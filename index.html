@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Learnora | Learn Better. Practice Smarter.</title>
+  <meta name="description" content="Explore clear Maths, English and Science lessons, interactive quizzes and printable worksheets for Grades 6–8 with Learnora.">
+  <meta name="theme-color" content="#173b63">
+
+  <style>
+    :root {
+      --navy: #173b63;
+      --navy-dark: #102b49;
+      --teal: #168b68;
+      --light: #f4f8fb;
+      --text: #26374a;
+      --muted: #68788a;
+      --white: #ffffff;
+      --border: #e5ebf1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-button {
+      background: var(--navy);
+      color: white !important;
+      padding: 10px 17px;
+      border-radius: 8px;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #edf5fb, #f1faf6);
+      padding: 78px 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.13;
+      color: var(--navy);
+      letter-spacing: -1.7px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 570px;
+      margin-bottom: 27px;
+    }
+
+    .primary-btn {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      padding: 13px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .primary-btn:hover {
+      background: #117456;
+    }
+
+    .hero-art {
+      background: white;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 15px 45px #173b6314;
+      text-align: center;
+    }
+
+    .hero-icon {
+      font-size: 76px;
+      margin-bottom: 12px;
+    }
+
+    .hero-art h3 {
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .hero-art p {
+      font-size: 14px;
+      margin: 8px auto 0;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .subject-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 27px;
+      background: white;
+      transition: .2s;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px #173b6310;
+    }
+
+    .subject-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      background: #edf5fb;
+      border-radius: 12px;
+      margin-bottom: 18px;
+    }
+
+    .subject-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .subject-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card-link {
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .grade-section {
+      background: var(--light);
+    }
+
+    .grades {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grade-card {
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .grade-card h3 {
+      color: var(--navy);
+      font-size: 25px;
+    }
+
+    .grade-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .resources {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .resource-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 23px;
+    }
+
+    .resource-card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eaf6f1;
+      color: var(--teal);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .search-area {
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+
+    .search-area input {
+      width: 100%;
+      padding: 15px 17px;
+      border: 1px solid #d8e1e9;
+      border-radius: 9px;
+      outline: none;
+      background: white;
+    }
+
+    .search-area input:focus {
+      border-color: var(--teal);
+    }
+
+    .quiz-section {
+      background: #edf5fb;
+    }
+
+    .quiz-box {
+      background: white;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 35px #173b630d;
+    }
+
+    .quiz-box h3 {
+      color: var(--navy);
+      margin-bottom: 18px;
+      font-size: 21px;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 13px 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--teal);
+      background: #f3faf7;
+    }
+
+    .quiz-option:disabled {
+      cursor: default;
+      opacity: 1;
+    }
+
+    #quiz-result {
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    .quiz-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      padding: 55px 20px;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #dce8f2;
+      margin-bottom: 22px;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: white;
+      padding: 38px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 28px;
+    }
+
+    footer h3, footer h4 {
+      margin-bottom: 12px;
+    }
+
+    footer p, footer a {
+      color: #d0dce7;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin: 7px 0;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #ffffff25;
+      padding-top: 18px;
+      font-size: 13px;
+      color: #bdcbd8;
+    }
+
+    @media(max-width: 760px) {
+      .nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 52px 0;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        max-width: 420px;
+      }
+
+      .subjects {
+        grid-template-columns: 1fr;
+      }
+
+      .grades {
+        grid-template-columns: 1fr;
+      }
+
+      .resources {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">Learn<span>ora</span></a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#subjects">Subjects</a>
+      <a href="#grades">Grades</a>
+      <a href="#resources">Resources</a>
+      <a href="#quiz">Quizzes</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <div class="eyebrow">Your learning journey starts here</div>
+
+        <h1>Learn Better.<br>Practice Smarter.</h1>
+
+        <p>
+          Build confidence in Maths, English and Science with
+          easy-to-understand lessons, useful practice questions
+          and learning resources designed for students.
+        </p>
+
+        <a href="#subjects" class="primary-btn">Explore Learning</a>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-icon">📚</div>
+        <h3>Knowledge Made Clear</h3>
+        <p>
+          Understand concepts, practise new skills and
+          make progress one lesson at a time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Explore your subjects</div>
+        <h2>What Would You Like to Learn?</h2>
+        <p>Start with a subject and discover new ways to learn.</p>
+      </div>
+
+      <div class="subjects">
+        <article class="subject-card">
+          <div class="subject-icon">➗</div>
+          <h3>Mathematics</h3>
+          <p>
+            Explore fractions, ratios, percentages, algebra,
+            geometry and more with step-by-step explanations.
+          </p>
+          <a class="card-link" href="#resources">Explore Maths →</a>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-icon">📖</div>
+          <h3>English</h3>
+          <p>
+            Improve grammar, vocabulary, reading comprehension
+            and writing skills through guided practice.
+          </p>
+          <a class="card-link" href="#resources">Explore English →</a>
+        </article>
+
+        <article class="subject-card">
+          <div class="subject-icon">🔬</div>
+          <h3>Science</h3>
+          <p>
+            Discover cells, ecosystems, matter, energy,
+            forces and the world around us.
+          </p>
+          <a class="card-link" href="#resources">Explore Science →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="grade-section" id="grades">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Learning by level</div>
+        <h2>Choose Your Grade</h2>
+        <p>Learning resources for middle school students.</p>
+      </div>
+
+      <div class="grades">
+        <div class="grade-card">
+          <h3>Grade 6</h3>
+          <p>Build strong foundations.</p>
+        </div>
+
+        <div class="grade-card">
+          <h3>Grade 7</h3>
+          <p>Develop deeper understanding.</p>
+        </div>
+
+        <div class="grade-card">
+          <h3>Grade 8</h3>
+          <p>Strengthen skills and confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Study and practise</div>
+        <h2>Learning Resources</h2>
+        <p>Find useful topics to support your studies.</p>
+      </div>
+
+      <div class="search-area">
+        <input
+          type="search"
+          id="resource-search"
+          placeholder="Search topics, e.g. fractions or grammar..."
+          aria-label="Search learning resources"
+        >
+      </div>
+
+      <div class="resources" id="resource-list">
+
+        <article class="resource-card" data-search="maths fractions grade 6">
+          <span class="tag">Mathematics · Grade 6</span>
+          <h3>Understanding Fractions</h3>
+          <p>
+            Learn what fractions represent and how numerators
+            and denominators work.
+          </p>
+          <span class="card-link">Learning topic coming soon</span>
+        </article>
+
+        <article class="resource-card" data-search="maths ratios grade 6 grade 7">
+          <span class="tag">Mathematics · Grades 6–7</span>
+          <h3>Introduction to Ratios</h3>
+          <p>
+            Understand how ratios compare quantities using
+            simple everyday examples.
+          </p>
+          <span class="card-link">Learning topic coming soon</span>
+        </article>
+
+        <article class="resource-card" data-search="english grammar parts of speech">
+          <span class="tag">English · Grades 6–8</span>
+          <h3>Parts of Speech</h3>
+          <p>
+            Discover nouns, verbs, adjectives and other
+            important parts of English grammar.
+          </p>
+          <span class="card-link">Learning topic coming soon</span>
+        </article>
+
+        <article class="resource-card" data-search="science cells biology grade 7">
+          <span class="tag">Science · Grade 7</span>
+          <h3>Introduction to Cells</h3>
+          <p>
+            Explore the basic structure of cells and learn
+            why they are important to living things.
+          </p>
+          <span class="card-link">Learning topic coming soon</span>
+        </article>
+
+      </div>
+
+      <p id="no-results" style="display:none;text-align:center;margin-top:20px;color:#68788a;">
+        No matching topics found. Try another search.
+      </p>
+    </div>
+  </section>
+
+  <section class="quiz-section" id="quiz">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Test your understanding</div>
+        <h2>Quick Maths Challenge</h2>
+        <p>Try this sample question and check your answer.</p>
+      </div>
+
+      <div class="quiz-box">
+        <h3>What is 3/4 of 20?</h3>
+
+        <button class="quiz-option" data-correct="false">A. 10</button>
+        <button class="quiz-option" data-correct="false">B. 12</button>
+        <button class="quiz-option" data-correct="true">C. 15</button>
+        <button class="quiz-option" data-correct="false">D. 18</button>
+
+        <p id="quiz-result" aria-live="polite"></p>
+
+        <p class="quiz-note">
+          Hint: Divide 20 by 4, then multiply the result by 3.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container section-heading">
+      <div class="eyebrow">About Learnora</div>
+      <h2>Learning Should Be Clear and Accessible</h2>
+      <p>
+        Learnora aims to make learning easier through clear
+        explanations, practical examples, quizzes and
+        printable study resources. Our goal is to help
+        students understand concepts rather than simply
+        memorise answers.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Make Every Learning Step Count</h2>
+    <p>Explore a topic, practise a skill and keep moving forward.</p>
+    <a href="#subjects" class="primary-btn">Start Exploring</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <h3>Learnora</h3>
+        <p>Learn Better. Practice Smarter.</p>
+        <p style="margin-top:10px;">
+          Helping students build understanding through
+          accessible educational resources.
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a href="#subjects">Subjects</a>
+        <a href="#grades">Grades</a>
+        <a href="#resources">Resources</a>
+        <a href="#quiz">Quizzes</a>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <a href="#about">About Learnora</a>
+        <a href="mailto:hello@learnora.com">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Learnora. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Update copyright year
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  // Resource search
+  const searchInput = document.getElementById("resource-search");
+  const resourceCards = document.querySelectorAll(".resource-card");
+  const noResults = document.getElementById("no-results");
+
+  searchInput.addEventListener("input", function () {
+    const term = this.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    resourceCards.forEach(function (card) {
+      const searchableText =
+        (card.innerText + " " + card.dataset.search).toLowerCase();
+
+      const match = searchableText.includes(term);
+
+      card.style.display = match ? "" : "none";
+
+      if (match) visibleCount++;
+    });
+
+    noResults.style.display =
+      visibleCount === 0 ? "block" : "none";
+  });
+
+  // Interactive sample quiz
+  const quizOptions = document.querySelectorAll(".quiz-option");
+  const quizResult = document.getElementById("quiz-result");
+
+  quizOptions.forEach(function (option) {
+    option.addEventListener("click", function () {
+      const correct = this.dataset.correct === "true";
+
+      quizOptions.forEach(function (item) {
+        item.disabled = true;
+      });
+
+      if (correct) {
+        quizResult.textContent =
+          "Correct! 20 ÷ 4 = 5, and 5 × 3 = 15. Well done!";
+        quizResult.style.color = "#168b68";
+      } else {
+        quizResult.textContent =
+          "Not quite. The correct answer is 15. Divide 20 by 4, then multiply by 3.";
+        quizResult.style.color = "#b45309";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
