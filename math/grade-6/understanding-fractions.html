@@ -1086,7 +1086,13 @@ footer a { text-decoration:none; }
     }
 
     result.style.display = "block";
-    result.scrollIntoView({ behavior:"smooth", block:"center" });
+
+requestAnimationFrame(function() {
+  result.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+});
   });
 
   retakeButton.addEventListener("click", function() {
