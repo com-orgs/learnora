@@ -749,4 +749,84 @@ footer a { text-decoration:none; }
     let answered = 0;
 
     Object.keys(answers).forEach(function(questionName) {
-      const question = answers[questionNa
+      const question = answers[questionName];
+      const questionElement = document.querySelector(
+        '[data-question="' + questionName + '"]'
+      );
+
+      const selected = form.querySelector(
+        'input[name="' + questionName + '"]:checked'
+      );
+
+      const feedback = questionElement.querySelector(".quiz-feedback");
+
+      feedback.hidden = false;
+      feedback.className = "quiz-feedback";
+
+      if (!selected) {
+        feedback.classList.add("unanswered");
+        feedback.textContent =
+          "Not answered. Correct answer: " +
+          question.correctText + ". " + question.explanation;
+        return;
+      }
+
+      answered++;
+
+      if (selected.value === question.correct) {
+        score++;
+        feedback.classList.add("correct");
+        feedback.textContent =
+          "Correct! " + question.explanation;
+      } else {
+        feedback.classList.add("incorrect");
+        feedback.textContent =
+          "Incorrect. Correct answer: " +
+          question.correctText + ". " + question.explanation;
+      }
+    });
+
+    const percentage = Math.round((score / 5) * 100);
+
+    scoreNumber.textContent = score + " / 5";
+    scoreDetail.textContent =
+      percentage + "% correct · " + answered + " of 5 questions answered.";
+
+    progressFill.style.width = percentage + "%";
+
+    if (score === 5) {
+      scoreMessage.textContent = "Excellent! Perfect score. Keep it up!";
+    } else if (score >= 4) {
+      scoreMessage.textContent = "Great work! You understand fractions very well.";
+    } else if (score >= 3) {
+      scoreMessage.textContent = "Good effort! Review the explanations and try again.";
+    } else {
+      scoreMessage.textContent = "Keep practising! Review the lesson and try again.";
+    }
+
+    result.style.display = "block";
+    result.scrollIntoView({ behavior:"smooth", block:"center" });
+  });
+
+  retakeButton.addEventListener("click", function() {
+    form.reset();
+
+    document.querySelectorAll(".quiz-feedback").forEach(function(feedback) {
+      feedback.hidden = true;
+      feedback.textContent = "";
+      feedback.className = "quiz-feedback";
+    });
+
+    result.style.display = "none";
+    progressFill.style.width = "0%";
+
+    document.getElementById("quiz").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
