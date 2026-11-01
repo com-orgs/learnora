@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn fractions with simple explanations, visual examples, step-by-step solutions, practice questions and a free printable worksheet for Grade 6.">
+  <meta name="theme-color" content="#173B63">
+  <title>Understanding Fractions | Grade 6 Maths | Learnora</title>
+  <link rel="canonical" href="https://learnora-ab2.pages.dev/math/grade-6/understanding-fractions.html">
+  <style>
+    :root {
+      --navy:#173B63;
+      --teal:#168B68;
+      --ink:#263445;
+      --muted:#66758a;
+      --bg:#f5f8fc;
+      --line:#e1e8f0;
+      --white:#fff;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.7;
+    }
+    a { color:var(--teal); }
+    header {
+      background:var(--white);
+      border-bottom:1px solid var(--line);
+      padding:15px 20px;
+    }
+    .nav {
+      max-width:1050px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+    .brand {
+      color:var(--navy);
+      font-size:25px;
+      font-weight:800;
+      text-decoration:none;
+    }
+    .nav a:not(.brand) {
+      text-decoration:none;
+      font-weight:600;
+      margin-left:14px;
+    }
+    main { max-width:900px; margin:35px auto; padding:0 18px; }
+    .breadcrumb { color:var(--muted); font-size:14px; margin-bottom:20px; }
+    .breadcrumb a { text-decoration:none; }
+    .hero, .section, .callout {
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:25px;
+      margin-bottom:22px;
+    }
+    .hero { border-top:5px solid var(--teal); }
+    .tag {
+      display:inline-block;
+      background:#e8f5ef;
+      color:#116548;
+      border-radius:30px;
+      padding:4px 12px;
+      font-size:13px;
+      font-weight:700;
+    }
+    h1,h2,h3 { color:var(--navy); line-height:1.3; }
+    h1 { font-size:clamp(30px,5vw,42px); margin:13px 0; }
+    h2 { font-size:25px; margin-top:0; }
+    h3 { font-size:19px; }
+    .muted { color:var(--muted); }
+    .objectives li, .section li { margin:7px 0; }
+    .fraction {
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      vertical-align:middle;
+      font-weight:800;
+      line-height:1.15;
+      margin:0 5px;
+      color:var(--navy);
+    }
+    .fraction .top { border-bottom:2px solid currentColor; padding:0 8px 3px; }
+    .fraction .bottom { padding-top:3px; }
+    .visual {
+      background:#f1f6fb;
+      border-radius:12px;
+      padding:18px;
+      text-align:center;
+      margin:16px 0;
+    }
+    .pizza {
+      display:flex;
+      width:min(100%,320px);
+      height:70px;
+      margin:15px auto;
+      border:3px solid var(--navy);
+      border-radius:8px;
+      overflow:hidden;
+    }
+    .pizza span { flex:1; border-right:2px solid white; background:#dce8f2; }
+    .pizza span.filled { background:#168b68; }
+    .pizza span:last-child { border:0; }
+    .example {
+      border-left:4px solid var(--teal);
+      padding:12px 17px;
+      background:#f3faf7;
+      border-radius:7px;
+      margin:15px 0;
+    }
+    .answer { color:#116548; font-weight:700; }
+    .mistake { background:#fff8e9; border-left:4px solid #d99b28; padding:13px 16px; border-radius:7px; margin:12px 0; }
+    .practice-item { padding:12px 0; border-bottom:1px solid var(--line); }
+    button {
+      background:var(--teal);
+      color:white;
+      border:0;
+      border-radius:8px;
+      padding:11px 17px;
+      font-weight:700;
+      font-size:15px;
+      cursor:pointer;
+    }
+    button:hover { filter:brightness(.93); }
+    .quiz-question { padding:15px 0; border-bottom:1px solid var(--line); }
+    .quiz-question label { display:block; margin:7px 0; cursor:pointer; }
+    #quiz-result { margin-top:16px; font-weight:700; }
+    .worksheet {
+      background:#fff;
+      border:2px dashed #aab8c8;
+      padding:22px;
+      border-radius:10px;
+    }
+    .worksheet li { margin:15px 0; }
+    .write-line { display:block; border-bottom:1px solid #9aa8b8; height:24px; }
+    footer {
+      text-align:center;
+      padding:28px 15px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      background:white;
+    }
+    @media(max-width:600px) {
+      .nav { align-items:flex-start; }
+      .nav div { width:100%; }
+      .nav a:not(.brand) { margin:0 12px 0 0; }
+      .hero,.section { padding:19px; }
+    }
+    @media print {
+      header, footer, .no-print, .breadcrumb { display:none !important; }
+      body { background:white; }
+      main { margin:0 auto; max-width:100%; }
+      .section, .worksheet { break-inside:avoid; border:1px solid #bbb; }
+      .worksheet { border:0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="/">Learnora</a>
+    <div>
+      <a href="/">Home</a>
+      <a href="/#subjects">Subjects</a>
+      <a href="/#resources">Resources</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="/">Home</a> / Mathematics / Grade 6 / Understanding Fractions
+  </div>
+
+  <section class="hero">
+    <span class="tag">GRADE 6 · MATHEMATICS</span>
+    <h1>Understanding Fractions</h1>
+    <p>Learn what fractions mean, understand their parts, explore visual examples and practise solving fraction questions step by step.</p>
+    <p class="muted">Learning time: approximately 20–25 minutes · Beginner level</p>
+  </section>
+
+  <section class="section">
+    <h2>What You Will Learn</h2>
+    <ul class="objectives">
+      <li>Understand what a fraction represents.</li>
+      <li>Identify the numerator and denominator.</li>
+      <li>Recognise proper, improper and mixed fractions.</li>
+      <li>Read and write fractions using simple examples.</li>
+      <li>Practise identifying fractions in everyday situations.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>1. What Is a Fraction?</h2>
+    <p>A <strong>fraction</strong> represents a part of a whole. It tells us how many equal parts we have out of the total number of equal parts.</p>
+    <p>Imagine a pizza cut into 4 equal slices. If you eat 1 slice, you have eaten one out of four equal parts.</p>
+    <div class="visual">
+      <strong>One out of four equal parts</strong>
+      <div class="pizza" role="img" aria-label="A rectangle divided into four equal parts, with one part shaded">
+        <span class="filled"></span><span></span><span></span><span></span>
+      </div>
+      <span class="fraction"><span class="top">1</span><span class="bottom">4</span></span>
+      <p class="muted">The shaded part represents one quarter (1/4).</p>
+    </div>
+    <p>Fractions are useful in everyday life. We use them when sharing food, measuring ingredients, dividing objects and describing parts of a group.</p>
+  </section>
+
+  <section class="section">
+    <h2>2. Parts of a Fraction</h2>
+    <p>Look at this fraction:</p>
+    <div class="visual">
+      <span class="fraction" style="font-size:38px">
+        <span class="top">3</span><span class="bottom">5</span>
+      </span>
+      <p><strong>Numerator:</strong> The top number (3). It tells us how many parts we have.</p>
+      <p><strong>Denominator:</strong> The bottom number (5). It tells us how many equal parts make the whole.</p>
+    </div>
+    <p>In the fraction 3/5, a whole is divided into 5 equal parts and we are talking about 3 of those parts.</p>
+    <div class="example">
+      <strong>Remember:</strong> The denominator tells the total number of equal parts. The numerator tells how many of those parts are being considered.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>3. Types of Fractions</h2>
+    <h3>A. Proper Fractions</h3>
+    <p>A proper fraction has a numerator smaller than its denominator.</p>
+    <p>Examples: 1/2, 2/5 and 3/4.</p>
+    <div class="example">Example: In 2/5, 2 is smaller than 5. Therefore, 2/5 is a proper fraction.</div>
+
+    <h3>B. Improper Fractions</h3>
+    <p>An improper fraction has a numerator greater than or equal to its denominator.</p>
+    <p>Examples: 5/4, 7/3 and 6/6.</p>
+    <div class="example">Example: In 7/3, 7 is greater than 3. Therefore, 7/3 is an improper fraction.</div>
+
+    <h3>C. Mixed Numbers</h3>
+    <p>A mixed number contains a whole number and a proper fraction.</p>
+    <p>Examples: 1 1/2, 2 1/4 and 3 2/5.</p>
+    <div class="example">Example: 1 1/2 means one whole and one half.</div>
+  </section>
+
+  <section class="section">
+    <h2>4. Step-by-Step Solved Examples</h2>
+    <h3>Example 1: Identify the numerator and denominator</h3>
+    <p>Question: In the fraction 4/7, identify both parts.</p>
+    <ol>
+      <li>Look at the top number: 4.</li>
+      <li>Look at the bottom number: 7.</li>
+      <li>The numerator is 4 and the denominator is 7.</li>
+    </ol>
+    <p class="answer">Answer: Numerator = 4; Denominator = 7.</p>
+
+    <h3>Example 2: Identify the type of fraction</h3>
+    <p>Question: Is 3/8 a proper or improper fraction?</p>
+    <ol>
+      <li>Compare the numerator (3) and denominator (8).</li>
+      <li>Since 3 is smaller than 8, it is a proper fraction.</li>
+    </ol>
+    <p class="answer">Answer: 3/8 is a proper fraction.</p>
+
+    <h3>Example 3: Write a fraction from a situation</h3>
+    <p>Question: A chocolate bar is divided into 6 equal pieces. Sara eats 2 pieces. What fraction does she eat?</p>
+    <ol>
+      <li>Total equal pieces = 6. This is the denominator.</li>
+      <li>Pieces eaten = 2. This is the numerator.</li>
+      <li>Write the fraction as 2/6.</li>
+    </ol>
+    <p class="answer">Answer: Sara eats 2/6 of the chocolate bar.</p>
+  </section>
+
+  <section class="section">
+    <h2>5. Common Mistakes to Avoid</h2>
+    <div class="mistake"><strong>Mistake 1:</strong> Mixing up the numerator and denominator.<br>Remember: numerator is on top; denominator is below.</div>
+    <div class="mistake"><strong>Mistake 2:</strong> Thinking the denominator tells how many parts are selected.<br>The denominator tells how many equal parts make the whole.</div>
+    <div class="mistake"><strong>Mistake 3:</strong> Dividing something into unequal pieces and calling them equal fractions.<br>Fractions of a whole require equal-sized parts.</div>
+    <div class="mistake"><strong>Mistake 4:</strong> Assuming every fraction is less than one.<br>Improper fractions can represent one whole or more than one whole.</div>
+  </section>
+
+  <section class="section">
+    <h2>6. Practice Exercises</h2>
+    <p>Try these questions before checking your answers.</p>
+    <div class="practice-item">1. What is the numerator in 5/9?</div>
+    <div class="practice-item">2. What is the denominator in 3/8?</div>
+    <div class="practice-item">3. Is 2/7 a proper or improper fraction?</div>
+    <div class="practice-item">4. Is 9/5 a proper or improper fraction?</div>
+    <div class="practice-item">5. A cake is cut into 8 equal pieces. Ali eats 3. Write the fraction he eats.</div>
+    <details>
+      <summary><strong>Show practice answers</strong></summary>
+      <ol>
+        <li>5</li>
+        <li>8</li>
+        <li>Proper fraction</li>
+        <li>Improper fraction</li>
+        <li>3/8</li>
+      </ol>
+    </details>
+  </section>
+
+  <section class="section" id="quiz">
+    <h2>7. Test Your Understanding</h2>
+    <p>Choose one answer for each question, then select Check Answers.</p>
+    <form id="quiz-form">
+      <div class="quiz-question">
+        <strong>1. What is the numerator of 4/9?</strong>
+        <label><input type="radio" name="q1" value="a"> A. 9</label>
+        <label><input type="radio" name="q1" value="b"> B. 4</label>
+        <label><input type="radio" name="q1" value="c"> C. 13</label>
+      </div>
+      <div class="quiz-question">
+        <strong>2. Which is a proper fraction?</strong>
+        <label><input type="radio" name="q2" value="a"> A. 7/3</label>
+        <label><input type="radio" name="q2" value="b"> B. 5/5</label>
+        <label><input type="radio" name="q2" value="c"> C. 2/5</label>
+      </div>
+      <div class="quiz-question">
+        <strong>3. What does the denominator tell us?</strong>
+        <label><input type="radio" name="q3" value="a"> A. Total equal parts in the whole</label>
+        <label><input type="radio" name="q3" value="b"> B. Number of selected parts only</label>
+        <label><input type="radio" name="q3" value="c"> C. The whole number only</label>
+      </div>
+      <div class="quiz-question">
+        <strong>4. Which is an improper fraction?</strong>
+        <label><input type="radio" name="q4" value="a"> A. 1/4</label>
+        <label><input type="radio" name="q4" value="b"> B. 3/8</label>
+        <label><input type="radio" name="q4" value="c"> C. 7/4</label>
+      </div>
+      <div class="quiz-question">
+        <strong>5. A whole is divided into 10 equal pieces. You take 6. What fraction do you have?</strong>
+        <label><input type="radio" name="q5" value="a"> A. 10/6</label>
+        <label><input type="radio" name="q5" value="b"> B. 6/10</label>
+        <label><input type="radio" name="q5" value="c"> C. 6/6</label>
+      </div>
+      <button class="no-print" type="submit">Check Answers</button>
+    </form>
+    <div id="quiz-result" aria-live="polite"></div>
+    <div id="quiz-explanations"></div>
+  </section>
+
+  <section class="section">
+    <h2>8. Free Printable Worksheet</h2>
+    <p>Use this worksheet to practise what you have learned. You can print it or save it as a PDF.</p>
+    <div class="worksheet">
+      <h3>Learnora — Grade 6 Mathematics</h3>
+      <h2>Understanding Fractions Worksheet</h2>
+      <p>Name: __________________________ Date: _______________</p>
+      <p><strong>Instructions:</strong> Answer all questions. Show your working where needed.</p>
+      <ol>
+        <li>Identify the numerator and denominator in 3/7.<span class="write-line"></span></li>
+        <li>Write one example of a proper fraction.<span class="write-line"></span></li>
+        <li>Write one example of an improper fraction.<span class="write-line"></span></li>
+        <li>Is 4/9 a proper or improper fraction? Explain.<span class="write-line"></span><span class="write-line"></span></li>
+        <li>A pizza has 8 equal slices. You eat 3 slices. What fraction did you eat?<span class="write-line"></span></li>
+        <li>Write the mixed number that means two wholes and one third.<span class="write-line"></span></li>
+        <li>What does the denominator represent?<span class="write-line"></span><span class="write-line"></span></li>
+        <li>Classify 8/8 as proper or improper.<span class="write-line"></span></li>
+      </ol>
+      <p><strong>Great work! Keep practising.</strong></p>
+      <p class="muted">Learnora — Learn Better. Practice Smarter.</p>
+    </div>
+    <div class="no-print" style="margin-top:18px">
+      <button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button>
+    </div>
+    <details class="no-print" style="margin-top:20px">
+      <summary><strong>Teacher / Parent Answer Key</strong></summary>
+      <ol>
+        <li>Numerator = 3; denominator = 7.</li>
+        <li>Any valid example such as 1/2.</li>
+        <li>Any valid example such as 5/3.</li>
+        <li>Proper fraction, because 4 is smaller than 9.</li>
+        <li>3/8.</li>
+        <li>2 1/3.</li>
+        <li>The total number of equal parts in the whole.</li>
+        <li>Improper fraction, because the numerator equals the denominator.</li>
+      </ol>
+    </details>
+  </section>
+
+  <section class="section">
+    <h2>9. Lesson Summary</h2>
+    <ul>
+      <li>A fraction represents part of a whole.</li>
+      <li>The numerator is the top number.</li>
+      <li>The denominator is the bottom number.</li>
+      <li>A proper fraction has a smaller numerator than denominator.</li>
+      <li>An improper fraction has a numerator equal to or greater than its denominator.</li>
+      <li>A mixed number combines a whole number and a proper fraction.</li>
+    </ul>
+    <div class="callout">
+      <strong>Next learning goal:</strong> Once you understand fractions, you can move on to equivalent fractions and comparing fractions.
+    </div>
+  </section>
+
+  <p class="muted">Educational note: This is a curriculum-neutral introductory lesson. Teachers and parents can adapt the examples to their local curriculum.</p>
+</main>
+
+<footer>
+  <strong>Learnora</strong><br>
+  Learn Better. Practice Smarter.<br>
+  <a href="/">Back to Home</a>
+</footer>
+
+<script>
+  const quizAnswers = {
+    q1: "b",
+    q2: "c",
+    q3: "a",
+    q4: "c",
+    q5: "b"
+  };
+
+  const explanations = {
+    q1: "The numerator is the top number. In 4/9, it is 4.",
+    q2: "2/5 is proper because 2 is smaller than 5.",
+    q3: "The denominator tells us how many equal parts make the whole.",
+    q4: "7/4 is improper because 7 is greater than 4.",
+    q5: "Six selected pieces out of ten equal pieces gives 6/10."
+  };
+
+  document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let score = 0;
+    let feedback = "";
+
+    for (const [question, correct] of Object.entries(quizAnswers)) {
+      const selected = document.querySelector('input[name="' + question + '"]:checked');
+      if (selected && selected.value === correct) {
+        score++;
+      }
+      feedback += "<p>" + explanations[question] + "</p>";
+    }
+
+    const result = document.getElementById("quiz-result");
+    result.textContent = "Your score: " + score + " out of 5.";
+
+    document.getElementById("quiz-explanations").innerHTML = feedback;
+  });
+</script>
+</body>
+</html>
