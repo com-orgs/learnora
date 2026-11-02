@@ -56,7 +56,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>9. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Equivalent Fractions Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Answer all questions. Show your working where needed.</p><ol><li>Write a fraction equivalent to 2/3 by multiplying both terms by 5.<span class="write-line"></span></li><li>Complete: 3/4 = 12/____.<span class="write-line"></span></li><li>Simplify 6/10.<span class="write-line"></span></li><li>Simplify 21/28.<span class="write-line"></span></li><li>Are 5/8 and 10/16 equivalent? Explain.<span class="write-line"></span><span class="write-line"></span></li><li>Write two fractions equivalent to 3/5.<span class="write-line"></span></li><li>Explain the rule for making an equivalent fraction.<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Great work! Keep practising.</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>10/15.</li><li>16.</li><li>3/5.</li><li>3/4.</li><li>Yes. Multiply 5/8 by 2/2 to get 10/16.</li><li>Examples: 6/10 and 9/15.</li><li>Multiply or divide both numerator and denominator by the same non-zero number.</li></ol></details></section>
 <section class="section"><h2>10. Lesson Summary</h2><ul><li>Equivalent fractions represent the same value.</li><li>Multiply both numerator and denominator by the same non-zero number to make an equivalent fraction.</li><li>Divide both by the same common factor to simplify.</li><li>Always perform the same operation on the numerator and denominator.</li></ul><div class="example"><strong>Next learning goal:</strong> Use equivalent fractions to compare and order fractions with different denominators.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral introductory lesson. Teachers and parents can adapt the examples to their local curriculum.</p>
@@ -66,25 +66,6 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/adding-subtracting-fractions.html">Adding and Subtracting Fractions</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 3/6",explanation:"3/6 simplifies to 1/2 when both 3 and 6 are divided by 3."},
-q2:{correct:"c",correctText:"C. 8/12",explanation:"Multiply the numerator and denominator of 2/3 by 4 to get 8/12."},
-q3:{correct:"a",correctText:"A. 2/3",explanation:"Divide both 10 and 15 by 5 to get 2/3."},
-q4:{correct:"b",correctText:"B. Multiply numerator and denominator by the same non-zero number",explanation:"The same operation must be applied to both parts of the fraction."},
-q5:{correct:"c",correctText:"C. 20",explanation:"3 is multiplied by 5 to become 15, so 4 must also be multiplied by 5 to get 20."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result"),scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";scoreMessage.textContent=score===total?"Excellent! Perfect score. Keep it up!":score>=4?"Great work! You understand equivalent fractions very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-equivalent-fractions.js" defer></script>
 </body>
 </html>

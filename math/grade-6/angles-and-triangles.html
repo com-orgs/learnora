@@ -51,7 +51,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>11. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Angles and Triangles Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working for missing angles.</p><ol><li>Classify 25°.<span class="write-line"></span></li><li>Classify 110°.<span class="write-line"></span></li><li>Find the missing angle in a triangle with angles 35° and 85°.<span class="write-line"></span></li><li>Find the missing angle in a triangle with angles 90° and 42°.<span class="write-line"></span></li><li>Two angles on a straight line are 130° and x. Find x.<span class="write-line"></span></li><li>Three angles around a point are 100°, 120° and x. Find x.<span class="write-line"></span></li><li>Name the triangle with all sides equal.<span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>Acute.</li><li>Obtuse.</li><li>180° − 35° − 85° = 60°.</li><li>180° − 90° − 42° = 48°.</li><li>180° − 130° = 50°.</li><li>360° − 100° − 120° = 140°.</li><li>Equilateral triangle.</li></ol></details></section>
 <section class="section"><h2>12. Lesson Summary</h2><ul><li>Angles measure turns and are measured in degrees.</li><li>Acute angles are below 90°, right angles are 90°, and obtuse angles are between 90° and 180°.</li><li>Triangles can be classified by their sides and their angles.</li><li>The interior angles of a triangle add up to 180°.</li><li>Angles on a straight line add to 180°; angles around a point add to 360°.</li></ul><div class="example"><strong>Next learning goal:</strong> Explore parallel and perpendicular lines, quadrilaterals and symmetry.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -61,37 +61,5 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/data-and-graphs.html">Data and Graphs</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"a",correctText:"A. Acute",explanation:"An acute angle is greater than 0° and less than 90°."},
-q2:{correct:"b",correctText:"B. 90°",explanation:"A right angle measures exactly 90°."},
-q3:{correct:"c",correctText:"C. 180°",explanation:"The three interior angles in every triangle add up to 180°."},
-q4:{correct:"a",correctText:"A. 70°",explanation:"180° − 50° − 60° = 70°."},
-q5:{correct:"c",correctText:"C. Equilateral",explanation:"An equilateral triangle has three equal sides and three equal 60° angles."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-angles-and-triangles.js" defer></script>
 </body></html>

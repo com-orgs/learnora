@@ -53,7 +53,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>12. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Data and Graphs Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working and write answers clearly.</p><ol><li>Find the mean of 5, 7, 9 and 11.<span class="write-line"></span></li><li>Find the median of 4, 8, 2, 10 and 6.<span class="write-line"></span></li><li>Find the mode of 3, 4, 4, 5, 6, 4 and 7.<span class="write-line"></span></li><li>Find the range of 14, 8, 19, 11 and 6.<span class="write-line"></span></li><li>A survey records 8 votes for blue, 5 for green and 7 for red. Find the total number of votes.<span class="write-line"></span></li><li>Find the median of 2, 4, 8 and 10.<span class="write-line"></span></li><li>Explain when a line graph is useful.<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>(5 + 7 + 9 + 11) ÷ 4 = 8.</li><li>Ordered: 2, 4, 6, 8, 10. Median = 6.</li><li>Mode = 4.</li><li>19 − 6 = 13.</li><li>8 + 5 + 7 = 20 votes.</li><li>Middle values 4 and 8; median = (4 + 8) ÷ 2 = 6.</li><li>A line graph is useful for showing how a value changes over time.</li></ol></details></section>
 <section class="section"><h2>13. Lesson Summary</h2><ul><li>Data is information collected to answer questions.</li><li>Frequency tables organise counts for each category or value.</li><li>Bar charts compare categories; line graphs often show change over time.</li><li>Mean is the total divided by the number of values.</li><li>Median is the middle after ordering, mode is most frequent, and range is largest minus smallest.</li></ul><div class="example"><strong>Next learning goal:</strong> Explore probability and how to describe the chance of an event.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -63,37 +63,5 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/understanding-decimals.html">Understanding Decimals and Place Value</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 4",explanation:"Mean = (2 + 4 + 6) ÷ 3 = 12 ÷ 3 = 4."},
-q2:{correct:"b",correctText:"B. 5",explanation:"The numbers are already in order. The middle value is 5."},
-q3:{correct:"c",correctText:"C. 4",explanation:"The number 4 appears more often than any other value."},
-q4:{correct:"a",correctText:"A. 9",explanation:"Range = largest − smallest = 12 − 3 = 9."},
-q5:{correct:"a",correctText:"A. Line graph",explanation:"A line graph is commonly used to show how a measurement changes over time."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-data-and-graphs.js" defer></script>
 </body></html>

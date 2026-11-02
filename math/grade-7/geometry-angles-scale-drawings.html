@@ -100,51 +100,6 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <section class="section related"><h2>Continue learning</h2><p>Explore related maths topics:</p><a href="/math/grade-6/angles-and-triangles.html">Angle and triangle foundations</a><a href="/math/grade-7/ratios-rates-proportional-relationships.html">Ratios and proportional relationships</a><a href="/math/grade-7/">Grade 7 Maths learning path</a></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Home</a> · <a href="/about.html">About</a> · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a><p><a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-const form=document.getElementById('quizForm'),result=document.getElementById('quizResult');
-const bar=document.getElementById('progressBar'),progress=document.getElementById('progress'),progressText=document.getElementById('progressText');
-const answers={q1:'b',q2:'b',q3:'b',q4:'b',q5:'b'};
-const explanations={
-q1:'Angles on a straight line always add up to 180°.',
-q2:'Vertically opposite angles are equal, so the answer is 76°.',
-q3:'Co-interior angles between parallel lines add up to 180°.',
-q4:'2 × 50 = 100 cm, which is 1 metre.',
-q5:'9 × 0.5 = 4.5 cm.'
-};
-function updateProgress(){const count=Object.keys(answers).filter(n=>form.querySelector('input[name="'+n+'"]:checked')).length;bar.style.width=(count/5*100)+'%';progress.setAttribute('aria-valuenow',String(count));progressText.textContent=count+' of 5 answered';}
-form.addEventListener('change',updateProgress);
-form.addEventListener('submit',function(event){
-event.preventDefault();
-let score=0;
-const details=[];
-Object.keys(answers).forEach(function(name,index){
-const selected=form.querySelector('input[name="'+name+'"]:checked');
-const correct=selected&&selected.value===answers[name];
-if(correct)score++;
-details.push({index:index+1,correct:!!correct,explanation:explanations[name]});
-});
-const content=document.createDocumentFragment();
-const heading=document.createElement('h3');
-heading.textContent='Your score: '+score+' / 5 ('+(score*20)+'%)';
-content.appendChild(heading);
-details.forEach(function(item){
-const paragraph=document.createElement('p');
-const label=document.createElement('strong');
-label.textContent='Question '+item.index+': '+(item.correct?'Correct':'Review')+'.';
-paragraph.append(label,document.createTextNode(' '+item.explanation));
-content.appendChild(paragraph);
-});
-const summary=document.createElement('p');
-summary.textContent=score===5?'Excellent work.':score>=3?'Good effort. Review any missed explanations.':'Keep practising, then try the quiz again.';
-content.appendChild(summary);
-result.replaceChildren(content);
-result.hidden=false;
-});
-document.getElementById('retake').addEventListener('click',function(){form.reset();result.hidden=true;result.textContent='';updateProgress();});
-document.getElementById('printWorksheet').addEventListener('click',function(){window.print();});
-updateProgress();
-})();
-</script>
+<script src="/scripts/pages/math-grade-7-geometry-angles-scale-drawings.js" defer></script>
 </body>
 </html>

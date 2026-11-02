@@ -52,7 +52,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>12. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Solving One-Step Equations Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Solve each equation and check your answer.</p><ol><li>x + 8 = 17<span class="write-line"></span></li><li>y − 6 = 10<span class="write-line"></span></li><li>5a = 35<span class="write-line"></span></li><li>m ÷ 3 = 9<span class="write-line"></span></li><li>p + 15 = 23<span class="write-line"></span></li><li>4n = 36<span class="write-line"></span></li><li>A number minus 7 equals 12. Find the number.<span class="write-line"></span><span class="write-line"></span></li><li>Six equal packs contain 54 cards altogether. How many cards are in each pack?<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>x = 9.</li><li>y = 16.</li><li>a = 7.</li><li>m = 27.</li><li>p = 8.</li><li>n = 9.</li><li>n − 7 = 12, so n = 19.</li><li>54 ÷ 6 = 9 cards per pack.</li></ol></details></section>
 <section class="section"><h2>13. Lesson Summary</h2><ul><li>An equation states that two expressions are equal.</li><li>Inverse operations undo each other.</li><li>Do the same operation to both sides to keep an equation balanced.</li><li>Use subtraction to undo addition and division to undo multiplication.</li><li>Check a solution by substituting it into the original equation.</li></ul><div class="example"><strong>Next learning goal:</strong> Build on one-step equations by learning to solve two-step equations.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -62,37 +62,5 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/integers-number-line.html">Integers and the Number Line</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. Subtraction",explanation:"Subtraction undoes addition. For example, adding 5 can be undone by subtracting 5."},
-q2:{correct:"c",correctText:"C. x = 7",explanation:"Subtract 5 from both sides: x = 12 − 5 = 7."},
-q3:{correct:"a",correctText:"A. a = 8",explanation:"Divide both sides by 3: a = 24 ÷ 3 = 8."},
-q4:{correct:"c",correctText:"C. m = 24",explanation:"Multiply both sides by 4: m = 6 × 4 = 24."},
-q5:{correct:"b",correctText:"B. Substitute it into the original equation",explanation:"Replace the variable with your answer and check that both sides have the same value."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-solving-one-step-equations.js" defer></script>
 </body></html>

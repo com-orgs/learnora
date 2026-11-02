@@ -59,7 +59,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Adding and Subtracting Decimals Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Line up decimal points and show your working.</p><ol><li>3.25 + 1.4<span class="write-line"></span></li><li>7.08 + 0.95<span class="write-line"></span></li><li>8.6 − 2.75<span class="write-line"></span></li><li>10 − 3.48<span class="write-line"></span></li><li>0.67 + 0.58<span class="write-line"></span></li><li>6.03 − 1.9<span class="write-line"></span></li><li>A sandwich costs $3.65 and a drink costs $1.85. Find the total cost.<span class="write-line"></span><span class="write-line"></span></li><li>A 5.5-metre rope is cut by 2.35 metres. How much rope remains?<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>4.65.</li><li>8.03.</li><li>5.85.</li><li>6.52.</li><li>1.25.</li><li>4.13.</li><li>$5.50.</li><li>3.15 metres.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>Line up decimal points before adding or subtracting.</li><li>Use zeros as placeholders to make place values clear.</li><li>Add or subtract from right to left, regrouping when needed.</li><li>Keep the decimal point aligned in the answer.</li><li>Estimate to check whether your answer is reasonable.</li></ul><div class="example"><strong>Next learning goal:</strong> Practise multiplying and dividing decimals, then use decimals in percentages and money problems.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -69,37 +69,5 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/understanding-percentages.html">Understanding Percentages</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 5.65",explanation:"Write 3.4 as 3.40. Then 3.40 + 2.25 = 5.65."},
-q2:{correct:"a",correctText:"A. 3.25",explanation:"6.00 − 2.75 = 3.25 after regrouping."},
-q3:{correct:"b",correctText:"B. 4.70",explanation:"A zero at the end of a decimal does not change its value. 4.7 = 4.70."},
-q4:{correct:"b",correctText:"B. 1.33",explanation:"0.86 + 0.47 = 1.33."},
-q5:{correct:"c",correctText:"C. 3.44",explanation:"Write 5.2 as 5.20. Then 5.20 − 1.76 = 3.44."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-adding-subtracting-decimals.js" defer></script>
 </body></html>

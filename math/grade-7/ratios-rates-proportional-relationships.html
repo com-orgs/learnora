@@ -67,39 +67,6 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <p class="muted">Educational note: This is a curriculum-neutral learning resource for Grade 7. Topic order and terminology may vary between schools and countries.</p>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Home</a> · <a href="/about.html">About</a> · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a><p><a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"a",correctText:"A. 2:3",explanation:"The ratio 4:6 simplifies by dividing both terms by 2, giving 2:3."},
-q2:{correct:"b",correctText:"B. $1.50",explanation:"Divide the total cost by the number of folders: $12 ÷ 8 = $1.50 per folder."},
-q3:{correct:"b",correctText:"B. 9:15",explanation:"Multiply both terms of 3:5 by 3 to get 9:15."},
-q4:{correct:"c",correctText:"C. 20",explanation:"Substitute x = 4 into y = 5x: y = 5 × 4 = 20."},
-q5:{correct:"a",correctText:"A. 60 km/h",explanation:"Divide distance by time: 120 km ÷ 2 hours = 60 km/h."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! Review any missed explanation.":score>=3?"Good effort! Review the lesson and try again.":"Keep practising! Revisit the examples and try again.";
-result.style.display="block";result.scrollIntoView({behavior:"smooth",block:"nearest"});
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-const printButton=document.getElementById("print-worksheet");if(printButton)printButton.addEventListener("click",function(){window.print();});
-})();
-</script>
+<script src="/scripts/pages/math-grade-7-ratios-rates-proportional-relationships.js" defer></script>
 </body>
 </html>

@@ -51,7 +51,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grades 6–7 Mathematics</h3><h2>Multiplying and Dividing Fractions Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working and simplify each answer where possible.</p><ol><li>4 × 2/9<span class="write-line"></span></li><li>3/5 × 5/8<span class="write-line"></span></li><li>7/10 × 5/14<span class="write-line"></span></li><li>2/3 ÷ 1/6<span class="write-line"></span></li><li>5/8 ÷ 1/4<span class="write-line"></span></li><li>3/4 ÷ 2/5<span class="write-line"></span></li><li>A recipe needs 2/3 cup of milk. You make one half of the recipe. How much milk do you need?<span class="write-line"></span><span class="write-line"></span></li><li>A 3/4-metre length of string is cut into pieces of 1/8 metre. How many pieces can be cut?<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>8/9.</li><li>15/40 = 3/8.</li><li>35/140 = 1/4.</li><li>2/3 × 6/1 = 4.</li><li>5/8 × 4/1 = 20/8 = 5/2 = 2 1/2.</li><li>3/4 × 5/2 = 15/8 = 1 7/8.</li><li>1/2 × 2/3 = 1/3 cup.</li><li>3/4 ÷ 1/8 = 3/4 × 8 = 6 pieces.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>Multiply fractions by multiplying the numerators and denominators.</li><li>You can simplify before or after multiplying.</li><li>To divide by a fraction, multiply by its reciprocal.</li><li>Flip only the second fraction when dividing.</li><li>Check units and simplify the final answer.</li></ul><div class="example"><strong>Next learning goal:</strong> Practise mixed numbers and multi-step fraction problems, then apply fractions to decimals and percentages.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral lesson for Grades 6–7. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -61,37 +61,5 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/mixed-numbers-improper-fractions.html">Mixed Numbers and Improper Fractions</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"a",correctText:"A. 2/5",explanation:"2/3 × 3/5 = 6/15. Divide numerator and denominator by 3 to get 2/5."},
-q2:{correct:"b",correctText:"B. 3/4",explanation:"Multiply the whole number by the numerator: 3 × 1/4 = 3/4."},
-q3:{correct:"b",correctText:"B. 7/2",explanation:"The reciprocal is found by swapping the numerator and denominator."},
-q4:{correct:"c",correctText:"C. 2",explanation:"1/2 ÷ 1/4 = 1/2 × 4/1 = 4/2 = 2."},
-q5:{correct:"a",correctText:"A. 9/10",explanation:"3/5 ÷ 2/3 = 3/5 × 3/2 = 9/10."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-multiplying-dividing-fractions.js" defer></script>
 </body></html>

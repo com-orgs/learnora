@@ -14,6 +14,7 @@ Learnora is a lightweight, static educational website with curriculum-neutral st
 - `404.html` — custom not-found page
 - `sitemap.xml`, `robots.txt` — search-engine discovery
 - `scripts/audit-site.mjs` — automated static quality checks
+- `scripts/pages/` — same-origin JavaScript assets for lessons and interactive features
 - `.github/workflows/site-audit.yml` — GitHub Actions workflow for the audit
 
 ## Local preview
@@ -36,7 +37,7 @@ Node.js 24 or later is used by the CI workflow.
 node scripts/audit-site.mjs
 ```
 
-The audit checks page metadata and canonical URLs, Open Graph consistency, HTML language attributes, image alt attributes, suspicious unescaped less-than signs in page content, heading-level jumps, internal links and in-page anchors, quiz question structure and accessible fieldset/legend groups, duplicate IDs, inline JavaScript syntax, sitemap coverage, robots.txt and the custom 404 page.
+The audit checks page metadata and canonical URLs, Open Graph consistency, HTML language attributes, image alt attributes, suspicious unescaped less-than signs in page content, heading-level jumps, internal links and in-page anchors, quiz question structure and accessible fieldset/legend groups, duplicate IDs, same-origin external JavaScript sources and syntax, Content Security Policy readiness, sitemap coverage, robots.txt and the custom 404 page.
 
 A passing static audit does **not** replace academic review, assistive-technology testing, browser/device testing, performance testing, security review or a live HTTP status check.
 

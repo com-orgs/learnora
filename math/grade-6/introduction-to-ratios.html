@@ -60,7 +60,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF to practise ratios away from the screen.</p><div class="worksheet"><h3>Learnora — Grades 6–7 Mathematics</h3><h2>Introduction to Ratios Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Answer all questions. Show your working where needed.</p><ol><li>Write the ratio of 7 red beads to 5 blue beads.<span class="write-line"></span></li><li>Write the ratio of 3 dogs to 8 cats in the order cats to dogs.<span class="write-line"></span></li><li>Simplify 12 : 18.<span class="write-line"></span></li><li>Simplify 20 : 30.<span class="write-line"></span></li><li>Complete: 4 : 7 = 12 : ____.<span class="write-line"></span></li><li>A recipe uses 2 parts juice and 5 parts water. How much water is needed for 6 parts juice?<span class="write-line"></span><span class="write-line"></span></li><li>Explain why 3 : 4 and 6 : 8 are equivalent ratios.<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Great work! Keep practising.</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>7 : 5.</li><li>8 : 3.</li><li>2 : 3.</li><li>2 : 3.</li><li>21.</li><li>15 parts of water.</li><li>Both terms in 3 : 4 have been multiplied by 2 to make 6 : 8.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>A ratio compares quantities.</li><li>The order of terms matters.</li><li>Ratios can be written using words, a colon or a fraction.</li><li>Simplify a ratio by dividing every term by the same common factor.</li><li>Equivalent ratios are made by multiplying or dividing every term by the same non-zero factor.</li></ul><div class="example"><strong>Next learning goal:</strong> Practise solving more ratio problems and then explore rates and proportions.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral introductory lesson. Teachers and parents can adapt the examples to their local curriculum.</p>
@@ -70,52 +70,6 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/understanding-percentages.html">Understanding Percentages</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 4 : 3",explanation:"The question asks for pears to apples. There are 4 pears and 3 apples, so the ratio is 4 : 3."},
-q2:{correct:"c",correctText:"C. 2 : 3",explanation:"Divide both 6 and 9 by their greatest common factor, 3. The result is 2 : 3."},
-q3:{correct:"a",correctText:"A. 4 : 10",explanation:"Multiply both terms of 2 : 5 by 2 to get 4 : 10."},
-q4:{correct:"b",correctText:"B. 12",explanation:"3 is multiplied by 3 to become 9, so multiply 4 by 3 to get 12."},
-q5:{correct:"c",correctText:"C. 2 : 3",explanation:"Divide both 8 and 12 by 4 to get 2 : 3."}
-};
-const form=document.getElementById("quiz-form");
-const result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number");
-const scoreMessage=document.getElementById("score-message");
-const scoreDetail=document.getElementById("score-detail");
-const progressFill=document.getElementById("progress-fill");
-const retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();
-let score=0;let answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name];
-const question=form.querySelector('[data-question="'+name+'"]');
-const selected=form.querySelector('input[name="'+name+'"]:checked');
-const feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;
-feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;
-if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length;const percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;
-scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";
-progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score. Keep it up!":score>=4?"Great work! You understand ratios very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();
-form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-introduction-to-ratios.js" defer></script>
 </body>
 </html>

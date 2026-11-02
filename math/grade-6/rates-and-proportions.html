@@ -50,7 +50,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grades 6–7 Mathematics</h3><h2>Rates and Proportions Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working and include units.</p><ol><li>Eight apples cost $4. Find the cost per apple.<span class="write-line"></span></li><li>A cyclist travels 42 km in 3 hours. Find the average distance per hour.<span class="write-line"></span></li><li>Complete: 2 : 7 = 6 : ____.<span class="write-line"></span></li><li>Complete: 5 : 8 = ____ : 24.<span class="write-line"></span></li><li>Compare: 4 kg for $12 or 5 kg for $14. Which costs less per kilogram?<span class="write-line"></span><span class="write-line"></span></li><li>A recipe uses 3 cups of flour for 6 people. How much flour is needed for 12 people?<span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>$4 ÷ 8 = $0.50 per apple.</li><li>42 ÷ 3 = 14 km/h.</li><li>7 becomes 21 by multiplying by 3, so the missing term is 21.</li><li>8 becomes 24 by multiplying by 3, so the missing term is 15.</li><li>First: $12 ÷ 4 = $3/kg. Second: $14 ÷ 5 = $2.80/kg. The 5 kg option costs less per kilogram.</li><li>Double 3 cups because 12 is twice 6. Answer: 6 cups.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>A rate compares quantities with different units.</li><li>A unit rate gives the amount for one unit.</li><li>Compare rates using the same units.</li><li>A proportion states that two ratios are equal.</li><li>To solve a missing-value proportion, scale both terms by the same factor.</li></ul><div class="example"><strong>Next learning goal:</strong> Apply rates and proportions to maps, scale drawings and more complex problems.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral lesson for Grades 6–7. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -60,37 +60,5 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
 <li><a href="/math/grade-6/multiplying-dividing-fractions.html">Multiplying and Dividing Fractions</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"a",correctText:"A. Different units",explanation:"A rate compares quantities measured in different units, such as kilometres and hours."},
-q2:{correct:"b",correctText:"B. $0.50",explanation:"$3 divided by 6 oranges is $0.50 per orange."},
-q3:{correct:"c",correctText:"C. 4 : 6",explanation:"Multiply both terms of 2 : 3 by 2 to get 4 : 6."},
-q4:{correct:"a",correctText:"A. 12",explanation:"3 becomes 9 by multiplying by 3, so 4 × 3 = 12."},
-q5:{correct:"b",correctText:"B. 50 km/h",explanation:"100 kilometres divided by 2 hours is 50 kilometres per hour."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-rates-and-proportions.js" defer></script>
 </body></html>

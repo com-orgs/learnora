@@ -148,15 +148,54 @@ for (const file of indexable) {
     }
   }
 
+  const markupWithoutScripts = source
+    .replace(/<script\b[\s\S]*?<\/script>/gi, '')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, '');
+  if (/<[a-z][^>]*\son[a-z]+\s*=/i.test(markupWithoutScripts)) {
+    errors.push(rel + ': inline event handlers are not allowed by the Content Security Policy.');
+  }
+
   for (const match of source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
-    const type = (attr('<script ' + match[1] + '>', 'type') || '').toLowerCase();
+    const scriptTag = '<script ' + match[1] + '>';
+    const type = (attr(scriptTag, 'type') || '').toLowerCase();
     if (type && !/(javascript|ecmascript|module)/i.test(type)) continue;
-    const code = match[2].trim();
+
+    const src = attr(scriptTag, 'src');
+    let code = match[2].trim();
+    if (src) {
+      let scriptUrl;
+      try {
+        scriptUrl = new URL(src, origin + '/' + rel);
+      } catch {
+        errors.push(rel + ': invalid script source URL "' + src + '".');
+        continue;
+      }
+      if (scriptUrl.origin !== origin) {
+        errors.push(rel + ': external script source is not allowed by the Content Security Policy: ' + src);
+        continue;
+      }
+      let scriptPath;
+      try {
+        scriptPath = decodeURIComponent(scriptUrl.pathname).replace(/^\/+/, '');
+      } catch {
+        scriptPath = scriptUrl.pathname.replace(/^\/+/, '');
+      }
+      const scriptFile = path.join(root, scriptPath);
+      if (!fs.existsSync(scriptFile) || !fs.statSync(scriptFile).isFile()) {
+        errors.push(rel + ': script asset not found: ' + src);
+        continue;
+      }
+      code = fs.readFileSync(scriptFile, 'utf8');
+    } else if (code) {
+      errors.push(rel + ': executable inline JavaScript is not allowed by the Content Security Policy.');
+      continue;
+    }
+
     if (!code) continue;
     try {
-      new vm.Script(code, { filename: rel + ':inline-script' });
+      new vm.Script(code, { filename: rel + ':' + (src || 'inline-script') });
     } catch (error) {
-      errors.push(rel + ': inline JavaScript syntax error: ' + error.message);
+      errors.push(rel + ': JavaScript syntax error: ' + error.message);
     }
   }
 
@@ -223,13 +262,18 @@ else {
     ['X-Frame-Options', /^\s*X-Frame-Options:\s*DENY\s*$/im],
     ['X-Content-Type-Options', /^\s*X-Content-Type-Options:\s*nosniff\s*$/im],
     ['Referrer-Policy', /^\s*Referrer-Policy:\s*strict-origin-when-cross-origin\s*$/im],
-    ['Permissions-Policy', /^\s*Permissions-Policy:\s*.+$/im]
+    ['Permissions-Policy', /^\s*Permissions-Policy:\s*.+$/im],
+    ['Content-Security-Policy', /^\s*Content-Security-Policy:\s*.+$/im]
   ];
   for (const [name, pattern] of requiredHeaders) {
     if (!pattern.test(headers)) errors.push('_headers is missing or misconfigures ' + name + '.');
   }
+  const csp = headers.match(/^\s*Content-Security-Policy:\s*(.+)$/im)?.[1] || '';
+  for (const directive of ["default-src 'self'", "script-src 'self'", "script-src-attr 'none'", "style-src 'self' 'unsafe-inline'", "img-src 'self' data:", "connect-src 'self'", "base-uri 'self'", "form-action 'self'", "frame-ancestors 'none'", "object-src 'none'"]) {
+    if (!csp.includes(directive)) errors.push('_headers Content-Security-Policy is missing directive: ' + directive);
+  }
+  if (csp.length > 2000) errors.push('_headers Content-Security-Policy exceeds Cloudflare Pages 2,000-character line limit.');
 }
-
 console.log('HTML pages checked: ' + indexable.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
 console.log('Warnings: ' + warnings.length);
