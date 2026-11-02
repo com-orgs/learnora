@@ -140,6 +140,63 @@ try {
       failures.push(route + ': accessibility ' + violation.impact + ' [' + violation.id + ']: ' + violation.help + ' — ' + examples);
     }
 
+    if (route === '/') {
+      const search = page.locator('#resource-search');
+      if (await search.count() !== 1) {
+        failures.push(route + ': resource search input is missing.');
+      } else {
+        await search.fill('fractions');
+        if (await page.locator('.resource-card:visible').count() === 0) {
+          failures.push(route + ': resource search did not return matching cards.');
+        }
+        await search.fill('');
+      }
+
+      const scienceFilter = page.locator('.filter-btn[data-filter="science"]');
+      if (await scienceFilter.count() !== 1) {
+        failures.push(route + ': Science resource filter is missing.');
+      } else {
+        await scienceFilter.click();
+        if (await page.locator('.resource-card:visible').count() === 0 ||
+            await page.locator('.resource-card:visible:not([data-subject="science"])').count() > 0 ||
+            await scienceFilter.getAttribute('aria-pressed') !== 'true') {
+          failures.push(route + ': Science filter did not correctly filter and announce its selected state.');
+        }
+        await page.locator('.filter-btn[data-filter="all"]').click();
+      }
+
+      const homeQuiz = page.locator('#quiz-content');
+      if (await homeQuiz.count() !== 1) {
+        failures.push(route + ': homepage quick quiz is missing.');
+      } else {
+        const answers = [1, 1, 2];
+        const expectedQuestions = ['What is 3/4 of 20?', 'Which fraction is equal to 1/2?', 'What is 25% of 80?'];
+        for (let question = 0; question < answers.length; question++) {
+          const prompt = (await page.locator('#quiz-question').textContent() || '').trim();
+          if (prompt !== expectedQuestions[question]) {
+            failures.push(route + ': homepage quiz question ' + (question + 1) + ' did not load as expected.');
+            break;
+          }
+          await page.locator('#quiz-options .quiz-option').nth(answers[question]).click();
+          const feedback = (await page.locator('#quiz-feedback').textContent() || '').trim();
+          if (!/Correct!/i.test(feedback)) {
+            failures.push(route + ': homepage quiz question ' + (question + 1) + ' did not show correct-answer feedback.');
+          }
+          if (question < answers.length - 1) await page.locator('#next-question').click();
+        }
+        await page.locator('#next-question').click();
+        if ((await page.locator('#result-score').textContent() || '').trim() !== '3 / 3') {
+          failures.push(route + ': homepage quick quiz calculated an incorrect final score.');
+        }
+        await page.locator('#restart-quiz').click();
+        if (!(await homeQuiz.isVisible()) ||
+            !(await page.locator('#quiz-question').textContent() || '').includes('3/4 of 20') ||
+            (await page.locator('#quiz-score').textContent() || '').trim() !== 'Score: 0') {
+          failures.push(route + ': homepage quick quiz did not reset correctly.');
+        }
+      }
+    }
+
     const forms = page.locator('form');
     let quizForm = null;
     for (let i = 0; i < await forms.count(); i++) {
