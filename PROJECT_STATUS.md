@@ -3,27 +3,31 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
-## Latest verified live status — 2 November 2026
+## Latest verified live status — 2 November 2026 (23:00 PKT)
 
-- Production main commit: `3a31914894d7971ea36b7c73f28a1e7e38060bd9`.
-- Canonical URL / sitemap consistency fix: PR #5 merged; Cloudflare production now serves extensionless canonical URLs. Verified Grade 6 Fractions returns HTTP 200 with self-canonical clean URL.
-- Sitemap: 75 unique URLs, no .html lesson URLs, no duplicate entries; submitted to GSC at 18:01 UTC and awaiting Google's fetch (pending, 0 warnings, 0 errors).
-- GSC indexing tracker: 75 URLs tracked; 1 indexed (homepage), 64 pending/unknown; 10 reported as URL unknown. This is a discovery/indexing priority, not proof that every URL is excluded.
-- Fresh GSC on-page audit of all 75 sitemap URLs: all 75 indexable with self-canonical URLs; 155 low-severity findings across three batches. Main repeated findings: no structured data (all sampled pages), favicon absent, and long titles/descriptions on some pages. One transient GSC HTTP 500 for Grade 7 Equations was independently rechecked through Firecrawl and returned HTTP 200.
-- Search Console last 28-day data: 0 clicks and 0 impressions; country report has no rows. There is not yet enough first-party search data to infer country demand or performance.
-- GitHub Actions run #41496479106 for main commit `3a31914894d7971ea36b7c73f28a1e7e38060bd9`: **success** — static website audit and legal/pre-monetisation audit passed. Main-branch workflow skips the preview/browser steps; those checks need a dedicated preview/PR run.
-- GSC Wizard: three subject content groups (Maths, English, Science) retained. Removed three duplicate topic clusters created during this session; existing Mathematics, English and Science clusters retained.
-- Ahrefs keyword volume/CPC lookup unavailable because the connected Ahrefs plan reports “Insufficient plan”. Bing Webmaster and CrUX are not configured in GSC Wizard; do not claim their data was audited.
-- AdSense remains intentionally inactive. Audience/COPPA classification, verified publisher ID, certified CMP and ads.txt remain owner/account gates. Do not add placeholder IDs or ad scripts.
+- Production site: https://learnora-ab2.pages.dev/
+- Canonical URL / sitemap consistency fix: PR #5 merged. Production lesson URLs use clean extensionless paths; live GSC audit confirms all 19 sampled pages are indexable and self-canonical.
+- Sitemap: 74 unique clean URLs. Submitted to GSC at 18:16 UTC; Google reports pending download, 0 warnings and 0 errors. Sitemap submission queues processing; it does not mean pages are indexed.
+- GSC indexing tracker: migrated away from 68 legacy `.html` tracking URLs. Tracker now has 75 clean canonical URLs: 1 indexed, 9 reported "URL is unknown to Google", and 65 pending. No .html URLs remain in the tracker. Low health score reflects that Google has not yet crawled most newly tracked URLs; it is not a technical noindex finding.
+- Latest GSC on-page audit: 19 pages, all 19 indexable, all self-canonical, 0 critical/high/medium issues, 16 low-severity findings. Most remaining findings are missing page-specific structured data; there are also two long Grade 6/7 maths hub descriptions and a short contact page. Homepage Organization logo structured-data error has been fixed and re-audited.
+- Metadata improvements deployed for key Grade 7 maths, English, Science, Grade 8 maths, privacy and terms pages. Contact page guidance expanded. Favicon links added to audited high-priority pages; verify remaining pages in a later full-site audit.
+- IndexNow: old broken key rotated; root key file added to GitHub and verified by GSC Wizard. Latest submission of 15 updated URLs returned HTTP 200 with key validated. Earlier 74-URL batch had returned 202 pending validation and must not be counted as confirmed delivery.
+- Search Console last 28 settled days: 0 clicks and 0 impressions; country report has no rows. No first-party evidence yet to rank USA, UK, Canada or Australia by actual Learnora performance.
+- International targeting: keep one global English-language site for now. Do not add hreflang for identical English pages or misleading country-targeting tags. Build distinct US Common Core, England KS3, Canadian provincial-context and Australian Curriculum pages only after official curriculum-by-curriculum validation.
+- GitHub Actions: latest main run [#41499737954](https://github.com/com-orgs/learnora/actions/runs/41499737954) was pending at the last check. Main-branch workflow runs static site and legal readiness audits; preview/browser checks are conditional on non-main branches and have not been rerun against this latest production snapshot.
+- Ahrefs keyword data could not be retrieved because the connected plan returned "Insufficient plan". Bing Webmaster and CrUX API keys are not configured in GSC Wizard; do not claim those data sources were audited.
+- AdSense remains intentionally inactive. Audience/COPPA classification, verified publisher ID, Google-certified CMP and exact ads.txt seller line remain owner/account gates. No placeholder ID or ad scripts were added.
 
 ## Next actions
-1. Check Cloudflare production deployment after the latest main commit and verify the production sitemap/canonicals again.
-2. Recheck GSC sitemap fetch and URL Inspection after Google has had time to process the sitemap; prioritize lesson URLs currently unknown to Google.
-3. Fix missing favicon and add valid, page-appropriate structured data where it genuinely describes the page; validate before release.
-4. Improve overly long titles/descriptions and expand thin subject/grade hubs with useful curriculum guidance, not filler.
-5. Build distinct US Common Core, UK KS3, Canadian provincial-context and Australian Curriculum guidance only after source-by-source validation. Do not imply universal alignment.
-6. Complete original-content/fact-check/source attribution review, real-device screen-reader checks, and a full preview/browser regression.
-7. Ahrefs research requires a higher plan or another accessible keyword source; Bing/CrUX need their account API keys configured.
+1. Verify the latest GitHub Actions run #41499737954 completes successfully, then confirm the latest Cloudflare production deployment is serving the final commit.
+2. Recheck GSC sitemap download status and indexing tracker after Google processes the clean URL sitemap; do not repeatedly request indexing for URLs Google has recently checked.
+3. Run a full-site audit of all 74 sitemap URLs after deployment; fix any remaining long snippets and missing favicon references where confirmed.
+4. Complete page-by-page originality, factual accuracy, source attribution and content-value review; add named authors/reviewers only when real identities and credentials are supplied.
+5. Expand thin Grade 8/English/Science hub pages with curriculum maps, topic sequencing, prerequisites and useful navigation rather than filler.
+6. Build distinct country curriculum guidance using official sources: US Common Core; England National Curriculum/KS3; Canadian provincial curricula (state province scope explicitly); Australian Curriculum. Keep global core lessons and label country-specific coverage accurately.
+7. Enable Bing Webmaster and CrUX data only after their API keys are configured; Ahrefs keyword volumes/CPC require an accessible plan or alternate keyword source.
+8. Complete real-device mobile/desktop/accessibility/quiz regression on a non-main preview branch.
+9. Keep ad code disabled until Phase 8 owner/account decisions and consent requirements are satisfied.
 
 ## Project identity
 
