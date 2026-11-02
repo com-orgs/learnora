@@ -63,6 +63,34 @@ for (const file of indexable) {
   const canonical = canonicalOf(source);
   const h1Count = (source.match(/<h1\b/gi) || []).length;
 
+  const htmlTag = getTags(source, 'html')[0] || '';
+  if (!attr(htmlTag, 'lang')) errors.push(rel + ': missing html lang attribute.');
+
+  const ogUrlTag = metaTags.find(t => (attr(t, 'property') || '').toLowerCase() === 'og:url');
+  const ogUrl = ogUrlTag ? attr(ogUrlTag, 'content') : null;
+  if (!ogUrl) warnings.push(rel + ': missing Open Graph og:url.');
+  else if (canonical && ogUrl !== canonical) errors.push(rel + ': og:url does not match canonical URL.');
+
+  for (const image of getTags(source, 'img')) {
+    if (attr(image, 'alt') === null) errors.push(rel + ': image is missing an alt attribute.');
+  }
+
+  const visibleText = source
+    .replace(/<script\\b[\\s\\S]*?<\\/script>/gi, '')
+    .replace(/<style\\b[\\s\\S]*?<\\/style>/gi, '')
+    .replace(/<svg\\b[\\s\\S]*?<\\/svg>/gi, '')
+    .replace(/<!--[\\s\\S]*?-->/g, '');
+  if (/<(?=\\s|,|=|[0-9])/m.test(visibleText)) {
+    errors.push(rel + ': suspicious unescaped less-than sign in HTML content.');
+  }
+
+  const headingLevels = [...source.matchAll(/<h([1-6])\\b/gi)].map(m => Number(m[1]));
+  for (let i = 1; i < headingLevels.length; i++) {
+    if (headingLevels[i] > headingLevels[i - 1] + 1) {
+      warnings.push(rel + ': heading level skips from H' + headingLevels[i - 1] + ' to H' + headingLevels[i] + '.');
+    }
+  }
+
   if (!title) errors.push(rel + ': missing title.');
   if (!description || description.trim().length < 50) errors.push(rel + ': missing or very short meta description.');
   if (!canonical) errors.push(rel + ': missing canonical URL.');
@@ -102,6 +130,19 @@ for (const file of indexable) {
   }
 
   for (const match of source.matchAll(/<a\b[^>]*\bhref\s*=\s*["']([^"']+)["'][^>]*>/gi)) {
+    const fullTag = match[0];
+    const href = match[1].trim();
+    if (attr(fullTag, 'target') === '_blank') {
+      const relValue = (attr(fullTag, 'rel') || '').toLowerCase().split(/\\s+/);
+      if (!relValue.includes('noopener') || !relValue.includes('noreferrer')) {
+        warnings.push(rel + ': external new-tab link should include rel="noopener noreferrer": ' + href);
+      }
+    }
+    if (href.startsWith('#') && href.length > 1) {
+      const fragment = decodeURIComponent(href.slice(1));
+      const candidates = ['id="' + fragment + '"', "id='" + fragment + "'", 'name="' + fragment + '"', "name='" + fragment + "'"];
+      if (!candidates.some(value => source.includes(value))) errors.push(rel + ': broken in-page anchor "' + href + '".');
+    }
     const href = match[1].trim();
     if (!href || href.startsWith('#') || /^(mailto:|tel:|javascript:|data:)/i.test(href)) continue;
     let target;
@@ -153,5 +194,5 @@ if (errors.length) {
   for (const error of errors) console.error('ERROR: ' + error);
   process.exitCode = 1;
 } else {
-  console.log('PASS: metadata, canonicals, sitemap, internal links, quiz question structure, duplicate IDs and inline JavaScript syntax.');
+  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, quiz structure, duplicate IDs and inline JavaScript syntax.');
 }
