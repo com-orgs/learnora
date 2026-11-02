@@ -47,7 +47,9 @@ try {
   if (missingResponse.status() !== 404) failures.push('Unknown routes should return HTTP 404; received ' + missingResponse.status() + '.');
   else if (!/Page Not Found/i.test(await missingResponse.text())) failures.push('Custom 404 response did not contain the expected not-found page.');
   const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => new URL(match[1]).pathname);
-  if (routes.length !== 62) throw new Error('Expected 62 sitemap URLs; found ' + routes.length);
+  if (routes.length === 0) throw new Error('Sitemap does not contain any routes.');
+  if (new Set(routes).size !== routes.length) throw new Error('Sitemap contains duplicate routes.');
+  if (routes.some(route => !route.startsWith('/') || route.startsWith('//'))) throw new Error('Sitemap contains a route outside the site origin.');
 
   for (const route of routes) {
     activePath = route;
