@@ -35,6 +35,14 @@ function attr(tag, name) {
   return singleQuoted?.[1] ?? null;
 }
 
+const attributeParserSamples = [
+  ['<meta name = "description" content = "sample">', 'name', 'description'],
+  ["<a href = '/lesson.html'>", 'href', '/lesson.html']
+];
+for (const [tag, name, expected] of attributeParserSamples) {
+  if (attr(tag, name) !== expected) errors.push('HTML attribute parser self-test failed for ' + name + '.');
+}
+
 function normalizeVisibleText(value) {
   return value
     .replace(/<input\b[^>]*>/gi, ' ')
@@ -134,6 +142,36 @@ for (const file of indexable) {
   const source = fs.readFileSync(file, 'utf8');
   const title = source.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
   const metaTags = getTags(source, 'meta');
+  for (const link of getTags(source, 'link')) {
+    const relValues = (attr(link, 'rel') || '').toLowerCase().split(/\s+/);
+    if (!relValues.includes('stylesheet')) continue;
+    const href = attr(link, 'href');
+    if (!href) {
+      errors.push(rel + ': stylesheet link is missing href.');
+      continue;
+    }
+    let stylesheetUrl;
+    try {
+      stylesheetUrl = new URL(href, origin + '/' + rel);
+    } catch {
+      errors.push(rel + ': invalid stylesheet URL "' + href + '".');
+      continue;
+    }
+    if (stylesheetUrl.origin !== origin) {
+      errors.push(rel + ': external stylesheet is not allowed by the current Content Security Policy: ' + href);
+      continue;
+    }
+    let stylesheetPath;
+    try {
+      stylesheetPath = decodeURIComponent(stylesheetUrl.pathname).replace(/^\/+/, '');
+    } catch {
+      stylesheetPath = stylesheetUrl.pathname.replace(/^\/+/, '');
+    }
+    const stylesheetFile = path.join(root, stylesheetPath);
+    if (!fs.existsSync(stylesheetFile) || !fs.statSync(stylesheetFile).isFile()) {
+      errors.push(rel + ': stylesheet asset not found: ' + href);
+    }
+  }
   const descriptionTag = metaTags.find(t => (attr(t, 'name') || '').toLowerCase() === 'description');
   const description = descriptionTag ? attr(descriptionTag, 'content') : null;
   const canonical = canonicalOf(source);
