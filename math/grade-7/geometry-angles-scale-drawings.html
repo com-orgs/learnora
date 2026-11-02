@@ -111,7 +111,33 @@ q5:'9 × 0.5 = 4.5 cm.'
 };
 function updateProgress(){const count=Object.keys(answers).filter(n=>form.querySelector('input[name="'+n+'"]:checked')).length;bar.style.width=(count/5*100)+'%';progress.setAttribute('aria-valuenow',String(count));progressText.textContent=count+' of 5 answered';}
 form.addEventListener('change',updateProgress);
-form.addEventListener('submit',function(event){event.preventDefault();let score=0;let detail='';Object.keys(answers).forEach(function(n,i){const selected=form.querySelector('input[name="'+n+'"]:checked');const correct=selected&&selected.value===answers[n];if(correct)score++;detail+='<p><strong>Question '+(i+1)+': '+(correct?'Correct':'Review')+'.</strong> '+explanations[n]+'</p>';});result.innerHTML='<h3>Your score: '+score+' / 5 ('+(score*20)+'%)</h3>'+detail+'<p>'+(score===5?'Excellent work.':score>=3?'Good effort. Review any missed explanations.':'Keep practising, then try the quiz again.')+'</p>';result.hidden=false;});
+form.addEventListener('submit',function(event){
+event.preventDefault();
+let score=0;
+const details=[];
+Object.keys(answers).forEach(function(name,index){
+const selected=form.querySelector('input[name="'+name+'"]:checked');
+const correct=selected&&selected.value===answers[name];
+if(correct)score++;
+details.push({index:index+1,correct:!!correct,explanation:explanations[name]});
+});
+const content=document.createDocumentFragment();
+const heading=document.createElement('h3');
+heading.textContent='Your score: '+score+' / 5 ('+(score*20)+'%)';
+content.appendChild(heading);
+details.forEach(function(item){
+const paragraph=document.createElement('p');
+const label=document.createElement('strong');
+label.textContent='Question '+item.index+': '+(item.correct?'Correct':'Review')+'.';
+paragraph.append(label,document.createTextNode(' '+item.explanation));
+content.appendChild(paragraph);
+});
+const summary=document.createElement('p');
+summary.textContent=score===5?'Excellent work.':score>=3?'Good effort. Review any missed explanations.':'Keep practising, then try the quiz again.';
+content.appendChild(summary);
+result.replaceChildren(content);
+result.hidden=false;
+});
 document.getElementById('retake').addEventListener('click',function(){form.reset();result.hidden=true;result.textContent='';updateProgress();});
 document.getElementById('printWorksheet').addEventListener('click',function(){window.print();});
 updateProgress();
