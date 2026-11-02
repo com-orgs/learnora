@@ -427,6 +427,70 @@ else {
   for (const item of canonicals) if (!sitemapSet.has(item.url)) errors.push('Canonical missing from sitemap: ' + item.url);
   for (const url of sitemapUrls) if (!canonicalSet.has(url)) errors.push('Sitemap URL has no matching canonical: ' + url);
 }
+
+const lessonFiles = indexable
+  .map(file => relative(file))
+  .filter(rel => /^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(rel) && !rel.endsWith('/index.html'));
+const lessonSet = new Set(lessonFiles);
+const sitemapLessonUrls = fs.existsSync(sitemapPath)
+  ? [...fs.readFileSync(sitemapPath, 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)]
+      .map(match => match[1].trim())
+      .filter(url => {
+        try {
+          const parsed = new URL(url);
+          return parsed.origin === origin && /\/(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(parsed.pathname);
+        } catch { return false; }
+      })
+  : [];
+const sitemapLessonPaths = new Set(sitemapLessonUrls.map(url => {
+  const pathname = new URL(url).pathname.replace(/^\/+/, '');
+  return pathname;
+}));
+for (const lesson of lessonFiles) {
+  if (!sitemapLessonPaths.has(lesson)) errors.push('Lesson file is missing from sitemap.xml: ' + lesson);
+  const expectedScript = 'scripts/pages/' + lesson.replace(/\//g, '-').replace(/\.html$/i, '.js');
+  if (!fs.existsSync(path.join(root, expectedScript))) {
+    errors.push(lesson + ': expected lesson quiz script is missing: ' + expectedScript);
+    continue;
+  }
+  const source = fs.readFileSync(path.join(root, lesson), 'utf8');
+  const scriptSources = getTags(source, 'script').map(tag => attr(tag, 'src')).filter(Boolean);
+  const expectedScriptUrl = '/' + expectedScript;
+  const hasExpectedScript = scriptSources.some(src => {
+    try { return new URL(src, origin + '/' + lesson).pathname.replace(/^\/+/, '') === expectedScript; }
+    catch { return false; }
+  });
+  if (!hasExpectedScript) errors.push(lesson + ': does not load its expected quiz script ' + expectedScriptUrl);
+}
+for (const lesson of sitemapLessonPaths) {
+  if (!lessonSet.has(lesson)) errors.push('Sitemap contains a lesson URL with no matching lesson file: ' + lesson);
+}
+const lessonIndexFiles = indexable
+  .map(file => relative(file))
+  .filter(rel => /^(math\/grade-[^/]+|english|science)\/index\.html$/i.test(rel));
+const indexedLessons = new Set();
+for (const indexFile of lessonIndexFiles) {
+  const source = fs.readFileSync(path.join(root, indexFile), 'utf8');
+  for (const tag of getTags(source, 'a')) {
+    const href = attr(tag, 'href');
+    if (!href) continue;
+    try {
+      const target = new URL(href, origin + '/' + indexFile);
+      if (target.origin !== origin) continue;
+      const targetPath = decodeURIComponent(target.pathname).replace(/^\/+/, '');
+      if (/^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(targetPath) && !targetPath.endsWith('/index.html')) {
+        indexedLessons.add(targetPath);
+        if (!lessonSet.has(targetPath)) errors.push(indexFile + ': lesson card points to a missing lesson file: ' + targetPath);
+      }
+    } catch {
+      errors.push(indexFile + ': invalid lesson-card URL: ' + href);
+    }
+  }
+}
+for (const lesson of lessonFiles) {
+  if (!indexedLessons.has(lesson)) errors.push('Lesson is not linked from a subject/grade index: ' + lesson);
+}
+
 const robotsPath = path.join(root, 'robots.txt');
 if (!fs.existsSync(robotsPath)) errors.push('robots.txt is missing.');
 else {
@@ -463,6 +527,10 @@ else {
 }
 console.log('HTML attribute parser self-tests checked: ' + attributeParserSamplesChecked);
 console.log('HTML pages checked: ' + indexable.length);
+console.log('Curriculum lesson files checked: ' + lessonFiles.length);
+console.log('Sitemap lesson URLs checked: ' + sitemapLessonPaths.size);
+console.log('Subject/grade index files checked: ' + lessonIndexFiles.length);
+console.log('Lesson quiz script links checked: ' + lessonFiles.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
 console.log('Accessible quiz forms checked: ' + quizFormsChecked);
 console.log('Quiz answer-key mappings checked: ' + quizAnswerMappingsChecked);
@@ -475,5 +543,5 @@ if (errors.length) {
   for (const error of errors) console.error('ERROR: ' + error);
   process.exitCode = 1;
 } else {
-  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, accessible quiz fieldsets/labels and answer-key mappings, same-origin JavaScript security sinks, CSP and JavaScript syntax.');
+  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, lesson/index/script inventory, internal links/anchors, accessible quiz fieldsets/labels and answer-key mappings, same-origin JavaScript security sinks, CSP and JavaScript syntax.');
 }
