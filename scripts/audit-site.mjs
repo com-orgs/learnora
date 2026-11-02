@@ -193,7 +193,7 @@ for (const file of indexable) {
   if (/^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(rel) && !rel.endsWith('/index.html')) {
     const visible = normalizeVisibleText(source);
     const qualityChecks = [
-      ['learning outcomes', /what you will learn|learning objectives|by the end of this lesson/i],
+      ['learning outcomes', /what you will learn|learning goals|learning objectives|by the end of this lesson/i],
       ['explanation/examples', /worked example|worked examples|for example|examples/i],
       ['independent practice', /independent practice|practice exercises|practice questions|try it yourself|practice activity/i],
       ['printable worksheet', /printable worksheet|worksheet and answer key|free printable worksheet/i],
