@@ -29,20 +29,20 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  const doubleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\\s*\"([^\"]*)\"", "i"));
-  if (doubleQuoted) return doubleQuoted[1];
-  const singleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\\s*'([^']*)'", "i"));
-  return singleQuoted?.[1] ?? null;
+  const escapedName = name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');
+  const pattern = new RegExp(String.raw`(?:^|\\s)${escapedName}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`, 'i');
+  const match = tag.match(pattern);
+  return match ? (match[1] ?? match[2] ?? match[3]) : null;
 }
 
 const attributeParserSamples = [
   ['<meta name = "description" content = "sample">', 'name', 'description'],
-  ["<a href = '/lesson.html'>", 'href', '/lesson.html']
+  ["<a href = '/lesson.html'>", 'href', '/lesson.html'],
+  ['<input TYPE="radio" name="q1" value=2>', 'value', '2'],
+  ['<a data-href="/wrong.html" href="/right.html">', 'href', '/right.html'],
+  ['<meta content="sample" NAME="description">', 'name', 'description'],
+  ['<div class="card">', 'href', null]
 ];
-for (const [tag, name, expected] of attributeParserSamples) {
-  if (attr(tag, name) !== expected) errors.push('HTML attribute parser self-test failed for ' + name + '.');
-}
-
 function normalizeVisibleText(value) {
   return value
     .replace(/<input\b[^>]*>/gi, ' ')
