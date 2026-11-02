@@ -25,7 +25,7 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  const re = new RegExp('\\b' + name + '\\s*=\\s*["\\']([^"\\']*)["\\']', 'i');
+  const re = new RegExp("\\b" + name + "\\s*=\\s*[\"']([^\"']*)[\"']", "i");
   return tag.match(re)?.[1] ?? null;
 }
 
