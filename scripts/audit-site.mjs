@@ -202,8 +202,8 @@ for (const file of indexable) {
     for (const [label, pattern] of qualityChecks) {
       if (!pattern.test(visible)) warnings.push(rel + ': educational quality review — missing or unclear ' + label + ' section.');
     }
-    if ((source.match(/<h2\\b/gi) || []).length < 5) warnings.push(rel + ': educational quality review — fewer than five major lesson sections.');
-    if ((source.match(/<fieldset\\b/gi) || []).length !== 5) errors.push(rel + ': expected exactly five interactive quiz questions.');
+    if ((source.match(/<h2\b/gi) || []).length < 5) warnings.push(rel + ': educational quality review — fewer than five major lesson sections.');
+    if ((source.match(/<fieldset\b/gi) || []).length !== 5) errors.push(rel + ': expected exactly five interactive quiz questions.');
   }
   const descriptionTag = metaTags.find(t => (attr(t, 'name') || '').toLowerCase() === 'description');
   const description = descriptionTag ? attr(descriptionTag, 'content') : null;
