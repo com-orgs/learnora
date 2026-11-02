@@ -1715,7 +1715,7 @@
       progressFill.style.width = `${(currentQuestion / questions.length) * 100}%`;
       progressBar.setAttribute("aria-valuenow", String(currentQuestion));
 
-      quizOptions.innerHTML = "";
+      quizOptions.replaceChildren();
 
       question.options.forEach((option, index) => {
         const button = document.createElement("button");
