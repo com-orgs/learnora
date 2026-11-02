@@ -8,6 +8,7 @@ const warnings = [];
 let quizFormsChecked = 0;
 let externalScriptsChecked = 0;
 let quizAnswerMappingsChecked = 0;
+let pageScriptsSecurityChecked = 0;
 
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -110,6 +111,16 @@ function expectedUrl(origin, file) {
 const files = walk(root);
 const htmlFiles = files.filter(f => f.toLowerCase().endsWith('.html'));
 const indexable = htmlFiles.filter(f => relative(f) !== '404.html');
+const pageScriptFiles = files.filter(file => relative(file).startsWith('scripts/pages/') && file.toLowerCase().endsWith('.js'));
+for (const file of pageScriptFiles) {
+  const rel = relative(file);
+  const code = fs.readFileSync(file, 'utf8');
+  pageScriptsSecurityChecked++;
+  if (/\beval\s*\(|\bnew\s+Function\s*\(|\bdocument\.write\s*\(|\.innerHTML\s*=|\.outerHTML\s*=|\.insertAdjacentHTML\s*\(/i.test(code)) {
+    errors.push(rel + ': unsafe dynamic code or HTML injection sink detected.');
+  }
+}
+
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const homeCanonical = canonicalOf(home);
 if (!homeCanonical) {
@@ -381,6 +392,7 @@ console.log('HTML pages checked: ' + indexable.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
 console.log('Accessible quiz forms checked: ' + quizFormsChecked);
 console.log('Quiz answer-key mappings checked: ' + quizAnswerMappingsChecked);
+console.log('Lesson JavaScript security scans checked: ' + pageScriptsSecurityChecked);
 console.log('Same-origin JavaScript assets checked: ' + externalScriptsChecked);
 console.log('Warnings: ' + warnings.length);
 for (const warning of warnings) console.warn('WARNING: ' + warning);
@@ -389,5 +401,5 @@ if (errors.length) {
   for (const error of errors) console.error('ERROR: ' + error);
   process.exitCode = 1;
 } else {
-  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, accessible quiz fieldsets/labels and answer-key mappings, same-origin JavaScript, CSP and JavaScript syntax.');
+  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, accessible quiz fieldsets/labels and answer-key mappings, same-origin JavaScript security sinks, CSP and JavaScript syntax.');
 }
