@@ -22,12 +22,12 @@
 - Main branch remains unchanged until the authorized Phase 10 merge. Production deployment will be verified after merge.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Last updated automatically: run #41491976013 on branch `audit/indexnow-seo-foundation-2026-11-02`.
+- Last updated automatically: run #41492455741 on branch `audit/indexnow-seo-foundation-2026-11-02`.
 
 
-- Status: success.
-- Tested commit: `b1dffaa145048692f45dca70d0ee59e69a12bc5e`
-- Workflow: Learnora Site Audit (run [#41491976013](https://github.com/com-orgs/learnora/actions/runs/41491976013))
+- Status: cancelled.
+- Tested commit: `92cbe882d989a2e03dcb2ba9da221408581fa4a6`
+- Workflow: Learnora Site Audit (run [#41492455741](https://github.com/com-orgs/learnora/actions/runs/41492455741))
 - Last known run: [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
