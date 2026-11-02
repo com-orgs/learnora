@@ -18,6 +18,7 @@ let activePath = '/';
 let pagesChecked = 0;
 let quizzesSubmitted = 0;
 let printActionsChecked = 0;
+let retakeActionsChecked = 0;
 
 page.on('pageerror', error => runtimeErrors.push(activePath + ': ' + error.message));
 page.on('console', message => {
@@ -139,6 +140,15 @@ try {
             failures.push(route + ': submitting the quiz did not update an accessible status or feedback region.');
           }
         }
+        const retakeButton = page.getByRole('button', { name: /try again|retake|reset/i }).first();
+        if (await retakeButton.count()) {
+          await retakeButton.click();
+          const remainingSelections = await quizForm.locator('input[type="radio"]:checked').count();
+          if (remainingSelections) failures.push(route + ': retake button did not clear selected quiz answers.');
+          const feedbackMessages = await quizForm.locator('.feedback, .quiz-feedback, [aria-live]').allTextContents();
+          if (feedbackMessages.some(message => message.trim())) failures.push(route + ': retake button did not clear quiz feedback.');
+          retakeActionsChecked++;
+        }
       }
     }
 
@@ -176,6 +186,7 @@ try {
 if (runtimeErrors.length) failures.push(...runtimeErrors);
 console.log('Pages checked at 320px, 390px, 768px and desktop widths: ' + pagesChecked);
 console.log('Interactive quizzes submitted: ' + quizzesSubmitted);
+console.log('Quiz retake actions checked: ' + retakeActionsChecked);
 console.log('Worksheet print actions checked: ' + printActionsChecked);
 if (failures.length) {
   console.error('Browser smoke test failed with ' + failures.length + ' issue(s):');
