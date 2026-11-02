@@ -4,12 +4,13 @@ import AxeBuilder from '@axe-core/playwright';
 const baseUrl = (process.env.LEARNORA_PREVIEW_URL || 'https://audit-production-hardening-2.learnora-ab2.pages.dev').replace(/\/$/, '');
 const baseOrigin = new URL(baseUrl).origin;
 const browser = await chromium.launch({ headless: true });
-const page = await browser.newPage({
+const context = await browser.newContext({
   viewport: { width: 390, height: 844 },
   deviceScaleFactor: 1,
   isMobile: true,
   hasTouch: true
 });
+const page = await context.newPage();
 
 const failures = [];
 const runtimeErrors = [];
