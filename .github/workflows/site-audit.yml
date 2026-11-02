@@ -25,6 +25,9 @@ jobs:
           package-manager-cache: false
       - name: Run static website audit
         run: node scripts/audit-site.mjs
+      - name: Run legal and pre-monetisation readiness audit
+        run: node scripts/audit-legal-readiness.mjs
+
       - name: Verify Cloudflare Pages preview headers and assets
         if: github.ref != 'refs/heads/main'
         shell: bash
