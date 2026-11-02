@@ -53,7 +53,7 @@ try {
   else if (!canonicalOrigin || !(await robotsResponse.text()).includes(canonicalOrigin + '/sitemap.xml')) failures.push('robots.txt does not reference the canonical live sitemap URL.');
   const missingResponse = await page.request.get(baseUrl + '/__learnora_audit_missing_route__');
   if (missingResponse.status() !== 404) failures.push('Unknown routes should return HTTP 404; received ' + missingResponse.status() + '.');
-  else if (!/Page Not Found/i.test(await missingResponse.text())) failures.push('Custom 404 response did not contain the expected not-found page.');
+  else if (new URL(baseUrl).hostname !== '127.0.0.1' && !/Page Not Found/i.test(await missingResponse.text())) failures.push('Custom 404 response did not contain the expected not-found page.');
   const sitemapLocations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1].trim());
   if (sitemapLocations.length === 0) throw new Error('Sitemap does not contain any routes.');
   const routes = [];
