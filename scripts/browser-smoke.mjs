@@ -170,7 +170,8 @@ try {
     if (performanceAudit.scriptBytes > 500000) {
       failures.push(route + ': JavaScript transfer exceeds 500 KB budget (' + performanceAudit.scriptBytes + ' bytes).');
     }
-    performanceBudgetsChecked++;\n    if (performanceAudit.largestResource > 1000000) {
+    performanceBudgetsChecked++;
+    if (performanceAudit.largestResource > 1000000) {
       failures.push(route + ': a first-party resource exceeds 1 MB (' + performanceAudit.largestResource + ' bytes).');
     }
 
