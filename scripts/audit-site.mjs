@@ -194,6 +194,11 @@ for (const file of indexable) {
   const description = descriptionTag ? attr(descriptionTag, 'content') : null;
   const canonical = canonicalOf(source);
   const h1Count = (source.match(/<h1\b/gi) || []).length;
+  for (const heading of source.matchAll(/<h2\\b[^>]*>([\\s\\S]*?)<\\/h2>/gi)) {
+    const headingText = normalizeVisibleText(heading[1]);
+    const repeatedNumber = headingText.match(/^(\\d+)\\.\\s*\\1\\./);
+    if (repeatedNumber) errors.push(rel + ': section heading repeats its number: ' + headingText);
+  }
 
   const htmlTag = getTags(source, 'html')[0] || '';
   if (!attr(htmlTag, 'lang')) errors.push(rel + ': missing html lang attribute.');
