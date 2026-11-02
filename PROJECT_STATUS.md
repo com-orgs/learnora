@@ -244,3 +244,8 @@
 - The tracker-only follow-up commit is marked `[skip ci]`; it does not change website files. Tested website commit: `fc1a75dff54972e7413f458b86a4a17e42f5e413`.
 - Final compare against production main `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec`: 316 commits ahead, 0 behind, 151 files changed.
 - Phase 10 merge is authorized by the user; verify production Pages deployment and live routes after merge before declaring deployment complete.
+
+
+## Preview QA trigger
+
+- Non-production audit branch created from the current main commit to run the Cloudflare preview, responsive browser, accessibility and quiz regression steps. Do not merge this QA-only branch without reviewing its results.
