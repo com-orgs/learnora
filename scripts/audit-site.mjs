@@ -153,7 +153,7 @@ for (const file of indexable) {
   const rel = relative(file);
   const source = fs.readFileSync(file, 'utf8');
   const titleTags = getTags(source, 'title');
-  const title = titleTags[0]?.replace(/^<title\b[^>]*>/i, '').replace(/<\/title>$/i, '').trim();
+  const title = source.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
   if (titleTags.length !== 1) errors.push(rel + ': expected exactly one title element, found ' + titleTags.length + '.');
   const metaTags = getTags(source, 'meta');
   const descriptionTags = metaTags.filter(tag => (attr(tag, 'name') || '').toLowerCase() === 'description');
