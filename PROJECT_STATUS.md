@@ -6,7 +6,7 @@
 ## Latest verified live status — 2 November 2026 (latest checks)
 
 - Production site: https://learnora-ab2.pages.dev/
-- Production branch: `main`; latest repository HEAD is checked before each update.
+- Production branch: `main`; latest verified main commit: `5e5d3f6da61e9f9c98464d4682f81b1ebf32c7a2`.
 - Canonical URL / sitemap consistency fix: PR #5 merged. Live lesson URLs use clean extensionless paths and canonical URLs match final URLs.
 - Sitemap: 80 URLs, including the international curriculum hub and four country/province guides. Live sitemap returns HTTP 200. GSC accepted the latest submission with 0 warnings and 0 errors; download/processing remains pending.
 - IndexNow: verified key file; all 80 sitemap URLs were submitted successfully (75 existing + 5 curriculum pages). All 80 were accepted with key validated (HTTP 200).
@@ -16,12 +16,12 @@
 - Firecrawl crawl: 75 pages discovered in the latest crawl; all returned HTTP 200 with no missing titles/descriptions, duplicate titles or canonical mismatches. Five new curriculum pages were also fetched individually and returned HTTP 200. The live sitemap lists 80 URLs.
 - International content: added `/curriculum/` hub and guides for US Common Core Grades 6–8, England KS3 Years 7–9, Ontario Grades 6–8 and Australian Curriculum Years 7–8. Caveats explicitly explain state/district differences, England-only scope, Canadian provincial/territorial control and Australian implementation timelines.
 - SERP research completed for US, UK, Canada and Australia. Ahrefs volume/CPC unavailable because connected plan returned "Insufficient plan"; no volume or earnings estimates are being invented.
-- GitHub Actions: latest verified main run [#41501079938](https://github.com/com-orgs/learnora/actions/runs/41501079938) succeeded. Static website audit and legal/pre-monetisation audit passed. Preview/browser checks were skipped on main and still need a non-main preview run.
+- GitHub Actions: main run [#41502283767](https://github.com/com-orgs/learnora/actions/runs/41502283767) passed static and legal/pre-monetisation audits. Non-main preview run [#41502412490](https://github.com/com-orgs/learnora/actions/runs/41502412490) also passed Cloudflare preview headers/assets, Playwright/Chromium, mobile/desktop/accessibility/quiz browser checks and tracker refresh.
 - Bing Webmaster and CrUX are not configured because their API keys are not present. No Bing traffic or field Core Web Vitals data has been audited.
 - AdSense remains inactive. Audience/COPPA classification, publisher ID, Google-certified CMP and exact ads.txt seller line remain owner/account gates. No placeholder ID or ad code has been added.
 
 ## Next actions
-1. Run a non-main preview workflow to exercise Cloudflare preview headers, Playwright mobile/desktop, accessibility and quiz regression against current code.
+1. [x] Run non-main preview workflow: Cloudflare preview headers/assets, Playwright/Chromium, mobile/desktop/accessibility and quiz regression all passed in run #41502412490.
 2. Improve Grade 8 Science, Grade 8 Maths and English hub pages with useful study sequencing and navigation rather than filler.
 3. Monitor GSC sitemap processing and indexing over the next 24–72 hours; inspect in small batches and avoid repeated requests for recently checked URLs.
 4. Complete manual originality, factual accuracy, source attribution and educational-value review across lesson pages.
@@ -42,7 +42,7 @@
 ## Latest verified repository state
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
-- Latest verified production/main commit: `43f948a23646d3de0e5d9594c85899039df785f4` (refresh after each new commit).
+- Latest verified production/main commit: `5e5d3f6da61e9f9c98464d4682f81b1ebf32c7a2`.
 - Branch drift warning: the audit branch currently contains an older `.html`-suffixed sitemap while production `main` uses clean extensionless lesson URLs and includes the five curriculum URLs. Do not merge the audit branch until it is rebased/reconciled and its sitemap/canonicals are re-audited. Earlier ahead/behind counts are stale.
 - PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
