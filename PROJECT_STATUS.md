@@ -192,3 +192,13 @@
 - Google policy references reviewed: AdSense Required Content; Google Publisher Policies (privacy disclosures and COPPA); Google certified CMP requirements; ads.txt FAQs. AdSense approval cannot be guaranteed.
 - Latest confirmed full Phase 1–7 CI baseline remains run 41469810411 (success). Legal-document edits are awaiting a fresh full CI run against the final consolidated commit.
 - Next: complete final legal/trust checklist, verify all policy links and current page code, review AdSense content originality/value risks, then issue Phase 8 readiness decision. No merge/deployment.
+
+
+### 2026-11-02 — Phase 8 continuation / AdSense gate review
+- Verified audit branch HEAD and production/main separation; latest full CI run 41471580311 succeeded on code commit e5d440d (the current HEAD cbb6791 is only the automated CI-status tracker commit).
+- Reviewed current Google publisher requirements using official documentation: certified Google CMP + IAB TCF for personalised ads in EEA/UK/Switzerland; COPPA notification and restrictions for covered child-directed sites; TFAT is the current age-treatment signal and legacy TFCD/TFUA tags are deprecated.
+- Spot-checked About, Grade 6 Fractions, English Reading Comprehension and Grade 8 Science lesson pages. The sampled lessons contain substantive explanations and practice material; named author/reviewer and source attribution are not clearly visible in the sampled lesson pages. Full originality and source audit remains Phase 9 work.
+- Added PHASE8_ADSENSE_READINESS.md documenting current implementation, CMP strategy, COPPA/age-treatment gate, ads.txt/publisher-ID requirements, content-value risks and explicit release holds.
+- Confirmed no real AdSense publisher ID is available in repository context; no ads.txt placeholder or ad code added. No CMP is installed while advertising and analytics remain inactive.
+- Phase 8 remains IN PROGRESS. Remaining external/user-dependent gates: audience classification, actual AdSense account/publisher ID, CMP configuration/testing, verified ads.txt declaration and full content originality review. Keep ads and tracking disabled until all relevant gates are met.
+- No merge or deployment. Production main remains unchanged.
