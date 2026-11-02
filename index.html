@@ -582,6 +582,11 @@
       transition: transform .2s ease, box-shadow .2s ease;
     }
 
+    /* Preserve the native hidden state when subject/search filters hide cards. */
+    .resource-card[hidden] {
+      display: none;
+    }
+
     .resource-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
