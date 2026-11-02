@@ -29,9 +29,9 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  const doubleQuoted = tag.match(new RegExp("\\b" + name + "\s*=\s*\"([^\"]*)\"", "i"));
+  const doubleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\s*\"([^\"]*)\"", "i"));
   if (doubleQuoted) return doubleQuoted[1];
-  const singleQuoted = tag.match(new RegExp("\\b" + name + "\s*=\s*'([^']*)'", "i"));
+  const singleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\s*'([^']*)'", "i"));
   return singleQuoted?.[1] ?? null;
 }
 
