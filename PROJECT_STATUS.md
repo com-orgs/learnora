@@ -18,7 +18,7 @@
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
 - Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
-- Latest verified comparison before this update: audit branch ahead by 266 commits, behind by 0. Re-check after this update.
+- Latest verified comparison before this update: audit branch ahead by 288 commits, behind by 0. Re-check after this update.
 - Main branch has not been merged or deployed from the audit branch.
 
 ## CI status (automatically refreshed by GitHub Actions)
@@ -72,9 +72,9 @@
 2. [x] Phase 2 — English curriculum coverage expansion. Seven lessons now cover grammar (parts of speech, sentence structure, verbs, punctuation), reading comprehension, paragraph writing and vocabulary/context clues. Continue any detailed fact-check under Phase 4.
 3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. Three Grade 8 lessons now cover chemistry, human digestive/circulatory systems and electric circuits; continue adding balanced physics, biology and earth/space science topics.
 4. [ ] Phase 4 — full educational quality review across all 62 lessons; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions (61/61 pass with zero warnings). Manually validate factual accuracy, answer keys and age suitability.
-5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks ran on all 72 pages in run 41467406909; responsive and keyboard quiz checks passed. Continue manual screen-reader review.
-6. [ ] Phase 6 — SEO/content discoverability review. Metadata and sitemap checks are automated; Science index title/description mismatch fixed. Review updated About page and Grade 8 index metadata in this commit; continue manual duplicate/thin-content and structured-data review.
-7. [ ] Phase 7 — performance/responsiveness/security review. Latest run checked 72 routes at 320/390/768/desktop, page resource budgets, no third-party requests, CSP/security headers and custom 404; continue deeper device/security review.
+5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks previously passed across all sitemap pages; latest additions require rerun. Continue manual screen-reader review.
+6. [ ] Phase 6 — SEO/content discoverability review. Metadata, canonical, Open Graph and sitemap checks are automated; new Grade 8 lessons and indexes have unique metadata and sitemap links. Continue manual duplicate/thin-content, structured-data and search-index review.
+7. [ ] Phase 7 — performance/responsiveness/security review. Browser suite checks responsive widths, page resource budgets, third-party requests, CSP/security headers and custom 404; rerun on latest complete inventory and continue deeper device/security review.
 8. [ ] Audit legal/trust/AdSense readiness: privacy/cookie disclosures, contact/about/terms, original substantial content, navigation and ad placement readiness (no guarantee of AdSense approval).
 9. [ ] Run complete final static + browser + accessibility + link/route verification on the final audit branch.
 10. [ ] Produce final issue list and completion report; compare audit branch against main.
@@ -127,3 +127,12 @@
 
 - Added Science Grade 8 Physics lesson: Electric Circuits — Current, Voltage and Resistance, including safe low-voltage guidance, series/parallel circuits, Ohm's law examples, five-question quiz/retake and printable worksheet.
 - Synchronized the Grade 8 Science pathway, Science index, sitemap and About page in one atomic commit. Expected inventory after this addition: 46 Maths + 7 English + 9 Science = 62 lessons; 73 sitemap URLs and 73 HTML pages. Await CI verification.
+
+
+### 2026-11-02 — Grade 8 Science expansion and audit continuation
+- Added Grade 8 Physics lesson: Waves, Sound and Light, with wave properties, transverse/longitudinal comparisons, sound, reflection/refraction, electromagnetic spectrum, worked examples, independent practice, five-question quiz, retake/feedback and printable worksheet.
+- Added Grade 8 Earth and Space lesson: Earth, Moon and Space Patterns, covering rotation/day-night, axial tilt/seasons, lunar phases, solar/lunar eclipses, safe solar viewing, model explanations, practice, five-question quiz and worksheet.
+- Added both lessons to their matching quiz scripts, Grade 8 Science pathway, Science subject index, sitemap and About curriculum description.
+- Current content inventory from sitemap: Maths 46, English 7, Science 11 = 64 lessons; 75 sitemap URLs total. Latest static audit run 41469271674 passed with 64 lesson files and 64 answer-key mappings, and preview headers/assets passed; its browser stage was cancelled by a superseding push, so a clean full rerun is required.
+- The preceding run 41469194026 failed at static audit on an intermediate commit because the Earth and Space page had not yet been synchronized to the sitemap and indexes. Those missing links were subsequently added. Treat this as an intermediate-snapshot failure, not a verified failure of the current tree.
+- Next: run the complete static + preview + browser + axe suite against the final synchronized tree, then continue manual lesson-content, accessibility, SEO, and performance review. No merge or deployment.
