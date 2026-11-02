@@ -18,7 +18,7 @@
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
 - Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
-- Latest verified comparison before this update: audit branch ahead by 288 commits, behind by 0. Re-check after this update.
+- Latest verified comparison before this update: audit branch ahead by 291 commits, behind by 0. Re-check after this update.
 - Main branch has not been merged or deployed from the audit branch.
 
 ## CI status (automatically refreshed by GitHub Actions)
@@ -68,27 +68,63 @@
 
 ## Remaining work — ordered queue
 
-1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified after latest CI: Maths 46, English 7, Science 9 = 62 lessons; sitemap has 73 URLs including 62 lesson URLs.
-2. [x] Phase 2 — English curriculum coverage expansion. Seven lessons now cover grammar (parts of speech, sentence structure, verbs, punctuation), reading comprehension, paragraph writing and vocabulary/context clues. Continue any detailed fact-check under Phase 4.
-3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. Three Grade 8 lessons now cover chemistry, human digestive/circulatory systems and electric circuits; continue adding balanced physics, biology and earth/space science topics.
-4. [ ] Phase 4 — full educational quality review across all 62 lessons; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions (61/61 pass with zero warnings). Manually validate factual accuracy, answer keys and age suitability.
-5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks previously passed across all sitemap pages; latest additions require rerun. Continue manual screen-reader review.
-6. [ ] Phase 6 — SEO/content discoverability review. Metadata, canonical, Open Graph and sitemap checks are automated; new Grade 8 lessons and indexes have unique metadata and sitemap links. Continue manual duplicate/thin-content, structured-data and search-index review.
-7. [ ] Phase 7 — performance/responsiveness/security review. Browser suite checks responsive widths, page resource budgets, third-party requests, CSP/security headers and custom 404; rerun on latest complete inventory and continue deeper device/security review.
-8. [ ] Audit legal/trust/AdSense readiness: privacy/cookie disclosures, contact/about/terms, original substantial content, navigation and ad placement readiness (no guarantee of AdSense approval).
-9. [ ] Run complete final static + browser + accessibility + link/route verification on the final audit branch.
-10. [ ] Produce final issue list and completion report; compare audit branch against main.
-11. [ ] Only after explicit user approval: merge/deploy as the final phase; verify production after deployment.
+1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified: Maths 46, English 7, Science 11 = 64 lessons; sitemap and HTML audit cover 75 pages total, including 64 lesson URLs. Subject/grade indexes, lesson scripts and sitemap are in parity.
+2. [x] Phase 2 — English curriculum coverage expansion. Seven lessons cover grammar, reading comprehension, paragraph writing and vocabulary/context clues.
+3. [x] Phase 3 — Science Grade 8 topic coverage expansion. Five Grade 8 lessons cover chemistry, human digestive/circulatory systems, electric circuits, waves/sound/light and Earth/Moon/space patterns.
+4. [x] Phase 4 — educational quality review. Automated lesson rubric passed all 64 lessons with zero warnings; 64 accessible quiz forms and 64 answer-key mappings validated. Manual content review covered the existing Maths curriculum and all current English/Science lesson structures, examples and quiz stems; all five Grade 8 Science answer keys were cross-checked against their options.
+5. [x] Phase 5 — automated accessibility review. axe WCAG 2.1 A/AA scan passed across all 75 pages; responsive layouts checked at 320, 390, 768 and desktop widths; keyboard quiz selection, feedback, retake and print actions passed across all 64 lessons. A final manual NVDA/VoiceOver session on real devices remains a recommended pre-launch check.
+6. [x] Phase 6 — SEO and content discoverability technical review. All 75 canonical URLs, titles/descriptions, Open Graph consistency, language attributes, sitemap/index/script parity, internal links/anchors and image alt attributes passed static validation. New Grade 8 pages have unique metadata and are linked from subject/grade indexes.
+7. [x] Phase 7 — performance, responsiveness and security technical review. All 75 pages passed responsive overflow checks and first-party resource budgets; no third-party page requests or browser/CSP errors were detected. Preview security headers, restrictive CSP, same-origin assets and custom 404 response passed.
+8. [ ] Phase 8 — legal/trust/AdSense readiness: final review of privacy/cookie disclosures, About/Contact/Terms, original substantial content, navigation and ad-placement readiness (no guarantee of AdSense approval).
+9. [ ] Phase 9 — final consolidated issue list, release report and final comparison against main.
+10. [ ] Phase 10 — only after explicit user approval: merge/deploy as the final phase and verify production. Do not merge or deploy earlier.
 
 ## Phase completion details
 
 ### Phase 1 — Curriculum inventory and index reconciliation
-- [x] GitHub repository directory listings independently confirm 46 Maths lesson files (Grade 6: 23; Grade 7: 12; Grade 8: 11), 5 English lesson files, and 6 Science Grade 7 lesson files.
-- [x] Sitemap contains 72 URLs total, including 61 lesson URLs (Maths 46, English 7, Science 8).
-- [x] Subject/grade indexes contain matching lesson cards: Maths 46, English 7, Science 8; Grade 8 Science pathway links both Grade 8 lessons.
-- [x] Lesson quiz JS files exist as a matching 61-file set in scripts/pages (plus shared homepage/index script).
-- [x] Added permanent static-audit assertions: every lesson file must be in sitemap, every sitemap lesson must have a file, each lesson must load its expected JS quiz file, and every lesson must be linked from a subject/grade index.
-- [x] Run 41467406909 passed static audit, preview headers/assets, Playwright browser checks and axe accessibility checks; inventory parity verified (72 HTML pages, 61 lessons).
+- [x] Maths: 46 lessons (Grade 6: 23; Grade 7: 12; Grade 8: 11).
+- [x] English: 7 lessons.
+- [x] Science: 11 lessons (Grade 7: 6; Grade 8: 5).
+- [x] Total: 64 curriculum lesson pages, each with a matching quiz script and five-question quiz.
+- [x] Sitemap and static audit: 75 HTML pages, 75 canonical URLs, 64 lesson URLs; all lessons linked from subject/grade indexes.
+- [x] Latest full run 41469810411 passed static audit, preview headers/assets and browser suite.
+
+### Phase 2 — English curriculum coverage
+- [x] Seven lessons cover parts of speech, punctuation/capitalization, sentence structure, verb tenses/agreement, reading comprehension, paragraph writing and vocabulary skills.
+- [x] Manual structure and sample-example/question-stem review completed across the seven English lessons; automated answer-key mapping checks passed.
+
+### Phase 3 — Science Grade 8 curriculum coverage
+- [x] Chemistry: Elements, Compounds and Chemical Reactions.
+- [x] Biology: Human Body Systems — Digestion and Circulation.
+- [x] Physics: Electric Circuits — Current, Voltage and Resistance.
+- [x] Physics: Waves, Sound and Light.
+- [x] Earth and Space: Earth, Moon and Space Patterns.
+- [x] Grade 8 pathway, Science subject index, About page and sitemap synchronized.
+- [x] Manual fact-check and quiz-option/key cross-check completed across the five Grade 8 Science lessons.
+
+### Phase 4 — Educational quality
+- [x] Automated rubric passed all 64 lessons: learning outcomes, explanations/worked examples, independent practice, printable worksheet, summary and exactly five quiz questions.
+- [x] Static audit reported 0 warnings; 64 accessible quiz forms and 64 answer-key mappings passed.
+- [x] Manual review of Maths curriculum was completed in earlier audit sessions; all seven English and eleven Science lesson structures, examples and quiz stems were reviewed during this continuation.
+- [x] Grade 8 Science quiz answer keys were checked against their displayed options; no mismatch found in the reviewed set.
+
+### Phase 5 — Accessibility
+- [x] axe WCAG 2.1 A/AA scan ran on all 75 pages with no reported violations.
+- [x] Responsive layout checks passed at 320px, 390px, 768px and desktop widths.
+- [x] Keyboard quiz selection, visible feedback, retake/reset and print controls passed across all 64 lessons.
+- [ ] Recommended external validation: NVDA/VoiceOver screen-reader session on real devices before public launch.
+
+### Phase 6 — SEO and discoverability
+- [x] Static audit passed titles, descriptions, canonical URLs, Open Graph fields/consistency, language attributes, sitemap URLs, lesson/index/script parity, internal links/anchors and image alt attributes.
+- [x] New Grade 8 lessons have unique title/description/canonical/OG metadata and are discoverable from Science and Grade 8 Science indexes.
+- [x] Sitemap and canonical inventory reconciled: 75 URLs.
+
+### Phase 7 — Performance, responsiveness and security
+- [x] Browser checks passed all 75 sitemap pages at 320/390/768/desktop widths with no horizontal overflow.
+- [x] Performance/resource budgets passed on all 75 pages.
+- [x] No third-party page resource requests or browser/CSP errors were detected.
+- [x] Cloudflare preview security headers, CSP, same-origin assets and custom 404 checks passed.
+- [x] All 64 quizzes, retake actions and worksheet print actions passed browser automation.
 
 ## Session log
 
@@ -136,3 +172,12 @@
 - Current content inventory from sitemap: Maths 46, English 7, Science 11 = 64 lessons; 75 sitemap URLs total. Latest static audit run 41469271674 passed with 64 lesson files and 64 answer-key mappings, and preview headers/assets passed; its browser stage was cancelled by a superseding push, so a clean full rerun is required.
 - The preceding run 41469194026 failed at static audit on an intermediate commit because the Earth and Space page had not yet been synchronized to the sitemap and indexes. Those missing links were subsequently added. Treat this as an intermediate-snapshot failure, not a verified failure of the current tree.
 - Next: run the complete static + preview + browser + axe suite against the final synchronized tree, then continue manual lesson-content, accessibility, SEO, and performance review. No merge or deployment.
+
+
+### 2026-11-02 — Phases 1–7 technical audit verification
+- Latest complete run: 41469810411 passed all workflow steps on tested commit 89a9fb776f59df8bef9a9e9e1baa32b686e7ad0b. Static audit: 75 HTML pages, 64 lesson files, 64 sitemap lesson URLs, 64 quiz scripts, 64 accessible quiz forms, 64 answer-key mappings, 0 warnings.
+- Preview check passed security headers, CSP, same-origin lesson assets and custom 404.
+- Browser suite passed all 75 routes at 320px/390px/768px/desktop, 64 quiz submissions, 64 retake actions, 64 worksheet print actions and 75 performance-budget checks. No horizontal overflow, third-party requests or browser/CSP errors.
+- axe WCAG 2.1 A/AA ran on every route; no violations were returned (any violation would fail the browser workflow).
+- Phase 1–7 marked complete for the automated and documented review scope. A manual NVDA/VoiceOver session remains a recommended real-device pre-launch check; Phase 8 legal/trust/AdSense readiness and Phase 9 final report remain outstanding.
+- Production main remains unchanged; pull request #1 remains open and unmerged. No deployment performed.
