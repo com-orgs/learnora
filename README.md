@@ -43,7 +43,7 @@ A passing static audit does **not** replace academic review, assistive-technolog
 
 ## Security headers and Content Security Policy
 
-Cloudflare Pages applies the repository's `_headers` file to static asset responses. Executable page scripts are stored as same-origin JavaScript assets; inline JavaScript and inline event handlers are blocked by the Content Security Policy. Inline CSS is currently permitted with `style-src 'unsafe-inline'` because page styles are embedded in the HTML. Revisit this allowance if styles are later moved to external stylesheets. HSTS is intentionally deferred until a custom domain and its HTTPS/redirect configuration are confirmed.
+Cloudflare Pages applies the repository's `_headers` file to static asset responses. Executable page scripts are stored as same-origin JavaScript assets; inline JavaScript and inline event handlers are blocked by the Content Security Policy. Inline CSS is currently permitted with `style-src 'unsafe-inline'` because page styles are embedded in the HTML. Revisit this allowance if styles are later moved to external stylesheets. HSTS is enabled for the current HTTPS Pages hostname with a one-year max-age. Subdomain inheritance and preload are not enabled; review those separately if a custom domain is added.
 
 ## Content and release principles
 
