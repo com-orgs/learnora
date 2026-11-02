@@ -33,7 +33,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base_url="https://audit-production-hardening-2.learnora-ab2.pages.dev"
+          branch_slug="${GITHUB_REF_NAME//\//-}"
+          base_url="https://${branch_slug}.learnora-ab2.pages.dev"
           status="000"
           for attempt in {1..30}; do
             status=$(curl --silent --show-error --connect-timeout 10 --max-time 20 --output /tmp/learnora-home.html --dump-header /tmp/learnora-headers --write-out '%{http_code}' "$base_url/" || true)
