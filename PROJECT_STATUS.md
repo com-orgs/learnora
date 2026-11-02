@@ -3,6 +3,28 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Latest verified live status — 2 November 2026
+
+- Production main commit: `3a31914894d7971ea36b7c73f28a1e7e38060bd9`.
+- Canonical URL / sitemap consistency fix: PR #5 merged; Cloudflare production now serves extensionless canonical URLs. Verified Grade 6 Fractions returns HTTP 200 with self-canonical clean URL.
+- Sitemap: 75 unique URLs, no .html lesson URLs, no duplicate entries; submitted to GSC at 18:01 UTC and awaiting Google's fetch (pending, 0 warnings, 0 errors).
+- GSC indexing tracker: 75 URLs tracked; 1 indexed (homepage), 64 pending/unknown; 10 reported as URL unknown. This is a discovery/indexing priority, not proof that every URL is excluded.
+- Fresh GSC on-page audit of all 75 sitemap URLs: all 75 indexable with self-canonical URLs; 155 low-severity findings across three batches. Main repeated findings: no structured data (all sampled pages), favicon absent, and long titles/descriptions on some pages. One transient GSC HTTP 500 for Grade 7 Equations was independently rechecked through Firecrawl and returned HTTP 200.
+- Search Console last 28-day data: 0 clicks and 0 impressions; country report has no rows. There is not yet enough first-party search data to infer country demand or performance.
+- GitHub Actions run #41496479106 for main commit `3a31914894d7971ea36b7c73f28a1e7e38060bd9`: **success** — static website audit and legal/pre-monetisation audit passed. Main-branch workflow skips the preview/browser steps; those checks need a dedicated preview/PR run.
+- GSC Wizard: three subject content groups (Maths, English, Science) retained. Removed three duplicate topic clusters created during this session; existing Mathematics, English and Science clusters retained.
+- Ahrefs keyword volume/CPC lookup unavailable because the connected Ahrefs plan reports “Insufficient plan”. Bing Webmaster and CrUX are not configured in GSC Wizard; do not claim their data was audited.
+- AdSense remains intentionally inactive. Audience/COPPA classification, verified publisher ID, certified CMP and ads.txt remain owner/account gates. Do not add placeholder IDs or ad scripts.
+
+## Next actions
+1. Check Cloudflare production deployment after the latest main commit and verify the production sitemap/canonicals again.
+2. Recheck GSC sitemap fetch and URL Inspection after Google has had time to process the sitemap; prioritize lesson URLs currently unknown to Google.
+3. Fix missing favicon and add valid, page-appropriate structured data where it genuinely describes the page; validate before release.
+4. Improve overly long titles/descriptions and expand thin subject/grade hubs with useful curriculum guidance, not filler.
+5. Build distinct US Common Core, UK KS3, Canadian provincial-context and Australian Curriculum guidance only after source-by-source validation. Do not imply universal alignment.
+6. Complete original-content/fact-check/source attribution review, real-device screen-reader checks, and a full preview/browser regression.
+7. Ahrefs research requires a higher plan or another accessible keyword source; Bing/CrUX need their account API keys configured.
+
 ## Project identity
 
 - Repository: https://github.com/com-orgs/learnora
@@ -17,9 +39,9 @@
 ## Latest verified repository state
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
-- Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
+- Last verified production/main commit: `3a31914894d7971ea36b7c73f28a1e7e38060bd9` (re-check before further changes).
 - Latest verified comparison before this update: audit branch ahead by 299 commits, behind by 0. Re-check after this update.
-- Main branch remains unchanged until the authorized Phase 10 merge. Production deployment will be verified after merge.
+- PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Last updated automatically: run #41473638302 on branch `audit/production-hardening-2026-11-02`.
