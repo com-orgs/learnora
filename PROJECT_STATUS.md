@@ -44,7 +44,7 @@
 ### Learning content and curriculum
 - [x] Maths Grades 6–8: 46 lessons (Grade 6: 23; Grade 7: 12; Grade 8: 11).
 - [x] English: 7 lessons, covering grammar, reading, writing and vocabulary.
-- [x] Science: 8 lessons total — 6 Grade 7 and 2 Grade 8.
+- [x] Science: 9 lessons total — 6 Grade 7 and 3 Grade 8.
 - [x] Science Grade 7 Heat Transfer: lesson, quiz JS, subject index card and sitemap entry.
 - [x] Science Grade 7 States of Matter: lesson, quiz JS, subject index card and sitemap entry.
 - [x] Science Grade 7 Forces & Motion scientific accuracy corrections.
@@ -68,10 +68,10 @@
 
 ## Remaining work — ordered queue
 
-1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified after latest CI: Maths 46, English 7, Science 8 = 61 lessons; sitemap has 72 URLs including 61 lesson URLs.
+1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified after latest CI: Maths 46, English 7, Science 9 = 62 lessons; sitemap has 73 URLs including 62 lesson URLs.
 2. [x] Phase 2 — English curriculum coverage expansion. Seven lessons now cover grammar (parts of speech, sentence structure, verbs, punctuation), reading comprehension, paragraph writing and vocabulary/context clues. Continue any detailed fact-check under Phase 4.
-3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. Two Grade 8 lessons now cover chemistry and human digestive/circulatory systems; continue adding balanced physics, biology and earth/space science topics.
-4. [ ] Phase 4 — full educational quality review across all 61 lessons; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions (61/61 pass with zero warnings). Manually validate factual accuracy, answer keys and age suitability.
+3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. Three Grade 8 lessons now cover chemistry, human digestive/circulatory systems and electric circuits; continue adding balanced physics, biology and earth/space science topics.
+4. [ ] Phase 4 — full educational quality review across all 62 lessons; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions (61/61 pass with zero warnings). Manually validate factual accuracy, answer keys and age suitability.
 5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks ran on all 72 pages in run 41467406909; responsive and keyboard quiz checks passed. Continue manual screen-reader review.
 6. [ ] Phase 6 — SEO/content discoverability review. Metadata and sitemap checks are automated; Science index title/description mismatch fixed. Review updated About page and Grade 8 index metadata in this commit; continue manual duplicate/thin-content and structured-data review.
 7. [ ] Phase 7 — performance/responsiveness/security review. Latest run checked 72 routes at 320/390/768/desktop, page resource budgets, no third-party requests, CSP/security headers and custom 404; continue deeper device/security review.
@@ -124,3 +124,6 @@
 
 - Latest CI confirmation: run 41467406909 passed all 72 HTML routes, 61 lesson files/quizzes, responsive widths, axe WCAG 2.1 A/AA, print controls and performance budgets; static warnings 0.
 - Phase 2 English coverage marked complete at the topic-coverage level (7 lessons); detailed academic fact-check remains in Phase 4.
+
+- Added Science Grade 8 Physics lesson: Electric Circuits — Current, Voltage and Resistance, including safe low-voltage guidance, series/parallel circuits, Ohm's law examples, five-question quiz/retake and printable worksheet.
+- Synchronized the Grade 8 Science pathway, Science index, sitemap and About page in one atomic commit. Expected inventory after this addition: 46 Maths + 7 English + 9 Science = 62 lessons; 73 sitemap URLs and 73 HTML pages. Await CI verification.
