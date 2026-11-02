@@ -482,7 +482,7 @@ for (const lesson of sitemapLessonPaths) {
 }
 const lessonIndexFiles = indexable
   .map(file => relative(file))
-  .filter(rel => /^(math\/grade-[^/]+|english|science)\/index\.html$/i.test(rel));
+  .filter(rel => /^(math\/grade-[^/]+|science\/grade-[^/]+|english|science)\/index\.html$/i.test(rel));
 const indexedLessons = new Set();
 for (const indexFile of lessonIndexFiles) {
   const source = fs.readFileSync(path.join(root, indexFile), 'utf8');
