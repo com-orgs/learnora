@@ -41,6 +41,10 @@ The audit checks page metadata and canonical URLs, Open Graph consistency, HTML 
 
 A passing static audit does **not** replace academic review, assistive-technology testing, browser/device testing, performance testing, security review or a live HTTP status check.
 
+## Security headers and Content Security Policy
+
+Cloudflare Pages applies the repository's `_headers` file to static asset responses. Executable page scripts are stored as same-origin JavaScript assets; inline JavaScript and inline event handlers are blocked by the Content Security Policy. Inline CSS is currently permitted with `style-src 'unsafe-inline'` because page styles are embedded in the HTML. Revisit this allowance if styles are later moved to external stylesheets. HSTS is intentionally deferred until a custom domain and its HTTPS/redirect configuration are confirmed.
+
 ## Content and release principles
 
 - Keep explanations accurate, age-appropriate and understandable.

@@ -5,6 +5,8 @@ import vm from 'node:vm';
 const root = process.cwd();
 const errors = [];
 const warnings = [];
+let quizFormsChecked = 0;
+let externalScriptsChecked = 0;
 
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -130,6 +132,7 @@ for (const file of indexable) {
     .map(match => match[0])
     .filter(form => /\bname=["']q[1-5]["']/.test(form));
   for (const form of quizForms) {
+    quizFormsChecked++;
     const ungroupedQuestions = form.match(/<div\b[^>]*\bclass=["'][^"']*\b(?:quiz-question|question)\b[^"']*["']/gi) || [];
     if (ungroupedQuestions.length) errors.push(rel + ': quiz questions must use fieldset groups, not div wrappers.');
     const fieldsets = [...form.matchAll(/<fieldset\b[^>]*>([\s\S]*?)<\/fieldset>/gi)];
@@ -186,6 +189,7 @@ for (const file of indexable) {
         continue;
       }
       code = fs.readFileSync(scriptFile, 'utf8');
+      externalScriptsChecked++;
     } else if (code) {
       errors.push(rel + ': executable inline JavaScript is not allowed by the Content Security Policy.');
       continue;
@@ -276,6 +280,8 @@ else {
 }
 console.log('HTML pages checked: ' + indexable.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
+console.log('Accessible quiz forms checked: ' + quizFormsChecked);
+console.log('Same-origin JavaScript assets checked: ' + externalScriptsChecked);
 console.log('Warnings: ' + warnings.length);
 for (const warning of warnings) console.warn('WARNING: ' + warning);
 if (errors.length) {
@@ -283,5 +289,5 @@ if (errors.length) {
   for (const error of errors) console.error('ERROR: ' + error);
   process.exitCode = 1;
 } else {
-  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, quiz structure, duplicate IDs and inline JavaScript syntax.');
+  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, accessible quiz fieldsets/labels, same-origin JavaScript, CSP and JavaScript syntax.');
 }
