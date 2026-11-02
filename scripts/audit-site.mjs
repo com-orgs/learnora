@@ -125,7 +125,7 @@ function canonicalOf(source) {
 function expectedUrl(origin, file) {
   if (file === 'index.html') return origin + '/';
   if (file.endsWith('/index.html')) return origin + '/' + file.slice(0, -'index.html'.length);
-  return origin + '/' + file;
+  return origin + '/' + file.replace(/\\.html$/i, '');
 }
 
 const files = walk(root);
@@ -422,7 +422,10 @@ for (const file of indexable) {
     try { pathname = decodeURIComponent(target.pathname); } catch { pathname = target.pathname; }
     let targetPath = pathname.replace(/^\/+/, '');
     if (!targetPath || pathname.endsWith('/')) targetPath += (targetPath ? '' : '') + 'index.html';
-    const targetFile = path.join(root, targetPath);
+    let targetFile = path.join(root, targetPath);
+    if ((!fs.existsSync(targetFile) || !fs.statSync(targetFile).isFile()) && !path.extname(targetPath)) {
+      targetFile = path.join(root, targetPath + '.html');
+    }
     if (!fs.existsSync(targetFile) || !fs.statSync(targetFile).isFile()) {
       errors.push(rel + ': broken internal link "' + href + '".');
     }
