@@ -59,10 +59,10 @@
 
 - Gmail contained many GitHub Actions failure notifications for intermediate commits on the audit branch, plus some pull-request runs.
 - The notification subjects reference commits such as `460f534`, `477dfe6`, `e0b100c`, `118b49a` and `9e6d646`.
-- These were generated while lesson files, JavaScript, subject index and sitemap were being committed sequentially; intermediate commits could temporarily fail validation before the related files were all synchronized.
-- Do not assume a notification represents the current HEAD. Always match the failed notification's commit SHA/run ID to the current branch and compare with the latest complete run.
-- Latest known complete run 41461081003 is green. The earlier failures should still be treated as historical/intermediate until a specific failure log shows a persistent defect.
-- Future improvements: batch related file updates where possible, wait for the final synchronized commit's CI, and inspect actual failing step/logs before concluding.
+- A representative failure was inspected directly: run [41441495924](https://github.com/com-orgs/learnora/actions/runs/41441495924), commit `9e6d64672bc161822c4ab5e383addb467ba1cfbb`. The static audit failed immediately at `scripts/audit-site.mjs:197` with `SyntaxError: Invalid regular expression flags`; the malformed regex contained doubled backslashes in a regex literal.
+- Current audit-branch source was checked at the same section: the regex is now correctly written as `/<h2\\b[^>]*>([\\s\\S]*?)<\\/h2>/gi`, and the latest known complete run [41461081003](https://github.com/com-orgs/learnora/actions/runs/41461081003) passed all audit, preview and browser-test steps.
+- Other Gmail failure notifications reference multiple intermediate commits and some PR runs. Do not assume a notification represents the current HEAD. Match each failed notification's commit SHA/run ID to the current branch and inspect its own failing step/logs if it remains relevant.
+- Conclusion: at least one confirmed failure was a real static-audit regex defect (now corrected), while sequential commits also explain why notifications were generated for multiple intermediate snapshots.
 
 ## Remaining work — ordered queue
 
@@ -83,7 +83,7 @@
 ### 2026-11-02
 - Added Science Grade 7 Heat Transfer lesson and synchronized its JS, Science index and sitemap.
 - Confirmed workflow run 41461081003 succeeded: all audit, preview and browser-check steps green.
-- Investigated Gmail failure notifications: many correspond to sequential intermediate audit-branch commits; verify each against its SHA/run rather than treating all as current failures.
+- Investigated Gmail failures and inspected run 41441495924 logs: confirmed malformed regex at audit-site.mjs:197 caused an early static-audit syntax error; current branch regex is corrected and run 41461081003 is green.
 - Added this persistent tracker so future chats can resume without repeating completed work.
 - Next starting point: reconcile lesson inventory and indexes, then continue English Grade 7–8 content review/expansion.
 
