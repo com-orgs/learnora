@@ -16,16 +16,16 @@
 
 ## Latest verified repository state
 
-- Last known audit branch commit before tracker setup: `dae65e3765846e4caff40d05089eb4cee34d5848`
+- Last recorded audit branch commit before the current inventory/QA changes: `69a1ba4228d4bef3bb6d31991289715af5f501be` (re-check latest HEAD after CI).
 - Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
-- Last known comparison: audit branch ahead by 204 commits, behind by 0, 133 changed files (re-check after tracker/automation commits).
+- Latest comparison before current phase-1 audit commits: audit branch ahead by 208 commits, behind by 0, 134 changed files (re-check after each phase).
 - Main branch has not been merged or deployed from the audit branch.
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Last updated automatically: run #41462399856 on branch `audit/production-hardening-2026-11-02`.
 
 
-- Status: success.
+- Status: success (run #41462399856; this is the last verified tracker-aware run before phase-1 inventory enforcement).
 - Tested commit: `69a1ba4228d4bef3bb6d31991289715af5f501be`
 - Workflow: Learnora Site Audit (run [#41462399856](https://github.com/com-orgs/learnora/actions/runs/41462399856))
 - Last known run: [41461081003](https://github.com/com-orgs/learnora/actions/runs/41461081003) — **success**.
@@ -68,7 +68,7 @@
 
 ## Remaining work — ordered queue
 
-1. [ ] Re-count current sitemap lesson inventory by subject/grade and reconcile every index card against real lesson files and sitemap URLs.
+1. [x] Re-count current sitemap lesson inventory by subject/grade; add automated parity checks between lesson files, subject/grade index cards, sitemap URLs and quiz scripts. Await new CI result for the new checks.
 2. [ ] Continue English curriculum expansion/review (especially Grade 7–8 grammar, writing and reading); avoid duplicate topics.
 3. [ ] Continue Science Grade 8 curriculum expansion/review, checking factual accuracy and curriculum progression.
 4. [ ] Audit all lessons for educational quality: age/grade suitability, learning objectives, explanations, worked examples, question correctness, answer keys, quiz feedback/retake and printable worksheet quality.
@@ -80,6 +80,16 @@
 10. [ ] Produce final issue list and completion report; compare audit branch against main.
 11. [ ] Only after explicit user approval: merge/deploy as the final phase; verify production after deployment.
 
+## Phase completion details
+
+### Phase 1 — Curriculum inventory and index reconciliation
+- [x] GitHub repository directory listings independently confirm 46 Maths lesson files (Grade 6: 23; Grade 7: 12; Grade 8: 11), 5 English lesson files, and 6 Science Grade 7 lesson files.
+- [x] Sitemap contains 67 URLs total, including 57 lesson URLs (Maths 46, English 5, Science 6).
+- [x] Subject/grade indexes currently contain matching lesson cards: Maths grade indexes 46 combined, English 5, Science 6.
+- [x] Lesson quiz JS files exist as a matching 57-file set in scripts/pages (plus shared homepage/index script).
+- [x] Added permanent static-audit assertions: every lesson file must be in sitemap, every sitemap lesson must have a file, each lesson must load its expected JS quiz file, and every lesson must be linked from a subject/grade index.
+- [ ] New CI run must pass before Phase 1 is marked fully verified.
+
 ## Session log
 
 ### 2026-11-02
@@ -87,7 +97,7 @@
 - Confirmed workflow run 41461081003 succeeded: all audit, preview and browser-check steps green.
 - Investigated Gmail failures and inspected run 41441495924 logs: confirmed malformed regex at audit-site.mjs:197 caused an early static-audit syntax error; current branch regex is corrected and run 41461081003 is green.
 - Added this persistent tracker so future chats can resume without repeating completed work.
-- Next starting point: reconcile lesson inventory and indexes, then continue English Grade 7–8 content review/expansion.
+- Exact inventory reconciled and automated parity assertions added; next start Phase 2 English curriculum coverage review and Phase 3 Science Grade 8 content.
 
 ## Instructions for the next ChatGPT session
 
