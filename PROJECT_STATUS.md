@@ -22,12 +22,12 @@
 - Main branch remains unchanged until the authorized Phase 10 merge. Production deployment will be verified after merge.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Last updated automatically: run #41483539644 on branch `audit/production-sitemap-smoke-test`.
+- Last updated automatically: run #41483570287 on branch `audit/production-sitemap-smoke-test`.
 
 
-- Status: cancelled.
-- Tested commit: `2c7c59883840af83b674018d2434527d549394b9`
-- Workflow: Learnora Site Audit (run [#41483539644](https://github.com/com-orgs/learnora/actions/runs/41483539644))
+- Status: success.
+- Tested commit: `b0f5ddd2ab9bd5d559777ef47ff67bd2e0e3b1d3`
+- Workflow: Learnora Site Audit (run [#41483570287](https://github.com/com-orgs/learnora/actions/runs/41483570287))
 - Last known run: [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
