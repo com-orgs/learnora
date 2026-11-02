@@ -7,18 +7,18 @@ Production branch: `main`
 
 ## Current verified state
 
-- The audit-branch Privacy Policy, Terms and About page have been updated.
-- Advertising and analytics are not active on the current site code.
+- The production Privacy Policy, Terms and About pages contain pre-monetisation disclosures and contact/editorial information.
+- Advertising and analytics are not active on the production site code.
 - The new CI legal-readiness guard scans every HTML page and fails if it finds active AdSense/advertising/analytics script tags. The existing browser/preview suite also checks for unexpected third-party requests.
 - The Privacy Policy now identifies Cloudflare Pages and explains the categories of technical data Cloudflare may process, with a link to Cloudflare's privacy policy.
 - No `ads.txt` file exists.
 - No real AdSense publisher ID has been supplied or verified for this project.
 - No CMP has been installed. This is intentional while no advertising/analytics technologies are active; a homemade banner must not be represented as a Google-certified CMP.
-- Production `main` is unchanged. Do not merge or deploy without the user's explicit approval.
+- The user explicitly authorised production merge/deployment on 2026-11-02. The privacy, terms, about and SEO updates have been deployed to `main`; advertising and analytics remain disabled.
 
-## Work completed on the audit branch
+## Work completed and deployed to production
 
-- [x] Privacy Policy, Terms and About editorial-transparency pages updated.
+- [x] Privacy Policy, Terms and About editorial-transparency pages updated and deployed.
 - [x] Privacy Policy identifies Cloudflare Pages/network processing and links to Cloudflare's privacy policy.
 - [x] Added `scripts/audit-legal-readiness.mjs` to verify required disclosures, contact details, Cloudflare hosting disclosure, and the absence of active ad/analytics scripts across all HTML pages.
 - [x] Added the legal-readiness guard to `.github/workflows/site-audit.yml`; it runs on every audit-branch push and on `main`.
@@ -68,7 +68,7 @@ Official references:
 
 A spot review of the homepage, About page, Grade 6 Fractions, English Reading Comprehension and two Grade 8 Science lesson pages found substantial lesson structure, learning outcomes, explanations, worked examples, independent practice, quizzes and printable resources. The sampled lesson text was approximately 1,000–1,600 words. The About page describes Learnora as an independent supplementary learning resource and explains its editorial/corrections approach.
 
-This is a preliminary sample, not a full originality or AdSense approval assessment. Some sampled lesson pages did not show a named author/reviewer or source/reference list. Phase 9 must complete a page-by-page originality, factual accuracy, source attribution, duplicated-template and user-value review. Avoid claiming that word count alone guarantees AdSense approval. Add real author/reviewer identities only when supplied and verified; never invent credentials.
+This remains a preliminary sample, not a full originality or AdSense approval assessment. Some sampled lesson pages did not show a named author/reviewer or source/reference list. Phase 9 must complete a page-by-page originality, factual accuracy, source attribution, duplicated-template and user-value review. Avoid claiming that word count alone guarantees AdSense approval. Add real author/reviewer identities only when supplied and verified; never invent credentials.
 
 Official references:
 - https://support.google.com/adsense/answer/10502938
