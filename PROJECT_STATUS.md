@@ -22,12 +22,12 @@
 - Main branch has not been merged or deployed from the audit branch.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Last updated automatically: run #41463814452 on branch `audit/production-hardening-2026-11-02`.
+- Last updated automatically: run #41464613227 on branch `audit/production-hardening-2026-11-02`.
 
 
 - Status: failure.
-- Tested commit: `05447ec63175b0f974d1ff1c45de2d261a3d3693`
-- Workflow: Learnora Site Audit (run [#41463814452](https://github.com/com-orgs/learnora/actions/runs/41463814452))
+- Tested commit: `b14f6ba2164fc7c4a5e3f412cb21e6b444d32794`
+- Workflow: Learnora Site Audit (run [#41464613227](https://github.com/com-orgs/learnora/actions/runs/41464613227))
 - Last known run: [41461081003](https://github.com/com-orgs/learnora/actions/runs/41461081003) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
