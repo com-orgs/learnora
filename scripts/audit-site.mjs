@@ -204,8 +204,14 @@ for (const file of indexable) {
   else if (canonical && ogUrl !== canonical) errors.push(rel + ': og:url does not match canonical URL.');
 
   for (const property of ['og:title', 'og:description', 'og:type']) {
-    if (!metaTags.some(t => (attr(t, 'property') || '').toLowerCase() === property)) {
-      errors.push(rel + ': missing Open Graph ' + property + '.');
+    const matches = metaTags.filter(tag => (attr(tag, 'property') || '').toLowerCase() === property);
+    if (matches.length === 0) errors.push(rel + ': missing Open Graph ' + property + '.');
+    if (matches.length > 1) errors.push(rel + ': duplicate Open Graph ' + property + ' tags.');
+    if (matches.length === 1 && !attr(matches[0], 'content')?.trim()) {
+      errors.push(rel + ': Open Graph ' + property + ' has empty content.');
+    }
+    if (property === 'og:description' && matches.length === 1 && (attr(matches[0], 'content') || '').trim().length < 50) {
+      errors.push(rel + ': Open Graph description is too short.');
     }
   }
   if (metaTags.filter(t => (attr(t, 'property') || '').toLowerCase() === 'og:url').length > 1) {
