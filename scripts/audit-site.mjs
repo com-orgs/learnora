@@ -29,10 +29,12 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  const escapedName = name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');
-  const pattern = new RegExp(String.raw`(?:^|\\s)${escapedName}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`, 'i');
-  const match = tag.match(pattern);
-  return match ? (match[1] ?? match[2] ?? match[3]) : null;
+  for (const match of tag.matchAll(/([^\\s=/>]+)\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))/g)) {
+    if (match[1].toLowerCase() === name.toLowerCase()) {
+      return match[2] ?? match[3] ?? match[4];
+    }
+  }
+  return null;
 }
 
 const attributeParserSamples = [
