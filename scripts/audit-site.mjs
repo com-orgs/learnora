@@ -25,8 +25,10 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  const re = new RegExp("\\b" + name + "\\s*=\\s*[\"']([^\"']*)[\"']", "i");
-  return tag.match(re)?.[1] ?? null;
+  const doubleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\\s*\"([^\"]*)\"", "i"));
+  if (doubleQuoted) return doubleQuoted[1];
+  const singleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\\s*'([^']*)'", "i"));
+  return singleQuoted?.[1] ?? null;
 }
 
 function canonicalOf(source) {
