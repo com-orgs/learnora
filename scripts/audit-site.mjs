@@ -158,7 +158,7 @@ for (const file of indexable) {
   const metaTags = getTags(source, 'meta');
   const descriptionTags = metaTags.filter(tag => (attr(tag, 'name') || '').toLowerCase() === 'description');
   if (descriptionTags.length > 1) errors.push(rel + ': duplicate meta description tags.');
-  const canonicalTags = getTags(source, 'link').filter(tag => (attr(tag, 'rel') || '').toLowerCase().split(/\\s+/).includes('canonical'));
+  const canonicalTags = getTags(source, 'link').filter(tag => (attr(tag, 'rel') || '').toLowerCase().split(/\s+/).includes('canonical'));
   if (canonicalTags.length > 1) errors.push(rel + ': duplicate canonical link tags.');
   for (const link of getTags(source, 'link')) {
     const relValues = (attr(link, 'rel') || '').toLowerCase().split(/\s+/);
@@ -244,7 +244,7 @@ for (const file of indexable) {
   const viewportTags = metaTags.filter(tag => (attr(tag, 'name') || '').toLowerCase() === 'viewport');
   if (viewportTags.length === 0) errors.push(rel + ': missing viewport meta tag.');
   if (viewportTags.length > 1) errors.push(rel + ': duplicate viewport meta tags.');
-  if (viewportTags.length === 1 && !/width\\s*=\\s*device-width/i.test(attr(viewportTags[0], 'content') || '')) {
+  if (viewportTags.length === 1 && !/width\s*=\s*device-width/i.test(attr(viewportTags[0], 'content') || '')) {
     errors.push(rel + ': viewport meta tag must include width=device-width.');
   }
 
