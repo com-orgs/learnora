@@ -37,9 +37,12 @@ try {
   const sitemapResponse = await page.request.get(baseUrl + '/sitemap.xml');
   if (!sitemapResponse.ok()) throw new Error('Sitemap request failed with HTTP ' + sitemapResponse.status());
   const sitemap = await sitemapResponse.text();
+  const firstSitemapLocation = sitemap.match(/<loc>(.*?)<\/loc>/);
+  const canonicalOrigin = firstSitemapLocation ? new URL(firstSitemapLocation[1]).origin : null;
+  if (!canonicalOrigin) failures.push('Sitemap does not contain a valid canonical URL.');
   const robotsResponse = await page.request.get(baseUrl + '/robots.txt');
   if (!robotsResponse.ok()) failures.push('robots.txt did not return HTTP 200.');
-  else if (!(await robotsResponse.text()).includes(baseUrl + '/sitemap.xml')) failures.push('robots.txt does not reference the live sitemap URL.');
+  else if (!canonicalOrigin || !(await robotsResponse.text()).includes(canonicalOrigin + '/sitemap.xml')) failures.push('robots.txt does not reference the canonical live sitemap URL.');
   const missingResponse = await page.request.get(baseUrl + '/__learnora_audit_missing_route__');
   if (missingResponse.status() !== 404) failures.push('Unknown routes should return HTTP 404; received ' + missingResponse.status() + '.');
   else if (!/Page Not Found/i.test(await missingResponse.text())) failures.push('Custom 404 response did not contain the expected not-found page.');
