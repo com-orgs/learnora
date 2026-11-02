@@ -46,13 +46,34 @@ try {
       continue;
     }
 
-    const mobile = await page.evaluate(() => ({
-      viewport: document.documentElement.clientWidth,
-      document: document.documentElement.scrollWidth,
-      body: document.body.scrollWidth
-    }));
+    const mobile = await page.evaluate(() => {
+      const viewport = document.documentElement.clientWidth;
+      const offenders = [...document.querySelectorAll('body *')].map(element => {
+        const rect = element.getBoundingClientRect();
+        const style = getComputedStyle(element);
+        return {
+          tag: element.tagName.toLowerCase(),
+          id: element.id,
+          className: typeof element.className === 'string' ? element.className : '',
+          text: (element.textContent || '').trim().replace(/\\s+/g, ' ').slice(0, 90),
+          left: Math.round(rect.left),
+          right: Math.round(rect.right),
+          width: Math.round(rect.width),
+          scrollWidth: element.scrollWidth,
+          clientWidth: element.clientWidth,
+          minWidth: style.minWidth,
+          whiteSpace: style.whiteSpace
+        };
+      }).filter(item => item.right > viewport + 1 || item.left < -1 || item.scrollWidth > item.clientWidth + 1).slice(0, 12);
+      return {
+        viewport,
+        document: document.documentElement.scrollWidth,
+        body: document.body.scrollWidth,
+        offenders
+      };
+    });
     if (mobile.document > mobile.viewport + 1 || mobile.body > mobile.viewport + 1) {
-      failures.push(route + ': horizontal overflow at 390px (viewport ' + mobile.viewport + ', document ' + mobile.document + ', body ' + mobile.body + ').');
+      failures.push(route + ': horizontal overflow at 390px: ' + JSON.stringify(mobile));
     }
 
     const forms = page.locator('form');
