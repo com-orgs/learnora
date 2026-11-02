@@ -28,7 +28,7 @@
 - Status: success.
 - Tested commit: `710c07ed5ec740d909aafbcb4d8b02c0cc118e80`
 - Workflow: Learnora Site Audit (run [#41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909))
-- Last known run: [41466567257](https://github.com/com-orgs/learnora/actions/runs/41466567257) — **success**.
+- Last known run: [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
 ## Completed work
@@ -51,9 +51,9 @@
 - [x] English reading comprehension and punctuation/capitalization content additions (verify exact current inventory before adding overlapping topics).
 
 ### Quality assurance
-- [x] Latest CI run 41466567257: 71 HTML pages, 60 curriculum lessons, 60 quiz forms and 60 answer-key mappings; warnings 0.
+- [x] Latest CI run 41467406909: 72 HTML pages, 61 curriculum lessons, 61 quiz forms and 61 answer-key mappings; warnings 0.
 - [x] Browser smoke coverage previously exercised mobile widths 320, 390, 768 and desktop, quiz submission/retake and print actions (historical 52-quiz run).
-- [x] Latest run 41466567257 passed every step, including static audit, Cloudflare preview, Playwright, axe accessibility, responsive checks, quiz submission/retake and performance budgets.
+- [x] Latest run 41467406909 passed every step, including static audit, Cloudflare preview, Playwright, axe accessibility, responsive checks, quiz submission/retake and performance budgets.
 - [x] Responsive table overflow fixes applied to Science Grade 7 States of Matter and Heat Transfer lessons.
 - [x] Print styles hide worksheet answer keys where intended.
 
@@ -62,19 +62,19 @@
 - Gmail search returned 252+ matching GitHub notification threads, with many duplicate/near-duplicate failure notifications for intermediate commits and some PR runs. The main reason for volume is the workflow trigger on every push combined with many sequential one-file commits; concurrency cancels superseded runs but does not prevent already-started failure emails.
 - The notification subjects reference commits such as `460f534`, `477dfe6`, `e0b100c`, `118b49a` and `9e6d646`.
 - A representative failure was inspected directly: run [41441495924](https://github.com/com-orgs/learnora/actions/runs/41441495924), commit `9e6d64672bc161822c4ab5e383addb467ba1cfbb`. The static audit failed immediately at `scripts/audit-site.mjs:197` with `SyntaxError: Invalid regular expression flags`; the malformed regex contained doubled backslashes in a regex literal.
-- Current audit-branch source was checked at the same section: the regex is now correctly written as `/<h2\\b[^>]*>([\\s\\S]*?)<\\/h2>/gi`, and the latest known complete run [41461081003](https://github.com/com-orgs/learnora/actions/runs/41461081003) passed all audit, preview and browser-test steps.
+- Current audit-branch source was checked at the same section: the regex is now correctly written as `/<h2\\b[^>]*>([\\s\\S]*?)<\\/h2>/gi`, and the latest known complete run [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) passed all audit, preview and browser-test steps.
 - Other Gmail failure notifications reference multiple intermediate commits and some PR runs. Do not assume a notification represents the current HEAD. Match each failed notification's commit SHA/run ID to the current branch and inspect its own failing step/logs if it remains relevant.
 - Inspected run 41465180778 (commit 79e9f32): it failed because the newly added Grade 8 Science index URL had not yet been added to sitemap at that intermediate commit; two educational-quality warnings were also emitted. A later atomic/synchronized commit and run 41465504326 passed. Conclusion: older failure emails refer to intermediate snapshots, not current branch health. Batch related files into one Git tree commit to reduce future email noise.
 
 ## Remaining work — ordered queue
 
-1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified after latest CI: Maths 46, English 7, Science 7 = 60 lessons; sitemap has 71 URLs including 60 lesson URLs.
-2. [ ] Phase 2 — English curriculum expansion/review. Added vocabulary/context-clues lesson in this commit; continue checking writing, reading and grammar coverage without duplicates.
+1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified after latest CI: Maths 46, English 7, Science 8 = 61 lessons; sitemap has 72 URLs including 61 lesson URLs.
+2. [x] Phase 2 — English curriculum coverage expansion. Seven lessons now cover grammar (parts of speech, sentence structure, verbs, punctuation), reading comprehension, paragraph writing and vocabulary/context clues. Continue any detailed fact-check under Phase 4.
 3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. Two Grade 8 lessons now cover chemistry and human digestive/circulatory systems; continue adding balanced physics, biology and earth/space science topics.
-4. [ ] Phase 4 — full educational quality review across all 61 lessons after the current Science Grade 8 addition; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions. Manually validate factual accuracy, answer keys and age suitability.
-5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks ran on all 71 pages in run 41466567257 with no browser-test failures; continue manual keyboard and screen-reader review.
+4. [ ] Phase 4 — full educational quality review across all 61 lessons; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions (61/61 pass with zero warnings). Manually validate factual accuracy, answer keys and age suitability.
+5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks ran on all 72 pages in run 41467406909; responsive and keyboard quiz checks passed. Continue manual screen-reader review.
 6. [ ] Phase 6 — SEO/content discoverability review. Metadata and sitemap checks are automated; Science index title/description mismatch fixed. Review updated About page and Grade 8 index metadata in this commit; continue manual duplicate/thin-content and structured-data review.
-7. [ ] Phase 7 — performance/responsiveness/security review. Latest run checked 71 routes at 320/390/768/desktop, page resource budgets, no third-party requests, CSP/security headers and custom 404; continue deeper device/security review.
+7. [ ] Phase 7 — performance/responsiveness/security review. Latest run checked 72 routes at 320/390/768/desktop, page resource budgets, no third-party requests, CSP/security headers and custom 404; continue deeper device/security review.
 8. [ ] Audit legal/trust/AdSense readiness: privacy/cookie disclosures, contact/about/terms, original substantial content, navigation and ad placement readiness (no guarantee of AdSense approval).
 9. [ ] Run complete final static + browser + accessibility + link/route verification on the final audit branch.
 10. [ ] Produce final issue list and completion report; compare audit branch against main.
@@ -84,11 +84,11 @@
 
 ### Phase 1 — Curriculum inventory and index reconciliation
 - [x] GitHub repository directory listings independently confirm 46 Maths lesson files (Grade 6: 23; Grade 7: 12; Grade 8: 11), 5 English lesson files, and 6 Science Grade 7 lesson files.
-- [x] Sitemap contains 67 URLs total, including 60 lesson URLs after this update (Maths 46, English 7, Science 7).
-- [x] Subject/grade indexes currently contain matching lesson cards: Maths grade indexes 46 combined, English 7, Science 7.
-- [x] Lesson quiz JS files exist as a matching 60-file set in scripts/pages (plus shared homepage/index script).
+- [x] Sitemap contains 72 URLs total, including 61 lesson URLs (Maths 46, English 7, Science 8).
+- [x] Subject/grade indexes contain matching lesson cards: Maths 46, English 7, Science 8; Grade 8 Science pathway links both Grade 8 lessons.
+- [x] Lesson quiz JS files exist as a matching 61-file set in scripts/pages (plus shared homepage/index script).
 - [x] Added permanent static-audit assertions: every lesson file must be in sitemap, every sitemap lesson must have a file, each lesson must load its expected JS quiz file, and every lesson must be linked from a subject/grade index.
-- [x] Run 41465504326 passed static audit, preview headers/assets, Playwright browser checks and axe accessibility checks; inventory parity was verified (70 HTML pages, 59 lesson files at that tested commit).
+- [x] Run 41467406909 passed static audit, preview headers/assets, Playwright browser checks and axe accessibility checks; inventory parity verified (72 HTML pages, 61 lessons).
 
 ## Session log
 
@@ -121,3 +121,6 @@
 - Synchronized Grade 8 Science pathway, Science subject index, sitemap and About page curriculum description in one atomic commit.
 - Inventory expected after this addition: Maths 46, English 7, Science 8 = 61 lessons; 72 sitemap URLs and 72 HTML pages. Await CI to verify exact totals.
 - Current full CI baseline before this commit: run 41466567257 passed all 71 HTML pages and 60 quizzes with zero static warnings.
+
+- Latest CI confirmation: run 41467406909 passed all 72 HTML routes, 61 lesson files/quizzes, responsive widths, axe WCAG 2.1 A/AA, print controls and performance budgets; static warnings 0.
+- Phase 2 English coverage marked complete at the topic-coverage level (7 lessons); detailed academic fact-check remains in Phase 4.
