@@ -49,3 +49,14 @@ jobs:
           curl --fail --silent --show-error "$base_url/math/grade-6/understanding-fractions.html" --output /dev/null
           curl --fail --silent --show-error "$base_url/scripts/pages/math-grade-6-understanding-fractions.js" --output /dev/null
           echo "PASS: preview HTML, security headers, CSP and external lesson scripts."
+
+      - name: Install Playwright and Chromium
+        if: github.ref != 'refs/heads/main'
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Run mobile, desktop and quiz browser checks
+        if: github.ref != 'refs/heads/main'
+        env:
+          LEARNORA_PREVIEW_URL: https://audit-production-hardening-2.learnora-ab2.pages.dev
+        run: node scripts/browser-smoke.mjs
