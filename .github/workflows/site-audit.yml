@@ -98,22 +98,23 @@ jobs:
           import os
           from pathlib import Path
           path = Path("PROJECT_STATUS.md")
-          text = path.read_text(encoding="utf-8")
-          replacements = {
-              "- Status: Pending first tracker-aware workflow run.": f"- Status: {os.environ['JOB_STATUS']}.",
-              "- Tested commit: `dae65e3765846e4caff40d05089eb4cee34d5848`": f"- Tested commit: `{os.environ['TESTED_SHA']}`",
-              "- Workflow: Learnora Site Audit": f"- Workflow: Learnora Site Audit (run [#{os.environ['RUN_ID']}]({os.environ['RUN_URL']}))",
-          }
-          for old, new in replacements.items():
-              if old in text:
-                  text = text.replace(old, new, 1)
-          text = text.replace(
-              "## CI status (automatically refreshed by GitHub Actions)",
-              "## CI status (automatically refreshed by GitHub Actions)\n\n"
-              f"- Last updated automatically: {os.environ.get('GITHUB_RUN_ATTEMPT', '1')} attempt on branch `{os.environ['BRANCH_NAME']}`.",
-              1,
-          )
-          path.write_text(text, encoding="utf-8")
+          lines = path.read_text(encoding="utf-8").splitlines()
+          out = []
+          for line in lines:
+              if line.startswith("- Status:"):
+                  line = f"- Status: {os.environ['JOB_STATUS']}."
+              elif line.startswith("- Tested commit:"):
+                  line = f"- Tested commit: `{os.environ['TESTED_SHA']}`"
+              elif line.startswith("- Workflow: Learnora Site Audit"):
+                  line = f"- Workflow: Learnora Site Audit (run [#{os.environ['RUN_ID']}]({os.environ['RUN_URL']}))"
+              elif line.startswith("- Last updated automatically:"):
+                  line = f"- Last updated automatically: run #{os.environ['RUN_ID']} on branch `{os.environ['BRANCH_NAME']}`."
+              out.append(line)
+          if not any(line.startswith("- Last updated automatically:") for line in out):
+              i = out.index("## CI status (automatically refreshed by GitHub Actions)")
+              out.insert(i + 1, f"- Last updated automatically: run #{os.environ['RUN_ID']} on branch `{os.environ['BRANCH_NAME']}`.")
+              out.insert(i + 2, "")
+          path.write_text("\n".join(out) + "\n", encoding="utf-8")
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
