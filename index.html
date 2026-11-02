@@ -463,6 +463,9 @@
       font-size: .9rem;
     }
 
+    .subject-card-link { display:block; color:inherit; text-decoration:none; cursor:pointer; }
+    .subject-card-link:focus-visible, .grade-card-link:focus-visible { outline:3px solid var(--teal); outline-offset:4px; }
+
     .subject-arrow {
       position: absolute;
       top: 25px;
@@ -486,7 +489,9 @@
       transition: border-color .2s ease, transform .2s ease;
     }
 
-    .grade-card-link { display: block; color: inherit; text-decoration: none; }\n\n    .grade-card:hover {
+    .grade-card-link { display: block; color: inherit; text-decoration: none; }
+
+    .grade-card:hover {
       transform: translateY(-3px);
       border-color: var(--teal);
     }
@@ -1109,24 +1114,24 @@
           <p>Start with a subject you enjoy, or choose one you would like a little more help with.</p>
         </div>
         <div class="subject-grid">
-          <article class="subject-card math">
+          <a class="subject-card math subject-card-link" href="/math/grade-6/">
             <span class="subject-arrow" aria-hidden="true">↗</span>
             <div class="subject-icon" aria-hidden="true">➗</div>
             <h3>Mathematics</h3>
-            <p>Understand numbers, patterns, fractions and problem-solving step by step.</p>
-          </article>
-          <article class="subject-card english">
+            <p>Explore structured Maths learning paths for Grades 6, 7 and 8.</p>
+          </a>
+          <a class="subject-card english subject-card-link" href="/english/">
             <span class="subject-arrow" aria-hidden="true">↗</span>
             <div class="subject-icon" aria-hidden="true">📖</div>
             <h3>English</h3>
-            <p>Build your grammar, vocabulary, reading and writing skills with practice.</p>
-          </article>
-          <article class="subject-card science">
+            <p>Build grammar, vocabulary, reading and writing skills with practice.</p>
+          </a>
+          <a class="subject-card science subject-card-link" href="/science/">
             <span class="subject-arrow" aria-hidden="true">↗</span>
             <div class="subject-icon" aria-hidden="true">🔬</div>
             <h3>Science</h3>
-            <p>Explore living things, matter and the world through simple explanations.</p>
-          </article>
+            <p>Explore living things and the natural world through clear explanations.</p>
+          </a>
         </div>
       </div>
     </section>
