@@ -253,12 +253,17 @@ try {
           const feedbackMessages = await quizForm.locator('.feedback, .quiz-feedback, [aria-live]').allTextContents();
           if (feedbackMessages.some(message => message.trim())) failures.push(route + ': retake button did not clear quiz feedback.');
           retakeActionsChecked++;
+        } else {
+          failures.push(route + ': interactive quiz is missing a retake/reset button.');
         }
       }
     }
 
     let printButton = page.getByRole('button', { name: /print/i }).first();
     if (!(await printButton.count())) printButton = page.locator('[data-print-worksheet]').first();
+    if (!(await printButton.count()) && await page.locator('.worksheet').count() > 0) {
+      failures.push(route + ': printable worksheet is missing a print control.');
+    }
     if (await printButton.count()) {
       await page.evaluate(() => {
         window.__learnoraPrintCalled = false;
