@@ -25,9 +25,9 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  const doubleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\\s*\"([^\"]*)\"", "i"));
+  const doubleQuoted = tag.match(new RegExp("\\b" + name + "\s*=\s*\"([^\"]*)\"", "i"));
   if (doubleQuoted) return doubleQuoted[1];
-  const singleQuoted = tag.match(new RegExp("\\b" + name + "\\s*=\\s*'([^']*)'", "i"));
+  const singleQuoted = tag.match(new RegExp("\\b" + name + "\s*=\s*'([^']*)'", "i"));
   return singleQuoted?.[1] ?? null;
 }
 
@@ -198,10 +198,10 @@ if (!fs.existsSync(headersPath)) errors.push('_headers is missing; security head
 else {
   const headers = fs.readFileSync(headersPath, 'utf8');
   const requiredHeaders = [
-    ['X-Frame-Options', /^\\s*X-Frame-Options:\\s*DENY\\s*$/im],
-    ['X-Content-Type-Options', /^\\s*X-Content-Type-Options:\\s*nosniff\\s*$/im],
-    ['Referrer-Policy', /^\\s*Referrer-Policy:\\s*strict-origin-when-cross-origin\\s*$/im],
-    ['Permissions-Policy', /^\\s*Permissions-Policy:\\s*.+$/im]
+    ['X-Frame-Options', /^\s*X-Frame-Options:\s*DENY\s*$/im],
+    ['X-Content-Type-Options', /^\s*X-Content-Type-Options:\s*nosniff\s*$/im],
+    ['Referrer-Policy', /^\s*Referrer-Policy:\s*strict-origin-when-cross-origin\s*$/im],
+    ['Permissions-Policy', /^\s*Permissions-Policy:\s*.+$/im]
   ];
   for (const [name, pattern] of requiredHeaders) {
     if (!pattern.test(headers)) errors.push('_headers is missing or misconfigures ' + name + '.');
