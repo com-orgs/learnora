@@ -266,6 +266,7 @@ else {
     ['X-Frame-Options', /^\s*X-Frame-Options:\s*DENY\s*$/im],
     ['X-Content-Type-Options', /^\s*X-Content-Type-Options:\s*nosniff\s*$/im],
     ['Referrer-Policy', /^\s*Referrer-Policy:\s*strict-origin-when-cross-origin\s*$/im],
+    ['Strict-Transport-Security', /^\s*Strict-Transport-Security:\s*max-age=31536000\s*$/im],
     ['Permissions-Policy', /^\s*Permissions-Policy:\s*.+$/im],
     ['Content-Security-Policy', /^\s*Content-Security-Policy:\s*.+$/im]
   ];
