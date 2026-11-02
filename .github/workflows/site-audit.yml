@@ -54,7 +54,7 @@ jobs:
       - name: Install Playwright and Chromium
         if: github.ref != 'refs/heads/main'
         run: |
-          npm install --no-save --no-package-lock playwright
+          npm install --no-save --no-package-lock playwright @axe-core/playwright
           npx playwright install --with-deps chromium
       - name: Run mobile, desktop and quiz browser checks
         if: github.ref != 'refs/heads/main'
