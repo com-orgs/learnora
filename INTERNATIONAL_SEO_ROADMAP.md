@@ -46,22 +46,15 @@ These are qualitative long-tail opportunities from competitor and search-result 
 
 ## 4. Content quality audit — all 64 lesson pages
 
-The 64 lesson URLs returned content. Extracted lesson length averaged approximately 1,015 words (range 709–1,821); no lesson was below 700 words. Every lesson included a printable worksheet. The scan identified:
+The 64 lesson URLs returned content. Extracted lesson length averaged approximately 1,015 words (range 709–1,821); no lesson was below 700 words. Every lesson included a printable worksheet and answer-key or suggested-answer guidance. A corrected full-site scan found:
 
-- 3 lessons without a detectable quiz / knowledge-check section:
-  - math/grade-7/statistics-probability-data-interpretation.html
-  - math/grade-7/transformations-and-symmetry.html
-  - math/grade-7/fractions-decimals-and-percentages-in-problem-solving.html
-- 7 lessons without a detectable teacher/parent answer-key or suggested-answer section:
-  - english/grade-6-8/paragraph-writing-topic-sentences-supporting-details.html
-  - science/grade-8/elements-compounds-and-chemical-reactions.html
-  - english/grade-6-8/vocabulary-context-clues-prefixes-suffixes-roots.html
-  - science/grade-8/human-digestive-and-circulatory-systems.html
-  - science/grade-8/electric-circuits-current-voltage-resistance.html
-  - science/grade-8/waves-sound-and-light.html
-  - science/grade-8/earth-moon-and-space-patterns.html
+- 63 of 64 lessons have a detectable quiz / knowledge-check section.
+- One lesson still needs an interactive quiz / knowledge check:
+  - `math/grade-7/coordinate-geometry.html`
 - No lesson page exposed a named author/reviewer in the extracted metadata.
 - 61 lessons had no explicit Sources / References / Further Reading section.
+
+A first-pass scan used narrow heading patterns and incorrectly flagged some lessons using headings such as “Knowledge check” and “Suggested Answer Features”. Those false positives were removed after source-level verification.
 
 These are editorial workflow gaps, not a reason to add fabricated authors or generic filler. Add named reviewers only after real review; cite primary curriculum/science sources where factual claims or standards are discussed. Keep the corrections process visible.
 
