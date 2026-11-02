@@ -269,3 +269,8 @@
 - [x] Recorded stale audit-branch sitemap mismatch as a merge blocker until branch reconciliation.
 - [ ] Continue monitoring Google fetch/indexing over 24–72 hours; inspect only a small sample of pending/unknown URLs when useful.
 - [ ] Run a fresh preview workflow against a rebased audit branch before any future merge.
+
+
+## Preview QA trigger — curriculum expansion
+
+- QA-only branch created from the current main commit after adding UK-wide and Canada-wide curriculum guidance. Run the full preview, responsive, accessibility and quiz browser checks against this commit. Do not merge this QA-only branch.
