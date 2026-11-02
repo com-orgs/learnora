@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import AxeBuilder from '@axe-core/playwright';
 
 const baseUrl = (process.env.LEARNORA_PREVIEW_URL || 'https://audit-production-hardening-2.learnora-ab2.pages.dev').replace(/\/$/, '');
 const baseOrigin = new URL(baseUrl).origin;
@@ -80,6 +81,14 @@ try {
       }
     }
     await page.setViewportSize({ width: 390, height: 844 });
+
+    const accessibility = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    for (const violation of accessibility.violations) {
+      const examples = violation.nodes.slice(0, 3).map(node => node.target.join(' ')).join('; ');
+      failures.push(route + ': accessibility ' + violation.impact + ' [' + violation.id + ']: ' + violation.help + ' — ' + examples);
+    }
 
     const forms = page.locator('form');
     let quizForm = null;
