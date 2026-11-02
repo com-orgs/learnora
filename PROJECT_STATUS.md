@@ -126,6 +126,13 @@
 - [x] Cloudflare preview security headers, CSP, same-origin assets and custom 404 checks passed.
 - [x] All 64 quizzes, retake actions and worksheet print actions passed browser automation.
 
+## Phase 8 continuation — 2 November 2026
+- Added Cloudflare Pages technical-data processing disclosure to Privacy Policy and linked Cloudflare's privacy policy.
+- Added `scripts/audit-legal-readiness.mjs`: checks required Privacy/Terms/About/Contact disclosures, Cloudflare hosting disclosure, and rejects active AdSense/advertising/analytics script tags across all HTML pages. It explicitly permits no ads.txt while no verified publisher ID exists.
+- Wired the legal readiness guard into GitHub Actions immediately after the static site audit. Latest run for this new guard is pending/queued at time of update; do not report it green until it completes.
+- Phase 8 is not signed off yet. External owner gates remain: audience classification (child-directed / mixed / general), actual AdSense account and verified publisher ID, configured and tested Google-certified TCF CMP for applicable regions, and the exact ads.txt declaration. Never fabricate any of these. Full originality/source-value review is part of the consolidated release review.
+- No merge or deployment. 
+
 ## Session log
 
 ### 2026-11-02
