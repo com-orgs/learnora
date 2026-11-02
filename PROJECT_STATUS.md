@@ -43,7 +43,7 @@
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
 - Latest verified production/main commit: `43f948a23646d3de0e5d9594c85899039df785f4` (refresh after each new commit).
-- Latest verified comparison before this update: audit branch ahead by 299 commits, behind by 0. Re-check after this update.
+- Branch drift warning: the audit branch currently contains an older `.html`-suffixed sitemap while production `main` uses clean extensionless lesson URLs and includes the five curriculum URLs. Do not merge the audit branch until it is rebased/reconciled and its sitemap/canonicals are re-audited. Earlier ahead/behind counts are stale.
 - PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
 ## CI status (automatically refreshed by GitHub Actions)
@@ -244,3 +244,28 @@
 - The tracker-only follow-up commit is marked `[skip ci]`; it does not change website files. Tested website commit: `fc1a75dff54972e7413f458b86a4a17e42f5e413`.
 - Final compare against production main `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec`: 316 commits ahead, 0 behind, 151 files changed.
 - Phase 10 merge is authorized by the user; verify production Pages deployment and live routes after merge before declaring deployment complete.
+
+
+## Sitemap verification — 2 November 2026 (production)
+
+- Verified production URL: `https://learnora-ab2.pages.dev/sitemap.xml` returned HTTP 200 and contains exactly 80 unique `<loc>` entries, all on the verified Learnora Pages host.
+- The 80 entries cover 64 learning lessons, subject/grade hubs, trust pages, contact, and the international curriculum hub plus four country guides (USA, England, Ontario/Canada, Australia).
+- Production `robots.txt` returned HTTP 200, allows public crawling (`User-agent: *`, `Allow: /`) and references the exact production sitemap URL.
+- GSC Sitemaps report: `sitemap.xml` submitted at 2026-11-02 18:31 UTC; `isPending=true`, warnings 0, errors 0. Pending means Google has not completed the latest fetch/processing; it is not proof that all listed pages are indexed.
+- GSC Indexing Tracker: 80 URLs tracked; 1 indexed, 10 reported as “URL is unknown to Google”, 69 pending, 0 warnings. Most URLs have not yet been inspected/crawled; avoid repeatedly spending inspection quota on pending URLs.
+- GSC sitemap performance for 2026-10-03 through 2026-10-30: 80 sitemap URLs parsed, 0 URLs with recorded impressions in the report, 0 clicks. Search Console data can lag; the result is not evidence of a technical noindex issue by itself.
+- IndexNow key file was verified reachable. Submission history contains 80 distinct sitemap URLs among the latest 100 records; all 100 records returned HTTP 200. HTTP 200 confirms IndexNow acceptance/key validation, not indexing by Google or Bing. Several URLs were resubmitted; avoid unnecessary duplicate submissions.
+- Live `/curriculum/` hub returned HTTP 200 and exposes crawlable internal links to all four market guides. Prior live crawl verified the main 75-page set; the four country guides and hub were individually fetched with HTTP 200. Firecrawl credits were exhausted during the latest attempted refresh, so no new all-site crawl is claimed for this session.
+- Browser connector could not attach because the originating browser context was unavailable. GSC Wizard and GitHub API remained connected and usable.
+- Critical branch consistency warning: production `main` sitemap uses clean extensionless lesson URLs; `audit/production-hardening-2026-11-02` still has the older `.html` URL format and omits the five curriculum URLs. Keep production as source of truth and do not merge that stale branch until reconciled.
+- Current SEO conclusion: sitemap delivery and crawl access are technically healthy; organic visibility/indexing is still at an early discovery stage. No country-level ranking or earnings claims should be made while GSC has no meaningful search-performance rows.
+
+## 2026-11-02 — sitemap verification continuation
+- [x] Reconnected and verified GSC Wizard property access for the production URL-prefix property.
+- [x] Rechecked production sitemap HTTP 200, 80 URL entries, and GSC submission state (0 errors / 0 warnings; processing pending).
+- [x] Rechecked production robots.txt HTTP 200 and sitemap directive.
+- [x] Reconciled tracker and sitemap performance: 80 tracked; 1 indexed, 10 URL-unknown, 69 pending; zero clicks/impressions in the reported settled window.
+- [x] Reconciled IndexNow history: 80 distinct URLs in recent submission records; all returned HTTP 200 and key file is verified.
+- [x] Recorded stale audit-branch sitemap mismatch as a merge blocker until branch reconciliation.
+- [ ] Continue monitoring Google fetch/indexing over 24–72 hours; inspect only a small sample of pending/unknown URLs when useful.
+- [ ] Run a fresh preview workflow against a rebased audit branch before any future merge.
