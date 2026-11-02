@@ -96,6 +96,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git fetch origin "${BRANCH_NAME}"
+          git reset --hard "origin/${BRANCH_NAME}"
           python3 - <<'PY'
           import os
           from pathlib import Path
