@@ -152,8 +152,14 @@ const canonicals = [];
 for (const file of indexable) {
   const rel = relative(file);
   const source = fs.readFileSync(file, 'utf8');
-  const title = source.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
+  const titleTags = getTags(source, 'title');
+  const title = titleTags[0]?.replace(/^<title\b[^>]*>/i, '').replace(/<\/title>$/i, '').trim();
+  if (titleTags.length !== 1) errors.push(rel + ': expected exactly one title element, found ' + titleTags.length + '.');
   const metaTags = getTags(source, 'meta');
+  const descriptionTags = metaTags.filter(tag => (attr(tag, 'name') || '').toLowerCase() === 'description');
+  if (descriptionTags.length > 1) errors.push(rel + ': duplicate meta description tags.');
+  const canonicalTags = getTags(source, 'link').filter(tag => (attr(tag, 'rel') || '').toLowerCase().split(/\\s+/).includes('canonical'));
+  if (canonicalTags.length > 1) errors.push(rel + ': duplicate canonical link tags.');
   for (const link of getTags(source, 'link')) {
     const relValues = (attr(link, 'rel') || '').toLowerCase().split(/\s+/);
     if (!relValues.includes('stylesheet')) continue;
@@ -238,6 +244,9 @@ for (const file of indexable) {
   const viewportTags = metaTags.filter(tag => (attr(tag, 'name') || '').toLowerCase() === 'viewport');
   if (viewportTags.length === 0) errors.push(rel + ': missing viewport meta tag.');
   if (viewportTags.length > 1) errors.push(rel + ': duplicate viewport meta tags.');
+  if (viewportTags.length === 1 && !/width\\s*=\\s*device-width/i.test(attr(viewportTags[0], 'content') || '')) {
+    errors.push(rel + ': viewport meta tag must include width=device-width.');
+  }
 
   const footer = source.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] || source;
   if (rel !== 'contact.html' && !/href=["']\/contact\.html["']/i.test(footer)) warnings.push(rel + ': Contact link not found in footer.');
