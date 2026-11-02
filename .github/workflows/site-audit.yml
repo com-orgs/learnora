@@ -28,6 +28,10 @@ jobs:
       - name: Run legal and pre-monetisation readiness audit
         run: node scripts/audit-legal-readiness.mjs
 
+      - name: Verify production sitemap and robots.txt
+        if: github.ref == 'refs/heads/main'
+        run: python3 scripts/verify-production-sitemap.py
+
       - name: Verify Cloudflare Pages preview headers and assets
         if: github.ref != 'refs/heads/main'
         shell: bash
