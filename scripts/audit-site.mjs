@@ -29,13 +29,14 @@ function getTags(source, name) {
 }
 
 function attr(tag, name) {
-  for (const match of tag.matchAll(/([^\\s=/>]+)\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))/g)) {
+  for (const match of tag.matchAll(/([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)) {
     if (match[1].toLowerCase() === name.toLowerCase()) {
       return match[2] ?? match[3] ?? match[4];
     }
   }
   return null;
 }
+
 
 const attributeParserSamples = [
   ['<meta name = "description" content = "sample">', 'name', 'description'],
