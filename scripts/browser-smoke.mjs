@@ -142,7 +142,8 @@ try {
       }
     }
 
-    const printButton = page.locator('[data-print-worksheet]').first();
+    let printButton = page.getByRole('button', { name: /print/i }).first();
+    if (!(await printButton.count())) printButton = page.locator('[data-print-worksheet]').first();
     if (await printButton.count()) {
       await page.evaluate(() => {
         window.__learnoraPrintCalled = false;
