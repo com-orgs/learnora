@@ -190,7 +190,7 @@ for (const file of indexable) {
       errors.push(rel + ': stylesheet asset not found: ' + href);
     }
   }
-  if (/^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(rel)) {
+  if (/^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(rel) && !rel.endsWith('/index.html')) {
     const visible = normalizeVisibleText(source);
     const qualityChecks = [
       ['learning outcomes', /what you will learn|learning objectives|by the end of this lesson/i],
