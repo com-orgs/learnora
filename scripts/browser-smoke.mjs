@@ -17,7 +17,8 @@ const runtimeErrors = [];
 let activePath = '/';
 let pagesChecked = 0;
 let quizzesSubmitted = 0;
-let printActionsChecked = 0;\nlet performanceBudgetsChecked = 0;
+let printActionsChecked = 0;
+let performanceBudgetsChecked = 0;
 let retakeActionsChecked = 0;
 
 page.on('pageerror', error => runtimeErrors.push(activePath + ': ' + error.message));
