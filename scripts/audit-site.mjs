@@ -364,9 +364,10 @@ for (const file of indexable) {
     }
   }
 
-  for (const match of source.matchAll(/<a\b[^>]*\bhref\s*=\s*["']([^"']+)["'][^>]*>/gi)) {
-    const fullTag = match[0];
-    const href = match[1].trim();
+  for (const fullTag of getTags(source, 'a')) {
+    const rawHref = attr(fullTag, 'href');
+    if (rawHref === null) continue;
+    const href = rawHref.trim();
     if (attr(fullTag, 'target') === '_blank') {
       const relValue = (attr(fullTag, 'rel') || '').toLowerCase().split(/\s+/);
       if (!relValue.includes('noopener') || !relValue.includes('noreferrer')) {
