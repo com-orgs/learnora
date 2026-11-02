@@ -46,35 +46,40 @@ try {
       continue;
     }
 
-    const mobile = await page.evaluate(() => {
-      const viewport = document.documentElement.clientWidth;
-      const offenders = [...document.querySelectorAll('body *')].map(element => {
-        const rect = element.getBoundingClientRect();
-        const style = getComputedStyle(element);
+    const responsiveWidths = [320, 390, 768];
+    for (const width of responsiveWidths) {
+      await page.setViewportSize({ width, height: 844 });
+      const layout = await page.evaluate(() => {
+        const viewport = document.documentElement.clientWidth;
+        const offenders = [...document.querySelectorAll('body *')].map(element => {
+          const rect = element.getBoundingClientRect();
+          const style = getComputedStyle(element);
+          return {
+            tag: element.tagName.toLowerCase(),
+            id: element.id,
+            className: typeof element.className === 'string' ? element.className : '',
+            text: (element.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 90),
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            width: Math.round(rect.width),
+            scrollWidth: element.scrollWidth,
+            clientWidth: element.clientWidth,
+            minWidth: style.minWidth,
+            whiteSpace: style.whiteSpace
+          };
+        }).filter(item => item.right > viewport + 1 || item.left < -1 || item.scrollWidth > item.clientWidth + 1).slice(0, 12);
         return {
-          tag: element.tagName.toLowerCase(),
-          id: element.id,
-          className: typeof element.className === 'string' ? element.className : '',
-          text: (element.textContent || '').trim().replace(/\\s+/g, ' ').slice(0, 90),
-          left: Math.round(rect.left),
-          right: Math.round(rect.right),
-          width: Math.round(rect.width),
-          scrollWidth: element.scrollWidth,
-          clientWidth: element.clientWidth,
-          minWidth: style.minWidth,
-          whiteSpace: style.whiteSpace
+          viewport,
+          document: document.documentElement.scrollWidth,
+          body: document.body.scrollWidth,
+          offenders
         };
-      }).filter(item => item.right > viewport + 1 || item.left < -1 || item.scrollWidth > item.clientWidth + 1).slice(0, 12);
-      return {
-        viewport,
-        document: document.documentElement.scrollWidth,
-        body: document.body.scrollWidth,
-        offenders
-      };
-    });
-    if (mobile.document > mobile.viewport + 1 || mobile.body > mobile.viewport + 1) {
-      failures.push(route + ': horizontal overflow at 390px: ' + JSON.stringify(mobile));
+      });
+      if (layout.document > layout.viewport + 1 || layout.body > layout.viewport + 1) {
+        failures.push(route + ': horizontal overflow at ' + width + 'px: ' + JSON.stringify(layout));
+      }
     }
+    await page.setViewportSize({ width: 390, height: 844 });
 
     const forms = page.locator('form');
     let quizForm = null;
@@ -93,6 +98,12 @@ try {
       if (groupCount !== 5) {
         failures.push(route + ': expected 5 quiz fieldsets, found ' + groupCount + '.');
       } else {
+        const keyboardRadio = fieldsets.first().locator('input[type="radio"]').first();
+        await keyboardRadio.focus();
+        await page.keyboard.press('Space');
+        if (!(await keyboardRadio.isChecked())) {
+          failures.push(route + ': keyboard Space did not select the focused quiz option.');
+        }
         for (let i = 0; i < groupCount; i++) {
           const radio = fieldsets.nth(i).locator('input[type="radio"]').first();
           if (!(await radio.count())) {
@@ -152,7 +163,7 @@ try {
 }
 
 if (runtimeErrors.length) failures.push(...runtimeErrors);
-console.log('Pages checked at mobile and desktop widths: ' + pagesChecked);
+console.log('Pages checked at 320px, 390px, 768px and desktop widths: ' + pagesChecked);
 console.log('Interactive quizzes submitted: ' + quizzesSubmitted);
 console.log('Worksheet print actions checked: ' + printActionsChecked);
 if (failures.length) {
@@ -160,5 +171,5 @@ if (failures.length) {
   for (const failure of failures) console.error('FAIL: ' + failure);
   process.exitCode = 1;
 } else {
-  console.log('PASS: all sitemap pages load, no horizontal overflow, quiz feedback works, print handlers work and no browser/CSP errors were detected.');
+  console.log('PASS: all sitemap pages load, no horizontal overflow, keyboard quiz selection works, quiz feedback works, print handlers work and no browser/CSP errors were detected.');
 }
