@@ -326,6 +326,9 @@ footer a { text-decoration:none; }
   .hero,.section { box-shadow:none; }
   .worksheet { border:0; }
 }
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
 </head>
 
@@ -550,45 +553,45 @@ footer a { text-decoration:none; }
 
   <form id="quiz-form">
 
-    <div class="quiz-question" data-question="q1">
-      <strong>1. What is the numerator of 4/9?</strong>
+    <fieldset class="quiz-question" data-question="q1">
+      <legend>1. What is the numerator of 4/9?</legend>
       <label><input type="radio" name="q1" value="a"> A. 9</label>
       <label><input type="radio" name="q1" value="b"> B. 4</label>
       <label><input type="radio" name="q1" value="c"> C. 13</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q2">
-      <strong>2. Which is a proper fraction?</strong>
+    <fieldset class="quiz-question" data-question="q2">
+      <legend>2. Which is a proper fraction?</legend>
       <label><input type="radio" name="q2" value="a"> A. 7/3</label>
       <label><input type="radio" name="q2" value="b"> B. 5/5</label>
       <label><input type="radio" name="q2" value="c"> C. 2/5</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q3">
-      <strong>3. What does the denominator tell us?</strong>
+    <fieldset class="quiz-question" data-question="q3">
+      <legend>3. What does the denominator tell us?</legend>
       <label><input type="radio" name="q3" value="a"> A. Total equal parts in the whole</label>
       <label><input type="radio" name="q3" value="b"> B. Number of selected parts only</label>
       <label><input type="radio" name="q3" value="c"> C. The whole number only</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q4">
-      <strong>4. Which is an improper fraction?</strong>
+    <fieldset class="quiz-question" data-question="q4">
+      <legend>4. Which is an improper fraction?</legend>
       <label><input type="radio" name="q4" value="a"> A. 1/4</label>
       <label><input type="radio" name="q4" value="b"> B. 3/8</label>
       <label><input type="radio" name="q4" value="c"> C. 7/4</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q5">
-      <strong>5. A whole is divided into 10 equal pieces. You take 6. What fraction do you have?</strong>
+    <fieldset class="quiz-question" data-question="q5">
+      <legend>5. A whole is divided into 10 equal pieces. You take 6. What fraction do you have?</legend>
       <label><input type="radio" name="q5" value="a"> A. 10/6</label>
       <label><input type="radio" name="q5" value="b"> B. 6/10</label>
       <label><input type="radio" name="q5" value="c"> C. 6/6</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
     <div class="no-print" style="margin-top:20px">
       <button type="submit" id="check-answers">Check Answers</button>

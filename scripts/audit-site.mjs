@@ -126,6 +126,28 @@ for (const file of indexable) {
     for (let i = 1; i <= 5; i++) if (!unique.has('q' + i)) errors.push(rel + ': quiz is missing question q' + i + '.');
   }
 
+  const quizForms = [...source.matchAll(/<form\b[\s\S]*?<\/form>/gi)]
+    .map(match => match[0])
+    .filter(form => /\bname=["']q[1-5]["']/.test(form));
+  for (const form of quizForms) {
+    const ungroupedQuestions = form.match(/<div\b[^>]*\bclass=["'][^"']*\b(?:quiz-question|question)\b[^"']*["']/gi) || [];
+    if (ungroupedQuestions.length) errors.push(rel + ': quiz questions must use fieldset groups, not div wrappers.');
+    const fieldsets = [...form.matchAll(/<fieldset\b[^>]*>([\s\S]*?)<\/fieldset>/gi)];
+    for (let question = 1; question <= 5; question++) {
+      const group = fieldsets.find(match => [...match[1].matchAll(/<input\b[^>]*>/gi)].some(input => {
+        return attr(input[0], 'name') === 'q' + question && (attr(input[0], 'type') || '').toLowerCase() === 'radio';
+      }));
+      if (!group) {
+        errors.push(rel + ': quiz question q' + question + ' is not inside a fieldset.');
+        continue;
+      }
+      if (!/<legend\b/i.test(group[1])) errors.push(rel + ': quiz question q' + question + ' is missing its legend.');
+      const radioCount = [...group[1].matchAll(/<input\b[^>]*type=["']radio["'][^>]*>/gi)].length;
+      const labelCount = (group[1].match(/<label\b/gi) || []).length;
+      if (labelCount < radioCount) errors.push(rel + ': quiz question q' + question + ' has radio options without labels.');
+    }
+  }
+
   for (const match of source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
     const type = (attr('<script ' + match[1] + '>', 'type') || '').toLowerCase();
     if (type && !/(javascript|ecmascript|module)/i.test(type)) continue;

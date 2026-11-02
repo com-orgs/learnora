@@ -30,13 +30,13 @@ Then open `http://localhost:8000` in a browser. Stop the server with `Ctrl+C`.
 
 ## Run the quality audit
 
-Node.js 22 or later is used by the CI workflow.
+Node.js 24 or later is used by the CI workflow.
 
 ```bash
 node scripts/audit-site.mjs
 ```
 
-The audit checks page metadata and canonical URLs, Open Graph consistency, HTML language attributes, image alt attributes, suspicious unescaped less-than signs in page content, heading-level jumps, internal links and in-page anchors, quiz question structure, duplicate IDs, inline JavaScript syntax, sitemap coverage, robots.txt and the custom 404 page.
+The audit checks page metadata and canonical URLs, Open Graph consistency, HTML language attributes, image alt attributes, suspicious unescaped less-than signs in page content, heading-level jumps, internal links and in-page anchors, quiz question structure and accessible fieldset/legend groups, duplicate IDs, inline JavaScript syntax, sitemap coverage, robots.txt and the custom 404 page.
 
 A passing static audit does **not** replace academic review, assistive-technology testing, browser/device testing, performance testing, security review or a live HTTP status check.
 
