@@ -9,11 +9,20 @@ Production branch: `main`
 
 - The audit-branch Privacy Policy, Terms and About page have been updated.
 - Advertising and analytics are not active on the current site code.
-- No AdSense ad tag or analytics tag was found in the inspected homepage and policy files; the existing site audit/preview checks also passed without third-party page requests.
+- The new CI legal-readiness guard scans every HTML page and fails if it finds active AdSense/advertising/analytics script tags. The existing browser/preview suite also checks for unexpected third-party requests.
+- The Privacy Policy now identifies Cloudflare Pages and explains the categories of technical data Cloudflare may process, with a link to Cloudflare's privacy policy.
 - No `ads.txt` file exists.
 - No real AdSense publisher ID has been supplied or verified for this project.
 - No CMP has been installed. This is intentional while no advertising/analytics technologies are active; a homemade banner must not be represented as a Google-certified CMP.
 - Production `main` is unchanged. Do not merge or deploy without the user's explicit approval.
+
+## Work completed on the audit branch
+
+- [x] Privacy Policy, Terms and About editorial-transparency pages updated.
+- [x] Privacy Policy identifies Cloudflare Pages/network processing and links to Cloudflare's privacy policy.
+- [x] Added `scripts/audit-legal-readiness.mjs` to verify required disclosures, contact details, Cloudflare hosting disclosure, and the absence of active ad/analytics scripts across all HTML pages.
+- [x] Added the legal-readiness guard to `.github/workflows/site-audit.yml`; it runs on every audit-branch push and on `main`.
+- [x] Kept ad/analytics code disabled; did not fabricate a publisher ID, CMP, or ads.txt record.
 
 ## CMP plan
 
@@ -69,16 +78,28 @@ Official references:
 ## Phase 8 exit criteria
 
 - [x] Privacy Policy, Terms and About / editorial transparency updated on audit branch.
-- [x] Confirm no active AdSense or analytics tags in inspected site code; automated preview checks show no third-party requests.
+- [x] Added an automated all-HTML-page guard against active AdSense/advertising/analytics script tags; CI will verify this on the audit branch.
+- [x] Documented Cloudflare technical data processing in the Privacy Policy.
 - [x] Confirm no placeholder ads.txt or fabricated publisher ID has been added.
 - [x] Record CMP, COPPA and publisher-ID prerequisites and official references.
 - [ ] Decide/document child-directed vs mixed/general audience classification.
 - [ ] Create/verify the actual AdSense account and publisher ID, if the user chooses to apply.
 - [ ] Configure and test the selected Google-certified TCF CMP for applicable regions before personalised ads.
 - [ ] Add the exact verified ads.txt seller declaration after the publisher ID is available.
-- [ ] Complete all-page originality, factual accuracy, attribution and low-value-content review.
+- [ ] Complete all-page originality, factual accuracy, attribution and low-value-content review (coordinate with Phase 9's consolidated release audit; automated quality checks do not prove originality).
 - [ ] Run the full CI and live preview checks after any implementation changes.
 - [ ] User explicitly confirms the advertising/CMP configuration before any ad code is enabled.
+
+## User / account dependencies that prevent a truthful Phase 8 sign-off
+
+The following cannot be completed by repository code alone and must not be guessed:
+
+1. **Audience classification:** the owner must confirm whether Learnora intentionally targets children under 13, is a mixed-audience service, or is genuinely general-audience. The Grade 6–8 curriculum is a relevant child-directedness factor. A legal assessment may be needed; a simple age checkbox or a generic cookie banner does not settle COPPA.
+2. **AdSense account:** the owner must create/use the actual AdSense account and provide the publisher ID shown in Account → Settings → Account information. Do not send passwords or account access codes.
+3. **CMP configuration:** after an AdSense account exists, configure the currently certified Google Privacy & Messaging / another Google-certified TCF CMP and test applicable EEA/UK/Swiss consent behaviour before serving personalised ads. Google updates its certified CMP list, so verify it at setup time.
+4. **ads.txt:** add only the exact seller line generated for the verified publisher account, then verify `/ads.txt` on the live domain after the approved deployment.
+
+Until those owner/account decisions and verifications are completed, Phase 8 remains **blocked / not fully signed off**. The site is in a safe pre-monetisation state, not an AdSense-ready-for-ad-serving state.
 
 ## Safety / release hold
 
