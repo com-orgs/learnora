@@ -190,6 +190,21 @@ for (const file of indexable) {
       errors.push(rel + ': stylesheet asset not found: ' + href);
     }
   }
+  if (/^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(rel)) {
+    const visible = normalizeVisibleText(source);
+    const qualityChecks = [
+      ['learning outcomes', /what you will learn|learning objectives|by the end of this lesson/i],
+      ['explanation/examples', /worked example|worked examples|for example|examples/i],
+      ['independent practice', /independent practice|practice exercises|practice questions|try it yourself|practice activity/i],
+      ['printable worksheet', /printable worksheet|worksheet and answer key|free printable worksheet/i],
+      ['lesson summary', /lesson summary|key takeaways|summary/i]
+    ];
+    for (const [label, pattern] of qualityChecks) {
+      if (!pattern.test(visible)) warnings.push(rel + ': educational quality review — missing or unclear ' + label + ' section.');
+    }
+    if ((source.match(/<h2\\b/gi) || []).length < 5) warnings.push(rel + ': educational quality review — fewer than five major lesson sections.');
+    if ((source.match(/<fieldset\\b/gi) || []).length !== 5) errors.push(rel + ': expected exactly five interactive quiz questions.');
+  }
   const descriptionTag = metaTags.find(t => (attr(t, 'name') || '').toLowerCase() === 'description');
   const description = descriptionTag ? attr(descriptionTag, 'content') : null;
   const canonical = canonicalOf(source);
@@ -528,6 +543,7 @@ else {
 console.log('HTML attribute parser self-tests checked: ' + attributeParserSamplesChecked);
 console.log('HTML pages checked: ' + indexable.length);
 console.log('Curriculum lesson files checked: ' + lessonFiles.length);
+console.log('Educational quality rubric checks: learning outcomes, explanations/examples, practice, worksheets, summaries and five-question quizzes.');
 console.log('Sitemap lesson URLs checked: ' + sitemapLessonPaths.size);
 console.log('Subject/grade index files checked: ' + lessonIndexFiles.length);
 console.log('Lesson quiz script links checked: ' + lessonFiles.length);
