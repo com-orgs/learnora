@@ -23,3 +23,29 @@ jobs:
           package-manager-cache: false
       - name: Run static website audit
         run: node scripts/audit-site.mjs
+      - name: Verify Cloudflare Pages preview headers and assets
+        if: github.ref != 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_url="https://audit-production-hardening-2.learnora-ab2.pages.dev"
+          status="000"
+          for attempt in {1..30}; do
+            status=$(curl --silent --show-error --connect-timeout 10 --max-time 20 --output /tmp/learnora-home.html --dump-header /tmp/learnora-headers --write-out '%{http_code}' "$base_url/" || true)
+            if [ "$status" = "200" ]; then
+              break
+            fi
+            echo "Preview not ready yet (HTTP $status); retry $attempt/30"
+            sleep 10
+          done
+          test "$status" = "200"
+          grep -Eiq "^x-frame-options: *DENY" /tmp/learnora-headers
+          grep -Eiq "^x-content-type-options: *nosniff" /tmp/learnora-headers
+          grep -Eiq "^referrer-policy: *strict-origin-when-cross-origin" /tmp/learnora-headers
+          grep -Eiq "^permissions-policy:" /tmp/learnora-headers
+          grep -Eiq "^content-security-policy:.*script-src 'self'.*script-src-attr 'none'.*frame-ancestors 'none'.*object-src 'none'" /tmp/learnora-headers
+          grep -Fq '<script src="/scripts/pages/index.js" defer></script>' /tmp/learnora-home.html
+          curl --fail --silent --show-error "$base_url/scripts/pages/index.js" --output /dev/null
+          curl --fail --silent --show-error "$base_url/math/grade-6/understanding-fractions.html" --output /dev/null
+          curl --fail --silent --show-error "$base_url/scripts/pages/math-grade-6-understanding-fractions.js" --output /dev/null
+          echo "PASS: preview HTML, security headers, CSP and external lesson scripts."
