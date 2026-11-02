@@ -42,6 +42,7 @@ jobs:
           grep -Eiq "^x-frame-options: *DENY" /tmp/learnora-headers
           grep -Eiq "^x-content-type-options: *nosniff" /tmp/learnora-headers
           grep -Eiq "^referrer-policy: *strict-origin-when-cross-origin" /tmp/learnora-headers
+          grep -Eiq "^strict-transport-security: *max-age=31536000" /tmp/learnora-headers
           grep -Eiq "^permissions-policy:" /tmp/learnora-headers
           grep -Eiq "^content-security-policy:.*script-src 'self'.*script-src-attr 'none'.*frame-ancestors 'none'.*object-src 'none'" /tmp/learnora-headers
           grep -Fq '<script src="/scripts/pages/index.js" defer></script>' /tmp/learnora-home.html
