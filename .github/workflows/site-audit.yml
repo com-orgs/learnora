@@ -3,9 +3,11 @@ name: Learnora Site Audit
 on:
   push:
     branches: [main, 'audit/**']
-  pull_request:
-    branches: [main]
   workflow_dispatch:
+
+concurrency:
+  group: learnora-site-audit-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
