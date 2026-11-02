@@ -37,6 +37,12 @@ try {
   const sitemapResponse = await page.request.get(baseUrl + '/sitemap.xml');
   if (!sitemapResponse.ok()) throw new Error('Sitemap request failed with HTTP ' + sitemapResponse.status());
   const sitemap = await sitemapResponse.text();
+  const robotsResponse = await page.request.get(baseUrl + '/robots.txt');
+  if (!robotsResponse.ok()) failures.push('robots.txt did not return HTTP 200.');
+  else if (!(await robotsResponse.text()).includes(baseUrl + '/sitemap.xml')) failures.push('robots.txt does not reference the live sitemap URL.');
+  const missingResponse = await page.request.get(baseUrl + '/__learnora_audit_missing_route__');
+  if (missingResponse.status() !== 404) failures.push('Unknown routes should return HTTP 404; received ' + missingResponse.status() + '.');
+  else if (!/Page Not Found/i.test(await missingResponse.text())) failures.push('Custom 404 response did not contain the expected not-found page.');
   const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => new URL(match[1]).pathname);
   if (routes.length !== 62) throw new Error('Expected 62 sitemap URLs; found ' + routes.length);
 
