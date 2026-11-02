@@ -20,7 +20,11 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}table{font-size:14px}th,td{padding:8px}.sum{font-size:18px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{max-width:100%;margin:0 auto}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -39,16 +43,16 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <section class="section"><h2>9. Practice Exercises</h2><p>Try these before revealing the answers.</p><ol><li>3.7 × 10</li><li>0.56 × 100</li><li>2.3 × 4</li><li>1.5 × 0.4</li><li>9.6 ÷ 10</li><li>7.2 ÷ 3</li><li>Explain why 8.4 ÷ 0 is undefined.</li><li>A 2.5-metre board is cut into 5 equal pieces. How long is each piece?</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>37.</li><li>56.</li><li>9.2.</li><li>0.6.</li><li>0.96.</li><li>2.4.</li><li>Division by zero is undefined; there is no number that can be multiplied by zero to give 8.4.</li><li>2.5 ÷ 5 = 0.5 metre.</li></ol></details></section>
 <section class="section" id="quiz"><h2>10. Test Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. What is 0.45 × 10?</strong><label><input type="radio" name="q1" value="a"> A. 0.045</label><label><input type="radio" name="q1" value="b"> B. 4.5</label><label><input type="radio" name="q1" value="c"> C. 45</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. What is 1.2 × 0.3?</strong><label><input type="radio" name="q2" value="a"> A. 3.6</label><label><input type="radio" name="q2" value="b"> B. 0.36</label><label><input type="radio" name="q2" value="c"> C. 0.036</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. What is 8.4 ÷ 4?</strong><label><input type="radio" name="q3" value="a"> A. 2.1</label><label><input type="radio" name="q3" value="b"> B. 21</label><label><input type="radio" name="q3" value="c"> C. 0.21</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. What is 0.56 × 100?</strong><label><input type="radio" name="q4" value="a"> A. 5.6</label><label><input type="radio" name="q4" value="b"> B. 560</label><label><input type="radio" name="q4" value="c"> C. 56</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. A 7.5 km walk is shared equally over 3 days. How far each day?</strong><label><input type="radio" name="q5" value="a"> A. 2.5 km</label><label><input type="radio" name="q5" value="b"> B. 3.5 km</label><label><input type="radio" name="q5" value="c"> C. 4.5 km</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. What is 0.45 × 10?</legend><label><input type="radio" name="q1" value="a"> A. 0.045</label><label><input type="radio" name="q1" value="b"> B. 4.5</label><label><input type="radio" name="q1" value="c"> C. 45</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. What is 1.2 × 0.3?</legend><label><input type="radio" name="q2" value="a"> A. 3.6</label><label><input type="radio" name="q2" value="b"> B. 0.36</label><label><input type="radio" name="q2" value="c"> C. 0.036</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. What is 8.4 ÷ 4?</legend><label><input type="radio" name="q3" value="a"> A. 2.1</label><label><input type="radio" name="q3" value="b"> B. 21</label><label><input type="radio" name="q3" value="c"> C. 0.21</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. What is 0.56 × 100?</legend><label><input type="radio" name="q4" value="a"> A. 5.6</label><label><input type="radio" name="q4" value="b"> B. 560</label><label><input type="radio" name="q4" value="c"> C. 56</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. A 7.5 km walk is shared equally over 3 days. How far each day?</legend><label><input type="radio" name="q5" value="a"> A. 2.5 km</label><label><input type="radio" name="q5" value="b"> B. 3.5 km</label><label><input type="radio" name="q5" value="c"> C. 4.5 km</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>11. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Multiplying and Dividing Decimals Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working and check answers with estimation.</p><ol><li>4.2 × 10<span class="write-line"></span></li><li>0.38 × 100<span class="write-line"></span></li><li>3.6 × 5<span class="write-line"></span></li><li>1.4 × 0.2<span class="write-line"></span></li><li>5.7 ÷ 10<span class="write-line"></span></li><li>9.6 ÷ 4<span class="write-line"></span></li><li>12.5 litres of juice are shared equally into 5 containers. How much goes in each container?<span class="write-line"></span><span class="write-line"></span></li><li>A notebook costs $1.35. Find the cost of 6 notebooks.<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>42.</li><li>38.</li><li>18.</li><li>0.28.</li><li>0.57.</li><li>2.4.</li><li>12.5 ÷ 5 = 2.5 litres.</li><li>$1.35 × 6 = $8.10.</li></ol></details></section>
 <section class="section"><h2>12. Lesson Summary</h2><ul><li>Multiplying by 10, 100 or 1,000 makes a number larger by shifting digits to higher place values.</li><li>When multiplying decimals, count the decimal places in both factors.</li><li>When dividing decimals by whole numbers, place the decimal point correctly in the quotient.</li><li>Use zeros as placeholders when needed.</li><li>Estimate to check that the answer is reasonable.</li></ul><div class="example"><strong>Next learning goal:</strong> Use decimals and percentages together to solve practical money and measurement problems.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -58,37 +62,5 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <li><a href="/math/grade-6/understanding-percentages.html">Understanding Percentages</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 4.5",explanation:"Multiplying 0.45 by 10 makes it ten times larger: 4.5."},
-q2:{correct:"b",correctText:"B. 0.36",explanation:"12 × 3 = 36 and there are two decimal places in total, so the product is 0.36."},
-q3:{correct:"a",correctText:"A. 2.1",explanation:"8.4 divided by 4 equals 2.1."},
-q4:{correct:"c",correctText:"C. 56",explanation:"Multiplying by 100 shifts digits two places to higher place values: 0.56 becomes 56."},
-q5:{correct:"a",correctText:"A. 2.5 km",explanation:"7.5 divided equally by 3 is 2.5 kilometres."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-multiplying-dividing-decimals.js" defer></script>
 </body></html>

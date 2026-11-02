@@ -20,7 +20,11 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}table{font-size:14px}th,td{padding:8px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{max-width:100%;margin:0 auto}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -38,16 +42,16 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <section class="section"><h2>8. Practice Exercises</h2><p>Try these before revealing the answers.</p><ol><li>List all positive factors of 10.</li><li>Write the first five positive multiples of 6.</li><li>Is 17 prime or composite?</li><li>Find the HCF of 8 and 12.</li><li>Find the LCM of 3 and 5.</li><li>Find the HCF of 15 and 25.</li><li>Find the LCM of 4 and 10.</li><li>Two lights flash every 5 seconds and every 8 seconds. If they flash together now, after how many seconds will they next flash together?</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>1, 2, 5 and 10.</li><li>6, 12, 18, 24 and 30.</li><li>Prime; its only positive factors are 1 and 17.</li><li>Common factors are 1, 2 and 4, so HCF = 4.</li><li>First common multiple is 15, so LCM = 15.</li><li>Common factors include 1 and 5, so HCF = 5.</li><li>Multiples of 4: 4, 8, 12, 16, 20; multiples of 10: 10, 20. LCM = 20.</li><li>LCM of 5 and 8 is 40, so they next flash together after 40 seconds.</li></ol></details></section>
 <section class="section" id="quiz"><h2>9. Test Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. Which number is a factor of 18?</strong><label><input type="radio" name="q1" value="a"> A. 5</label><label><input type="radio" name="q1" value="b"> B. 6</label><label><input type="radio" name="q1" value="c"> C. 7</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. Which statement about 1 is correct?</strong><label><input type="radio" name="q2" value="a"> A. It is prime</label><label><input type="radio" name="q2" value="b"> B. It is composite</label><label><input type="radio" name="q2" value="c"> C. It is neither prime nor composite</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. What is the HCF of 12 and 18?</strong><label><input type="radio" name="q3" value="a"> A. 3</label><label><input type="radio" name="q3" value="b"> B. 6</label><label><input type="radio" name="q3" value="c"> C. 12</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. What is the LCM of 4 and 6?</strong><label><input type="radio" name="q4" value="a"> A. 8</label><label><input type="radio" name="q4" value="b"> B. 10</label><label><input type="radio" name="q4" value="c"> C. 12</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. Which is the only even prime number?</strong><label><input type="radio" name="q5" value="a"> A. 2</label><label><input type="radio" name="q5" value="b"> B. 4</label><label><input type="radio" name="q5" value="c"> C. 6</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. Which number is a factor of 18?</legend><label><input type="radio" name="q1" value="a"> A. 5</label><label><input type="radio" name="q1" value="b"> B. 6</label><label><input type="radio" name="q1" value="c"> C. 7</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. Which statement about 1 is correct?</legend><label><input type="radio" name="q2" value="a"> A. It is prime</label><label><input type="radio" name="q2" value="b"> B. It is composite</label><label><input type="radio" name="q2" value="c"> C. It is neither prime nor composite</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. What is the HCF of 12 and 18?</legend><label><input type="radio" name="q3" value="a"> A. 3</label><label><input type="radio" name="q3" value="b"> B. 6</label><label><input type="radio" name="q3" value="c"> C. 12</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. What is the LCM of 4 and 6?</legend><label><input type="radio" name="q4" value="a"> A. 8</label><label><input type="radio" name="q4" value="b"> B. 10</label><label><input type="radio" name="q4" value="c"> C. 12</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. Which is the only even prime number?</legend><label><input type="radio" name="q5" value="a"> A. 2</label><label><input type="radio" name="q5" value="b"> B. 4</label><label><input type="radio" name="q5" value="c"> C. 6</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Factors, Multiples, HCF and LCM Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your lists or working where needed.</p><ol><li>List the positive factors of 16.<span class="write-line"></span></li><li>Write the first five positive multiples of 7.<span class="write-line"></span></li><li>Is 19 prime or composite? Explain briefly.<span class="write-line"></span></li><li>Find the HCF of 10 and 15.<span class="write-line"></span></li><li>Find the LCM of 5 and 8.<span class="write-line"></span></li><li>Find the HCF of 18 and 24.<span class="write-line"></span></li><li>Two alarms ring every 6 minutes and 9 minutes. If they ring together now, when will they next ring together?<span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>1, 2, 4, 8 and 16.</li><li>7, 14, 21, 28 and 35.</li><li>Prime; its only positive factors are 1 and 19.</li><li>HCF = 5.</li><li>LCM = 40.</li><li>HCF = 6.</li><li>LCM of 6 and 9 is 18, so after 18 minutes.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>Factors divide a number exactly.</li><li>Multiples are made by multiplying a number by whole numbers.</li><li>Prime numbers have exactly two positive factors; 1 is neither prime nor composite.</li><li>HCF is the greatest common factor.</li><li>LCM is the smallest positive common multiple.</li></ul><div class="example"><strong>Next learning goal:</strong> Use prime factorisation to find HCF and LCM more efficiently.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -57,37 +61,5 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <li><a href="/math/grade-6/rates-and-proportions.html">Rates and Proportions</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 6",explanation:"18 ÷ 6 = 3 with no remainder, so 6 is a factor of 18."},
-q2:{correct:"c",correctText:"C. It is neither prime nor composite",explanation:"The number 1 has only one positive factor, but a prime number has exactly two."},
-q3:{correct:"b",correctText:"B. 6",explanation:"The common factors are 1, 2, 3 and 6. The greatest is 6."},
-q4:{correct:"c",correctText:"C. 12",explanation:"12 is the smallest positive number that is a multiple of both 4 and 6."},
-q5:{correct:"a",correctText:"A. 2",explanation:"2 has exactly two positive factors, 1 and 2. Every other even number greater than 2 has more than two."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-factors-multiples-hcf-lcm.js" defer></script>
 </body></html>

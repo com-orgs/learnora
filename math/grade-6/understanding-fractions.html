@@ -326,7 +326,11 @@ footer a { text-decoration:none; }
   .hero,.section { box-shadow:none; }
   .worksheet { border:0; }
 }
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 
 <body>
@@ -550,45 +554,45 @@ footer a { text-decoration:none; }
 
   <form id="quiz-form">
 
-    <div class="quiz-question" data-question="q1">
-      <strong>1. What is the numerator of 4/9?</strong>
+    <fieldset class="quiz-question" data-question="q1">
+      <legend>1. What is the numerator of 4/9?</legend>
       <label><input type="radio" name="q1" value="a"> A. 9</label>
       <label><input type="radio" name="q1" value="b"> B. 4</label>
       <label><input type="radio" name="q1" value="c"> C. 13</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q2">
-      <strong>2. Which is a proper fraction?</strong>
+    <fieldset class="quiz-question" data-question="q2">
+      <legend>2. Which is a proper fraction?</legend>
       <label><input type="radio" name="q2" value="a"> A. 7/3</label>
       <label><input type="radio" name="q2" value="b"> B. 5/5</label>
       <label><input type="radio" name="q2" value="c"> C. 2/5</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q3">
-      <strong>3. What does the denominator tell us?</strong>
+    <fieldset class="quiz-question" data-question="q3">
+      <legend>3. What does the denominator tell us?</legend>
       <label><input type="radio" name="q3" value="a"> A. Total equal parts in the whole</label>
       <label><input type="radio" name="q3" value="b"> B. Number of selected parts only</label>
       <label><input type="radio" name="q3" value="c"> C. The whole number only</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q4">
-      <strong>4. Which is an improper fraction?</strong>
+    <fieldset class="quiz-question" data-question="q4">
+      <legend>4. Which is an improper fraction?</legend>
       <label><input type="radio" name="q4" value="a"> A. 1/4</label>
       <label><input type="radio" name="q4" value="b"> B. 3/8</label>
       <label><input type="radio" name="q4" value="c"> C. 7/4</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
-    <div class="quiz-question" data-question="q5">
-      <strong>5. A whole is divided into 10 equal pieces. You take 6. What fraction do you have?</strong>
+    <fieldset class="quiz-question" data-question="q5">
+      <legend>5. A whole is divided into 10 equal pieces. You take 6. What fraction do you have?</legend>
       <label><input type="radio" name="q5" value="a"> A. 10/6</label>
       <label><input type="radio" name="q5" value="b"> B. 6/10</label>
       <label><input type="radio" name="q5" value="c"> C. 6/6</label>
-      <div class="quiz-feedback" hidden></div>
-    </div>
+      <div class="quiz-feedback" hidden aria-live="polite"></div>
+    </fieldset>
 
     <div class="no-print" style="margin-top:20px">
       <button type="submit" id="check-answers">Check Answers</button>
@@ -654,7 +658,7 @@ footer a { text-decoration:none; }
   </div>
 
   <div class="no-print" style="margin-top:18px">
-    <button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button>
+    <button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button>
   </div>
 
   <details class="no-print" style="margin-top:20px">
@@ -707,170 +711,4 @@ footer a { text-decoration:none; }
   <a href="/">Back to Home</a>
 <p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
 
-<script>
-(function() {
-  "use strict";
-
-  const answers = {
-    q1: {
-      correct: "b",
-      explanation: "The numerator is the top number. In 4/9, it is 4.",
-      correctText: "B. 4"
-    },
-    q2: {
-      correct: "c",
-      explanation: "2/5 is a proper fraction because its numerator (2) is smaller than its denominator (5).",
-      correctText: "C. 2/5"
-    },
-    q3: {
-      correct: "a",
-      explanation: "The denominator tells us how many equal parts make the whole.",
-      correctText: "A. Total equal parts in the whole"
-    },
-    q4: {
-      correct: "c",
-      explanation: "7/4 is an improper fraction because its numerator (7) is greater than its denominator (4).",
-      correctText: "C. 7/4"
-    },
-    q5: {
-      correct: "b",
-      explanation: "Six selected pieces out of ten equal pieces gives 6/10.",
-      correctText: "B. 6/10"
-    }
-  };
-
-  const form = document.getElementById("quiz-form");
-  const result = document.getElementById("quiz-result");
-  const scoreNumber = document.getElementById("score-number");
-  const scoreMessage = document.getElementById("score-message");
-  const scoreDetail = document.getElementById("score-detail");
-  const progressFill = document.getElementById("progress-fill");
-  const retakeButton = document.getElementById("retake-quiz");
-
-  // Stop safely if required quiz elements are missing.
-  if (
-    !form ||
-    !result ||
-    !scoreNumber ||
-    !scoreMessage ||
-    !scoreDetail ||
-    !progressFill ||
-    !retakeButton
-  ) {
-    console.error("Quiz error: One or more required HTML elements are missing.");
-    return;
-  }
-
-  // Check answers.
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    let score = 0;
-    let answered = 0;
-
-    Object.keys(answers).forEach(function(questionName) {
-      const question = answers[questionName];
-
-      const questionElement = form.querySelector(
-        '[data-question="' + questionName + '"]'
-      );
-
-      if (!questionElement) {
-        console.error("Missing question element:", questionName);
-        return;
-      }
-
-      const selected = form.querySelector(
-        'input[name="' + questionName + '"]:checked'
-      );
-
-      const feedback = questionElement.querySelector(".quiz-feedback");
-
-      if (!feedback) {
-        console.error("Missing feedback element:", questionName);
-        return;
-      }
-
-      feedback.hidden = false;
-      feedback.className = "quiz-feedback";
-
-      if (!selected) {
-        feedback.classList.add("unanswered");
-        feedback.textContent =
-          "Not answered. Correct answer: " +
-          question.correctText + ". " +
-          question.explanation;
-
-        return;
-      }
-
-      answered++;
-
-      if (selected.value === question.correct) {
-        score++;
-
-        feedback.classList.add("correct");
-        feedback.textContent =
-          "Correct! " + question.explanation;
-
-      } else {
-        feedback.classList.add("incorrect");
-        feedback.textContent =
-          "Incorrect. Correct answer: " +
-          question.correctText + ". " +
-          question.explanation;
-      }
-    });
-
-    const totalQuestions = Object.keys(answers).length;
-    const percentage = Math.round((score / totalQuestions) * 100);
-
-    // Update score.
-    scoreNumber.textContent = score + " / " + totalQuestions;
-
-    scoreDetail.textContent =
-      percentage + "% correct · " +
-      answered + " of " + totalQuestions +
-      " questions answered.";
-
-    progressFill.style.width = percentage + "%";
-
-    // Display performance message.
-    if (score === totalQuestions) {
-      scoreMessage.textContent =
-        "Excellent! Perfect score. Keep it up!";
-    } else if (score >= 4) {
-      scoreMessage.textContent =
-        "Great work! You understand fractions very well.";
-    } else if (score >= 3) {
-      scoreMessage.textContent =
-        "Good effort! Review the explanations and try again.";
-    } else {
-      scoreMessage.textContent =
-        "Keep practising! Review the lesson and try again.";
-    }
-
-    // Show result without automatically scrolling the page.
-    result.style.display = "block";
-  });
-
-  // Retake quiz.
-  retakeButton.addEventListener("click", function() {
-    form.reset();
-
-    form.querySelectorAll(".quiz-feedback").forEach(function(feedback) {
-      feedback.hidden = true;
-      feedback.textContent = "";
-      feedback.className = "quiz-feedback";
-    });
-
-    scoreNumber.textContent = "0 / 5";
-    scoreMessage.textContent = "";
-    scoreDetail.textContent = "0% correct · 0 of 5 questions answered.";
-
-    progressFill.style.width = "0%";
-    result.style.display = "none";
-  });
-
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-understanding-fractions.js" defer></script>

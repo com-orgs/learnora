@@ -1,0 +1,35 @@
+/* Shared WCAG contrast and keyboard-accessibility improvements. */
+:root {
+  --muted: #526274;
+  --teal: #0b6b4e;
+  --teal-dark: #06676a;
+}
+
+.breadcrumb a,
+.crumb a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.14em;
+}
+
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap[tabindex="0"]:focus-visible {
+  outline: 3px solid #e09b36;
+  outline-offset: 3px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

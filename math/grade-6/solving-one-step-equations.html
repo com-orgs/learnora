@@ -13,14 +13,19 @@ header{background:#fff;border-bottom:1px solid var(--line);padding:15px 20px}.na
 main{max-width:900px;margin:35px auto;padding:0 18px}.breadcrumb{margin-bottom:20px;color:var(--muted);font-size:14px}.breadcrumb a{text-decoration:none}.hero,.section{margin-bottom:22px;padding:25px;border:1px solid var(--line);border-radius:15px;background:#fff}.hero{border-top:5px solid var(--teal)}.tag{display:inline-block;padding:4px 12px;border-radius:30px;background:var(--teal-light);color:#116548;font-size:13px;font-weight:700}
 h1,h2,h3{color:var(--navy);line-height:1.3}h1{margin:13px 0;font-size:clamp(30px,5vw,42px)}h2{margin-top:0;font-size:25px}h3{font-size:19px}.muted{color:var(--muted)}li{margin:7px 0}.example{margin:15px 0;padding:12px 17px;border-left:4px solid var(--teal);border-radius:7px;background:#f3faf7}.mistake{margin:12px 0;padding:13px 16px;border-left:4px solid #d99b28;border-radius:7px;background:#fff8e9}
 .visual{margin:16px 0;padding:18px;border-radius:12px;background:#f1f6fb;text-align:center}.equation{display:block;margin:10px auto;padding:10px 16px;border-radius:8px;background:#fff;color:var(--navy);font-size:24px;font-weight:800}
-table{width:100%;margin:15px 0;border-collapse:collapse}th,td{padding:10px 12px;border:1px solid var(--line);text-align:left}th{background:#f1f6fb;color:var(--navy)}
+table{width:100%;table-layout:fixed;overflow-wrap:anywhere;margin:15px 0;border-collapse:collapse}th,td{padding:10px 12px;border:1px solid var(--line);text-align:left;overflow-wrap:anywhere}th{background:#f1f6fb;color:var(--navy)}
 button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color:#fff;font-size:15px;font-weight:700;cursor:pointer}button:hover{filter:brightness(.93)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #78aef0;outline-offset:3px}
 .quiz-question{padding:18px 0;border-bottom:1px solid var(--line)}.quiz-question label{display:block;margin:8px 0;padding:8px 12px;border-radius:7px;cursor:pointer}.quiz-question label:hover{background:#f2f6fa}.quiz-question input{margin-right:8px}.quiz-feedback{margin-top:12px;padding:11px 13px;border-radius:8px;font-size:14px}.quiz-feedback.correct{background:#e8f6ed;color:#126239}.quiz-feedback.incorrect{background:#fff0f0;color:#a32828}.quiz-feedback.unanswered{background:#fff8e9;color:#79551b}
 #quiz-result{display:none;margin-top:20px;padding:20px;border:1px solid var(--line);border-radius:12px;background:#f1f6fb;text-align:center}.score-number{color:var(--navy);font-size:38px;font-weight:800}.progress-track{height:12px;overflow:hidden;margin:14px 0;border-radius:20px;background:#dfe7ef}.progress-fill{width:0;height:100%;background:var(--teal);transition:width .3s}.worksheet{padding:22px;border:2px dashed #aab8c8;border-radius:10px;background:#fff}.write-line{display:block;height:24px;border-bottom:1px solid #9aa8b8}
 footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}.equation{font-size:21px}}
+@media(max-width:600px){th,td{padding:7px 6px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{max-width:100%;margin:0 auto}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -40,16 +45,16 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <section class="section"><h2>10. Practice Exercises</h2><p>Try these before revealing the answers.</p><ol><li>x + 6 = 14</li><li>y − 8 = 5</li><li>3a = 21</li><li>m ÷ 4 = 7</li><li>p + 12 = 19</li><li>5n = 45</li><li>A number divided by 6 equals 4. Find the number.</li><li>Seven identical bags contain 56 marbles altogether. How many marbles are in each bag?</li></ol><details><summary><strong>Show practice answers and working</strong></summary><ol><li>x = 14 − 6 = 8.</li><li>y = 5 + 8 = 13.</li><li>a = 21 ÷ 3 = 7.</li><li>m = 7 × 4 = 28.</li><li>p = 19 − 12 = 7.</li><li>n = 45 ÷ 5 = 9.</li><li>n ÷ 6 = 4, so n = 4 × 6 = 24.</li><li>56 ÷ 7 = 8 marbles per bag.</li></ol></details></section>
 <section class="section" id="quiz"><h2>11. Test Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. What operation undoes addition?</strong><label><input type="radio" name="q1" value="a"> A. Multiplication</label><label><input type="radio" name="q1" value="b"> B. Subtraction</label><label><input type="radio" name="q1" value="c"> C. Division</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. Solve x + 5 = 12.</strong><label><input type="radio" name="q2" value="a"> A. x = 17</label><label><input type="radio" name="q2" value="b"> B. x = 5</label><label><input type="radio" name="q2" value="c"> C. x = 7</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. Solve 3a = 24.</strong><label><input type="radio" name="q3" value="a"> A. a = 8</label><label><input type="radio" name="q3" value="b"> B. a = 21</label><label><input type="radio" name="q3" value="c"> C. a = 27</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. Solve m ÷ 4 = 6.</strong><label><input type="radio" name="q4" value="a"> A. m = 2</label><label><input type="radio" name="q4" value="b"> B. m = 10</label><label><input type="radio" name="q4" value="c"> C. m = 24</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. How can you check a solution?</strong><label><input type="radio" name="q5" value="a"> A. Change the variable to zero</label><label><input type="radio" name="q5" value="b"> B. Substitute it into the original equation</label><label><input type="radio" name="q5" value="c"> C. Multiply both sides by 10</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. What operation undoes addition?</legend><label><input type="radio" name="q1" value="a"> A. Multiplication</label><label><input type="radio" name="q1" value="b"> B. Subtraction</label><label><input type="radio" name="q1" value="c"> C. Division</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. Solve x + 5 = 12.</legend><label><input type="radio" name="q2" value="a"> A. x = 17</label><label><input type="radio" name="q2" value="b"> B. x = 5</label><label><input type="radio" name="q2" value="c"> C. x = 7</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. Solve 3a = 24.</legend><label><input type="radio" name="q3" value="a"> A. a = 8</label><label><input type="radio" name="q3" value="b"> B. a = 21</label><label><input type="radio" name="q3" value="c"> C. a = 27</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. Solve m ÷ 4 = 6.</legend><label><input type="radio" name="q4" value="a"> A. m = 2</label><label><input type="radio" name="q4" value="b"> B. m = 10</label><label><input type="radio" name="q4" value="c"> C. m = 24</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. How can you check a solution?</legend><label><input type="radio" name="q5" value="a"> A. Change the variable to zero</label><label><input type="radio" name="q5" value="b"> B. Substitute it into the original equation</label><label><input type="radio" name="q5" value="c"> C. Multiply both sides by 10</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>12. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Solving One-Step Equations Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Solve each equation and check your answer.</p><ol><li>x + 8 = 17<span class="write-line"></span></li><li>y − 6 = 10<span class="write-line"></span></li><li>5a = 35<span class="write-line"></span></li><li>m ÷ 3 = 9<span class="write-line"></span></li><li>p + 15 = 23<span class="write-line"></span></li><li>4n = 36<span class="write-line"></span></li><li>A number minus 7 equals 12. Find the number.<span class="write-line"></span><span class="write-line"></span></li><li>Six equal packs contain 54 cards altogether. How many cards are in each pack?<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>x = 9.</li><li>y = 16.</li><li>a = 7.</li><li>m = 27.</li><li>p = 8.</li><li>n = 9.</li><li>n − 7 = 12, so n = 19.</li><li>54 ÷ 6 = 9 cards per pack.</li></ol></details></section>
 <section class="section"><h2>13. Lesson Summary</h2><ul><li>An equation states that two expressions are equal.</li><li>Inverse operations undo each other.</li><li>Do the same operation to both sides to keep an equation balanced.</li><li>Use subtraction to undo addition and division to undo multiplication.</li><li>Check a solution by substituting it into the original equation.</li></ul><div class="example"><strong>Next learning goal:</strong> Build on one-step equations by learning to solve two-step equations.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -59,37 +64,5 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <li><a href="/math/grade-6/integers-number-line.html">Integers and the Number Line</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. Subtraction",explanation:"Subtraction undoes addition. For example, adding 5 can be undone by subtracting 5."},
-q2:{correct:"c",correctText:"C. x = 7",explanation:"Subtract 5 from both sides: x = 12 − 5 = 7."},
-q3:{correct:"a",correctText:"A. a = 8",explanation:"Divide both sides by 3: a = 24 ÷ 3 = 8."},
-q4:{correct:"c",correctText:"C. m = 24",explanation:"Multiply both sides by 4: m = 6 × 4 = 24."},
-q5:{correct:"b",correctText:"B. Substitute it into the original equation",explanation:"Replace the variable with your answer and check that both sides have the same value."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-solving-one-step-equations.js" defer></script>
 </body></html>

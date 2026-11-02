@@ -31,7 +31,11 @@ button{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px
 footer{text-align:center;padding:28px 15px;color:var(--muted);border-top:1px solid var(--line);background:#fff}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}table{font-size:14px}th,td{padding:8px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{margin:0 auto;max-width:100%}.hero,.section{box-shadow:none}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -49,16 +53,16 @@ footer{text-align:center;padding:28px 15px;color:var(--muted);border-top:1px sol
 <section class="section"><h2>8. Practice Exercises</h2><p>Try these questions before revealing the answers.</p><ol><li>Use &gt;, &lt; or =: 4/9 ___ 7/9.</li><li>Use &gt;, &lt; or =: 3/5 ___ 3/8.</li><li>Compare 1/2 and 4/7 using a common denominator.</li><li>Compare 5/6 and 7/9 using a common denominator.</li><li>Arrange 1/3, 3/4 and 1/2 from least to greatest.</li><li>Arrange 5/8, 2/3 and 3/4 from greatest to least.</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>4/9 &lt; 7/9 because the denominators match and 4 is less than 7.</li><li>3/5 &gt; 3/8 because the numerators match and fifths are larger than eighths.</li><li>1/2 = 7/14 and 4/7 = 8/14, so 1/2 &lt; 4/7.</li><li>5/6 = 15/18 and 7/9 = 14/18, so 5/6 &gt; 7/9.</li><li>1/3, 1/2, 3/4.</li><li>3/4, 2/3, 5/8.</li></ol></details></section>
 <section class="section" id="quiz"><h2>9. Test Your Understanding</h2><p>Select one answer for each question, then choose Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. Which fraction is greater: 3/8 or 5/8?</strong><label><input type="radio" name="q1" value="a"> A. 3/8</label><label><input type="radio" name="q1" value="b"> B. 5/8</label><label><input type="radio" name="q1" value="c"> C. They are equal</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. Which is greater: 2/5 or 2/7?</strong><label><input type="radio" name="q2" value="a"> A. 2/7</label><label><input type="radio" name="q2" value="b"> B. They are equal</label><label><input type="radio" name="q2" value="c"> C. 2/5</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. Which fraction is equivalent to 3/4 with denominator 12?</strong><label><input type="radio" name="q3" value="a"> A. 9/12</label><label><input type="radio" name="q3" value="b"> B. 6/12</label><label><input type="radio" name="q3" value="c"> C. 8/12</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. Which statement is correct?</strong><label><input type="radio" name="q4" value="a"> A. 5/6 is less than 7/9</label><label><input type="radio" name="q4" value="b"> B. 5/6 is greater than 7/9</label><label><input type="radio" name="q4" value="c"> C. They are equal</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. Which list is in order from least to greatest?</strong><label><input type="radio" name="q5" value="a"> A. 3/4, 1/2, 1/3</label><label><input type="radio" name="q5" value="b"> B. 1/2, 1/3, 3/4</label><label><input type="radio" name="q5" value="c"> C. 1/3, 1/2, 3/4</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. Which fraction is greater: 3/8 or 5/8?</legend><label><input type="radio" name="q1" value="a"> A. 3/8</label><label><input type="radio" name="q1" value="b"> B. 5/8</label><label><input type="radio" name="q1" value="c"> C. They are equal</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. Which is greater: 2/5 or 2/7?</legend><label><input type="radio" name="q2" value="a"> A. 2/7</label><label><input type="radio" name="q2" value="b"> B. They are equal</label><label><input type="radio" name="q2" value="c"> C. 2/5</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. Which fraction is equivalent to 3/4 with denominator 12?</legend><label><input type="radio" name="q3" value="a"> A. 9/12</label><label><input type="radio" name="q3" value="b"> B. 6/12</label><label><input type="radio" name="q3" value="c"> C. 8/12</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. Which statement is correct?</legend><label><input type="radio" name="q4" value="a"> A. 5/6 is less than 7/9</label><label><input type="radio" name="q4" value="b"> B. 5/6 is greater than 7/9</label><label><input type="radio" name="q4" value="c"> C. They are equal</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. Which list is in order from least to greatest?</legend><label><input type="radio" name="q5" value="a"> A. 3/4, 1/2, 1/3</label><label><input type="radio" name="q5" value="b"> B. 1/2, 1/3, 3/4</label><label><input type="radio" name="q5" value="c"> C. 1/3, 1/2, 3/4</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Comparing and Ordering Fractions Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working. Use equivalent fractions where needed.</p><ol><li>Write &gt;, &lt; or =: 2/9 ___ 7/9.<span class="write-line"></span></li><li>Write &gt;, &lt; or =: 4/5 ___ 4/7.<span class="write-line"></span></li><li>Compare 3/4 and 5/6. Show equivalent fractions.<span class="write-line"></span><span class="write-line"></span></li><li>Compare 2/3 and 5/8. Show your working.<span class="write-line"></span><span class="write-line"></span></li><li>Order 1/4, 2/3 and 1/2 from least to greatest.<span class="write-line"></span><span class="write-line"></span></li><li>Order 7/8, 3/4 and 5/6 from greatest to least.<span class="write-line"></span><span class="write-line"></span></li><li>Explain why 3/5 is greater than 3/8.<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>2/9 &lt; 7/9.</li><li>4/5 &gt; 4/7.</li><li>3/4 = 9/12 and 5/6 = 10/12, so 3/4 &lt; 5/6.</li><li>2/3 = 16/24 and 5/8 = 15/24, so 2/3 &gt; 5/8.</li><li>1/4, 1/2, 2/3.</li><li>7/8, 5/6, 3/4.</li><li>Both fractions have the same numerator. Fifths are larger parts than eighths, so three fifths is greater than three eighths.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>With the same denominator, compare the numerators.</li><li>With the same numerator, the fraction with the smaller denominator is greater.</li><li>For different denominators, use equivalent fractions with a common denominator.</li><li>Benchmarks such as 0, 1/2 and 1 can help you estimate and compare.</li><li>To order fractions, convert them to a common denominator and compare their numerators.</li></ul><div class="example"><strong>Next learning goal:</strong> Build on fraction comparisons by practising addition and subtraction of fractions.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -68,38 +72,6 @@ footer{text-align:center;padding:28px 15px;color:var(--muted);border-top:1px sol
 <li><a href="/math/grade-6/adding-subtracting-fractions.html">Adding and Subtracting Fractions</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 5/8",explanation:"The denominators are the same, so compare the numerators. Five is greater than three."},
-q2:{correct:"c",correctText:"C. 2/5",explanation:"The numerators are the same. Fifths are larger parts than sevenths, so 2/5 is greater."},
-q3:{correct:"a",correctText:"A. 9/12",explanation:"Multiply the numerator and denominator of 3/4 by 3 to get 9/12."},
-q4:{correct:"b",correctText:"B. 5/6 is greater than 7/9",explanation:"5/6 = 15/18 and 7/9 = 14/18. Since 15 is greater than 14, 5/6 is greater."},
-q5:{correct:"c",correctText:"C. 1/3, 1/2, 3/4",explanation:"Using denominator 12 gives 4/12, 6/12 and 9/12. The correct order is 1/3, 1/2, 3/4."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-comparing-ordering-fractions.js" defer></script>
 </body>
 </html>

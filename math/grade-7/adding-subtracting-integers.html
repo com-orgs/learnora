@@ -31,7 +31,11 @@ button{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px
 .worksheet{background:#fff;border:2px dashed #aab8c8;padding:22px;border-radius:10px}.write-line{display:block;border-bottom:1px solid #9aa8b8;height:25px}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%;gap:12px}.number-line{padding:12px 5px}.number-line span b{width:25px;height:25px;font-size:13px}table{font-size:14px}th,td{padding:8px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{margin:0 auto;max-width:100%}.hero,.section{box-shadow:none}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a><a href="/math/grade-7/">Grade 7 Maths</a></div></nav></header>
@@ -49,11 +53,11 @@ button{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px
 <section class="section"><h2>8. Common Mistakes to Avoid</h2><div class="mistake"><strong>Adding signs without checking values:</strong> With different signs, subtract the absolute values and use the sign of the number with the larger absolute value.</div><div class="mistake"><strong>Thinking subtracting always makes a number smaller:</strong> Subtracting a negative number increases the value. For example, 5 − (−2) = 7.</div><div class="mistake"><strong>Changing both signs during subtraction:</strong> Change the sign of the number being subtracted, not the first number.</div><div class="mistake"><strong>Confusing a negative answer with a smaller absolute value:</strong> −12 is less than −5, even though 12 is greater than 5.</div><div class="mistake"><strong>Forgetting brackets:</strong> Write 8 + (−3) clearly so the negative sign is not mistaken for a subtraction operation.</div></section>
 <section class="section"><h2>9. Practice Exercises</h2><p>Try these questions before revealing the answers.</p><ol><li>−5 + (−7)</li><li>12 + (−8)</li><li>−9 + 4</li><li>6 − (−3)</li><li>−2 − 7</li><li>−4 − (−9)</li><li>The temperature is −6°C and rises by 11°C. What is the new temperature?</li><li>A lift is on floor 3 and travels down 7 floors. Which floor does it reach?</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>−12. Add 5 and 7 and keep the negative sign.</li><li>4. Subtract 8 from 12 and keep the positive sign.</li><li>−5. Subtract 4 from 9 and keep the negative sign.</li><li>9. Rewrite as 6 + 3.</li><li>−9. Rewrite as −2 + (−7).</li><li>5. Rewrite as −4 + 9.</li><li>5°C. Calculate −6 + 11.</li><li>Floor −4. Calculate 3 − 7 = −4.</li></ol></details></section>
 <section class="section" id="quiz"><h2>10. Test Your Understanding</h2><p>Select one answer for each question, then choose Check Answers. Each question is worth one point.</p><form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. What is −7 + (−4)?</strong><label><input type="radio" name="q1" value="a"> A. −3</label><label><input type="radio" name="q1" value="b"> B. 11</label><label><input type="radio" name="q1" value="c"> C. −11</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. What is 9 + (−5)?</strong><label><input type="radio" name="q2" value="a"> A. 4</label><label><input type="radio" name="q2" value="b"> B. 14</label><label><input type="radio" name="q2" value="c"> C. −4</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. What is 6 − (−2)?</strong><label><input type="radio" name="q3" value="a"> A. 4</label><label><input type="radio" name="q3" value="b"> B. 8</label><label><input type="radio" name="q3" value="c"> C. −8</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. What is −3 − 5?</strong><label><input type="radio" name="q4" value="a"> A. 2</label><label><input type="radio" name="q4" value="b"> B. −2</label><label><input type="radio" name="q4" value="c"> C. −8</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. What is −4 + 9?</strong><label><input type="radio" name="q5" value="a"> A. −13</label><label><input type="radio" name="q5" value="b"> B. 5</label><label><input type="radio" name="q5" value="c"> C. −5</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. What is −7 + (−4)?</legend><label><input type="radio" name="q1" value="a"> A. −3</label><label><input type="radio" name="q1" value="b"> B. 11</label><label><input type="radio" name="q1" value="c"> C. −11</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. What is 9 + (−5)?</legend><label><input type="radio" name="q2" value="a"> A. 4</label><label><input type="radio" name="q2" value="b"> B. 14</label><label><input type="radio" name="q2" value="c"> C. −4</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. What is 6 − (−2)?</legend><label><input type="radio" name="q3" value="a"> A. 4</label><label><input type="radio" name="q3" value="b"> B. 8</label><label><input type="radio" name="q3" value="c"> C. −8</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. What is −3 − 5?</legend><label><input type="radio" name="q4" value="a"> A. 2</label><label><input type="radio" name="q4" value="b"> B. −2</label><label><input type="radio" name="q4" value="c"> C. −8</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. What is −4 + 9?</legend><label><input type="radio" name="q5" value="a"> A. −13</label><label><input type="radio" name="q5" value="b"> B. 5</label><label><input type="radio" name="q5" value="c"> C. −5</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div></section>
 <section class="section"><h2>11. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 7 Mathematics</h3><h2>Adding and Subtracting Integers Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working. Use a number line if it helps.</p><ol><li>−8 + (−6)<span class="write-line"></span></li><li>14 + (−9)<span class="write-line"></span></li><li>−12 + 5<span class="write-line"></span></li><li>7 − (−4)<span class="write-line"></span></li><li>−5 − 8<span class="write-line"></span></li><li>−3 − (−10)<span class="write-line"></span></li><li>The temperature is −4°C and falls by 6°C. What is the new temperature?<span class="write-line"></span><span class="write-line"></span></li><li>A submarine is at −25 m and rises 9 m. What is its new position relative to sea level?<span class="write-line"></span><span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div><div class="no-print" style="margin-top:18px"><button type="button" id="print-worksheet">Print Worksheet / Save as PDF</button></div><details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>−14.</li><li>5.</li><li>−7.</li><li>11.</li><li>−13.</li><li>7.</li><li>−10°C.</li><li>−16 m.</li></ol></details></section>
@@ -62,40 +66,6 @@ button{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px
 <section class="section"><h2>Continue Learning</h2><ul><li><a href="/math/grade-6/integers-number-line.html">Grade 6: Integers and the Number Line</a></li><li><a href="/math/grade-7/two-step-equations.html">Grade 7: How to Solve Two-Step Equations</a></li><li><a href="/math/grade-7/">Grade 7 Maths Learning Path</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Home</a> · <a href="/math/grade-7/">Grade 7 Maths</a> · <a href="/about.html">About</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"c",correctText:"C. −11",explanation:"Both numbers are negative. Add 7 and 4, then keep the negative sign."},
-q2:{correct:"a",correctText:"A. 4",explanation:"The signs differ. Subtract 5 from 9 and keep the positive sign."},
-q3:{correct:"b",correctText:"B. 8",explanation:"Subtracting a negative is addition: 6 − (−2) = 6 + 2."},
-q4:{correct:"c",correctText:"C. −8",explanation:"Rewrite as −3 + (−5). Add 3 and 5 and keep the negative sign."},
-q5:{correct:"b",correctText:"B. 5",explanation:"The signs differ. 9 − 4 = 5, and 9 has the larger absolute value."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz"),printButton=document.getElementById("print-worksheet");
-if(form&&result&&scoreNumber&&scoreMessage&&scoreDetail&&progressFill&&retakeButton){
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! Review the explanations to strengthen your skills.":score>=3?"Good effort! Review the lesson and try again.":"Keep practising! Review the examples and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-}
-if(printButton){printButton.addEventListener("click",function(){window.print();});}
-})();
-</script>
+<script src="/scripts/pages/math-grade-7-adding-subtracting-integers.js" defer></script>
 </body>
 </html>

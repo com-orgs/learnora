@@ -20,7 +20,11 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}table{font-size:14px}th,td{padding:8px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{max-width:100%;margin:0 auto}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -40,16 +44,16 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <section class="section"><h2>10. Practice Exercises</h2><p>Try these before revealing the answers.</p><ol><li>Find the perimeter of a square with side 7 cm.</li><li>Find the area of a square with side 7 cm.</li><li>Find the perimeter of a rectangle 9 cm long and 4 cm wide.</li><li>Find the area of a rectangle 9 cm long and 4 cm wide.</li><li>Find the area of a triangle with base 12 cm and perpendicular height 5 cm.</li><li>A rectangular field is 15 m long and 8 m wide. How much fencing is needed to go around it?</li><li>What is the difference between 18 cm and 18 cm²?</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>4 × 7 = 28 cm.</li><li>7 × 7 = 49 cm².</li><li>2 × (9 + 4) = 26 cm.</li><li>9 × 4 = 36 cm².</li><li>1/2 × 12 × 5 = 30 cm².</li><li>2 × (15 + 8) = 46 m of fencing.</li><li>18 cm is a length; 18 cm² is an area.</li></ol></details></section>
 <section class="section" id="quiz"><h2>11. Test Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. What does perimeter measure?</strong><label><input type="radio" name="q1" value="a"> A. Space inside a shape</label><label><input type="radio" name="q1" value="b"> B. Distance around a shape</label><label><input type="radio" name="q1" value="c"> C. Number of corners</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. What is the area of a rectangle 6 cm by 4 cm?</strong><label><input type="radio" name="q2" value="a"> A. 20 cm²</label><label><input type="radio" name="q2" value="b"> B. 10 cm²</label><label><input type="radio" name="q2" value="c"> C. 24 cm²</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. What is the perimeter of a square with side 5 m?</strong><label><input type="radio" name="q3" value="a"> A. 20 m</label><label><input type="radio" name="q3" value="b"> B. 25 m²</label><label><input type="radio" name="q3" value="c"> C. 10 m</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. What is the area of a triangle with base 8 cm and perpendicular height 5 cm?</strong><label><input type="radio" name="q4" value="a"> A. 40 cm²</label><label><input type="radio" name="q4" value="b"> B. 20 cm²</label><label><input type="radio" name="q4" value="c"> C. 13 cm²</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. Which unit is suitable for the area of a floor?</strong><label><input type="radio" name="q5" value="a"> A. metres</label><label><input type="radio" name="q5" value="b"> B. square metres</label><label><input type="radio" name="q5" value="c"> C. litres</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. What does perimeter measure?</legend><label><input type="radio" name="q1" value="a"> A. Space inside a shape</label><label><input type="radio" name="q1" value="b"> B. Distance around a shape</label><label><input type="radio" name="q1" value="c"> C. Number of corners</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. What is the area of a rectangle 6 cm by 4 cm?</legend><label><input type="radio" name="q2" value="a"> A. 20 cm²</label><label><input type="radio" name="q2" value="b"> B. 10 cm²</label><label><input type="radio" name="q2" value="c"> C. 24 cm²</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. What is the perimeter of a square with side 5 m?</legend><label><input type="radio" name="q3" value="a"> A. 20 m</label><label><input type="radio" name="q3" value="b"> B. 25 m²</label><label><input type="radio" name="q3" value="c"> C. 10 m</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. What is the area of a triangle with base 8 cm and perpendicular height 5 cm?</legend><label><input type="radio" name="q4" value="a"> A. 40 cm²</label><label><input type="radio" name="q4" value="b"> B. 20 cm²</label><label><input type="radio" name="q4" value="c"> C. 13 cm²</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. Which unit is suitable for the area of a floor?</legend><label><input type="radio" name="q5" value="a"> A. metres</label><label><input type="radio" name="q5" value="b"> B. square metres</label><label><input type="radio" name="q5" value="c"> C. litres</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>12. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Perimeter and Area Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Write the formula and show your working. Include the correct units.</p><ol><li>Find the perimeter of a square with side 9 cm.<span class="write-line"></span></li><li>Find the area of a square with side 9 cm.<span class="write-line"></span></li><li>Find the perimeter of a rectangle 11 m long and 6 m wide.<span class="write-line"></span></li><li>Find the area of a rectangle 11 m long and 6 m wide.<span class="write-line"></span></li><li>Find the area of a triangle with base 14 cm and perpendicular height 3 cm.<span class="write-line"></span></li><li>A rectangular patio is 7 m long and 5 m wide. Find its area.<span class="write-line"></span></li><li>A rectangular garden is 10 m by 4 m. Find the total length of fencing needed.<span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>4 × 9 = 36 cm.</li><li>9 × 9 = 81 cm².</li><li>2 × (11 + 6) = 34 m.</li><li>11 × 6 = 66 m².</li><li>1/2 × 14 × 3 = 21 cm².</li><li>7 × 5 = 35 m².</li><li>2 × (10 + 4) = 28 m.</li></ol></details></section>
 <section class="section"><h2>13. Lesson Summary</h2><ul><li>Perimeter is the distance around a 2D shape.</li><li>Area is the surface covered inside a 2D shape.</li><li>Rectangle perimeter = 2 × (length + width).</li><li>Rectangle area = length × width.</li><li>Square perimeter = 4 × side; square area = side × side.</li><li>Triangle area = 1/2 × base × perpendicular height.</li><li>Use ordinary units for perimeter and square units for area.</li></ul><div class="example"><strong>Next learning goal:</strong> Explore angles, triangles and properties of 2D shapes.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -63,37 +67,5 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <li><a href="/math/grade-6/angles-and-triangles.html">Angles and Triangles</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. Distance around a shape",explanation:"Perimeter is the total distance around the outside edge of a 2D shape."},
-q2:{correct:"c",correctText:"C. 24 cm²",explanation:"Area = length × width = 6 × 4 = 24 square centimetres."},
-q3:{correct:"a",correctText:"A. 20 m",explanation:"A square has four equal sides, so 4 × 5 = 20 metres."},
-q4:{correct:"b",correctText:"B. 20 cm²",explanation:"Triangle area = 1/2 × base × perpendicular height = 1/2 × 8 × 5 = 20 cm²."},
-q5:{correct:"b",correctText:"B. square metres",explanation:"Area is measured in square units. A floor is commonly measured in square metres."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-perimeter-area-shapes.js" defer></script>
 </body></html>

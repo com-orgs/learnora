@@ -20,7 +20,11 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}.expression{font-size:21px}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{max-width:100%;margin:0 auto}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -38,16 +42,16 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <section class="section"><h2>8. Practice Exercises</h2><p>Try these before revealing the answers. Show each step.</p><ol><li>7 + 3 × 4</li><li>(7 + 3) × 4</li><li>20 − 12 ÷ 3</li><li>24 ÷ 4 × 2</li><li>18 − 5 + 2</li><li>6 + (8 − 2) × 3</li><li>36 ÷ (3 × 4) + 5</li><li>40 − 18 ÷ 3 × 2</li></ol><details><summary><strong>Show practice answers and working</strong></summary><ol><li>3 × 4 = 12; 7 + 12 = 19.</li><li>7 + 3 = 10; 10 × 4 = 40.</li><li>12 ÷ 3 = 4; 20 − 4 = 16.</li><li>24 ÷ 4 = 6; 6 × 2 = 12.</li><li>18 − 5 = 13; 13 + 2 = 15.</li><li>8 − 2 = 6; 6 × 3 = 18; 6 + 18 = 24.</li><li>3 × 4 = 12; 36 ÷ 12 = 3; 3 + 5 = 8.</li><li>18 ÷ 3 = 6; 6 × 2 = 12; 40 − 12 = 28.</li></ol></details></section>
 <section class="section" id="quiz"><h2>9. Test Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. What should you calculate first in 8 + 2 × 5?</strong><label><input type="radio" name="q1" value="a"> A. 8 + 2</label><label><input type="radio" name="q1" value="b"> B. 2 × 5</label><label><input type="radio" name="q1" value="c"> C. 8 × 5</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. What is (6 + 4) × 3?</strong><label><input type="radio" name="q2" value="a"> A. 18</label><label><input type="radio" name="q2" value="b"> B. 30</label><label><input type="radio" name="q2" value="c"> C. 22</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. What is 24 ÷ 6 × 2?</strong><label><input type="radio" name="q3" value="a"> A. 2</label><label><input type="radio" name="q3" value="b"> B. 8</label><label><input type="radio" name="q3" value="c"> C. 12</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. What is 20 − 4 × 3?</strong><label><input type="radio" name="q4" value="a"> A. 48</label><label><input type="radio" name="q4" value="b"> B. 8</label><label><input type="radio" name="q4" value="c"> C. 16</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. What is 15 − 4 + 3?</strong><label><input type="radio" name="q5" value="a"> A. 8</label><label><input type="radio" name="q5" value="b"> B. 14</label><label><input type="radio" name="q5" value="c"> C. 18</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. What should you calculate first in 8 + 2 × 5?</legend><label><input type="radio" name="q1" value="a"> A. 8 + 2</label><label><input type="radio" name="q1" value="b"> B. 2 × 5</label><label><input type="radio" name="q1" value="c"> C. 8 × 5</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. What is (6 + 4) × 3?</legend><label><input type="radio" name="q2" value="a"> A. 18</label><label><input type="radio" name="q2" value="b"> B. 30</label><label><input type="radio" name="q2" value="c"> C. 22</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. What is 24 ÷ 6 × 2?</legend><label><input type="radio" name="q3" value="a"> A. 2</label><label><input type="radio" name="q3" value="b"> B. 8</label><label><input type="radio" name="q3" value="c"> C. 12</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. What is 20 − 4 × 3?</legend><label><input type="radio" name="q4" value="a"> A. 48</label><label><input type="radio" name="q4" value="b"> B. 8</label><label><input type="radio" name="q4" value="c"> C. 16</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. What is 15 − 4 + 3?</legend><label><input type="radio" name="q5" value="a"> A. 8</label><label><input type="radio" name="q5" value="b"> B. 14</label><label><input type="radio" name="q5" value="c"> C. 18</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>10. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Order of Operations Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show the order of each step.</p><ol><li>9 + 2 × 6<span class="write-line"></span></li><li>(9 + 2) × 6<span class="write-line"></span></li><li>32 ÷ 4 + 5<span class="write-line"></span></li><li>28 − 3 × 6<span class="write-line"></span></li><li>36 ÷ 3 × 2<span class="write-line"></span></li><li>20 − 7 + 4<span class="write-line"></span></li><li>5 + (12 − 4) ÷ 2<span class="write-line"></span></li><li>48 − 24 ÷ 4 × 2<span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>9 + 12 = 21.</li><li>11 × 6 = 66.</li><li>8 + 5 = 13.</li><li>28 − 18 = 10.</li><li>12 × 2 = 24.</li><li>20 − 7 = 13; 13 + 4 = 17.</li><li>12 − 4 = 8; 8 ÷ 2 = 4; 5 + 4 = 9.</li><li>24 ÷ 4 = 6; 6 × 2 = 12; 48 − 12 = 36.</li></ol></details></section>
 <section class="section"><h2>11. Lesson Summary</h2><ul><li>Complete brackets first.</li><li>Then complete multiplication and division from left to right.</li><li>Finally complete addition and subtraction from left to right.</li><li>Multiplication and division share the same priority.</li><li>Addition and subtraction share the same priority.</li><li>Show each step to reduce mistakes.</li></ul><div class="example"><strong>Next learning goal:</strong> Apply order of operations to longer expressions and problems with powers when you are ready for the next level.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -57,37 +61,5 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <li><a href="/math/grade-6/algebraic-expressions.html">Algebraic Expressions</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",correctText:"B. 2 × 5",explanation:"Multiplication is completed before addition and subtraction."},
-q2:{correct:"b",correctText:"B. 30",explanation:"Calculate the brackets first: 6 + 4 = 10. Then 10 × 3 = 30."},
-q3:{correct:"b",correctText:"B. 8",explanation:"Division and multiplication have equal priority. Work left to right: 24 ÷ 6 = 4, then 4 × 2 = 8."},
-q4:{correct:"b",correctText:"B. 8",explanation:"Multiply first: 4 × 3 = 12. Then 20 − 12 = 8."},
-q5:{correct:"b",correctText:"B. 14",explanation:"Addition and subtraction have equal priority. Work left to right: 15 − 4 = 11, then 11 + 3 = 14."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-order-of-operations.js" defer></script>
 </body></html>

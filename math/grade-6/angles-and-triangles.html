@@ -20,7 +20,11 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center}
 @media(max-width:600px){.nav{align-items:flex-start}.nav-links{width:100%}.nav-links a{margin:0 12px 0 0}.hero,.section{padding:19px}.angle-grid{grid-template-columns:1fr}}
 @media print{header,footer,.no-print,.breadcrumb{display:none!important}body{background:#fff}main{max-width:100%;margin:0 auto}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
 <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div class="nav-links"><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/#resources">Resources</a></div></nav></header>
@@ -39,16 +43,16 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <section class="section"><h2>9. Practice Exercises</h2><p>Try these before revealing the answers.</p><ol><li>Classify an angle of 42°.</li><li>Classify an angle of 135°.</li><li>How many degrees are in a straight angle?</li><li>Two angles in a triangle are 45° and 65°. Find the third angle.</li><li>A triangle has angles 90° and 28°. Find the third angle.</li><li>What is the total of angles around a point?</li><li>What type of triangle has all three equal sides?</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>Acute angle.</li><li>Obtuse angle.</li><li>180°.</li><li>180° − 45° − 65° = 70°.</li><li>180° − 90° − 28° = 62°.</li><li>360°.</li><li>Equilateral triangle.</li></ol></details></section>
 <section class="section" id="quiz"><h2>10. Test Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="quiz-question" data-question="q1"><strong>1. What type of angle is 40°?</strong><label><input type="radio" name="q1" value="a"> A. Acute</label><label><input type="radio" name="q1" value="b"> B. Obtuse</label><label><input type="radio" name="q1" value="c"> C. Straight</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q2"><strong>2. How many degrees are in a right angle?</strong><label><input type="radio" name="q2" value="a"> A. 45°</label><label><input type="radio" name="q2" value="b"> B. 90°</label><label><input type="radio" name="q2" value="c"> C. 180°</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q3"><strong>3. What is the total of the interior angles in a triangle?</strong><label><input type="radio" name="q3" value="a"> A. 90°</label><label><input type="radio" name="q3" value="b"> B. 360°</label><label><input type="radio" name="q3" value="c"> C. 180°</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q4"><strong>4. A triangle has angles 50° and 60°. What is the third angle?</strong><label><input type="radio" name="q4" value="a"> A. 70°</label><label><input type="radio" name="q4" value="b"> B. 80°</label><label><input type="radio" name="q4" value="c"> C. 90°</label><div class="quiz-feedback" hidden></div></div>
-<div class="quiz-question" data-question="q5"><strong>5. What type of triangle has three equal sides?</strong><label><input type="radio" name="q5" value="a"> A. Scalene</label><label><input type="radio" name="q5" value="b"> B. Isosceles</label><label><input type="radio" name="q5" value="c"> C. Equilateral</label><div class="quiz-feedback" hidden></div></div>
+<fieldset class="quiz-question" data-question="q1"><legend>1. What type of angle is 40°?</legend><label><input type="radio" name="q1" value="a"> A. Acute</label><label><input type="radio" name="q1" value="b"> B. Obtuse</label><label><input type="radio" name="q1" value="c"> C. Straight</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q2"><legend>2. How many degrees are in a right angle?</legend><label><input type="radio" name="q2" value="a"> A. 45°</label><label><input type="radio" name="q2" value="b"> B. 90°</label><label><input type="radio" name="q2" value="c"> C. 180°</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q3"><legend>3. What is the total of the interior angles in a triangle?</legend><label><input type="radio" name="q3" value="a"> A. 90°</label><label><input type="radio" name="q3" value="b"> B. 360°</label><label><input type="radio" name="q3" value="c"> C. 180°</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q4"><legend>4. A triangle has angles 50° and 60°. What is the third angle?</legend><label><input type="radio" name="q4" value="a"> A. 70°</label><label><input type="radio" name="q4" value="b"> B. 80°</label><label><input type="radio" name="q4" value="c"> C. 90°</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="quiz-question" data-question="q5"><legend>5. What type of triangle has three equal sides?</legend><label><input type="radio" name="q5" value="a"> A. Scalene</label><label><input type="radio" name="q5" value="b"> B. Isosceles</label><label><input type="radio" name="q5" value="c"> C. Equilateral</label><div class="quiz-feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print" style="margin-top:20px"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score-number" id="score-number"></div><div id="score-message"></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
 <section class="section"><h2>11. Free Printable Worksheet</h2><p>Print this worksheet or save it as a PDF for extra practice.</p><div class="worksheet"><h3>Learnora — Grade 6 Mathematics</h3><h2>Angles and Triangles Worksheet</h2><p>Name: __________________________ Date: _______________</p><p><strong>Instructions:</strong> Show your working for missing angles.</p><ol><li>Classify 25°.<span class="write-line"></span></li><li>Classify 110°.<span class="write-line"></span></li><li>Find the missing angle in a triangle with angles 35° and 85°.<span class="write-line"></span></li><li>Find the missing angle in a triangle with angles 90° and 42°.<span class="write-line"></span></li><li>Two angles on a straight line are 130° and x. Find x.<span class="write-line"></span></li><li>Three angles around a point are 100°, 120° and x. Find x.<span class="write-line"></span></li><li>Name the triangle with all sides equal.<span class="write-line"></span></li></ol><p><strong>Keep practising — you are making progress!</strong></p><p class="muted">Learnora — Learn Better. Practice Smarter.</p></div>
-<div class="no-print" style="margin-top:18px"><button type="button" onclick="window.print()">Print Worksheet / Save as PDF</button></div>
+<div class="no-print" style="margin-top:18px"><button type="button" data-print-worksheet>Print Worksheet / Save as PDF</button></div>
 <details class="no-print" style="margin-top:20px"><summary><strong>Teacher / Parent Answer Key</strong></summary><ol><li>Acute.</li><li>Obtuse.</li><li>180° − 35° − 85° = 60°.</li><li>180° − 90° − 42° = 48°.</li><li>180° − 130° = 50°.</li><li>360° − 100° − 120° = 140°.</li><li>Equilateral triangle.</li></ol></details></section>
 <section class="section"><h2>12. Lesson Summary</h2><ul><li>Angles measure turns and are measured in degrees.</li><li>Acute angles are below 90°, right angles are 90°, and obtuse angles are between 90° and 180°.</li><li>Triangles can be classified by their sides and their angles.</li><li>The interior angles of a triangle add up to 180°.</li><li>Angles on a straight line add to 180°; angles around a point add to 360°.</li></ul><div class="example"><strong>Next learning goal:</strong> Explore parallel and perpendicular lines, quadrilaterals and symmetry.</div></section>
 <p class="muted">Educational note: This is a curriculum-neutral Grade 6 lesson. Teachers and parents can adapt examples and practice to their local curriculum.</p>
@@ -58,37 +62,5 @@ footer{padding:28px 15px;border-top:1px solid var(--line);background:#fff;color:
 <li><a href="/math/grade-6/data-and-graphs.html">Data and Graphs</a></li></ul></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Back to Home</a><p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"a",correctText:"A. Acute",explanation:"An acute angle is greater than 0° and less than 90°."},
-q2:{correct:"b",correctText:"B. 90°",explanation:"A right angle measures exactly 90°."},
-q3:{correct:"c",correctText:"C. 180°",explanation:"The three interior angles in every triangle add up to 180°."},
-q4:{correct:"a",correctText:"A. 70°",explanation:"180° − 50° − 60° = 70°."},
-q5:{correct:"c",correctText:"C. Equilateral",explanation:"An equilateral triangle has three equal sides and three equal 60° angles."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const scoreNumber=document.getElementById("score-number"),scoreMessage=document.getElementById("score-message"),scoreDetail=document.getElementById("score-detail"),progressFill=document.getElementById("progress-fill"),retakeButton=document.getElementById("retake-quiz");
-if(!form||!result||!scoreNumber||!scoreMessage||!scoreDetail||!progressFill||!retakeButton){console.error("Quiz could not start: required element missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let score=0,answered=0;
-Object.keys(answers).forEach(function(name){
-const item=answers[name],question=form.querySelector('[data-question="'+name+'"]'),selected=form.querySelector('input[name="'+name+'"]:checked'),feedback=question&&question.querySelector(".quiz-feedback");
-if(!feedback)return;feedback.hidden=false;feedback.className="quiz-feedback";
-if(!selected){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+item.correctText+". "+item.explanation;return;}
-answered++;if(selected.value===item.correct){score++;feedback.classList.add("correct");feedback.textContent="Correct! "+item.explanation;}
-else{feedback.classList.add("incorrect");feedback.textContent="Incorrect. Correct answer: "+item.correctText+". "+item.explanation;}
-});
-const total=Object.keys(answers).length,percent=Math.round(score/total*100);
-scoreNumber.textContent=score+" / "+total;scoreDetail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";progressFill.style.width=percent+"%";
-scoreMessage.textContent=score===total?"Excellent! Perfect score.":score>=4?"Great work! You understand this topic very well.":score>=3?"Good effort! Review the explanations and try again.":"Keep practising! Review the lesson and try again.";
-result.style.display="block";
-});
-retakeButton.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".quiz-feedback").forEach(function(feedback){feedback.hidden=true;feedback.textContent="";feedback.className="quiz-feedback";});
-scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textContent="0% correct · 0 of 5 questions answered.";progressFill.style.width="0%";result.style.display="none";
-});
-})();
-</script>
+<script src="/scripts/pages/math-grade-6-angles-and-triangles.js" defer></script>
 </body></html>

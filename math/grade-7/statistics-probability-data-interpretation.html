@@ -13,23 +13,26 @@
 <meta property="og:url" content="https://learnora-ab2.pages.dev/math/grade-7/statistics-probability-data-interpretation.html">
 <title>Statistics, Probability and Data Interpretation | Grade 7 Maths | Learnora</title>
 <style>
-:root{--navy:#173b63;--teal:#117454;--ink:#263445;--muted:#66758a;--bg:#f4f7fb;--line:#e1e8f0;--pale:#edf5f8}
+:root{--navy:#173b63;--teal:#117454;--ink:#263445;--muted:#536575;--bg:#f4f7fb;--line:#e1e8f0;--pale:#edf5f8}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Arial,Helvetica,sans-serif}a{color:var(--teal)}
 header,footer{background:#fff;padding:15px 20px;border-bottom:1px solid var(--line)}footer{border-top:1px solid var(--line);border-bottom:0;text-align:center;color:var(--muted)}
 nav,main{max-width:960px;margin:auto}nav{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.brand{font-size:25px;font-weight:800;color:var(--navy);text-decoration:none}.navlinks{display:flex;gap:16px;flex-wrap:wrap}.navlinks a{text-decoration:none;color:var(--navy);font-weight:600}
-main{padding:30px 18px 55px}.crumb{font-size:14px;color:var(--muted);margin-bottom:17px}.crumb a{text-decoration:none}
+main{padding:30px 18px 55px}.crumb{font-size:14px;color:var(--muted);margin-bottom:17px}.crumb a{text-decoration:underline;text-underline-offset:2px}
 .hero,.section{background:#fff;border:1px solid var(--line);border-radius:15px;padding:clamp(18px,4vw,26px);margin-bottom:20px}.hero{border-top:5px solid var(--teal)}.tag{display:inline-block;background:#e9f6f0;color:#116548;border-radius:30px;padding:4px 12px;font-size:13px;font-weight:700}
 h1,h2,h3{color:var(--navy);line-height:1.3}h1{font-size:clamp(29px,5vw,42px);margin:12px 0}h2{font-size:24px;margin-top:0}h3{font-size:19px}.muted{color:var(--muted)}li{margin:7px 0}
 .example{margin:15px 0;padding:13px 17px;border-left:4px solid var(--teal);border-radius:7px;background:#f1f8f5}.caution{margin:14px 0;padding:13px 17px;border-left:4px solid #d69a28;border-radius:7px;background:#fff8e9}
 .formula{display:inline-block;padding:10px 15px;border-radius:8px;background:var(--pale);color:var(--navy);font-weight:800}
-table{width:100%;border-collapse:collapse;margin:15px 0}th,td{padding:10px 12px;border:1px solid var(--line);text-align:left}th{background:var(--pale);color:var(--navy)}
+table{width:100%;table-layout:fixed;overflow-wrap:anywhere;border-collapse:collapse;margin:15px 0}th,td{padding:10px 12px;border:1px solid var(--line);text-align:left}th{background:var(--pale);color:var(--navy)}
 .visual{background:#f3f7fa;border-radius:12px;padding:17px;margin:15px 0}.barlist{max-width:540px;margin:12px auto}.barrow{display:grid;grid-template-columns:95px 1fr 28px;gap:8px;align-items:center;margin:9px 0}.track{height:17px;background:#dfe8ee;border-radius:4px;overflow:hidden}.fill{height:100%;background:var(--teal)}
 button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color:white;font-size:15px;font-weight:700;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #78aef0;outline-offset:3px}
 .question{padding:17px 0;border-bottom:1px solid var(--line)}.question label{display:block;margin:8px 0;padding:8px 11px;border-radius:7px;cursor:pointer}.question label:hover{background:#f2f6fa}.question input{margin-right:8px}.feedback{margin-top:10px;padding:10px 13px;border-radius:8px;font-size:14px}.correct{background:#e8f6ed;color:#126239}.incorrect{background:#fff0f0;color:#a32828}.unanswered{background:#fff8e9;color:#79551b}
 #quiz-result{display:none;margin-top:20px;padding:20px;border:1px solid var(--line);border-radius:12px;background:#f1f6fb;text-align:center}.score{font-size:38px;font-weight:800;color:var(--navy)}.progress{height:12px;margin:14px 0;background:#dfe7ef;border-radius:20px;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--teal);transition:width .25s}
 .worksheet{padding:20px;border:2px dashed #aab8c8;border-radius:10px;background:#fff}.answerline{height:25px;border-bottom:1px solid #9aa8b8}.no-print{margin-top:16px}
-@media(max-width:600px){.navlinks{width:100%;gap:12px}.navlinks a{font-size:14px}table{font-size:14px}th,td{padding:8px}.barrow{grid-template-columns:75px 1fr 22px;font-size:14px}}
+@media(max-width:600px){.navlinks{width:100%;gap:12px}.navlinks a{font-size:14px}table{font-size:12px;table-layout:fixed}th,td{padding:6px 3px;overflow-wrap:anywhere}.worksheet p{overflow-wrap:anywhere}.barrow{grid-template-columns:75px 1fr 22px;font-size:14px}}
 @media print{header,footer,.no-print,.crumb{display:none!important}body{background:#fff}main{max-width:100%;padding:0}.worksheet{border:0}}
+
+fieldset.question,fieldset.quiz-question{border:0;min-width:0}
+fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
 </style>
 </head>
 <body>
@@ -52,11 +55,11 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 <section class="section"><h2>12. Practice Exercises</h2><p>Try these questions before opening the solutions.</p><ol><li>A school has 600 students. A survey asks 60 students about lunch choices. Identify the population and sample.</li><li>Find the mean of 5, 7, 8 and 12.</li><li>Find the median of 3, 9, 5, 7 and 11.</li><li>Find the mode and range of 2, 4, 4, 6, 9.</li><li>A bag contains 4 green and 6 orange counters. Find the probability of choosing green and the probability of not choosing green.</li><li>A fair six-sided die is rolled. Find the probability of rolling a number greater than 4.</li><li>A coin lands on heads 14 times in 25 flips. Find the experimental probability of heads as a fraction and percentage.</li><li>Explain why asking only basketball players about the school's favourite sport may produce a biased sample.</li></ol><details><summary><strong>Show practice answers and explanations</strong></summary><ol><li>Population = all 600 students; sample = the 60 students surveyed.</li><li>(5 + 7 + 8 + 12) ÷ 4 = 32 ÷ 4 = 8.</li><li>Ordered: 3, 5, 7, 9, 11. Median = 7.</li><li>Mode = 4; range = 9 − 2 = 7.</li><li>P(green) = 4/10 = 2/5. P(not green) = 6/10 = 3/5.</li><li>Outcomes greater than 4 are 5 and 6, so probability = 2/6 = 1/3.</li><li>Experimental probability = 14/25 = 0.56 = 56%.</li><li>Basketball players may prefer basketball, so their answers may not reflect the views of all students.</li></ol></details></section>
 <section class="section" id="quiz"><h2>13. Check Your Understanding</h2><p>Choose one answer for each question, then select Check Answers. Each question is worth one point.</p>
 <form id="quiz-form">
-<div class="question" data-question="q1"><strong>1. What is a sample?</strong><label><input type="radio" name="q1" value="a"> A. The entire population every time</label><label><input type="radio" name="q1" value="b"> B. A smaller group selected from a population</label><label><input type="radio" name="q1" value="c"> C. A type of graph</label><div class="feedback" hidden></div></div>
-<div class="question" data-question="q2"><strong>2. What is the median of 2, 4, 6, 8 and 10?</strong><label><input type="radio" name="q2" value="a"> A. 4</label><label><input type="radio" name="q2" value="b"> B. 6</label><label><input type="radio" name="q2" value="c"> C. 8</label><div class="feedback" hidden></div></div>
-<div class="question" data-question="q3"><strong>3. A fair die is rolled. What is the probability of rolling an even number?</strong><label><input type="radio" name="q3" value="a"> A. 1/6</label><label><input type="radio" name="q3" value="b"> B. 1/3</label><label><input type="radio" name="q3" value="c"> C. 1/2</label><div class="feedback" hidden></div></div>
-<div class="question" data-question="q4"><strong>4. A coin lands on tails 12 times in 20 flips. What is the experimental probability of tails?</strong><label><input type="radio" name="q4" value="a"> A. 3/5</label><label><input type="radio" name="q4" value="b"> B. 1/2</label><label><input type="radio" name="q4" value="c"> C. 2/5</label><div class="feedback" hidden></div></div>
-<div class="question" data-question="q5"><strong>5. Which measure is usually less affected by one very large outlier?</strong><label><input type="radio" name="q5" value="a"> A. Mean</label><label><input type="radio" name="q5" value="b"> B. Median</label><label><input type="radio" name="q5" value="c"> C. Range</label><div class="feedback" hidden></div></div>
+<fieldset class="question" data-question="q1"><legend>1. What is a sample?</legend><label><input type="radio" name="q1" value="a"> A. The entire population every time</label><label><input type="radio" name="q1" value="b"> B. A smaller group selected from a population</label><label><input type="radio" name="q1" value="c"> C. A type of graph</label><div class="feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="question" data-question="q2"><legend>2. What is the median of 2, 4, 6, 8 and 10?</legend><label><input type="radio" name="q2" value="a"> A. 4</label><label><input type="radio" name="q2" value="b"> B. 6</label><label><input type="radio" name="q2" value="c"> C. 8</label><div class="feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="question" data-question="q3"><legend>3. A fair die is rolled. What is the probability of rolling an even number?</legend><label><input type="radio" name="q3" value="a"> A. 1/6</label><label><input type="radio" name="q3" value="b"> B. 1/3</label><label><input type="radio" name="q3" value="c"> C. 1/2</label><div class="feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="question" data-question="q4"><legend>4. A coin lands on tails 12 times in 20 flips. What is the experimental probability of tails?</legend><label><input type="radio" name="q4" value="a"> A. 3/5</label><label><input type="radio" name="q4" value="b"> B. 1/2</label><label><input type="radio" name="q4" value="c"> C. 2/5</label><div class="feedback" hidden aria-live="polite"></div></fieldset>
+<fieldset class="question" data-question="q5"><legend>5. Which measure is usually less affected by one very large outlier?</legend><label><input type="radio" name="q5" value="a"> A. Mean</label><label><input type="radio" name="q5" value="b"> B. Median</label><label><input type="radio" name="q5" value="c"> C. Range</label><div class="feedback" hidden aria-live="polite"></div></fieldset>
 <div class="no-print"><button type="submit">Check Answers</button></div></form>
 <div id="quiz-result" aria-live="polite"><div class="score" id="score-number"></div><div id="score-message"></div><div class="progress"><span id="progress-fill"></span></div><p id="score-detail"></p><button type="button" id="retake-quiz" class="no-print">Retake Quiz</button></div>
 </section>
@@ -67,40 +70,6 @@ button{padding:11px 17px;border:0;border-radius:8px;background:var(--teal);color
 <section class="section"><h2>Continue Learning</h2><ul><li><a href="/math/grade-7/ratios-rates-proportional-relationships.html">Ratios, Rates and Proportional Relationships</a></li><li><a href="/math/grade-7/rational-numbers-and-operations.html">Rational Numbers and Operations</a></li><li><a href="/math/grade-6/data-and-graphs.html">Review: Grade 6 Data and Graphs</a></li></ul><p><a href="/math/grade-7/">Return to the Grade 7 Maths Learning Path</a></p></section>
 </main>
 <footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Home</a> · <a href="/about.html">About</a> · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a><p><a href="/contact.html">Contact</a></p></footer>
-<script>
-(function(){
-"use strict";
-const answers={
-q1:{correct:"b",label:"B. A smaller group selected from a population",why:"A sample is a subset selected to provide information about the wider population."},
-q2:{correct:"b",label:"B. 6",why:"The five values are already ordered; 6 is the middle value."},
-q3:{correct:"c",label:"C. 1/2",why:"Three of six outcomes (2, 4 and 6) are even, so 3/6 = 1/2."},
-q4:{correct:"a",label:"A. 3/5",why:"Experimental probability = 12/20 = 3/5."},
-q5:{correct:"b",label:"B. Median",why:"A single extreme value usually changes the mean more than it changes the median."}
-};
-const form=document.getElementById("quiz-form"),result=document.getElementById("quiz-result");
-const score=document.getElementById("score-number"),message=document.getElementById("score-message"),detail=document.getElementById("score-detail"),bar=document.getElementById("progress-fill"),retake=document.getElementById("retake-quiz"),print=document.getElementById("print-worksheet");
-if(!form||!result||!score||!message||!detail||!bar||!retake||!print){console.error("Quiz setup incomplete: required elements are missing.");return;}
-form.addEventListener("submit",function(event){
-event.preventDefault();let points=0,answered=0;
-Object.keys(answers).forEach(function(key){
-const answer=answers[key],question=form.querySelector('[data-question="'+key+'"]'),choice=form.querySelector('input[name="'+key+'"]:checked'),feedback=question.querySelector(".feedback");
-feedback.hidden=false;feedback.className="feedback";
-if(!choice){feedback.classList.add("unanswered");feedback.textContent="Not answered. Correct answer: "+answer.label+". "+answer.why;return;}
-answered++;
-if(choice.value===answer.correct){points++;feedback.classList.add("correct");feedback.textContent="Correct! "+answer.why;}
-else{feedback.classList.add("incorrect");feedback.textContent="Not quite. Correct answer: "+answer.label+". "+answer.why;}
-});
-const total=Object.keys(answers).length,percent=Math.round(points/total*100);
-score.textContent=points+" / "+total;detail.textContent=percent+"% correct · "+answered+" of "+total+" questions answered.";bar.style.width=percent+"%";
-message.textContent=points===total?"Excellent — a perfect score!":points>=4?"Great work. Review any feedback to strengthen your understanding.":points>=3?"Good effort. Revisit the examples and try again.":"Keep practising. Review the lesson, then retake the quiz.";
-result.style.display="block";
-});
-retake.addEventListener("click",function(){
-form.reset();form.querySelectorAll(".feedback").forEach(function(item){item.hidden=true;item.textContent="";item.className="feedback";});
-score.textContent="0 / 5";message.textContent="";detail.textContent="0% correct · 0 of 5 questions answered.";bar.style.width="0%";result.style.display="none";
-});
-print.addEventListener("click",function(){window.print();});
-})();
-</script>
+<script src="/scripts/pages/math-grade-7-statistics-probability-data-interpretation.js" defer></script>
 </body>
 </html>
