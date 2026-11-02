@@ -33,7 +33,7 @@ function resolveRequestPath(requestUrl) {
     return null;
   }
   if (pathname.includes(String.fromCharCode(0)) || pathname.split('/').some(part => part === '..')) return null;
-  let relative = pathname.replace(/^\\/+/, '');
+  let relative = pathname.replace(/^\/+/, '');
   if (!relative) relative = 'index.html';
   else if (relative.endsWith('/')) relative += 'index.html';
   else if (!path.extname(relative)) relative += '.html';
