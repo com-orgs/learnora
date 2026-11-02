@@ -32,7 +32,7 @@ function resolveRequestPath(requestUrl) {
   } catch {
     return null;
   }
-  if (pathname.includes('\\0') || pathname.split('/').some(part => part === '..')) return null;
+  if (pathname.includes(String.fromCharCode(0)) || pathname.split('/').some(part => part === '..')) return null;
   let relative = pathname.replace(/^\\/+/, '');
   if (!relative) relative = 'index.html';
   else if (relative.endsWith('/')) relative += 'index.html';
@@ -74,5 +74,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, host, () => {
-  process.stdout.write('Learnora clean-URL preview server listening on http://' + host + ':' + port + '\\n');
+  process.stdout.write('Learnora clean-URL preview server listening on http://' + host + ':' + port + '\n');
 });
