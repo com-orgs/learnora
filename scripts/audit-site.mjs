@@ -60,9 +60,38 @@ function loadQuizAnswerKey(source, rel, origin) {
     const scriptFile = path.join(root, scriptPath);
     if (!fs.existsSync(scriptFile) || !fs.statSync(scriptFile).isFile()) continue;
     const code = fs.readFileSync(scriptFile, 'utf8');
-    const answerMatch = code.match(/\bconst\s+answers\s*=\s*(\{[\s\S]*?\})\s*;/);
-    if (!answerMatch) continue;
-    return vm.runInNewContext('(' + answerMatch[1] + ')', Object.create(null), { timeout: 100 });
+    const declaration = code.match(/\bconst\s+(answers|key|A)\s*=\s*\{/);
+    if (!declaration) continue;
+
+    const openBrace = code.indexOf('{', declaration.index);
+    let depth = 0;
+    let quote = null;
+    let escaped = false;
+    let closeBrace = -1;
+    for (let index = openBrace; index < code.length; index++) {
+      const character = code[index];
+      if (quote) {
+        if (escaped) escaped = false;
+        else if (character === '\\') escaped = true;
+        else if (character === quote) quote = null;
+        continue;
+      }
+      if (character === '"' || character === "'" || character.charCodeAt(0) === 96) {
+        quote = character;
+        continue;
+      }
+      if (character === '{') depth++;
+      else if (character === '}') {
+        depth--;
+        if (depth === 0) {
+          closeBrace = index;
+          break;
+        }
+      }
+    }
+    if (closeBrace < 0) throw new Error('Quiz answer object has unbalanced braces in ' + scriptPath);
+    const objectSource = code.slice(openBrace, closeBrace + 1);
+    return vm.runInNewContext('(' + objectSource + ')', Object.create(null), { timeout: 100 });
   }
   throw new Error('No readable external quiz answer key found.');
 }
@@ -190,7 +219,7 @@ for (const file of indexable) {
       for (let question = 1; question <= 5; question++) {
         const name = 'q' + question;
         const entry = answerKey[name];
-        const correctValue = typeof entry === 'string' ? entry : entry?.correct ?? entry?.answer;
+        const correctValue = typeof entry === 'string' ? entry : entry?.correct ?? entry?.answer ?? entry?.v ?? entry?.a;
         if (correctValue === undefined || correctValue === null) {
           errors.push(rel + ': answer key is missing a valid correct option for ' + name + '.');
           continue;
@@ -208,8 +237,9 @@ for (const file of indexable) {
           errors.push(rel + ': answer key option ' + correctValue + ' does not match a labelled radio option for ' + name + '.');
           continue;
         }
-        if (entry && typeof entry === 'object' && entry.correctText) {
-          if (normalizeVisibleText(entry.correctText) !== correctOption.text) {
+        const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
+        if (expectedText) {
+          if (normalizeVisibleText(expectedText) !== correctOption.text) {
             errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
           }
         }
