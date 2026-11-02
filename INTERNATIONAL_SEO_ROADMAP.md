@@ -46,17 +46,17 @@ These are qualitative long-tail opportunities from competitor and search-result 
 
 ## 4. Content quality audit — all 64 lesson pages
 
-The 64 lesson URLs returned content. Extracted lesson length averaged approximately 1,015 words (range 709–1,821); no lesson was below 700 words. Every lesson included a printable worksheet and answer-key or suggested-answer guidance. A corrected full-site scan found:
+The 64 lesson URLs returned content. Extracted lesson length averaged approximately 1,015 words (range 709–1,821); no lesson was below 700 words. Source-level verification confirmed:
 
-- 63 of 64 lessons have a detectable quiz / knowledge-check section.
-- One lesson still needs an interactive quiz / knowledge check:
-  - `math/grade-7/coordinate-geometry.html`
+- All 64 lessons include an interactive quiz / knowledge check.
+- All 64 lessons include a printable worksheet.
+- All 64 lessons include an answer key or suggested-answer guidance.
 - No lesson page exposed a named author/reviewer in the extracted metadata.
 - 61 lessons had no explicit Sources / References / Further Reading section.
 
-A first-pass scan used narrow heading patterns and incorrectly flagged some lessons using headings such as “Knowledge check” and “Suggested Answer Features”. Those false positives were removed after source-level verification.
+A first-pass text-extraction scan used narrow heading patterns and missed some quiz markup and answer-guidance formats. Those false positives were removed after inspecting the underlying HTML and external JavaScript.
 
-These are editorial workflow gaps, not a reason to add fabricated authors or generic filler. Add named reviewers only after real review; cite primary curriculum/science sources where factual claims or standards are discussed. Keep the corrections process visible.
+The remaining editorial gap is source attribution and a truthful reviewer/corrections workflow. Add named reviewers only after real review; cite primary curriculum/science sources where factual claims or standards are discussed. Do not fabricate credentials or citations.
 
 Tracked work: GitHub issue #4 — https://github.com/com-orgs/learnora/issues/4
 
