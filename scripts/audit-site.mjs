@@ -456,7 +456,7 @@ const sitemapLessonUrls = fs.existsSync(sitemapPath)
       .filter(url => {
         try {
           const parsed = new URL(url);
-          return parsed.origin === origin && /\/(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(parsed.pathname);
+          return parsed.origin === origin && /\/(math|english|science)\/grade-[^/]+\/.+$/i.test(parsed.pathname) && !parsed.pathname.endsWith('/');
         } catch { return false; }
       })
   : [];
