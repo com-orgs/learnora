@@ -125,7 +125,7 @@ function canonicalOf(source) {
 function expectedUrl(origin, file) {
   if (file === 'index.html') return origin + '/';
   if (file.endsWith('/index.html')) return origin + '/' + file.slice(0, -'index.html'.length);
-  return origin + '/' + file.replace(/\\.html$/i, '');
+  return origin + '/' + file.replace(/\.html$/i, '');
 }
 
 const files = walk(root);
