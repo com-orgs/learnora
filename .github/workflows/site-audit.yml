@@ -34,6 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           branch_slug="${GITHUB_REF_NAME//\//-}"
+          branch_slug="${branch_slug:0:28}"
           base_url="https://${branch_slug}.learnora-ab2.pages.dev"
           status="000"
           for attempt in {1..30}; do
