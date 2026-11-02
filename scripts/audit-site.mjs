@@ -9,6 +9,7 @@ let quizFormsChecked = 0;
 let externalScriptsChecked = 0;
 let quizAnswerMappingsChecked = 0;
 let pageScriptsSecurityChecked = 0;
+let attributeParserSamplesChecked = 0;
 
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -46,6 +47,14 @@ const attributeParserSamples = [
   ['<meta content="sample" NAME="description">', 'name', 'description'],
   ['<div class="card">', 'href', null]
 ];
+for (const [sampleTag, sampleName, expectedValue] of attributeParserSamples) {
+  attributeParserSamplesChecked++;
+  const actualValue = attr(sampleTag, sampleName);
+  if (actualValue !== expectedValue) {
+    errors.push('HTML attribute parser self-test failed for ' + sampleName + ': expected ' + String(expectedValue) + ', found ' + String(actualValue) + '.');
+  }
+}
+
 function normalizeVisibleText(value) {
   return value
     .replace(/<input\b[^>]*>/gi, ' ')
@@ -226,7 +235,9 @@ for (const file of indexable) {
     if (canonical !== expected) errors.push(rel + ': canonical mismatch. Expected ' + expected + ', found ' + canonical);
   }
   if (h1Count !== 1) errors.push(rel + ': expected exactly one H1, found ' + h1Count + '.');
-  if (!/name=["']viewport["']/i.test(source)) errors.push(rel + ': missing viewport meta tag.');
+  const viewportTags = metaTags.filter(tag => (attr(tag, 'name') || '').toLowerCase() === 'viewport');
+  if (viewportTags.length === 0) errors.push(rel + ': missing viewport meta tag.');
+  if (viewportTags.length > 1) errors.push(rel + ': duplicate viewport meta tags.');
 
   const footer = source.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] || source;
   if (rel !== 'contact.html' && !/href=["']\/contact\.html["']/i.test(footer)) warnings.push(rel + ': Contact link not found in footer.');
@@ -429,6 +440,7 @@ else {
   }
   if (csp.length > 2000) errors.push('_headers Content-Security-Policy exceeds Cloudflare Pages 2,000-character line limit.');
 }
+console.log('HTML attribute parser self-tests checked: ' + attributeParserSamplesChecked);
 console.log('HTML pages checked: ' + indexable.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
 console.log('Accessible quiz forms checked: ' + quizFormsChecked);
