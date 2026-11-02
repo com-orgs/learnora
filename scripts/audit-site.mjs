@@ -7,6 +7,7 @@ const errors = [];
 const warnings = [];
 let quizFormsChecked = 0;
 let externalScriptsChecked = 0;
+let quizAnswerMappingsChecked = 0;
 
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -31,6 +32,39 @@ function attr(tag, name) {
   if (doubleQuoted) return doubleQuoted[1];
   const singleQuoted = tag.match(new RegExp("\\b" + name + "\s*=\s*'([^']*)'", "i"));
   return singleQuoted?.[1] ?? null;
+}
+
+function normalizeVisibleText(value) {
+  return value
+    .replace(/<input\b[^>]*>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+function loadQuizAnswerKey(source, rel, origin) {
+  for (const match of source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+    const tag = '<script ' + match[1] + '>';
+    const src = attr(tag, 'src');
+    if (!src) continue;
+    const url = new URL(src, origin + '/' + rel);
+    if (url.origin !== origin) continue;
+    const scriptPath = decodeURIComponent(url.pathname).replace(/^\/+/, '');
+    const scriptFile = path.join(root, scriptPath);
+    if (!fs.existsSync(scriptFile) || !fs.statSync(scriptFile).isFile()) continue;
+    const code = fs.readFileSync(scriptFile, 'utf8');
+    const answerMatch = code.match(/\bconst\s+answers\s*=\s*(\{[\s\S]*?\})\s*;/);
+    if (!answerMatch) continue;
+    return vm.runInNewContext('(' + answerMatch[1] + ')', Object.create(null), { timeout: 100 });
+  }
+  throw new Error('No readable external quiz answer key found.');
 }
 
 function canonicalOf(source) {
@@ -148,6 +182,40 @@ for (const file of indexable) {
       const radioCount = [...group[1].matchAll(/<input\b[^>]*type=["']radio["'][^>]*>/gi)].length;
       const labelCount = (group[1].match(/<label\b/gi) || []).length;
       if (labelCount < radioCount) errors.push(rel + ': quiz question q' + question + ' has radio options without labels.');
+    }
+
+    try {
+      const answerKey = loadQuizAnswerKey(source, rel, origin);
+      quizAnswerMappingsChecked++;
+      for (let question = 1; question <= 5; question++) {
+        const name = 'q' + question;
+        const entry = answerKey[name];
+        const correctValue = typeof entry === 'string' ? entry : entry?.correct ?? entry?.answer;
+        if (correctValue === undefined || correctValue === null) {
+          errors.push(rel + ': answer key is missing a valid correct option for ' + name + '.');
+          continue;
+        }
+        const group = fieldsets.find(match => [...match[1].matchAll(/<input\b[^>]*>/gi)].some(input => attr(input[0], 'name') === name));
+        if (!group) continue;
+        const options = [...group[1].matchAll(/<label\b[^>]*>([\s\S]*?)<\/label>/gi)]
+          .map(match => {
+            const input = match[1].match(/<input\b[^>]*>/i)?.[0];
+            return input ? { value: attr(input, 'value'), text: normalizeVisibleText(match[1]) } : null;
+          })
+          .filter(Boolean);
+        const correctOption = options.find(option => String(option.value) === String(correctValue));
+        if (!correctOption) {
+          errors.push(rel + ': answer key option ' + correctValue + ' does not match a labelled radio option for ' + name + '.');
+          continue;
+        }
+        if (entry && typeof entry === 'object' && entry.correctText) {
+          if (normalizeVisibleText(entry.correctText) !== correctOption.text) {
+            errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
+          }
+        }
+      }
+    } catch (error) {
+      errors.push(rel + ': quiz answer-key validation failed: ' + error.message);
     }
   }
 
@@ -282,6 +350,7 @@ else {
 console.log('HTML pages checked: ' + indexable.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
 console.log('Accessible quiz forms checked: ' + quizFormsChecked);
+console.log('Quiz answer-key mappings checked: ' + quizAnswerMappingsChecked);
 console.log('Same-origin JavaScript assets checked: ' + externalScriptsChecked);
 console.log('Warnings: ' + warnings.length);
 for (const warning of warnings) console.warn('WARNING: ' + warning);
@@ -290,5 +359,5 @@ if (errors.length) {
   for (const error of errors) console.error('ERROR: ' + error);
   process.exitCode = 1;
 } else {
-  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, accessible quiz fieldsets/labels, same-origin JavaScript, CSP and JavaScript syntax.');
+  console.log('PASS: metadata, canonical/OG consistency, language, images, sitemap, internal links/anchors, accessible quiz fieldsets/labels and answer-key mappings, same-origin JavaScript, CSP and JavaScript syntax.');
 }
