@@ -38,18 +38,55 @@ try {
   if (!sitemapResponse.ok()) throw new Error('Sitemap request failed with HTTP ' + sitemapResponse.status());
   const sitemap = await sitemapResponse.text();
   const firstSitemapLocation = sitemap.match(/<loc>(.*?)<\/loc>/);
-  const canonicalOrigin = firstSitemapLocation ? new URL(firstSitemapLocation[1]).origin : null;
-  if (!canonicalOrigin) failures.push('Sitemap does not contain a valid canonical URL.');
+  let canonicalOrigin = null;
+  if (firstSitemapLocation) {
+    try {
+      const firstUrl = new URL(firstSitemapLocation[1].trim());
+      if (firstUrl.protocol === 'https:' && !firstUrl.username && !firstUrl.password) canonicalOrigin = firstUrl.origin;
+    } catch {
+      // Reported below as an invalid sitemap location.
+    }
+  }
+  if (!canonicalOrigin) failures.push('Sitemap does not contain a valid HTTPS canonical URL.');
   const robotsResponse = await page.request.get(baseUrl + '/robots.txt');
   if (!robotsResponse.ok()) failures.push('robots.txt did not return HTTP 200.');
   else if (!canonicalOrigin || !(await robotsResponse.text()).includes(canonicalOrigin + '/sitemap.xml')) failures.push('robots.txt does not reference the canonical live sitemap URL.');
   const missingResponse = await page.request.get(baseUrl + '/__learnora_audit_missing_route__');
   if (missingResponse.status() !== 404) failures.push('Unknown routes should return HTTP 404; received ' + missingResponse.status() + '.');
   else if (!/Page Not Found/i.test(await missingResponse.text())) failures.push('Custom 404 response did not contain the expected not-found page.');
-  const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => new URL(match[1]).pathname);
-  if (routes.length === 0) throw new Error('Sitemap does not contain any routes.');
-  if (new Set(routes).size !== routes.length) throw new Error('Sitemap contains duplicate routes.');
-  if (routes.some(route => !route.startsWith('/') || route.startsWith('//'))) throw new Error('Sitemap contains a route outside the site origin.');
+  const sitemapLocations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1].trim());
+  if (sitemapLocations.length === 0) throw new Error('Sitemap does not contain any routes.');
+  const routes = [];
+  const seenRoutes = new Set();
+  for (const location of sitemapLocations) {
+    let sitemapUrl;
+    try {
+      sitemapUrl = new URL(location);
+    } catch {
+      failures.push('Sitemap contains an invalid URL: ' + location);
+      continue;
+    }
+    if (sitemapUrl.protocol !== 'https:' || sitemapUrl.origin !== canonicalOrigin || sitemapUrl.username || sitemapUrl.password) {
+      failures.push('Sitemap URL must use the same HTTPS canonical origin (' + canonicalOrigin + '): ' + location);
+      continue;
+    }
+    if (sitemapUrl.search || sitemapUrl.hash) {
+      failures.push('Sitemap URL must not contain a query string or fragment: ' + location);
+      continue;
+    }
+    const route = sitemapUrl.pathname;
+    if (!route.startsWith('/') || route.startsWith('//')) {
+      failures.push('Sitemap contains an invalid local route: ' + location);
+      continue;
+    }
+    if (seenRoutes.has(route)) {
+      failures.push('Sitemap contains duplicate routes: ' + route);
+      continue;
+    }
+    seenRoutes.add(route);
+    routes.push(route);
+  }
+  if (routes.length === 0) throw new Error('Sitemap contains no valid same-origin routes.');
 
   for (const route of routes) {
     activePath = route;
