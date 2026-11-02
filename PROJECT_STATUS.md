@@ -18,7 +18,7 @@
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
 - Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
-- Latest comparison before current phase-1 audit commits: audit branch ahead by 208 commits, behind by 0, 134 changed files (re-check after each phase).
+- Latest verified comparison before this update: audit branch ahead by 266 commits, behind by 0. Re-check after this update.
 - Main branch has not been merged or deployed from the audit branch.
 
 ## CI status (automatically refreshed by GitHub Actions)
@@ -28,7 +28,7 @@
 - Status: success.
 - Tested commit: `1678f336d402dca7143a665d3d45bac4b7d67535`
 - Workflow: Learnora Site Audit (run [#41466567257](https://github.com/com-orgs/learnora/actions/runs/41466567257))
-- Last known run: [41461081003](https://github.com/com-orgs/learnora/actions/runs/41461081003) — **success**.
+- Last known run: [41466567257](https://github.com/com-orgs/learnora/actions/runs/41466567257) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
 ## Completed work
@@ -43,17 +43,17 @@
 
 ### Learning content and curriculum
 - [x] Maths Grades 6–8: 46 lessons (Grade 6: 23; Grade 7: 12; Grade 8: 11).
-- [x] English: 7 lessons after this vocabulary addition (6 before this commit).
-- [x] Science: 7 lessons total — 6 Grade 7 and 1 Grade 8.
+- [x] English: 7 lessons, covering grammar, reading, writing and vocabulary.
+- [x] Science: 8 lessons total — 6 Grade 7 and 2 Grade 8.
 - [x] Science Grade 7 Heat Transfer: lesson, quiz JS, subject index card and sitemap entry.
 - [x] Science Grade 7 States of Matter: lesson, quiz JS, subject index card and sitemap entry.
 - [x] Science Grade 7 Forces & Motion scientific accuracy corrections.
 - [x] English reading comprehension and punctuation/capitalization content additions (verify exact current inventory before adding overlapping topics).
 
 ### Quality assurance
-- [x] Static audit previously reported 62 HTML pages, 62 canonical URLs, 52 quiz forms and 52 answer-key mappings (historical count; re-run for current totals).
+- [x] Latest CI run 41466567257: 71 HTML pages, 60 curriculum lessons, 60 quiz forms and 60 answer-key mappings; warnings 0.
 - [x] Browser smoke coverage previously exercised mobile widths 320, 390, 768 and desktop, quiz submission/retake and print actions (historical 52-quiz run).
-- [x] Latest known run 41461081003 passed every job step, including mobile/desktop/quiz browser checks.
+- [x] Latest run 41466567257 passed every step, including static audit, Cloudflare preview, Playwright, axe accessibility, responsive checks, quiz submission/retake and performance budgets.
 - [x] Responsive table overflow fixes applied to Science Grade 7 States of Matter and Heat Transfer lessons.
 - [x] Print styles hide worksheet answer keys where intended.
 
@@ -68,13 +68,13 @@
 
 ## Remaining work — ordered queue
 
-1. [x] Phase 1 — curriculum inventory and index reconciliation. Latest tested inventory: Maths 46, English 6, Science 7 = 59 lessons; current commit adds one English vocabulary lesson, so expected total is 60. New CI will verify.
+1. [x] Phase 1 — curriculum inventory and index reconciliation. Verified after latest CI: Maths 46, English 7, Science 7 = 60 lessons; sitemap has 71 URLs including 60 lesson URLs.
 2. [ ] Phase 2 — English curriculum expansion/review. Added vocabulary/context-clues lesson in this commit; continue checking writing, reading and grammar coverage without duplicates.
-3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. One Grade 8 chemistry lesson and Grade 8 pathway now exist; add and review further topics.
-4. [ ] Phase 4 — full educational quality review across all 60 lessons; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions. Manually validate factual accuracy, answer keys and age suitability.
-5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks ran on all 70 pages in run 41465504326 with no browser-test failures; continue manual keyboard and screen-reader review.
-6. [ ] Phase 6 — SEO/content discoverability review. Metadata and sitemap checks are automated; Science index title/description mismatch fixed in this commit. Continue manual duplicate/thin-content and structured-data review.
-7. [ ] Phase 7 — performance/responsiveness/security review. Latest run checked 70 routes at 320/390/768/desktop, page resource budgets, no third-party requests, CSP/security headers and custom 404; continue deeper device/security review.
+3. [ ] Phase 3 — Science Grade 8 curriculum expansion/review. Two Grade 8 lessons now cover chemistry and human digestive/circulatory systems; continue adding balanced physics, biology and earth/space science topics.
+4. [ ] Phase 4 — full educational quality review across all 61 lessons after the current Science Grade 8 addition; automated rubric now checks learning outcomes, examples, independent practice, printable worksheet, summary and five quiz questions. Manually validate factual accuracy, answer keys and age suitability.
+5. [ ] Phase 5 — complete accessibility review. Automated axe WCAG 2.1 A/AA checks ran on all 71 pages in run 41466567257 with no browser-test failures; continue manual keyboard and screen-reader review.
+6. [ ] Phase 6 — SEO/content discoverability review. Metadata and sitemap checks are automated; Science index title/description mismatch fixed. Review updated About page and Grade 8 index metadata in this commit; continue manual duplicate/thin-content and structured-data review.
+7. [ ] Phase 7 — performance/responsiveness/security review. Latest run checked 71 routes at 320/390/768/desktop, page resource budgets, no third-party requests, CSP/security headers and custom 404; continue deeper device/security review.
 8. [ ] Audit legal/trust/AdSense readiness: privacy/cookie disclosures, contact/about/terms, original substantial content, navigation and ad placement readiness (no guarantee of AdSense approval).
 9. [ ] Run complete final static + browser + accessibility + link/route verification on the final audit branch.
 10. [ ] Produce final issue list and completion report; compare audit branch against main.
@@ -116,3 +116,8 @@
 - Broadened the educational-quality learning-outcomes detector to recognise “By the end…” and “You should be able to…” wording, reducing false warnings.
 - Latest confirmed full run before this update: 41465504326 passed all steps; 70 pages, 59 lesson files, 59 quiz submissions, 70 responsive/performance checks. One educational quality warning remained on Grade 7 Geometry outcomes and is addressed by the updated detector.
 - Current continuation point: review English and Science curriculum gaps, then complete manual lesson-quality, accessibility, SEO, legal/trust and final regression reviews. Do not deploy.
+
+- Added Science Grade 8 Biology lesson: Human Body Systems — Digestion and Circulation, with worked examples, independent practice, five-question quiz/feedback/retake and printable worksheet.
+- Synchronized Grade 8 Science pathway, Science subject index, sitemap and About page curriculum description in one atomic commit.
+- Inventory expected after this addition: Maths 46, English 7, Science 8 = 61 lessons; 72 sitemap URLs and 72 HTML pages. Await CI to verify exact totals.
+- Current full CI baseline before this commit: run 41466567257 passed all 71 HTML pages and 60 quizzes with zero static warnings.
