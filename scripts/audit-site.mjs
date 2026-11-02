@@ -76,15 +76,15 @@ for (const file of indexable) {
   }
 
   const visibleText = source
-    .replace(/<script\\b[\\s\\S]*?<\\/script>/gi, '')
-    .replace(/<style\\b[\\s\\S]*?<\\/style>/gi, '')
-    .replace(/<svg\\b[\\s\\S]*?<\\/svg>/gi, '')
-    .replace(/<!--[\\s\\S]*?-->/g, '');
-  if (/<(?=\\s|,|=|[0-9])/m.test(visibleText)) {
+    .replace(/<script\b[\s\S]*?<\/script>/gi, '')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, '')
+    .replace(/<svg\b[\s\S]*?<\/svg>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+  if (/<(?=\s|,|=|[0-9])/m.test(visibleText)) {
     errors.push(rel + ': suspicious unescaped less-than sign in HTML content.');
   }
 
-  const headingLevels = [...source.matchAll(/<h([1-6])\\b/gi)].map(m => Number(m[1]));
+  const headingLevels = [...source.matchAll(/<h([1-6])\b/gi)].map(m => Number(m[1]));
   for (let i = 1; i < headingLevels.length; i++) {
     if (headingLevels[i] > headingLevels[i - 1] + 1) {
       warnings.push(rel + ': heading level skips from H' + headingLevels[i - 1] + ' to H' + headingLevels[i] + '.');
@@ -133,7 +133,7 @@ for (const file of indexable) {
     const fullTag = match[0];
     const href = match[1].trim();
     if (attr(fullTag, 'target') === '_blank') {
-      const relValue = (attr(fullTag, 'rel') || '').toLowerCase().split(/\\s+/);
+      const relValue = (attr(fullTag, 'rel') || '').toLowerCase().split(/\s+/);
       if (!relValue.includes('noopener') || !relValue.includes('noreferrer')) {
         warnings.push(rel + ': external new-tab link should include rel="noopener noreferrer": ' + href);
       }
@@ -143,7 +143,6 @@ for (const file of indexable) {
       const candidates = ['id="' + fragment + '"', "id='" + fragment + "'", 'name="' + fragment + '"', "name='" + fragment + "'"];
       if (!candidates.some(value => source.includes(value))) errors.push(rel + ': broken in-page anchor "' + href + '".');
     }
-    const href = match[1].trim();
     if (!href || href.startsWith('#') || /^(mailto:|tel:|javascript:|data:)/i.test(href)) continue;
     let target;
     try { target = new URL(href, origin + '/' + rel); } catch { continue; }
