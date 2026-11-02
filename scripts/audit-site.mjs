@@ -461,7 +461,8 @@ const sitemapLessonUrls = fs.existsSync(sitemapPath)
       })
   : [];
 const sitemapLessonPaths = new Set(sitemapLessonUrls.map(url => {
-  const pathname = new URL(url).pathname.replace(/^\/+/, '');
+  let pathname = new URL(url).pathname.replace(/^\/+/, '');
+  if (!path.extname(pathname)) pathname += '.html';
   return pathname;
 }));
 for (const lesson of lessonFiles) {
@@ -495,7 +496,8 @@ for (const indexFile of lessonIndexFiles) {
     try {
       const target = new URL(href, origin + '/' + indexFile);
       if (target.origin !== origin) continue;
-      const targetPath = decodeURIComponent(target.pathname).replace(/^\/+/, '');
+      let targetPath = decodeURIComponent(target.pathname).replace(/^\/+/, '');
+      if (/^(math|english|science)\/grade-[^/]+\/.+$/i.test(targetPath) && !targetPath.endsWith('/') && !path.extname(targetPath)) targetPath += '.html';
       if (/^(math|english|science)\/grade-[^/]+\/.+\.html$/i.test(targetPath) && !targetPath.endsWith('/index.html')) {
         indexedLessons.add(targetPath);
         if (!lessonSet.has(targetPath)) errors.push(indexFile + ': lesson card points to a missing lesson file: ' + targetPath);
