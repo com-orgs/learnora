@@ -8,16 +8,16 @@
 - Production site: https://learnora-ab2.pages.dev/
 - Production branch: `main`; latest verified main commit: `5e5d3f6da61e9f9c98464d4682f81b1ebf32c7a2`.
 - Canonical URL / sitemap consistency fix: PR #5 merged. Live lesson URLs use clean extensionless paths and canonical URLs match final URLs.
-- Sitemap: 80 URLs, including the international curriculum hub and four country/province guides. Live sitemap returns HTTP 200. GSC accepted the latest submission with 0 warnings and 0 errors; download/processing remains pending.
+- Sitemap: 82 URLs, including the international curriculum hub, US/England/Ontario/Australia guides, and UK-wide/Canada-wide orientation pages. Live sitemap returns HTTP 200. GSC accepted the latest submission with 0 warnings and 0 errors; download/processing remains pending.
 - IndexNow: verified key file; all 80 sitemap URLs were submitted successfully (75 existing + 5 curriculum pages). All 80 were accepted with key validated (HTTP 200).
-- GSC tracker: 80 URLs tracked; latest snapshot 1 indexed, 10 URL-unknown, 69 pending, 0 warnings. Newly added curriculum pages currently show URL unknown to Google; this is a discovery/crawl backlog, not proof of a noindex block.
+- GSC tracker: 82 URLs tracked; latest snapshot 1 indexed, 11 URL-unknown, 70 pending, 0 warnings. Newly added curriculum pages currently show URL unknown to Google; this is a discovery/crawl backlog, not proof of a noindex block.
 - GSC configuration: branded keywords and sitemap saved; Mathematics, English and Science content groups are filterable; topic clusters for all three subjects are saved. Country report presets exist for USA, UK, Canada and Australia.
 - GSC performance: last 28 days show 0 clicks and 0 impressions. Query, page and country reports have no rows, so no first-party performance evidence yet to rank the target markets.
-- Firecrawl crawl: 75 pages discovered in the latest crawl; all returned HTTP 200 with no missing titles/descriptions, duplicate titles or canonical mismatches. Five new curriculum pages were also fetched individually and returned HTTP 200. The live sitemap lists 80 URLs.
-- International content: added `/curriculum/` hub and guides for US Common Core Grades 6–8, England KS3 Years 7–9, Ontario Grades 6–8 and Australian Curriculum Years 7–8. Caveats explicitly explain state/district differences, England-only scope, Canadian provincial/territorial control and Australian implementation timelines.
+- Firecrawl crawl: 75 pages discovered in the last available crawl; all returned HTTP 200 with no missing titles/descriptions, duplicate titles or canonical mismatches. Curriculum pages were individually verified through Firecrawl/GSC; the live sitemap now lists 82 URLs. GSC on-page audit covered all 80 pages in the previous sitemap snapshot plus the 2 newest pages: 82/82 indexable, 0 critical/high/medium issues; remaining findings are low severity (mostly optional structured data and snippet-length suggestions).
+- International content: added `/curriculum/` hub and guides for US Common Core Grades 6–8, UK-wide curriculum differences, England KS3 Years 7–9, Canada-wide provincial/territorial differences, Ontario Grades 6–8 and Australian Curriculum Years 7–8. Official sources are linked; the guides avoid claiming exact grade equivalence or full formal alignment.
 - SERP research completed for US, UK, Canada and Australia. Ahrefs volume/CPC unavailable because connected plan returned "Insufficient plan"; no volume or earnings estimates are being invented.
 - GitHub Actions: main run [#41502283767](https://github.com/com-orgs/learnora/actions/runs/41502283767) passed static and legal/pre-monetisation audits. Non-main preview run [#41502412490](https://github.com/com-orgs/learnora/actions/runs/41502412490) also passed Cloudflare preview headers/assets, Playwright/Chromium, mobile/desktop/accessibility/quiz browser checks and tracker refresh.
-- Bing Webmaster and CrUX are not configured because their API keys are not present. No Bing traffic or field Core Web Vitals data has been audited.
+- Bing Webmaster and CrUX are not configured because their API keys are not present. GA4 is also not connected to the GSC Wizard account (Analytics OAuth scope missing). No Bing traffic, GA4 engagement or field Core Web Vitals data has been audited.
 - AdSense remains inactive. Audience/COPPA classification, publisher ID, Google-certified CMP and exact ads.txt seller line remain owner/account gates. No placeholder ID or ad code has been added.
 
 ## Next actions
@@ -25,7 +25,7 @@
 2. Improve Grade 8 Science, Grade 8 Maths and English hub pages with useful study sequencing and navigation rather than filler.
 3. Monitor GSC sitemap processing and indexing over the next 24–72 hours; inspect in small batches and avoid repeated requests for recently checked URLs.
 4. Complete manual originality, factual accuracy, source attribution and educational-value review across lesson pages.
-5. Configure Bing Webmaster and CrUX only after their API keys are connected; Ahrefs volume/CPC requires a plan with access or another reliable source.
+5. Connect GA4 in the GSC Wizard Analytics page and configure Bing Webmaster/CrUX only after their required permissions/API keys are available; Ahrefs volume/CPC requires an accessible plan or another reliable source.
 6. Complete AdSense owner/account gates and keep ads/analytics disabled until the user approves a compliant setup.
 
 ## Project identity
@@ -42,7 +42,7 @@
 ## Latest verified repository state
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
-- Latest verified production/main commit: `5e5d3f6da61e9f9c98464d4682f81b1ebf32c7a2`.
+- Latest verified production/main commit: `e270019d3ea1f46dc4bd2683cb7a0dfe78a88613`.
 - Branch drift warning: the audit branch currently contains an older `.html`-suffixed sitemap while production `main` uses clean extensionless lesson URLs and includes the five curriculum URLs. Do not merge the audit branch until it is rebased/reconciled and its sitemap/canonicals are re-audited. Earlier ahead/behind counts are stale.
 - PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
