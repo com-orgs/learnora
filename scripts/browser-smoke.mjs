@@ -17,7 +17,7 @@ const runtimeErrors = [];
 let activePath = '/';
 let pagesChecked = 0;
 let quizzesSubmitted = 0;
-let printActionsChecked = 0;
+let printActionsChecked = 0;\nlet performanceBudgetsChecked = 0;
 let retakeActionsChecked = 0;
 
 page.on('pageerror', error => runtimeErrors.push(activePath + ': ' + error.message));
@@ -138,6 +138,40 @@ try {
     for (const violation of accessibility.violations) {
       const examples = violation.nodes.slice(0, 3).map(node => node.target.join(' ')).join('; ');
       failures.push(route + ': accessibility ' + violation.impact + ' [' + violation.id + ']: ' + violation.help + ' — ' + examples);
+    }
+
+    const performanceAudit = await page.evaluate(() => {
+      const navigation = performance.getEntriesByType('navigation')[0];
+      const resources = performance.getEntriesByType('resource');
+      const firstParty = resources.filter(resource => {
+        try { return new URL(resource.name, location.href).origin === location.origin; }
+        catch { return false; }
+      });
+      const thirdParty = resources.filter(resource => {
+        try { return new URL(resource.name, location.href).origin !== location.origin; }
+        catch { return true; }
+      });
+      const totalBytes = (navigation?.transferSize || 0) + firstParty.reduce((sum, resource) => sum + (resource.transferSize || 0), 0);
+      const scriptBytes = firstParty.filter(resource => /\\.js(?:$|\\?)/i.test(resource.name)).reduce((sum, resource) => sum + (resource.transferSize || 0), 0);
+      const largestResource = Math.max(0, ...firstParty.map(resource => resource.transferSize || 0));
+      return {
+        totalBytes,
+        scriptBytes,
+        largestResource,
+        thirdParty: thirdParty.map(resource => resource.name).slice(0, 5)
+      };
+    });
+    if (performanceAudit.thirdParty.length) {
+      failures.push(route + ': unexpected third-party resource requests (CSP/privacy review): ' + performanceAudit.thirdParty.join(', '));
+    }
+    if (performanceAudit.totalBytes > 2000000) {
+      failures.push(route + ': first-party page transfer exceeds 2 MB budget (' + performanceAudit.totalBytes + ' bytes).');
+    }
+    if (performanceAudit.scriptBytes > 500000) {
+      failures.push(route + ': JavaScript transfer exceeds 500 KB budget (' + performanceAudit.scriptBytes + ' bytes).');
+    }
+    performanceBudgetsChecked++;\n    if (performanceAudit.largestResource > 1000000) {
+      failures.push(route + ': a first-party resource exceeds 1 MB (' + performanceAudit.largestResource + ' bytes).');
     }
 
     if (route === '/') {
@@ -297,11 +331,11 @@ if (runtimeErrors.length) failures.push(...runtimeErrors);
 console.log('Pages checked at 320px, 390px, 768px and desktop widths: ' + pagesChecked);
 console.log('Interactive quizzes submitted: ' + quizzesSubmitted);
 console.log('Quiz retake actions checked: ' + retakeActionsChecked);
-console.log('Worksheet print actions checked: ' + printActionsChecked);
+console.log('Worksheet print actions checked: ' + printActionsChecked);\nconsole.log('Page performance/resource budgets checked: ' + performanceBudgetsChecked);
 if (failures.length) {
   console.error('Browser smoke test failed with ' + failures.length + ' issue(s):');
   for (const failure of failures) console.error('FAIL: ' + failure);
   process.exitCode = 1;
 } else {
-  console.log('PASS: all sitemap pages load, no horizontal overflow, keyboard quiz selection works, quiz feedback works, print handlers work and no browser/CSP errors were detected.');
+  console.log('PASS: all sitemap pages load, no horizontal overflow, keyboard quiz selection works, quiz feedback works, print handlers work, first-party performance budgets pass and no third-party browser/CSP errors were detected.');
 }
