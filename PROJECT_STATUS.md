@@ -269,3 +269,10 @@
 - [x] Recorded stale audit-branch sitemap mismatch as a merge blocker until branch reconciliation.
 - [ ] Continue monitoring Google fetch/indexing over 24–72 hours; inspect only a small sample of pending/unknown URLs when useful.
 - [ ] Run a fresh preview workflow against a rebased audit branch before any future merge.
+
+
+### 2026-11-03 — Phase 11 started: international learning support
+- Added a curriculum-neutral Grade 6–8 maths four-week study plan with a skills checklist, three worked examples, ten independent practice questions and expandable worked answers.
+- Linked the resource to existing Learnora lessons and the USA, UK, Canada and Australia curriculum guides; clearly labels it supplementary rather than claiming formal curriculum alignment.
+- Added the page to the curriculum hub and sitemap on branch `audit/phase11-international-study-plan-2026-11-03`. Production remains unchanged pending review and CI.
+- Next: run static/legal/browser QA, then build equivalent guided revision resources for English and Science.
