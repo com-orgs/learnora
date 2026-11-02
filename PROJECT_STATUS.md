@@ -1,7 +1,7 @@
 # Learnora — Project Status & Continuation Tracker
 
 > **Single source of truth for all future chats and development sessions.**
-> Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). No production deployment or merge is permitted without the user's explicit approval.
+> Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
 ## Project identity
 
@@ -11,7 +11,7 @@
 - Production site: https://learnora-ab2.pages.dev/
 - Preview site used by audit workflow: https://audit-production-hardening-2.learnora-ab2.pages.dev/
 - Contact email used on site: Learnora.site@gmail.com
-- Deployment policy: **Deployment is the final phase only. Do not deploy or merge until the user explicitly authorizes it.**
+- Deployment policy: **User explicitly authorized merge and production deployment on 2026-11-02. Merge only after the latest audit is green; verify Cloudflare production deployment afterwards.**
 - User communication: Roman Urdu; beginner-friendly, direct. At the end of every `Continue` / `Next` response, include the project tree with completed, in-progress, and remaining work.
 
 ## Latest verified repository state
@@ -19,7 +19,7 @@
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
 - Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
 - Latest verified comparison before this update: audit branch ahead by 299 commits, behind by 0. Re-check after this update.
-- Main branch has not been merged or deployed from the audit branch.
+- Main branch remains unchanged until the authorized Phase 10 merge. Production deployment will be verified after merge.
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Last updated automatically: run #41473638302 on branch `audit/production-hardening-2026-11-02`.
@@ -75,9 +75,9 @@
 5. [x] Phase 5 — automated accessibility review. axe WCAG 2.1 A/AA scan passed across all 75 pages; responsive layouts checked at 320, 390, 768 and desktop widths; keyboard quiz selection, feedback, retake and print actions passed across all 64 lessons. A final manual NVDA/VoiceOver session on real devices remains a recommended pre-launch check.
 6. [x] Phase 6 — SEO and content discoverability technical review. All 75 canonical URLs, titles/descriptions, Open Graph consistency, language attributes, sitemap/index/script parity, internal links/anchors and image alt attributes passed static validation. New Grade 8 pages have unique metadata and are linked from subject/grade indexes.
 7. [x] Phase 7 — performance, responsiveness and security technical review. All 75 pages passed responsive overflow checks and first-party resource budgets; no third-party page requests or browser/CSP errors were detected. Preview security headers, restrictive CSP, same-origin assets and custom 404 response passed.
-8. [ ] Phase 8 — legal/trust/AdSense readiness. In progress: updated Privacy Policy with Google advertising-cookie disclosures, opt-out links, Google partner-site data link, EEA/UK/Swiss certified-CMP requirement and child-directed/COPPA safeguards; added About editorial-independence/corrections policy and Terms advertising clause. Still must complete final originality/content-value review, child-directed/mixed-audience determination, real contact/ownership details, and prepare consent/ad setup only after account and publisher ID exist.
-9. [ ] Phase 9 — final consolidated issue list, release report and final comparison against main.
-10. [ ] Phase 10 — only after explicit user approval: merge/deploy as the final phase and verify production. Do not merge or deploy earlier.
+8. [x] Phase 8 — pre-monetisation legal/trust baseline. Privacy Policy, Terms, About/editorial transparency, contact details and Cloudflare data-processing disclosure are in place; automated legal audit passes and confirms no active advertising/analytics scripts. User has explicitly deferred Google AdSense: CMP, publisher ID, ads.txt and ad-serving configuration are postponed until monetisation is requested. Do not claim AdSense-ready or enable ads.
+9. [x] Phase 9 — final consolidated release audit. Current audit commit passed static, legal, Cloudflare preview/header/assets, and Playwright browser checks; main comparison: audit branch 316 commits ahead, 0 behind, 151 changed files. Outstanding non-blocking recommendation: manual NVDA/VoiceOver test on real devices. Production smoke test remains part of Phase 10.
+10. [~] Phase 10 — user authorized merge/deploy on 2026-11-02. Merge only after verifying latest branch HEAD and green CI; then confirm Cloudflare production deployment and live-site smoke tests.
 
 ## Phase completion details
 
@@ -209,3 +209,13 @@
 - Confirmed no real AdSense publisher ID is available in repository context; no ads.txt placeholder or ad code added. No CMP is installed while advertising and analytics remain inactive.
 - Phase 8 remains IN PROGRESS. Remaining external/user-dependent gates: audience classification, actual AdSense account/publisher ID, CMP configuration/testing, verified ads.txt declaration and full content originality review. Keep ads and tracking disabled until all relevant gates are met.
 - No merge or deployment. Production main remains unchanged.
+
+
+## Release decision — 2026-11-02
+
+- User instruction: complete the audit, defer Google AdSense until later, then deploy.
+- AdSense is intentionally not configured: no publisher ID, ads.txt seller record, CMP or advertising tags are added. The site remains pre-monetisation.
+- Latest complete audit workflow: [run #41473638302](https://github.com/com-orgs/learnora/actions/runs/41473638302) — success. Static site audit, legal/pre-monetisation audit, Cloudflare preview headers/assets, Playwright browser checks and tracker refresh all passed.
+- The tracker-only follow-up commit is marked `[skip ci]`; it does not change website files. Tested website commit: `fc1a75dff54972e7413f458b86a4a17e42f5e413`.
+- Final compare against production main `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec`: 316 commits ahead, 0 behind, 151 files changed.
+- Phase 10 merge is authorized by the user; verify production Pages deployment and live routes after merge before declaring deployment complete.
