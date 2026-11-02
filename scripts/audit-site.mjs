@@ -71,6 +71,15 @@ for (const file of indexable) {
   if (!ogUrl) warnings.push(rel + ': missing Open Graph og:url.');
   else if (canonical && ogUrl !== canonical) errors.push(rel + ': og:url does not match canonical URL.');
 
+  for (const property of ['og:title', 'og:description', 'og:type']) {
+    if (!metaTags.some(t => (attr(t, 'property') || '').toLowerCase() === property)) {
+      warnings.push(rel + ': missing Open Graph ' + property + '.');
+    }
+  }
+  if (metaTags.filter(t => (attr(t, 'property') || '').toLowerCase() === 'og:url').length > 1) {
+    errors.push(rel + ': duplicate Open Graph og:url tags.');
+  }
+
   for (const image of getTags(source, 'img')) {
     if (attr(image, 'alt') === null) errors.push(rel + ': image is missing an alt attribute.');
   }
