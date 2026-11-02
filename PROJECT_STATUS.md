@@ -47,12 +47,12 @@
 - PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Last updated automatically: run #41473638302 on branch `audit/production-hardening-2026-11-02`.
+- Last updated automatically: run #41507154601 on branch `audit/phase11-international-study-plan-2026-11-03`.
 
 
-- Status: success.
-- Tested commit: `fc1a75dff54972e7413f458b86a4a17e42f5e413`
-- Workflow: Learnora Site Audit (run [#41473638302](https://github.com/com-orgs/learnora/actions/runs/41473638302))
+- Status: cancelled.
+- Tested commit: `edaf5a12225aab5cc1c23d58cd0eee7f83ac3b48`
+- Workflow: Learnora Site Audit (run [#41507154601](https://github.com/com-orgs/learnora/actions/runs/41507154601))
 - Last known run: [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
