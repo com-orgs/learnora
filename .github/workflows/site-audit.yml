@@ -69,7 +69,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 -m http.server 8788 --bind 127.0.0.1 > /tmp/learnora-http.log 2>&1 &
+          node scripts/preview-server.mjs > /tmp/learnora-http.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           ready=false
