@@ -29,7 +29,7 @@ requireText(privacy, /does not load Google AdSense advertising code or third-par
 requireText(privacy, /European Economic Area[\s\S]{0,350}Google-certified consent management platform[\s\S]{0,160}IAB Transparency and Consent Framework/i, 'EEA/UK/Swiss certified CMP disclosure', 'privacy-policy.html');
 requireText(privacy, /under 13[\s\S]{0,500}COPPA/i, 'children/COPPA disclosure', 'privacy-policy.html');
 requireText(privacy, /Learnora\.site@gmail\.com/i, 'privacy contact email', 'privacy-policy.html');
-requireText(privacy, /Cloudflare Pages[\\s\\S]{0,350}IP address[\\s\\S]{0,350}Privacy Policy/i, 'Cloudflare hosting and technical-data disclosure', 'privacy-policy.html');
+requireText(privacy, /Cloudflare Pages[\s\S]{0,350}IP address[\s\S]{0,350}Privacy Policy/i, 'Cloudflare hosting and technical-data disclosure', 'privacy-policy.html');
 requireText(terms, /Advertising is not currently active on Learnora/i, 'terms advertising status', 'terms.html');
 requireText(terms, /Learnora\.site@gmail\.com/i, 'terms contact email', 'terms.html');
 requireText(about, /Editorial independence and corrections/i, 'editorial independence and corrections section', 'about.html');
