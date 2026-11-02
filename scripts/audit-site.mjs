@@ -193,6 +193,21 @@ else {
   if (!/noindex/i.test(notFound)) errors.push('404.html should be noindex.');
 }
 
+const headersPath = path.join(root, '_headers');
+if (!fs.existsSync(headersPath)) errors.push('_headers is missing; security headers are not configured in the Pages project.');
+else {
+  const headers = fs.readFileSync(headersPath, 'utf8');
+  const requiredHeaders = [
+    ['X-Frame-Options', /^\\s*X-Frame-Options:\\s*DENY\\s*$/im],
+    ['X-Content-Type-Options', /^\\s*X-Content-Type-Options:\\s*nosniff\\s*$/im],
+    ['Referrer-Policy', /^\\s*Referrer-Policy:\\s*strict-origin-when-cross-origin\\s*$/im],
+    ['Permissions-Policy', /^\\s*Permissions-Policy:\\s*.+$/im]
+  ];
+  for (const [name, pattern] of requiredHeaders) {
+    if (!pattern.test(headers)) errors.push('_headers is missing or misconfigures ' + name + '.');
+  }
+}
+
 console.log('HTML pages checked: ' + indexable.length);
 console.log('Canonical URLs checked: ' + canonicals.length);
 console.log('Warnings: ' + warnings.length);
