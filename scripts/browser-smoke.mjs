@@ -333,7 +333,8 @@ if (runtimeErrors.length) failures.push(...runtimeErrors);
 console.log('Pages checked at 320px, 390px, 768px and desktop widths: ' + pagesChecked);
 console.log('Interactive quizzes submitted: ' + quizzesSubmitted);
 console.log('Quiz retake actions checked: ' + retakeActionsChecked);
-console.log('Worksheet print actions checked: ' + printActionsChecked);\nconsole.log('Page performance/resource budgets checked: ' + performanceBudgetsChecked);
+console.log('Worksheet print actions checked: ' + printActionsChecked);
+console.log('Page performance/resource budgets checked: ' + performanceBudgetsChecked);
 if (failures.length) {
   console.error('Browser smoke test failed with ' + failures.length + ' issue(s):');
   for (const failure of failures) console.error('FAIL: ' + failure);
