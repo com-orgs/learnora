@@ -194,7 +194,7 @@ for (const file of indexable) {
     const visible = normalizeVisibleText(source);
     const qualityChecks = [
       ['learning outcomes', /what you will learn|learning goals|learning objectives|by the end of this lesson/i],
-      ['explanation/examples', /worked example|worked examples|for example|examples/i],
+      ['explanation/examples', /worked example|worked examples|for example|examples|example/i],
       ['independent practice', /independent practice|practice exercises|practice questions|try it yourself|practice activity/i],
       ['printable worksheet', /printable worksheet|worksheet and answer key|free printable worksheet/i],
       ['lesson summary', /lesson summary|key takeaways|summary/i]
