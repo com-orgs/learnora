@@ -56,8 +56,25 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright @axe-core/playwright
           npx playwright install --with-deps chromium
-      - name: Run mobile, desktop and quiz browser checks
+      - name: Run mobile, desktop and quiz browser checks against this commit
         if: github.ref != 'refs/heads/main'
-        env:
-          LEARNORA_PREVIEW_URL: https://audit-production-hardening-2.learnora-ab2.pages.dev
-        run: node scripts/browser-smoke.mjs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8788 --bind 127.0.0.1 > /tmp/learnora-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:8788/sitemap.xml --output /dev/null; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" != "true" ]; then
+            cat /tmp/learnora-http.log
+            echo "Local Learnora preview did not start."
+            exit 1
+          fi
+          LEARNORA_PREVIEW_URL=http://127.0.0.1:8788 node scripts/browser-smoke.mjs
