@@ -18,7 +18,7 @@
 
 - Audit branch HEAD is checked at the start of each session; CI status is refreshed by the workflow after each branch run.
 - Last known production/main commit: `cd3ee6e0600e56ffc9a00b1f6b8e1dc254462aec` (must re-check before any merge decision)
-- Latest verified comparison before this update: audit branch ahead by 291 commits, behind by 0. Re-check after this update.
+- Latest verified comparison before this update: audit branch ahead by 299 commits, behind by 0. Re-check after this update.
 - Main branch has not been merged or deployed from the audit branch.
 
 ## CI status (automatically refreshed by GitHub Actions)
@@ -75,7 +75,7 @@
 5. [x] Phase 5 — automated accessibility review. axe WCAG 2.1 A/AA scan passed across all 75 pages; responsive layouts checked at 320, 390, 768 and desktop widths; keyboard quiz selection, feedback, retake and print actions passed across all 64 lessons. A final manual NVDA/VoiceOver session on real devices remains a recommended pre-launch check.
 6. [x] Phase 6 — SEO and content discoverability technical review. All 75 canonical URLs, titles/descriptions, Open Graph consistency, language attributes, sitemap/index/script parity, internal links/anchors and image alt attributes passed static validation. New Grade 8 pages have unique metadata and are linked from subject/grade indexes.
 7. [x] Phase 7 — performance, responsiveness and security technical review. All 75 pages passed responsive overflow checks and first-party resource budgets; no third-party page requests or browser/CSP errors were detected. Preview security headers, restrictive CSP, same-origin assets and custom 404 response passed.
-8. [ ] Phase 8 — legal/trust/AdSense readiness: final review of privacy/cookie disclosures, About/Contact/Terms, original substantial content, navigation and ad-placement readiness (no guarantee of AdSense approval).
+8. [ ] Phase 8 — legal/trust/AdSense readiness. In progress: updated Privacy Policy with Google advertising-cookie disclosures, opt-out links, Google partner-site data link, EEA/UK/Swiss certified-CMP requirement and child-directed/COPPA safeguards; added About editorial-independence/corrections policy and Terms advertising clause. Still must complete final originality/content-value review, child-directed/mixed-audience determination, real contact/ownership details, and prepare consent/ad setup only after account and publisher ID exist.
 9. [ ] Phase 9 — final consolidated issue list, release report and final comparison against main.
 10. [ ] Phase 10 — only after explicit user approval: merge/deploy as the final phase and verify production. Do not merge or deploy earlier.
 
@@ -181,3 +181,14 @@
 - axe WCAG 2.1 A/AA ran on every route; no violations were returned (any violation would fail the browser workflow).
 - Phase 1–7 marked complete for the automated and documented review scope. A manual NVDA/VoiceOver session remains a recommended real-device pre-launch check; Phase 8 legal/trust/AdSense readiness and Phase 9 final report remain outstanding.
 - Production main remains unchanged; pull request #1 remains open and unmerged. No deployment performed.
+
+
+### 2026-11-02 — Phase 8 legal and AdSense readiness
+- Updated Privacy Policy: explicitly states advertising and analytics are not currently active; explains Google and third-party advertising cookies before future activation; adds Google Ads Settings, aboutads.info and Google's partner-site data disclosure links; documents certified Google CMP + IAB TCF requirement for personalised ads in EEA/UK/Switzerland; records child-directed/mixed-audience and COPPA assessment as a hard pre-advertising requirement because Grade 6–8 content may be used by under-13 learners.
+- Updated About page with an editorial independence statement (not affiliated with an official board/school), transparent grade/curriculum disclaimer and a practical corrections process.
+- Updated Terms to disclose that ads are not currently active and future ads/third-party services will be governed by their own policies; prohibits artificial ad clicks/traffic.
+- Confirmed no AdSense code, no active analytics tag and no ads.txt currently exist. Do not create a placeholder ads.txt: Google requires the real publisher ID (pub- plus 16 digits) and account-specific seller declaration. Add it only after user supplies/authorizes the actual AdSense account ID.
+- No cookie banner/CMP was installed because no advertising or analytics cookies are currently loaded. Before serving personalised ads to EEA/UK/Swiss traffic, implement a Google-certified TCF CMP; before serving any ads, determine whether the Grade 6–8 site is child-directed or mixed-audience and configure required child-directed treatment / restrictions. Do not enable ad code before this work.
+- Google policy references reviewed: AdSense Required Content; Google Publisher Policies (privacy disclosures and COPPA); Google certified CMP requirements; ads.txt FAQs. AdSense approval cannot be guaranteed.
+- Latest confirmed full Phase 1–7 CI baseline remains run 41469810411 (success). Legal-document edits are awaiting a fresh full CI run against the final consolidated commit.
+- Next: complete final legal/trust checklist, verify all policy links and current page code, review AdSense content originality/value risks, then issue Phase 8 readiness decision. No merge/deployment.
