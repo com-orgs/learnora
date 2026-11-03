@@ -390,3 +390,11 @@
 - [ ] Extend source attribution and correct-answer feedback to the remaining legacy lessons; complete topic-by-topic accuracy checks for maths, English and science.
 - [ ] Verify preview source links, run static/legal/browser QA, then consider production release only after all checks pass.
 - Phase 14 is not complete. Phase 8 AdSense readiness remains partial and separate from academic quality.
+
+
+#### Phase 14 — mathematics sample desk audit (3 November 2026)
+
+- [x] Desk-checked worked examples and quiz answer keys in six representative fraction, ratio, Pythagorean theorem, linear-equation and probability lessons. The calculations and keyed quiz answers sampled were consistent with the visible questions.
+- [x] Added official mathematics curriculum reference links and scope disclaimers to three Grade 8 lessons: Pythagorean theorem, linear equations/inequalities and probability models.
+- [x] Improved those three quizzes so incorrect or unanswered attempts identify the correct option text, not only a generic explanation.
+- [ ] Expand calculation verification and source attribution across all remaining mathematics lessons; the sample is not a full subject audit.
