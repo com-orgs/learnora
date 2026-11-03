@@ -336,10 +336,10 @@ for (const file of indexable) {
           continue;
         }
         const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
-        if (expectedText) {
-          if (normalizeVisibleText(expectedText) !== correctOption.text) {
-            errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
-          }
+        if (!expectedText) {
+          warnings.push(rel + ': quiz feedback quality — answer key does not yet include correctText for ' + name + '; wrong or unanswered attempts may not identify the correct option.');
+        } else if (normalizeVisibleText(expectedText) !== correctOption.text) {
+          errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
         }
       }
     } catch (error) {
