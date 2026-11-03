@@ -340,3 +340,9 @@
 - Tested commit: `1ab9696b0878ffa731ca7058802e8ce6de7de977`
 - Workflow: Learnora Site Audit (run [#41612460963](https://github.com/com-orgs/learnora/actions/runs/41612460963))
 - Last updated automatically: run #41612460963 on branch `audit/phase12-english-science-2026-11-03`.
+
+
+### Phase 12 browser QA correction — 3 November 2026
+
+- First full browser run [#41612460963](https://github.com/com-orgs/learnora/actions/runs/41612460963) checked 87 pages, 64 quizzes, 64 quiz retakes and 66 print actions. Responsive layout and performance checks passed; axe found two serious colour-contrast failures on the contact links inside the English and Science guide note panels.
+- Corrective change: darkened and underlined note-panel links on both guides. Rerun the full browser suite; do not mark Phase 12 QA green until it passes.
