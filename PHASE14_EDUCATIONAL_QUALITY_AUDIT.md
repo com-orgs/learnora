@@ -19,7 +19,7 @@
 - No named reviewer has been invented or claimed. Independent review by qualified educators remains outstanding.
 
 ## Remaining backlog
-- Extend explicit source sections and correct-answer feedback to the remaining legacy lessons.
+- Extend explicit source sections to the remaining legacy lessons.
 - Verify mathematical worked calculations and answer keys topic by topic.
 - Review science claims against topic-specific primary scientific sources.
 - Review English examples and explanations for ambiguity and age suitability.
@@ -45,3 +45,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Added the editorial policy link on About and Contact and included its clean URL in the sitemap.
 - Verified all ten official source URLs cited by the four Phase 13 lessons were reachable at audit time. Curriculum references are context only and do not certify formal curriculum alignment.
 - Latest CI run [#41635673927](https://github.com/com-orgs/learnora/actions/runs/41635673927) has passed static, legal and Cloudflare preview header/assets steps; browser QA is pending. No production release is claimed.
+
+
+## Footer and full QA closure — 3 November 2026
+
+- Added the missing Terms link to nine curriculum/worksheet page footers identified by the audit.
+- Latest branch workflow [#41636282293](https://github.com/com-orgs/learnora/actions/runs/41636282293) completed successfully on commit `94a93b1554558934a140ab109b78ad438dd71e88`.
+- Final static audit: 68 sitemap lesson URLs, 92 canonical pages, 68 accessible quiz forms, 68 quiz answer-key mappings and **zero warnings**.
+- Legal/pre-monetisation checks and Cloudflare preview headers, CSP, lesson assets and custom 404 checks passed.
+- Browser QA passed 92 pages at 320px, 390px, 768px and desktop widths; 68 quiz submissions; 68 retakes; 70 worksheet print actions; 92 performance/resource checks; no horizontal overflow or third-party/CSP errors.
+- This closes the first Phase 14 remediation batch, not the entire academic audit. Subject-by-subject content verification and genuine independent educator review remain open work.
