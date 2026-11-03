@@ -337,9 +337,9 @@
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `27c1729214f66e12b1c868225ed7c5159af273f3`
-- Workflow: Learnora Site Audit (run [#41613609696](https://github.com/com-orgs/learnora/actions/runs/41613609696))
-- Last updated automatically: run #41613609696 on branch `audit/phase13-lesson-depth-2026-11-03`.
+- Tested commit: `a8bff6b2567fef77920a40922cf145447d8cb10a`
+- Workflow: Learnora Site Audit (run [#41614283348](https://github.com/com-orgs/learnora/actions/runs/41614283348))
+- Last updated automatically: run #41614283348 on branch `audit/phase13-lesson-depth-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
