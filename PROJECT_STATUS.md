@@ -336,7 +336,7 @@
 - [ ] Reconcile tracker status and run complete CI before release.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: pending.
-- Tested commit: `pending`
-- Workflow: Learnora Site Audit (run pending)
-- Last updated automatically: pending.
+- Status: failure.
+- Tested commit: `1ab9696b0878ffa731ca7058802e8ce6de7de977`
+- Workflow: Learnora Site Audit (run [#41612460963](https://github.com/com-orgs/learnora/actions/runs/41612460963))
+- Last updated automatically: run #41612460963 on branch `audit/phase12-english-science-2026-11-03`.
