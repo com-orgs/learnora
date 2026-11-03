@@ -337,9 +337,9 @@
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: cancelled.
-- Tested commit: `dd7484b6b15353f306c95c7c88115d3c56b5b63b`
-- Workflow: Learnora Site Audit (run [#41660940460](https://github.com/com-orgs/learnora/actions/runs/41660940460))
-- Last updated automatically: run #41660940460 on branch `audit/production-hardening-2`.
+- Tested commit: `8042cbf23af95a999051a8dd42477347c77eba49`
+- Workflow: Learnora Site Audit (run [#41661103063](https://github.com/com-orgs/learnora/actions/runs/41661103063))
+- Last updated automatically: run #41661103063 on branch `audit/production-hardening-2`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
