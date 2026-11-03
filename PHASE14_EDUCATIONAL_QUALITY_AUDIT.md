@@ -84,3 +84,12 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Full post-deployment on-page audit was rerun across all 104 sitemap URLs: 104/104 indexable, 0 critical, 0 high, 0 medium and 159 low findings.
 - The first medium-severity metadata remediation batch is closed. Remaining low findings are optional structured data, title/meta-length heuristics and minor content recommendations; do not make mechanical edits solely to clear heuristic warnings.
 - Academic review remains open: full subject-by-subject accuracy verification, legacy source attribution and independent educator review are not completed.
+
+## Legacy lesson source-section inventory — 3 November 2026
+
+- A repository-wide inventory examined all 77 lesson HTML files across Maths (46), English (9), Science (13), Computer Science (3), AI Literacy (3) and Financial Literacy (3).
+- Seven pages have a dedicated Sources/References/Further reading list: two English lessons, three Grade 8 Maths lessons and two Science lessons. The lesson section titled “How to Check AI Answers and Sources” is a teaching topic, not a references list, and was not counted as a source list.
+- Seventy lessons do not currently show a dedicated source/reference section in the HTML: Maths 43, English 7, Science 11, Computer Science 3, AI Literacy 3 and Financial Literacy 3.
+- This is a preliminary structural inventory, not a finding that all 70 lessons are factually wrong or contain no useful external references. It checks for an explicit, learner-facing source section and must be followed by page-by-page claim verification.
+- Backlog recorded in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. Add topic-specific official or reputable educational sources only after checking that each URL is live and genuinely supports the lesson. Do not bulk-add generic curriculum links as if they substantiate every factual claim.
+- Prioritise Science, Financial Literacy and AI Literacy safety/privacy claims; then verify Maths worked examples and answer keys; then English language and writing guidance. Independent educator review remains required and must not be invented.
