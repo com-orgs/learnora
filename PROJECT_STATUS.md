@@ -276,3 +276,13 @@
 - Linked the resource to existing Learnora lessons and the USA, UK, Canada and Australia curriculum guides; clearly labels it supplementary rather than claiming formal curriculum alignment.
 - Added the page to the curriculum hub and sitemap on branch `audit/phase11-international-study-plan-2026-11-03`. Production remains unchanged pending review and CI.
 - Next: run static/legal/browser QA, then build equivalent guided revision resources for English and Science.
+
+
+### 2026-11-03 — Phase 11 international worksheet expansion
+- Added a free print-ready middle-school maths workbook with four jurisdiction-specific sets: US Common Core Grades 6–8, England KS3, Ontario Grades 6–8, and Australian Curriculum Version 9 Years 7–8.
+- Workbook contains 24 original practice questions, four expandable worked answer keys, print styling, and a visible supplementary-resource disclaimer.
+- Linked the workbook from the international curriculum hub and each country/region guide; added its clean extensionless URL to sitemap.xml.
+- Updated the Australian Curriculum source link to the official Version 9 site.
+- Static checks: 24 questions; 4 answer keys; print action present; canonical and sitemap entry present; all worksheet internal links are represented in the sitemap; all five guide pages link to the workbook.
+- Firecrawl refresh could not run because the connected Firecrawl account had insufficient credits; no fresh Firecrawl crawl is claimed. Live route smoke testing and CI must be completed after the release PR preview.
+- Release PR #8: https://github.com/com-orgs/learnora/pull/8. Production remains unchanged until green CI and merge.
