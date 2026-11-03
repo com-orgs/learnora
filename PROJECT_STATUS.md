@@ -398,3 +398,5 @@
 - [x] Added official mathematics curriculum reference links and scope disclaimers to three Grade 8 lessons: Pythagorean theorem, linear equations/inequalities and probability models.
 - [x] Improved those three quizzes so incorrect or unanswered attempts identify the correct option text, not only a generic explanation.
 - [ ] Expand calculation verification and source attribution across all remaining mathematics lessons; the sample is not a full subject audit.
+
+- [x] Added a separate three-task independent-practice activity with suggested responses to the Grade 8 sustainability lesson; the page now explicitly supports application before the quiz.
