@@ -400,3 +400,6 @@
 - [ ] Expand calculation verification and source attribution across all remaining mathematics lessons; the sample is not a full subject audit.
 
 - [x] Added a separate three-task independent-practice activity with suggested responses to the Grade 8 sustainability lesson; the page now explicitly supports application before the quiz.
+
+- [x] Added independent-practice tasks and suggested responses to the two Phase 13 English lessons and Grade 7 weather/water-cycle lesson, completing the rubric's explicit practice-section requirement for the four new Phase 13 lessons.
+- [x] Aligned the probability quiz's stored correct-answer text with the static audit schema; the visible option and feedback string now match.
