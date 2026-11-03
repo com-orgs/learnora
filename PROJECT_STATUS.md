@@ -301,8 +301,8 @@
 - [x] 24 original questions and four worked answer keys added.
 - [x] CSP inline print handler issue found by CI and corrected before merge.
 - [x] PR #9 merged to main; production deployment is expected from the connected Cloudflare Pages main-branch integration.
-- [ ] Confirm Cloudflare production deployment and HTTP 200 smoke checks for the workbook, external script and sitemap after the deployment completes.
-- [ ] Run a fresh full CI workflow against the post-fix release commit; do not reuse the pre-fix failure as the current result or call the rerun green without evidence.
+- [x] Confirmed Cloudflare Pages production deployment and live HTTP smoke checks for the maths workbook, external print script and sitemap on 3 November 2026.
+- [x] Full post-fix browser regression completed successfully in run [#41612754761](https://github.com/com-orgs/learnora/actions/runs/41612754761); see Phase 12 verification below.
 
 
 ### 2026-11-03 — Phase 11 production smoke verification
@@ -312,7 +312,7 @@
 - [x] Verified live production sitemap lists 84 URLs and includes the new workbook URL.
 - [x] Verified live curriculum hub and US, England, Ontario and Australia guide pages are accessible, have matching canonical URLs and link to the workbook.
 - [x] Verified the workbook footer links Contact, Privacy and Terms; worksheet canonical/robots metadata is correct.
-- [ ] Fresh full GitHub Actions audit against post-fix release: run [#41564576167](https://github.com/com-orgs/learnora/actions/runs/41564576167) on `audit/phase11-postfix-qa-2026-11-03` was queued/pending at the latest check; no jobs had started yet. Do not mark full QA green until it completes.
+- [x] The earlier pending/failing Phase 11 QA run was superseded by full run [#41612754761](https://github.com/com-orgs/learnora/actions/runs/41612754761), which passed the complete browser suite across the merged 87-page release.
 - [ ] Review and reconcile remaining editorial-attribution PR #4 before treating all content quality work as complete.
 
 
@@ -328,12 +328,12 @@
 
 ### Phase 12 — International English and Science foundations
 
-- [ ] Publish English guide covering US ELA, England KS3, Ontario Language and Australian Curriculum English.
-- [ ] Publish Science guide covering NGSS/state adoption, England KS3, Ontario Science and Technology, and Australian Curriculum Science.
-- [ ] Publish original English and Science practice workbook with worked answers and external print JavaScript.
-- [ ] Link guides/workbook from subject hubs and curriculum hub; add clean URLs to sitemap.
-- [ ] Resolve mobile overflow on the maths study-plan table and pass full browser QA.
-- [ ] Reconcile tracker status and run complete CI before release.
+- [x] Published English guide covering US ELA, England KS3, Ontario Language and Australian Curriculum English.
+- [x] Published Science guide covering NGSS/state adoption, England KS3, Ontario Science and Technology, and Australian Curriculum Science.
+- [x] Published 20-question original English and Science practice workbook with worked answers and external print JavaScript.
+- [x] Linked both guides and workbook from subject/curriculum hubs; added clean URLs to the production sitemap (87 URLs total).
+- [x] Fixed maths study-plan table overflow; full browser QA passed at 320px, 390px, 768px and desktop widths.
+- [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
@@ -346,3 +346,16 @@
 
 - First full browser run [#41612460963](https://github.com/com-orgs/learnora/actions/runs/41612460963) checked 87 pages, 64 quizzes, 64 quiz retakes and 66 print actions. Responsive layout and performance checks passed; axe found two serious colour-contrast failures on the contact links inside the English and Science guide note panels.
 - Corrective change: darkened and underlined note-panel links on both guides. Rerun the full browser suite; do not mark Phase 12 QA green until it passes.
+
+
+### Phase 12 — merged and live in production (3 November 2026)
+
+- [x] PR [#10](https://github.com/com-orgs/learnora/pull/10) squash-merged to `main` as `e1be1bde7abcda7679f0c507228805f0f1380151`.
+- [x] Cloudflare Pages GitHub check reported **Deployed successfully** for the production merge commit; the production alias `https://learnora-ab2.pages.dev` was independently fetched after deployment.
+- [x] Production English guide, Science guide, shared 20-question workbook and external print JavaScript all returned successfully with correct canonical URLs and `index,follow`.
+- [x] Production sitemap now reports 87 URLs and includes both guides and the workbook.
+- [x] English, Science and curriculum hubs each link to their relevant guide and the shared workbook.
+- [x] Responsive table fix verified in full browser suite. Browser run [#41612754761](https://github.com/com-orgs/learnora/actions/runs/41612754761) passed 87 pages at 320/390/768/desktop, 64 quiz submissions, 64 retakes, 66 worksheet print actions, 87 performance/resource checks and axe WCAG 2.1 A/AA with no reported violations.
+- [x] Main-branch static and legal workflow [#41613022618](https://github.com/com-orgs/learnora/actions/runs/41613022618) passed. Cloudflare Pages deployment check also passed for the merge commit.
+- Phase 12 foundation work is complete. Future curriculum depth still needed: more English and Science lessons, additional country-specific practice, and site-wide editorial source/reviewer reconciliation.
+- Phase 8 remains partial; do not enable AdSense until actual account/publisher ID, audience/COPPA assessment and any applicable certified CMP requirements are resolved.
