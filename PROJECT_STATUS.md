@@ -388,7 +388,7 @@
 - [x] Improved all 20 quiz answer feedback entries across those four lessons to reveal the correct answer text after incorrect or unanswered attempts.
 - [x] Added a public Editorial and Corrections Policy and internal desk-audit log. No named subject expert is claimed; independent expert review remains outstanding.
 - [ ] Extend explicit source attribution to the remaining legacy lessons; complete topic-by-topic accuracy checks for maths, English and science, and obtain genuine independent subject-expert review.
-- [ ] [x] Verified all ten official source URLs added to the four Phase 13 lessons are reachable; static, legal and Cloudflare preview checks passed on the latest remediation commit. [ ] Complete browser QA and production verification before release.
+- [x] Verified all ten official source URLs added to the four Phase 13 lessons are reachable; static, legal, Cloudflare preview and full browser QA passed, followed by production verification.
 - Phase 14 is not complete. Phase 8 AdSense readiness remains partial and separate from academic quality.
 
 
@@ -407,4 +407,10 @@
 - [x] Repaired 273 false-positive footer warnings by teaching the audit to accept Learnora's clean routes (for example `/contact`) as well as `.html` paths.
 - [x] Resolved all 165 quiz-feedback audit warnings across 33 legacy lessons: 19 lessons received explicit correct-answer text and feedback for 95 quiz questions; 14 lessons already exposed answer labels and are now correctly recognized by the checker.
 - [x] Added the Editorial and Corrections Policy link on About and Contact pages and included the policy URL in the sitemap.
-- [x] Latest remediation commit `27619f34cdc805b442ad20c5e198c43f07b3ff83`: static, legal and preview header/assets workflow steps passed; browser suite is running in [workflow #41635673927](https://github.com/com-orgs/learnora/actions/runs/41635673927).
+- [x] PR [#12](https://github.com/com-orgs/learnora/pull/12) squash-merged to `main` as `97640771c2700345152c359f96c369f9ed675755`.
+- [x] Cloudflare Pages reported **Deployed successfully** for the merge commit; production alias `https://learnora-ab2.pages.dev` was independently verified.
+- [x] Production policy, About, Contact and all four Phase 13 lesson URLs returned with correct canonical metadata and `index,follow`; sitemap reports 92 URLs and includes `/editorial-policy`.
+- [x] Production lessons expose Sources and further reading, independent practice, quizzes and worksheets; sampled deployed quiz scripts contain the correct-answer feedback.
+- [x] Full branch QA [#41636282293](https://github.com/com-orgs/learnora/actions/runs/41636282293) passed with zero static warnings, 92 pages at 320/390/768/desktop widths, 68 quiz submissions, 68 retakes, 70 print actions and 92 performance checks.
+- [x] Main workflow [#41636821146](https://github.com/com-orgs/learnora/actions/runs/41636821146) passed static and legal/pre-monetisation checks.
+- Phase 14 first remediation batch is merged and live. The wider academic audit remains in progress: source attribution for legacy lessons, full topic-by-topic accuracy verification and genuine subject-expert review remain open.
