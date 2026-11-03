@@ -81,7 +81,7 @@ function loadQuizAnswerKey(source, rel, origin) {
     const scriptFile = path.join(root, scriptPath);
     if (!fs.existsSync(scriptFile) || !fs.statSync(scriptFile).isFile()) continue;
     const code = fs.readFileSync(scriptFile, 'utf8');
-    const declaration = code.match(/\bconst\s+(answers|key|A)\s*=\s*\{/);
+    const declaration = code.match(/\bconst\s+(answers|key|A|all)\s*=\s*\{/);
     if (!declaration) continue;
 
     const openBrace = code.indexOf('{', declaration.index);
