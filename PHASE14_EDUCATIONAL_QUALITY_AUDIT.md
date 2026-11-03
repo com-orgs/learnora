@@ -44,7 +44,7 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Fixed the footer audit to recognize both clean routes (`/contact`, `/privacy-policy`, `/terms`) and explicit `.html` paths, resolving 273 false-positive warnings without changing every page footer.
 - Added the editorial policy link on About and Contact and included its clean URL in the sitemap.
 - Verified all ten official source URLs cited by the four Phase 13 lessons were reachable at audit time. Curriculum references are context only and do not certify formal curriculum alignment.
-- Latest CI run [#41635673927](https://github.com/com-orgs/learnora/actions/runs/41635673927) has passed static, legal and Cloudflare preview header/assets steps; browser QA is pending. No production release is claimed.
+- An earlier run [#41635673927](https://github.com/com-orgs/learnora/actions/runs/41635673927) passed static, legal and preview checks; it was superseded by the final zero-warning browser run recorded below.
 
 
 ## Footer and full QA closure — 3 November 2026
@@ -55,3 +55,14 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Legal/pre-monetisation checks and Cloudflare preview headers, CSP, lesson assets and custom 404 checks passed.
 - Browser QA passed 92 pages at 320px, 390px, 768px and desktop widths; 68 quiz submissions; 68 retakes; 70 worksheet print actions; 92 performance/resource checks; no horizontal overflow or third-party/CSP errors.
 - This closes the first Phase 14 remediation batch, not the entire academic audit. Subject-by-subject content verification and genuine independent educator review remain open work.
+
+
+## Production deployment verification — 3 November 2026
+
+- PR [#12](https://github.com/com-orgs/learnora/pull/12) was squash-merged to `main` as `97640771c2700345152c359f96c369f9ed675755`.
+- Cloudflare Pages check reported **Deployed successfully** for the merge commit (deployment preview `https://f267dd92.learnora-ab2.pages.dev`).
+- Independently fetched the production alias `https://learnora-ab2.pages.dev`: the Editorial and Corrections Policy, About, Contact and all four Phase 13 lesson pages returned successfully with canonical URLs and `index,follow`.
+- Production sitemap reports 92 URLs and includes the Editorial and Corrections Policy page.
+- All four Phase 13 lessons expose their Sources and further reading and independent-practice sections; deployed sample quiz scripts for English, Maths and Science contain explicit correct-answer feedback.
+- Main workflow [#41636821146](https://github.com/com-orgs/learnora/actions/runs/41636821146) passed its static and legal/pre-monetisation checks.
+- The first Phase 14 remediation batch is live. Phase 14 remains in progress because the remaining legacy source attribution, complete subject-by-subject academic verification and genuine independent educator review have not been completed.
