@@ -314,3 +314,35 @@
 - [x] Verified the workbook footer links Contact, Privacy and Terms; worksheet canonical/robots metadata is correct.
 - [ ] Fresh full GitHub Actions audit against post-fix release: run [#41564576167](https://github.com/com-orgs/learnora/actions/runs/41564576167) on `audit/phase11-postfix-qa-2026-11-03` was queued/pending at the latest check; no jobs had started yet. Do not mark full QA green until it completes.
 - [ ] Review and reconcile remaining editorial-attribution PR #4 before treating all content quality work as complete.
+
+
+## Current continuation status — 3 November 2026
+
+- Production branch head at session start: `78854ac777fa701d3a8d2f94a769e8812a1556e6`. Phase 11 maths international guides and practice workbook were live-smoke-checked in the preceding session.
+- Phase 11 maths expansion is complete for US Common Core, England KS3, Ontario Grades 6–8 and Australian Curriculum Years 7–8. English and Science international expansion is tracked separately under Phase 12.
+- Latest browser QA run [#41564576167](https://github.com/com-orgs/learnora/actions/runs/41564576167) failed because the four-week maths study-plan table caused horizontal page overflow at 320px and 390px. Static, legal and Cloudflare preview checks passed. Its tracker-refresh step also failed because the expected CI status heading was absent. Run [#41564569725](https://github.com/com-orgs/learnora/actions/runs/41564569725) was cancelled before browser checks completed. Neither run is a green full-browser result.
+- Phase 12 remediation: wrap the study-plan table in a keyboard-focusable horizontal-scroll region; add the missing CI status section; rerun responsive, accessibility, quiz, print and performance checks.
+- Firecrawl search was unavailable because the connected account reported insufficient credits. No Firecrawl crawl is claimed. Official primary curriculum sources were checked through public search and are linked directly on the new guides.
+- Phase 8 remains partial: AdSense account/publisher ID, audience/COPPA assessment and any required certified CMP remain owner/account gates. No advertising code is enabled.
+- Editorial-attribution issue [#4](https://github.com/com-orgs/learnora/issues/4) remains open. New curriculum guides cite official primary sources, but site-wide source attribution and real named-reviewer workflow are not yet complete.
+
+### Phase 12 — International English and Science foundations
+
+- [ ] Publish English guide covering US ELA, England KS3, Ontario Language and Australian Curriculum English.
+- [ ] Publish Science guide covering NGSS/state adoption, England KS3, Ontario Science and Technology, and Australian Curriculum Science.
+- [ ] Publish original English and Science practice workbook with worked answers and external print JavaScript.
+- [ ] Link guides/workbook from subject hubs and curriculum hub; add clean URLs to sitemap.
+- [ ] Resolve mobile overflow on the maths study-plan table and pass full browser QA.
+- [ ] Reconcile tracker status and run complete CI before release.
+
+## CI status (automatically refreshed by GitHub Actions)
+- Status: success.
+- Tested commit: `8d2d2cab6fefe37caf4d7429a93b1769d23af354`
+- Workflow: Learnora Site Audit (run [#41612754761](https://github.com/com-orgs/learnora/actions/runs/41612754761))
+- Last updated automatically: run #41612754761 on branch `audit/phase12-english-science-2026-11-03`.
+
+
+### Phase 12 browser QA correction — 3 November 2026
+
+- First full browser run [#41612460963](https://github.com/com-orgs/learnora/actions/runs/41612460963) checked 87 pages, 64 quizzes, 64 quiz retakes and 66 print actions. Responsive layout and performance checks passed; axe found two serious colour-contrast failures on the contact links inside the English and Science guide note panels.
+- Corrective change: darkened and underlined note-panel links on both guides. Rerun the full browser suite; do not mark Phase 12 QA green until it passes.
