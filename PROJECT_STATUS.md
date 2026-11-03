@@ -337,9 +337,9 @@
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `a8bff6b2567fef77920a40922cf145447d8cb10a`
-- Workflow: Learnora Site Audit (run [#41614283348](https://github.com/com-orgs/learnora/actions/runs/41614283348))
-- Last updated automatically: run #41614283348 on branch `audit/phase13-lesson-depth-2026-11-03`.
+- Tested commit: `94a93b1554558934a140ab109b78ad438dd71e88`
+- Workflow: Learnora Site Audit (run [#41636282293](https://github.com/com-orgs/learnora/actions/runs/41636282293))
+- Last updated automatically: run #41636282293 on branch `audit/phase14-educational-quality-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -378,3 +378,33 @@
 - [x] Production verified: all four lesson URLs return with canonical metadata and `index,follow`; all four pages contain the learning objectives, quiz and printable worksheet; English and Science hubs link to the two subject-specific lessons; sitemap reports 91 URLs and includes all four new lessons; external quiz/print scripts return successfully.
 - Phase 13 release complete. Future depth: add more lessons and differentiated practice, strengthen source attribution and review process.
 - Phase 8 remains partial; AdSense account/publisher ID, audience/COPPA assessment and any applicable certified CMP requirements remain owner/account gates. No advertising code enabled.
+
+
+### Phase 14 — educational quality audit (in progress, 3 November 2026)
+
+- [x] Started structured academic accuracy, teaching-depth, quiz, worksheet, source-attribution and reviewer-transparency checks.
+- [x] Confirmed inventory from the static audit: 68 sitemap lesson URLs and 92 canonical HTML pages.
+- [x] Added primary/reference sources to the four Phase 13 lessons: Common Core ELA, England curriculum, Ontario Language, Australian Curriculum English, NASA, NOAA, NGSS, US EPA and relevant curriculum frameworks.
+- [x] Improved all 20 quiz answer feedback entries across those four lessons to reveal the correct answer text after incorrect or unanswered attempts.
+- [x] Added a public Editorial and Corrections Policy and internal desk-audit log. No named subject expert is claimed; independent expert review remains outstanding.
+- [ ] Extend explicit source attribution to the remaining legacy lessons; complete topic-by-topic accuracy checks for maths, English and science, and obtain genuine independent subject-expert review.
+- [ ] [x] Verified all ten official source URLs added to the four Phase 13 lessons are reachable; static, legal and Cloudflare preview checks passed on the latest remediation commit. [ ] Complete browser QA and production verification before release.
+- Phase 14 is not complete. Phase 8 AdSense readiness remains partial and separate from academic quality.
+
+
+#### Phase 14 — mathematics sample desk audit (3 November 2026)
+
+- [x] Desk-checked worked examples and quiz answer keys in six representative fraction, ratio, Pythagorean theorem, linear-equation and probability lessons. The calculations and keyed quiz answers sampled were consistent with the visible questions.
+- [x] Added official mathematics curriculum reference links and scope disclaimers to three Grade 8 lessons: Pythagorean theorem, linear equations/inequalities and probability models.
+- [x] Improved those three quizzes so incorrect or unanswered attempts identify the correct option text, not only a generic explanation.
+- [ ] Expand calculation verification and source attribution across all remaining mathematics lessons; the sample is not a full subject audit.
+
+- [x] Added a separate three-task independent-practice activity with suggested responses to the Grade 8 sustainability lesson; the page now explicitly supports application before the quiz.
+
+- [x] Added independent-practice tasks and suggested responses to the two Phase 13 English lessons and Grade 7 weather/water-cycle lesson, completing the rubric's explicit practice-section requirement for the four new Phase 13 lessons.
+- [x] Aligned the probability quiz's stored correct-answer text with the static audit schema; the visible option and feedback string now match.
+
+- [x] Repaired 273 false-positive footer warnings by teaching the audit to accept Learnora's clean routes (for example `/contact`) as well as `.html` paths.
+- [x] Resolved all 165 quiz-feedback audit warnings across 33 legacy lessons: 19 lessons received explicit correct-answer text and feedback for 95 quiz questions; 14 lessons already exposed answer labels and are now correctly recognized by the checker.
+- [x] Added the Editorial and Corrections Policy link on About and Contact pages and included the policy URL in the sitemap.
+- [x] Latest remediation commit `27619f34cdc805b442ad20c5e198c43f07b3ff83`: static, legal and preview header/assets workflow steps passed; browser suite is running in [workflow #41635673927](https://github.com/com-orgs/learnora/actions/runs/41635673927).

@@ -4,7 +4,7 @@ const result=document.getElementById('quizResult');
 const progress=document.getElementById('progress');
 const bar=document.getElementById('progressBar');
 const progressText=document.getElementById('progressText');
-const answers={q1:'b',q2:'b',q3:'b',q4:'b',q5:'b'};
+const answers={"q1":{"correct":"b","correctText":"x = 5","explanation":"Subtract 3 to get 2x = 10, then divide by 2. x = 5."},"q2":{"correct":"b","correctText":"x = 5","explanation":"Subtract 2x to get 2x + 2 = 12. Subtract 2 and divide by 2. x = 5."},"q3":{"correct":"b","correctText":"It reverses direction","explanation":"Multiplying or dividing an inequality by a negative number reverses its sign."},"q4":{"correct":"b","correctText":"Filled circle at 6","explanation":"The symbol ≥ includes 6, so use a filled circle at 6 and shade to the right."},"q5":{"correct":"b","correctText":"x > −4","explanation":"Divide both sides by −3 and reverse < to >. Therefore x > −4."}};
 const explanations={
 q1:'Subtract 3 to get 2x = 10, then divide by 2. x = 5.',
 q2:'Subtract 2x to get 2x + 2 = 12. Subtract 2 and divide by 2. x = 5.',
@@ -25,9 +25,9 @@ let score=0;
 const details=[];
 Object.keys(answers).forEach(function(name,index){
 const selected=form.querySelector('input[name="'+name+'"]:checked');
-const correct=selected&&selected.value===answers[name];
+const correct=selected&&selected.value===answers[name].correct;
 if(correct)score++;
-details.push({index:index+1,correct:!!correct,explanation:explanations[name]});
+details.push({index:index+1,correct:!!correct,explanation:explanations[name],correctText:answers[name].correctText});
 });
 const content=document.createDocumentFragment();
 const heading=document.createElement('h3');
@@ -36,7 +36,7 @@ content.appendChild(heading);
 details.forEach(function(item){
 const paragraph=document.createElement('p');
 const label=document.createElement('strong');
-label.textContent='Question '+item.index+': '+(item.correct?'Correct':'Review this one')+'.';
+label.textContent='Question '+item.index+': '+(item.correct?'Correct':'Review. Correct answer: '+item.correctText)+'.';
 paragraph.append(label,document.createTextNode(' '+item.explanation));
 content.appendChild(paragraph);
 });

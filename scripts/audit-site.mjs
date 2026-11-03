@@ -196,7 +196,7 @@ for (const file of indexable) {
       ['learning outcomes', /what you will learn|learning goals|learning objectives|by the end|you should be able to/i],
       ['explanation/examples', /worked example|worked examples|for example|examples|example/i],
       ['independent practice', /independent practice|practice exercises|practice questions|try it yourself|practice activity/i],
-      ['printable worksheet', /printable worksheet|worksheet and answer key|free printable worksheet/i],
+      ['printable worksheet', /printable (?:practice )?worksheet|worksheet and answer key|free printable worksheet/i],
       ['lesson summary', /lesson summary|key takeaways|summary/i]
     ];
     for (const [label, pattern] of qualityChecks) {
@@ -275,9 +275,9 @@ for (const file of indexable) {
   }
 
   const footer = source.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] || source;
-  if (rel !== 'contact.html' && !/href=["']\/contact\.html["']/i.test(footer)) warnings.push(rel + ': Contact link not found in footer.');
-  if (rel !== 'privacy-policy.html' && !/href=["']\/privacy-policy\.html["']/i.test(footer)) warnings.push(rel + ': Privacy link not found in footer.');
-  if (rel !== 'terms.html' && !/href=["']\/terms\.html["']/i.test(footer)) warnings.push(rel + ': Terms link not found in footer.');
+  if (rel !== 'contact.html' && !/href=["']\/contact(?:\.html)?["']/i.test(footer)) warnings.push(rel + ': Contact link not found in footer.');
+  if (rel !== 'privacy-policy.html' && !/href=["']\/privacy-policy(?:\.html)?["']/i.test(footer)) warnings.push(rel + ': Privacy link not found in footer.');
+  if (rel !== 'terms.html' && !/href=["']\/terms(?:\.html)?["']/i.test(footer)) warnings.push(rel + ': Terms link not found in footer.');
 
   const ids = [...source.matchAll(/\bid=["']([^"']+)["']/gi)].map(m => m[1]);
   const duplicateIds = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
@@ -335,9 +335,13 @@ for (const file of indexable) {
           errors.push(rel + ': answer key option ' + correctValue + ' does not match a labelled radio option for ' + name + '.');
           continue;
         }
-        const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
-        if (expectedText) {
-          if (normalizeVisibleText(expectedText) !== correctOption.text) {
+        const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? entry.label ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
+        if (!expectedText) {
+          warnings.push(rel + ': quiz feedback quality — answer key does not yet include correctText for ' + name + '; wrong or unanswered attempts may not identify the correct option.');
+        } else {
+          const expectedOptionText = normalizeVisibleText(expectedText).replace(/^[a-d][.)]\s*/, '');
+          const visibleOptionText = correctOption.text.replace(/^[a-d][.)]\s*/, '');
+          if (expectedOptionText !== visibleOptionText) {
             errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
           }
         }
