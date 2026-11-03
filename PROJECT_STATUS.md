@@ -337,9 +337,9 @@
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: failure.
-- Tested commit: `b568452b719773c764ccf81834a629796f9addb9`
-- Workflow: Learnora Site Audit (run [#41619825545](https://github.com/com-orgs/learnora/actions/runs/41619825545))
-- Last updated automatically: run #41619825545 on branch `audit/phase14-educational-quality-2026-11-03`.
+- Tested commit: `0336fe50cf7c428a31c6efc1a15fde3a94b4c308`
+- Workflow: Learnora Site Audit (run [#41619934074](https://github.com/com-orgs/learnora/actions/runs/41619934074))
+- Last updated automatically: run #41619934074 on branch `audit/phase14-educational-quality-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
