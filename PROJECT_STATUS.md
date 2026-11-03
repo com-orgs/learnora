@@ -378,3 +378,15 @@
 - [x] Production verified: all four lesson URLs return with canonical metadata and `index,follow`; all four pages contain the learning objectives, quiz and printable worksheet; English and Science hubs link to the two subject-specific lessons; sitemap reports 91 URLs and includes all four new lessons; external quiz/print scripts return successfully.
 - Phase 13 release complete. Future depth: add more lessons and differentiated practice, strengthen source attribution and review process.
 - Phase 8 remains partial; AdSense account/publisher ID, audience/COPPA assessment and any applicable certified CMP requirements remain owner/account gates. No advertising code enabled.
+
+
+### Phase 14 — educational quality audit (in progress, 3 November 2026)
+
+- [x] Started structured academic accuracy, teaching-depth, quiz, worksheet, source-attribution and reviewer-transparency checks.
+- [x] Confirmed inventory: 64 subject lessons (72 grade-path HTML files including eight grade/subject index pages).
+- [x] Added primary/reference sources to the four Phase 13 lessons: Common Core ELA, England curriculum, Ontario Language, Australian Curriculum English, NASA, NOAA, NGSS, US EPA and relevant curriculum frameworks.
+- [x] Improved all 20 quiz answer feedback entries across those four lessons to reveal the correct answer text after incorrect or unanswered attempts.
+- [x] Added a public Editorial and Corrections Policy and internal desk-audit log. No named subject expert is claimed; independent expert review remains outstanding.
+- [ ] Extend source attribution and correct-answer feedback to the remaining legacy lessons; complete topic-by-topic accuracy checks for maths, English and science.
+- [ ] Verify preview source links, run static/legal/browser QA, then consider production release only after all checks pass.
+- Phase 14 is not complete. Phase 8 AdSense readiness remains partial and separate from academic quality.
