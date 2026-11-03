@@ -196,7 +196,7 @@ for (const file of indexable) {
       ['learning outcomes', /what you will learn|learning goals|learning objectives|by the end|you should be able to/i],
       ['explanation/examples', /worked example|worked examples|for example|examples|example/i],
       ['independent practice', /independent practice|practice exercises|practice questions|try it yourself|practice activity/i],
-      ['printable worksheet', /printable worksheet|worksheet and answer key|free printable worksheet/i],
+      ['printable worksheet', /printable (?:practice )?worksheet|worksheet and answer key|free printable worksheet/i],
       ['lesson summary', /lesson summary|key takeaways|summary/i]
     ];
     for (const [label, pattern] of qualityChecks) {
