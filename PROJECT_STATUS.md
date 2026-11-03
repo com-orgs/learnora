@@ -366,4 +366,15 @@
 - Added four full lessons: English argument writing; English text structure and author's purpose; Grade 7 weather, climate and the water cycle; Grade 8 Earth's resources, sustainability and human impact.
 - Each lesson includes learning objectives, concept explanations, worked examples, five interactive questions with feedback and retake, a printable worksheet and suggested answers.
 - Linked all four lessons from their subject hubs and added clean canonical URLs to the sitemap.
-- Static, legal, preview and full browser QA are pending. Do not merge or call these resources live until required checks pass and production URLs are verified.
+- [x] Static, legal and preview checks passed; full 91-page browser QA passed in run [#41614283348](https://github.com/com-orgs/learnora/actions/runs/41614283348). PR #11 merged to main and production deployment was verified.
+
+
+### Phase 13 — merged and live in production (3 November 2026)
+
+- [x] PR [#11](https://github.com/com-orgs/learnora/pull/11) squash-merged to `main` as `8da27fefe1b18f7f681cd5ceddb00062c853cfa7`.
+- [x] Full browser QA run [#41614283348](https://github.com/com-orgs/learnora/actions/runs/41614283348) passed: 91 sitemap pages at 320px, 390px, 768px and desktop widths; no horizontal overflow; 68 quiz submissions; 68 retake actions; 70 worksheet print actions; 91 performance/resource checks; no third-party requests or CSP errors.
+- [x] Static website audit, legal/pre-monetisation readiness audit and Cloudflare preview headers/assets checks passed on the branch.
+- [x] Main workflow [#41614592612](https://github.com/com-orgs/learnora/actions/runs/41614592612) passed; Cloudflare Pages deployment check succeeded for the merge commit.
+- [x] Production verified: all four lesson URLs return with canonical metadata and `index,follow`; all four pages contain the learning objectives, quiz and printable worksheet; English and Science hubs link to the two subject-specific lessons; sitemap reports 91 URLs and includes all four new lessons; external quiz/print scripts return successfully.
+- Phase 13 release complete. Future depth: add more lessons and differentiated practice, strengthen source attribution and review process.
+- Phase 8 remains partial; AdSense account/publisher ID, audience/COPPA assessment and any applicable certified CMP requirements remain owner/account gates. No advertising code enabled.
