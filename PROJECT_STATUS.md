@@ -337,9 +337,9 @@
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: cancelled.
-- Tested commit: `66c7350e3c25b156c1ca3a034dc825309f13b621`
-- Workflow: Learnora Site Audit (run [#41635106502](https://github.com/com-orgs/learnora/actions/runs/41635106502))
-- Last updated automatically: run #41635106502 on branch `audit/phase14-educational-quality-2026-11-03`.
+- Tested commit: `9483a82d3f9a883be12b78864eaec5d8cfd2c97d`
+- Workflow: Learnora Site Audit (run [#41635275424](https://github.com/com-orgs/learnora/actions/runs/41635275424))
+- Last updated automatically: run #41635275424 on branch `audit/phase14-educational-quality-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
