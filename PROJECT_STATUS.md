@@ -337,9 +337,9 @@
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `8d2d2cab6fefe37caf4d7429a93b1769d23af354`
-- Workflow: Learnora Site Audit (run [#41612754761](https://github.com/com-orgs/learnora/actions/runs/41612754761))
-- Last updated automatically: run #41612754761 on branch `audit/phase12-english-science-2026-11-03`.
+- Tested commit: `a8bff6b2567fef77920a40922cf145447d8cb10a`
+- Workflow: Learnora Site Audit (run [#41614283348](https://github.com/com-orgs/learnora/actions/runs/41614283348))
+- Last updated automatically: run #41614283348 on branch `audit/phase13-lesson-depth-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -359,3 +359,11 @@
 - [x] Main-branch static and legal workflow [#41613022618](https://github.com/com-orgs/learnora/actions/runs/41613022618) passed. Cloudflare Pages deployment check also passed for the merge commit.
 - Phase 12 foundation work is complete. Future curriculum depth still needed: more English and Science lessons, additional country-specific practice, and site-wide editorial source/reviewer reconciliation.
 - Phase 8 remains partial; do not enable AdSense until actual account/publisher ID, audience/COPPA assessment and any applicable certified CMP requirements are resolved.
+
+
+### Phase 13 — lesson-depth expansion (3 November 2026)
+
+- Added four full lessons: English argument writing; English text structure and author's purpose; Grade 7 weather, climate and the water cycle; Grade 8 Earth's resources, sustainability and human impact.
+- Each lesson includes learning objectives, concept explanations, worked examples, five interactive questions with feedback and retake, a printable worksheet and suggested answers.
+- Linked all four lessons from their subject hubs and added clean canonical URLs to the sitemap.
+- Static, legal, preview and full browser QA are pending. Do not merge or call these resources live until required checks pass and production URLs are verified.
