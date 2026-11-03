@@ -34,3 +34,14 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 
 - Added independent-practice activities and suggested responses to Argument Writing, Text Structure and Author’s Purpose, and Weather, Climate and the Water Cycle. All four Phase 13 lessons now have an explicit independent-practice section.
 - Aligned the Grade 8 probability quiz's correct-answer text with the visible option and audit schema.
+
+
+## Legacy quiz feedback and audit-rule remediation — 3 November 2026
+
+- The preceding static audit emitted 165 quiz-feedback warnings across 33 legacy lessons. A review separated pages that already displayed a correct-answer label from pages that only showed a generic explanation.
+- Added correct-option text and explicit incorrect-answer feedback to 19 legacy lesson scripts (95 quiz questions): three English lessons, three Grade 7 mathematics lessons, eight Grade 8 mathematics lessons, two Grade 7 science lessons and three Grade 8 science lessons.
+- Fourteen other flagged lessons already had a `label` field and displayed the correct option; the static audit now recognizes that existing correct-answer label rather than producing a false warning.
+- Fixed the footer audit to recognize both clean routes (`/contact`, `/privacy-policy`, `/terms`) and explicit `.html` paths, resolving 273 false-positive warnings without changing every page footer.
+- Added the editorial policy link on About and Contact and included its clean URL in the sitemap.
+- Verified all ten official source URLs cited by the four Phase 13 lessons were reachable at audit time. Curriculum references are context only and do not certify formal curriculum alignment.
+- Latest CI run [#41635673927](https://github.com/com-orgs/learnora/actions/runs/41635673927) has passed static, legal and Cloudflare preview header/assets steps; browser QA is pending. No production release is claimed.
