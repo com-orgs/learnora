@@ -275,9 +275,9 @@ for (const file of indexable) {
   }
 
   const footer = source.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] || source;
-  if (rel !== 'contact.html' && !/href=["']\/contact\.html["']/i.test(footer)) warnings.push(rel + ': Contact link not found in footer.');
-  if (rel !== 'privacy-policy.html' && !/href=["']\/privacy-policy\.html["']/i.test(footer)) warnings.push(rel + ': Privacy link not found in footer.');
-  if (rel !== 'terms.html' && !/href=["']\/terms\.html["']/i.test(footer)) warnings.push(rel + ': Terms link not found in footer.');
+  if (rel !== 'contact.html' && !/href=["']\/contact(?:\.html)?["']/i.test(footer)) warnings.push(rel + ': Contact link not found in footer.');
+  if (rel !== 'privacy-policy.html' && !/href=["']\/privacy-policy(?:\.html)?["']/i.test(footer)) warnings.push(rel + ': Privacy link not found in footer.');
+  if (rel !== 'terms.html' && !/href=["']\/terms(?:\.html)?["']/i.test(footer)) warnings.push(rel + ': Terms link not found in footer.');
 
   const ids = [...source.matchAll(/\bid=["']([^"']+)["']/gi)].map(m => m[1]);
   const duplicateIds = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
