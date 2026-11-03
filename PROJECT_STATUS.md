@@ -303,3 +303,8 @@
 - [x] PR #9 merged to main; production deployment is expected from the connected Cloudflare Pages main-branch integration.
 - [ ] Confirm Cloudflare production deployment and HTTP 200 smoke checks for the workbook, external script and sitemap after the deployment completes.
 - [ ] Run a fresh full CI workflow against the post-fix release commit; do not reuse the pre-fix failure as the current result or call the rerun green without evidence.
+
+
+### Post-release QA rerun — 2026-11-03
+- Re-run the complete Learnora Site Audit workflow against the merged Phase 11 content after the CSP-safe external print-script fix.
+- This branch is QA-only; production `main` is not changed by this verification run.
