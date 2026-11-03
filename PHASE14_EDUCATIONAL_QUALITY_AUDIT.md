@@ -66,3 +66,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - All four Phase 13 lessons expose their Sources and further reading and independent-practice sections; deployed sample quiz scripts for English, Maths and Science contain explicit correct-answer feedback.
 - Main workflow [#41636821146](https://github.com/com-orgs/learnora/actions/runs/41636821146) passed its static and legal/pre-monetisation checks.
 - The first Phase 14 remediation batch is live. Phase 14 remains in progress because the remaining legacy source attribution, complete subject-by-subject academic verification and genuine independent educator review have not been completed.
+
+## Full sitemap on-page SEO audit — 3 November 2026
+
+- Audited all 104 URLs from the live repository sitemap in five batches (21, 21, 21, 21 and 20 URLs) using the connected Search Console on-page auditor.
+- Result: 104/104 pages fetched and indexable; 0 critical, 0 high, 18 medium and 159 low findings (177 total). The audit reported no non-indexable page.
+- The 18 medium findings were all an `Organization` node missing its `logo` property in existing JSON-LD: the Grade 6–8 maths study plan; two international worksheets; international English and Science guides; four Phase 13 lessons; and nine Computer Science / AI Literacy / Financial Literacy lessons.
+- Low findings mainly reflect optional structured data absence, heuristic title length (~60 characters), heuristic meta description length (~160 characters), and the Contact page's 242-word count. These are not automatically ranking penalties. Do not truncate useful copy mechanically or add irrelevant schema just to silence a tool.
+- Remediation prepared on `audit/seo-ga4-safety-2026-11-03`: added a square 512×512 Learnora SVG and attached it as an `ImageObject` logo to existing `Organization` nodes in the 18 affected pages. This does not alter visible content or external script behaviour. Verify the new logo URL and rerun the 18-page on-page audit after production deployment.
+- The complete sitemap audit is recorded in `ONPAGE_SEO_AUDIT_2026-11-03.md`.
+- This technical audit does not replace Phase 14's academic review. Subject-expert accuracy review, legacy lesson source attribution and independent educator review remain outstanding.

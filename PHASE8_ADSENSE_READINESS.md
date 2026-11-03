@@ -104,3 +104,14 @@ Until those owner/account decisions and verifications are completed, Phase 8 rem
 ## Safety / release hold
 
 Until all relevant exit criteria are satisfied, keep ad code, analytics tags and non-essential tracking disabled. Do not add a fake CMP, guessed publisher ID, placeholder ads.txt row, or unapproved ad scripts. This document is an engineering readiness record, not legal advice and not a guarantee of AdSense approval.
+
+## GA4 privacy and child-audience gate — 3 November 2026
+
+- A GA4 property and web stream now exist and are linked in GSC Wizard: property ID `562164102`, stream ID `16264528436`, Measurement ID `G-0186E0KTH6`.
+- The production site does **not** yet contain a GA4 / Google Tag Manager script. The current GA4 report is zero because the stream has not been implemented; this is intentional, not a tracking failure.
+- The owner has confirmed that Learnora serves students (including children under 13), parents and teachers. This makes a documented child-directed / mixed-audience assessment a material prerequisite; do not treat a generic consent banner as a substitute for any legally required parental consent or other legal basis.
+- Do not install GA4 until the audience classification, applicable international privacy requirements, data-controller disclosures and consent approach have been reviewed. Prefer a blocking/basic-consent design if GA4 is later approved; do not default to advanced Consent Mode cookieless pings for this conservative child/mixed-audience context.
+- If implementation is approved later, keep analytics separate from advertising: no Google Signals, ads personalisation, remarketing, User-ID, custom dimensions based on children, or quiz-answer/score events. Never send names, email addresses, student identifiers, free-text input, quiz answers or scores to Google Analytics.
+- Update the Privacy Policy and implement an accessible choice/revocation interface before any analytics tag can load. Google Consent Mode is a technical signalling mechanism, not a consent banner and not a legal basis.
+- Existing CSP, same-origin script restriction, legal CI guard and browser third-party-request checks must remain intact. Do not broadly allowlist Google domains or weaken `script-src 'self'` until the privacy gate is satisfied.
+- No GA4 code, consent banner or policy claim has been deployed in this audit. Detailed implementation gates: `GA4_PRIVACY_SAFE_PLAN_2026-11-03.md`.

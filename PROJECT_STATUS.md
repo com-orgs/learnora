@@ -3,20 +3,23 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
-## Current verified state — 3 November 2026
+## Current verified state — 3 November 2026 (live refresh)
 
 - Production website: https://learnora-ab2.pages.dev/
-- Latest production commit: `8042cbf23af95a999051a8dd42477347c77eba49`; Cloudflare Pages deployment succeeded.
-- Content inventory: 104 sitemap URLs; 105 HTML files including the custom 404 page. Added 9 original Grades 6–8 lessons across Computer Science, AI Literacy and Financial Literacy. Each has learning objectives, explanations, examples, independent practice, a five-question interactive quiz with feedback/retake and a printable worksheet.
-- Homepage discovery: added Computer Science, AI Literacy and Financial Literacy filters and featured resource cards. Subject hubs link to all 9 lessons.
-- Technical and legal CI: run [#41660898074](https://github.com/com-orgs/learnora/actions/runs/41660898074) passed static and legal/pre-monetisation audits. Latest full browser run [#41661383388](https://github.com/com-orgs/learnora/actions/runs/41661383388) passed on production: all 104 sitemap pages, 77 quiz submissions, 77 retakes, 79 print actions, mobile widths 320/390/768 and desktop; no horizontal overflow, accessibility violations, third-party browser requests or CSP/runtime errors. Cloudflare preview headers/assets also passed.
-- Static audit: 104 HTML pages, 77 accessible quiz forms and 77 answer-key mappings; zero warnings. Legal guard passed and confirms no active AdSense or analytics scripts.
-- Sitemap: Search Console accepted the updated sitemap on 3 November; processing is pending with 0 warnings and 0 errors.
-- IndexNow: verified key; 95 original sitemap URLs, 9 new lesson URLs, 3 subject hubs and homepage updates were accepted with key validated (HTTP 200). Acceptance is not a guarantee of indexing.
-- Google indexing tracker: 104 URLs monitored; latest snapshot 1 indexed, 81 not indexed (coverage says “URL is unknown to Google”), 22 pending, 0 errors and 0 warnings. The new pages are discoverable/submitted but Google indexing remains pending; do not describe unknown URLs as blocked or deindexed.
-- AI discovery: robots.txt allows `OAI-SearchBot` and all public crawlers. This improves crawl access but cannot guarantee ChatGPT citations or traffic.
-- Account-dependent items still open: Bing Webmaster API reporting, GA4 OAuth/connection, CrUX API access, manual NVDA/VoiceOver testing on a real device, and AdSense owner gates (audience/COPPA classification, verified publisher ID, certified CMP where applicable and exact ads.txt declaration). No advertising or analytics has been enabled. Firecrawl full crawl was unavailable because credits were exhausted.
-- Search performance remains early: GSC last-28-day report through 1 November shows 0 clicks and 0 impressions. Continue monitoring after Google fetches the sitemap; traffic and rankings are not guaranteed.
+- Production branch at audit start: `main`, commit `f5b70bc6f7aa644fd3b76ecda70273277a3738c7`. Main Site Audit workflow [#41662078877](https://github.com/com-orgs/learnora/actions/runs/41662078877) completed successfully. This main-branch workflow runs the static and legal/pre-monetisation audits; the latest full browser run remains [#41661383388](https://github.com/com-orgs/learnora/actions/runs/41661383388).
+- Sitemap inventory: 104 unique HTTPS URLs on the production host. Existing static QA record reports 105 HTML files including the custom 404 page.
+- Latest live on-page SEO audit: all 104/104 sitemap URLs fetched and reported indexable; 0 critical, 0 high, 18 medium and 159 low findings (177 total). Medium findings are missing `Organization.logo` in existing JSON-LD; low findings are mostly title/meta length heuristics, absent optional structured data and one short Contact page. No page was reported non-indexable. Detailed findings: [ONPAGE_SEO_AUDIT_2026-11-03.md](ONPAGE_SEO_AUDIT_2026-11-03.md).
+- A low-risk remediation is prepared on branch `audit/seo-ga4-safety-2026-11-03`: add a dedicated 512×512 Learnora SVG logo and reference it only from existing Organization objects in 18 pages. No visible page layout, URL, robots, sitemap, CSP or analytics behaviour is changed by this metadata patch. Await branch CI and post-deployment verification before calling it complete.
+- Google Search Console: the sitemap `https://learnora-ab2.pages.dev/sitemap.xml` was last submitted 3 November at 15:07 UTC; current report says processing pending, 0 warnings and 0 errors. The sitemap contains 104 URLs.
+- Latest Indexing Tracker snapshot (3 November, 16:57 UTC): 104 tracked URLs — 1 indexed, 87 marked `URL is unknown to Google`, 16 pending, 0 errors and 0 warnings. The 87 unknown URLs have no recorded Google crawl time; treat this as a discovery/crawl backlog, not as a confirmed robots.txt/noindex defect. Do not repeatedly request indexing for the same recently checked URLs.
+- GSC performance: 28-day SEO report window 4–31 October 2026 shows 0 clicks and 0 impressions. There are no query/page/country/device rows yet, so no country-market winner or keyword opportunity can be inferred.
+- Bing Webmaster Tools: property is recognized; current crawl endpoint returned no dated crawl rows and the crawl-issues endpoint reported no issues. No crawl volume/index count can be claimed from an empty daily response.
+- GA4: property `562164102` / stream `16264528436` / Measurement ID `G-0186E0KTH6` is linked in GSC Wizard. The API returned 0 sessions, users and events for 4–31 October, consistent with no tracking code being installed. Live checks of homepage, Privacy Policy and a lesson found no GA4/Google Tag Manager scripts. Tracking remains intentionally disabled.
+- Audience/privacy gate: Learnora is intended for students (including under-13 learners), parents and teachers. Do not activate GA4 until child-directed/mixed-audience classification, applicable legal basis and consent requirements have been assessed. Never send names, emails, student identifiers, quiz answers/scores or other personal data. Do not enable Google Signals, advertising personalisation, remarketing or User-ID. Keep the existing restrictive CSP and third-party request guard.
+- Core Web Vitals field data is unavailable because no CrUX API key is configured. Do not infer real-user LCP/INP/CLS from a missing CrUX result.
+- Phase 14 educational quality review remains in progress: first remediation batch and 104-page technical audit are complete; full subject-by-subject factual verification, source attribution across legacy lessons and genuine independent educator review remain open. No reviewer credentials may be invented.
+- AdSense remains disabled. Child-audience classification, actual publisher ID, certified CMP where applicable and exact ads.txt seller declaration remain separate account/legal gates.
+- IndexNow acceptance is not a guarantee of Google/Bing indexing. Search visibility, rankings and traffic are not guaranteed.
 
 Historical session notes below are retained for continuity; use this current state as the source of truth.
 
@@ -354,9 +357,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `c60e6848a2bb7ec2721161f5aec91ef9cb333c30`
-- Workflow: Learnora Site Audit (run [#41649534060](https://github.com/com-orgs/learnora/actions/runs/41649534060))
-- Last updated automatically: run #41649534060 on branch `audit/phase15-new-subjects-ai-discovery-2026-11-03`.
+- Tested commit: `632cdddde3ebf7763fffcd12b9a69ac9c530e64a`
+- Workflow: Learnora Site Audit (run [#41682977213](https://github.com/com-orgs/learnora/actions/runs/41682977213))
+- Last updated automatically: run #41682977213 on branch `audit/seo-ga4-safety-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
