@@ -359,3 +359,11 @@
 - [x] Main-branch static and legal workflow [#41613022618](https://github.com/com-orgs/learnora/actions/runs/41613022618) passed. Cloudflare Pages deployment check also passed for the merge commit.
 - Phase 12 foundation work is complete. Future curriculum depth still needed: more English and Science lessons, additional country-specific practice, and site-wide editorial source/reviewer reconciliation.
 - Phase 8 remains partial; do not enable AdSense until actual account/publisher ID, audience/COPPA assessment and any applicable certified CMP requirements are resolved.
+
+
+### Phase 13 — lesson-depth expansion (3 November 2026)
+
+- Added four full lessons: English argument writing; English text structure and author's purpose; Grade 7 weather, climate and the water cycle; Grade 8 Earth's resources, sustainability and human impact.
+- Each lesson includes learning objectives, concept explanations, worked examples, five interactive questions with feedback and retake, a printable worksheet and suggested answers.
+- Linked all four lessons from their subject hubs and added clean canonical URLs to the sitemap.
+- Static, legal, preview and full browser QA are pending. Do not merge or call these resources live until required checks pass and production URLs are verified.
