@@ -24,3 +24,8 @@
 - Review science claims against topic-specific primary scientific sources.
 - Review English examples and explanations for ambiguity and age suitability.
 - Obtain genuine subject-expert reviews before publishing named reviewer attribution.
+
+
+## Additional mathematics sample — 3 November 2026
+
+Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles; linear equations and inequalities; probability models and compound events. Worked examples and quiz keys were compared with the displayed questions. The sampled calculations and keyed options were consistent. Official Common Core, England, Ontario and Australian mathematics framework links were added with a clear non-alignment disclaimer. The three quiz scripts now identify the correct option text when a learner answers incorrectly or leaves a question blank. This is a sample desk check, not a complete mathematics audit or independent expert review.
