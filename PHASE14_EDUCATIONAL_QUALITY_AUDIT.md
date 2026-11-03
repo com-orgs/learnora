@@ -76,3 +76,11 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Remediation prepared on `audit/seo-ga4-safety-2026-11-03`: added a square 512×512 Learnora SVG and attached it as an `ImageObject` logo to existing `Organization` nodes in the 18 affected pages. This does not alter visible content or external script behaviour. Verify the new logo URL and rerun the 18-page on-page audit after production deployment.
 - The complete sitemap audit is recorded in `ONPAGE_SEO_AUDIT_2026-11-03.md`.
 - This technical audit does not replace Phase 14's academic review. Subject-expert accuracy review, legacy lesson source attribution and independent educator review remain outstanding.
+
+## Post-deployment SEO metadata verification — 3 November 2026
+
+- PR #15 merged to production as `4360fc43b47b5d7a0d7d13b5387e5e58320cb276`; Cloudflare Pages deployment succeeded.
+- All 18 pages previously flagged for missing Organization logos were retested: 18/18 indexable, 0 medium findings, 23 low findings.
+- Full post-deployment on-page audit was rerun across all 104 sitemap URLs: 104/104 indexable, 0 critical, 0 high, 0 medium and 159 low findings.
+- The first medium-severity metadata remediation batch is closed. Remaining low findings are optional structured data, title/meta-length heuristics and minor content recommendations; do not make mechanical edits solely to clear heuristic warnings.
+- Academic review remains open: full subject-by-subject accuracy verification, legacy source attribution and independent educator review are not completed.
