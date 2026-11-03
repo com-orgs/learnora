@@ -336,10 +336,10 @@
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: failure.
-- Tested commit: `1dff82e426d9f06d5bc45322ded2b9c36a666ccc`
-- Workflow: Learnora Site Audit (run [#41648271835](https://github.com/com-orgs/learnora/actions/runs/41648271835))
-- Last updated automatically: run #41648271835 on branch `audit/phase15-new-subjects-ai-discovery-2026-11-03`.
+- Status: success.
+- Tested commit: `c60e6848a2bb7ec2721161f5aec91ef9cb333c30`
+- Workflow: Learnora Site Audit (run [#41649534060](https://github.com/com-orgs/learnora/actions/runs/41649534060))
+- Last updated automatically: run #41649534060 on branch `audit/phase15-new-subjects-ai-discovery-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
