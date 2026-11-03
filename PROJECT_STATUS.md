@@ -3,6 +3,23 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Current verified state — 3 November 2026
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production commit: `8042cbf23af95a999051a8dd42477347c77eba49`; Cloudflare Pages deployment succeeded.
+- Content inventory: 104 sitemap URLs; 105 HTML files including the custom 404 page. Added 9 original Grades 6–8 lessons across Computer Science, AI Literacy and Financial Literacy. Each has learning objectives, explanations, examples, independent practice, a five-question interactive quiz with feedback/retake and a printable worksheet.
+- Homepage discovery: added Computer Science, AI Literacy and Financial Literacy filters and featured resource cards. Subject hubs link to all 9 lessons.
+- Technical and legal CI: run [#41660898074](https://github.com/com-orgs/learnora/actions/runs/41660898074) passed static and legal/pre-monetisation audits. Latest full browser run [#41661383388](https://github.com/com-orgs/learnora/actions/runs/41661383388) passed on production: all 104 sitemap pages, 77 quiz submissions, 77 retakes, 79 print actions, mobile widths 320/390/768 and desktop; no horizontal overflow, accessibility violations, third-party browser requests or CSP/runtime errors. Cloudflare preview headers/assets also passed.
+- Static audit: 104 HTML pages, 77 accessible quiz forms and 77 answer-key mappings; zero warnings. Legal guard passed and confirms no active AdSense or analytics scripts.
+- Sitemap: Search Console accepted the updated sitemap on 3 November; processing is pending with 0 warnings and 0 errors.
+- IndexNow: verified key; 95 original sitemap URLs, 9 new lesson URLs, 3 subject hubs and homepage updates were accepted with key validated (HTTP 200). Acceptance is not a guarantee of indexing.
+- Google indexing tracker: 104 URLs monitored; latest snapshot 1 indexed, 81 not indexed (coverage says “URL is unknown to Google”), 22 pending, 0 errors and 0 warnings. The new pages are discoverable/submitted but Google indexing remains pending; do not describe unknown URLs as blocked or deindexed.
+- AI discovery: robots.txt allows `OAI-SearchBot` and all public crawlers. This improves crawl access but cannot guarantee ChatGPT citations or traffic.
+- Account-dependent items still open: Bing Webmaster API reporting, GA4 OAuth/connection, CrUX API access, manual NVDA/VoiceOver testing on a real device, and AdSense owner gates (audience/COPPA classification, verified publisher ID, certified CMP where applicable and exact ads.txt declaration). No advertising or analytics has been enabled. Firecrawl full crawl was unavailable because credits were exhausted.
+- Search performance remains early: GSC last-28-day report through 1 November shows 0 clicks and 0 impressions. Continue monitoring after Google fetches the sitemap; traffic and rankings are not guaranteed.
+
+Historical session notes below are retained for continuity; use this current state as the source of truth.
+
 ## Latest verified live status — 2 November 2026 (latest checks)
 
 - Production site: https://learnora-ab2.pages.dev/
