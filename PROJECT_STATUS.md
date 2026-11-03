@@ -303,3 +303,14 @@
 - [x] PR #9 merged to main; production deployment is expected from the connected Cloudflare Pages main-branch integration.
 - [ ] Confirm Cloudflare production deployment and HTTP 200 smoke checks for the workbook, external script and sitemap after the deployment completes.
 - [ ] Run a fresh full CI workflow against the post-fix release commit; do not reuse the pre-fix failure as the current result or call the rerun green without evidence.
+
+
+### 2026-11-03 — Phase 11 production smoke verification
+- [x] Verified live production workbook at `/worksheets/international-middle-school-maths`; page title, description, canonical URL, `index,follow` robots directive and Open Graph metadata are present.
+- [x] Verified live workbook contains all four practice sets and all four worked-answer sections; content is visible in the production response.
+- [x] Verified the same-origin print script `/scripts/pages/international-middle-school-maths.js` is publicly served and contains the click-to-print handler.
+- [x] Verified live production sitemap lists 84 URLs and includes the new workbook URL.
+- [x] Verified live curriculum hub and US, England, Ontario and Australia guide pages are accessible, have matching canonical URLs and link to the workbook.
+- [x] Verified the workbook footer links Contact, Privacy and Terms; worksheet canonical/robots metadata is correct.
+- [ ] Fresh full GitHub Actions audit against post-fix release: run [#41564576167](https://github.com/com-orgs/learnora/actions/runs/41564576167) on `audit/phase11-postfix-qa-2026-11-03` was queued/pending at the latest check; no jobs had started yet. Do not mark full QA green until it completes.
+- [ ] Review and reconcile remaining editorial-attribution PR #4 before treating all content quality work as complete.
