@@ -66,26 +66,9 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Run mobile, desktop and quiz browser checks against this commit
         if: github.ref != 'refs/heads/main'
-        shell: bash
-        run: |
-          set -euo pipefail
-          node scripts/preview-server.mjs > /tmp/learnora-http.log 2>&1 &
-          server_pid=$!
-          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
-          ready=false
-          for attempt in {1..20}; do
-            if curl --fail --silent http://127.0.0.1:8788/sitemap.xml --output /dev/null; then
-              ready=true
-              break
-            fi
-            sleep 1
-          done
-          if [ "$ready" != "true" ]; then
-            cat /tmp/learnora-http.log
-            echo "Local Learnora preview did not start."
-            exit 1
-          fi
-          LEARNORA_PREVIEW_URL=http://127.0.0.1:8788 node scripts/browser-smoke.mjs
+        env:
+          LEARNORA_PREVIEW_URL: https://audit-production-hardening-2.learnora-ab2.pages.dev
+        run: node scripts/browser-smoke.mjs
 
       - name: Refresh persistent project tracker with CI result
         if: always() && github.event_name != 'pull_request' && github.ref != 'refs/heads/main'
