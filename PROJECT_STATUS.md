@@ -289,3 +289,5 @@
 
 
 - Release validation branch: `audit/phase11-release-2026-11-03`; run the full audit workflow on this branch before production merge.
+
+- CSP remediation: worksheet print action now uses `scripts/pages/international-middle-school-maths.js`; inline event attributes removed; Contact, Privacy and Terms footer links added.
