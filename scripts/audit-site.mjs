@@ -335,7 +335,7 @@ for (const file of indexable) {
           errors.push(rel + ': answer key option ' + correctValue + ' does not match a labelled radio option for ' + name + '.');
           continue;
         }
-        const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
+        const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? entry.label ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
         if (!expectedText) {
           warnings.push(rel + ': quiz feedback quality — answer key does not yet include correctText for ' + name + '; wrong or unanswered attempts may not identify the correct option.');
         } else {
