@@ -354,9 +354,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `c60e6848a2bb7ec2721161f5aec91ef9cb333c30`
-- Workflow: Learnora Site Audit (run [#41649534060](https://github.com/com-orgs/learnora/actions/runs/41649534060))
-- Last updated automatically: run #41649534060 on branch `audit/phase15-new-subjects-ai-discovery-2026-11-03`.
+- Tested commit: `f5b70bc6f7aa644fd3b76ecda70273277a3738c7`
+- Workflow: Learnora Site Audit (run [#41682157653](https://github.com/com-orgs/learnora/actions/runs/41682157653))
+- Last updated automatically: run #41682157653 on branch `audit/seo-ga4-safety-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
