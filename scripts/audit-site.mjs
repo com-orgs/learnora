@@ -338,8 +338,12 @@ for (const file of indexable) {
         const expectedText = entry && typeof entry === 'object' ? entry.correctText ?? (typeof entry.v === 'string' ? entry.a : undefined) : undefined;
         if (!expectedText) {
           warnings.push(rel + ': quiz feedback quality — answer key does not yet include correctText for ' + name + '; wrong or unanswered attempts may not identify the correct option.');
-        } else if (normalizeVisibleText(expectedText) !== correctOption.text) {
-          errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
+        } else {
+          const expectedOptionText = normalizeVisibleText(expectedText).replace(/^[a-d][.)]\\s*/, '');
+          const visibleOptionText = correctOption.text.replace(/^[a-d][.)]\\s*/, '');
+          if (expectedOptionText !== visibleOptionText) {
+            errors.push(rel + ': answer key correctText does not match the visible option for ' + name + '.');
+          }
         }
       }
     } catch (error) {
