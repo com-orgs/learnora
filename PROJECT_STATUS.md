@@ -46,15 +46,17 @@
 - Branch drift warning: the audit branch currently contains an older `.html`-suffixed sitemap while production `main` uses clean extensionless lesson URLs and includes the five curriculum URLs. Do not merge the audit branch until it is rebased/reconciled and its sitemap/canonicals are re-audited. Earlier ahead/behind counts are stale.
 - PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
-## CI status (automatically refreshed by GitHub Actions)
-- Last updated automatically: run #41562298729 on branch `audit/phase11-release-2026-11-03`.
+## CI status — release qualification
+- Latest full workflow run: [#41562298729](https://github.com/com-orgs/learnora/actions/runs/41562298729), tested pre-fix commit `f099c06a31e4d07f0bae5665eb7f897e86d00849`.
+- That run failed the static audit because the new worksheet used an inline `onclick` handler, which violates the site's Content Security Policy.
+- Fixed before merge: print action now uses the same-origin external file `scripts/pages/international-middle-school-maths.js`; no inline event attributes remain in the worksheet. Added Contact, Privacy and Terms footer links.
+- Post-fix static checks confirmed: 24 questions, four worked answer keys, print script reference, canonical URL, sitemap entry and worksheet internal links.
+- A fresh full GitHub Actions run against the post-fix release head was not confirmed in this session. Previous full green baseline: [#41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909). Do not describe the post-fix full workflow as green until rerun.
 
-
-- Status: failure.
-- Tested commit: `f099c06a31e4d07f0bae5665eb7f897e86d00849`
-- Workflow: Learnora Site Audit (run [#41562298729](https://github.com/com-orgs/learnora/actions/runs/41562298729))
-- Last known run: [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) — **success**.
-- Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
+## Production release — 3 November 2026
+- Phase 11 release PR [#9](https://github.com/com-orgs/learnora/pull/9) was squash-merged to `main` as commit `5ea1c6d21ab9af936f213fc08b491bcc8400f209`.
+- Verified on GitHub `main`: international worksheet HTML, external print JavaScript and sitemap entry are present.
+- Cloudflare Pages is expected to deploy automatically from the connected `main` branch. A live HTTP smoke check could not be completed from this session because the connected browser context was unavailable, Firecrawl credits were exhausted, and the network fetch route could not resolve the site hostname. Treat production deployment as triggered, not independently verified.
 
 ## Completed work
 
@@ -291,3 +293,13 @@
 - Release validation branch: `audit/phase11-release-2026-11-03`; run the full audit workflow on this branch before production merge.
 
 - CSP remediation: worksheet print action now uses `scripts/pages/international-middle-school-maths.js`; inline event attributes removed; Contact, Privacy and Terms footer links added.
+
+
+### 2026-11-03 — Phase 11 release merged
+- [x] International curriculum guide set linked to original printable maths practice workbook.
+- [x] Four regional practice sets published in the release commit: US Common Core, England KS3, Ontario Grades 6–8 and Australian Curriculum Version 9 Years 7–8.
+- [x] 24 original questions and four worked answer keys added.
+- [x] CSP inline print handler issue found by CI and corrected before merge.
+- [x] PR #9 merged to main; production deployment is expected from the connected Cloudflare Pages main-branch integration.
+- [ ] Confirm Cloudflare production deployment and HTTP 200 smoke checks for the workbook, external script and sitemap after the deployment completes.
+- [ ] Run a fresh full CI workflow against the post-fix release commit; do not reuse the pre-fix failure as the current result or call the rerun green without evidence.
