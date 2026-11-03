@@ -31,3 +31,6 @@
 Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles; linear equations and inequalities; probability models and compound events. Worked examples and quiz keys were compared with the displayed questions. The sampled calculations and keyed options were consistent. Official Common Core, England, Ontario and Australian mathematics framework links were added with a clear non-alignment disclaimer. The three quiz scripts now identify the correct option text when a learner answers incorrectly or leaves a question blank. This is a sample desk check, not a complete mathematics audit or independent expert review.
 
 - Added a three-task independent-practice section with suggested responses to the Grade 8 sustainability lesson, covering resource classification, a measurable school waste plan and sustainability trade-offs.
+
+- Added independent-practice activities and suggested responses to Argument Writing, Text Structure and Author’s Purpose, and Weather, Climate and the Water Cycle. All four Phase 13 lessons now have an explicit independent-practice section.
+- Aligned the Grade 8 probability quiz's correct-answer text with the visible option and audit schema.
