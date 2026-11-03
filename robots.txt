@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Allow ChatGPT Search to discover and cite public Learnora pages.
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://learnora-ab2.pages.dev/sitemap.xml
