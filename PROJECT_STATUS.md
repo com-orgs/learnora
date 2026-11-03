@@ -286,3 +286,6 @@
 - Static checks: 24 questions; 4 answer keys; print action present; canonical and sitemap entry present; all worksheet internal links are represented in the sitemap; all five guide pages link to the workbook.
 - Firecrawl refresh could not run because the connected Firecrawl account had insufficient credits; no fresh Firecrawl crawl is claimed. Live route smoke testing and CI must be completed after the release PR preview.
 - Release PR #8: https://github.com/com-orgs/learnora/pull/8. Production remains unchanged until green CI and merge.
+
+
+- Release validation branch: `audit/phase11-release-2026-11-03`; run the full audit workflow on this branch before production merge.
