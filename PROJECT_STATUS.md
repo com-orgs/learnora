@@ -336,10 +336,10 @@
 - [ ] Reconcile tracker status and run complete CI before release.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: failure.
-- Tested commit: `1ab9696b0878ffa731ca7058802e8ce6de7de977`
-- Workflow: Learnora Site Audit (run [#41612460963](https://github.com/com-orgs/learnora/actions/runs/41612460963))
-- Last updated automatically: run #41612460963 on branch `audit/phase12-english-science-2026-11-03`.
+- Status: success.
+- Tested commit: `8d2d2cab6fefe37caf4d7429a93b1769d23af354`
+- Workflow: Learnora Site Audit (run [#41612754761](https://github.com/com-orgs/learnora/actions/runs/41612754761))
+- Last updated automatically: run #41612754761 on branch `audit/phase12-english-science-2026-11-03`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
