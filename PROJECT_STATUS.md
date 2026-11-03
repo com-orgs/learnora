@@ -47,12 +47,12 @@
 - PR #5 was merged with the user's current authorization. Production canonical and sitemap changes have been verified live.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Last updated automatically: run #41473638302 on branch `audit/production-hardening-2026-11-02`.
+- Last updated automatically: run #41562298729 on branch `audit/phase11-release-2026-11-03`.
 
 
-- Status: success.
-- Tested commit: `fc1a75dff54972e7413f458b86a4a17e42f5e413`
-- Workflow: Learnora Site Audit (run [#41473638302](https://github.com/com-orgs/learnora/actions/runs/41473638302))
+- Status: failure.
+- Tested commit: `f099c06a31e4d07f0bae5665eb7f897e86d00849`
+- Workflow: Learnora Site Audit (run [#41562298729](https://github.com/com-orgs/learnora/actions/runs/41562298729))
 - Last known run: [41467406909](https://github.com/com-orgs/learnora/actions/runs/41467406909) — **success**.
 - Last verified checks: static website audit, Cloudflare preview security headers/assets, Playwright/Chromium install, mobile/desktop/quiz browser checks all passed.
 
@@ -269,3 +269,25 @@
 - [x] Recorded stale audit-branch sitemap mismatch as a merge blocker until branch reconciliation.
 - [ ] Continue monitoring Google fetch/indexing over 24–72 hours; inspect only a small sample of pending/unknown URLs when useful.
 - [ ] Run a fresh preview workflow against a rebased audit branch before any future merge.
+
+
+### 2026-11-03 — Phase 11 started: international learning support
+- Added a curriculum-neutral Grade 6–8 maths four-week study plan with a skills checklist, three worked examples, ten independent practice questions and expandable worked answers.
+- Linked the resource to existing Learnora lessons and the USA, UK, Canada and Australia curriculum guides; clearly labels it supplementary rather than claiming formal curriculum alignment.
+- Added the page to the curriculum hub and sitemap on branch `audit/phase11-international-study-plan-2026-11-03`. Production remains unchanged pending review and CI.
+- Next: run static/legal/browser QA, then build equivalent guided revision resources for English and Science.
+
+
+### 2026-11-03 — Phase 11 international worksheet expansion
+- Added a free print-ready middle-school maths workbook with four jurisdiction-specific sets: US Common Core Grades 6–8, England KS3, Ontario Grades 6–8, and Australian Curriculum Version 9 Years 7–8.
+- Workbook contains 24 original practice questions, four expandable worked answer keys, print styling, and a visible supplementary-resource disclaimer.
+- Linked the workbook from the international curriculum hub and each country/region guide; added its clean extensionless URL to sitemap.xml.
+- Updated the Australian Curriculum source link to the official Version 9 site.
+- Static checks: 24 questions; 4 answer keys; print action present; canonical and sitemap entry present; all worksheet internal links are represented in the sitemap; all five guide pages link to the workbook.
+- Firecrawl refresh could not run because the connected Firecrawl account had insufficient credits; no fresh Firecrawl crawl is claimed. Live route smoke testing and CI must be completed after the release PR preview.
+- Release PR #8: https://github.com/com-orgs/learnora/pull/8. Production remains unchanged until green CI and merge.
+
+
+- Release validation branch: `audit/phase11-release-2026-11-03`; run the full audit workflow on this branch before production merge.
+
+- CSP remediation: worksheet print action now uses `scripts/pages/international-middle-school-maths.js`; inline event attributes removed; Contact, Privacy and Terms footer links added.
