@@ -112,7 +112,13 @@ function loadQuizAnswerKey(source, rel, origin) {
     }
     if (closeBrace < 0) throw new Error('Quiz answer object has unbalanced braces in ' + scriptPath);
     const objectSource = code.slice(openBrace, closeBrace + 1);
-    return vm.runInNewContext('(' + objectSource + ')', Object.create(null), { timeout: 100 });
+    const parsed = vm.runInNewContext('(' + objectSource + ')', Object.create(null), { timeout: 100 });
+    if (declaration[1] === 'all') {
+      const lessonKey = rel.replace(/\.html$/i, '');
+      if (!parsed[lessonKey]) throw new Error('No answer key found for ' + lessonKey + '.');
+      return parsed[lessonKey];
+    }
+    return parsed;
   }
   throw new Error('No readable external quiz answer key found.');
 }
