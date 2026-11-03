@@ -67,7 +67,7 @@ jobs:
       - name: Run mobile, desktop and quiz browser checks against this commit
         if: github.ref != 'refs/heads/main'
         env:
-          LEARNORA_PREVIEW_URL: https://audit-production-hardening-2.learnora-ab2.pages.dev
+          LEARNORA_PREVIEW_URL: https://learnora-ab2.pages.dev
         run: node scripts/browser-smoke.mjs
 
       - name: Refresh persistent project tracker with CI result
