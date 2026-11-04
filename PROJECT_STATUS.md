@@ -478,10 +478,10 @@ Historical session notes below are retained for continuity; use this current sta
 - PR #17's original branch was behind the newly merged main and reported a merge conflict. The documentation has been reapplied on top of current main for a fresh preview/QA cycle. No production edits are part of this documentation refresh.
 
 ### Next actions
-1. Complete refreshed PR #17 documentation preview QA and merge only when clean.
-2. Fix the Grade 8 Science hub's missing internal link to the existing Earth Resources lesson in a separate preview PR.
-3. Continue source attribution and academic review for the 70 legacy lessons without dedicated references.
-4. Wait for actual GSC query/impression data before claiming ranking gains; competitor keyword metrics remain blocked by Semrush API units.
+1. Complete PR #20 Grade 8 Science hub cross-link QA and merge only after all checks are green.
+2. Continue source attribution and academic review for the 70 legacy lessons without dedicated references.
+3. Use GSC impressions/queries when they begin appearing to prioritise on-page changes; current settled 28-day report through 1 Nov has 0 clicks and 0 impressions.
+4. Continue legitimate teacher/parent discovery and community distribution; no spam link schemes.
 
 
 ### PR #17 refreshed documentation QA — 4 November 2026
@@ -489,4 +489,12 @@ Historical session notes below are retained for continuity; use this current sta
 - Cloudflare branch preview deployment succeeded for head `91f2039`: https://research-competitor-keywords.learnora-ab2.pages.dev/ .
 - Full preview QA [#41785142372](https://github.com/com-orgs/learnora/actions/runs/41785142372) passed. Static metadata/canonical/OG, sitemap, lesson/script inventory, internal links, accessible quiz form/answer-key mapping, JavaScript security/CSP/syntax checks passed. Legal/pre-monetisation disclosures and no-ad/no-tracking guardrails passed; zero static warnings.
 - Preview header/asset/CSP/custom-404 checks passed. Browser QA checked 104 pages at 320/390/768/desktop widths, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource budgets. No horizontal overflow, quiz keyboard/feedback failure, print failure, third-party request, CSP/runtime error or performance-budget failure.
-- PR #17 remains documentation-only (50 competitor/benchmark domains, keyword intent map, research limitations, updated roadmap and checkpoint); no production HTML, URLs, scripts, analytics, ads or sitemap entries changed. Ready for squash merge.
+- PR #17 merged successfully as `14949c842ccf65cd948bf410d64255e744d5dc41`; it remains documentation-only and made no production HTML, URL, script, analytics, ad or sitemap changes.
+
+
+## 4 November 2026 — PR #20 Grade 8 Science internal-link preview QA
+- PR [#20](https://github.com/com-orgs/learnora/pull/20) adds a card and contextual in-text link from `/science/grade-8/` to the existing `/science/grade-8/earth-resources-sustainability-human-impact` lesson, and updates the hub meta description plus CollectionPage JSON-LD description to include environmental science and sustainability.
+- The target lesson already exists in the sitemap, returns indexable self-canonical metadata and includes a “Sources and further reading” section with EPA, NGSS, England National Curriculum and Australian Curriculum references. No new URL was created.
+- Exact Cloudflare preview: https://seo-grade8-science-earth-res.learnora-ab2.pages.dev/ . Independent preview fetch found the Grade 8 hub H1, updated description, production canonical, `index,follow`, the new card and two relevant internal links to the existing lesson; the target lesson also returned expected H1, self-canonical and `index,follow`.
+- Full preview QA [#41785499567](https://github.com/com-orgs/learnora/actions/runs/41785499567) passed: static and legal audits, preview headers/CSP/assets/custom 404, 104 pages at 320/390/768/desktop, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource checks. No horizontal overflow, quiz keyboard/feedback failure, print failure, third-party request, CSP/runtime error or performance-budget failure.
+- QA tested code commit `473ffb49cf8a65496efb06ff75427a3e66ec0eca`; latest branch head `94604132a6e1a33901e4e5ec4e0c019cd7dfb3b2` differs only by the automatically refreshed CI status block. PR #20 remains open and unmerged; production is unchanged by PR #20.
