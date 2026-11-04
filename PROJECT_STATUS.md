@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `800bc4b03d7ca98f8d6647f5a9072d55b754ce6f`
-- Workflow: Learnora Site Audit (run [#41845422303](https://github.com/com-orgs/learnora/actions/runs/41845422303))
-- Last updated automatically: run #41845422303 on branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
+- Tested commit: `400b5a9874ce6c90e8e67a80e237ae659c3e7359`
+- Workflow: Learnora Site Audit (run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731))
+- Last updated automatically: run #41848440731 on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -634,3 +634,19 @@ Historical session notes below are retained for continuity; use this current sta
 2. Refresh and reconcile the 77-lesson source inventory after each batch; do not treat the absence of a dedicated source section as proof that a page has no citations.
 3. Monitor GSC/Bing discovery using deduplicated history and evidence-based reporting; do not claim traffic, rankings or indexing without current data.
 4. Review the existing GitHub Actions duplicate-trigger behaviour for `seo/**` branches and improve it only in a separate safe workflow change; current PR #25 duplicate audit runs both passed.
+
+
+## PR #26 — Grade 6 Multiplying and Dividing Fractions source review (4 November 2026)
+
+- Opened work on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04` for `math/grade-6/multiplying-dividing-fractions.html`.
+- Added three relevant learning references: OpenStax Prealgebra 2e section 4.2; Illustrative Mathematics Grade 6 standard 6.NS.A.1; and Khan Academy's conceptual explanation of fraction division using number lines.
+- Added a precision note that zero has no reciprocal and division by zero is undefined.
+- Academic review checked the worked examples, eight practice answer mappings, five quiz answer keys/explanations, eight worksheet answer keys, and quiz script. Arithmetic and answer mappings were consistent; no quiz-key changes were needed.
+- Existing title, description, canonical, robots directive, internal navigation, quiz, worksheet, print action, scripts and sitemap are preserved. External links use `target="_blank"` and `rel="noopener noreferrer"`; curriculum-neutral disclaimer retained.
+- Source inventory baseline remains 10/77 lessons with a dedicated Sources and Further Reading section before this PR; the PR adds one more only if merged.
+- Full preview/static/legal/browser QA is required before merge. Production must remain unchanged until all checks pass.
+
+### Next actions
+1. Create the PR, verify the exact Cloudflare branch preview, and complete full Learnora Site Audit (static, legal, headers/assets, mobile/desktop and quiz browser checks).
+2. Merge only if all required checks pass; then verify the main deployment and live production lesson, sources, canonical and robots metadata.
+3. Continue the remaining Grade 6 Maths source/accuracy backlog in isolated, fully tested batches.
