@@ -3,25 +3,21 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
-## Current verified state — 3 November 2026 (post-deployment refresh)
+## Current verified state — 4 November 2026 (source of truth)
 
 - Production website: https://learnora-ab2.pages.dev/
-- Latest production `main` commit: `f23e955f37aa35ccdf8fb04b43b394471281fee1`. SEO metadata PR [#15](https://github.com/com-orgs/learnora/pull/15) was merged and deployed; subsequent documentation-only update also passed.
-- Cloudflare Pages deployment workflow [#41684025756](https://github.com/com-orgs/learnora/actions/runs/41684025756) completed successfully. Main static/legal audit [#41684025341](https://github.com/com-orgs/learnora/actions/runs/41684025341) completed successfully.
-- Full branch browser QA [#41682977213](https://github.com/com-orgs/learnora/actions/runs/41682977213) passed: 104 sitemap pages loaded; 77 quiz submissions, 77 retakes, 79 worksheet print actions and 104 performance/resource checks; no horizontal overflow, keyboard quiz failure, third-party request, CSP/runtime error or first-party performance-budget failure.
-- Sitemap inventory: 104 unique HTTPS URLs on the production host; 105 HTML files including custom 404. The new root-level `/learnora-logo.svg` is used in Organization JSON-LD only; no visible layout, URL, robots, sitemap, CSP or analytics changes were made.
-- Post-deployment on-page SEO audit: all 104/104 sitemap URLs fetched and indexable; **0 critical, 0 high, 0 medium and 159 low findings**. The 18 Organization-logo medium findings from the initial audit are resolved. Remaining low findings are mainly optional structured data, heuristic title/meta lengths and the concise Contact page. Details: [ONPAGE_SEO_AUDIT_2026-11-03.md](ONPAGE_SEO_AUDIT_2026-11-03.md).
-- Google Search Console: `sitemap.xml` last submitted 3 November at 15:07 UTC; processing remains pending with 0 warnings and 0 errors. The sitemap contains 104 URLs.
-- Latest Indexing Tracker snapshot (3 November, 16:57 UTC): 104 tracked URLs — 1 indexed, 87 marked `URL is unknown to Google`, 16 pending, 0 errors and 0 warnings. The 87 unknown URLs have no recorded Google crawl time; this is a discovery/crawl backlog, not a confirmed robots.txt/noindex defect. Do not repeatedly request indexing for recently checked URLs.
-- GSC performance: 28-day SEO report window 4–31 October 2026 shows 0 clicks and 0 impressions. There are no query/page/country/device rows yet, so no country-market winner or keyword opportunity can be inferred.
-- Bing Webmaster Tools: sitemap feed status **Success**, submitted and last crawled 3 November 2026, 104 URLs. Bing crawl-issues endpoint reported 0 issue URLs. Bing daily crawl and search-performance endpoints returned no dated rows, so crawl volume and search clicks/impressions are not yet available.
-- IndexNow: API key is configured and the key file is verified. Submission history contains 296 records; the newest 200 returned records all show HTTP 200. Acceptance is not a guarantee of indexing.
-- GA4: property `562164102` / stream `16264528436` / Measurement ID `G-0186E0KTH6` is linked in GSC Wizard. GA4 returns 0 sessions/users/events because no tracking code is installed. Live checks confirm no GA4/Google Tag Manager script on the site. Tracking remains intentionally disabled.
-- Audience/privacy gate: Learnora is intended for students including under-13 learners, parents and teachers. Do not activate GA4 until child-directed/mixed-audience classification, applicable legal basis and consent requirements are assessed. Never send names, emails, student identifiers, quiz answers/scores or other personal data. Do not enable Google Signals, advertising personalisation, remarketing or User-ID. Preserve the restrictive CSP and third-party request guard.
-- Core Web Vitals field data is unavailable because no CrUX API key is configured. Do not infer real-user LCP/INP/CLS from missing CrUX data.
-- Phase 14 educational quality review remains in progress. Technical SEO remediation is complete, but a preliminary source-section inventory of 77 lesson pages found only 7 with a dedicated Sources/References/Further reading section; 70 legacy lessons remain in the source-attribution backlog. Full subject-by-subject factual verification and genuine independent educator review also remain open. Details: [PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md](PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md).
-- AdSense remains disabled. Child-audience classification, actual publisher ID, certified CMP where applicable and exact ads.txt seller declaration remain separate account/legal gates.
-- Search visibility, rankings and traffic are not guaranteed.
+- Current production `main` HEAD checked for this reconciliation: `04365dae96a40f933478bf872bcf60609979a226`.
+- Main-branch static website and legal/pre-monetisation audits passed on exact commit `04365dae96a40f933478bf872bcf60609979a226` in [run #41684504428](https://github.com/com-orgs/learnora/actions/runs/41684504428). Cloudflare Pages deployment workflow [#41684504620](https://github.com/com-orgs/learnora/actions/runs/41684504620) also completed successfully for that same commit. No production merge or deployment was performed by this reconciliation.
+- Latest full browser/preview QA located: [run #41684807139](https://github.com/com-orgs/learnora/actions/runs/41684807139), tested commit `25291046ee17cece9272ad71b39f027ef97237e2` on branch `audit/phase14-financial-sources-2026-11-03` (not the exact main SHA). Static, legal, preview headers/assets and Playwright browser steps passed: 104 sitemap pages, 77 quiz submissions, 77 retakes, 79 print actions and 104 performance/resource checks; no horizontal overflow, third-party requests, CSP/runtime errors or first-party budget failures were reported.
+- Production sitemap inventory: 104 unique HTTPS URLs. Latest connected GSC Sitemaps read: `https://learnora-ab2.pages.dev/sitemap.xml`, last submitted 3 November 2026 at 15:07:21 UTC, processing pending, 0 warnings and 0 errors. Pending is not proof of indexing; do not claim all URLs are indexed.
+- Phase 11 mathematics is already complete on `main`: curriculum-neutral Grade 6–8 four-week study plan, skills checklist, worked examples, independent practice and answer reasoning; four-region printable workbook with 24 original questions and four worked answer keys; curriculum hub, regional guide and sitemap links. Release PR [#9](https://github.com/com-orgs/learnora/pull/9) is merged.
+- Phase 12 English/Science foundations are already complete on `main`: international English and Science curriculum guides, a shared 20-question original workbook (10 English and 10 Science) with worked explanations, same-origin print script, and links from the English, Science and curriculum hubs plus sitemap. Release PR [#10](https://github.com/com-orgs/learnora/pull/10) is merged. The workbook uses curriculum-neutral practice and clearly labels itself supplementary rather than an official assessment.
+- Phase 13 expanded English and Science lesson depth; PR [#11](https://github.com/com-orgs/learnora/pull/11) is merged. Phase 14 educational-quality remediation PR [#12](https://github.com/com-orgs/learnora/pull/12) is merged; broader legacy source attribution, full topic-by-topic verification and genuine independent subject-expert review remain in progress.
+- PR #6 is still open but stale: head `8effd6c0a470e6e0b43c9ff57a7b5c7927425c3d`, old base SHA `edaf5a12225aab5cc1c23d58cd0eee7f83ac3b48`, GitHub reports `mergeable_state=dirty`, and the exact head has no check runs. Its earlier green run [#41505731285](https://github.com/com-orgs/learnora/actions/runs/41505731285) tested predecessor `ee025861ad4d3c7d1b1590252e47a0967fbf713a`, not the current PR head.
+- PR #7 is still open as a draft but its Phase 11 content has been superseded by merged PRs #9 and #10: head `bb3c25535d70cceb4bc16b14d324eb740bff06a9`, same stale base SHA, `mergeable_state=dirty`, and no checks on its exact head. Earlier run [#41562169272](https://github.com/com-orgs/learnora/actions/runs/41562169272) failed static audit on predecessor `d98051222741b26ed3810954d5e1c9a68f7b4c7d` because the maths workbook used an inline print handler blocked by CSP. The issue was corrected before merged PR #9 by moving print behaviour into `scripts/pages/international-middle-school-maths.js`; current main has no inline handler on that workbook. Do not merge stale PRs #6 or #7.
+- Other current open work includes PR [#16](https://github.com/com-orgs/learnora/pull/16) (financial-literacy references) and PR [#17](https://github.com/com-orgs/learnora/pull/17) (competitor set and keyword map). Review those against their exact heads and CI before any merge.
+- AdSense remains disabled. Publisher ID, audience/COPPA classification and any applicable certified CMP and exact ads.txt seller declaration remain owner/account/legal gates. No ads or analytics should be enabled without the required review and approval.
+- Search visibility, rankings, traffic and indexing are not guaranteed.
 
 Historical session notes below are retained for continuity; use this current state as the source of truth.
 
@@ -359,9 +355,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `632cdddde3ebf7763fffcd12b9a69ac9c530e64a`
-- Workflow: Learnora Site Audit (run [#41682977213](https://github.com/com-orgs/learnora/actions/runs/41682977213))
-- Last updated automatically: run #41682977213 on branch `audit/seo-ga4-safety-2026-11-03`.
+- Tested commit: `1cc2e752800ff22525a49929044a16f0c2aa057d`
+- Workflow: Learnora Site Audit (run [#41767866966](https://github.com/com-orgs/learnora/actions/runs/41767866966))
+- Last updated automatically: run #41767866966 on branch `audit/phase11-reconciliation-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -436,3 +432,52 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Full branch QA [#41636282293](https://github.com/com-orgs/learnora/actions/runs/41636282293) passed with zero static warnings, 92 pages at 320/390/768/desktop widths, 68 quiz submissions, 68 retakes, 70 print actions and 92 performance checks.
 - [x] Main workflow [#41636821146](https://github.com/com-orgs/learnora/actions/runs/41636821146) passed static and legal/pre-monetisation checks.
 - Phase 14 first remediation batch is merged and live. The wider academic audit remains in progress: source attribution for legacy lessons, full topic-by-topic accuracy verification and genuine subject-expert review remain open.
+
+## Daily indexing/discovery checkpoint — 4 November 2026 (Pakistan time)
+
+- Live production sitemap was fetched from `https://learnora-ab2.pages.dev/sitemap.xml`: HTTP 200, 104 unique URLs. The GSC Sitemaps API reports the same sitemap last submitted 2026-11-03T15:07:21Z, still pending, with 0 warnings and 0 errors. Bing Webmaster feed reports Success, 104 URLs, submitted and last crawled 2026-11-03.
+- GSC Indexing Tracker read-only snapshot: 104 tracked URLs; 1 indexed, 95 `URL is unknown to Google`, 8 pending, 0 errors, 0 warnings. Last tracker check: 2026-11-04T03:28:05Z. These unknown states are not proof of a robots/noindex defect.
+- Pakistan-date deduplication audit (Asia/Karachi, 2026-11-04): tracker latest-check records show 31 distinct URLs checked today; URL Inspection history shows 6 rows across 5 distinct URLs; the two sources have 0 URL overlap. Combined: 36 distinct URLs and 37 records; 1 repeated record (the `/math/grade-6/` URL appears twice in inspection history). This exceeds the project cap of 10 distinct URLs by 26. No additional inspections were run in this session; no manual Google Request Indexing UI submissions were made.
+- Exact URLs recorded as checked today:
+  - `/curriculum/grade-6-8-maths-study-plan`
+  - `/computer-science/`
+  - `/english/grade-6-8/argument-writing-claims-reasons-evidence`
+  - `/financial-literacy/`
+  - `/worksheets/international-middle-school-maths`
+  - `/curriculum/us-common-core-math`
+  - `/terms`
+  - `/math/grade-6/perimeter-area-shapes`
+  - `/math/grade-7/area-surface-area-volume`
+  - `/math/grade-6/equivalent-fractions`
+  - `/math/grade-7/equations-and-inequalities`
+  - `/math/grade-6/adding-subtracting-fractions`
+  - `/privacy-policy`
+  - `/math/grade-7/adding-subtracting-integers`
+  - `/math/grade-6/multiplying-dividing-decimals`
+  - `/math/grade-6/introduction-to-ratios`
+  - `/math/grade-6/metric-units-and-conversions`
+  - `/math/grade-6/percentage-increase-decrease`
+  - `/math/grade-7/rational-numbers-and-operations`
+  - `/math/grade-6/order-of-operations`
+  - `/math/grade-6/comparing-ordering-fractions`
+  - `/math/grade-6/understanding-decimals`
+  - `/math/grade-6/understanding-percentages`
+  - `/math/grade-6/multiplying-dividing-fractions`
+  - `/math/grade-6/adding-subtracting-decimals`
+  - `/math/grade-6/mixed-numbers-improper-fractions`
+  - `/about`
+  - `/math/grade-7/geometry-angles-scale-drawings`
+  - `/math/grade-7/ratios-rates-proportional-relationships`
+  - `/math/grade-6/volume-of-3d-shapes`
+  - `/math/grade-7/simplifying-algebraic-expressions`
+  - `/math/grade-6/`
+  - `/math/grade-6/understanding-fractions`
+  - `/ai-literacy/`
+  - `/`
+  - `/science/grade-8/elements-compounds-and-chemical-reactions`
+- Inspection history rows on the Pakistan date: `/math/grade-6/` (two records), `/math/grade-6/understanding-fractions`, `/ai-literacy/`, `/`, and `/science/grade-8/elements-compounds-and-chemical-reactions`. These five URLs are included in the 36-URL combined set above, not additional URLs.
+- Project rule remains: never inspect the same URL twice on one Pakistan calendar date; no more than 10 distinct URLs/day. The app's automatic hourly tracker is active and its exposed configuration only reports active/stale-threshold/email-digest fields; no cron-frequency or pause control is exposed by the connected tool. Do not call `check_tracked_url_now` again today. The daily-cap breach is caused by pre-existing automated tracker activity; exact cron execution schedule cannot be changed through the available interface.
+- Bing: crawl-issues endpoint returned 0 issue URLs; daily crawl-statistics endpoint returned no dated rows (not evidence of zero crawling). URL-submission quota: 100/day and 2,700/month. IndexNow key is configured and verified. Full history: 296 rows; all 104 current sitemap URLs already appear in history, so 0 new URLs submitted and 0 duplicate resubmissions made today. HTTP 202 means accepted/key validation pending, not confirmed indexing. Direct Bing URL Submission action is not exposed by this connection.
+- No Google manual Request Indexing command was submitted. Google URL Inspection API checks status only. Browser UI submission controls were not available.
+- Current GSC API inspection quota snapshot: 23 used / 2,000, 1,977 remaining (separate from the stricter project limit of 10 distinct URLs/day).
+- Next actions: keep inspection calls disabled for the remainder of 4 November; investigate the GSC Wizard hourly tracker automation control/support route; preserve the 10-URL Pakistan-date cap; inspect only materially changed or never-checked high-priority URLs on a future Pakistan date; continue sitemap/Bing monitoring without redundant IndexNow sends. Production code, metadata and published content were not changed.
