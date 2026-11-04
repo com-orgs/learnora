@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `7a7b933e3c330d21d61e8af5feb4ee2ce0114459`
-- Workflow: Learnora Site Audit (run [#41825203160](https://github.com/com-orgs/learnora/actions/runs/41825203160))
-- Last updated automatically: run #41825203160 on branch `seo/grade6-comparing-ordering-fractions-sources-2026-11-04`.
+- Tested commit: `400b5a9874ce6c90e8e67a80e237ae659c3e7359`
+- Workflow: Learnora Site Audit (run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731))
+- Last updated automatically: run #41848440731 on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -597,3 +597,88 @@ Historical session notes below are retained for continuity; use this current sta
 2. Select the next Grade 6 Maths lesson from the researched fraction keyword cluster, verify mathematical examples and references, and use a separate preview PR.
 3. On the next Pakistan calendar day, inspect GSC indexing history before using the daily 10-unique-URL operational cap; do not duplicate earlier inspections.
 4. Keep search-volume, ranking and traffic claims strictly evidence-based.
+
+
+## Source inventory refresh and PR #25 checkpoint — 4 November 2026
+
+- Re-audited all **77 educational lesson HTML files** across Maths, English, Science, Computer Science, AI Literacy and Financial Literacy using the current repository tree and live lesson heading/link extraction.
+- **10 of 77 lessons** currently have a dedicated “Sources and Further Reading” section; **67 lessons** do not. This supersedes the earlier provisional 9/77 and 10/77 estimates. This is a structural inventory, not a judgment that every lesson without a dedicated section lacks citations elsewhere.
+- Source-section pages found: Grade 6 Understanding Fractions, Equivalent Fractions, Mixed Numbers and Improper Fractions; Grade 8 Linear Equations and Inequalities, Probability Models and Compound Events, Pythagorean Theorem; English Argument Writing, Text Structure and Author’s Purpose; Science Weather, Climate and Water Cycle, and Grade 8 Earth Resources/Sustainability.
+- Opened PR [#25](https://github.com/com-orgs/learnora/pull/25), branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
+- Added OpenStax Prealgebra 2e sections 4.4 and 4.5, plus the Math Learning Center Bridges Intervention fraction resource, to `math/grade-6/adding-subtracting-fractions.html`.
+- Corrected an academic visual defect: the unlike-denominator example previously displayed `1/3 = 4/12 + 3/12 = 7/12`, omitting the original `1/4) term and using an incorrect equality chain. It now explicitly shows `1/3 + 1/4 = 4/12 + 3/12 = 7/12`.
+- Rechecked all worked examples, eight practice answer mappings, five quiz keys/explanations and eight worksheet answer keys; arithmetic is consistent. Quiz script and answer mapping are unchanged.
+- Cloudflare preview deployed successfully at `https://seo-grade6-adding-subtractin.learnora-ab2.pages.dev` (commit `55cc487`). Full site audit must pass before merge; PR #25 is not merged.
+- External source verification: OpenStax covers common and unlike denominators; Math Learning Center provides fraction-bar models and strategies for adding/subtracting with like and unlike denominators. No Firecrawl credits or paid services used.
+
+### Next actions
+1. Trigger and complete the full Learnora Site Audit for PR #25; verify static, legal, preview headers/assets and browser checks.
+2. If all checks pass, merge PR #25, verify Cloudflare production deployment and fetch the live page.
+3. Continue the source/accuracy backlog in Grade 6 Maths, prioritising the remaining fraction cluster and checking every page before edits.
+4. Review GSC indexing history before any new inspections; avoid duplicate URL checks and respect the 10-unique-URL operational cap.
+
+
+## PR #25 — production release and verification (4 November 2026)
+
+- PR [#25](https://github.com/com-orgs/learnora/pull/25) was merged successfully using squash merge. Merge commit: `5fb3e5363faefe31a6d1a2999fd33f2e3f8fd3e7`.
+- Both full preview audit runs [#41845431748](https://github.com/com-orgs/learnora/actions/runs/41845431748) and [#41845422303](https://github.com/com-orgs/learnora/actions/runs/41845422303) completed successfully. Static website audit, legal/pre-monetisation checks, exact Cloudflare preview resolution, preview headers/assets, Playwright/Chromium setup, and mobile/desktop/quiz browser checks all passed.
+- Main-branch static/legal audit [#41848054905](https://github.com/com-orgs/learnora/actions/runs/41848054905) completed successfully. Cloudflare Pages production deployment [#41848054871](https://github.com/com-orgs/learnora/actions/runs/41848054871) completed successfully; the pre-deployment content verification and Cloudflare deploy step passed.
+- Fresh production fetch of `https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-fractions` confirms the lesson is live with the corrected unlike-denominator worked example: `1/3 + 1/4 = 4/12 + 3/12 = 7/12`. It also confirms all three expected outbound references (OpenStax common denominators, OpenStax different denominators, and Math Learning Center Bridges Intervention).
+- Production metadata verified: title “Adding and Subtracting Fractions | Learnora”, production self-canonical, `index,follow`, expected Open Graph URL and description. Homepage fetch also succeeded. No fetch errors.
+- The lesson's quiz, worksheet and scripts were preserved; preview QA passed the full existing site browser checks. No sitemap or URL change was made.
+- Source-attribution inventory remains **10 of 77 lessons** with a dedicated “Sources and Further Reading” section (67 without a dedicated section). This is a structural count, not a claim that all other pages lack citations elsewhere.
+- Indexing guardrail: no additional GSC URL inspections or duplicate Bing/IndexNow submissions on 4 November. On the next Pakistan calendar day, inspect indexing history before using any remaining daily allowance; keep the 10-unique-URL operational cap.
+
+### Current next actions
+1. Continue the Grade 6 Maths source-attribution and academic accuracy backlog, prioritising the remaining fraction cluster. Each lesson must receive independent math/key review, relevant sources, an isolated preview, and full browser QA before merge.
+2. Refresh and reconcile the 77-lesson source inventory after each batch; do not treat the absence of a dedicated source section as proof that a page has no citations.
+3. Monitor GSC/Bing discovery using deduplicated history and evidence-based reporting; do not claim traffic, rankings or indexing without current data.
+4. Review the existing GitHub Actions duplicate-trigger behaviour for `seo/**` branches and improve it only in a separate safe workflow change; current PR #25 duplicate audit runs both passed.
+
+
+## PR #26 — Grade 6 Multiplying and Dividing Fractions source review (4 November 2026)
+
+- Opened work on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04` for `math/grade-6/multiplying-dividing-fractions.html`.
+- Added three relevant learning references: OpenStax Prealgebra 2e section 4.2; Illustrative Mathematics Grade 6 standard 6.NS.A.1; and Khan Academy's conceptual explanation of fraction division using number lines.
+- Added a precision note that zero has no reciprocal and division by zero is undefined.
+- Academic review checked the worked examples, eight practice answer mappings, five quiz answer keys/explanations, eight worksheet answer keys, and quiz script. Arithmetic and answer mappings were consistent; no quiz-key changes were needed.
+- Existing title, description, canonical, robots directive, internal navigation, quiz, worksheet, print action, scripts and sitemap are preserved. External links use `target="_blank"` and `rel="noopener noreferrer"`; curriculum-neutral disclaimer retained.
+- Source inventory baseline remains 10/77 lessons with a dedicated Sources and Further Reading section before this PR; the PR adds one more only if merged.
+- Full preview/static/legal/browser QA is required before merge. Production must remain unchanged until all checks pass.
+
+### Next actions
+1. Create the PR, verify the exact Cloudflare branch preview, and complete full Learnora Site Audit (static, legal, headers/assets, mobile/desktop and quiz browser checks).
+2. Merge only if all required checks pass; then verify the main deployment and live production lesson, sources, canonical and robots metadata.
+3. Continue the remaining Grade 6 Maths source/accuracy backlog in isolated, fully tested batches.
+
+
+## PR #26 — merged; production deployment pending verification (4 November 2026)
+
+- PR [#26](https://github.com/com-orgs/learnora/pull/26) merged successfully; squash merge commit `983a50ce6cdc0ea54735679b7fe8d3b7793c6902`.
+- Full preview audit run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731) completed successfully. Static website audit, legal/pre-monetisation audit, exact Cloudflare preview resolution, preview headers/assets, Playwright/Chromium setup, and full mobile/desktop/quiz browser checks passed.
+- Exact Cloudflare preview verified: three references (OpenStax 4.2; Illustrative Mathematics 6.NS.A.1; Khan Academy conceptual division explanation), zero-reciprocal note, expected title, production self-canonical, `index,follow`, and homepage availability.
+- Merge created commit `983a50ce6cdc0ea54735679b7fe8d3b7793c6902`, but the latest observed main-branch deployment/audit runs still corresponded to the preceding main SHA `9813207fead92358ae47cb1c7010380d11945a27`. A fresh production fetch also showed the old lesson without the new references/note. Therefore PR #26 is merged but **not yet confirmed deployed**.
+- Trigger a normal docs-only main checkpoint to start deployment; then verify the main deployment workflow and fetch production again. Do not claim release until the production page contains all expected changes.
+- Source inventory baseline is 10/77 dedicated source sections; increment to 11/77 only after the live production release is confirmed.
+
+### Next actions
+1. Confirm the docs checkpoint triggers Cloudflare deployment and site audit for the merged main tree.
+2. Verify production lesson contains the zero-reciprocal note and all three links, with correct canonical and robots metadata; verify homepage.
+3. After confirmation, record PR #26 as live and update inventory to 11/77.
+4. Continue the Grade 6 Maths source/accuracy backlog only after deployment verification.
+
+
+## PR #26 — production release confirmed (4 November 2026)
+
+- Main-branch deployment for merge commit `983a50ce6cdc0ea54735679b7fe8d3b7793c6902` completed successfully in [Cloudflare deployment run #41858083620](https://github.com/com-orgs/learnora/actions/runs/41858083620). The main static/legal audit [#41858083987](https://github.com/com-orgs/learnora/actions/runs/41858083987) also passed.
+- Fresh production fetch confirms `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-fractions` now includes the zero-reciprocal clarification and all three outbound references: OpenStax Prealgebra 2e 4.2, Illustrative Mathematics 6.NS.A.1, and Khan Academy conceptual fraction division.
+- Production title, self-canonical, `index,follow`, Open Graph URL/description and homepage fetch verified. No fetch errors.
+- PR #26 preview browser audit [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731) passed all checks, including mobile/desktop, quizzes, retakes, print actions and performance/resource checks.
+- Dedicated “Sources and Further Reading” inventory is now **11 of 77 lessons** (66 without a dedicated section). This remains a structural count, not proof that the other pages have no citations elsewhere.
+- PR #26 is fully merged and live. No further action required for this release.
+
+### Current next actions
+1. Continue Grade 6 Maths cluster review with the next lesson that benefits from authoritative references and academic verification; avoid adding links without lesson-specific relevance.
+2. Preserve preview-first QA and no-merge-before-green policy.
+3. Keep GSC URL inspection within the 10-unique-URL daily cap; dedupe Bing/IndexNow and report only verified indexing/performance evidence.
+4. Review duplicate `seo/**` workflow triggers separately, without weakening required QA.
