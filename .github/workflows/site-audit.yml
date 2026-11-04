@@ -35,7 +35,7 @@ jobs:
 
       - name: Resolve the exact Cloudflare PR branch preview
         id: preview
-        if: github.ref != 'refs/heads/main'
+        if: github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER_INPUT: ${{ github.event.pull_request.number || '' }}
@@ -62,7 +62,7 @@ jobs:
           echo "url=$preview_url" >> "$GITHUB_OUTPUT"
 
       - name: Verify Cloudflare Pages preview headers and assets
-        if: github.ref != 'refs/heads/main'
+        if: github.event_name == 'pull_request'
         env:
           LEARNORA_PREVIEW_URL: ${{ steps.preview.outputs.url }}
         shell: bash
@@ -95,12 +95,12 @@ jobs:
           echo "PASS: preview HTML, security headers, CSP, lesson scripts and custom 404 response."
 
       - name: Install Playwright and Chromium
-        if: github.ref != 'refs/heads/main'
+        if: github.event_name == 'pull_request'
         run: |
           npm install --no-save --no-package-lock playwright @axe-core/playwright
           npx playwright install --with-deps chromium
       - name: Run mobile, desktop and quiz browser checks against this commit
-        if: github.ref != 'refs/heads/main'
+        if: github.event_name == 'pull_request'
         env:
           LEARNORA_PREVIEW_URL: ${{ steps.preview.outputs.url }}
         run: node scripts/browser-smoke.mjs
