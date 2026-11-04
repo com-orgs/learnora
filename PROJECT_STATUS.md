@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `632cdddde3ebf7763fffcd12b9a69ac9c530e64a`
-- Workflow: Learnora Site Audit (run [#41682977213](https://github.com/com-orgs/learnora/actions/runs/41682977213))
-- Last updated automatically: run #41682977213 on branch `audit/seo-ga4-safety-2026-11-03`.
+- Tested commit: `0cec6d701227cc24bb93efc4878e9b82d19b3857`
+- Workflow: Learnora Site Audit (run [#41784399824](https://github.com/com-orgs/learnora/actions/runs/41784399824))
+- Last updated automatically: run #41784399824 on branch `seo/grade6-maths-onpage-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -436,3 +436,30 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Full branch QA [#41636282293](https://github.com/com-orgs/learnora/actions/runs/41636282293) passed with zero static warnings, 92 pages at 320/390/768/desktop widths, 68 quiz submissions, 68 retakes, 70 print actions and 92 performance checks.
 - [x] Main workflow [#41636821146](https://github.com/com-orgs/learnora/actions/runs/41636821146) passed static and legal/pre-monetisation checks.
 - Phase 14 first remediation batch is merged and live. The wider academic audit remains in progress: source attribution for legacy lessons, full topic-by-topic accuracy verification and genuine subject-expert review remain open.
+
+## 4 November 2026 — Grade 6 Maths on-page preview work (PR #19)
+
+- Baseline audit used six live Grade 6 Maths pages (grade hub, Understanding Fractions, Equivalent Fractions, Comparing and Ordering Fractions, Adding and Subtracting Fractions, Understanding Decimals). All six returned HTTP 200, self-canonical, `index,follow`, one H1, and zero critical/high/medium on-page audit findings. The GSC Wizard on-page audit reported 8 low-severity findings: 3 lesson pages missing structured data; 2 fraction descriptions longer than ~160 characters; decimals title 65 characters. No indexing or ranking claim follows from this on-page audit.
+- Content review found the decimals lesson repeats the “Continue Learning” section heading; its second occurrence is now labelled “Related Measurement Topics” to make the navigation clearer.
+- Targeted preview-only edits on three files: shorten the Comparing Fractions and Adding/Subtracting Fractions meta descriptions; retitle the Decimals lesson to “Grade 6 Decimals: Place Value and Rounding | Learnora”; rename the second duplicate heading. No mass metadata edit, no new URLs, no sitemap change, no content publication, and no production changes.
+- New isolated PR: [#19](https://github.com/com-orgs/learnora/pull/19), branch `seo/grade6-maths-onpage-2026-11-04`, head `5ac4a632be6ac4fe295a142574c5ecf7f2115bf6`, exactly 3 intended HTML files changed (4 insertions / 4 deletions). PR remains open and unmerged.
+- Cloudflare preview check for PR #19 was still reported as Building at last check; preview URL not yet provided. Candidate guessed preview host returned HTTP 404 and is not considered verified. No full static/legal/browser QA has passed yet. Do not merge until the exact preview is available and all required QA is green.
+- Next: wait for Cloudflare's authoritative PR check to finish, obtain the exact preview URL from the check, verify all three changed pages (HTTP 200, updated title/description, self-canonical, index,follow), then run static/legal/accessibility/mobile/desktop/quiz/print QA. Keep production untouched.
+
+### PR #19 preview verification update — 4 November 2026
+- Cloudflare Pages deployment succeeded for code commit `5ac4a63`; exact branch preview: https://seo-grade6-maths-onpage-2026.learnora-ab2.pages.dev/
+- All three changed lesson routes were fetched from that exact preview and returned HTTP 200, one H1, `index,follow`, and production self-canonical URLs:
+  - Comparing and Ordering Fractions: title 59 chars; revised description 160 chars.
+  - Adding and Subtracting Fractions: title 59 chars; revised description 142 chars.
+  - Grade 6 Decimals: revised title 53 chars; description 159 chars; second section heading now “Related Measurement Topics”; only one “Continue Learning” heading remains.
+- Preview metadata and revised content match the intended changes. The canonical URLs correctly point to the production host; preview internal navigation resolves on the preview host as expected.
+- Preview HTTP/metadata smoke test passed. Full repository static/legal/browser/assistive-tech/quiz-interaction/print QA is still not verified; the repository workflow does not trigger on the current `seo/**` branch (it triggers on `main`, `audit/**`, or manual dispatch). PR #19 remains open and unmerged. Production remains unchanged.
+- Next: obtain full static/legal/browser QA evidence for this code diff, then make a release decision only after all required checks pass.
+
+
+### Latest PR #19 verification — 4 November 2026, 11:13 PKT
+- GitHub PR #19 latest head at verification: `ad4910efa833700c358390ccbb00c0127fc0732f`. Cloudflare's PR comment confirms successful deployment for short SHA `ad4910e`; deployment preview: https://7944d8ec.learnora-ab2.pages.dev/ .
+- Independently fetched all three changed lesson routes from that exact deployment preview. All returned HTTP 200, HTML content type, one page title, one H1 in the rendered HTML sample, `index,follow`, and canonical URLs pointing to their matching production URLs. The two revised fraction meta descriptions and the revised decimals title are present. No production page was changed.
+- The GitHub `site-audit.yml` workflow has `workflow_dispatch`, but its non-main preview-header step is hard-coded to a different deployment (`audit-production-hardening-2.learnora-ab2.pages.dev`), and its browser smoke step targets the production URL. Therefore a manual run on PR #19 would not be a valid end-to-end test of this PR preview. The available GitHub connector has no workflow-dispatch action; no such run was started.
+- Full static/legal/accessibility/mobile/desktop/quiz/retake/print QA for the current PR #19 head remains unverified. Keep PR #19 open and unmerged; do not release until a workflow is corrected or QA is run against the exact preview.
+- PR #17 remains open and unmerged; documentation-only research changes. No GSC inspections or Bing/IndexNow submissions were made in this continuation. The 4 November GSC daily project cap is already exceeded; zero further inspections today.
