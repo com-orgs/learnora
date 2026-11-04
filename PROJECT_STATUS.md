@@ -699,3 +699,11 @@ Historical session notes below are retained for continuity; use this current sta
 2. Fetch the production lesson and verify all three references, expected title, self-canonical, `index,follow`, and homepage availability.
 3. Refresh the dedicated source-section inventory across all 77 lesson files before updating the count; do not infer the count from the historical tracker.
 4. Continue the Grade 6 Maths source/accuracy backlog only after release verification.
+
+
+### PR #28 — production content verification complete (4 November 2026)
+- Fresh production fetch of `https://learnora-ab2.pages.dev/math/grade-6/comparing-ordering-fractions` confirms the Sources and Further Reading section is live with all three expected outbound links: UK Department for Education/NCETM Year 6 guidance, Khan Academy Class 6 Mathematics, and Illustrative Mathematics Lesson 15.
+- Production metadata verified: expected title and description, self-canonical, `index,follow`, and matching Open Graph URL/title/description. Production homepage also fetched successfully.
+- This direct production fetch confirms the PR #28 content is live. The GitHub Actions run listing had not yet exposed a new main deployment run at the time of verification; do not invent a deployment run ID. Production content verification is the evidence of release.
+- PR #28 is now **merged and production-content verified**. No GSC inspection or duplicate IndexNow/Bing submission was performed.
+- Source inventory count remains to be refreshed across all 77 lesson HTML files before any revised total is stated.
