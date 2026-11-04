@@ -65,3 +65,14 @@ A task is COMPLETE only after its result is independently verified. A tool call 
 - Verified all three changed routes HTTP 200, index,follow, one H1, production self-canonical; metadata lengths: Comparing Fractions description 160, Adding/Subtracting Fractions description 142, Decimals title 53 and description 159. Duplicate decimals section heading is corrected.
 - Full static/legal/browser/accessibility/quiz/retake/print QA not verified because workflow triggers only on main, audit/** or manual dispatch, not seo/**. PR #19 open, not merged. Production untouched.
 - Next: arrange full QA evidence before merge.
+
+
+## 2026-11-04 — PR #19 exact preview and workflow QA investigation
+- Status: PREVIEW ROUTE/METADATA SMOKE PASS; FULL QA BLOCKED / UNVERIFIED.
+- Rechecked PR #19 via GitHub. Current head: `ad4910efa833700c358390ccbb00c0127fc0732f`; PR remains open and unmerged.
+- Retrieved exact deployment URL from Cloudflare's authoritative PR comment: https://0b8f0f63.learnora-ab2.pages.dev/ (unique deployment ID `0b8f0f63`).
+- Firecrawl live fetch verified homepage, three changed lesson routes, sitemap.xml and robots.txt all HTTP 200. Changed lessons show expected titles and content; lesson robots metadata is index,follow.
+- The branch alias previously recorded in the checkpoint currently returns HTTP 404 Deployment Not Found. The unique deployment URL above is the verified preview for current head.
+- Inspected workflow and scripts. Workflow header-check is pinned to an unrelated old preview; browser-smoke env points at production, and browser-smoke default points at a stale alias. Workflow only triggers on main, audit/** or workflow_dispatch, not seo/**. No manual dispatch tool available in connected GitHub integration.
+- No static/legal/Playwright test was executed; no claim of full QA pass. No files changed, no merge, no production deploy.
+- Next single action: establish safe QA execution against the exact PR head and preview, then record actual test output.
