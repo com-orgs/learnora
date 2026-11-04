@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `3e6ad14a2933e418e831cf4040ddace977f0904d`
-- Workflow: Learnora Site Audit (run [#41859285017](https://github.com/com-orgs/learnora/actions/runs/41859285017))
-- Last updated automatically: run #41859285017 on branch `seo/grade6-comparing-ordering-fractions-sources-2026-11-04`.
+- Tested commit: `400b5a9874ce6c90e8e67a80e237ae659c3e7359`
+- Workflow: Learnora Site Audit (run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731))
+- Last updated automatically: run #41848440731 on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -682,3 +682,12 @@ Historical session notes below are retained for continuity; use this current sta
 2. Preserve preview-first QA and no-merge-before-green policy.
 3. Keep GSC URL inspection within the 10-unique-URL daily cap; dedupe Bing/IndexNow and report only verified indexing/performance evidence.
 4. Review duplicate `seo/**` workflow triggers separately, without weakening required QA.
+
+
+## PR #24 — Grade 6 Comparing and Ordering Fractions (4 November 2026)
+
+- PR [#24](https://github.com/com-orgs/learnora/pull/24) adds a curriculum-neutral Sources and Further Reading section to `math/grade-6/comparing-ordering-fractions.html`.
+- References: UK Department for Education/NCETM Year 6 Mathematics Guidance; Khan Academy Class 6 Mathematics; Illustrative Mathematics Lesson 15 on common denominators.
+- Academic review checked worked comparisons, benchmark reasoning, practice answers, worksheet key and five quiz answer mappings; all were consistent.
+- Cloudflare preview is available at https://seo-grade6-comparing-orderin.learnora-ab2.pages.dev. Full audit run [#41859299496](https://github.com/com-orgs/learnora/actions/runs/41859299496) passed static, legal, preview headers/assets and mobile/desktop/quiz browser checks for code commit `3e6ad14a2933e418e831cf4040ddace977f0904d`.
+- The PR branch has since received an automated tracker-only commit; main has also advanced. Reconcile current PR head and rerun QA before merge. Production remains unchanged until release verification.
