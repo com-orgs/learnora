@@ -53,3 +53,13 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - Checkpoint documentation (`PROJECT_STATE.md`, `TASK_LOG.md`, `DECISIONS.md`) was created and fetched back successfully on branch `project-checkpoint-system-2026-11-04`.
 - The three files are committed on this isolated documentation branch; it has not been merged into `main` and no production release is authorized by this checkpoint.
 - Next action: recover the original competitor list and selected keyword priority from prior work, then verify the last completed operation before continuing.
+
+## 2026-11-04 continuation — original SEO research recovered
+
+- [x] Recovered `COMPETITOR_KEYWORD_RESEARCH_2026-11-03.md` from PR #17 branch `research/competitor-keywords-2026-11-03`; exact 50 named benchmark domains and the 41-URL keyword map are present. Do not recreate this research.
+- [x] Exact selected priority recovered: strengthen existing Grades 6–8 Maths lessons, practice questions, quizzes and worksheets first; then Grade 7–8 Science and middle-school English. The 50 domains are curated benchmarks, not verified Semrush organic competitors.
+- [x] Validated all 41 keyword-map URL targets against the live 104-URL sitemap: 41/41 match, 0 duplicates, 0 missing.
+- [x] Verified PR #17's three changed files are documentation only. Latest preview commit `24ad602`; Cloudflare Pages preview deployment succeeded. Preview homepage, robots.txt, Computer Science, AI Literacy and Financial Literacy hubs returned HTTP 200. PR checks show Cloudflare deployment succeeded, but full static/legal/browser QA is not independently confirmed; PR is not merged.
+- [x] Rechecked GSC performance: 104 sitemap URLs, 0 with impressions, 0 clicks / 0 impressions for 5 Oct–1 Nov settled period. This is not an indexing verdict. Tracker: 1 indexed, 95 URL-unknown, 8 pending.
+- [x] Latest 4 Nov PKT deduplication audit: 31 tracker URLs plus 5 unique URL Inspection history URLs, no overlap; 36 combined unique URLs, 1 duplicate history record. No additional inspection was run during this continuation; stop inspections for 4 Nov.
+- [ ] Next: review the highest-priority existing Grade 6 Maths pages against the recovered map, identify specific teaching/on-page gaps, and prepare preview-only changes with full QA. Do not deploy without explicit release approval.
