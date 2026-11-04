@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: cancelled.
-- Tested commit: `43b93f8a9c7a0a6cc049f44e37a3d9410f443794`
-- Workflow: Learnora Site Audit (run [#41880996566](https://github.com/com-orgs/learnora/actions/runs/41880996566))
-- Last updated automatically: run #41880996566 on branch `seo/grade6-understanding-decimals-sources-2026-11-04`.
+- Tested commit: `31d61de84e670a006729c5866325874ef1a5cfe7`
+- Workflow: Learnora Site Audit (run [#41881020386](https://github.com/com-orgs/learnora/actions/runs/41881020386))
+- Last updated automatically: run #41881020386 on branch `seo/grade6-understanding-decimals-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
