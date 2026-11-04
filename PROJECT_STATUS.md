@@ -482,3 +482,11 @@ Historical session notes below are retained for continuity; use this current sta
 2. Fix the Grade 8 Science hub's missing internal link to the existing Earth Resources lesson in a separate preview PR.
 3. Continue source attribution and academic review for the 70 legacy lessons without dedicated references.
 4. Wait for actual GSC query/impression data before claiming ranking gains; competitor keyword metrics remain blocked by Semrush API units.
+
+
+### PR #17 refreshed documentation QA — 4 November 2026
+- Rebased the documentation branch onto the current production main commit `7f351cc` after PR #19 merged; restored the three documentation files without carrying stale main history.
+- Cloudflare branch preview deployment succeeded for head `91f2039`: https://research-competitor-keywords.learnora-ab2.pages.dev/ .
+- Full preview QA [#41785142372](https://github.com/com-orgs/learnora/actions/runs/41785142372) passed. Static metadata/canonical/OG, sitemap, lesson/script inventory, internal links, accessible quiz form/answer-key mapping, JavaScript security/CSP/syntax checks passed. Legal/pre-monetisation disclosures and no-ad/no-tracking guardrails passed; zero static warnings.
+- Preview header/asset/CSP/custom-404 checks passed. Browser QA checked 104 pages at 320/390/768/desktop widths, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource budgets. No horizontal overflow, quiz keyboard/feedback failure, print failure, third-party request, CSP/runtime error or performance-budget failure.
+- PR #17 remains documentation-only (50 competitor/benchmark domains, keyword intent map, research limitations, updated roadmap and checkpoint); no production HTML, URLs, scripts, analytics, ads or sitemap entries changed. Ready for squash merge.
