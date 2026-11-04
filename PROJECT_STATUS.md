@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: cancelled.
-- Tested commit: `dcace55d3ce37d22e6e84db33c4a09434353aa4a`
-- Workflow: Learnora Site Audit (run [#41785758472](https://github.com/com-orgs/learnora/actions/runs/41785758472))
-- Last updated automatically: run #41785758472 on branch `seo/grade8-science-earth-resources-crosslink-2026-11-04`.
+- Status: failure.
+- Tested commit: `b5ef16b59312ec717834e43dd4f4145b0da7311d`
+- Workflow: Learnora Site Audit (run [#41785763632](https://github.com/com-orgs/learnora/actions/runs/41785763632))
+- Last updated automatically: run #41785763632 on branch `seo/grade8-science-earth-resources-crosslink-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
