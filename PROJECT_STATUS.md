@@ -597,3 +597,22 @@ Historical session notes below are retained for continuity; use this current sta
 2. Select the next Grade 6 Maths lesson from the researched fraction keyword cluster, verify mathematical examples and references, and use a separate preview PR.
 3. On the next Pakistan calendar day, inspect GSC indexing history before using the daily 10-unique-URL operational cap; do not duplicate earlier inspections.
 4. Keep search-volume, ranking and traffic claims strictly evidence-based.
+
+
+## Source inventory refresh and PR #25 checkpoint — 4 November 2026
+
+- Re-audited all **77 educational lesson HTML files** across Maths, English, Science, Computer Science, AI Literacy and Financial Literacy using the current repository tree and live lesson heading/link extraction.
+- **10 of 77 lessons** currently have a dedicated “Sources and Further Reading” section; **67 lessons** do not. This supersedes the earlier provisional 9/77 and 10/77 estimates. This is a structural inventory, not a judgment that every lesson without a dedicated section lacks citations elsewhere.
+- Source-section pages found: Grade 6 Understanding Fractions, Equivalent Fractions, Mixed Numbers and Improper Fractions; Grade 8 Linear Equations and Inequalities, Probability Models and Compound Events, Pythagorean Theorem; English Argument Writing, Text Structure and Author’s Purpose; Science Weather, Climate and Water Cycle, and Grade 8 Earth Resources/Sustainability.
+- Opened PR [#25](https://github.com/com-orgs/learnora/pull/25), branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
+- Added OpenStax Prealgebra 2e sections 4.4 and 4.5, plus the Math Learning Center Bridges Intervention fraction resource, to `math/grade-6/adding-subtracting-fractions.html`.
+- Corrected an academic visual defect: the unlike-denominator example previously displayed `1/3 = 4/12 + 3/12 = 7/12`, omitting the original `1/4) term and using an incorrect equality chain. It now explicitly shows `1/3 + 1/4 = 4/12 + 3/12 = 7/12`.
+- Rechecked all worked examples, eight practice answer mappings, five quiz keys/explanations and eight worksheet answer keys; arithmetic is consistent. Quiz script and answer mapping are unchanged.
+- Cloudflare preview deployed successfully at `https://seo-grade6-adding-subtractin.learnora-ab2.pages.dev` (commit `55cc487`). Full site audit must pass before merge; PR #25 is not merged.
+- External source verification: OpenStax covers common and unlike denominators; Math Learning Center provides fraction-bar models and strategies for adding/subtracting with like and unlike denominators. No Firecrawl credits or paid services used.
+
+### Next actions
+1. Trigger and complete the full Learnora Site Audit for PR #25; verify static, legal, preview headers/assets and browser checks.
+2. If all checks pass, merge PR #25, verify Cloudflare production deployment and fetch the live page.
+3. Continue the source/accuracy backlog in Grade 6 Maths, prioritising the remaining fraction cluster and checking every page before edits.
+4. Review GSC indexing history before any new inspections; avoid duplicate URL checks and respect the 10-unique-URL operational cap.
