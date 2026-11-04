@@ -76,3 +76,12 @@ A task is COMPLETE only after its result is independently verified. A tool call 
 - Inspected workflow and scripts. Workflow header-check is pinned to an unrelated old preview; browser-smoke env points at production, and browser-smoke default points at a stale alias. Workflow only triggers on main, audit/** or workflow_dispatch, not seo/**. No manual dispatch tool available in connected GitHub integration.
 - No static/legal/Playwright test was executed; no claim of full QA pass. No files changed, no merge, no production deploy.
 - Next single action: establish safe QA execution against the exact PR head and preview, then record actual test output.
+
+
+## 2026-11-04 — isolated PR #19 full-QA run
+- Status: RUNNING / UNVERIFIED.
+- Created isolated branch `audit/pr19-full-qa-2026-11-04` from PR #19 head `ad4910efa833700c358390ccbb00c0127fc0732f`.
+- Changed only `.github/workflows/site-audit.yml` on the audit branch: security-header/asset preview target and `LEARNORA_PREVIEW_URL` now point to the exact verified PR #19 commit deployment `https://0b8f0f63.learnora-ab2.pages.dev`.
+- Workflow commit `61c518645a78f35e4e16d45e539d57fe4b804868`; GitHub Actions run #665 ID `41770292874` created, currently pending/no jobs at last poll.
+- This isolates the run from main and ensures browser QA targets PR preview rather than production. No production code changed; no merge and no production deploy.
+- Next: poll run #665, inspect static/legal/browser results and failures; mark QA only from actual evidence.
