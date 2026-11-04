@@ -445,3 +445,13 @@ Historical session notes below are retained for continuity; use this current sta
 - New isolated PR: [#19](https://github.com/com-orgs/learnora/pull/19), branch `seo/grade6-maths-onpage-2026-11-04`, head `5ac4a632be6ac4fe295a142574c5ecf7f2115bf6`, exactly 3 intended HTML files changed (4 insertions / 4 deletions). PR remains open and unmerged.
 - Cloudflare preview check for PR #19 was still reported as Building at last check; preview URL not yet provided. Candidate guessed preview host returned HTTP 404 and is not considered verified. No full static/legal/browser QA has passed yet. Do not merge until the exact preview is available and all required QA is green.
 - Next: wait for Cloudflare's authoritative PR check to finish, obtain the exact preview URL from the check, verify all three changed pages (HTTP 200, updated title/description, self-canonical, index,follow), then run static/legal/accessibility/mobile/desktop/quiz/print QA. Keep production untouched.
+
+### PR #19 preview verification update — 4 November 2026
+- Cloudflare Pages deployment succeeded for code commit `5ac4a63`; exact branch preview: https://seo-grade6-maths-onpage-2026.learnora-ab2.pages.dev/
+- All three changed lesson routes were fetched from that exact preview and returned HTTP 200, one H1, `index,follow`, and production self-canonical URLs:
+  - Comparing and Ordering Fractions: title 59 chars; revised description 160 chars.
+  - Adding and Subtracting Fractions: title 59 chars; revised description 142 chars.
+  - Grade 6 Decimals: revised title 53 chars; description 159 chars; second section heading now “Related Measurement Topics”; only one “Continue Learning” heading remains.
+- Preview metadata and revised content match the intended changes. The canonical URLs correctly point to the production host; preview internal navigation resolves on the preview host as expected.
+- Preview HTTP/metadata smoke test passed. Full repository static/legal/browser/assistive-tech/quiz-interaction/print QA is still not verified; the repository workflow does not trigger on the current `seo/**` branch (it triggers on `main`, `audit/**`, or manual dispatch). PR #19 remains open and unmerged. Production remains unchanged.
+- Next: obtain full static/legal/browser QA evidence for this code diff, then make a release decision only after all required checks pass.
