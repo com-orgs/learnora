@@ -463,3 +463,30 @@ Historical session notes below are retained for continuity; use this current sta
 - The GitHub `site-audit.yml` workflow has `workflow_dispatch`, but its non-main preview-header step is hard-coded to a different deployment (`audit-production-hardening-2.learnora-ab2.pages.dev`), and its browser smoke step targets the production URL. Therefore a manual run on PR #19 would not be a valid end-to-end test of this PR preview. The available GitHub connector has no workflow-dispatch action; no such run was started.
 - Full static/legal/accessibility/mobile/desktop/quiz/retake/print QA for the current PR #19 head remains unverified. Keep PR #19 open and unmerged; do not release until a workflow is corrected or QA is run against the exact preview.
 - PR #17 remains open and unmerged; documentation-only research changes. No GSC inspections or Bing/IndexNow submissions were made in this continuation. The 4 November GSC daily project cap is already exceeded; zero further inspections today.
+
+
+## 4 November 2026 — PR #19 production release and current continuation state
+
+- PR [#19](https://github.com/com-orgs/learnora/pull/19) merged as `7f351cc75a4d531e4ff0948e59aa201240d62463`. It changes three existing Grade 6 Maths HTML pages, the preview-based QA workflow and this project checkpoint.
+- Cloudflare Pages production deployment [#41784777507](https://github.com/com-orgs/learnora/actions/runs/41784777507) completed successfully. Main static/legal audit [#41784777268](https://github.com/com-orgs/learnora/actions/runs/41784777268) passed with zero static warnings; 104 HTML pages, 68 lesson files, 77 accessible quiz forms and answer-key mappings were checked.
+- Full preview browser QA [#41784399824](https://github.com/com-orgs/learnora/actions/runs/41784399824) passed: 104 sitemap pages at 320/390/768/desktop widths; 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource checks. No horizontal overflow, keyboard quiz issue, third-party request, CSP/runtime error or performance-budget failure.
+- Production fetch verified all three changed pages. HTML title tags, descriptions, canonical URLs and `index,follow` are correct. Decimals title is “Grade 6 Decimals: Place Value and Rounding | Learnora”; the page has one “Continue Learning” and one “Related Measurement Topics” heading.
+- PR #19's preview workflow now resolves the authoritative Cloudflare branch preview from the Cloudflare PR comment, validates the `learnora-ab2.pages.dev` host and uses that same preview for header/asset and browser checks. The parser was tested against Cloudflare's actual comment markup.
+- GSC settled 28-day performance through 1 Nov 2026: 0 clicks, 0 impressions and no query/page rows. Bing query/page/daily crawl reports returned no dated rows. Bing sitemap feed remains Success (104 URLs).
+- Free Keyword Tool autocomplete produced intent ideas only, without cached metrics. Useful themes: Grade 6 worksheets, fraction questions/word problems, equivalent fractions, and multiplication/division of fractions. UK/Australia samples included mismatched MCO/ATP/Green Shoots terms; do not target without validation.
+- Latest 4 Nov indexing deduplication: 36 distinct URLs across tracker and URL Inspection history, 37 records and one duplicate. This exceeds the requested 10/day project cap due to GSC Wizard's hourly background tracker; no pause/throttle action is exposed. Daily automation guard remains enabled; no further checks today.
+- PR #17's original branch was behind the newly merged main and reported a merge conflict. The documentation has been reapplied on top of current main for a fresh preview/QA cycle. No production edits are part of this documentation refresh.
+
+### Next actions
+1. Complete refreshed PR #17 documentation preview QA and merge only when clean.
+2. Fix the Grade 8 Science hub's missing internal link to the existing Earth Resources lesson in a separate preview PR.
+3. Continue source attribution and academic review for the 70 legacy lessons without dedicated references.
+4. Wait for actual GSC query/impression data before claiming ranking gains; competitor keyword metrics remain blocked by Semrush API units.
+
+
+### PR #17 refreshed documentation QA — 4 November 2026
+- Rebased the documentation branch onto the current production main commit `7f351cc` after PR #19 merged; restored the three documentation files without carrying stale main history.
+- Cloudflare branch preview deployment succeeded for head `91f2039`: https://research-competitor-keywords.learnora-ab2.pages.dev/ .
+- Full preview QA [#41785142372](https://github.com/com-orgs/learnora/actions/runs/41785142372) passed. Static metadata/canonical/OG, sitemap, lesson/script inventory, internal links, accessible quiz form/answer-key mapping, JavaScript security/CSP/syntax checks passed. Legal/pre-monetisation disclosures and no-ad/no-tracking guardrails passed; zero static warnings.
+- Preview header/asset/CSP/custom-404 checks passed. Browser QA checked 104 pages at 320/390/768/desktop widths, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource budgets. No horizontal overflow, quiz keyboard/feedback failure, print failure, third-party request, CSP/runtime error or performance-budget failure.
+- PR #17 remains documentation-only (50 competitor/benchmark domains, keyword intent map, research limitations, updated roadmap and checkpoint); no production HTML, URLs, scripts, analytics, ads or sitemap entries changed. Ready for squash merge.
