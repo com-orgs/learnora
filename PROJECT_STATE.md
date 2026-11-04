@@ -79,3 +79,16 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
   - Grade 6 Decimals — title 53 chars, description 159; second heading changed to Related Measurement Topics; duplicate Continue Learning heading removed.
 - [ ] Full static/legal/browser/keyboard/accessibility/quiz/retake/worksheet-print QA remains unverified. Current repository workflow does not trigger on `seo/**`; only `main`, `audit/**` and manual dispatch are configured. PR #19 remains open/unmerged. Production untouched.
 - Next: arrange full required QA for PR #19 before merge; no production release without explicit approval.
+
+
+## 2026-11-04 continuation — PR #19 full-QA investigation
+
+- [x] Re-read the existing GitHub Actions workflow, static audit script, legal-readiness script and browser-smoke script on PR #19 branch.
+- [x] Confirmed PR #19 remains open/unmerged; current head is `ad4910efa833700c358390ccbb00c0127fc0732f`; Cloudflare comment reports successful deployment for that commit.
+- [x] Retrieved authoritative commit-specific Cloudflare preview URL from the PR deployment comment: https://0b8f0f63.learnora-ab2.pages.dev/.
+- [x] Verified homepage, all three changed Grade 6 Maths routes, sitemap.xml and robots.txt on that exact deployment. All returned HTTP 200; homepage and changed lessons are index,follow; lesson titles/content reflect intended edits.
+- [x] Found the prior branch-preview alias `https://seo-grade6-maths-onpage-2026-11-04.learnora-ab2.pages.dev/` currently returns Cloudflare Deployment Not Found (HTTP 404). Do not use this stale alias as the authoritative preview. Use the unique deployment URL from the latest Cloudflare PR comment.
+- [x] Identified workflow QA mismatch: workflow's preview-header step is hard-coded to an unrelated `audit-production-hardening-2` preview; browser-smoke step sets `LEARNORA_PREVIEW_URL` to production, while the script default is also a stale preview alias. Thus a green run from this workflow would not by itself validate PR #19's deployed preview.
+- [ ] Full static/legal/Playwright browser QA remains unrun/unverified. No manual dispatch action was available through the connected GitHub tools. Do not merge or deploy production.
+- Files inspected: `.github/workflows/site-audit.yml`, `scripts/audit-site.mjs`, `scripts/audit-legal-readiness.mjs`, `scripts/browser-smoke.mjs`, `PROJECT_STATUS.md`. No repository files changed in this QA investigation.
+- Next single action: obtain a trustworthy way to run static/legal/browser checks against the exact PR #19 commit and commit-specific preview without triggering production deployment or misreporting QA.
