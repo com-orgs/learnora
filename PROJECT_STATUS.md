@@ -682,3 +682,20 @@ Historical session notes below are retained for continuity; use this current sta
 2. Preserve preview-first QA and no-merge-before-green policy.
 3. Keep GSC URL inspection within the 10-unique-URL daily cap; dedupe Bing/IndexNow and report only verified indexing/performance evidence.
 4. Review duplicate `seo/**` workflow triggers separately, without weakening required QA.
+
+
+## PR #28 — Grade 6 Comparing and Ordering Fractions (4 November 2026)
+
+- PR [#28](https://github.com/com-orgs/learnora/pull/28) was created from the current `main` branch after the older PR #24 branch had diverged; PR #24 was closed unmerged as superseded.
+- Added only a curriculum-neutral “Sources and Further Reading” section to `math/grade-6/comparing-ordering-fractions.html`, with UK Department for Education/NCETM Year 6 guidance, Khan Academy Class 6 Mathematics, and Illustrative Mathematics Lesson 15 on common denominators. Existing worked examples, practice, quiz, worksheet, metadata, URL and sitemap were preserved.
+- Fresh Cloudflare PR preview verified the lesson and homepage, all three source links, production self-canonical, `index,follow`, and Open Graph metadata.
+- Full preview QA run [#41878776095](https://github.com/com-orgs/learnora/actions/runs/41878776095) completed successfully: static website audit, legal/pre-monetisation audit, exact preview resolution, preview headers/assets, Playwright/Chromium and mobile/desktop/quiz browser checks all passed. Tracker refresh step was skipped; the audit job itself concluded success.
+- PR #28 was squash-merged successfully as `965fc13523a93731df409e0fe8c6b5b4d607ed18`. Merge was performed against the exact QA-tested head SHA `5d9b4b464ffc0ba5b1c43b945e3aa9c3e906da47`.
+- Main currently points to the merge commit. The observed latest main deployment/audit runs still target the preceding SHA `8b6eba6c4d5d8047ac6b3408078ed76741bb0f7e`; production release of PR #28 is therefore **pending verification**. A normal documentation checkpoint is being used to trigger the existing main workflows; verify deployment and production fetch before marking this change live.
+- No GSC URL inspections, duplicate Bing submissions or IndexNow resubmissions were performed as part of this task.
+
+### Next actions
+1. Confirm main Cloudflare deployment and static/legal audit for the PR #28 tree.
+2. Fetch the production lesson and verify all three references, expected title, self-canonical, `index,follow`, and homepage availability.
+3. Refresh the dedicated source-section inventory across all 77 lesson files before updating the count; do not infer the count from the historical tracker.
+4. Continue the Grade 6 Maths source/accuracy backlog only after release verification.
