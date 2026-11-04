@@ -455,3 +455,11 @@ Historical session notes below are retained for continuity; use this current sta
 - Preview metadata and revised content match the intended changes. The canonical URLs correctly point to the production host; preview internal navigation resolves on the preview host as expected.
 - Preview HTTP/metadata smoke test passed. Full repository static/legal/browser/assistive-tech/quiz-interaction/print QA is still not verified; the repository workflow does not trigger on the current `seo/**` branch (it triggers on `main`, `audit/**`, or manual dispatch). PR #19 remains open and unmerged. Production remains unchanged.
 - Next: obtain full static/legal/browser QA evidence for this code diff, then make a release decision only after all required checks pass.
+
+
+### Latest PR #19 verification — 4 November 2026, 11:13 PKT
+- GitHub PR #19 latest head at verification: `ad4910efa833700c358390ccbb00c0127fc0732f`. Cloudflare's PR comment confirms successful deployment for short SHA `ad4910e`; deployment preview: https://7944d8ec.learnora-ab2.pages.dev/ .
+- Independently fetched all three changed lesson routes from that exact deployment preview. All returned HTTP 200, HTML content type, one page title, one H1 in the rendered HTML sample, `index,follow`, and canonical URLs pointing to their matching production URLs. The two revised fraction meta descriptions and the revised decimals title are present. No production page was changed.
+- The GitHub `site-audit.yml` workflow has `workflow_dispatch`, but its non-main preview-header step is hard-coded to a different deployment (`audit-production-hardening-2.learnora-ab2.pages.dev`), and its browser smoke step targets the production URL. Therefore a manual run on PR #19 would not be a valid end-to-end test of this PR preview. The available GitHub connector has no workflow-dispatch action; no such run was started.
+- Full static/legal/accessibility/mobile/desktop/quiz/retake/print QA for the current PR #19 head remains unverified. Keep PR #19 open and unmerged; do not release until a workflow is corrected or QA is run against the exact preview.
+- PR #17 remains open and unmerged; documentation-only research changes. No GSC inspections or Bing/IndexNow submissions were made in this continuation. The 4 November GSC daily project cap is already exceeded; zero further inspections today.
