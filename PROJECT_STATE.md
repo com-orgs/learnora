@@ -109,3 +109,18 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - [ ] Playwright browser step is still running. It iterates all sitemap routes, checks 320/390/768px and desktop layout, Axe WCAG 2.1 A/AA, resource/performance budgets, homepage search/filter/quick-quiz, lesson quiz keyboard submission/feedback/retake, worksheet print handlers, and runtime/resource errors.
 - Latest run status: `in_progress`; active step: `Run mobile, desktop and quiz browser checks against this commit`. No browser-test conclusion yet.
 - Do not merge PR #19 until this step and tracker refresh complete successfully, and review any browser failures.
+
+
+## 2026-11-04 — PR #19 full QA completed (latest authoritative checkpoint)
+
+- [x] GitHub Actions run [#665](https://github.com/com-orgs/learnora/actions/runs/41770292874), ID `41770292874`, completed with conclusion `success` on isolated branch `audit/pr19-full-qa-2026-11-04`.
+- [x] The audit branch was based on PR #19 head `ad4910efa833700c358390ccbb00c0127fc0732f`; only `.github/workflows/site-audit.yml` was adjusted to target the exact Cloudflare deployment `https://0b8f0f63.learnora-ab2.pages.dev`. The workflow's audit code therefore matches the PR #19 code head; the tested workflow commit was `61c518645a78f35e4e16d45e539d57fe4b804868`.
+- [x] Static audit: 104 HTML pages, 68 curriculum lesson files and sitemap lesson URLs, 6 subject/grade indexes, 68 quiz script links, 104 canonical URLs, 77 accessible quiz forms and answer-key mappings, 72 JavaScript security scans and 80 same-origin JS assets; **0 warnings**.
+- [x] Legal/pre-monetisation audit passed: policy pages, editorial transparency, contact details and children/COPPA disclosures present; no active AdSense or analytics script tags across 105 HTML pages.
+- [x] Exact PR preview headers/assets and custom 404 checks passed.
+- [x] Full Playwright browser suite passed against the exact PR preview: 104 sitemap pages checked at 320/390/768px and desktop; 77 quiz submissions; 77 retake actions; 79 worksheet print actions; 104 performance/resource checks; no horizontal overflow, keyboard quiz failure, quiz feedback failure, print-handler failure, third-party request or CSP/runtime error.
+- [x] CI automatically refreshed `PROJECT_STATUS.md` on the isolated audit branch; latest audit-branch head after tracker refresh is `e4f12ac` (workflow also produced intermediate tracker commit `d591111`).
+- [ ] PR #19 remains open and unmerged. GitHub currently reports mergeable=true but mergeable_state=`unstable`; do not merge based on the green isolated QA run alone. Review PR checks/status and release decision before any merge. Production remains unchanged.
+- [ ] PR #17 (50-competitor keyword research + roadmap docs) remains open/unmerged; documentation-only preview smoke passed earlier, but no equivalent full QA run is recorded.
+- [ ] Daily GSC inspection cap: do not run any more URL inspections on Pakistan local date 4 Nov 2026. On next PKT day, deduplicate tracker and inspection history first, then inspect at most 10 distinct URLs total.
+- Exact next action: review PR #19's remaining check/status state and confirm no code drift from the tested PR head; if clean, prepare the next preview-only educational quality batch (structured data/source attribution for priority Grade 6 Maths pages), without merging/deploying production.
