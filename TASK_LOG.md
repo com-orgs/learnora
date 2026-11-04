@@ -85,3 +85,10 @@ A task is COMPLETE only after its result is independently verified. A tool call 
 - Workflow commit `61c518645a78f35e4e16d45e539d57fe4b804868`; GitHub Actions run #665 ID `41770292874` created, currently pending/no jobs at last poll.
 - This isolates the run from main and ensures browser QA targets PR preview rather than production. No production code changed; no merge and no production deploy.
 - Next: poll run #665, inspect static/legal/browser results and failures; mark QA only from actual evidence.
+
+
+## 2026-11-04 — QA run #665 partial results
+- GitHub Actions run #665 (ID `41770292874`) remains in progress.
+- Passed: static website audit; legal/pre-monetisation readiness audit; Cloudflare preview headers/assets verification; Playwright/Chromium installation.
+- Active: sitemap-wide Playwright browser QA against the PR #19 preview. Test scope includes responsive overflow at 320/390/768 and desktop, Axe WCAG 2.1 A/AA, first-party resource/performance budgets, homepage resource search/filter and 3-question quiz, lesson quiz keyboard selection/submission/feedback/retake, worksheet print handlers, runtime errors and same-origin failed resources.
+- No browser-test result or final workflow conclusion yet. Do not call full QA passed and do not merge.
