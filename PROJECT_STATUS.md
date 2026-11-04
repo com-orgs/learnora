@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `400b5a9874ce6c90e8e67a80e237ae659c3e7359`
-- Workflow: Learnora Site Audit (run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731))
-- Last updated automatically: run #41848440731 on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04`.
+- Tested commit: `13ea0d1171c07dedd010124cb226bd4894b35c41`
+- Workflow: Learnora Site Audit (run [#41858540894](https://github.com/com-orgs/learnora/actions/runs/41858540894))
+- Last updated automatically: run #41858540894 on branch `seo/grade6-comparing-ordering-fractions-sources-v2-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -682,3 +682,20 @@ Historical session notes below are retained for continuity; use this current sta
 2. Preserve preview-first QA and no-merge-before-green policy.
 3. Keep GSC URL inspection within the 10-unique-URL daily cap; dedupe Bing/IndexNow and report only verified indexing/performance evidence.
 4. Review duplicate `seo/**` workflow triggers separately, without weakening required QA.
+
+
+## PR #27 — Grade 6 Comparing and Ordering Fractions (fresh-base QA, 4 November 2026)
+
+- Reused the previously reviewed, lesson-specific source research from stale PR #24, but recreated the change on a fresh branch from current `main` so all recently merged lesson work is included.
+- Branch: `seo/grade6-comparing-ordering-fractions-sources-v2-2026-11-04`.
+- Target file: `math/grade-6/comparing-ordering-fractions.html`.
+- Adds a learner-facing Sources and Further Reading section with UK Department for Education/NCETM Year 6 mathematics guidance (6F-2/6F-3), Khan Academy Class 6 Mathematics, and Illustrative Mathematics Lesson 15 on common denominators.
+- Keeps curriculum-neutral disclaimer; external links use `target="_blank"` and `rel="noopener noreferrer"`. Existing page metadata, worked comparisons, practice, quiz, worksheet, scripts, related links and sitemap are preserved.
+- Academic review previously checked all worked comparisons, benchmark reasoning, practice answers, worksheet key and five quiz answer mappings; they were consistent.
+- The earlier PR #24 used an outdated base SHA and was not mergeable after subsequent main changes. This fresh-base PR must pass full static/legal/preview/browser QA before merge. Production remains unchanged until verified.
+- Source inventory baseline is 11/77 dedicated source sections; increment to 12/77 only after successful production release.
+
+### Next actions
+1. Create PR #27 and complete exact Cloudflare preview, static/legal audits, headers/assets and full browser QA.
+2. Merge only after all required checks pass; verify production lesson and metadata.
+3. Close stale PR #24 as superseded after PR #27 is open and linked.
