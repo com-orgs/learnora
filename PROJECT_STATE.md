@@ -50,6 +50,6 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 8. At the end of each work session, leave an exact resume point and a compact project tree/status in the chat.
 
 ## Current exact resume point
-- Checkpoint documentation has been created on branch `project-checkpoint-system-2026-11-04`.
-- This is a documentation-only branch at this stage; it has not been merged into `main` and no production release is authorized by this checkpoint.
+- Checkpoint documentation (`PROJECT_STATE.md`, `TASK_LOG.md`, `DECISIONS.md`) was created and fetched back successfully on branch `project-checkpoint-system-2026-11-04`.
+- The three files are committed on this isolated documentation branch; it has not been merged into `main` and no production release is authorized by this checkpoint.
 - Next action: recover the original competitor list and selected keyword priority from prior work, then verify the last completed operation before continuing.
