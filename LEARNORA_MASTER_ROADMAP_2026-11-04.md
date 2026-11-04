@@ -356,10 +356,10 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - PR [#17](https://github.com/com-orgs/learnora/pull/17) merged as `14949c842ccf65cd948bf410d64255e744d5dc41`. The competitor/benchmark list, 41-URL keyword map, research limitations and roadmap are now available on main.
 - PR [#20](https://github.com/com-orgs/learnora/pull/20) adds a hub card and contextual internal link from Grade 8 Science to the existing Earth’s Resources, Sustainability and Human Impact lesson. The target is already in the 104-URL sitemap and includes a source/further-reading section. The hub meta description and CollectionPage JSON-LD description now reflect environmental science and sustainability.
 - PR #20 preview fetch confirmed the new card, two contextual internal links, correct H1, updated description, production self-canonical and `index,follow`. Full static/legal/header/browser QA [#41785499567](https://github.com/com-orgs/learnora/actions/runs/41785499567) passed: 104 pages at 320/390/768/desktop, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource checks; no horizontal overflow, quiz, print, third-party, CSP/runtime or performance-budget issues.
-- PR #20 remains open and unmerged; no production changes have been made for this batch.
+- PR #20 merged as `892cde2c8c17d27cd95522f384338d38ae5b6a40`; Cloudflare production deployment succeeded and live fetch verified the Grade 8 hub card, two internal links, updated description, self-canonical and `index,follow`.
 
 ### Next priorities
-1. Merge PR #20 only after confirming its latest head contains no code changes beyond the QA-tested commit (the later commit is only the CI status block), then verify production deployment.
-2. Continue the 70-lesson academic source-attribution and accuracy review, beginning with the highest-traffic/priority Grade 6 Maths cluster.
-3. Wait for settled GSC query/impression data before asserting rankings; the latest 28-day report through 1 Nov has 0 clicks and 0 impressions.
-4. Develop useful teacher/parent distribution resources and partnerships without spam or artificial link schemes.
+1. Continue the 70-lesson academic source-attribution and accuracy review, beginning with the highest-priority Grade 6 Maths cluster.
+2. Wait for settled GSC query/impression data before asserting rankings; the latest 28-day report through 1 Nov has 0 clicks and 0 impressions.
+3. Develop useful teacher/parent distribution resources and partnerships without spam or artificial link schemes.
+4. Monitor discovery without duplicate GSC inspections or resubmitting the existing 104 Bing URLs.
