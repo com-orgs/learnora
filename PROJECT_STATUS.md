@@ -555,3 +555,12 @@ Historical session notes below are retained for continuity; use this current sta
 2. Update this tracker and roadmap with verified deployment state.
 3. Continue the highest-priority Grade 6 Maths source/accuracy review in a separate preview branch with full QA.
 4. Reconcile source inventory before making further backlog-count claims.
+
+
+### PR #22 production deployment confirmation — 4 November 2026
+- The existing main-branch Cloudflare Pages deployment workflow ran automatically after the normal documentation checkpoint commit `0481a2115fe79bcacd4d59e6f092772d0be9c056`; no manual dispatch was necessary. Deployment run [#41819235194](https://github.com/com-orgs/learnora/actions/runs/41819235194) completed successfully. Its audit/pre-deployment verification and Cloudflare deployment steps all passed.
+- Main static audit [#41819235153](https://github.com/com-orgs/learnora/actions/runs/41819235153) also completed successfully.
+- Fresh production fetch of `/math/grade-6/equivalent-fractions` confirms “Sources and further reading” with all three expected outbound links: OpenStax, BBC Bitesize and The Math Learning Center. Production response returned the expected title and description, self-canonical, `index,follow`, and safe external-link attributes (`target=_blank`, `rel=noopener noreferrer`).
+- PR #22 is now **merged, deployed and production-verified**. Earlier notes about pending deployment and attempted manual workflow dispatch are superseded; the browser UI dispatch attempt was not needed because the normal push workflow subsequently ran successfully.
+- Latest verified main commit at this checkpoint: `0481a2115fe79bcacd4d59e6f092772d0be9c056`.
+- Source-attribution estimate: 77 lessons total, 9 with dedicated sources, 68 remaining; refresh the full inventory before using this estimate as a final count.
