@@ -471,9 +471,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `9b2e2137d598f5e32e8cbf570eed0e570e387be9`
-- Workflow: Learnora Site Audit (run [#41891925209](https://github.com/com-orgs/learnora/actions/runs/41891925209))
-- Last updated automatically: run #41891925209 on branch `seo/grade6-breadcrumb-structured-data-2026-11-04`.
+- Tested commit: `03d2e481ee83f4edacad4227bd829fdeab5f8278`
+- Workflow: Learnora Site Audit (run [#41893407540](https://github.com/com-orgs/learnora/actions/runs/41893407540))
+- Last updated automatically: run #41893407540 on branch `seo/grade6-introduction-to-ratios-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
