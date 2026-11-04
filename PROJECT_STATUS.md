@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `6c1e5f3462fea5e845449eb82a6fda0cd4a4576b`
-- Workflow: Learnora Site Audit (run [#41786022856](https://github.com/com-orgs/learnora/actions/runs/41786022856))
-- Last updated automatically: run #41786022856 on branch `seo/grade6-understanding-fractions-sources-2026-11-04`.
+- Tested commit: `b94b46d01487d3e3a2fa8772bb097719deba01c8`
+- Workflow: Learnora Site Audit (run [#41789521442](https://github.com/com-orgs/learnora/actions/runs/41789521442))
+- Last updated automatically: run #41789521442 on branch `seo/grade6-equivalent-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
