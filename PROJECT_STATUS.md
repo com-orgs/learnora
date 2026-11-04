@@ -3,6 +3,26 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Current verified state — 4 November 2026 (post-PR #34 release)
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production main commit: `a33b3be4ba7a22fec717e554166a6b1ffc4cb351`.
+- PR [#34](https://github.com/com-orgs/learnora/pull/34) merged as `a33b3be4ba7a22fec717e554166a6b1ffc4cb351`. Added the existing `/favicon.svg` reference to 20 audited Grade 6 Maths lesson pages, shortened 16 long meta descriptions and three titles, and aligned Open Graph titles/descriptions with the updated page metadata.
+- Full PR34 preview QA [#41890469586](https://github.com/com-orgs/learnora/actions/runs/41890469586) passed all 10 steps: static audit, legal/pre-monetisation audit, exact Cloudflare preview, preview headers/assets, Playwright/Chromium and mobile/desktop/quiz browser checks. The final PR head had only a CI-generated project tracker commit after the QA-tested commit; all 20 lesson HTML blobs were identical.
+- Cloudflare Pages production deployment [#41891090587](https://github.com/com-orgs/learnora/actions/runs/41891090587) completed successfully. Main static/legal audit [#41891090560](https://github.com/com-orgs/learnora/actions/runs/41891090560) completed successfully.
+- Production spot checks passed for Grade 6 Multiplying and Dividing Fractions, Mixed Numbers and Improper Fractions, and Adding and Subtracting Decimals: updated title/description, matching Open Graph metadata, root favicon, self-canonical and `index,follow` all present.
+- Post-deployment GSC Wizard on-page audit repeated the same 25 URLs. All 25 returned HTTP 200 and were indexable; every page now reports a favicon; all titles are at or below 60 characters and all meta descriptions at or below 160 characters. No critical/high/medium issues remain. The only 23 low-severity observations are missing structured data on the 23 lesson pages (homepage and Grade 6 hub already have schema). No URL Inspection API requests were made.
+- Google Search Console performance through 2 November still shows 0 clicks and 0 impressions; 3 November onward is incomplete. Sitemap submitted 3 November remains pending with 0 warnings and 0 errors.
+- Ahrefs API still returns `Insufficient plan`; no paid usage or upgrade. Semrush MCP has no API units; no trial or paid upgrade activated. Google Tag/GA4 remains disabled pending child/mixed-audience privacy classification and consent review. Cloudflare feature toggles remain unchanged pending crawler/privacy compatibility review.
+
+## Next actions — 4 November
+1. [ ] Add valid Google-supported BreadcrumbList JSON-LD to Grade 6 Maths lesson pages, using the visible user journey (Home → Grade 6 Mathematics → lesson). Validate structured data and preview QA before merging; do not claim ranking guarantees.
+2. [ ] Extend the same structured-data review to English, Science, Computer Science, AI Literacy and Financial Literacy pages only after confirming their actual breadcrumb paths.
+3. [ ] Recount source-section coverage across the 77 lesson pages from the current repository tree before updating any inventory percentages.
+4. [ ] Continue verified learning references on remaining Grade 6 Maths lessons.
+5. [ ] Keep GSC monitoring read-only; no URL inspections today due to the earlier inspection-cap overrun.
+6. [ ] Keep Google Tag/GA4 and Cloudflare security/performance toggles unchanged until privacy/crawler compatibility is established.
+
 ## Current verified state — 4 November 2026 (post-PR #33 release)
 
 - Production website: https://learnora-ab2.pages.dev/
