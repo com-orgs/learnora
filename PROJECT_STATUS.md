@@ -650,3 +650,19 @@ Historical session notes below are retained for continuity; use this current sta
 1. Create the PR, verify the exact Cloudflare branch preview, and complete full Learnora Site Audit (static, legal, headers/assets, mobile/desktop and quiz browser checks).
 2. Merge only if all required checks pass; then verify the main deployment and live production lesson, sources, canonical and robots metadata.
 3. Continue the remaining Grade 6 Maths source/accuracy backlog in isolated, fully tested batches.
+
+
+## PR #26 — merged; production deployment pending verification (4 November 2026)
+
+- PR [#26](https://github.com/com-orgs/learnora/pull/26) merged successfully; squash merge commit `983a50ce6cdc0ea54735679b7fe8d3b7793c6902`.
+- Full preview audit run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731) completed successfully. Static website audit, legal/pre-monetisation audit, exact Cloudflare preview resolution, preview headers/assets, Playwright/Chromium setup, and full mobile/desktop/quiz browser checks passed.
+- Exact Cloudflare preview verified: three references (OpenStax 4.2; Illustrative Mathematics 6.NS.A.1; Khan Academy conceptual division explanation), zero-reciprocal note, expected title, production self-canonical, `index,follow`, and homepage availability.
+- Merge created commit `983a50ce6cdc0ea54735679b7fe8d3b7793c6902`, but the latest observed main-branch deployment/audit runs still corresponded to the preceding main SHA `9813207fead92358ae47cb1c7010380d11945a27`. A fresh production fetch also showed the old lesson without the new references/note. Therefore PR #26 is merged but **not yet confirmed deployed**.
+- Trigger a normal docs-only main checkpoint to start deployment; then verify the main deployment workflow and fetch production again. Do not claim release until the production page contains all expected changes.
+- Source inventory baseline is 10/77 dedicated source sections; increment to 11/77 only after the live production release is confirmed.
+
+### Next actions
+1. Confirm the docs checkpoint triggers Cloudflare deployment and site audit for the merged main tree.
+2. Verify production lesson contains the zero-reciprocal note and all three links, with correct canonical and robots metadata; verify homepage.
+3. After confirmation, record PR #26 as live and update inventory to 11/77.
+4. Continue the Grade 6 Maths source/accuracy backlog only after deployment verification.
