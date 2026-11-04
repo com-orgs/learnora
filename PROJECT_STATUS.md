@@ -581,3 +581,19 @@ Historical session notes below are retained for continuity; use this current sta
 2. If green, merge PR #23, verify main deployment, then fetch production page and confirm all three references and canonical/robots metadata.
 3. Refresh the 77-lesson source inventory after release; current estimate before PR #23 is 9/77 with dedicated source sections.
 4. Continue with the next Grade 6 Maths lesson selected from the fraction keyword cluster, without claiming autocomplete suggestions are search-volume metrics.
+
+
+## PR #23 — production release confirmed (4 November 2026)
+
+- PR [#23](https://github.com/com-orgs/learnora/pull/23) was merged successfully as `dd08771c2f672cc71c464d1793e34e8f8588c3f1`.
+- Full Learnora Site Audit run [#41823111786](https://github.com/com-orgs/learnora/actions/runs/41823111786) completed successfully. Static audit, legal/pre-monetisation audit, exact Cloudflare preview headers/assets, and full mobile/desktop/quiz browser checks all passed. The CI status refresh step was skipped; the audit job itself concluded success.
+- A fresh production fetch of `https://learnora-ab2.pages.dev/math/grade-6/mixed-numbers-improper-fractions` confirms the new Sources and Further Reading section and all three outbound references: Manitoba Education, Texas Instruments Education, and The Open University OpenLearn.
+- Production metadata verified: expected title and description, self-canonical, `index,follow`; homepage also fetched successfully. No fetch errors. PR #23 is **merged and production content verified**.
+- The earlier PR #23 note saying “do not merge until QA is green” is superseded by the successful QA and merge above.
+- Source count remains provisional at 10/77 if the prior 9/77 estimate is accurate; perform the full 77-lesson inventory before treating any count as definitive.
+
+### Next actions
+1. Refresh source-attribution inventory across all 77 lessons using repository content, counting actual unique pages with relevant source sections.
+2. Select the next Grade 6 Maths lesson from the researched fraction keyword cluster, verify mathematical examples and references, and use a separate preview PR.
+3. On the next Pakistan calendar day, inspect GSC indexing history before using the daily 10-unique-URL operational cap; do not duplicate earlier inspections.
+4. Keep search-volume, ranking and traffic claims strictly evidence-based.
