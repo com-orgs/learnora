@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: pending — the initial branch-push audit was cancelled as the pull request opened; a normal checkpoint commit is being used to trigger the full preview QA.
-- Tested commit: `b6190bcacfc8a79100b342a2fdac869a30746c65`
-- Workflow: Learnora Site Audit (initial push run [#41822873836](https://github.com/com-orgs/learnora/actions/runs/41822873836) was cancelled before QA completed)
-- Last updated automatically: awaiting the full preview QA run on `seo/grade6-mixed-numbers-sources-2026-11-04`.
+- Status: success.
+- Tested commit: `c45f2f99fca48881ed61f257dece5abd96a62e35`
+- Workflow: Learnora Site Audit (run [#41822895125](https://github.com/com-orgs/learnora/actions/runs/41822895125))
+- Last updated automatically: run #41822895125 on branch `seo/grade6-mixed-numbers-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
