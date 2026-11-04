@@ -616,3 +616,21 @@ Historical session notes below are retained for continuity; use this current sta
 2. If all checks pass, merge PR #25, verify Cloudflare production deployment and fetch the live page.
 3. Continue the source/accuracy backlog in Grade 6 Maths, prioritising the remaining fraction cluster and checking every page before edits.
 4. Review GSC indexing history before any new inspections; avoid duplicate URL checks and respect the 10-unique-URL operational cap.
+
+
+## PR #25 — production release and verification (4 November 2026)
+
+- PR [#25](https://github.com/com-orgs/learnora/pull/25) was merged successfully using squash merge. Merge commit: `5fb3e5363faefe31a6d1a2999fd33f2e3f8fd3e7`.
+- Both full preview audit runs [#41845431748](https://github.com/com-orgs/learnora/actions/runs/41845431748) and [#41845422303](https://github.com/com-orgs/learnora/actions/runs/41845422303) completed successfully. Static website audit, legal/pre-monetisation checks, exact Cloudflare preview resolution, preview headers/assets, Playwright/Chromium setup, and mobile/desktop/quiz browser checks all passed.
+- Main-branch static/legal audit [#41848054905](https://github.com/com-orgs/learnora/actions/runs/41848054905) completed successfully. Cloudflare Pages production deployment [#41848054871](https://github.com/com-orgs/learnora/actions/runs/41848054871) completed successfully; the pre-deployment content verification and Cloudflare deploy step passed.
+- Fresh production fetch of `https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-fractions` confirms the lesson is live with the corrected unlike-denominator worked example: `1/3 + 1/4 = 4/12 + 3/12 = 7/12`. It also confirms all three expected outbound references (OpenStax common denominators, OpenStax different denominators, and Math Learning Center Bridges Intervention).
+- Production metadata verified: title “Adding and Subtracting Fractions | Learnora”, production self-canonical, `index,follow`, expected Open Graph URL and description. Homepage fetch also succeeded. No fetch errors.
+- The lesson's quiz, worksheet and scripts were preserved; preview QA passed the full existing site browser checks. No sitemap or URL change was made.
+- Source-attribution inventory remains **10 of 77 lessons** with a dedicated “Sources and Further Reading” section (67 without a dedicated section). This is a structural count, not a claim that all other pages lack citations elsewhere.
+- Indexing guardrail: no additional GSC URL inspections or duplicate Bing/IndexNow submissions on 4 November. On the next Pakistan calendar day, inspect indexing history before using any remaining daily allowance; keep the 10-unique-URL operational cap.
+
+### Current next actions
+1. Continue the Grade 6 Maths source-attribution and academic accuracy backlog, prioritising the remaining fraction cluster. Each lesson must receive independent math/key review, relevant sources, an isolated preview, and full browser QA before merge.
+2. Refresh and reconcile the 77-lesson source inventory after each batch; do not treat the absence of a dedicated source section as proof that a page has no citations.
+3. Monitor GSC/Bing discovery using deduplicated history and evidence-based reporting; do not claim traffic, rankings or indexing without current data.
+4. Review the existing GitHub Actions duplicate-trigger behaviour for `seo/**` branches and improve it only in a separate safe workflow change; current PR #25 duplicate audit runs both passed.
