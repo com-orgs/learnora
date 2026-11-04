@@ -387,3 +387,11 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Production fetch confirms the Grade 6 Understanding Fractions lesson now displays all four verified references. HTTP 200, self-canonical, `index,follow`, expected title and safe external-link attributes were confirmed.
 - PR #21 is merged and live. This supersedes the earlier pending-deployment note in this checkpoint.
 - Next content task: continue the legacy source-attribution audit in a separate preview branch; estimate 69 lessons remain, pending full inventory refresh. Do not compromise source quality or claim formal curriculum alignment without evidence.
+
+
+### PR #22 production release confirmation — 4 November 2026
+- PR #22 is merged and live. Cloudflare deployment run [#41819235194](https://github.com/com-orgs/learnora/actions/runs/41819235194) succeeded on main; main static audit [#41819235153](https://github.com/com-orgs/learnora/actions/runs/41819235153) also succeeded.
+- Production verification confirms the Grade 6 Equivalent Fractions lesson displays all three verified resources (OpenStax, BBC Bitesize, The Math Learning Center), with expected title/description, self-canonical and `index,follow`.
+- Current estimate: 9/77 lessons have dedicated further-reading sections; 68 remain, pending full inventory refresh. Keep sources directly relevant and curriculum-neutral unless formal alignment is verified.
+- Next content task: continue Grade 6 Maths source and academic accuracy audit in a separate preview branch with full QA before merging.
+- Do not make indexing submissions on 4 November; inspect GSC/Bing history before using any next-day allowance.
