@@ -38,3 +38,14 @@ For each operation record:
 - Next single action
 
 A task is COMPLETE only after its result is independently verified. A tool call being attempted is not proof of success.
+
+## 2026-11-04 — resumed SEO research and PR #17 verification
+- Status: COMPLETE for research recovery and validation; PR merge remains BLOCKED pending full QA evidence.
+- Recovered exact artifact: `COMPETITOR_KEYWORD_RESEARCH_2026-11-03.md` on `research/competitor-keywords-2026-11-03`; contains 50 named benchmark domains and 41 mapped URL targets.
+- Exact priority: existing Grades 6–8 Maths lessons, practice questions, quizzes and worksheets first; Grade 7–8 Science and middle-school English next.
+- Validation: 41 unique keyword-map URLs; 41/41 present in live 104-URL sitemap; 0 duplicates / 0 missing.
+- PR #17 files: competitor research, master roadmap, project status (documentation only). Preview commit `24ad602`; Cloudflare deployment check succeeded; preview smoke tests returned HTTP 200 for homepage, robots.txt and three new subject hubs. Full static/legal/browser QA not independently verified; no merge performed.
+- Search visibility: GSC sitemap performance (5 Oct–1 Nov settled) reports 0 impressions across 104 URLs, 0 clicks; tracker is 1 indexed, 95 unknown, 8 pending. No ranking/indexing claim.
+- Daily GSC cap: later same-day PKT snapshot is 36 combined distinct checked URLs, 1 duplicate history record. No additional inspections run in this continuation; no more inspections on 4 Nov.
+- Files changed: PR #17 branch `LEARNORA_MASTER_ROADMAP_2026-11-04.md` and `PROJECT_STATUS.md`; checkpoint branch `PROJECT_STATE.md` and `TASK_LOG.md`. No production files changed.
+- Next single action: audit the highest-priority existing Grade 6 Maths pages against the recovered keyword map and prepare preview-only fixes with full QA.
