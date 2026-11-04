@@ -537,3 +537,21 @@ Historical session notes below are retained for continuity; use this current sta
 - Fresh production fetch of `/math/grade-6/understanding-fractions` confirmed the “Sources and further reading” section and all four outbound references (OpenStax, BBC Bitesize, The Math Learning Center, NRICH). Production page remains HTTP 200; title is “Understanding Fractions - Grade 6 Maths | Learnora”; canonical is self-referential; robots is `index,follow`; all four links use `target=_blank` and `rel=noopener noreferrer`.
 - PR #21 is therefore complete, merged and live. The earlier “deployment pending” note above is superseded by this verification.
 - Latest main documentation/deployment commit: `241191ab043698fedbfc51131ba5190786c44418`.
+
+
+## Superseding execution checkpoint — 4 November 2026 (PR #22 merged; deployment trigger recovery)
+
+- PR [#22](https://github.com/com-orgs/learnora/pull/22) merged successfully as `b1c040330bf0903a8c4667aad9af36b52d293861`.
+- Added a curriculum-neutral “Sources and further reading” section to `math/grade-6/equivalent-fractions.html` with three supporting resources: OpenStax, BBC Bitesize and The Math Learning Center. No new URL, sitemap, quiz, worksheet, analytics, advertising or metadata changes.
+- Full PR QA run [#41789533003](https://github.com/com-orgs/learnora/actions/runs/41789533003) succeeded: 104 HTML pages, 68 curriculum lessons, 77 accessible quizzes, zero static warnings; legal/pre-monetisation audit passed; preview security headers/CSP/assets/custom 404 passed; browser checks passed across 104 pages at 320/390/768/desktop, 77 quiz submissions, 77 retakes, 79 print actions and 104 performance/resource checks.
+- PR preview [https://seo-grade6-equivalent-fracti.learnora-ab2.pages.dev/math/grade-6/equivalent-fractions](https://seo-grade6-equivalent-fracti.learnora-ab2.pages.dev/math/grade-6/equivalent-fractions) confirmed all three sources, HTTP success, production self-canonical and `index,follow`.
+- Main now points to `b1c040330bf0903a8c4667aad9af36b52d293861`. Fresh production fetch still showed the old content; no post-merge main deployment run was visible. The squash merge commit includes CI-status bot commit text containing `[skip ci]`, which likely suppressed the push workflows. This is a deployment-trigger issue, not a failed QA result.
+- This documentation checkpoint intentionally uses a normal commit message (no skip-ci marker) to trigger the existing main-branch static audit and Cloudflare Pages deployment. Verify workflow completion and production content before marking PR #22 live.
+- Source attribution estimate: 77 lessons total, 9 with dedicated references (7 previous + PR #21 + PR #22), leaving **68 legacy lessons** pending a refreshed inventory.
+- GSC/Bing guardrail: no further inspections or duplicate submissions on 4 November. Review history before using any next-day allowance.
+
+### Next actions
+1. Confirm main static audit and Cloudflare Pages deployment for the current main commit; then verify production Equivalent Fractions page has all three sources, HTTP 200, self-canonical and `index,follow`.
+2. Update this tracker and roadmap with verified deployment state.
+3. Continue the highest-priority Grade 6 Maths source/accuracy review in a separate preview branch with full QA.
+4. Reconcile source inventory before making further backlog-count claims.
