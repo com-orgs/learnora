@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: failure.
-- Tested commit: `55cc48760184ac6ea98758a93e4000cf97dbe25d`
-- Workflow: Learnora Site Audit (run [#41845245941](https://github.com/com-orgs/learnora/actions/runs/41845245941))
-- Last updated automatically: run #41845245941 on branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
+- Status: success.
+- Tested commit: `800bc4b03d7ca98f8d6647f5a9072d55b754ce6f`
+- Workflow: Learnora Site Audit (run [#41845422303](https://github.com/com-orgs/learnora/actions/runs/41845422303))
+- Last updated automatically: run #41845422303 on branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
