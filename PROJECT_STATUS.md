@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: cancelled.
-- Tested commit: `91c1f7223822053fc53a97fd82def6249cb87cd0`
-- Workflow: Learnora Site Audit (run [#41786017048](https://github.com/com-orgs/learnora/actions/runs/41786017048))
-- Last updated automatically: run #41786017048 on branch `seo/grade6-understanding-fractions-sources-2026-11-04`.
+- Status: success.
+- Tested commit: `6c1e5f3462fea5e845449eb82a6fda0cd4a4576b`
+- Workflow: Learnora Site Audit (run [#41786022856](https://github.com/com-orgs/learnora/actions/runs/41786022856))
+- Last updated automatically: run #41786022856 on branch `seo/grade6-understanding-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
