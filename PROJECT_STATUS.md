@@ -666,3 +666,19 @@ Historical session notes below are retained for continuity; use this current sta
 2. Verify production lesson contains the zero-reciprocal note and all three links, with correct canonical and robots metadata; verify homepage.
 3. After confirmation, record PR #26 as live and update inventory to 11/77.
 4. Continue the Grade 6 Maths source/accuracy backlog only after deployment verification.
+
+
+## PR #26 — production release confirmed (4 November 2026)
+
+- Main-branch deployment for merge commit `983a50ce6cdc0ea54735679b7fe8d3b7793c6902` completed successfully in [Cloudflare deployment run #41858083620](https://github.com/com-orgs/learnora/actions/runs/41858083620). The main static/legal audit [#41858083987](https://github.com/com-orgs/learnora/actions/runs/41858083987) also passed.
+- Fresh production fetch confirms `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-fractions` now includes the zero-reciprocal clarification and all three outbound references: OpenStax Prealgebra 2e 4.2, Illustrative Mathematics 6.NS.A.1, and Khan Academy conceptual fraction division.
+- Production title, self-canonical, `index,follow`, Open Graph URL/description and homepage fetch verified. No fetch errors.
+- PR #26 preview browser audit [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731) passed all checks, including mobile/desktop, quizzes, retakes, print actions and performance/resource checks.
+- Dedicated “Sources and Further Reading” inventory is now **11 of 77 lessons** (66 without a dedicated section). This remains a structural count, not proof that the other pages have no citations elsewhere.
+- PR #26 is fully merged and live. No further action required for this release.
+
+### Current next actions
+1. Continue Grade 6 Maths cluster review with the next lesson that benefits from authoritative references and academic verification; avoid adding links without lesson-specific relevance.
+2. Preserve preview-first QA and no-merge-before-green policy.
+3. Keep GSC URL inspection within the 10-unique-URL daily cap; dedupe Bing/IndexNow and report only verified indexing/performance evidence.
+4. Review duplicate `seo/**` workflow triggers separately, without weakening required QA.
