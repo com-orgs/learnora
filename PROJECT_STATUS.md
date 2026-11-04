@@ -497,4 +497,18 @@ Historical session notes below are retained for continuity; use this current sta
 - The target lesson already exists in the sitemap, returns indexable self-canonical metadata and includes a “Sources and further reading” section with EPA, NGSS, England National Curriculum and Australian Curriculum references. No new URL was created.
 - Exact Cloudflare preview: https://seo-grade8-science-earth-res.learnora-ab2.pages.dev/ . Independent preview fetch found the Grade 8 hub H1, updated description, production canonical, `index,follow`, the new card and two relevant internal links to the existing lesson; the target lesson also returned expected H1, self-canonical and `index,follow`.
 - Full preview QA [#41785499567](https://github.com/com-orgs/learnora/actions/runs/41785499567) passed: static and legal audits, preview headers/CSP/assets/custom 404, 104 pages at 320/390/768/desktop, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource checks. No horizontal overflow, quiz keyboard/feedback failure, print failure, third-party request, CSP/runtime error or performance-budget failure.
-- QA tested code commit `473ffb49cf8a65496efb06ff75427a3e66ec0eca`; latest branch head `94604132a6e1a33901e4e5ec4e0c019cd7dfb3b2` differs only by the automatically refreshed CI status block. PR #20 remains open and unmerged; production is unchanged by PR #20.
+- QA tested code commit `473ffb49cf8a65496efb06ff75427a3e66ec0eca`; later branch commits changed only documentation/checkpoint files. PR #20 merged as `892cde2c8c17d27cd95522f384338d38ae5b6a40` and deployed successfully.
+
+
+## 4 November 2026 — PR #20 production release verified
+- PR [#20](https://github.com/com-orgs/learnora/pull/20) merged as `892cde2c8c17d27cd95522f384338d38ae5b6a40`. Production Cloudflare Pages check-run [#126427622558](https://github.com/com-orgs/learnora/runs/126427622558) reported “Deployed successfully”.
+- Live production fetch verified `/science/grade-8/`: updated description includes chemistry, biology, physics, Earth and space science, and sustainability; canonical points to the production hub; robots is `index,follow`; H1 is “Grade 8 Science Learning Resources”. The new card and contextual in-text link both point to the existing Earth Resources lesson (two links total).
+- Live target `/science/grade-8/earth-resources-sustainability-human-impact` also returned the expected title/description, self-canonical and `index,follow`. No new URL or sitemap entry was created.
+- PR #20 preview QA [#41785499567](https://github.com/com-orgs/learnora/actions/runs/41785499567) passed full static/legal/header/browser tests before merge: 104 pages, 77 quizzes, 77 retakes, 79 print actions and 104 performance/resource checks.
+- Current main release includes PR #19 (Grade 6 Maths metadata/heading improvements), PR #17 (competitor research/keyword map/roadmap) and PR #20 (Grade 8 Science internal cross-link). Production remains unchanged except for these reviewed, preview-tested releases.
+
+### Current next actions
+1. Continue academic source attribution and factual accuracy review across the 70 legacy lessons without dedicated references, starting with the Grade 6 Maths priority cluster.
+2. Use Google Search Console query/impression data once it appears; latest settled 28-day baseline through 1 November remains 0 clicks and 0 impressions.
+3. Monitor Google/Bing discovery without duplicate URL inspections or IndexNow submissions; respect the 10 unique GSC URL/day project cap and avoid resending the existing 104 Bing URLs.
+4. Build useful teacher/parent distribution resources and legitimate partnerships; no spam or artificial backlink schemes.
