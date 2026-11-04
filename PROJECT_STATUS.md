@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: failure.
-- Tested commit: `99da986dd71e92453de08fa57b0ca8d13694d0b7`
-- Workflow: Learnora Site Audit (run [#41822873836](https://github.com/com-orgs/learnora/actions/runs/41822873836))
-- Last updated automatically: run #41822873836 on branch `seo/grade6-mixed-numbers-sources-2026-11-04`.
+- Status: pending — the initial branch-push audit was cancelled as the pull request opened; a normal checkpoint commit is being used to trigger the full preview QA.
+- Tested commit: `b6190bcacfc8a79100b342a2fdac869a30746c65`
+- Workflow: Learnora Site Audit (initial push run [#41822873836](https://github.com/com-orgs/learnora/actions/runs/41822873836) was cancelled before QA completed)
+- Last updated automatically: awaiting the full preview QA run on `seo/grade6-mixed-numbers-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -564,3 +564,20 @@ Historical session notes below are retained for continuity; use this current sta
 - PR #22 is now **merged, deployed and production-verified**. Earlier notes about pending deployment and attempted manual workflow dispatch are superseded; the browser UI dispatch attempt was not needed because the normal push workflow subsequently ran successfully.
 - Latest verified main commit at this checkpoint: `0481a2115fe79bcacd4d59e6f092772d0be9c056`.
 - Source-attribution estimate: 77 lessons total, 9 with dedicated sources, 68 remaining; refresh the full inventory before using this estimate as a final count.
+
+
+## PR #23 — Grade 6 Mixed Numbers source and accuracy review (4 November 2026)
+
+- Opened PR [#23](https://github.com/com-orgs/learnora/pull/23) on branch `seo/grade6-mixed-numbers-sources-2026-11-04`.
+- Added a learner-facing Sources and Further Reading section to `math/grade-6/mixed-numbers-improper-fractions.html`; no new URL, sitemap, quiz, worksheet, analytics, advertising or SEO metadata change.
+- Verified references: Manitoba Education Grade 6 outcome 6.N.4; Texas Instruments Education Grades 4–6 interactive mixed-numbers activity; The Open University OpenLearn conversion lesson. Text explicitly avoids claiming formal national-curriculum alignment.
+- Independently checked all visible worked examples, comparison calculation, seven practice answers, worksheet answer key and five quiz answer mappings; no arithmetic/key mismatch found.
+- Cloudflare branch preview deployed successfully at `https://seo-grade6-mixed-numbers-sou.learnora-ab2.pages.dev`. Fresh preview fetch confirmed the new source section, all three outbound URLs, lesson title, production self-canonical, and `index,follow`; homepage also fetched successfully. No source/metadata regression detected.
+- The first GitHub push-triggered audit run [#41822873836](https://github.com/com-orgs/learnora/actions/runs/41822873836) was cancelled during PR creation and did not complete QA. A normal checkpoint commit will trigger a fresh branch audit; do not merge until the full static/legal/header/browser QA is green.
+- Firecrawl balance checked: 0 credits remaining. External reference verification used public source pages instead; no paid credits were spent.
+
+### Next actions
+1. Complete full preview QA for PR #23; inspect every job and resolve any failure before merge.
+2. If green, merge PR #23, verify main deployment, then fetch production page and confirm all three references and canonical/robots metadata.
+3. Refresh the 77-lesson source inventory after release; current estimate before PR #23 is 9/77 with dedicated source sections.
+4. Continue with the next Grade 6 Maths lesson selected from the fraction keyword cluster, without claiming autocomplete suggestions are search-volume metrics.
