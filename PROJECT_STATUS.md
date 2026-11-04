@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: failure.
-- Tested commit: `75083392dd1b5fa61dcbfcecaecf28075e06b677`
-- Workflow: Learnora Site Audit (run [#41848376679](https://github.com/com-orgs/learnora/actions/runs/41848376679))
-- Last updated automatically: run #41848376679 on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04`.
+- Status: success.
+- Tested commit: `400b5a9874ce6c90e8e67a80e237ae659c3e7359`
+- Workflow: Learnora Site Audit (run [#41848440731](https://github.com/com-orgs/learnora/actions/runs/41848440731))
+- Last updated automatically: run #41848440731 on branch `seo/grade6-multiplying-dividing-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
