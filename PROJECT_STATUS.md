@@ -3,6 +3,29 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Current verified state — 4 November 2026 (post-PR #29 release)
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production main commit: `f21f33683147938003509e077168c5d0599b2311`.
+- PR [#29](https://github.com/com-orgs/learnora/pull/29) merged successfully; added curriculum-neutral Sources and Further Reading to Grade 6 Understanding Decimals and Place Value. Merge commit: `f21f33683147938003509e077168c5d0599b2311`.
+- Full preview QA run [#41881452008](https://github.com/com-orgs/learnora/actions/runs/41881452008) passed all 10 steps. QA-tested lesson blob SHA was identical to the lesson blob in the final PR head; the only later change was the project tracker.
+- Cloudflare Pages deployment [#41885045804](https://github.com/com-orgs/learnora/actions/runs/41885045804) completed successfully. Main static/legal audit [#41885045813](https://github.com/com-orgs/learnora/actions/runs/41885045813) completed successfully.
+- Production lesson verified live: https://learnora-ab2.pages.dev/math/grade-6/understanding-decimals. All three references are present: OpenStax Prealgebra 2e 5.1, Khan Academy Grade 6 Math (WNCP) and NCETM Place Value/Estimation/Rounding. Title, description, self-canonical, `index,follow` and Open Graph metadata verified. Production homepage also fetched successfully.
+- Ahrefs Free onboarding email recommends connecting Google Search Console to verify the site and run a Site Audit. The connected Ahrefs API currently returns `Insufficient plan`; no paid usage or upgrade was made. Free account verification through its UI remains a possible owner-side step.
+- Google Tag email says no Google tag was detected. Keep GA4/Google Tag disabled until child/mixed-audience privacy, legal basis and consent requirements are reviewed. Do not paste the suggested tag snippet into the site yet.
+- Cloudflare welcome email contains generic feature suggestions only; no security/performance setting was changed. Review settings individually before enabling, preserving Google/AI crawler access and the existing restrictive CSP.
+- GitHub Actions notification investigation: run [#41878714047](https://github.com/com-orgs/learnora/actions/runs/41878714047) failed only at “Resolve the exact Cloudflare PR branch preview”; static and legal checks passed. This is a workflow timing/trigger issue, not a production-site failure. The workflow currently triggers on every `seo/**` push as well as pull_request, so pushes before Cloudflare has posted a PR preview comment can create noisy false failures. Proposed fix: stop running preview-required QA on standalone `seo/**` pushes; let pull_request opened/synchronize/reopened events run the preview QA. Keep static/legal checks on main and retain explicit workflow_dispatch.
+- A content review of the production decimals lesson noticed the existing “Common Mistakes to Avoid” heading is immediately followed by the next section, with no explanatory content. This predates PR #29; queue a small educational-content correction after the CI trigger fix.
+- No GSC URL inspection was performed in this session. Avoid further inspections today because the prior indexing automation exceeded the intended daily cap. Sitemap/performance reads are quota-free and may be checked separately.
+
+## Next actions — 4 November
+1. [ ] Fix noisy GitHub Actions triggers for `seo/**` branches without weakening pull-request preview QA.
+2. [ ] Add concise, accurate “Common Mistakes to Avoid” content to the decimals lesson via a preview-tested PR.
+3. [ ] Continue source-attribution work on remaining lessons; recalculate actual lesson inventory before updating counts.
+4. [ ] Review current GSC sitemap and settled search performance using read-only reports; no URL inspection requests today.
+5. [ ] Ahrefs Free UI verification only if it can be completed at no cost; do not use paid API features.
+6. [ ] Keep Google tag/GA4 disabled pending child-audience privacy and consent review.
+
 ## Current verified state — 3 November 2026 (post-deployment refresh)
 
 - Production website: https://learnora-ab2.pages.dev/
