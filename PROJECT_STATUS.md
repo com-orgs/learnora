@@ -432,3 +432,52 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Full branch QA [#41636282293](https://github.com/com-orgs/learnora/actions/runs/41636282293) passed with zero static warnings, 92 pages at 320/390/768/desktop widths, 68 quiz submissions, 68 retakes, 70 print actions and 92 performance checks.
 - [x] Main workflow [#41636821146](https://github.com/com-orgs/learnora/actions/runs/41636821146) passed static and legal/pre-monetisation checks.
 - Phase 14 first remediation batch is merged and live. The wider academic audit remains in progress: source attribution for legacy lessons, full topic-by-topic accuracy verification and genuine subject-expert review remain open.
+
+## Daily indexing/discovery checkpoint — 4 November 2026 (Pakistan time)
+
+- Live production sitemap was fetched from `https://learnora-ab2.pages.dev/sitemap.xml`: HTTP 200, 104 unique URLs. The GSC Sitemaps API reports the same sitemap last submitted 2026-11-03T15:07:21Z, still pending, with 0 warnings and 0 errors. Bing Webmaster feed reports Success, 104 URLs, submitted and last crawled 2026-11-03.
+- GSC Indexing Tracker read-only snapshot: 104 tracked URLs; 1 indexed, 95 `URL is unknown to Google`, 8 pending, 0 errors, 0 warnings. Last tracker check: 2026-11-04T03:28:05Z. These unknown states are not proof of a robots/noindex defect.
+- Pakistan-date deduplication audit (Asia/Karachi, 2026-11-04): tracker latest-check records show 31 distinct URLs checked today; URL Inspection history shows 6 rows across 5 distinct URLs; the two sources have 0 URL overlap. Combined: 36 distinct URLs and 37 records; 1 repeated record (the `/math/grade-6/` URL appears twice in inspection history). This exceeds the project cap of 10 distinct URLs by 26. No additional inspections were run in this session; no manual Google Request Indexing UI submissions were made.
+- Exact URLs recorded as checked today:
+  - `/curriculum/grade-6-8-maths-study-plan`
+  - `/computer-science/`
+  - `/english/grade-6-8/argument-writing-claims-reasons-evidence`
+  - `/financial-literacy/`
+  - `/worksheets/international-middle-school-maths`
+  - `/curriculum/us-common-core-math`
+  - `/terms`
+  - `/math/grade-6/perimeter-area-shapes`
+  - `/math/grade-7/area-surface-area-volume`
+  - `/math/grade-6/equivalent-fractions`
+  - `/math/grade-7/equations-and-inequalities`
+  - `/math/grade-6/adding-subtracting-fractions`
+  - `/privacy-policy`
+  - `/math/grade-7/adding-subtracting-integers`
+  - `/math/grade-6/multiplying-dividing-decimals`
+  - `/math/grade-6/introduction-to-ratios`
+  - `/math/grade-6/metric-units-and-conversions`
+  - `/math/grade-6/percentage-increase-decrease`
+  - `/math/grade-7/rational-numbers-and-operations`
+  - `/math/grade-6/order-of-operations`
+  - `/math/grade-6/comparing-ordering-fractions`
+  - `/math/grade-6/understanding-decimals`
+  - `/math/grade-6/understanding-percentages`
+  - `/math/grade-6/multiplying-dividing-fractions`
+  - `/math/grade-6/adding-subtracting-decimals`
+  - `/math/grade-6/mixed-numbers-improper-fractions`
+  - `/about`
+  - `/math/grade-7/geometry-angles-scale-drawings`
+  - `/math/grade-7/ratios-rates-proportional-relationships`
+  - `/math/grade-6/volume-of-3d-shapes`
+  - `/math/grade-7/simplifying-algebraic-expressions`
+  - `/math/grade-6/`
+  - `/math/grade-6/understanding-fractions`
+  - `/ai-literacy/`
+  - `/`
+  - `/science/grade-8/elements-compounds-and-chemical-reactions`
+- Inspection history rows on the Pakistan date: `/math/grade-6/` (two records), `/math/grade-6/understanding-fractions`, `/ai-literacy/`, `/`, and `/science/grade-8/elements-compounds-and-chemical-reactions`. These five URLs are included in the 36-URL combined set above, not additional URLs.
+- Project rule remains: never inspect the same URL twice on one Pakistan calendar date; no more than 10 distinct URLs/day. The app's automatic hourly tracker is active and its exposed configuration only reports active/stale-threshold/email-digest fields; no cron-frequency or pause control is exposed by the connected tool. Do not call `check_tracked_url_now` again today. The daily-cap breach is caused by pre-existing automated tracker activity; exact cron execution schedule cannot be changed through the available interface.
+- Bing: crawl-issues endpoint returned 0 issue URLs; daily crawl-statistics endpoint returned no dated rows (not evidence of zero crawling). URL-submission quota: 100/day and 2,700/month. IndexNow key is configured and verified. Full history: 296 rows; all 104 current sitemap URLs already appear in history, so 0 new URLs submitted and 0 duplicate resubmissions made today. HTTP 202 means accepted/key validation pending, not confirmed indexing. Direct Bing URL Submission action is not exposed by this connection.
+- No Google manual Request Indexing command was submitted. Google URL Inspection API checks status only. Browser UI submission controls were not available.
+- Current GSC API inspection quota snapshot: 23 used / 2,000, 1,977 remaining (separate from the stricter project limit of 10 distinct URLs/day).
+- Next actions: keep inspection calls disabled for the remainder of 4 November; investigate the GSC Wizard hourly tracker automation control/support route; preserve the 10-URL Pakistan-date cap; inspect only materially changed or never-checked high-priority URLs on a future Pakistan date; continue sitemap/Bing monitoring without redundant IndexNow sends. Production code, metadata and published content were not changed.
