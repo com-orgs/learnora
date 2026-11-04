@@ -388,9 +388,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `8e7fdca9f5bfc05f8bebc7f59be8708983e98507`
-- Workflow: Learnora Site Audit (run [#41886318918](https://github.com/com-orgs/learnora/actions/runs/41886318918))
-- Last updated automatically: run #41886318918 on branch `seo/grade6-adding-subtracting-decimals-sources-2026-11-04`.
+- Tested commit: `90cdc499c80798ba104229fb171d5aa7a1f876e1`
+- Workflow: Learnora Site Audit (run [#41887147848](https://github.com/com-orgs/learnora/actions/runs/41887147848))
+- Last updated automatically: run #41887147848 on branch `seo/grade6-multiplying-dividing-decimals-complete-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
