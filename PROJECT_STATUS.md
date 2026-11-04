@@ -3,6 +3,31 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Current verified state — 4 November 2026 (post-PR #33 release)
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production main commit: `b8807f157125d1e43c47be1a6d38ac99b3aa9a85`.
+- PR [#30](https://github.com/com-orgs/learnora/pull/30) is merged. Preview-specific QA steps now run only for pull-request events; static and legal audits continue on pushes/main. Verified by successful main push audit [#41888208184](https://github.com/com-orgs/learnora/actions/runs/41888208184), where preview/browser steps were correctly skipped.
+- PR [#31](https://github.com/com-orgs/learnora/pull/31) merged and deployed: Grade 6 Adding and Subtracting Decimals now cites OpenStax Prealgebra 2e 5.2, Khan Academy 6th Grade Arithmetic with Rational Numbers, and Illustrative Mathematics' Jayden's Snacks.
+- PR [#33](https://github.com/com-orgs/learnora/pull/33) merged as `b8807f157125d1e43c47be1a6d38ac99b3aa9a85`. It fills the previously empty “7. Common Mistakes to Avoid” section in the Grade 6 Adding and Subtracting Decimals lesson with five learner-facing explanations: decimal-point alignment, placeholder zeros, answer decimal placement, regrouping and estimation.
+- PR33 full preview QA [#41887703666](https://github.com/com-orgs/learnora/actions/runs/41887703666) passed all 10 steps, including static, legal, exact Cloudflare preview, headers/assets, Playwright/Chromium and mobile/desktop/quiz checks.
+- Cloudflare Pages deployment [#41888208187](https://github.com/com-orgs/learnora/actions/runs/41888208187) completed successfully. Main static/legal audit [#41888208184](https://github.com/com-orgs/learnora/actions/runs/41888208184) completed successfully.
+- Production page verified live: https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-decimals. The new five-point Common Mistakes section is present; title, description, self-canonical, `index,follow`, Open Graph metadata and all three learning references remain correct.
+- GSC read-only on-page audit of 25 explicit URLs (homepage, Grade 6 hub, 22 lesson pages and one English page): all 25 returned HTTP 200, all 25 indexable, zero critical/high/medium issues; 42 low-severity observations. Main recurring items: lesson pages lack structured data; many long meta descriptions; a few long titles; favicon link missing on several legacy lesson pages. These are quality improvements, not indexability blockers. No URL Inspection API requests were made.
+- GSC performance through 2 November remains 0 clicks and 0 impressions; 3 November onward is incomplete. Sitemap submitted 3 November remains pending with 0 warnings and 0 errors.
+- Ahrefs API still returns `Insufficient plan`; use only the free account UI/GSC connection path if available, with no paid upgrade or API usage. Semrush MCP has no API units; no trial or paid upgrade activated.
+- Google Tag/GA4 remains disabled pending child/mixed-audience privacy classification, legal basis and consent review. Cloudflare Speed Brain, Bot Protection/Anti-AI Bot Scraping and Page Shield remain unchanged pending feature-by-feature safety review.
+- Gmail monitoring findings have been captured: Ahrefs Free onboarding, Google Search Console data-start notification, Google Tag not detected, generic Cloudflare feature suggestions, and the GitHub preview-workflow false-failure root cause. Continue checking relevant GitHub, Ahrefs, Semrush, Google, Bing and Cloudflare notifications during future Learnora sessions.
+
+## Next actions — 4 November
+1. [ ] Fix long meta descriptions (keep concise, accurate and page-specific) on the pages surfaced by the 25-page GSC audit.
+2. [ ] Add a consistent root `/favicon.svg` reference to legacy lesson pages where missing; verify the asset exists and preview-test before merge.
+3. [ ] Evaluate structured data for lesson pages. Do not add generic schema blindly; select a valid, useful schema type and test output before a controlled rollout.
+4. [ ] Recount actual lesson inventory and source-section coverage from the current repository tree before updating coverage statistics.
+5. [ ] Continue Grade 6 Maths references with academically verified sources and full preview QA.
+6. [ ] Read GSC performance/sitemap reports only; no URL inspections today due to the earlier inspection-cap overrun.
+7. [ ] Keep Google Tag/GA4 and Cloudflare security/performance toggles unchanged until privacy/crawler compatibility is established.
+
 ## Current verified state — 4 November 2026 (post-PR #31 release)
 
 - Production website: https://learnora-ab2.pages.dev/
