@@ -395,3 +395,10 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Current estimate: 9/77 lessons have dedicated further-reading sections; 68 remain, pending full inventory refresh. Keep sources directly relevant and curriculum-neutral unless formal alignment is verified.
 - Next content task: continue Grade 6 Maths source and academic accuracy audit in a separate preview branch with full QA before merging.
 - Do not make indexing submissions on 4 November; inspect GSC/Bing history before using any next-day allowance.
+
+
+### PR #23 production release confirmation — 4 November 2026
+- PR #23 merged as `dd08771c2f672cc71c464d1793e34e8f8588c3f1`; full preview audit run [#41823111786](https://github.com/com-orgs/learnora/actions/runs/41823111786) succeeded, including static, legal, preview headers/assets and mobile/desktop/quiz browser checks.
+- Production fetch now confirms all three Grade 6 Mixed Numbers references (Manitoba Education, Texas Instruments Education, Open University OpenLearn), expected page metadata, self-canonical and `index,follow`. Homepage also fetched successfully.
+- Earlier note that the PR #23 release was pending is superseded.
+- Next: refresh the actual source-attribution inventory across all 77 lessons, then select the next priority Grade 6 Maths page for a source and accuracy PR. Keep the 9/77 estimate provisional until inventory is complete.
