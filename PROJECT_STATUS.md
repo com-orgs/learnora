@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: success.
-- Tested commit: `632cdddde3ebf7763fffcd12b9a69ac9c530e64a`
-- Workflow: Learnora Site Audit (run [#41682977213](https://github.com/com-orgs/learnora/actions/runs/41682977213))
-- Last updated automatically: run #41682977213 on branch `audit/seo-ga4-safety-2026-11-03`.
+- Status: cancelled.
+- Tested commit: `ad4910efa833700c358390ccbb00c0127fc0732f`
+- Workflow: Learnora Site Audit (run [#41770289008](https://github.com/com-orgs/learnora/actions/runs/41770289008))
+- Last updated automatically: run #41770289008 on branch `audit/pr19-full-qa-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
