@@ -58,3 +58,10 @@ A task is COMPLETE only after its result is independently verified. A tool call 
 - Cloudflare check was still Building at last verified status; guessed preview host returned 404 and was discarded. No full QA passed; no merge or deployment to production.
 - Files changed: three HTML files and PROJECT_STATUS.md on PR #19 branch; PROJECT_STATE.md and TASK_LOG.md on checkpoint branch.
 - Next single action: recheck PR #19's Cloudflare check for the exact preview URL and perform preview QA.
+
+## 2026-11-04 — PR #19 preview smoke test
+- Status: PREVIEW SMOKE TEST PASS; FULL QA PENDING.
+- Cloudflare preview exact URL: https://seo-grade6-maths-onpage-2026.learnora-ab2.pages.dev/ (code commit `5ac4a63`).
+- Verified all three changed routes HTTP 200, index,follow, one H1, production self-canonical; metadata lengths: Comparing Fractions description 160, Adding/Subtracting Fractions description 142, Decimals title 53 and description 159. Duplicate decimals section heading is corrected.
+- Full static/legal/browser/accessibility/quiz/retake/print QA not verified because workflow triggers only on main, audit/** or manual dispatch, not seo/**. PR #19 open, not merged. Production untouched.
+- Next: arrange full QA evidence before merge.
