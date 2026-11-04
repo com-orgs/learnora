@@ -49,3 +49,12 @@ A task is COMPLETE only after its result is independently verified. A tool call 
 - Daily GSC cap: later same-day PKT snapshot is 36 combined distinct checked URLs, 1 duplicate history record. No additional inspections run in this continuation; no more inspections on 4 Nov.
 - Files changed: PR #17 branch `LEARNORA_MASTER_ROADMAP_2026-11-04.md` and `PROJECT_STATUS.md`; checkpoint branch `PROJECT_STATE.md` and `TASK_LOG.md`. No production files changed.
 - Next single action: audit the highest-priority existing Grade 6 Maths pages against the recovered keyword map and prepare preview-only fixes with full QA.
+
+## 2026-11-04 — Grade 6 Maths on-page audit and preview PR
+- Status: IN PROGRESS / PREVIEW QA PENDING.
+- Audited six Grade 6 Maths pages using live page fetch and GSC Wizard on-page audit: 6/6 HTTP 200, self-canonical, indexable, one H1; 0 critical/high/medium issues, 8 low findings. Specific findings: two long meta descriptions, one long title, no lesson structured data on three pages, duplicate “Continue Learning” heading on decimals page.
+- Changed only three HTML files on isolated branch `seo/grade6-maths-onpage-2026-11-04`: two descriptions shortened; decimals title refined; second duplicate heading renamed to “Related Measurement Topics”.
+- Opened PR #19, head `5ac4a632be6ac4fe295a142574c5ecf7f2115bf6`; exactly 3 files changed, 4 insertions / 4 deletions. Production untouched.
+- Cloudflare check was still Building at last verified status; guessed preview host returned 404 and was discarded. No full QA passed; no merge or deployment to production.
+- Files changed: three HTML files and PROJECT_STATUS.md on PR #19 branch; PROJECT_STATE.md and TASK_LOG.md on checkpoint branch.
+- Next single action: recheck PR #19's Cloudflare check for the exact preview URL and perform preview QA.
