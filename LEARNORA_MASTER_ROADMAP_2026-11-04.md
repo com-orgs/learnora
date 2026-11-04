@@ -380,3 +380,10 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 3. Refresh the 77-lesson source inventory after each small batch; do not add generic or unverified sources just to increase coverage.
 4. Do not perform additional GSC URL inspections or Bing/IndexNow resubmissions on 4 November; inspect history first on the next Pakistan calendar day.
 5. Keep traffic/ranking claims evidence-based. The latest settled GSC report through 1 November remains 0 clicks and 0 impressions; source additions and technical QA do not guarantee indexing or traffic.
+
+
+### PR #21 production release confirmation — 4 November 2026
+- Cloudflare Pages deployment [#41789314019](https://github.com/com-orgs/learnora/actions/runs/41789314019) succeeded on main; main static/legal audit [#41789314066](https://github.com/com-orgs/learnora/actions/runs/41789314066) also succeeded.
+- Production fetch confirms the Grade 6 Understanding Fractions lesson now displays all four verified references. HTTP 200, self-canonical, `index,follow`, expected title and safe external-link attributes were confirmed.
+- PR #21 is merged and live. This supersedes the earlier pending-deployment note in this checkpoint.
+- Next content task: continue the legacy source-attribution audit in a separate preview branch; estimate 69 lessons remain, pending full inventory refresh. Do not compromise source quality or claim formal curriculum alignment without evidence.
