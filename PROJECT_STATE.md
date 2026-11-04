@@ -92,3 +92,13 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - [ ] Full static/legal/Playwright browser QA remains unrun/unverified. No manual dispatch action was available through the connected GitHub tools. Do not merge or deploy production.
 - Files inspected: `.github/workflows/site-audit.yml`, `scripts/audit-site.mjs`, `scripts/audit-legal-readiness.mjs`, `scripts/browser-smoke.mjs`, `PROJECT_STATUS.md`. No repository files changed in this QA investigation.
 - Next single action: obtain a trustworthy way to run static/legal/browser checks against the exact PR #19 commit and commit-specific preview without triggering production deployment or misreporting QA.
+
+
+## 2026-11-04 — isolated PR #19 QA run started
+- [x] Created isolated audit-only branch `audit/pr19-full-qa-2026-11-04` from PR #19 head `ad4910efa833700c358390ccbb00c0127fc0732f`.
+- [x] Updated only the workflow file on that audit branch so both the security-header/asset check and Playwright browser-smoke test target the verified PR #19 deployment URL `https://0b8f0f63.learnora-ab2.pages.dev`, not production or the stale branch alias.
+- [x] Workflow commit: `61c518645a78f35e4e16d45e539d57fe4b804868`.
+- [x] GitHub Actions run #665 / ID `41770292874` was created for the updated workflow commit. At last check it was pending and had no jobs yet; no test conclusion is available.
+- [ ] Wait for run #665, inspect every job and step, retrieve logs for failures, and verify its actual target SHA/URL before recording QA as passed.
+- Safety: audit branch only; no PR opened from it, no merge, no production code or deployment change. Cloudflare may create a preview for the audit branch; do not treat that as production.
+- Next single action: poll run #665 and inspect results; do not merge PR #19 until all relevant QA is green.
