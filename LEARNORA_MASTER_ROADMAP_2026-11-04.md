@@ -363,3 +363,20 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 2. Wait for settled GSC query/impression data before asserting rankings; the latest 28-day report through 1 Nov has 0 clicks and 0 impressions.
 3. Develop useful teacher/parent distribution resources and partnerships without spam or artificial link schemes.
 4. Monitor discovery without duplicate GSC inspections or resubmitting the existing 104 Bing URLs.
+
+
+## Superseding execution checkpoint — 4 November 2026 (PR #21)
+
+- PR [#21](https://github.com/com-orgs/learnora/pull/21) merged to main as `06b2c35d07244606c0a840b7cc982b8748eac7b8` after successful full static, legal, preview-security and browser QA.
+- Grade 6 Understanding Fractions now has four further-reading references: OpenStax, BBC Bitesize, The Math Learning Center and NRICH. This is a curriculum-neutral resource list, not a claim of formal curriculum alignment.
+- QA evidence: 104 pages at 320/390/768/desktop, 77 quizzes, 77 retakes, 79 print actions, 104 performance/resource checks; static audit 104 HTML pages / 68 lesson files / 77 accessible quizzes / zero warnings; legal audit and preview security/CSP/custom-404 checks passed.
+- Source-attribution backlog estimate reduced from 70 to 69 legacy lessons (77 total lesson pages, now 8 with dedicated sources sections). Refresh the inventory before relying on this estimate for future planning.
+- Merge commit: `06b2c35d07244606c0a840b7cc982b8748eac7b8`. Main-branch documentation checkpoint commit: `8ff63c13b5dc419553b740d208f83e680b6f87d5`.
+- Production page verification immediately after merge still returned the previous page without the new references section. Treat Cloudflare deployment as pending until the main deployment workflow completes and a fresh production fetch confirms the new content.
+
+### Immediate next priorities
+1. Confirm Cloudflare Pages deployment for the current main commit; production must visibly contain the four references and retain HTTP 200, self-canonical and `index,follow`.
+2. Continue source attribution and academic accuracy review with the next priority Grade 6 Maths lesson; use isolated preview branches and full QA before merge.
+3. Refresh the 77-lesson source inventory after each small batch; do not add generic or unverified sources just to increase coverage.
+4. Do not perform additional GSC URL inspections or Bing/IndexNow resubmissions on 4 November; inspect history first on the next Pakistan calendar day.
+5. Keep traffic/ranking claims evidence-based. The latest settled GSC report through 1 November remains 0 clicks and 0 impressions; source additions and technical QA do not guarantee indexing or traffic.
