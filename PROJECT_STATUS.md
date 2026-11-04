@@ -433,9 +433,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `bd37fcd4de89c389aba56ae792ad335869b77062`
-- Workflow: Learnora Site Audit (run [#41890456465](https://github.com/com-orgs/learnora/actions/runs/41890456465))
-- Last updated automatically: run #41890456465 on branch `seo/grade6-meta-descriptions-favicon-cleanup-2026-11-04`.
+- Tested commit: `9b2e2137d598f5e32e8cbf570eed0e570e387be9`
+- Workflow: Learnora Site Audit (run [#41891925209](https://github.com/com-orgs/learnora/actions/runs/41891925209))
+- Last updated automatically: run #41891925209 on branch `seo/grade6-breadcrumb-structured-data-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
