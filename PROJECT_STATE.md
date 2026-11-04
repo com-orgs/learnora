@@ -70,3 +70,12 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - [x] Opened PR #19: https://github.com/com-orgs/learnora/pull/19; exactly three HTML files changed, head `5ac4a632be6ac4fe295a142574c5ecf7f2115bf6`.
 - [ ] Preview QA pending: Cloudflare check still reported Building at last verified check; no exact preview URL yet. Do not merge until the exact preview is verified and static/legal/mobile/desktop/accessibility/quiz/worksheet QA passes.
 - Next single action: recheck PR #19 Cloudflare deployment status, then test the exact preview pages and QA suite.
+
+## PR #19 preview smoke-test result — 4 November 2026
+- [x] Cloudflare Pages deployed code commit `5ac4a63`; verified exact preview https://seo-grade6-maths-onpage-2026.learnora-ab2.pages.dev/.
+- [x] Three changed routes returned HTTP 200, one H1, `index,follow`, and production self-canonical:
+  - Comparing and Ordering Fractions — title 59 chars, description 160.
+  - Adding and Subtracting Fractions — title 59 chars, description 142.
+  - Grade 6 Decimals — title 53 chars, description 159; second heading changed to Related Measurement Topics; duplicate Continue Learning heading removed.
+- [ ] Full static/legal/browser/keyboard/accessibility/quiz/retake/worksheet-print QA remains unverified. Current repository workflow does not trigger on `seo/**`; only `main`, `audit/**` and manual dispatch are configured. PR #19 remains open/unmerged. Production untouched.
+- Next: arrange full required QA for PR #19 before merge; no production release without explicit approval.
