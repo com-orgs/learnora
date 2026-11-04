@@ -3,6 +3,30 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Current verified state — 4 November 2026 (post-PR #37 release)
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production main commit: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`.
+- PR [#37](https://github.com/com-orgs/learnora/pull/37) merged and deployed. Grade 6 Introduction to Ratios now has a Sources and Further Reading section linking to:
+  1. OpenStax Prealgebra 2e 5.6 Ratios and Rate: https://openstax.org/books/prealgebra-2e/pages/5-6-ratios-and-rate
+  2. Khan Academy Grade 6 Ratios and Proportional Relationships: https://www.khanacademy.org/commoncore/grade-6-RP
+  3. Illustrative Mathematics Grade 6 6.RP.A: https://tasks.illustrativemathematics.org/content-standards/6/RP/A/standards
+- Lesson remains curriculum-neutral; sources are supplementary and do not imply formal alignment to a specific national curriculum.
+- Academic QA checked three worked examples, six practice answers, five quiz mappings/explanations and seven worksheet answers; ratio order, simplification, equivalent ratios and scale-factor calculations are correct. Quiz script unchanged.
+- Full PR37 preview QA [#41893422569](https://github.com/com-orgs/learnora/actions/runs/41893422569) passed all 10 steps. The final PR head differed from the QA-tested commit only by a CI-generated tracker commit; the lesson HTML blob was identical.
+- Cloudflare Pages production deployment [#41893873486](https://github.com/com-orgs/learnora/actions/runs/41893873486) completed successfully. Main static/legal audit [#41893873619](https://github.com/com-orgs/learnora/actions/runs/41893873619) completed successfully.
+- Production fetch verified all three links on the ratios lesson, plus the existing favicon, self-canonical, `index,follow`, title and Open Graph metadata.
+- Latest full GSC Wizard audit of 25 Grade 6 pages after PR35 returned 25/25 HTTP 200 and indexable, zero findings. PR36 and PR37 changed only a favicon link and supplemental references; no indexability or metadata changes.
+- GSC performance through 2 November still shows 0 clicks and 0 impressions; later data is incomplete. Sitemap remains pending with 0 warnings/errors. No URL Inspection API requests were made.
+- Ahrefs API still returns `Insufficient plan`; no paid usage or upgrade. Semrush MCP has no API units; no trial or paid upgrade activated. Google Tag/GA4 remains disabled pending child/mixed-audience privacy classification and consent review. Cloudflare feature toggles remain unchanged pending crawler/privacy compatibility review.
+
+## Next actions — 4 November
+1. [ ] Continue academically verified references on remaining Grade 6 Maths lessons, starting with percentages and remaining decimals pages.
+2. [ ] Extend BreadcrumbList to English, Science, Computer Science, AI Literacy and Financial Literacy only after confirming their actual visible breadcrumb paths.
+3. [ ] Recount source-section coverage across the 77 lesson pages from the current repository tree before updating inventory percentages.
+4. [ ] Keep GSC monitoring read-only; no URL inspections today due to the earlier inspection-cap overrun.
+5. [ ] Keep Google Tag/GA4 and Cloudflare security/performance toggles unchanged until privacy/crawler compatibility is established.
+
 ## Current verified state — 4 November 2026 (post-PR #36 release)
 
 - Production website: https://learnora-ab2.pages.dev/
