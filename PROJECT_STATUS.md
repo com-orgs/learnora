@@ -359,9 +359,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: failure.
-- Tested commit: `502c26bcb6d30ade3223b350b7c99a6d56c0da2b`
-- Workflow: Learnora Site Audit (run [#41845189479](https://github.com/com-orgs/learnora/actions/runs/41845189479))
-- Last updated automatically: run #41845189479 on branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
+- Tested commit: `55cc48760184ac6ea98758a93e4000cf97dbe25d`
+- Workflow: Learnora Site Audit (run [#41845245941](https://github.com/com-orgs/learnora/actions/runs/41845245941))
+- Last updated automatically: run #41845245941 on branch `seo/grade6-adding-subtracting-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
