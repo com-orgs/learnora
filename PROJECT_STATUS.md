@@ -3,6 +3,24 @@
 > **Single source of truth for all future chats and development sessions.**
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
+## Current verified state — 4 November 2026 (post-PR #36 release)
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production main commit: `d7ef944f9e638a09e6e87e8a61dff9a627b1b2bd`.
+- PR [#36](https://github.com/com-orgs/learnora/pull/36) merged and deployed. Added the existing `/favicon.svg` reference to the Grade 6 Introduction to Ratios lesson, the one remaining Grade 6 lesson without a favicon in the prior 25-URL audit.
+- Full preview QA [#41892701886](https://github.com/com-orgs/learnora/actions/runs/41892701886) passed all 10 steps, including static/legal, exact Cloudflare preview, headers/assets, Playwright/Chromium and mobile/desktop/quiz browser checks.
+- Cloudflare Pages deployment [#41893147938](https://github.com/com-orgs/learnora/actions/runs/41893147938) completed successfully. Production fetch of Introduction to Ratios confirmed the root favicon, self-canonical and `index,follow`.
+- The last full GSC Wizard audit after PR35 showed 25/25 pages HTTP 200/indexable, zero findings and all 25 titles/descriptions within length checks. PR36 only added the missing favicon reference; no URL, content, metadata or indexing directives changed.
+- PR35 BreadcrumbList JSON-LD remains live on all 23 Grade 6 Maths lessons and was structurally validated before merge.
+
+## Next actions — 4 November
+1. [ ] Add three academically appropriate references to Grade 6 Introduction to Ratios: OpenStax Prealgebra 2e 5.6, Khan Academy Grade 6 Ratios and Proportional Relationships, and Illustrative Mathematics Grade 6 6.RP.A standards/tasks. Keep the lesson curriculum-neutral; no formal alignment claim.
+2. [ ] Extend BreadcrumbList to English, Science, Computer Science, AI Literacy and Financial Literacy only after confirming their actual visible breadcrumb paths.
+3. [ ] Recount source-section coverage across the 77 lesson pages from the current repository tree before updating inventory percentages.
+4. [ ] Continue academically verified learning references on remaining Grade 6 Maths lessons.
+5. [ ] Keep GSC monitoring read-only; no URL inspections today due to the earlier inspection-cap overrun.
+6. [ ] Keep Google Tag/GA4 and Cloudflare security/performance toggles unchanged until privacy/crawler compatibility is established.
+
 ## Current verified state — 4 November 2026 (post-PR #35 release)
 
 - Production website: https://learnora-ab2.pages.dev/
