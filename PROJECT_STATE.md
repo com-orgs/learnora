@@ -102,3 +102,10 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - [ ] Wait for run #665, inspect every job and step, retrieve logs for failures, and verify its actual target SHA/URL before recording QA as passed.
 - Safety: audit branch only; no PR opened from it, no merge, no production code or deployment change. Cloudflare may create a preview for the audit branch; do not treat that as production.
 - Next single action: poll run #665 and inspect results; do not merge PR #19 until all relevant QA is green.
+
+
+## 2026-11-04 — browser QA execution in progress
+- [x] Static website audit, legal/pre-monetisation readiness audit, preview headers/assets check, and Playwright/Chromium installation all completed successfully in GitHub Actions run #665.
+- [ ] Playwright browser step is still running. It iterates all sitemap routes, checks 320/390/768px and desktop layout, Axe WCAG 2.1 A/AA, resource/performance budgets, homepage search/filter/quick-quiz, lesson quiz keyboard submission/feedback/retake, worksheet print handlers, and runtime/resource errors.
+- Latest run status: `in_progress`; active step: `Run mobile, desktop and quiz browser checks against this commit`. No browser-test conclusion yet.
+- Do not merge PR #19 until this step and tracker refresh complete successfully, and review any browser failures.
