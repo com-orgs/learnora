@@ -52,7 +52,7 @@ jobs:
           preview_url=''
           for attempt in {1..30}; do
             comments=$(gh api "repos/$REPOSITORY/issues/$pr_number/comments?per_page=100")
-            preview_url=$(printf '%s' "$comments" | jq -r '[.[] | select(.user.login == "cloudflare-workers-and-pages[bot]") | .body | try capture("Branch Preview URL:</td><td>\\s*<a href=\u0027(?<url>https://[^\u0027]+)\u0027").url catch empty] | map(select(length > 0)) | last // empty')
+            preview_url=$(printf '%s' "$comments" | jq -r '[.[] | select(.user.login == "cloudflare-workers-and-pages[bot]") | .body | try capture("Branch Preview URL:</strong></td><td>\\s*<a href=\u0027(?<url>https://[^\u0027]+)\u0027").url catch empty] | map(select(length > 0)) | last // empty')
             if [ -n "$preview_url" ]; then break; fi
             echo "Waiting for Cloudflare branch preview comment ($attempt/30)..."
             sleep 10
