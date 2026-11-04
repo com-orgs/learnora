@@ -529,3 +529,11 @@ Historical session notes below are retained for continuity; use this current sta
 2. Refresh the main project tracker and roadmap with the deployment result.
 3. Continue the source-attribution and accuracy review with the next high-priority Grade 6 Maths lesson, in an isolated branch and full preview QA.
 4. On the next Pakistan calendar day, check the GSC inspection history before using any daily inspection allowance; never repeat URLs.
+
+
+### PR #21 production deployment verification — 4 November 2026
+- Cloudflare Pages deployment workflow [#41789314019](https://github.com/com-orgs/learnora/actions/runs/41789314019) completed successfully on main commit `241191ab043698fedbfc51131ba5190786c44418`; deployment job and content/legal preflight both passed.
+- Main static/legal audit [#41789314066](https://github.com/com-orgs/learnora/actions/runs/41789314066) completed successfully.
+- Fresh production fetch of `/math/grade-6/understanding-fractions` confirmed the “Sources and further reading” section and all four outbound references (OpenStax, BBC Bitesize, The Math Learning Center, NRICH). Production page remains HTTP 200; title is “Understanding Fractions - Grade 6 Maths | Learnora”; canonical is self-referential; robots is `index,follow`; all four links use `target=_blank` and `rel=noopener noreferrer`.
+- PR #21 is therefore complete, merged and live. The earlier “deployment pending” note above is superseded by this verification.
+- Latest main documentation/deployment commit: `241191ab043698fedbfc51131ba5190786c44418`.
