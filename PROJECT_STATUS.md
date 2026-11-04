@@ -27,6 +27,29 @@
 4. [ ] Keep GSC monitoring read-only; no URL inspections today due to the earlier inspection-cap overrun.
 5. [ ] Keep Google Tag/GA4 and Cloudflare security/performance toggles unchanged until privacy/crawler compatibility is established.
 
+## Current verified state — 4 November 2026 (post-PR #37 release)
+
+- Production website: https://learnora-ab2.pages.dev/
+- Latest production main commit: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`.
+- PR [#36](https://github.com/com-orgs/learnora/pull/36) merged and deployed. Added the existing `/favicon.svg` reference to the Grade 6 Introduction to Ratios lesson.
+- PR [#37](https://github.com/com-orgs/learnora/pull/37) merged and deployed. Added three supplementary references to Grade 6 Introduction to Ratios: OpenStax Prealgebra 2e 5.6 Ratios and Rate; Khan Academy Grade 6 Ratios and Proportional Relationships; Illustrative Mathematics Grade 6 6.RP.A standards/tasks. The lesson remains curriculum-neutral and makes no formal alignment claim.
+- PR37 academic QA checked three worked examples, six practice answer mappings, five quiz answer keys/explanations and seven worksheet answer keys. Ratio order, simplification, equivalent ratios and scale-factor calculations are correct; quiz script unchanged.
+- PR37 full preview QA [#41893422569](https://github.com/com-orgs/learnora/actions/runs/41893422569) passed all 10 steps. The final PR head differed from the QA-tested commit only by a CI-generated tracker commit; lesson HTML blob was identical.
+- Cloudflare Pages deployment [#41893873486](https://github.com/com-orgs/learnora/actions/runs/41893873486) completed successfully. Main static/legal audit [#41893873619](https://github.com/com-orgs/learnora/actions/runs/41893873619) completed successfully.
+- Production fetch verified all three ratios references, existing favicon, self-canonical, `index,follow`, title and Open Graph metadata.
+- Latest full GSC Wizard audit after PR35: homepage, Grade 6 hub and all 23 Grade 6 Maths lessons; 25/25 HTTP 200 and indexable, zero findings, all titles/descriptions within length checks, all favicons present after PR36.
+- Gmail monitoring review: eight historical GitHub workflow-failure emails were checked. All eight runs failed only at “Resolve the exact Cloudflare PR branch preview”; static website and legal/pre-monetisation audits had passed. These were pre-PR30 trigger/timing failures, not production website defects. Since PR30 changed preview QA to run only on pull_request events, subsequent branch-push audits have succeeded with preview steps skipped, while PR35/36/37 full PR preview QA passed. No new failure email after the fix was found.
+- Ahrefs Free email recommends GSC verification and Site Audit; connected Ahrefs API returns `Insufficient plan`, so no paid usage/upgrade. Semrush welcome email promotes a 7-day Pro trial; do not activate it under the free-only constraint. Google Search Console data collection began 2 November; settled performance through 2 November still 0 clicks/0 impressions, later data incomplete. Sitemap remains pending with 0 warnings/errors. No URL Inspection API requests made.
+- Google Tag/GA4 remains disabled pending child/mixed-audience privacy classification and consent review. Cloudflare Speed Brain, Bot Protection/Anti-AI Bot Scraping and Page Shield remain unchanged pending crawler/privacy compatibility review.
+
+## Next actions — 4 November
+1. [ ] Continue academically verified references on remaining Grade 6 Maths lessons, prioritising percentages and remaining decimal topics.
+2. [ ] Recount source-section coverage across the 77 lesson pages from the current repository tree before updating inventory percentages.
+3. [ ] Extend BreadcrumbList to English, Science, Computer Science, AI Literacy and Financial Literacy only after confirming their actual visible breadcrumb paths.
+4. [ ] Keep GSC monitoring read-only; no URL inspections today due to the earlier inspection-cap overrun.
+5. [ ] Keep Google Tag/GA4 and Cloudflare security/performance toggles unchanged until privacy/crawler compatibility is established.
+6. [ ] Continue checking relevant Gmail alerts from GitHub, Ahrefs, Semrush, Google, Bing and Cloudflare during Learnora work; ignore generic paid upgrade/trial prompts unless a genuinely free feature is available.
+
 ## Current verified state — 4 November 2026 (post-PR #36 release)
 
 - Production website: https://learnora-ab2.pages.dev/
