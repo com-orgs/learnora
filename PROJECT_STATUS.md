@@ -512,3 +512,20 @@ Historical session notes below are retained for continuity; use this current sta
 2. Use Google Search Console query/impression data once it appears; latest settled 28-day baseline through 1 November remains 0 clicks and 0 impressions.
 3. Monitor Google/Bing discovery without duplicate URL inspections or IndexNow submissions; respect the 10 unique GSC URL/day project cap and avoid resending the existing 104 Bing URLs.
 4. Build useful teacher/parent distribution resources and legitimate partnerships; no spam or artificial backlink schemes.
+
+
+## Superseding execution update — 4 November 2026 (PR #21 merged; production verification pending)
+
+- PR [#21](https://github.com/com-orgs/learnora/pull/21) merged successfully to `main` as `06b2c35d07244606c0a840b7cc982b8748eac7b8`.
+- Added a dedicated “Sources and further reading” section to `math/grade-6/understanding-fractions.html`, with verified OpenStax, BBC Bitesize, The Math Learning Center and NRICH links. No new URL, sitemap change, quiz, worksheet, analytics or advertising change was made.
+- PR preview verification passed: all four source URLs were present; lesson H1, canonical and `index,follow` were confirmed. Full CI run [#41786036094](https://github.com/com-orgs/learnora/actions/runs/41786036094) succeeded: static audit (104 HTML pages, 68 lesson files, 77 accessible quizzes, 0 warnings), legal/pre-monetisation audit, preview security headers/CSP/assets/custom 404, and browser QA across 104 pages at 320/390/768/desktop, 77 quiz submissions, 77 retakes, 79 print actions and 104 performance/resource checks.
+- The PR head had two later commits affecting only `PROJECT_STATUS.md`; comparison confirmed no lesson-code changes after the tested code commit.
+- Post-merge main branch now points to `06b2c35d07244606c0a840b7cc982b8748eac7b8`. A fresh production fetch still returned the previous lesson content without the new sources section, so Cloudflare production deployment is **not yet verified**. Do not claim this release is live until the deployment workflow succeeds and the production page shows the four links.
+- Source-attribution inventory: 77 lesson pages; previously 7 had dedicated sources sections; this PR adds one, leaving **69 legacy lessons** in the source-attribution backlog (subject to the next full inventory refresh).
+- Indexing guardrail remains unchanged: no more GSC inspections or Bing/IndexNow resubmissions on 4 November. GSC's URL Inspection API status check is not the manual Request indexing action.
+
+### Next actions
+1. Trigger/confirm the main-branch Cloudflare Pages deployment using the repository's existing deployment workflow; then verify production lesson HTML, canonical and robots metadata.
+2. Refresh the main project tracker and roadmap with the deployment result.
+3. Continue the source-attribution and accuracy review with the next high-priority Grade 6 Maths lesson, in an isolated branch and full preview QA.
+4. On the next Pakistan calendar day, check the GSC inspection history before using any daily inspection allowance; never repeat URLs.
