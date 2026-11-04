@@ -63,3 +63,10 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - [x] Rechecked GSC performance: 104 sitemap URLs, 0 with impressions, 0 clicks / 0 impressions for 5 Oct–1 Nov settled period. This is not an indexing verdict. Tracker: 1 indexed, 95 URL-unknown, 8 pending.
 - [x] Latest 4 Nov PKT deduplication audit: 31 tracker URLs plus 5 unique URL Inspection history URLs, no overlap; 36 combined unique URLs, 1 duplicate history record. No additional inspection was run during this continuation; stop inspections for 4 Nov.
 - [ ] Next: review the highest-priority existing Grade 6 Maths pages against the recovered map, identify specific teaching/on-page gaps, and prepare preview-only changes with full QA. Do not deploy without explicit release approval.
+
+## 2026-11-04 — Grade 6 Maths on-page work started
+- [x] Completed focused live audit of six high-priority Grade 6 Maths pages. All six are HTTP 200, indexable, self-canonical, and have one H1; 0 critical/high/medium findings. Eight low findings total: three missing structured data, two long descriptions, one long title (the audit counts remaining low items across pages).
+- [x] Prepared small targeted changes on isolated branch `seo/grade6-maths-onpage-2026-11-04`: two meta-description trims, one decimals title refinement, and one duplicate heading clarification. No broad metadata edits or production changes.
+- [x] Opened PR #19: https://github.com/com-orgs/learnora/pull/19; exactly three HTML files changed, head `5ac4a632be6ac4fe295a142574c5ecf7f2115bf6`.
+- [ ] Preview QA pending: Cloudflare check still reported Building at last verified check; no exact preview URL yet. Do not merge until the exact preview is verified and static/legal/mobile/desktop/accessibility/quiz/worksheet QA passes.
+- Next single action: recheck PR #19 Cloudflare deployment status, then test the exact preview pages and QA suite.
