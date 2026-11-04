@@ -358,10 +358,10 @@ Historical session notes below are retained for continuity; use this current sta
 - [x] Updated CI status tracker; full branch browser workflow and main static/legal workflow passed; PR #10 merged and Cloudflare production verified.
 
 ## CI status (automatically refreshed by GitHub Actions)
-- Status: failure.
-- Tested commit: `502c26bcb6d30ade3223b350b7c99a6d56c0da2b`
-- Workflow: Learnora Site Audit (run [#41825166909](https://github.com/com-orgs/learnora/actions/runs/41825166909))
-- Last updated automatically: run #41825166909 on branch `seo/grade6-comparing-ordering-fractions-sources-2026-11-04`.
+- Status: success.
+- Tested commit: `7a7b933e3c330d21d61e8af5feb4ee2ce0114459`
+- Workflow: Learnora Site Audit (run [#41825203160](https://github.com/com-orgs/learnora/actions/runs/41825203160))
+- Last updated automatically: run #41825203160 on branch `seo/grade6-comparing-ordering-fractions-sources-2026-11-04`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
