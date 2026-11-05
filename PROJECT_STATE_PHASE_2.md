@@ -31,6 +31,10 @@ Base branch: main
 4. Check every changed page for content accuracy, links, metadata, canonical, structured data where appropriate, mobile rendering, and quiz/worksheet answer consistency.
 5. Keep all edits on phase-2-quality-fixes until reviewed. Do not merge to main or deploy without explicit user approval.
 
+## Editorial quality gate added
+- Added `EDITORIAL_CONTENT_STANDARD.md` with an internal 100-point educational quality rubric, non-negotiable accuracy/trust rules, subject-specific checks, and release gates.
+- This is an internal Learnora QA framework, not a Google score or a claim about Google's ranking formula.
+
 ## Changes made on working branch
 - `index.html`: removed one redundant duplicate resource card for `/math/grade-6/multiplying-dividing-fractions`.
 - Commit: `14cfdc81324d26e4843fc7559b20562aaceaa4fa`.
