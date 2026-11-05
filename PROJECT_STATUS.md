@@ -1239,3 +1239,12 @@ Historical session notes below are retained for continuity; use this current sta
 - Clarified protease stages and added NIDDK, NHLBI and optional OpenStax references.
 - Draft PR #52: https://github.com/com-orgs/learnora/pull/52; only lesson HTML changed. Cloudflare and repository audit checks still in progress; preview not yet confirmed.
 - Next QA target: Grade 8 Science — Electric Circuits, Current, Voltage and Resistance. No production change/deployment.
+
+ 
+## Grade 8 Science — Electric Circuits QA (5 Nov 2026)
+
+- Reviewed circuit principles, Ohm's law conditions, series/parallel behaviour, meter connections and safety. Recalculated worked examples and numerical practice/worksheet keys: 3 A, 12 J, 2 A, 6 Ω, 3 A, 3 A, 5 A and 2 A. Five quiz mappings also match the visible options.
+- Added GOV.UK KS3 science, PhET Circuit Construction Kit and OpenStax ammeter/voltmeter resources.
+- Draft PR #53: https://github.com/com-orgs/learnora/pull/53; only lesson HTML changed. Cloudflare Pages and repository audit checks still in progress.
+- PR #52 digestive/circulatory Cloudflare preview deployment succeeded: https://a789444a.learnora-ab2.pages.dev/science/grade-8/human-digestive-and-circulatory-systems
+- Next QA target: Grade 8 Science — Waves, Sound and Light. Production unchanged.
