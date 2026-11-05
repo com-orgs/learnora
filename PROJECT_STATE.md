@@ -410,3 +410,13 @@ Anything not at step 6 remains explicitly pending. Never claim preview = product
 - `PROJECT_STATE.md` / `PROJECT_STATUS.md` — checkpoint and release ledger
 - `audit/source-inventory-2026-11-05` — consolidated docs branch (PR #44)
 - Proposed new source-section additions: PRs #40–#42 and #45–#55 (14 total); if all merge, projected coverage is 33/77. This projection is not main-branch coverage.
+
+ 
+### CI / preview status refresh — 5 Nov 2026
+- PRs #41–#49: Cloudflare preview and audit checks succeeded.
+- PR #50: Cloudflare preview succeeded, but the audit job failed before header/Playwright checks because the workflow could not find a Cloudflare bot comment containing the branch preview URL. Static-site and legal readiness audit steps passed. This is a CI preview-discovery failure, not a lesson-content failure; it must be rerun after the workflow fix.
+- PRs #51–#55: Cloudflare preview and audit checks succeeded.
+- PR #40: Cloudflare preview succeeded, but the audit job failed at the same preview-comment discovery step; static-site and legal readiness audit steps passed.
+- PR #54 preview is confirmed successful: https://bd2bfff0.learnora-ab2.pages.dev/science/grade-8/waves-sound-and-light
+- CI repair PR #56: https://github.com/com-orgs/learnora/pull/56. It adds a fallback to the successful Cloudflare Pages check-run output for the exact commit when the bot comment is missing. Its audit run is currently in progress; do not merge until all header/asset/Playwright checks pass.
+- PR #40 and #50 are explicitly blocked pending PR #56 resolution and rerun of their failed audit jobs. No content PR is approved for production yet.
