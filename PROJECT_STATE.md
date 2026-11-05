@@ -156,3 +156,29 @@ Repository: https://github.com/com-orgs/learnora
 - `qa/grade6-order-operations-sources` — Draft PR #42
 - `qa/grade6-understanding-percentages-applications-2026-11-05` — Draft PR #43
 - `PROJECT_STATUS.md`, `PROJECT_STATE.md`, `LEARNORA_MASTER_ROADMAP_2026-11-04.md`
+
+
+## Consolidated checkpoint — Grade 6 and Grade 7 QA queue (5 Nov 2026)
+
+### Completed in preview branches
+- Grade 6 Mathematics: Algebraic Expressions PR #40; Integers and the Number Line PR #41; Order of Operations PR #42; Understanding Percentages PR #43.
+- Grade 7 Science: Ecosystems and Food Chains PR #45; Forces and Motion PR #46; Heat Transfer PR #47; Introduction to Cells PR #48.
+- Complete source-section inventory: 77 lesson files; 19 have a dedicated source section and 58 do not on main. Full list and methodology in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` (fresh inventory appended 5 Nov).
+- If the seven missing-section additions in PRs #40–#42 and #45–#48 are all accepted and merged, the structural count would move from 19/77 to 26/77, leaving 51 pages without a dedicated section. This is a projection only; main has not changed. PR #43 adds a fourth reference to a page that already has a source section.
+
+### Release safety
+- Keep all lesson changes on separate preview branches. Do not merge or deploy until preview/browser QA and release checks pass.
+- Do not claim independent educator endorsement. All checks recorded so far are desk reviews.
+- GSC inspection/manual indexing guard remains in force for 5 Nov; no GSC inspection requests were made in this content work.
+- Firecrawl credit balance remains zero; no paid crawl/scrape was initiated.
+
+### Current project tree
+- `math/grade-6/` — lesson HTML
+- `science/grade-7/` — lesson HTML
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — complete 77-lesson source-section inventory
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PROJECT_STATUS.md`, `PROJECT_STATE.md`, `LEARNORA_MASTER_ROADMAP_2026-11-04.md`
+
+### Next action
+- Continue Science source QA with Mixtures and Separation Techniques, then the remaining Science backlog. For each lesson, verify practice/worksheet/quiz answers, check claim-level source relevance, add only authoritative age-appropriate references, and keep work preview-only.
