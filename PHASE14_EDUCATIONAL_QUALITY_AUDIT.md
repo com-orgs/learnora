@@ -136,3 +136,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Added age-appropriate RSC resources for particle theory, particle models and states of matter (11–14 years), plus an optional, clearly labelled advanced OpenStax phase-transitions reference.
 - Draft PR #50: https://github.com/com-orgs/learnora/pull/50 on `qa/science-grade7-states-matter-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare preview deployment completed successfully for commit `6c88edc4df2d4acfe5c688cb450407e4b23f4555`; preview URL: https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model . This is preview only; interactive browser QA not performed.
 - This remains a repository-based desk review, not independent educator review or exhaustive scientific certification. No production merge/deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Elements, Compounds and Chemical Reactions QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/elements-compounds-and-chemical-reactions.html` and `scripts/pages/science-grade-8-elements-compounds-and-chemical-reactions.js`.
+- Checked the worked mass example (12 g carbon + 32 g oxygen = 44 g product mass in a closed system), five practice prompts for conceptual alignment, all five worksheet suggested-answer features, and all five quiz answer mappings. The calculation and answer mappings are consistent; quiz JavaScript required no change. The practice section has no separate suggested-answer block, so none was invented.
+- Desk-reviewed element/compound/mixture definitions, atoms rearranging in reactions, possible evidence of chemical change, rusting, physical vs chemical changes, and conservation of mass in a closed system.
+- Clarified the mixture definition: components are physically combined and a mixture may contain elements, compounds or both. Added RSC resources for ages 11–14 and the official England science programme of study, with an explicit statement that Learnora does not claim formal curriculum accreditation.
+- Draft PR #51: https://github.com/com-orgs/learnora/pull/51 on `qa/science-grade8-elements-compounds-sources-2026-11-05`. Only the lesson HTML changed; quiz JS unchanged. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
+- This is a repository-based editorial desk review, not independent educator review or exhaustive chemistry certification. No merge, production deployment or GSC indexing request was made.
