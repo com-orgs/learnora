@@ -160,3 +160,20 @@ Base branch: main
 2. Inspect shared layout/CSS and page templates for mobile breakpoints, semantic landmarks, focus visibility, form labels, keyboard access and print styles.
 3. Inspect the quiz scripts for keyboard operation, visible feedback, retry/reset and reduced-motion/accessibility concerns.
 4. Use a real rendered browser/device pass before release. Keep the branch isolated; no merge or production deployment without explicit user approval.
+
+
+## Static mobile, accessibility and quiz QA — 2026-11-05
+- Inspected all 23 Grade 6 Maths lesson templates: all have responsive media queries, print styles, focus-visible styling, a labelled main navigation landmark, and five quiz fieldsets with five legends.
+- Found 17 tables across 11 pages that lacked a keyboard-scrollable wrapper. Wrapped them in `div.table-wrap` regions with `role=region`, `aria-label=Scrollable table` and `tabindex=0`. Together with five previously wrapped tables, all 22 tables across the 23 lessons now have the wrapper. Re-fetched all pages and verified matching table/wrapper counts.
+- Updated shared `accessibility.css` with a print override so responsive table wrappers do not clip content in print output.
+- Checked external links: all `target=_blank` links in the inspected lesson pages also include `rel=noopener noreferrer`.
+- Checked all 23 quiz scripts: five answer entries, submit handler, preventDefault, feedback, retake/reset, progress reset and print handler are present.
+- Created `PHASE_2_GRADE6_RELEASE_MATRIX.md`. It distinguishes 11 lessons with detailed worked-example/practice/worksheet calculation review from 12 that still need that deeper review, even though all 115 quiz answer mappings have been checked.
+- Static source checks do not establish actual mobile rendering, screen-reader behaviour, WCAG conformance, print-preview quality or live JS behaviour.
+- No production deployment or merge to main.
+
+## Current next actions
+1. Perform a rendered browser pass if a connected browser/desktop session is available; test at narrow mobile and desktop widths.
+2. Run live quiz tests for correct, incorrect and unanswered submissions, retake/reset, keyboard-only interaction, and print preview.
+3. Deep-review the 12 lessons marked pending in `PHASE_2_GRADE6_RELEASE_MATRIX.md`.
+4. Then complete live HTTP/redirect and schema validation. Do not merge or deploy without explicit user approval.
