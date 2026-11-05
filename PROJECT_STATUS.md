@@ -1307,3 +1307,6 @@ User instruction: work is not complete until it is production-deployed and the l
 ### CI repair follow-up — 5 Nov 2026
 - PR #56 preview URL parsing was simplified after the earlier run remained stuck at the resolver step.
 - Latest head `cc886879769856bf473f4fe166f980909df03860`; Cloudflare Pages build in progress, audit run pending. No merge.
+
+ 
+- CI repair follow-up: commit `c2e5892767cbef79f0247c51c3d4ce31eea0d95b` replaces shell-unsafe literal apostrophe matching with escaped hex apostrophe matching in jq. PR #56 Cloudflare build is in progress and audit is queued. Previous commit `cc88687` failed due shell syntax in the resolver step; do not merge until this new run completes all browser/header checks successfully.
