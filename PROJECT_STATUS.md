@@ -1230,3 +1230,12 @@ Historical session notes below are retained for continuity; use this current sta
 - Next: Grade 8 Science — Human Digestive and Circulatory Systems. All work remains preview-only; no merge or production deployment.
 
 - PR #51 Cloudflare Pages preview deployment succeeded: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . Branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . Separate repository audit check remains in progress; production unchanged.
+
+ 
+## Grade 8 Science — Digestive and Circulatory Systems QA (5 Nov 2026)
+
+- Desk-reviewed digestion, enzyme roles, bile, villi, absorption, lacteals, heart chambers, pulmonary/systemic circuits, blood vessels and blood components.
+- Checked four worked examples, five independent-practice prompts, six worksheet suggested-answer features and five quiz mappings. All reviewed items are consistent; no quiz JS change required.
+- Clarified protease stages and added NIDDK, NHLBI and optional OpenStax references.
+- Draft PR #52: https://github.com/com-orgs/learnora/pull/52; only lesson HTML changed. Cloudflare and repository audit checks still in progress; preview not yet confirmed.
+- Next QA target: Grade 8 Science — Electric Circuits, Current, Voltage and Resistance. No production change/deployment.
