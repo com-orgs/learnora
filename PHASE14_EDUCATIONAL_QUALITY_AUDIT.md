@@ -113,3 +113,14 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - These are repository-based editorial desk checks, not independent educator reviews or exhaustive scientific certification.
 - Quiz scripts were unchanged in the four Grade 7 Science source PRs. No production files were changed and no production deployment was performed by these PRs.
 - All PRs #40–#43 and #45–#48 remain separate draft proposals unless their live GitHub status says otherwise. Browser interaction QA and genuine independent educator review remain release gates.
+
+ 
+## Grade 7 Science — Mixtures and Separation Techniques QA (5 Nov 2026)
+
+- Reviewed `science/grade-7/mixtures-and-separation-techniques.html` and `scripts/pages/science-grade-7-mixtures-and-separation-techniques.js`.
+- Checked all 5 independent-practice answers, all 6 worksheet suggested answers (including the iron/sand/salt separation challenge), and all 5 quiz answer mappings against the visible questions/options. All reviewed answers and mappings are consistent; quiz JavaScript required no change.
+- Desk-reviewed definitions and explanations for pure substances, mixtures, solutions, solutes/solvents, solubility, sieving, filtration, evaporation, crystallisation, simple distillation, chromatography and magnetic separation. No factual correction was identified in the reviewed content.
+- Added a dedicated Sources and Further Reading section with four relevant Royal Society of Chemistry education resources covering separation principles, mixtures, distillation and supervised practical separation activities. Added explicit adult-supervision/laboratory safety guidance for heating and distillation.
+- Draft PR #49: https://github.com/com-orgs/learnora/pull/49 on `qa/science-grade7-mixtures-separation-sources-2026-11-05`. PR changed only the lesson HTML; quiz JS unchanged. The PR was created as draft. CI/Cloudflare preview had not yet appeared at checkpoint time.
+- This is a repository-based editorial desk review, not independent educator review, live browser interaction QA or exhaustive scientific certification. No merge, production edit/deployment, or GSC indexing request was made.
+- Next: continue Grade 7 Science with `states-of-matter-and-particle-model.html`, then remaining Science lessons; keep changes preview-only and update this consolidated audit branch only for tracker changes.
