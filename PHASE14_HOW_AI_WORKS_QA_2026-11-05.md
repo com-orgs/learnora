@@ -42,7 +42,7 @@
 - Preview: https://qa-how-ai-works-content-qual.learnora-ab2.pages.dev/ai-literacy/how-ai-works
 - Preview homepage and updated lesson both fetched successfully.
 - Static website audit, legal/pre-monetisation audit, preview URL resolution, security headers and asset checks passed in GitHub Actions run [#42054837940](https://github.com/com-orgs/learnora/actions/runs/42054837940).
-- Playwright mobile/desktop/quiz browser checks were still running at checkpoint time.
+- Playwright mobile/desktop/quiz browser checks completed successfully.
 
 ## Release limits
 - Draft PR only; no production merge or deployment.
