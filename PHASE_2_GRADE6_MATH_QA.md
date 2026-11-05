@@ -259,3 +259,17 @@ Date: 2026-11-05
 - Confirmed all five quiz mappings match visible options.
 - Reviewed Manitoba Education Grade 6 support material, Texas Instruments Grades 4–6 activity and Open University OpenLearn reference for relevance.
 - No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Understanding Decimals
+
+Date: 2026-11-05
+- Reviewed decimal place-value definitions, reading/writing decimals, zero placeholders, comparing and ordering, rounding, decimal/fraction equivalences, seven practice answers, five quiz mappings and eight worksheet answer-key items.
+- Recalculated all reviewed values: 3.5 > 3.47; 0.65 < 0.705 < 0.8; 6.274 rounds to 6, 6.3 and 6.27 at the stated precisions; 5.284 rounds to 5.3; 3.846 rounds to 3.85; and 0.75 = 3/4. All are correct.
+- Rechecked place-value statements (including 2.08 and 6.125), ordering practice, and worksheet comparisons/rounding. No mismatch found.
+- Confirmed all five quiz answer mappings match visible options.
+- Found four tables wrapped in two nested, separately focusable scroll regions. Removed the redundant inner wrappers and kept one keyboard-focusable `.table-scroll` region per table.
+- Consolidated two overlapping related-learning sections into one section with four distinct lesson links.
+- Updated shared print CSS to handle both `.table-wrap` and `.table-scroll` regions. Re-fetched the page and verified four tables, four scroll regions, no nested scroll regions, one related-learning section, and closing body/html tags.
+- Reviewed OpenStax, Khan Academy Grade 6 WNCP and NCETM references for relevance.
+- No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
