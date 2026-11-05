@@ -212,3 +212,9 @@ Repository: https://github.com/com-orgs/learnora
 - `qa/science-grade7-mixtures-separation-sources-2026-11-05` — Mixtures lesson proposal (PR #49)
 - Draft content proposals: PRs #40–#43 and #45–#49; do not assume merge or production deployment.
 - `PROJECT_STATUS.md`, `LEARNORA_MASTER_ROADMAP_2026-11-04.md`
+
+### Preview deployment update — PR #49
+- Cloudflare Pages check for commit `978fc083c52fc3abac095de956e20a67bd80051f` completed with **Deployed successfully**.
+- Lesson preview: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
+- Branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
+- This is a successful preview deployment, not production. The preview URL could not be fetched by the web reader; interactive browser QA remains outstanding.
