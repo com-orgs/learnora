@@ -1,8 +1,9 @@
 # Learnora Grade 6 Maths — Phase 2 Release Matrix
 
 Date: 2026-11-05  
-Branch: `phase-2-quality-fixes`  
-Production deployment: **Not performed**
+Branch: `phase-2-quality-fixes` merged to `main` via [PR #57](https://github.com/com-orgs/learnora/pull/57)  
+Production deployment: **Successful — 2026-11-05**  
+Production commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`
 
 ## Release status
 
@@ -46,16 +47,35 @@ This matrix separates checks that are complete from checks that still need real 
 - 30 unique internal URL destinations were checked against the repository tree with no missing targets. All 23 page-specific scripts exist.
 - The working-branch sitemap contains 104 URLs, including all 23 Grade 6 Maths lesson URLs.
 
-## Still required before release
+## Release verification completed — 2026-11-05
 
-1. Real rendered browser testing on desktop and narrow mobile widths. Static media-query checks do not prove the layout actually looks correct.
-2. Live quiz interaction tests: submit correct/incorrect/unanswered combinations, verify feedback and score, retake, keyboard-only operation and focus order.
-3. Print-preview tests for each worksheet layout and tables.
-4. Accessibility checks with a real screen reader and automated accessibility tooling; source checks alone do not establish WCAG conformance.
-5. Live URL HTTP/redirect/canonical verification and Google Rich Results/schema validation.
-6. Independent subject-expert/educator review before claiming full academic peer verification.
+- PR [#57](https://github.com/com-orgs/learnora/pull/57) merged successfully to `main`.
+- Production main commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`.
+- GitHub Actions production deployment workflow [run #67](https://github.com/com-orgs/learnora/actions/runs/42049423565) completed successfully; Cloudflare Pages deployment check also reported success.
+- The exact same source tree was browser-tested on the PR preview before merge.
+- Playwright/Chromium tested all 104 sitemap routes at 320px, 390px, 768px and desktop widths. All routes loaded and no horizontal overflow was found.
+- 77 interactive quizzes were submitted; keyboard radio selection, feedback and retake/reset checks passed on all tested quiz forms.
+- 79 worksheet print controls invoked the print handler successfully. This verifies the handler, not the visual output of a real print-preview/PDF workflow.
+- Automated axe checks using WCAG 2.0/2.1 A/AA tags reported no violations. This is not a full WCAG conformance certification or a substitute for manual screen-reader testing.
+- All 104 routes passed the configured first-party transfer/resource budgets; no third-party browser/CSP errors were reported.
+- Preview HTTP/security checks passed: homepage HTTP 200, expected security headers/CSP, homepage script, Grade 6 fractions page and script, and custom 404 behaviour.
+- Post-deployment live fetch verified the production homepage and Grade 6 Understanding Fractions page, their canonical/robots metadata, the 104-URL sitemap, and robots.txt sitemap reference.
+- Production remains curriculum-neutral; no claim of independent educator peer review is made.
+
+## Remaining post-release work (not a deployment blocker)
+
+1. Arrange manual screen-reader testing with a real assistive-technology setup.
+2. Review actual print-preview/PDF output for representative worksheets and tables; CI only verified print-handler invocation.
+3. Obtain an independent educator/subject-expert review before describing the lessons as academically peer-reviewed.
+4. Continue indexing and search-performance monitoring under the existing GSC daily inspection limits. Do not exceed the established daily cap.
 
 ## Important limitations
+
+- Source-level review and answer-key consistency checks do not prove originality or independent academic peer review.
+- Automated axe checks do not certify full WCAG conformance.
+- Google rankings, indexing, snippets and traffic cannot be guaranteed by these checks.
+- The deployment is live; future content changes should follow the same preview QA and production release workflow.
+
 
 - The 115 quiz mappings are source-level verified against visible question options; this is not an external independent assessment of the whole lesson.
 - All 23 Grade 6 lesson pages have received a focused source-level review of worked examples, practice questions and worksheet answer keys; this is not a substitute for independent subject-expert peer review.
