@@ -147,3 +147,14 @@ Date: 2026-11-05
 - Relevant sources have now been added to those 11 pages: Perimeter and Area; Volume of 3D Shapes; Metric Units and Conversions; Angles and Triangles; Integers and the Number Line; Order of Operations; Rates and Proportions; Factors, Multiples, HCF and LCM; Algebraic Expressions; Solving One-Step Equations; and Data and Graphs.
 - The 23-page source inventory now has at least one external reference link in every Grade 6 Maths lesson file. This improves further-reading and source discoverability; it does not independently prove every claim or establish plagiarism-free originality.
 - No production deployment occurred.
+
+
+## Grade 6 internal-link and sitemap cross-check
+
+Date: 2026-11-05
+- Retrieved the working-branch repository tree and checked the root-relative internal destinations used across all 23 Grade 6 Maths lesson pages.
+- Checked 30 unique internal URL destinations against files in the branch. No missing repository targets were found.
+- Verified that each of the 23 lesson pages references a matching page-specific JavaScript file and that all 23 corresponding scripts exist in the branch.
+- Checked the working-branch `sitemap.xml`: it contains 104 URLs, including all 23 Grade 6 Maths lesson URLs.
+- This is a repository-level path and sitemap membership check. It does not prove that every URL returns HTTP 200 in production, that redirects/canonicals behave correctly at runtime, or that browser rendering works.
+- No sitemap or deployment changes were made.
