@@ -240,3 +240,15 @@ Continue the remaining detailed content reviews, prioritising Mixed Numbers and 
 
 ## Next action
 Continue with Understanding Decimals, then Adding/Subtracting Decimals, Multiplying/Dividing Decimals, Percentages and the remaining pending topics. Keep work on the branch.
+
+
+## Deep review — Understanding Decimals (2026-11-05)
+- Reviewed decimal place value, reading/writing, comparing/ordering, rounding, decimal/fraction conversions, practice, five quiz mappings and worksheet answer key. All reviewed calculations are correct.
+- Fixed four nested focusable table-scroll regions by removing the redundant inner wrappers; one accessible scroll region now surrounds each of the four tables.
+- Consolidated duplicate related-learning sections into one with unique lesson links.
+- Extended shared print CSS to handle both `.table-wrap` and `.table-scroll`.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark Understanding Decimals reviewed. Seven deep reviews are now complete; five remain.
+- Updated detailed QA notes. No deployment or merge.
+
+## Next action
+Continue with Adding and Subtracting Decimals, then Multiplying and Dividing Decimals and the remaining pending lessons.
