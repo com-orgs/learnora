@@ -426,3 +426,13 @@ Anything not at step 6 remains explicitly pending. Never claim preview = product
 - User explicitly requires that completed work must not remain undeployed. Pause adding further lesson content until the current QA/release backlog is reconciled and a production release plan is executed.
 - CI repair PR #56 latest commit: `2bb4bf7ed19418271c81d9b5159a6df48f33ff52`. Added `checks: read` permission so the audit workflow can query Cloudflare check-run output when the Cloudflare bot comment is missing. New workflow run #881 is pending at this checkpoint.
 - After PR #56's audit passes: merge the CI repair, then rerun failed audits for PRs #40 and #50. Verify every PR's changed files, dependencies, preview, browser/quiz tests and conflicts. Merge in safe order only when all checks are green, then confirm Cloudflare production deploy and verify each changed live URL. Do not mark work complete before live verification.
+
+
+### Resume checkpoint — PR #55 and deployment backlog (5 Nov 2026)
+- PR #55 audit check is now **successful** and Cloudflare Pages preview is successful for commit `db9f5b5f3cf5efe42ff1cc2b1f66f9cb50c25596`.
+- Preview URL `https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns` and branch URL `https://qa-science-grade8-earth-moon.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns` were fetched successfully. Lesson title, page metadata, astronomy explanations, worksheet guidance and NASA source section are present. This is preview verification only.
+- PR #56 CI preview-resolution fix has a successful Cloudflare preview, but its audit check is still in progress. Do not merge it until audit finishes green.
+- PR #40 and #50 each have successful Cloudflare previews but their audit checks remain failed at the earlier preview-discovery stage. Rerun them after #56 is merged and workflow repair is proven.
+- User explicitly asked to prevent work being completed but left undeployed. Mandatory ledger rule: no item is complete until preview QA, merge, successful production deployment, and live production URL/functionality verification. All #40–#55 content PRs remain pending production release; #44 is the docs/checkpoint PR. Older open PRs #2, #3, #6, #7, #16, #18 and #27 also need disposition.
+- **Priority:** pause additional lesson content. Finish #56 CI repair, refresh failed checks, inspect PR diffs/dependencies and release gates, then release in safe order and verify each live URL. Do not equate a green preview with production.
+
