@@ -309,3 +309,32 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — complete 77-lesson source-section inventory
 - `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
 - Draft content proposals: PRs #40–#43 and #45–#52. No production release.
+
+ 
+## Latest checkpoint — Grade 8 Electric Circuits (5 Nov 2026)
+
+### Completed
+- Reviewed the Grade 8 Electric Circuits lesson and quiz script.
+- Recalculated all six worked examples and numerical practice/worksheet items; values checked: 3 A, 12 J, 2 A, 6 Ω, 3 A, 3 A, 5 A and 2 A.
+- Checked five practice prompts, six worksheet suggested-answer features and five quiz mappings; all reviewed items are consistent.
+- Added the official England KS3 science programme, PhET Circuit Construction Kit and OpenStax ammeter/voltmeter reference.
+- Draft PR #53: https://github.com/com-orgs/learnora/pull/53; only lesson HTML changed. Cloudflare and repository audit checks were still in progress at checkpoint.
+- PR #52 Digestive/Circulatory preview deployment succeeded: https://a789444a.learnora-ab2.pages.dev/science/grade-8/human-digestive-and-circulatory-systems
+- PR #51 Elements/Compounds preview deployment succeeded: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions
+
+### Current safety / blockers
+- PRs #49–#53 are draft and unmerged; no production changes or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection/manual indexing request; no paid crawl/scrape.
+
+### Next action
+- Continue Grade 8 Science with `science/grade-8/waves-sound-and-light.html` and its quiz script. Verify the physics claims, examples, worksheet answers and quiz mappings; add relevant sources on a separate preview branch.
+
+### Project tree / active proposals
+- `science/grade-7/` — six source-section proposals in PRs #45–#50
+- `science/grade-8/` — Elements/Compounds PR #51; Digestive/Circulatory PR #52; Electric Circuits PR #53; remaining lessons
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
+- `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
+- Draft content proposals: PRs #40–#43 and #45–#53. No production release.
