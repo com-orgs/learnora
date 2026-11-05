@@ -234,3 +234,16 @@ Date: 2026-11-05
 - Confirmed all five quiz mappings match visible options and their explanations.
 - Reviewed OpenStax common-denominator/different-denominator lessons and Math Learning Center fraction-model resources for relevance.
 - No source-level factual or arithmetic mismatch found in this focused review. Browser interaction and print preview remain unverified.
+
+
+## Deep content review — Multiplying and Dividing Fractions
+
+Date: 2026-11-05
+- Reviewed multiplication by whole numbers, multiplying fractions, cross-cancellation, division meaning, reciprocal method, zero-divisor note, real-life problems, common mistakes, eight practice answers, five quiz mappings and eight worksheet answer-key items.
+- Recalculated worked examples: 3 × 1/4 = 3/4; 2/3 × 3/5 = 2/5; 4/9 × 3/8 = 1/6; 2/3 ÷ 4/5 = 5/6; and 3/4 ÷ 1/2 = 3/2 = 1 1/2. All are correct.
+- Recalculated word problems: half of 2/3 cup = 1/3 cup; 3/4 m divided into 1/8 m pieces = 6 pieces; 2/3 m × 3/5 m = 2/5 m². All are correct.
+- Rechecked all practice answers, including 5/6 × 3/10 = 1/4, 3/5 ÷ 2/3 = 9/10, and 2/3 ÷ 1/6 = 4. All are correct.
+- Rechecked worksheet answers, including 7/10 × 5/14 = 1/4, 5/8 ÷ 1/4 = 2 1/2, and 3/4 ÷ 2/5 = 1 7/8. All are correct.
+- Confirmed all five quiz answer mappings match the visible options.
+- Reviewed OpenStax, Illustrative Mathematics Grade 6 standard 6.NS.A.1 and Khan Academy fraction-division material for relevance.
+- No source-level factual or arithmetic mismatch found in this focused review. Browser and print-preview behaviour remain unverified.
