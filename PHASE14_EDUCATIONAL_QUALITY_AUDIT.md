@@ -170,3 +170,14 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Added the official England KS3 science programme, PhET's free Circuit Construction Kit: DC Virtual Lab, and OpenStax ammeter/voltmeter guidance.
 - Draft PR #53: https://github.com/com-orgs/learnora/pull/53 on `qa/science-grade8-electric-circuits-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
 - This is a repository-based desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Waves, Sound and Light QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/waves-sound-and-light.html` and `scripts/pages/science-grade-8-waves-sound-and-light.js`.
+- Checked worked calculations and angles: 5 Hz × 2 m = 10 m/s; reflection angles of 35° and 25°; practice 4 Hz × 3 m = 12 m/s and 25° reflection; worksheet 8 Hz × 0.5 m = 4 m/s. Checked all five worksheet suggested-answer features and all five quiz mappings; all reviewed items are consistent.
+- Desk-reviewed energy transfer, transverse/longitudinal motion, amplitude/wavelength/frequency/speed, sound as a mechanical wave, pitch/loudness, sound in different media, reflection/refraction, electromagnetic spectrum order and radiation safety.
+- Refined the sound-speed explanation to identify compressibility, stiffness and density as relevant material properties.
+- Added GOV.UK KS3 science, NASA Grades 5–8 wavelength activity, NASA electromagnetic-spectrum introduction and relevant OpenStax wave/sound/optics references.
+- Draft PR #54: https://github.com/com-orgs/learnora/pull/54 on `qa/science-grade8-waves-sound-light-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare preview/audit checks were not yet available at checkpoint time.
+- This is a repository-based editorial desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
