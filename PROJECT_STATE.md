@@ -42,3 +42,28 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Latest checkpoint — Algebraic Expressions (5 Nov 2026)
+
+### Completed
+- Reviewed `math/grade-6/algebraic-expressions.html` and `scripts/pages/math-grade-6-algebraic-expressions.js`.
+- Checked lesson calculations, 8 practice answers, 7 worksheet answer-key items, and 5 quiz answer mappings; reviewed items are consistent.
+- Improved like-terms definition; added two relevant OpenStax Prealgebra 2e references.
+- Created preview branch `qa/grade6-algebraic-expressions-sources` and Draft PR #40: https://github.com/com-orgs/learnora/pull/40.
+- Re-fetched changed branch file; confirmed source section and quiz-script mapping integrity.
+
+### Current safety state
+- PR is draft and unmerged. No production HTML/script changed, no deploy, no GSC inspection.
+- Browser interaction QA and independent educator review not yet done.
+
+### Next action
+- Continue source-code academic QA on `math/grade-6/integers-number-line.html` and its script: independently verify lesson examples, practice answers and worksheet answer key; check source links and relevance before proposing any change on a separate preview branch.
+
+### Project tree
+- math/grade-6/ — lesson HTML
+- scripts/pages/ — lesson quiz scripts
+- qa/grade6-algebraic-expressions-sources — preview branch (PR #40)
+- PROJECT_STATUS.md
+- LEARNORA_MASTER_ROADMAP_2026-11-04.md
+- PROJECT_STATE.md
