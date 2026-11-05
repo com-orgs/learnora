@@ -126,3 +126,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Next: continue Grade 7 Science with `states-of-matter-and-particle-model.html`, then remaining Science lessons; keep changes preview-only and update this consolidated audit branch only for tracker changes.
 
 - Follow-up verification: Cloudflare Pages check for commit `978fc083c52fc3abac095de956e20a67bd80051f` completed successfully. Preview URL: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques ; branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . This confirms preview deployment only; interactive browser QA was not performed.
+
+ 
+## Grade 7 Science — States of Matter and Particle Model QA (5 Nov 2026)
+
+- Reviewed `science/grade-7/states-of-matter-and-particle-model.html` and `scripts/pages/science-grade-7-states-of-matter-and-particle-model.js`.
+- Checked all 5 independent-practice answers, all 6 worksheet suggested answers (including the cool-day evaporation challenge), and all 5 quiz answer mappings against visible questions/options. All reviewed answers and mappings are consistent; quiz JavaScript required no change.
+- Desk-reviewed the particle model, particle arrangement and movement in solids/liquids/gases, shape/volume/compressibility, heating and cooling, melting, freezing, evaporation, boiling, condensation and physical changes. The constant-temperature explanation during phase changes is appropriately qualified for a pure substance at constant pressure.
+- Added age-appropriate RSC resources for particle theory, particle models and states of matter (11–14 years), plus an optional, clearly labelled advanced OpenStax phase-transitions reference.
+- Draft PR #50: https://github.com/com-orgs/learnora/pull/50 on `qa/science-grade7-states-matter-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare preview deployment completed successfully for commit `6c88edc4df2d4acfe5c688cb450407e4b23f4555`; preview URL: https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model . This is preview only; interactive browser QA not performed.
+- This remains a repository-based desk review, not independent educator review or exhaustive scientific certification. No production merge/deployment or GSC indexing request was made.
