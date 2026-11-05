@@ -676,3 +676,11 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Added one relevant OpenStax Prealgebra 2e reference for integers, number-line ordering, opposites and absolute value.
 - Preview branch `qa/grade6-integers-sources`; Draft PR #41: https://github.com/com-orgs/learnora/pull/41. Not merged or deployed.
 - PR #40 for Algebraic Expressions also remains draft/unmerged. Continue to keep production unchanged pending preview interaction QA and educator review.
+
+
+## Order of Operations QA update — 5 Nov 2026
+
+- Checked all 8 practice answers, 8 worksheet answers and 5 quiz answer mappings; all reviewed results match.
+- Clarified that exponents/indices are outside the scope of this introductory page despite mention of BIDMAS/PEMDAS, preventing a misleading incomplete order list.
+- Added OpenStax Prealgebra 2e section 2.1 reference. Preview branch `qa/grade6-order-operations-sources`, Draft PR #42: https://github.com/com-orgs/learnora/pull/42.
+- PR #40 (Algebraic Expressions) and #41 (Integers) also remain draft/unmerged. No production edits or deployment. Next target: Understanding Percentages.
