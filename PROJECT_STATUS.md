@@ -1196,3 +1196,14 @@ Historical session notes below are retained for continuity; use this current sta
 - Consolidated academic desk-review notes are in `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md`. These are not independent educator reviews. Browser interaction QA and release checks remain required.
 - No production edits or deployment were performed as part of this consolidated audit. No GSC inspection/manual indexing request made. Firecrawl credit balance 0; no paid crawl/scrape.
 - Next: Science — Mixtures and Separation Techniques; continue source QA and keep changes preview-only.
+
+ 
+## Latest Grade 7 Science QA update — Mixtures (5 Nov 2026)
+
+- Completed a desk review of the Grade 7 Mixtures and Separation Techniques lesson and quiz script.
+- Practice: 5/5 suggested answers checked. Worksheet: 6/6 suggested answers checked, including the multi-step mixture separation challenge. Quiz: 5/5 answer mappings match the visible choices.
+- Added four Royal Society of Chemistry educational references and explicit supervised-lab guidance for heating/distillation.
+- Draft PR #49: https://github.com/com-orgs/learnora/pull/49; only the lesson HTML changed. Quiz JavaScript unchanged.
+- PR #49 remains unmerged; no production edit or deployment. CI/preview status not yet confirmed. Browser interaction QA and independent educator review remain release gates.
+- No GSC inspection/manual indexing request or paid crawl/scrape was made.
+- Next QA target: Grade 7 Science — States of Matter and the Particle Model.
