@@ -181,3 +181,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Added GOV.UK KS3 science, NASA Grades 5–8 wavelength activity, NASA electromagnetic-spectrum introduction and relevant OpenStax wave/sound/optics references.
 - Draft PR #54: https://github.com/com-orgs/learnora/pull/54 on `qa/science-grade8-waves-sound-light-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare preview/audit checks were not yet available at checkpoint time.
 - This is a repository-based editorial desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Earth, Moon and Space Patterns QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/earth-moon-and-space-patterns.html` and `scripts/pages/science-grade-8-earth-moon-and-space-patterns.js`.
+- Desk-reviewed Earth's rotation and day/night, axial tilt and seasons, the approximately 29.5-day synodic lunar phase cycle, waxing/waning, solar and lunar eclipse alignments, the Moon's inclined orbit and why eclipses do not occur every month, plus solar-viewing safety.
+- Checked both worked examples, all five independent-practice prompts for conceptual alignment, all five worksheet suggested-answer features and all five quiz answer mappings. The reviewed worksheet guidance and quiz mappings are consistent; no quiz JavaScript change required. Confirmed that the 27.3-day sidereal orbital period is distinct from the approximately 29.5-day phase cycle used in the lesson.
+- Added NASA Space Place resources for seasons, Moon phases and eclipses; NASA eclipse-viewing safety; NASA JPL Moon Phases activity; and a NASA Grades 5–8 Sun–Earth–Moon activity guide.
+- Draft PR #55: https://github.com/com-orgs/learnora/pull/55 on `qa/science-grade8-earth-moon-space-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare Pages preview deployment succeeded for commit `db9f5b5f3cf5efe42ff1cc2b1f66f9cb50c25596`: https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . Branch preview: https://qa-science-grade8-earth-moon.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . GitHub audit check was still in progress at checkpoint time.
+- This is a repository-based editorial desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
