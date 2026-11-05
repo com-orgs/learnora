@@ -1144,3 +1144,13 @@ Historical session notes below are retained for continuity; use this current sta
 - No production files, metadata, HTML, or scripts changed; no deployment. Firecrawl current balance checked and returned 0 credits, so no paid crawl/scrape was initiated. Repository source inspection only.
 - GSC daily inspection restriction remains unchanged: no URL Inspection API call or manual Request Indexing request made.
 - Next: add reliable age-appropriate references to the three flagged pages only after checking exact claims and reference suitability; then test their worked examples and worksheet keys. Do not mass-edit or deploy without preview QA.
+
+
+## Algebraic Expressions source and concept QA — 5 Nov 2026
+
+- Reviewed `math/grade-6/algebraic-expressions.html` and its quiz script. Checked lesson explanations, worked examples, all 8 practice answers, all 7 worksheet answers, and the 5 visible quiz-answer mappings; reviewed calculations and answer mappings are consistent.
+- Clarified the like-terms definition to require the same variable part and exponents, and noted that constants are also like terms.
+- Added two relevant OpenStax Prealgebra 2e references: sections 2.1 (Use the Language of Algebra) and 2.2 (Evaluate, Simplify, and Translate Expressions). Source links were checked through current web search.
+- Proposed change is isolated to branch `qa/grade6-algebraic-expressions-sources`; Draft PR #40: https://github.com/com-orgs/learnora/pull/40. Branch file was re-fetched; source section and quiz script integrity checks passed.
+- No merge, production edit, or deployment. Live browser interaction test and independent educator review remain outstanding. Do not describe this as a full independent expert validation.
+- Next: audit exact mathematical claims, worked examples and worksheet answers on Integers and the Number Line; then Order of Operations. Add references only after checking their relevance, using preview branches.
