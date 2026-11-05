@@ -272,3 +272,13 @@ Continue with Multiplying and Dividing Decimals, then the remaining pending less
 
 ## Next action
 Continue the remaining deep reviews: Understanding Percentages, Percentage Increase and Decrease, and Introduction to Ratios (still pending in the release matrix). Then do final branch QA and browser tests when access is available.
+
+
+## Deep review — Understanding Percentages (2026-11-05)
+- Reviewed percent/fraction/decimal conversions, percentage-of-amount calculations, real-life problems, practice/worksheet answers and five quiz mappings. All reviewed calculations are correct.
+- Corrected imprecise wording: the discount example now says “percentage rate with the money amount”, not “percentage points”.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark Understanding Percentages reviewed. Ten detailed reviews are complete; two remain.
+- Detailed findings saved in `PHASE_2_GRADE6_MATH_QA.md`. No deployment or merge.
+
+## Next action
+Deep-review Percentage Increase and Decrease and Introduction to Ratios, then final release checks. Keep the branch isolated.
