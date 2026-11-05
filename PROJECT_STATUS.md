@@ -1164,3 +1164,14 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #41: https://github.com/com-orgs/learnora/pull/41. No merge or deployment. Browser interaction QA and independent educator review remain outstanding.
 - Algebraic Expressions draft PR #40 remains open and unmerged. Both changes are isolated from production.
 - Next: verify Order of Operations worked examples, practice/worksheet answers and quiz mappings, then check suitable source attribution.
+
+
+## Order of Operations lesson QA — 5 Nov 2026
+
+- Reviewed Grade 6 Order of Operations lesson and its quiz script. Independently checked all 8 practice answers and 8 worksheet answer-key items; all checked calculations are correct.
+- Confirmed all 5 quiz answer-key mappings match visible options.
+- Found a scope ambiguity: the page referenced BIDMAS/PEMDAS but the introductory sequence omitted indices/exponents. Clarified that this lesson intentionally covers brackets and the four basic operations, with exponents deferred to a later topic.
+- Added OpenStax Prealgebra 2e section 2.1 as a reference for operation priority and left-to-right rules. Re-fetched the branch and verified the source section and unchanged quiz script.
+- Draft PR #42: https://github.com/com-orgs/learnora/pull/42. Not merged or deployed. Browser interaction QA and independent educator review remain outstanding.
+- Draft PRs #40 (Algebraic Expressions) and #41 (Integers) remain unmerged. Production unchanged.
+- Next: continue targeted source-code QA on Understanding Percentages, verifying worked examples, practice/worksheet answers, quiz key mappings and suitable reference attribution.
