@@ -324,3 +324,14 @@ Date: 2026-11-05
 - Confirmed all five quiz mappings match visible options and their explanations.
 - Reviewed OpenStax, Khan Academy and Illustrative Mathematics resources for topic relevance.
 - No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Introduction to Ratios
+
+Date: 2026-11-05
+- Reviewed ratio meaning and notation, order of terms, ratios with three quantities, simplifying using a common factor, equivalent ratios, solved everyday problems, six practice answers, five quiz mappings and seven worksheet answer-key items.
+- Rechecked simplifications: 8:12 = 2:3; 15:25 = 3:5; 10:15 = 2:3; 6:9 = 2:3; 14:21 = 2:3; 12:18 = 2:3; and 20:30 = 2:3. All are correct.
+- Rechecked equivalent-ratio and scale-factor examples: 2:3 → 4:6, 6:9, 8:12; 2:5 = 6:15; 4:7 = 12:21; and 2:5 drink/recipe scale-up to 6:15. All are correct.
+- Rechecked all five quiz mappings and worksheet answers, including the order reversal cats:dogs = 8:3 and the juice/water ratio scale-up. No mismatch found.
+- Reviewed OpenStax Ratios and Rate, Khan Academy Grade 6 Ratios and Proportional Relationships, and Illustrative Mathematics Grade 6 ratio standards/tasks for relevance.
+- No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
