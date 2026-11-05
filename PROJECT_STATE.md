@@ -220,3 +220,40 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_PERCENTAGE_CHANGE_QA_2026-11-05.md` — Percentage Increase/Decrease QA
 - `qa-ai-safety-content-quality` — active preview branch, PR #59
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — AI Safety QA passed; How AI Works preview ready (5 Nov 2026)
+
+### Completed since previous checkpoint
+- AI Safety PR #59 preview passed the full GitHub CI workflow, including static audit, legal/pre-monetisation checks, Cloudflare preview/security checks and Playwright mobile/desktop/quiz checks. Run: https://github.com/com-orgs/learnora/actions/runs/42052324235.
+- Re-fetched the AI Safety preview after CI success; revised lesson content and sources were served correctly. PR #59 remains draft and unmerged.
+- Audited `ai-literacy/how-ai-works.html` and the shared quiz map. Existing five quiz keys match the visible options; shared JS unchanged.
+- Checked Google for Developers' current ML introduction, Microsoft Learn's ML learning path and Google Teachable Machine homepage.
+- Expanded AI vs ML, datasets/features/labels, training/inference, separate testing, classification/regression/clustering/generative AI, worked school-message example, five practice explanations and worksheet answer key.
+- Added sources and corrected recap. Source-level checks passed for one H1, five quiz questions, canonical/OG consistency, source links, worksheet answer key and safe external-link rel attributes.
+- Created audit record `PHASE14_HOW_AI_WORKS_QA_2026-11-05.md`.
+- Draft PR #60: https://github.com/com-orgs/learnora/pull/60.
+- Cloudflare preview deployed and fetched: https://qa-how-ai-works-content-qual.learnora-ab2.pages.dev/ai-literacy/how-ai-works.
+- GitHub Actions run #42054837940: static audit, legal-readiness, preview URL resolution, preview security headers/assets all passed. Playwright browser checks were still running at checkpoint time.
+- A small CI workflow correction on PR #60 uses `github.head_ref || github.ref_name` to resolve the actual source branch name for preview fallback.
+
+### Current release safety
+- PR #59 and PR #60 are draft, unmerged, and not deployed to production.
+- No production HTML/JS change and no GSC inspection.
+- AI Safety and How AI Works page-level editorial estimates must not be presented as site-wide scores.
+
+### Next action
+- Confirm PR #60 browser smoke tests complete successfully. If pass, retain as reviewed draft pending release approval.
+- Continue with `ai-literacy/verify-ai.html`: check source-verification claims, date handling, source hierarchy, worked examples, practice answers and worksheet. Do not add sources that are not relevant or verified.
+
+### Project tree
+- `ai-literacy/ai-safety.html` — revised on PR #59 preview branch
+- `ai-literacy/how-ai-works.html` — revised on PR #60 preview branch
+- `scripts/pages/new-subject-lessons.js` — shared quiz map, inspected and unchanged
+- `PHASE14_AI_SAFETY_QA_2026-11-05.md` — AI Safety audit record
+- `PHASE14_HOW_AI_WORKS_QA_2026-11-05.md` — How AI Works audit record
+- `PHASE14_PERCENTAGES_QA_2026-11-05.md` — Understanding Percentages QA
+- `PHASE14_PERCENTAGE_CHANGE_QA_2026-11-05.md` — Percentage Increase/Decrease QA
+- `qa-ai-safety-content-quality` — PR #59 preview branch
+- `qa-how-ai-works-content-quality` — PR #60 preview branch
+- `PROJECT_STATE.md` — current resume checkpoint
