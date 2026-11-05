@@ -57,7 +57,12 @@ jobs:
             echo "Waiting for Cloudflare branch preview comment ($attempt/30)..."
             sleep 10
           done
-          test -n "$preview_url" || { echo 'Cloudflare did not publish an authoritative branch preview URL.'; exit 1; }
+          if [ -z "$preview_url" ]; then
+            # Cloudflare may have deployed the branch before the PR existed, so no PR comment is available.
+            # Try the documented Pages branch hostname; the following HTTP/header checks must still pass.
+            preview_url="https://${BRANCH_NAME}.learnora-ab2.pages.dev"
+            echo "No Cloudflare PR comment found; verifying the branch hostname directly: $preview_url"
+          fi
           case "$preview_url" in https://*.learnora-ab2.pages.dev) ;; *) echo 'Preview URL is outside the Learnora Cloudflare Pages domain.'; exit 1 ;; esac
           echo "url=$preview_url" >> "$GITHUB_OUTPUT"
 
