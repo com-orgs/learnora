@@ -1257,3 +1257,21 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #54: https://github.com/com-orgs/learnora/pull/54; only lesson HTML changed. Preview/audit checks not yet available.
 - PR #53 Electric Circuits Cloudflare preview succeeded: https://e4c1e038.learnora-ab2.pages.dev/science/grade-8/electric-circuits-current-voltage-resistance
 - Next QA target: Grade 8 Science — Earth, Moon and Space Patterns. No production change or deployment.
+
+ 
+## Grade 8 Science — Earth, Moon and Space Patterns QA (5 Nov 2026)
+
+- Reviewed Earth's rotation, seasons, lunar phases, eclipse alignments/orbital inclination and solar-viewing safety.
+- Checked both worked examples, five practice prompts, five worksheet suggested-answer features and five quiz mappings. The 29.5-day lunar phase cycle is correctly distinguished from the 27.3-day orbital period.
+- Added NASA/JPL resources for seasons, Moon phases, eclipses, solar-viewing safety and classroom modelling.
+- Draft PR #55: https://github.com/com-orgs/learnora/pull/55; only lesson HTML changed. Cloudflare preview deployment succeeded: https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . GitHub audit check still in progress.
+
+## Mandatory release tracking — 5 Nov 2026
+
+User instruction: work is not complete until it is production-deployed and the live page/functionality is verified. Preview success is not production success.
+- Open draft PRs #40–#43 and #45–#55 remain unmerged; PR #44 carries consolidated documentation.
+- Successful preview deployments currently recorded: #49–#53 and #55.
+- Refresh preview/check status for #40–#48 and #54 before release.
+- No open draft PR in this batch is marked production-deployed or live-verified. All remain in release backlog until checks pass, merge is performed, Cloudflare production deploy succeeds and live verification is completed.
+- Older open PRs #2, #3, #6, #7, #16, #18 and #27 also require triage/disposition.
+- Next: continue Grade 8 Science QA, while keeping a release/production-verification pass in the plan. No production change has been made by this QA step.
