@@ -93,3 +93,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - This is a preliminary structural inventory, not a finding that all 70 lessons are factually wrong or contain no useful external references. It checks for an explicit, learner-facing source section and must be followed by page-by-page claim verification.
 - Backlog recorded in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. Add topic-specific official or reputable educational sources only after checking that each URL is live and genuinely supports the lesson. Do not bulk-add generic curriculum links as if they substantiate every factual claim.
 - Prioritise Science, Financial Literacy and AI Literacy safety/privacy claims; then verify Maths worked examples and answer keys; then English language and writing guidance. Independent educator review remains required and must not be invented.
+
+
+## Grade 7 Science — Heat Transfer (5 November 2026)
+
+- Reviewed `science/grade-7/heat-transfer-conduction-convection-radiation.html` and `scripts/pages/science-grade-7-heat-transfer-conduction-convection-radiation.js`.
+- Checked all 5 practice answers, all 6 worksheet suggested answers (including the challenge) and all 5 quiz mappings against the visible choices; the reviewed answers are consistent.
+- Identified a terminology improvement: the original introductory wording blurred the distinction between heat and thermal energy. Revised it to define heat as energy transferred between systems because of a temperature difference, while describing thermal energy as part of a system’s internal energy. Updated the hero summary to use the more precise “heat is transferred” wording.
+- Desk-reviewed the explanations of conduction, convection, radiation, insulation, temperature and everyday examples. No other correction was required in this review.
+- Added four supplementary sources: NASA STEMonstrations: Thermal Energy (Grades 5–8), NOAA The Transfer of Heat Energy, National Geographic Education Energy Transfers and Transformations (Grade 6 reading level), and U.S. Department of Energy Heat Flow.
+- Preview branch: `qa/science-grade7-heat-transfer-sources-2026-11-05`. Quiz JavaScript unchanged. No production edit or deployment; browser interaction QA and independent educator review remain outstanding.
