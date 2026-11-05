@@ -111,3 +111,19 @@ Base branch: main
 1. Continue checking remaining Grade 6 lessons, prioritising Solving One-Step Equations and Data and Graphs, then the remaining pages without references.
 2. After the content/answer-key pass, carry out a dedicated rendered mobile, accessibility, internal-link, worksheet-print and live quiz interaction QA.
 3. Reconcile page-level findings into the editorial release checklist. Keep all changes isolated on the branch until user approves merge/deployment.
+
+
+## Additional Grade 6 lesson QA — One-Step Equations and Data (2026-11-05)
+- Reviewed `math/grade-6/solving-one-step-equations.html` and its quiz script. Checked inverse operations, balance principle, worked examples, substitutions, word problems, eight practice answers, five quiz mappings and eight worksheet keys. No mismatch found.
+- Added Khan Academy references for one-step addition/subtraction and multiplication/division equations.
+- Reviewed `math/grade-6/data-and-graphs.html` and its quiz script. Checked the frequency table (total 18), bar-chart values, line-graph explanation, mean/median/mode/range examples, seven practice answers, five quiz mappings and seven worksheet keys. No mismatch found.
+- Added Khan Academy Grade 6 data/statistics and line-graph references, plus a Pennsylvania SAS Grades 5–8 interactive resource.
+- Re-fetched both pages and verified each has one H1, one canonical, five quiz questions, one “Continue Learning” section, one source section and safe rel attributes for every new external link.
+- The original QA inventory found 11/23 Grade 6 lessons without external links. References have now been added to all 11; all 23 Grade 6 Maths lesson files have at least one external reference in their source. This is a further-reading/source coverage improvement, not proof that all content is independently verified or plagiarism-free.
+- Updated `PHASE_2_GRADE6_MATH_QA.md`. No production deployment occurred.
+
+## Next actions
+1. Reconcile all Grade 6 lesson QA outcomes into a final per-lesson release matrix, separating content accuracy, source coverage, quiz/worksheet checks and unverified rendered behaviour.
+2. Run automated internal-link and external-link checks, including canonical URLs, sitemap coverage and redirects.
+3. Perform rendered desktop/mobile, keyboard/accessibility, quiz feedback/retake and worksheet-print QA before considering the branch release-ready.
+4. Keep the branch isolated. No merge or production deployment without explicit user approval.
