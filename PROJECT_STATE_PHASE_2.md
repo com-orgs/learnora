@@ -340,3 +340,17 @@ Complete the final pending deep review: Introduction to Ratios. Then run final r
 - Browser QA workflow is currently waiting for the authoritative Cloudflare PR preview comment. The existing preview deployment occurred before PR creation, so a fresh branch deployment is needed for the workflow to resolve its preview URL.
 - Production remains on `main`; no merge or production deployment has occurred.
 - Next: trigger a fresh branch preview after PR creation, complete HTTP/security/Playwright/axe checks, resolve any failures, then proceed to the production release.
+
+
+## Final Phase 2 production release — 2026-11-05
+
+- Phase 2 PR [#57](https://github.com/com-orgs/learnora/pull/57) was merged successfully. Main commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`.
+- Production deployment workflow [run #67](https://github.com/com-orgs/learnora/actions/runs/42049423565) completed successfully; Cloudflare Pages production deployment check reported success.
+- Static website audit and legal/pre-monetisation checks passed before deployment.
+- PR preview QA passed on the exact same source tree as the production merge: 104/104 sitemap routes loaded at 320px, 390px, 768px and desktop; no horizontal overflow; 77 quizzes submitted; 77 retake/reset checks passed; 79 worksheet print handlers invoked; 104 performance/resource budgets passed; axe WCAG 2.0/2.1 A/AA scans reported no violations; no third-party/CSP/runtime browser errors.
+- Preview HTTP/security checks passed for homepage, security headers/CSP, key lesson assets and custom 404.
+- Post-deploy live fetch verified homepage, Understanding Fractions, canonical/robots metadata, sitemap (104 URLs), and robots.txt sitemap reference.
+- Release matrix and detailed QA report updated with the results.
+- Remaining non-blocking work: manual screen-reader testing, real print-preview/PDF visual review, and independent educator review before claiming academic peer review. Do not exceed existing GSC daily inspection limits.
+- Current production URL: https://learnora-ab2.pages.dev/ .
+- Working branch has been merged; no pending Phase 2 deployment work remains.
