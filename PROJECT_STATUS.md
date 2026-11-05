@@ -1175,3 +1175,14 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #42: https://github.com/com-orgs/learnora/pull/42. Not merged or deployed. Browser interaction QA and independent educator review remain outstanding.
 - Draft PRs #40 (Algebraic Expressions) and #41 (Integers) remain unmerged. Production unchanged.
 - Next: continue targeted source-code QA on Understanding Percentages, verifying worked examples, practice/worksheet answers, quiz key mappings and suitable reference attribution.
+
+
+## Complete source-section inventory — 5 Nov 2026
+
+- Fresh recursive Git tree inventory identified 77 lesson HTML pages: Mathematics 46, English 9, Science 13, Computer Science 3, AI Literacy 3, Financial Literacy 3.
+- Dedicated Sources / References / Further Reading section present in 19/77; missing in 58/77. By subject: Mathematics 15/46; English 2/9; Science 2/13; Computer Science 0/3; AI Literacy 0/3; Financial Literacy 0/3.
+- Structural scan counted external links only within the dedicated section, excluded general site navigation/body/footer links, and excluded “How to Check AI Answers and Sources” as a lesson title false positive.
+- Full exact 58-page backlog and method appended to `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. The historical 3 Nov snapshot is preserved; the 5 Nov scan supersedes it for current planning.
+- This is not claim-level fact-checking, a fresh live crawl, URL reachability verification or browser QA. No production files changed and no deployment performed. PR #43 remains a separate unmerged proposal; its fourth percentages source is not counted in main.
+- Preview/documentation branch: `audit/source-inventory-2026-11-05`.
+- Next: claim-level science review (11), financial literacy (3), AI literacy (3), mathematics (31), English (7), then computer science (3); add sources only after checking authority, relevance, currentness and age suitability.
