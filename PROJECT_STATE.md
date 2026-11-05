@@ -156,3 +156,33 @@ Repository: https://github.com/com-orgs/learnora
 - `qa/grade6-integers-sources` — Draft PR #41
 - `qa/grade6-order-operations-sources` — Draft PR #42
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Percentage Increase and Decrease reviewed (5 Nov 2026)
+
+### Completed since previous checkpoint
+- Reviewed `math/grade-6/percentage-increase-decrease.html` and `scripts/pages/math-grade-6-percentage-increase-decrease.js`.
+- Independently recomputed 6/6 practice answers and 5/5 worksheet answer-key items; all are correct.
+- Confirmed all 5 quiz keys match visible answer options and feedback.
+- Reviewed 7 worked/context calculations; all are consistent.
+- Verified OpenStax Section 6.2 and Illustrative Mathematics Discounted Books are reachable and relevant. Khan Academy returned a client challenge and remains unverified.
+- No content edit was justified. Internal desk-audit estimate: 94/100 for this page only; not a Google score or independent certification.
+- Added `PHASE14_PERCENTAGE_CHANGE_QA_2026-11-05.md`.
+
+### Current production safety
+- Read-only review only. No production HTML/JS changes, no deployment and no GSC inspection.
+- Independent educator review remains outstanding.
+- Draft PRs #40, #41 and #42 remain separate and unmerged.
+
+### Next action
+- Prioritise thinner Computer Science, AI Literacy and Financial Literacy lessons, starting with `ai-literacy/ai-safety.html` and its quiz script. Verify safety, privacy and other update-sensitive claims against current primary sources; check practice, worksheet and quiz answers; propose edits only on a separate preview branch when evidence supports them.
+
+### Project tree
+- `math/grade-6/` — mathematics lesson HTML
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_PERCENTAGES_QA_2026-11-05.md` — Understanding Percentages QA
+- `PHASE14_PERCENTAGE_CHANGE_QA_2026-11-05.md` — Percentage Increase/Decrease QA
+- `qa/grade6-algebraic-expressions-sources` — Draft PR #40
+- `qa/grade6-integers-sources` — Draft PR #41
+- `qa/grade6-order-operations-sources` — Draft PR #42
+- `PROJECT_STATE.md` — current resume checkpoint
