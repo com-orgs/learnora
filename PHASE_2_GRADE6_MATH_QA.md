@@ -122,3 +122,28 @@ Date: 2026-11-05
 - These are source-level checks. No claim is made that every sentence has received independent subject-expert review or that the lessons are plagiarism-free.
 - Firecrawl remained unavailable due to exhausted connected-account daily MCP credits; web search was used as the fallback for source discovery. No retry was made.
 - No production deployment occurred.
+
+
+## Additional lesson QA — One-Step Equations and Data and Graphs
+
+Date: 2026-11-05
+
+### Solving One-Step Equations
+- Reviewed the equation and inverse-operation explanations, balance principle, four worked examples, solution checks, two word problems, eight practice answers, five quiz mappings and eight worksheet answer-key items.
+- Recalculated the reviewed solutions and substitutions. No arithmetic or answer-key mismatch found.
+- Confirmed all five quiz answer mappings match the visible options.
+- Added two Khan Academy Grade 6 references covering addition/subtraction and multiplication/division equations.
+- Source-level structure verified: one H1, one canonical, five quiz questions, one “Continue Learning” section and one source section; both new external links use `rel="noopener noreferrer"`.
+
+### Data and Graphs
+- Reviewed data types and survey note, frequency table, bar-chart values and proportions, line-graph explanation, mean/median/mode/range examples, seven practice answers, five quiz mappings and seven worksheet answer-key items.
+- Recalculated the table total (18), mean/median/range examples, frequency totals and worksheet measures. No arithmetic mismatch found.
+- Confirmed all five quiz answer mappings match the visible options.
+- Added Khan Academy Grade 6 data/statistics and line-graph learning references, plus a Pennsylvania SAS Grades 5–8 interactive mean/median/mode activity.
+- Source-level structure verified: one H1, one canonical, five quiz questions, one “Continue Learning” section and one source section; all three new external links use `rel="noopener noreferrer"`.
+
+### Updated Grade 6 reference coverage
+- The original batch found 11 of 23 Grade 6 Maths lesson files without external HTTP(S) references.
+- Relevant sources have now been added to those 11 pages: Perimeter and Area; Volume of 3D Shapes; Metric Units and Conversions; Angles and Triangles; Integers and the Number Line; Order of Operations; Rates and Proportions; Factors, Multiples, HCF and LCM; Algebraic Expressions; Solving One-Step Equations; and Data and Graphs.
+- The 23-page source inventory now has at least one external reference link in every Grade 6 Maths lesson file. This improves further-reading and source discoverability; it does not independently prove every claim or establish plagiarism-free originality.
+- No production deployment occurred.
