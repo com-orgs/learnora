@@ -1175,3 +1175,11 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #42: https://github.com/com-orgs/learnora/pull/42. Not merged or deployed. Browser interaction QA and independent educator review remain outstanding.
 - Draft PRs #40 (Algebraic Expressions) and #41 (Integers) remain unmerged. Production unchanged.
 - Next: continue targeted source-code QA on Understanding Percentages, verifying worked examples, practice/worksheet answers, quiz key mappings and suitable reference attribution.
+
+
+## Grade 7 Science — Forces and Motion QA — 5 Nov 2026
+
+- Recomputed 3 worked examples and 6 practice/worksheet answers; checked 5 quiz answer mappings against visible choices. All reviewed results consistent.
+- Desk-reviewed force/resultant force, balanced/unbalanced forces, friction, air resistance, gravity, speed, velocity, mass and weight. No factual correction required in this review.
+- Added NGSS Middle School Forces and Interactions, NASA Mass vs. Weight Activities (Grades 5–8), NASA STEMonstrations: Friction (Grades 5–8), and Khan Academy Describing Motion as supplementary references. Standards are not a claim of formal curriculum alignment.
+- Preview branch `qa/science-grade7-forces-motion-sources-2026-11-05`; quiz script unchanged. No merge, production change or deployment. Browser interaction QA and independent educator review remain outstanding.
