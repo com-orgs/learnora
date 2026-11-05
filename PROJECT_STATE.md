@@ -442,3 +442,6 @@ Anything not at step 6 remains explicitly pending. Never claim preview = product
 - PR #56 preview resolver was still waiting at the check-run fallback step on commit `2bb4bf7`. I inspected the workflow and simplified both preview URL regexes to match the actual Cloudflare check-run/comment HTML using literal single quotes and POSIX whitespace.
 - New PR #56 head commit: `cc886879769856bf473f4fe166f980909df03860`. Cloudflare Pages build is currently in progress; the new audit run has not yet appeared. Do not merge.
 - Previous run for `2bb4bf7` did not advance past preview resolution, so the fix is not yet validated.
+
+ 
+- CI repair follow-up: commit `c2e5892767cbef79f0247c51c3d4ce31eea0d95b` replaces shell-unsafe literal apostrophe matching with escaped hex apostrophe matching in jq. PR #56 Cloudflare build is in progress and audit is queued. Previous commit `cc88687` failed due shell syntax in the resolver step; do not merge until this new run completes all browser/header checks successfully.
