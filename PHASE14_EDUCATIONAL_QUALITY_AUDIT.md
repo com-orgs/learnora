@@ -93,3 +93,13 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - This is a preliminary structural inventory, not a finding that all 70 lessons are factually wrong or contain no useful external references. It checks for an explicit, learner-facing source section and must be followed by page-by-page claim verification.
 - Backlog recorded in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. Add topic-specific official or reputable educational sources only after checking that each URL is live and genuinely supports the lesson. Do not bulk-add generic curriculum links as if they substantiate every factual claim.
 - Prioritise Science, Financial Literacy and AI Literacy safety/privacy claims; then verify Maths worked examples and answer keys; then English language and writing guidance. Independent educator review remains required and must not be invented.
+
+
+## Grade 7 Science — Forces and Motion (5 November 2026)
+
+- Reviewed `science/grade-7/forces-and-motion.html` and `scripts/pages/science-grade-7-forces-and-motion.js`.
+- Recomputed all 3 worked examples and all 6 independent-practice/worksheet answers; checked all 5 quiz answer mappings against visible choices. Results are consistent: 600 m / 120 s = 5 m/s; 2 kg × 10 N/kg = 20 N; 300 m / 60 s = 5 m/s; 5 kg × 10 N/kg = 50 N; 150 km / 3 h = 50 km/h.
+- Reviewed definitions of force, resultant force, balanced/unbalanced forces, friction, air resistance, gravity, speed, velocity, mass and weight. No factual correction was required in this desk review.
+- Added four supplementary references: NGSS Middle School Forces and Interactions; NASA Mass vs. Weight Activities (Grades 5–8); NASA STEMonstrations: Friction (Grades 5–8); Khan Academy Describing Motion.
+- The standards link is explicitly described as learning-scope context only; no formal curriculum alignment or endorsement is claimed.
+- Preview branch: `qa/science-grade7-forces-motion-sources-2026-11-05`. Quiz script unchanged. No production edit or deployment; browser interaction QA and independent educator review remain outstanding.
