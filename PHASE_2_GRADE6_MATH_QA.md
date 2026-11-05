@@ -90,3 +90,35 @@ Date: 2026-11-05
 - This is a source-level review of the listed content and answer mappings. It does not prove plagiarism-free originality, complete academic peer review, mobile visual quality, accessibility conformance, or successful live browser interactions.
 - Firecrawl retrieval was unavailable because the connected account had exhausted its daily MCP credit allowance. Source discovery used web search as a fallback; Firecrawl was not retried.
 - No production deployment occurred. All edits remain on `phase-2-quality-fixes`.
+
+
+## Additional lesson QA — Rates, Factors and Algebra
+
+Date: 2026-11-05
+
+### Rates and Proportions
+- Reviewed rate and unit-rate definitions, unit conversion expectations, worked examples, equivalent ratios, missing-value proportions, three real-life examples, seven practice answers, five quiz mappings and six worksheet answer-key items.
+- Recalculated the unit rates and proportion scale factors. No arithmetic mismatch found.
+- Confirmed all five quiz answer mappings match the visible options.
+- Added GeoGebra Grades 6–8 ratios/rates activities and an Oxford University Press teacher-guide reference.
+- Source-level structure verified: one H1, one canonical, five quiz questions, one “Continue Learning” section, one source section; all new external links use `rel="noopener noreferrer"`.
+
+### Factors, Multiples, HCF and LCM
+- Reviewed factor and multiple definitions, prime/composite distinction, HCF and LCM methods, real-life grouping/repeating-event examples, eight practice answers, five quiz mappings and seven worksheet answer-key items.
+- Found and corrected a factual overgeneralisation: the statement that every whole number greater than zero has at least two positive factors incorrectly included 1. It now says every whole number greater than 1 has at least two positive factors and explicitly identifies 1 as the exception.
+- Rechecked HCF/LCM examples and worksheet calculations; no other mismatch found.
+- Confirmed all five quiz answer mappings match the visible options.
+- Added Math Is Fun, Khan Academy Grade 6 practice and Oxford University Press Pakistan teacher-guide references.
+- Source-level structure verified: one H1, one canonical, five quiz questions, one “Continue Learning” section, one source section; all new external links use `rel="noopener noreferrer"`.
+
+### Introduction to Algebraic Expressions
+- Reviewed definitions of variables, constants, coefficients and terms; translating phrases; substitution; combining like terms; the pattern example; eight practice answers; five quiz mappings and seven worksheet answer-key items.
+- Recalculated the evaluated expressions and simplifications. No mismatch found.
+- Confirmed all five quiz answer mappings match the visible options.
+- Added OpenStax and Alloprof references for expression vocabulary, substitution and like terms.
+- Source-level structure verified: one H1, one canonical, five quiz questions, one “Continue Learning” section, one source section; all new external links use `rel="noopener noreferrer"`.
+
+### Scope and limitations
+- These are source-level checks. No claim is made that every sentence has received independent subject-expert review or that the lessons are plagiarism-free.
+- Firecrawl remained unavailable due to exhausted connected-account daily MCP credits; web search was used as the fallback for source discovery. No retry was made.
+- No production deployment occurred.
