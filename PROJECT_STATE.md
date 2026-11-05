@@ -366,3 +366,47 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
 - `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
 - Preview-only content proposals: PRs #40–#43 and #45–#54. If the 13 missing-section proposals (#40–#42 and #45–#54) all merge, coverage would project to 32/77; this is not yet reflected on main. No production release.
+
+ 
+## Latest checkpoint — Grade 8 Earth, Moon and Space Patterns (5 Nov 2026)
+
+### Completed
+- Reviewed the Grade 8 Earth, Moon and Space lesson and quiz script.
+- Checked both worked examples, five practice prompts for conceptual alignment, five worksheet suggested-answer features and all five quiz mappings.
+- Confirmed the 29.5-day phase cycle is not the same as the Moon's 27.3-day orbital period.
+- Added six NASA/JPL references covering seasons, Moon phases, eclipses, safe viewing and classroom models.
+- Draft PR #55: https://github.com/com-orgs/learnora/pull/55; only lesson HTML changed. Cloudflare preview deployment succeeded: https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . Branch preview: https://qa-science-grade8-earth-moon.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . GitHub audit check was still in progress.
+- PR #49–#53 Cloudflare previews previously confirmed successful. PR #54 preview status needs a fresh check.
+
+### Mandatory deployment-completion rule (user instruction, 5 Nov 2026)
+A task is NOT complete merely because code is written, committed, or preview-deployed. Keep a release ledger and do not close a work item until:
+1. content/code QA and required review checks pass;
+2. preview deployment succeeds and the preview is inspected;
+3. the PR is merged after release checks;
+4. Cloudflare production deployment succeeds;
+5. the production URL is opened and the changed page/functionality is verified;
+6. the ledger is marked `LIVE VERIFIED`.
+Anything not at step 6 remains explicitly pending. Never claim preview = production. Keep the live site protected; merge/deploy only after checks and review are green.
+
+### Release backlog / current status
+- Draft PRs #40–#43 and #45–#55 remain open/unmerged as of this checkpoint. PR #44 is the consolidated documentation/checkpoint PR.
+- PRs #49, #50, #51, #52, #53 and #55 have successful Cloudflare preview deployments. PR #54 still needs fresh preview/check verification; PRs #40–#48 require their preview and check statuses to be refreshed before release.
+- None of these open draft PRs is recorded as production-deployed or live-verified. Keep all pending until production release verification is completed.
+- Separate older open PRs (#2, #3, #6, #7, #16, #18 and #27) also need triage and disposition; do not silently abandon or merge without checking scope, conflicts and release readiness.
+
+### Current safety / blockers
+- No production changes/deployment from this QA batch. Browser interaction QA and independent educator review remain release gates where required.
+- No GSC inspection/manual indexing request; no paid crawl/scrape.
+
+### Next action
+- Continue remaining Grade 8 Science lesson QA after checking current preview/check status for PRs #40–#55. Then consolidate release QA, resolve blockers, merge only green and reviewed changes, and verify each production deployment before marking live.
+
+### Project tree / active proposals
+- `science/grade-7/` — source-section proposals in PRs #45–#50
+- `science/grade-8/` — proposals in PRs #51–#55
+- `scripts/pages/` — quiz scripts reviewed
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source inventory
+- `PROJECT_STATE.md` / `PROJECT_STATUS.md` — checkpoint and release ledger
+- `audit/source-inventory-2026-11-05` — consolidated docs branch (PR #44)
+- Proposed new source-section additions: PRs #40–#42 and #45–#55 (14 total); if all merge, projected coverage is 33/77. This projection is not main-branch coverage.
