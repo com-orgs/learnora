@@ -1293,3 +1293,12 @@ User instruction: work is not complete until it is production-deployed and the l
 - CI fix PR #56 latest commit: `2bb4bf7ed19418271c81d9b5159a6df48f33ff52`; now grants `checks: read` for the check-run fallback. Workflow run #881 is pending.
 - Once PR #56 passes: merge the CI fix; rerun PR #40 and #50 audit jobs (both failed only at preview URL discovery; Cloudflare preview deployments succeeded); confirm browser/asset/header checks. Then perform ordered PR review/merge, verify production deployments and live pages, and update the ledger to LIVE VERIFIED.
 - No new lesson PR should be treated as complete while these earlier changes remain only in preview.
+
+
+### Resume / deployment ledger update — 5 Nov 2026
+- PR #55 Earth, Moon and Space: audit **success**; Cloudflare preview **success**; preview page fetched and content/source section verified. Not merged, not production-live.
+- PR #56 CI repair: Cloudflare preview **success**; audit **in progress**. Hold merge until all audit steps pass.
+- PR #40 Algebra and PR #50 States of Matter: preview success, audit failed due preview URL discovery; rerun after #56 workflow repair is merged/proven.
+- PRs #40–#55 are not production-deployed/live-verified. PR #44 is consolidated documentation.
+- User's release rule: every change must be tracked through preview QA → merge → production deploy → live URL/functionality verification. Anything before final verification stays pending.
+- Pause further lesson expansion; current next action is complete CI repair and release backlog. Older PRs #2, #3, #6, #7, #16, #18 and #27 require triage.
