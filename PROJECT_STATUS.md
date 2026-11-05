@@ -1285,3 +1285,11 @@ User instruction: work is not complete until it is production-deployed and the l
 - PRs #51–#55: Cloudflare preview and audit checks succeeded. PR #54 preview URL: https://bd2bfff0.learnora-ab2.pages.dev/science/grade-8/waves-sound-and-light
 - CI repair PR #56: https://github.com/com-orgs/learnora/pull/56. Audit fallback now reads the successful Cloudflare check-run preview URL for the exact head SHA if the bot comment is missing. Audit run still in progress; all further checks must pass before merge.
 - PR #40 and #50 remain blocked until the fix is validated and their audits are rerun. No PR in this batch is production-deployed/live-verified.
+
+ 
+### Immediate priority — production release backlog (5 Nov 2026)
+
+- Pause additional lesson-content expansion until the current reviewed PR backlog is reconciled and the deployment path is proven.
+- CI fix PR #56 latest commit: `2bb4bf7ed19418271c81d9b5159a6df48f33ff52`; now grants `checks: read` for the check-run fallback. Workflow run #881 is pending.
+- Once PR #56 passes: merge the CI fix; rerun PR #40 and #50 audit jobs (both failed only at preview URL discovery; Cloudflare preview deployments succeeded); confirm browser/asset/header checks. Then perform ordered PR review/merge, verify production deployments and live pages, and update the ledger to LIVE VERIFIED.
+- No new lesson PR should be treated as complete while these earlier changes remain only in preview.
