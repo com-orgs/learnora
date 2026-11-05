@@ -420,3 +420,9 @@ Anything not at step 6 remains explicitly pending. Never claim preview = product
 - PR #54 preview is confirmed successful: https://bd2bfff0.learnora-ab2.pages.dev/science/grade-8/waves-sound-and-light
 - CI repair PR #56: https://github.com/com-orgs/learnora/pull/56. It adds a fallback to the successful Cloudflare Pages check-run output for the exact commit when the bot comment is missing. Its audit run is currently in progress; do not merge until all header/asset/Playwright checks pass.
 - PR #40 and #50 are explicitly blocked pending PR #56 resolution and rerun of their failed audit jobs. No content PR is approved for production yet.
+
+ 
+### Priority override — deployment backlog first (5 Nov 2026)
+- User explicitly requires that completed work must not remain undeployed. Pause adding further lesson content until the current QA/release backlog is reconciled and a production release plan is executed.
+- CI repair PR #56 latest commit: `2bb4bf7ed19418271c81d9b5159a6df48f33ff52`. Added `checks: read` permission so the audit workflow can query Cloudflare check-run output when the Cloudflare bot comment is missing. New workflow run #881 is pending at this checkpoint.
+- After PR #56's audit passes: merge the CI repair, then rerun failed audits for PRs #40 and #50. Verify every PR's changed files, dependencies, preview, browser/quiz tests and conflicts. Merge in safe order only when all checks are green, then confirm Cloudflare production deploy and verify each changed live URL. Do not mark work complete before live verification.
