@@ -7,14 +7,26 @@
 > Traffic, rankings, indexing and revenue cannot be guaranteed. This plan prioritises measurable work, student value, search intent and safe monetisation. Do not invent keyword metrics or publish thin pages merely to increase URL count.
 
 
-## Superseding release and quality checkpoint — 5 November 2026
+## Superseding release and quality checkpoint — 5 November 2026 (post-PR #39)
 
-- Latest production code commit recorded in `PROJECT_STATUS.md`: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`; main HEAD `2e96dc638b96733174ce7c95e8ffa9c893f11ece` is a docs-only checkpoint.
-- Post-PR #23 content work subsequently released: Grade 8 Science hub cross-link to Earth Resources (PR #20); verified references on Grade 6 Understanding Fractions (#21), Equivalent Fractions (#22), Mixed Numbers (#23), Adding/Subtracting Fractions (#25), Multiplying/Dividing Fractions (#26), Comparing/Ordering Fractions (#28), Understanding Decimals (#29), Adding/Subtracting Decimals (#31), and Introduction to Ratios (#37).
-- Additional Grade 6 improvements include a fuller decimal-division lesson and common-mistakes content, metadata/favicon consistency across Grade 6 lessons, and BreadcrumbList structured data on all 23 Grade 6 Maths lessons. PR #36 added the favicon to Introduction to Ratios. Latest status records PR #37 as merged/deployed with full preview QA and production self-canonical/`index,follow` verification.
-- The Grade 8 Science internal-link gap is resolved by PR #20; no current unresolved internal-link defect is recorded in the latest release evidence.
-- Source attribution: 11/77 was the post-PR #26 snapshot; four later source-section additions imply a provisional 15/77 (62 remaining). Recount the repository before using this as a final percentage. Independent educator review remains open.
-- Daily monitoring results and all exact URLs for 5 November are recorded in the following daily log.
+- Latest production commit: `4bf96bbfdb786b45a510ca794fcc841edbbc01b4`; production URL https://learnora-ab2.pages.dev/.
+- PR #38 added verified supplementary sources to Grade 6 Understanding Percentages: OpenStax Prealgebra 2e 6.1, Khan Academy Grade 6 Rates and Percentages and Illustrative Mathematics Exam Scores (6.RP.A.3.c). Academic mappings and quiz/worksheet answer keys checked; preview QA, deployment and production verification passed.
+- PR #39 added verified supplementary sources to Grade 6–7 Percentage Increase and Decrease: OpenStax Prealgebra 2e 6.2, Khan Academy Finding Percentage of a Change and Illustrative Mathematics Discounted Books (7.EE.B.3). Worked examples, six practice mappings, five quiz mappings and five worksheet keys checked; full preview QA, deployment and production verification passed.
+- PR #39 QA run [#41962548017](https://github.com/com-orgs/learnora/actions/runs/41962548017) passed static, legal, exact Cloudflare preview, headers/assets and mobile/desktop/quiz checks. Production deployment [#41962847408](https://github.com/com-orgs/learnora/actions/runs/41962847408) and static/legal audit [#41962847493](https://github.com/com-orgs/learnora/actions/runs/41962847493) succeeded.
+- PR #33 completed the empty Common Mistakes section on Adding and Subtracting Decimals; PR #31 added its three learning references. PR #30 corrected CI trigger timing so preview-required QA runs on pull requests only.
+- Repository tree contains 78 lesson HTML files: 46 Maths (23 Grade 6, 12 Grade 7, 11 Grade 8), 9 English, 14 Science, 3 Computer Science, 3 AI Literacy and 3 Financial Literacy. Previous 15/77 source estimate is stale after PR #38 and #39. Full source-section inventory is required before publishing a coverage ratio.
+- GSC 5 November guard found 31 distinct URLs already checked by the hourly tracker, 0 inspection-history rows for today; total 31/10 (21 over cap). Automation made zero additional URL inspections. GSC Wizard connector exposes no pause/throttle control; owner must use its UI to pause/reduce hourly tracker checks. No more URL inspections on 5 November.
+- Bing/IndexNow 5 November: 42 materially changed URLs submitted and HTTP 200/key-validated; 62 unchanged URLs skipped. History: 338 rows / 104 unique URLs. HTTP 200 confirms acceptance, not indexing.
+- GSC: 104 tracked URLs, 1 indexed and 103 unknown; sitemap pending with 0 warnings/errors. Settled performance through 2 November: homepage 1 impression, 0 clicks, average position 77. Do not claim meaningful traffic/ranking growth.
+- Ahrefs API returns `Insufficient plan`; Semrush has no API units; Firecrawl credits are 0. No paid plans/trials/credits used. GA4/Google Tag remains disabled pending child/mixed-audience privacy and consent review. Cloudflare Speed Brain, Bot Protection and Page Shield settings remain unchanged pending crawler/privacy review.
+- Gmail review through 5 November found no new urgent alerts; continue monitoring platform notifications and ignore paid upgrade promotions under the free-only constraint.
+
+### Current execution priorities
+1. Owner: pause or reduce the GSC Wizard hourly tracker checks in its UI; no further manual/tracker inspections until the cap issue is resolved.
+2. Recount Sources/Further Reading sections across all 78 lesson files before reporting source coverage.
+3. Continue academically checked references on remaining Grade 6 Maths lessons using isolated preview branches and full QA.
+4. Extend BreadcrumbList only where the visible breadcrumb path has been confirmed.
+5. Keep tracking/ads and Cloudflare security/performance toggles unchanged pending privacy/crawler review.
 
 
 ## 1. Project timeline — from the beginning
