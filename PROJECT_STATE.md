@@ -127,3 +127,23 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — Grade 7 Science: Ecosystems and Food Chains (5 Nov 2026)
+
+### Completed
+- Reviewed `science/grade-7/ecosystems-and-food-chains.html` and its quiz script.
+- Checked all 6 practice answers, 6 worksheet answer-key items and 5 quiz mappings against visible choices; all checked answers are consistent.
+- Desk-reviewed ecosystem/population/community definitions, biotic/abiotic examples, producer/consumer/decomposer roles, food-chain arrow direction, food-web relationships and energy transfer. No factual correction was required in this review.
+- Added three topic-specific references: NGSS MS-LS2-3, U.S. National Park Service “Spinning a Food Web” (Grades 6–8), and National Geographic Education “Food Chain” (Grades 5–12).
+- Explicitly clarified that the standards link is supplementary learning-scope context only; Learnora does not claim formal curriculum alignment or endorsement.
+- Logged the review in `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md`.
+
+### Current branch / release status
+- Preview branch: `qa/science-grade7-ecosystems-sources-2026-11-05`.
+- Quiz JavaScript unchanged. No production changes, merge or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- Source inventory baseline: 77 pages; 19 with dedicated source sections, 58 without, as documented on `audit/source-inventory-2026-11-05` / Draft PR #44.
+
+### Next action
+- Continue science source review with the next lesson in the backlog, then Financial Literacy and AI Literacy. Keep all changes preview-only and verify source relevance, age suitability and currentness.
