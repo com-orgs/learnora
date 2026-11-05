@@ -148,3 +148,14 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - This is a repository-based editorial desk review, not independent educator review or exhaustive chemistry certification. No merge, production deployment or GSC indexing request was made.
 
 - Follow-up deployment verification: Cloudflare Pages completed successfully for PR #51 commit `c601c8bb74eb3b7c00803b4e0ccfd71dfbe7252a`. Preview URL: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions ; branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . The separate repository audit check was still in progress; this is preview deployment only, not browser interaction QA or production deployment.
+
+ 
+## Grade 8 Science — Human Digestive and Circulatory Systems QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/human-digestive-and-circulatory-systems.html` and `scripts/pages/science-grade-8-human-digestive-and-circulatory-systems.js`.
+- Desk-reviewed digestive organs, mechanical and chemical digestion, amylase/proteases/lipase, bile and emulsification, villi and nutrient absorption, lacteals, heart chambers and pulmonary/systemic circuits, arteries/veins/capillaries, blood components and the relationship between digestion and circulation.
+- Checked all four worked examples, five independent-practice prompts for conceptual alignment, all six worksheet suggested-answer features and all five quiz answer mappings. All reviewed answer features and quiz mappings are consistent; the practice section has no separate answer block. No quiz JavaScript change required.
+- Improved the protease table to distinguish proteases that form shorter peptides from enzymes that further break peptides into amino acids.
+- Added official NIDDK digestive-system and NHLBI heart/blood-flow references, plus an optional advanced OpenStax heart-anatomy reference.
+- Draft PR #52: https://github.com/com-orgs/learnora/pull/52 on `qa/science-grade8-digestive-circulatory-sources-2026-11-05`. Only lesson HTML changed. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
+- This is a repository-based editorial desk review, not independent educator review or medical advice. No merge, production deployment or GSC indexing request was made.
