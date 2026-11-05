@@ -21,7 +21,7 @@ This matrix separates checks that are complete from checks that still need real 
 | Adding and Subtracting Decimals | Pass | Reviewed | Pass | Pass | N/A |
 | Understanding Percentages | Pass | Pending detailed pass | Pass | Pass | Pass |
 | Percentage Increase and Decrease | Pass | Pending detailed pass | Pass | Pass | Pass |
-| Multiplying and Dividing Decimals | Pass | Pending detailed pass | Pass | Pass | Pass |
+| Multiplying and Dividing Decimals | Pass | Reviewed | Pass | Pass | Pass |
 | Perimeter and Area of 2D Shapes | Pass | Reviewed | Pass | Pass | Pass |
 | Volume of 3D Shapes | Pass | Reviewed | Pass | Pass | Pass |
 | Metric Units and Conversions | Pass | Reviewed | Pass | Pass | Pass |
