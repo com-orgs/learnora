@@ -636,3 +636,15 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 5. Re-run page-level live robots/canonical/fetch checks when Firecrawl credits or the originating browser context are available. Keep production code unchanged until preview QA passes.
 6. Continue IndexNow only for new/materially changed URLs; never resubmit the 62 unchanged URLs listed above.
 
+
+
+## Phase 14 preview-only QA batch — Grade 6 fractions (5 Nov 2026)
+
+- Review scope: repository HTML and linked quiz JavaScript for five Grade 6 lessons: Understanding Fractions; Comparing and Ordering Fractions; Adding and Subtracting Fractions; Equivalent Fractions; Mixed Numbers and Improper Fractions.
+- Quiz consistency: **25/25** quiz answer-key mappings matched the visible question and selected option text (5 questions per lesson). This is a source-code consistency check, not a live browser interaction test and not a complete mathematical proof of every practice answer.
+- Learner-facing reference sections: all 5 sampled pages contain a dedicated Sources and Further Reading section. This sample demonstrates that the prior provisional site-wide source-section estimate must not be treated as a fresh exact count; the full 77-lesson inventory remains to be re-counted before changing the total.
+- External reference spot-check: OpenStax Prealgebra 2e sections 4.1 (Visualize Fractions), 4.4 (Add/Subtract with Common Denominators) and 4.5 (Add/Subtract with Different Denominators) were reachable; the Illustrative Mathematics “Lesson 15: Common Denominators to Compare” PDF was reachable and its stated learning goal matches the comparing-fractions lesson topic. These references support the relevant mathematical methods, not independent review of Learnora's complete lesson text.
+- Source URLs checked: https://openstax.org/books/prealgebra-2e/pages/4-1-visualize-fractions ; https://openstax.org/books/prealgebra-2e/pages/4-4-add-and-subtract-fractions-with-common-denominators ; https://openstax.org/books/prealgebra-2e/pages/4-5-add-and-subtract-fractions-with-different-denominators ; https://cms-assets.illustrativemathematics.org/010c7ikte3p5qryp8ttfwdzaobvi
+- No HTML, quiz script, production code, metadata or live content was changed. No deployment was performed. This was repository-source inspection only; no fresh live page fetch or browser QA was claimed.
+- GSC daily guard remains in force for 5 Nov: tracker is active, 104 URLs are tracked, latest tracker timestamp returned 2026-11-05T03:36:29.347Z, and no pause/throttle action is exposed by the connected GSC Wizard tools. No GSC inspection was run in this QA batch.
+- Next: re-count source sections across all 77 lesson HTML files; then continue with Grade 6 maths worked-example/practice-answer verification in small batches. Obtain genuine independent educator review before claiming expert endorsement.
