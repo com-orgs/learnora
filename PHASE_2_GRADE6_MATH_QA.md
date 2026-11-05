@@ -350,3 +350,18 @@ Date: 2026-11-05
 - Compared `main` with `phase-2-quality-fixes`: 28 expected files changed (3 reports, editorial standard, shared accessibility CSS, homepage duplicate-card removal, and 22 lesson-page edits). No unexpected repository paths appeared in the diff.
 - All 23 Grade 6 lessons now have a focused source-level content/answer-key review recorded. This is not independent subject-expert peer review.
 - Real rendered browser/mobile, live quiz, screen-reader, print-preview and live production HTTP tests remain pending because no connected browser session is available in this chat. No production deployment or merge occurred.
+
+
+## Production release and browser QA — 2026-11-05
+
+- Merged Phase 2 through [PR #57](https://github.com/com-orgs/learnora/pull/57). Production main commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`.
+- Production deployment workflow [run #67](https://github.com/com-orgs/learnora/actions/runs/42049423565) passed. Cloudflare Pages production-branch deployment check also reported success.
+- The deployed source tree is the same tree that passed PR-preview browser QA.
+- Playwright/Chromium loaded all 104 sitemap routes and checked responsive widths 320px, 390px, 768px and desktop. No horizontal overflow was reported.
+- 77 interactive quiz forms were submitted. Keyboard radio selection, feedback/status updates and retake/reset behaviour passed.
+- 79 worksheet print controls invoked the print handler. Actual print-preview/PDF visual output was not tested.
+- axe-core scans using WCAG 2.0/2.1 A/AA tags reported no violations. This is an automated scan, not a full WCAG conformance certification or manual screen-reader test.
+- All 104 routes passed configured first-party transfer/resource budgets. No unexpected third-party requests or CSP/runtime browser errors were reported.
+- Preview HTTP checks passed for homepage HTTP 200, security headers/CSP, homepage script, Grade 6 Understanding Fractions page/script, and custom 404 behaviour.
+- Post-deployment fetch successfully retrieved the production homepage, Grade 6 Understanding Fractions lesson, sitemap and robots.txt. Homepage and lesson canonical/robots/Open Graph metadata were present and aligned; sitemap lists 104 URLs and robots.txt references it.
+- Remaining post-release checks: manual screen-reader review, actual print-preview/PDF review, and independent educator review before making any peer-review claim. Google rankings/indexing/traffic are not guaranteed.
