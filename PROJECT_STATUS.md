@@ -1175,3 +1175,11 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #42: https://github.com/com-orgs/learnora/pull/42. Not merged or deployed. Browser interaction QA and independent educator review remain outstanding.
 - Draft PRs #40 (Algebraic Expressions) and #41 (Integers) remain unmerged. Production unchanged.
 - Next: continue targeted source-code QA on Understanding Percentages, verifying worked examples, practice/worksheet answers, quiz key mappings and suitable reference attribution.
+
+
+## Grade 7 Science — Ecosystems and Food Chains QA — 5 Nov 2026
+
+- Checked 6 practice answers, 6 worksheet answer-key items and 5 quiz mappings against the visible choices; all checked answers are consistent.
+- Desk-reviewed ecosystem terms, biotic/abiotic factors, producer/consumer/decomposer roles, food-chain arrow direction, food webs and energy transfer. No factual correction required in this review.
+- Added NGSS MS-LS2-3, U.S. National Park Service “Spinning a Food Web” (Grades 6–8) and National Geographic Education “Food Chain” (Grades 5–12) as supplementary references. Standards link is not a claim of formal curriculum alignment.
+- Preview branch `qa/science-grade7-ecosystems-sources-2026-11-05`; quiz script unchanged. No merge, production change or deployment. Browser interaction QA and independent educator review remain outstanding.
