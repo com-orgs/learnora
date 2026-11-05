@@ -182,3 +182,33 @@ Repository: https://github.com/com-orgs/learnora
 
 ### Next action
 - Continue Science source QA with Mixtures and Separation Techniques, then the remaining Science backlog. For each lesson, verify practice/worksheet/quiz answers, check claim-level source relevance, add only authoritative age-appropriate references, and keep work preview-only.
+
+ 
+## Latest checkpoint — Grade 7 Mixtures and Separation Techniques (5 Nov 2026)
+
+### Completed
+- Reviewed `science/grade-7/mixtures-and-separation-techniques.html` and its quiz script.
+- Checked 5 practice answers, 6 worksheet suggested answers (including the multi-step iron/sand/salt challenge), and 5 quiz answer mappings; all reviewed items are consistent.
+- Desk-reviewed the key separation concepts; no factual correction was needed.
+- Added four Royal Society of Chemistry education references and a clear adult-supervision/laboratory safety note for heating and distillation.
+- Created Draft PR #49: https://github.com/com-orgs/learnora/pull/49.
+- PR #49 changes only the lesson HTML. Quiz JavaScript is unchanged. CI/Cloudflare preview is not yet confirmed.
+
+### Current safety / blockers
+- PR #49 is draft and unmerged. No production edit or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection or manual indexing request was made.
+- Firecrawl credits remain at zero; no paid crawl/scrape was initiated.
+
+### Next action
+- Continue Grade 7 Science source and answer-key QA with `science/grade-7/states-of-matter-and-particle-model.html` and its quiz script. Check lesson claims, worked examples, practice/worksheet keys and quiz mappings; add sources only when their authority and relevance are verified. Keep all changes on a separate preview branch.
+
+### Project tree / active proposals
+- `science/grade-7/` — Grade 7 Science lesson HTML
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
+- `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
+- `qa/science-grade7-mixtures-separation-sources-2026-11-05` — Mixtures lesson proposal (PR #49)
+- Draft content proposals: PRs #40–#43 and #45–#49; do not assume merge or production deployment.
+- `PROJECT_STATUS.md`, `LEARNORA_MASTER_ROADMAP_2026-11-04.md`
