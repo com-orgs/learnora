@@ -275,3 +275,9 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
 - `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
 - Draft content proposals: PRs #40–#43 and #45–#51. No production release.
+
+### PR #51 preview update
+- Cloudflare Pages preview deployment succeeded for commit `c601c8bb74eb3b7c00803b4e0ccfd71dfbe7252a`.
+- Lesson preview: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions
+- Branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions
+- Separate repository audit check was still in progress. No production deployment; browser interaction QA remains outstanding.
