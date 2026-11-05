@@ -262,3 +262,13 @@ Continue with Adding and Subtracting Decimals, then Multiplying and Dividing Dec
 
 ## Next action
 Continue with Multiplying and Dividing Decimals, then the remaining pending lessons. Rendered browser/print testing is still outstanding.
+
+
+## Deep review — Multiplying and Dividing Decimals (2026-11-05)
+- Reviewed place-value shifts, decimal multiplication/division methods, estimation, word problems, practice/worksheet calculations and five quiz mappings. All reviewed calculations are correct.
+- Added a clear note that division by zero is undefined and the divisor must be non-zero.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark this lesson reviewed. Nine detailed reviews are complete; three remain.
+- Detailed findings saved in `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next action
+Continue the remaining deep reviews: Understanding Percentages, Percentage Increase and Decrease, and Introduction to Ratios (still pending in the release matrix). Then do final branch QA and browser tests when access is available.
