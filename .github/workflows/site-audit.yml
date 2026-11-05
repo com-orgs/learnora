@@ -54,12 +54,12 @@ jobs:
           preview_url=''
           for attempt in {1..30}; do
             comments=$(gh api "repos/$REPOSITORY/issues/$pr_number/comments?per_page=100")
-            preview_url=$(printf '%s' "$comments" | jq -r '[.[] | select(.user.login == "cloudflare-workers-and-pages[bot]") | .body | try capture("Branch Preview URL:</strong></td><td>\\s*<a href=\\u0027(?<url>https://[^\\u0027]+)\\u0027").url catch empty] | map(select(length > 0)) | last // empty')
+            preview_url=$(printf '%s' "$comments" | jq -r '[.[] | select(.user.login == "cloudflare-workers-and-pages[bot]") | .body | try capture("Branch Preview URL:</strong></td><td>[[:space:]]*<a href='(?<url>https://[^']+)'").url catch empty] | map(select(length > 0)) | last // empty')
             if [ -n "$preview_url" ]; then break; fi
 
             # Use the successful Cloudflare check run if its bot comment is missing.
             checks=$(gh api "repos/$REPOSITORY/commits/$HEAD_SHA/check-runs?per_page=100")
-            preview_url=$(printf '%s' "$checks" | jq -r '[.check_runs[] | select(.name == "Cloudflare Pages" and .conclusion == "success") | .output.summary // "" | try capture("Preview URL:</strong></td><td>\\s*<a href=\\u0027(?<url>https://[^\\u0027]+)\\u0027").url catch empty] | map(select(length > 0)) | last // empty')
+            preview_url=$(printf '%s' "$checks" | jq -r '[.check_runs[] | select(.name == "Cloudflare Pages" and .conclusion == "success") | .output.summary // "" | try capture("Preview URL:</strong></td><td>[[:space:]]*<a href='(?<url>https://[^']+)'").url catch empty] | map(select(length > 0)) | last // empty')
             if [ -n "$preview_url" ]; then
               echo "Resolved exact commit preview from successful Cloudflare Pages check run."
               break
