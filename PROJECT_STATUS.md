@@ -1207,3 +1207,5 @@ Historical session notes below are retained for continuity; use this current sta
 - PR #49 remains unmerged; no production edit or deployment. CI/preview status not yet confirmed. Browser interaction QA and independent educator review remain release gates.
 - No GSC inspection/manual indexing request or paid crawl/scrape was made.
 - Next QA target: Grade 7 Science — States of Matter and the Particle Model.
+
+- PR #49 Cloudflare Pages preview deployment: **successful** for commit `978fc083c52fc3abac095de956e20a67bd80051f`. Preview: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . Branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . This does not mean production deployment; interactive browser QA remains outstanding.
