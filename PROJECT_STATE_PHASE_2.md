@@ -323,7 +323,7 @@ Complete the final pending deep review: Introduction to Ratios. Then run final r
 - All 22 tables have keyboard-focusable responsive regions: 18 `.table-wrap` and 4 `.table-scroll`. Shared print CSS covers both.
 - All external links opening in a new tab have safe rel attributes.
 - 30 internal URL destinations checked, no missing repository targets. All 23 lesson script files exist. Sitemap has 104 URLs including all Grade 6 lessons.
-- Compared branch to main: 26 expected files changed; no unexpected paths in diff.
+- Compared branch to main: 29 expected files changed; no unexpected paths in diff.
 - Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` and detailed QA report. All 23 lessons have a focused source-level content/answer-key review recorded.
 - Browser-rendered desktop/mobile, live quiz, screen-reader, print-preview and live production HTTP tests remain pending because no connected browser session is available. No merge or deployment.
 
