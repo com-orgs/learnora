@@ -1154,3 +1154,13 @@ Historical session notes below are retained for continuity; use this current sta
 - Proposed change is isolated to branch `qa/grade6-algebraic-expressions-sources`; Draft PR #40: https://github.com/com-orgs/learnora/pull/40. Branch file was re-fetched; source section and quiz script integrity checks passed.
 - No merge, production edit, or deployment. Live browser interaction test and independent educator review remain outstanding. Do not describe this as a full independent expert validation.
 - Next: audit exact mathematical claims, worked examples and worksheet answers on Integers and the Number Line; then Order of Operations. Add references only after checking their relevance, using preview branches.
+
+
+## Integers and Number Line academic QA — 5 Nov 2026
+
+- Reviewed `math/grade-6/integers-number-line.html` and its quiz script. Checked the lesson definitions, comparisons, ordering, opposites, absolute-value examples, all 7 practice answers and all 7 worksheet answer-key items; the checked answers are mathematically consistent.
+- Confirmed the 5 quiz answer-key mappings match the visible answer options.
+- Added a relevant OpenStax Prealgebra 2e reference for locating and ordering integers, opposites and absolute value. The source section was re-fetched and verified on preview branch `qa/grade6-integers-sources`.
+- Draft PR #41: https://github.com/com-orgs/learnora/pull/41. No merge or deployment. Browser interaction QA and independent educator review remain outstanding.
+- Algebraic Expressions draft PR #40 remains open and unmerged. Both changes are isolated from production.
+- Next: verify Order of Operations worked examples, practice/worksheet answers and quiz mappings, then check suitable source attribution.
