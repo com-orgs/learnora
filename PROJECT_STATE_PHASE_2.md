@@ -331,3 +331,12 @@ Complete the final pending deep review: Introduction to Ratios. Then run final r
 - Working branch: `phase-2-quality-fixes`
 - Main branch and production site remain untouched.
 - Next step: arrange an authorized browser session for rendered QA, or request approval to create a pull request for code review. Do not merge or deploy without explicit user approval.
+
+
+## Release validation handoff — 2026-11-05
+- Opened pull request [#57](https://github.com/com-orgs/learnora/pull/57) from `phase-2-quality-fixes` to `main` to trigger the repository's full release QA workflow.
+- Cloudflare successfully deployed the branch preview at https://phase-2-quality-fixes.learnora-ab2.pages.dev/ (deployment check reported success for commit `8e104fae37628d3665c0ee9e7791cd7a00dc6827`).
+- GitHub Actions static website audit and legal/pre-monetisation readiness audit both passed on the PR commit.
+- Browser QA workflow is currently waiting for the authoritative Cloudflare PR preview comment. The existing preview deployment occurred before PR creation, so a fresh branch deployment is needed for the workflow to resolve its preview URL.
+- Production remains on `main`; no merge or production deployment has occurred.
+- Next: trigger a fresh branch preview after PR creation, complete HTTP/security/Playwright/axe checks, resolve any failures, then proceed to the production release.
