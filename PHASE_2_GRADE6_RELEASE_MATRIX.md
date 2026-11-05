@@ -17,7 +17,7 @@ This matrix separates checks that are complete from checks that still need real 
 | Introduction to Ratios | Pass | Pending detailed pass | Pass | Pass | Pass |
 | Multiplying and Dividing Fractions | Pass | Reviewed | Pass | Pass | N/A |
 | Mixed Numbers and Improper Fractions | Pass | Reviewed | Pass | Pass | Pass |
-| Understanding Decimals | Pass | Pending detailed pass | Pass | Pass | Pass |
+| Understanding Decimals | Pass | Reviewed | Pass | Pass | Pass |
 | Adding and Subtracting Decimals | Pass | Pending detailed pass | Pass | Pass | N/A |
 | Understanding Percentages | Pass | Pending detailed pass | Pass | Pass | Pass |
 | Percentage Increase and Decrease | Pass | Pending detailed pass | Pass | Pass | Pass |
@@ -39,7 +39,7 @@ This matrix separates checks that are complete from checks that still need real 
 - All 23 lesson pages have five visible quiz questions and five matching answer-key entries; 115 answer mappings were compared with the visible options.
 - All 23 corresponding quiz scripts contain submit handling, feedback text, a retake/reset handler and worksheet print handling.
 - All 23 pages have a responsive breakpoint, print stylesheet, visible keyboard-focus styling, a labelled main navigation landmark, five quiz fieldsets and five corresponding legends.
-- Every one of the 22 HTML tables across these lessons is now inside a keyboard-focusable responsive `table-wrap` region. The shared `accessibility.css` adds a print override so table overflow does not clip printed output.
+- Every one of the 22 HTML tables across these lessons is now inside a keyboard-focusable responsive table region (18 `table-wrap` and 4 `table-scroll` wrappers). The shared `accessibility.css` adds a print override so table overflow does not clip printed output.
 - All external links opened in a new tab have `rel="noopener noreferrer"`.
 - All 23 pages have one canonical URL, matching Open Graph URL, `index,follow`, valid JSON-LD `BreadcrumbList`, and Open Graph title/description aligned with the page title/meta description.
 - All 23 pages have at least one further-learning reference.
