@@ -445,3 +445,6 @@ Anything not at step 6 remains explicitly pending. Never claim preview = product
 
  
 - CI repair follow-up: commit `c2e5892767cbef79f0247c51c3d4ce31eea0d95b` replaces shell-unsafe literal apostrophe matching with escaped hex apostrophe matching in jq. PR #56 Cloudflare build is in progress and audit is queued. Previous commit `cc88687` failed due shell syntax in the resolver step; do not merge until this new run completes all browser/header checks successfully.
+
+ 
+- Latest CI state: PR #56 head `c2e5892767cbef79f0247c51c3d4ce31eea0d95b`, Cloudflare preview succeeded at `https://a16e1887.learnora-ab2.pages.dev`. Workflow run [#895](https://github.com/com-orgs/learnora/actions/runs/42002228194): static audit, legal/readiness audit, exact preview resolution, and preview header/asset checks have all passed. Playwright/Chromium installation is currently in progress; mobile/desktop/quiz browser checks have not yet run. Keep PR #56 unmerged until those tests pass.
