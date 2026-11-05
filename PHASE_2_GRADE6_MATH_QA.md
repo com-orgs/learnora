@@ -298,3 +298,16 @@ Date: 2026-11-05
 - Added an explicit reminder that division by zero is undefined and the divisor must be non-zero.
 - Reviewed OpenStax Decimal Operations, Khan Academy Grade 6 arithmetic and Illustrative Mathematics Grade 6 standard 6.NS.B.3 as further-learning references.
 - No source-level arithmetic mismatch found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Understanding Percentages
+
+Date: 2026-11-05
+- Reviewed percent-as-per-hundred meaning, fraction/decimal conversions, finding a percentage of an amount, score/discount/survey word problems, seven practice answers, five quiz mappings and seven worksheet answer-key items.
+- Recalculated conversions: 50% = 1/2; 25% = 1/4; 75% = 3/4; 20% = 1/5; 10% = 1/10; 8% = 0.08; 125% = 1.25; and 0.075 = 7.5%. All are correct.
+- Recalculated word problems: 18/20 = 90%; 10% of $50 = $5 and sale price $45; 40% of 30 = 12 students. All are correct.
+- Rechecked practice and worksheet calculations, including 16/20 = 80%, 25% of $40 = $10, 50% of 86 = 43, 15% of 60 = 9, and a 20% reduction from $80 = $16 discount and $64 sale price. No mismatch found.
+- Confirmed all five quiz mappings match visible options.
+- Corrected imprecise terminology in one common-mistake label: replaced “percentage points and amounts” with “percentage rate with the money amount”. The original example concerned a discount amount, not percentage-point differences.
+- Reviewed OpenStax, Khan Academy Grade 6 percentages and Illustrative Mathematics Exam Scores task for relevance.
+- No source-level arithmetic or factual error found in this focused review. Browser and print-preview behaviour remain unverified.
