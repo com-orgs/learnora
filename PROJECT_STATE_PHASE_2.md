@@ -67,3 +67,8 @@ Base branch: main
 - Found two duplicated “Continue Learning” sections. Consolidated them into one section with four distinct internal lesson links.
 - Added PBS LearningMedia (Grades 6–8) and Victoria Department of Education (Level 7) as further-learning references after fetching both sources successfully. The Victorian source is explicitly labelled as a separate Level 7 resource, not as proof of Learnora curriculum alignment.
 - Verified the branch file contains exactly one “Continue Learning” heading and one source section. No production deployment occurred.
+
+## Metric Units and Conversions lesson improvement
+- Reviewed metric prefix definitions, conversion relationships, worked examples, six practice answers, five quiz answer mappings and six worksheet key items. No arithmetic or answer-key mismatch was found in this source-level pass.
+- Added three NIST references covering SI length units, metric prefixes/unit writing, and general tables including mass and capacity. All three references returned HTTP 200 and were relevant to the lesson.
+- The page did not contain duplicate “Continue Learning” sections. No production deployment occurred.
