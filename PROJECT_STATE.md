@@ -310,3 +310,39 @@ Repository: https://github.com/com-orgs/learnora
 - Preview homepage and revised lesson fetched successfully; the page contains the new claim-checking workflow, lateral reading, four evidence statuses, worked examples, practice answers, worksheet answer key and source section.
 - Static audit, legal readiness, preview resolution and security header/assets steps passed in run #42055587328. Playwright browser checks were still in progress; run #42055624934 was queued after the CI branch-name correction.
 - No production merge/deployment.
+
+
+## Checkpoint update — AI answer verification lesson QA passed (5 Nov 2026)
+
+### Completed
+- PR #61 updated `ai-literacy/verify-ai.html` on branch `qa-verify-ai-content-quality`.
+- Added claim-by-claim checking, author/purpose/evidence/date/context/scope/fit checks, primary-vs-secondary source context, lateral reading, independent corroboration and four honest statuses: supported, contradicted, partly supported, unverified.
+- Added worked examples, six common mistakes, five practice explanations, worksheet and suggested answer key.
+- Added Digital Inquiry Group / Civic Online Reasoning and Purdue University OWL references after fetching and checking both.
+- Inspected shared quiz map; five quiz keys match visible choices. Shared JS unchanged.
+- Source-level checks passed: one H1, five quiz questions, canonical/OG match, robots index/follow, safe external-link rel attributes, no fabricated author/reviewer/credential/endorsement.
+- Preview deployed and fetched successfully: https://qa-verify-ai-content-quality.learnora-ab2.pages.dev/ai-literacy/verify-ai.
+- GitHub Actions run [#42055624934](https://github.com/com-orgs/learnora/actions/runs/42055624934) passed: static audit, legal/pre-monetisation audit, Cloudflare preview resolution, security headers/assets and Playwright/Chromium mobile, desktop and quiz browser tests.
+- QA report: https://github.com/com-orgs/learnora/blob/main/PHASE14_VERIFY_AI_QA_2026-11-05.md.
+- Draft PR #61: https://github.com/com-orgs/learnora/pull/61.
+
+### AI Literacy draft PRs
+- PR #59 AI Safety — draft, unmerged; CI/browser tests passed (run #42052324235).
+- PR #60 How AI Works — draft, unmerged; CI/browser tests passed (run #42054837940).
+- PR #61 How to Check AI Answers and Sources — draft, unmerged; CI/browser tests passed (run #42055624934).
+- No production lesson changes or deployment have been made from these three PRs.
+
+### Next action
+- Continue auditing remaining AI Literacy lesson pages and their answer mappings.
+- Then audit Computer Science and Financial Literacy lessons.
+- Before any production release, review all three AI Literacy PRs together, check cross-links and sitemap integrity, then run a final combined regression test. Obtain release approval before merge/deployment.
+
+### Current project tree
+- `ai-literacy/ai-safety.html` — PR #59 preview branch
+- `ai-literacy/how-ai-works.html` — PR #60 preview branch
+- `ai-literacy/verify-ai.html` — PR #61 preview branch
+- `scripts/pages/new-subject-lessons.js` — shared quiz answer map; inspected, unchanged
+- `PHASE14_AI_SAFETY_QA_2026-11-05.md` — AI Safety QA
+- `PHASE14_HOW_AI_WORKS_QA_2026-11-05.md` — How AI Works QA
+- `PHASE14_VERIFY_AI_QA_2026-11-05.md` — AI answer verification QA
+- `PROJECT_STATE.md` — resume checkpoint
