@@ -93,3 +93,21 @@ Base branch: main
 2. Review each lesson's definitions, worked reasoning, practice and worksheet keys, quiz mappings, source quality and internal links before making targeted edits.
 3. After the content batch, perform a separate rendered/mobile/accessibility and live-interaction QA pass; source inspection alone cannot verify those behaviours.
 4. Keep all changes on the working branch. Do not merge or deploy without explicit user approval.
+
+
+## Additional Grade 6 lesson QA — Rates, Factors, Algebra (2026-11-05)
+- Reviewed `math/grade-6/rates-and-proportions.html` and its quiz script. Checked rate/unit-rate definitions, equivalent ratios, proportion scaling, real-life examples, seven practice answers, five quiz mappings and six worksheet keys. No arithmetic mismatch found.
+- Added GeoGebra Grades 6–8 ratios/rates and Oxford University Press teacher-guide references.
+- Reviewed `math/grade-6/factors-multiples-hcf-lcm.html` and its quiz script. Checked factors, multiples, primes, HCF/LCM examples, real-life applications, eight practice answers, five quiz mappings and seven worksheet keys.
+- Found and fixed a factual overgeneralisation: the former statement said every whole number greater than zero has at least two positive factors, which incorrectly included 1. It now correctly says every whole number greater than 1; 1 is the stated exception.
+- Added Math Is Fun, Khan Academy Grade 6 practice, and Oxford University Press Pakistan references.
+- Reviewed `math/grade-6/algebraic-expressions.html` and its quiz script. Checked variable/constant/coefficient/term definitions, word-to-expression translations, substitution examples, like-term simplification, pattern example, eight practice answers, five quiz mappings and seven worksheet keys. No mismatch found.
+- Added OpenStax and Alloprof references.
+- Re-fetched all three updated pages and verified each has one H1, one canonical, five quiz questions, one “Continue Learning” section, one source section, and safe `rel="noopener noreferrer"` attributes on new external links.
+- Detailed findings added to `PHASE_2_GRADE6_MATH_QA.md`.
+- No production deployment occurred; work remains on `phase-2-quality-fixes`.
+
+## Next actions
+1. Continue checking remaining Grade 6 lessons, prioritising Solving One-Step Equations and Data and Graphs, then the remaining pages without references.
+2. After the content/answer-key pass, carry out a dedicated rendered mobile, accessibility, internal-link, worksheet-print and live quiz interaction QA.
+3. Reconcile page-level findings into the editorial release checklist. Keep all changes isolated on the branch until user approves merge/deployment.
