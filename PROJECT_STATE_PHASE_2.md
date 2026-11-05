@@ -291,3 +291,26 @@ Deep-review Percentage Increase and Decrease and Introduction to Ratios, then fi
 
 ## Next action
 Complete the final pending deep review: Introduction to Ratios. Then run final release-matrix reconciliation and prepare browser QA when an authorized browser session is available.
+
+
+## Deep review — Introduction to Ratios (2026-11-05)
+- Reviewed ratio notation/order, three-part ratios, simplifying, equivalent ratios, word problems, six practice answers, five quiz mappings and worksheet key.
+- Rechecked ratio simplifications and scale factors; no mismatch found.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark the final pending lesson reviewed. All 23 Grade 6 Maths lessons now have a detailed source-level content/answer-key review recorded.
+- Updated `PHASE_2_GRADE6_MATH_QA.md`. No production deployment or merge.
+
+## Phase 2 Grade 6 status
+- 23/23 lesson content reviews recorded.
+- 115/115 quiz answer mappings checked against visible options.
+- 23/23 lessons have further-learning references.
+- 23/23 lesson metadata/canonical/JSON-LD checks passed.
+- 30 unique internal destinations checked; no missing repository targets.
+- 22/22 tables have keyboard-scrollable responsive regions (18 table-wrap and 4 table-scroll).
+- Browser-rendered mobile/desktop, live quiz interaction, screen-reader and print-preview tests remain pending; the connected browser context is unavailable in this chat.
+- Keep all changes on `phase-2-quality-fixes`. No merge or production deployment without explicit approval.
+
+## Next actions
+1. Perform final whole-branch consistency checks (document closing tags, metadata, links, script references, duplicate sections, source-link safety and sitemap membership).
+2. Reconcile the release matrix and inspect the diff for unintended edits.
+3. Obtain an authorized browser session for rendered mobile/desktop and live interaction tests.
+4. Only after those checks, prepare a pull request for review; do not merge or deploy without the user's explicit approval.
