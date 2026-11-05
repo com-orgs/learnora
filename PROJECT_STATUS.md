@@ -1302,3 +1302,8 @@ User instruction: work is not complete until it is production-deployed and the l
 - PRs #40–#55 are not production-deployed/live-verified. PR #44 is consolidated documentation.
 - User's release rule: every change must be tracked through preview QA → merge → production deploy → live URL/functionality verification. Anything before final verification stays pending.
 - Pause further lesson expansion; current next action is complete CI repair and release backlog. Older PRs #2, #3, #6, #7, #16, #18 and #27 require triage.
+
+
+### CI repair follow-up — 5 Nov 2026
+- PR #56 preview URL parsing was simplified after the earlier run remained stuck at the resolver step.
+- Latest head `cc886879769856bf473f4fe166f980909df03860`; Cloudflare Pages build in progress, audit run pending. No merge.
