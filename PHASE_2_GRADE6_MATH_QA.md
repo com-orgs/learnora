@@ -286,3 +286,15 @@ Date: 2026-11-05
 - Found repeated guidance in the “Common Mistakes” section. Consolidated it into five distinct reminders covering alignment, placeholder zeros, decimal-point placement, regrouping and estimation.
 - Reviewed OpenStax Decimal Operations, Khan Academy Grade 6 arithmetic and Illustrative Mathematics’ Grade 6 money task as further-learning references.
 - No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Multiplying and Dividing Decimals
+
+Date: 2026-11-05
+- Reviewed place-value changes for ×10/×100/×1,000 and ÷10/÷100, decimal-by-whole multiplication, decimal-by-decimal multiplication, decimal division by whole numbers and decimal divisors, estimation, practical problems, nine practice answers, five quiz mappings and nine worksheet answer-key items.
+- Recalculated examples: 2.4 × 3 = 7.2; 1.25 × 4 = 5; 1.2 × 0.3 = 0.36; 2.5 × 1.4 = 3.5; 8.4 ÷ 4 = 2.1; 6.75 ÷ 3 = 2.25; 3.6 ÷ 0.6 = 6; and 1.44 ÷ 0.12 = 12. All are correct.
+- Rechecked practice and word problems, including 2.5 m ÷ 5 = 0.5 m, and worksheet calculations such as 1.4 × 0.2 = 0.28 and $1.35 × 6 = $8.10. No mismatch found.
+- Confirmed all five quiz answer mappings match visible options.
+- Added an explicit reminder that division by zero is undefined and the divisor must be non-zero.
+- Reviewed OpenStax Decimal Operations, Khan Academy Grade 6 arithmetic and Illustrative Mathematics Grade 6 standard 6.NS.B.3 as further-learning references.
+- No source-level arithmetic mismatch found in this focused review. Browser and print-preview behaviour remain unverified.
