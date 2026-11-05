@@ -7,7 +7,7 @@ Production commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`
 
 ## Release status
 
-This matrix separates checks that are complete from checks that still need real browser rendering or deeper academic review. A source-level pass is not a substitute for testing the deployed page on devices.
+This matrix records the completed source-level, automated browser and production release checks, while clearly separating remaining manual assistive-technology, print-output and independent educator reviews. Automated checks do not replace those specialist reviews.
 
 | Lesson | Five quiz keys checked | Detailed worked-example / practice / worksheet calculation review | Further-learning references | Metadata / schema | Mobile table handling |
 |---|---:|---|---|---|---|
