@@ -246,3 +246,32 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — complete 77-lesson source-section inventory
 - `audit/source-inventory-2026-11-05` — documentation/checkpoint branch (PR #44)
 - Draft content proposals: PRs #40–#43 and #45–#50; all remain separate until reviewed. No production release.
+
+ 
+## Latest checkpoint — Grade 8 Elements, Compounds and Chemical Reactions (5 Nov 2026)
+
+### Completed
+- Reviewed Grade 8 chemistry lesson and quiz script.
+- Verified the worked mass example (12 g + 32 g = 44 g), checked five practice prompts conceptually, all five worksheet suggested-answer features and all five quiz answer mappings.
+- Clarified the mixture definition to state that mixtures contain physically combined substances and can contain elements, compounds or both.
+- Added RSC resources for ages 11–14 and the official England science programme of study; added a non-accreditation disclaimer.
+- Draft PR #51: https://github.com/com-orgs/learnora/pull/51. Only lesson HTML changed; quiz JS unchanged.
+- PR #51 Cloudflare Pages and repository audit checks were still in progress at checkpoint time.
+- Previous preview deployments: PR #49 Mixtures succeeded (https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques); PR #50 States of Matter succeeded (https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model).
+
+### Current safety / blockers
+- PRs #49–#51 are draft and unmerged; no production changes or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection/manual indexing request; no paid crawl/scrape.
+
+### Next action
+- Continue Grade 8 Science QA with `science/grade-8/human-digestive-and-circulatory-systems.html` and its quiz script. Verify biological claims and age suitability, check worksheet answers and quiz mappings, then add topic-specific authoritative sources on a separate preview branch.
+
+### Project tree / active proposals
+- `science/grade-7/` — six source-section proposals in PRs #45–#50
+- `science/grade-8/` — Elements/Compounds proposal PR #51 and remaining lessons
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
+- `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
+- Draft content proposals: PRs #40–#43 and #45–#51. No production release.
