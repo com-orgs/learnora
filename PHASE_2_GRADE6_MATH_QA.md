@@ -57,3 +57,36 @@ Scope: 23 Grade 6 Mathematics lesson pages and their quiz scripts
 3. Review examples for originality and educational value; do not claim plagiarism-free status without a proper comparison.
 4. Verify rendered lesson UI, quiz feedback, worksheet printing, keyboard access and mobile layout.
 5. Review internal links, title/meta descriptions and structured data page by page.
+
+
+## Additional lesson QA — Angles, Integers, Order of Operations
+
+Date: 2026-11-05
+
+### Angles and Triangles
+- Reviewed angle definitions and ranges, protractor instructions, triangle classification by sides and angles, triangle angle-sum examples, straight-line and around-a-point angle facts, seven practice answers, five quiz mappings and seven worksheet answer-key items.
+- Recalculated the reviewed missing-angle answers: 70°, 55°, 60°, 48°, 50° and 140° where applicable. No mismatch found.
+- Confirmed all five quiz answer mappings match the visible question options.
+- Added a short explanation that side-based and angle-based triangle classifications are independent and can be combined (for example, a right-angled isosceles triangle).
+- Added further-learning links to Math Is Fun's protractor and triangle references.
+- Source-level structural verification: one H1, one canonical, five quiz questions, one “Continue Learning” section and one “Sources and Further Learning” section.
+
+### Integers and the Number Line
+- Reviewed integer definitions, number-line direction, comparisons and ordering, opposites, absolute value, temperature/floor/money examples, seven practice answers, five quiz mappings and seven worksheet answer-key items.
+- Rechecked the ordering and absolute-value examples and the money-change calculations. No mismatch found.
+- Confirmed all five quiz answer mappings match the visible question options.
+- Added GeoGebra further-learning resources for integers, ordering integers on a number line and absolute value on a number line; these are identified as Grades 6–8 resources where the source does so.
+- Source-level structural verification: one H1, one canonical, five quiz questions, one “Continue Learning” section and one “Sources and Further Learning” section.
+
+### Order of Operations
+- Reviewed the priority rules, left-to-right handling for operations of equal priority, worked examples, eight practice answers, five quiz mappings and eight worksheet answer-key items.
+- Recalculated the mixed-operation examples and answer keys, including 24 ÷ 6 × 2 = 8 and 48 − 24 ÷ 4 × 2 = 36. No mismatch found.
+- Confirmed all five quiz answer mappings match the visible question options.
+- Clarified that some BIDMAS/PEMDAS versions include indices/exponents after brackets, while this introductory lesson focuses on brackets and the four basic operations.
+- Added references from The Open University and the Australian Mathematical Sciences Institute (AMSI), including a Year 6 teaching resource.
+- Source-level structural verification: one H1, one canonical, five quiz questions, one “Continue Learning” section and one “Sources and Further Learning” section.
+
+### Scope and limitations
+- This is a source-level review of the listed content and answer mappings. It does not prove plagiarism-free originality, complete academic peer review, mobile visual quality, accessibility conformance, or successful live browser interactions.
+- Firecrawl retrieval was unavailable because the connected account had exhausted its daily MCP credit allowance. Source discovery used web search as a fallback; Firecrawl was not retried.
+- No production deployment occurred. All edits remain on `phase-2-quality-fixes`.
