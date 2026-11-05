@@ -159,3 +159,14 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Added official NIDDK digestive-system and NHLBI heart/blood-flow references, plus an optional advanced OpenStax heart-anatomy reference.
 - Draft PR #52: https://github.com/com-orgs/learnora/pull/52 on `qa/science-grade8-digestive-circulatory-sources-2026-11-05`. Only lesson HTML changed. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
 - This is a repository-based editorial desk review, not independent educator review or medical advice. No merge, production deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Electric Circuits, Current, Voltage and Resistance QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/electric-circuits-current-voltage-resistance.html` and `scripts/pages/science-grade-8-electric-circuits-current-voltage-resistance.js`.
+- Recalculated all six worked examples and all numerical practice/worksheet answers: 12 C / 4 s = 3 A; 6 V × 2 C = 12 J; 6 V / 3 Ω = 2 A; 2 Ω + 4 Ω = 6 Ω; 15 C / 5 s = 3 A; 12 V / 4 Ω = 3 A; 20 C / 4 s = 5 A; 10 V / 5 Ω = 2 A.
+- Checked five independent-practice prompts, six worksheet suggested-answer features and all five quiz mappings; all reviewed calculations and mappings are consistent.
+- Desk-reviewed circuit completeness, current, potential difference, resistance, Ohm's law conditions, series/parallel behaviour, ammeter/voltmeter connections and low-voltage safety. No factual correction was needed.
+- Added the official England KS3 science programme, PhET's free Circuit Construction Kit: DC Virtual Lab, and OpenStax ammeter/voltmeter guidance.
+- Draft PR #53: https://github.com/com-orgs/learnora/pull/53 on `qa/science-grade8-electric-circuits-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
+- This is a repository-based desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
