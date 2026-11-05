@@ -191,3 +191,10 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - Added NASA Space Place resources for seasons, Moon phases and eclipses; NASA eclipse-viewing safety; NASA JPL Moon Phases activity; and a NASA Grades 5–8 Sun–Earth–Moon activity guide.
 - Draft PR #55: https://github.com/com-orgs/learnora/pull/55 on `qa/science-grade8-earth-moon-space-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare Pages preview deployment succeeded for commit `db9f5b5f3cf5efe42ff1cc2b1f66f9cb50c25596`: https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . Branch preview: https://qa-science-grade8-earth-moon.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . GitHub audit check was still in progress at checkpoint time.
 - This is a repository-based editorial desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
+
+
+### Release checkpoint update — 5 Nov 2026
+- PR #55 Earth, Moon and Space now has successful audit and Cloudflare preview checks. Preview page was fetched; expected lesson, metadata, NASA source list and safety guidance are present. Preview only; no production release.
+- PR #56 CI fix: preview deployment successful; audit still running. PR #40 and #50 audits still fail at preview URL discovery although their Cloudflare previews succeed. Retest after CI repair.
+- User requires all completed work to be deployed and live-verified. No lesson PR is considered complete until it is merged, production deployment succeeds, and the live production page/functionality is checked.
+- Pause new lesson content until current release backlog is reconciled and deployed safely.
