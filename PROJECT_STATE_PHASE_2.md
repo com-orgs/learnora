@@ -252,3 +252,13 @@ Continue with Understanding Decimals, then Adding/Subtracting Decimals, Multiply
 
 ## Next action
 Continue with Adding and Subtracting Decimals, then Multiplying and Dividing Decimals and the remaining pending lessons.
+
+
+## Deep review — Adding and Subtracting Decimals (2026-11-05)
+- Reviewed place-value rules, decimal addition/subtraction, regrouping, estimation, word problems, practice and worksheet calculations, and five quiz mappings. All reviewed arithmetic is correct.
+- Removed duplicated advice from the “Common Mistakes” section and consolidated it into five distinct reminders.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark this lesson reviewed. Eight detailed reviews are complete; four remain.
+- Detailed findings added to `PHASE_2_GRADE6_MATH_QA.md`. No deployment or merge.
+
+## Next action
+Continue with Multiplying and Dividing Decimals, then the remaining pending lessons. Rendered browser/print testing is still outstanding.
