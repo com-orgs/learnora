@@ -230,3 +230,13 @@ Continue with Multiplying and Dividing Fractions, then the other pending lessons
 
 ## Next action
 Continue the remaining detailed content reviews, prioritising Mixed Numbers and Improper Fractions, then Understanding Decimals and the remaining decimal/fraction pages. Keep all changes on the working branch.
+
+
+## Deep review — Mixed Numbers and Improper Fractions (2026-11-05)
+- Reviewed all conversion examples, quick-reference table, comparison method, practice answers, five quiz mappings and worksheet key.
+- Recalculated all listed mixed/improper conversions and comparisons; no mismatch found.
+- Marked the lesson reviewed in `PHASE_2_GRADE6_RELEASE_MATRIX.md`. Six deep reviews are complete; six remain.
+- Detailed notes saved in `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next action
+Continue with Understanding Decimals, then Adding/Subtracting Decimals, Multiplying/Dividing Decimals, Percentages and the remaining pending topics. Keep work on the branch.
