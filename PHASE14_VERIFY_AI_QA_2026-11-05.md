@@ -39,11 +39,11 @@
 - Draft PR #61: https://github.com/com-orgs/learnora/pull/61
 - Branch: `qa-verify-ai-content-quality`
 - Cloudflare branch preview deployed successfully and both the preview homepage and revised lesson were fetched successfully: https://qa-verify-ai-content-quality.learnora-ab2.pages.dev/ai-literacy/verify-ai.
-- GitHub Actions run #42055587328 had passed static/legal/preview header checks and was running Playwright browser checks; the updated workflow run #42055624934 was queued at the time of this update.
+- GitHub Actions run [#42055624934](https://github.com/com-orgs/learnora/actions/runs/42055624934) completed successfully: static website audit, legal/pre-monetisation audit, Cloudflare preview resolution, security headers/assets, and Playwright/Chromium mobile, desktop and quiz browser checks all passed.
 - No production change or deployment.
 
 ## Release limits
 - Draft PR only; no production merge or deployment.
 - No independent educator review is claimed.
 - No guarantee of ranking, AI citations or AdSense approval.
-- Next: complete preview/browser QA, then audit the remaining Computer Science and Financial Literacy lesson templates.
+- Next: continue with remaining AI Literacy lesson(s), then audit Computer Science and Financial Literacy pages. Before release, review all three draft AI Literacy PRs together and run a final combined regression audit.
