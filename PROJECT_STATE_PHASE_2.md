@@ -220,3 +220,13 @@ Deep-review Adding and Subtracting Fractions, then the remaining pending Grade 6
 
 ## Next action
 Continue with Multiplying and Dividing Fractions, then the other pending lessons. Rendered browser, real-device and print-preview tests remain pending.
+
+
+## Deep review — Multiplying and Dividing Fractions (2026-11-05)
+- Reviewed the full lesson, multiplication/cross-cancellation, reciprocal division, zero-divisor note, word problems, practice answers, five quiz mappings and worksheet answer key.
+- Recalculated worked examples and all listed practice/worksheet answers; no mismatch found.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark the lesson reviewed. Five deep lesson reviews are complete; seven remain.
+- Findings saved in `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next action
+Continue the remaining detailed content reviews, prioritising Mixed Numbers and Improper Fractions, then Understanding Decimals and the remaining decimal/fraction pages. Keep all changes on the working branch.
