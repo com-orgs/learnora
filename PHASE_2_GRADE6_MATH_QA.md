@@ -173,3 +173,19 @@ Date: 2026-11-05
 - The structured data currently provides BreadcrumbList only. No unsupported author, reviewer, rating, course accreditation or learning-outcome claims were added.
 - This is static source validation; no Google Rich Results Test, Schema Markup Validator, live crawler rendering, mobile screenshot or production URL response test was performed.
 - No production deployment occurred.
+
+
+## Static mobile, accessibility and quiz-script checks
+
+Date: 2026-11-05
+- Inspected all 23 lesson templates. Each includes a mobile-width media query, print stylesheet, visible keyboard-focus styling, labelled main navigation, five quiz fieldsets and five legends.
+- Every table across the 23 lesson pages is now wrapped in a `div.table-wrap` region with `role="region"`, `aria-label="Scrollable table"` and `tabindex="0"`. There are 22 tables in total; all 22 wrappers and matching closing tags were re-fetched and counted.
+- Updated shared `accessibility.css` with a print override that removes horizontal overflow clipping from table wrappers when printing.
+- Every external link using `target="_blank"` in the inspected Grade 6 lessons also has `rel="noopener noreferrer"`.
+- All 23 quiz scripts were source-checked for five answer entries, submit handling, `preventDefault`, feedback text, retake/reset handling, progress reset and worksheet print handling. The previously reviewed 115 answer mappings remain unchanged.
+- These are static markup/script checks, not real browser interaction or accessibility certification. Screen-reader behaviour, focus order, actual mobile rendering, print preview and runtime JavaScript errors remain unverified.
+- No production deployment occurred.
+
+## Release matrix
+- Created `PHASE_2_GRADE6_RELEASE_MATRIX.md` to distinguish all 23 pages' quiz-key, detailed academic review, reference, metadata/schema, mobile table and pending browser QA status.
+- 11 pages have detailed worked-example/practice/worksheet calculation reviews recorded; the remaining 12 are explicitly marked for deeper review. This prevents the 115 quiz-key check from being misrepresented as a full academic audit.
