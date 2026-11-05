@@ -11,7 +11,7 @@ This matrix separates checks that are complete from checks that still need real 
 | Lesson | Five quiz keys checked | Detailed worked-example / practice / worksheet calculation review | Further-learning references | Metadata / schema | Mobile table handling |
 |---|---:|---|---|---|---|
 | Understanding Fractions | Pass | Reviewed | Pass | Pass | N/A |
-| Equivalent Fractions | Pass | Pending detailed pass | Pass | Pass | N/A |
+| Equivalent Fractions | Pass | Reviewed | Pass | Pass | N/A |
 | Comparing and Ordering Fractions | Pass | Pending detailed pass | Pass | Pass | N/A |
 | Adding and Subtracting Fractions | Pass | Pending detailed pass | Pass | Pass | N/A |
 | Introduction to Ratios | Pass | Pending detailed pass | Pass | Pass | Pass |
