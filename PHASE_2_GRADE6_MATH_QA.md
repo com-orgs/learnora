@@ -158,3 +158,18 @@ Date: 2026-11-05
 - Checked the working-branch `sitemap.xml`: it contains 104 URLs, including all 23 Grade 6 Maths lesson URLs.
 - This is a repository-level path and sitemap membership check. It does not prove that every URL returns HTTP 200 in production, that redirects/canonicals behave correctly at runtime, or that browser rendering works.
 - No sitemap or deployment changes were made.
+
+
+## Grade 6 SEO metadata and structured-data audit
+
+Date: 2026-11-05
+- Inspected all 23 Grade 6 Maths lesson HTML files on the working branch.
+- Every lesson has exactly one canonical link, and the canonical URL matches its Open Graph URL.
+- All 23 pages declare `robots=index,follow`; no unintended noindex directive was found in this source-level check.
+- All 23 pages contain one JSON-LD block. Each block parses as valid JSON and declares `BreadcrumbList`.
+- All 23 pages' Open Graph titles now exactly match their HTML page titles; all Open Graph descriptions now exactly match the meta descriptions.
+- Corrected social metadata mismatches on the affected lesson pages only. No canonical URLs, meta descriptions, content titles, or structured-data claims were changed.
+- Meta description lengths across the inspected pages ranged from 132 to 160 characters. Length is a descriptive check only; Google may rewrite snippets and does not guarantee display of the supplied description.
+- The structured data currently provides BreadcrumbList only. No unsupported author, reviewer, rating, course accreditation or learning-outcome claims were added.
+- This is static source validation; no Google Rich Results Test, Schema Markup Validator, live crawler rendering, mobile screenshot or production URL response test was performed.
+- No production deployment occurred.
