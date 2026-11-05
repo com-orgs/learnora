@@ -1248,3 +1248,12 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #53: https://github.com/com-orgs/learnora/pull/53; only lesson HTML changed. Cloudflare Pages and repository audit checks still in progress.
 - PR #52 digestive/circulatory Cloudflare preview deployment succeeded: https://a789444a.learnora-ab2.pages.dev/science/grade-8/human-digestive-and-circulatory-systems
 - Next QA target: Grade 8 Science — Waves, Sound and Light. Production unchanged.
+
+ 
+## Grade 8 Science — Waves, Sound and Light QA (5 Nov 2026)
+
+- Reviewed wave properties, transverse/longitudinal waves, sound, reflection/refraction, electromagnetic spectrum and safety. Checked calculations: 10 m/s, 12 m/s and 4 m/s; mirror reflection examples 35°, 25° and worksheet/quiz values are correct. All five worksheet suggested-answer features and all five quiz mappings match.
+- Refined sound-speed explanation and added GOV.UK KS3, NASA and OpenStax resources.
+- Draft PR #54: https://github.com/com-orgs/learnora/pull/54; only lesson HTML changed. Preview/audit checks not yet available.
+- PR #53 Electric Circuits Cloudflare preview succeeded: https://e4c1e038.learnora-ab2.pages.dev/science/grade-8/electric-circuits-current-voltage-resistance
+- Next QA target: Grade 8 Science — Earth, Moon and Space Patterns. No production change or deployment.
