@@ -186,3 +186,37 @@ Repository: https://github.com/com-orgs/learnora
 - `qa/grade6-integers-sources` — Draft PR #41
 - `qa/grade6-order-operations-sources` — Draft PR #42
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — AI Safety lesson strengthened on preview (5 Nov 2026)
+
+### Completed since previous checkpoint
+- Audited `ai-literacy/ai-safety.html` and the shared `scripts/pages/new-subject-lessons.js` quiz map.
+- Confirmed all five visible quiz answer mappings match the visible options.
+- Identified gaps in the original lesson: no dedicated sources section, no substantive worked scenario, limited privacy detail, thin practice, no worksheet answer key, and a recap referring to worked examples that were not present.
+- Checked current primary guidance from UNICEF (2025 Version 3.0), NIST AI RMF Section 3 and UNESCO's generative-AI education guidance. All three URLs were reachable and relevant.
+- Expanded the lesson on a preview branch with a classroom fairness scenario, student privacy guidance, safe/ethical study workflow, age-rule caution, worked scenarios, practice answer features, worksheet answer key and source section.
+- Source-level QA passed: one H1, five quiz fieldsets, correct shared quiz-map entry, canonical/OG match, three primary sources, worksheet answer key, no invented reviewer and safe new-tab link rel attributes.
+- Cloudflare preview homepage and updated AI Safety page fetched successfully.
+- Created audit record `PHASE14_AI_SAFETY_QA_2026-11-05.md`.
+
+### Current branch / release state
+- Active preview branch: `qa-ai-safety-content-quality`.
+- Draft PR #59: https://github.com/com-orgs/learnora/pull/59.
+- Preview page: https://qa-ai-safety-content-quality.learnora-ab2.pages.dev/ai-literacy/ai-safety.
+- GitHub Actions PR audit run #42051906144: static website audit and legal/pre-monetisation checks passed; preview header/assets and browser checks were still pending when checkpoint was written.
+- Earlier slash-named branch PR #58 was closed because its branch name was unsuitable for the documented Cloudflare Pages preview-hostname fallback. PR #59 uses a clean branch name.
+- No production HTML/JS change, merge or deployment. No GSC inspection.
+- Independent educator and child-safeguarding expert review remain outstanding.
+
+### Next action
+- Finish CI for PR #59 and inspect any failures. If preview/browser checks pass, keep the change as a reviewed draft until release approval. Then audit the remaining short-form AI Literacy, Computer Science and Financial Literacy lessons, prioritising the highest-risk privacy/safety and factual claims.
+
+### Project tree
+- `ai-literacy/ai-safety.html` — updated only on preview branch
+- `scripts/pages/new-subject-lessons.js` — shared quiz script; inspected, unchanged
+- `PHASE14_AI_SAFETY_QA_2026-11-05.md` — audit record
+- `PHASE14_PERCENTAGES_QA_2026-11-05.md` — Understanding Percentages QA
+- `PHASE14_PERCENTAGE_CHANGE_QA_2026-11-05.md` — Percentage Increase/Decrease QA
+- `qa-ai-safety-content-quality` — active preview branch, PR #59
+- `PROJECT_STATE.md` — current resume checkpoint
