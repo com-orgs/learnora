@@ -247,3 +247,15 @@ Date: 2026-11-05
 - Confirmed all five quiz answer mappings match the visible options.
 - Reviewed OpenStax, Illustrative Mathematics Grade 6 standard 6.NS.A.1 and Khan Academy fraction-division material for relevance.
 - No source-level factual or arithmetic mismatch found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Mixed Numbers and Improper Fractions
+
+Date: 2026-11-05
+- Reviewed proper/improper fraction definitions, mixed-number representation, both conversion methods, quick-reference table, comparing mixed and improper forms, common mistakes, seven practice answers, five quiz mappings and seven worksheet answer-key items.
+- Recalculated conversions: 11/4 = 2 3/4; 17/5 = 3 2/5; 2 3/5 = 13/5; 4 1/3 = 13/3; 13/4 = 3 1/4; 2 2/3 = 8/3; 19/5 = 3 4/5; and 1 5/6 = 11/6. All are correct.
+- Rechecked comparisons: 1 2/3 = 20/12 and 7/4 = 21/12, so the mixed number is smaller; 2 1/2 = 10/4, so 11/4 is greater. Correct.
+- Rechecked practice and worksheet answers, including 22/6 = 3 2/3, 5 3/4 = 23/4, 23/6 = 3 5/6, and 4 3/8 = 35/8. No mismatch found.
+- Confirmed all five quiz mappings match visible options.
+- Reviewed Manitoba Education Grade 6 support material, Texas Instruments Grades 4–6 activity and Open University OpenLearn reference for relevance.
+- No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
