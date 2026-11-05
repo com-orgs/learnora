@@ -4,20 +4,21 @@
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
 
-## Current verified state — 5 November 2026 (post-PR #38 production release)
+## Current verified state — 5 November 2026 (post-PR #39 production release)
 
 - Production: https://learnora-ab2.pages.dev/
-- Latest production main commit: `4d3a8c7a5c23261c2bcea7036a1c93e30c6a8238`.
-- PR [#38](https://github.com/com-orgs/learnora/pull/38) merged successfully. Added three supplementary sources to Grade 6 Understanding Percentages: OpenStax Prealgebra 2e 6.1, Khan Academy 6th Grade Rates and Percentages, and Illustrative Mathematics Exam Scores (6.RP.A.3.c). Lesson remains curriculum-neutral.
-- PR38 academic QA verified three worked examples, all seven practice mappings, five quiz mappings and seven worksheet keys. No quiz/script changes.
-- Full PR38 preview QA [#41961960517](https://github.com/com-orgs/learnora/actions/runs/41961960517) passed all 10 steps, including static audit, legal/pre-monetisation audit, exact Cloudflare preview resolution, preview headers/assets and mobile/desktop/quiz Playwright checks. Final PR head differed from the QA-tested SHA only by CI-generated tracker commits; the lesson HTML blob was identical.
-- Cloudflare production deployment [#41962222398](https://github.com/com-orgs/learnora/actions/runs/41962222398) and main static/legal audit [#41962222525](https://github.com/com-orgs/learnora/actions/runs/41962222525) completed successfully.
-- Production fetch verified the three percentage references, self-canonical, `index,follow`, title, description and Open Graph metadata. The Grade 6 Adding and Subtracting Decimals page also verified live with its five-point Common Mistakes section and three references.
-- PR [#33](https://github.com/com-orgs/learnora/pull/33) is merged/deployed; it filled the previously empty Common Mistakes section on Adding and Subtracting Decimals with five accurate explanations. Its full preview QA [#41887703666](https://github.com/com-orgs/learnora/actions/runs/41887703666) passed all steps.
-- PR [#31](https://github.com/com-orgs/learnora/pull/31) merged/deployed; added OpenStax, Khan Academy and Illustrative Mathematics sources to Adding and Subtracting Decimals.
+- Latest production main commit: `4bf96bbfdb786b45a510ca794fcc841edbbc01b4`.
+- PR [#39](https://github.com/com-orgs/learnora/pull/39) merged successfully. Added three supplementary references to Grade 6–7 Percentage Increase and Decrease: OpenStax Prealgebra 2e 6.2, Khan Academy Grade 6 Finding Percentage of a Change, and Illustrative Mathematics Discounted Books (7.EE.B.3). Curriculum-neutral wording retained.
+- PR39 academic QA checked all six worked examples and everyday applications, six practice answer mappings, five quiz answer mappings/explanations and five worksheet keys. Percentage changes consistently use the original amount as the base; multipliers and answer mappings are correct.
+- Full PR39 preview QA [#41962548017](https://github.com/com-orgs/learnora/actions/runs/41962548017) passed all steps: static audit, legal/pre-monetisation audit, exact Cloudflare preview resolution, preview headers/assets and mobile/desktop/quiz browser checks. Final PR head differed from the QA-tested commit only by CI-generated tracker commits; the lesson HTML blob was identical.
+- Cloudflare production deployment [#41962847408](https://github.com/com-orgs/learnora/actions/runs/41962847408) and main static/legal audit [#41962847493](https://github.com/com-orgs/learnora/actions/runs/41962847493) completed successfully.
+- Production fetch verified all three references on the Percentage Increase and Decrease lesson, plus its self-canonical, `index,follow`, title, description and Open Graph metadata.
+- PR [#38](https://github.com/com-orgs/learnora/pull/38) merged/deployed. Added OpenStax Prealgebra 2e 6.1, Khan Academy 6th Grade Rates and Percentages, and Illustrative Mathematics Exam Scores to Understanding Percentages. Full preview QA [#41961960517](https://github.com/com-orgs/learnora/actions/runs/41961960517), production deployment [#41962222398](https://github.com/com-orgs/learnora/actions/runs/41962222398) and main audit [#41962222525](https://github.com/com-orgs/learnora/actions/runs/41962222525) all succeeded; production references and SEO metadata verified.
+- PR [#33](https://github.com/com-orgs/learnora/pull/33) merged/deployed; filled the previously empty Common Mistakes section on Adding and Subtracting Decimals with five accurate explanations. Full preview QA [#41887703666](https://github.com/com-orgs/learnora/actions/runs/41887703666) passed.
+- PR [#31](https://github.com/com-orgs/learnora/pull/31) merged/deployed; added OpenStax, Khan Academy and Illustrative Mathematics references to Adding and Subtracting Decimals.
 - PR [#30](https://github.com/com-orgs/learnora/pull/30) merged; preview-dependent browser QA now runs only on pull_request events, avoiding pre-PR preview failures while preserving full PR release checks.
-- Current GitHub repository tree contains 78 lesson HTML files: 46 Maths (23 Grade 6, 12 Grade 7, 11 Grade 8), 9 English, 14 Science, 3 Computer Science, 3 AI Literacy and 3 Financial Literacy. Previous source-section estimate was provisional (15/77 before PR38); do not publish a coverage percentage until a full repo-wide source-section recount is completed.
-- GSC daily indexing automation completed 5 November. It found 31 distinct tracker URLs already checked by the hourly background process, 0 URL Inspection history rows, total 31/10 (21 over the project's daily cap). The automation itself performed zero additional inspections. GSC Wizard exposes no pause/throttle action through the connected tools; owner action is required in the GSC Wizard UI to stop or limit hourly tracker checks. Do not perform any more GSC URL inspections on 5 November.
+- Current repository tree contains 78 lesson HTML files: 46 Maths (23 Grade 6, 12 Grade 7, 11 Grade 8), 9 English, 14 Science, 3 Computer Science, 3 AI Literacy and 3 Financial Literacy. Previous source-section estimate (15/77 before PR38) is stale; PR38 and PR39 added two more source sections. Do not publish a coverage percentage until a full repo-wide source-section recount is completed.
+- GSC daily indexing automation completed 5 November. Hourly background tracker checks had already checked 31 distinct URLs; URL Inspection history had 0 rows for today. Combined total 31/10, 21 above the project cap. The automation itself performed zero additional inspections. Connected GSC Wizard tools expose no pause/throttle action; owner must use the GSC Wizard UI to stop or reduce hourly tracker checks. No more GSC URL inspections on 5 November.
 - Latest GSC tracker snapshot: 104 URLs, 1 indexed, 103 “URL is unknown to Google”; sitemap pending with 0 warnings/errors. This is a discovery/crawl backlog, not proof of a specific robots/canonical/noindex defect.
 - Bing/IndexNow 5 November run submitted 42 materially changed URLs; 42/42 accepted with HTTP 200 and key validated. 62 unchanged URLs skipped. Full IndexNow history: 338 rows / 104 unique URLs. Acceptance does not prove indexing. Bing property verified; sitemap feed Success, 104 URLs; 0 crawl issue URLs.
 - Settled GSC performance 6 October–2 November: homepage 1 impression, 0 clicks, reported average position 77. No meaningful traffic/ranking growth claim is supported.
@@ -26,12 +27,11 @@
 
 ## Next actions — 5 November
 1. [ ] Owner must pause or throttle the GSC Wizard hourly Indexing Tracker checks in its UI; connected tools expose no control. Until confirmed, no manual GSC URL inspections or tracker check calls.
-2. [ ] Continue academically verified sources on Grade 6 Percentage Increase and Decrease; verify every example, practice item, quiz answer and worksheet key before PR.
-3. [ ] Complete an exact 78-lesson repository-wide source-section inventory before reporting source coverage.
+2. [ ] Complete the exact 78-lesson source-section inventory; previous 15/77 estimate is superseded and should not be used.
+3. [ ] Continue academically verified sources on remaining Grade 6 Maths lessons after the inventory, preserving curriculum-neutral language and full preview QA.
 4. [ ] Extend BreadcrumbList only to non-Maths lesson sections after confirming each visible breadcrumb path.
 5. [ ] Keep GA4/Google Tag and Cloudflare feature toggles unchanged until privacy/crawler compatibility is established.
 6. [ ] Continue checking relevant Gmail alerts from GitHub, Google/GSC, Bing, Cloudflare, Ahrefs and Semrush during Learnora work; do not activate paid trials or plans.
-
 
 
 ## Current verified state — 5 November 2026 (daily indexing refresh)
