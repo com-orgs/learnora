@@ -311,3 +311,16 @@ Date: 2026-11-05
 - Corrected imprecise terminology in one common-mistake label: replaced “percentage points and amounts” with “percentage rate with the money amount”. The original example concerned a discount amount, not percentage-point differences.
 - Reviewed OpenStax, Khan Academy Grade 6 percentages and Illustrative Mathematics Exam Scores task for relevance.
 - No source-level arithmetic or factual error found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Percentage Increase and Decrease
+
+Date: 2026-11-05
+- Reviewed percentage-change formula, original-value base, increase/decrease methods, multiplier method, percentage-point distinction, worked examples, money/population problems, six practice answers, five quiz mappings and five worksheet answer-key items.
+- Recalculated examples: 10% increase on $40 = $4 and new value $44; 20% discount on $80 = $16 and sale price $64; 30 cm to 36 cm = 20% increase; $50 to $40 = 20% decrease.
+- Rechecked multipliers: +10% = 1.10, +25% = 1.25, −10% = 0.90, −25% = 0.75, −40% = 0.60. All correct.
+- Rechecked real-life examples and practice answers: 5% increase on $60 = $63; 15% discount on $240 = $204; 80 to 100 = 25% increase; 200 to 170 = 15% decrease; multipliers 1.12 and 0.65. All correct.
+- Rechecked quiz keys and worksheet: $70 + 20% = $84; $150 − 10% = $135; 500 to 550 = 10% increase; 160 to 120 = 25% decrease; multipliers 1.07 and 0.93. No mismatch found.
+- Confirmed all five quiz mappings match visible options and their explanations.
+- Reviewed OpenStax, Khan Academy and Illustrative Mathematics resources for topic relevance.
+- No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
