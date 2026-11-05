@@ -561,9 +561,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `e76e44a2865c1d278c5cf14c093e5f9929ad85be`
-- Workflow: Learnora Site Audit (run [#41962538618](https://github.com/com-orgs/learnora/actions/runs/41962538618))
-- Last updated automatically: run #41962538618 on branch `seo/grade6-percentage-increase-decrease-sources-2026-11-05`.
+- Tested commit: `ce52fd1ce8df8ed92086fac20df31f19cd700f5f`
+- Workflow: Learnora Site Audit (run [#42002353311](https://github.com/com-orgs/learnora/actions/runs/42002353311))
+- Last updated automatically: run #42002353311 on branch `audit/source-inventory-2026-11-05`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
@@ -1175,3 +1175,141 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #42: https://github.com/com-orgs/learnora/pull/42. Not merged or deployed. Browser interaction QA and independent educator review remain outstanding.
 - Draft PRs #40 (Algebraic Expressions) and #41 (Integers) remain unmerged. Production unchanged.
 - Next: continue targeted source-code QA on Understanding Percentages, verifying worked examples, practice/worksheet answers, quiz key mappings and suitable reference attribution.
+
+
+## Complete source-section inventory — 5 Nov 2026
+
+- Fresh recursive Git tree inventory identified 77 lesson HTML pages: Mathematics 46, English 9, Science 13, Computer Science 3, AI Literacy 3, Financial Literacy 3.
+- Dedicated Sources / References / Further Reading section present in 19/77; missing in 58/77. By subject: Mathematics 15/46; English 2/9; Science 2/13; Computer Science 0/3; AI Literacy 0/3; Financial Literacy 0/3.
+- Structural scan counted external links only within the dedicated section, excluded general site navigation/body/footer links, and excluded “How to Check AI Answers and Sources” as a lesson title false positive.
+- Full exact 58-page backlog and method appended to `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. The historical 3 Nov snapshot is preserved; the 5 Nov scan supersedes it for current planning.
+- This is not claim-level fact-checking, a fresh live crawl, URL reachability verification or browser QA. No production files changed and no deployment performed. PR #43 remains a separate unmerged proposal; its fourth percentages source is not counted in main.
+- Preview/documentation branch: `audit/source-inventory-2026-11-05`.
+- Next: claim-level science review (11), financial literacy (3), AI literacy (3), mathematics (31), English (7), then computer science (3); add sources only after checking authority, relevance, currentness and age suitability.
+
+
+## Consolidated Grade 6 and Grade 7 QA status — 5 Nov 2026
+
+- Preview-only QA proposals: PR #40 Algebraic Expressions; #41 Integers; #42 Order of Operations; #43 Understanding Percentages; #45 Ecosystems and Food Chains; #46 Forces and Motion; #47 Heat Transfer; #48 Introduction to Cells.
+- Fresh source inventory: 19/77 lesson pages have a dedicated source section; 58/77 do not on main. Exact backlog and methodology are in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`.
+- Seven PRs (#40–#42, #45–#48) propose new dedicated source sections on currently missing pages. If all are accepted and merged, projected coverage becomes 26/77 with 51 remaining; this is not yet reflected in main. PR #43 adds a supplementary source to a page already counted as sourced.
+- Consolidated academic desk-review notes are in `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md`. These are not independent educator reviews. Browser interaction QA and release checks remain required.
+- No production edits or deployment were performed as part of this consolidated audit. No GSC inspection/manual indexing request made. Firecrawl credit balance 0; no paid crawl/scrape.
+- Next: Science — Mixtures and Separation Techniques; continue source QA and keep changes preview-only.
+
+ 
+## Latest Grade 7 Science QA update — Mixtures (5 Nov 2026)
+
+- Completed a desk review of the Grade 7 Mixtures and Separation Techniques lesson and quiz script.
+- Practice: 5/5 suggested answers checked. Worksheet: 6/6 suggested answers checked, including the multi-step mixture separation challenge. Quiz: 5/5 answer mappings match the visible choices.
+- Added four Royal Society of Chemistry educational references and explicit supervised-lab guidance for heating/distillation.
+- Draft PR #49: https://github.com/com-orgs/learnora/pull/49; only the lesson HTML changed. Quiz JavaScript unchanged.
+- PR #49 remains unmerged; no production edit or deployment. CI/preview status not yet confirmed. Browser interaction QA and independent educator review remain release gates.
+- No GSC inspection/manual indexing request or paid crawl/scrape was made.
+- Next QA target: Grade 7 Science — States of Matter and the Particle Model.
+
+- PR #49 Cloudflare Pages preview deployment: **successful** for commit `978fc083c52fc3abac095de956e20a67bd80051f`. Preview: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . Branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . This does not mean production deployment; interactive browser QA remains outstanding.
+
+ 
+## Grade 7 Science — States of Matter QA update (5 Nov 2026)
+
+- Reviewed the States of Matter and Particle Model lesson and quiz JS. Checked 5/5 practice answers, 6/6 worksheet suggested answers, and 5/5 quiz answer mappings; all reviewed items are consistent.
+- Added three RSC age-appropriate learning resources and one optional advanced OpenStax reference.
+- Draft PR #50: https://github.com/com-orgs/learnora/pull/50. Cloudflare Pages preview deployment succeeded: https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model
+- Draft PR #49 (Mixtures) also has a successful preview deployment: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
+- PRs #49 and #50 remain unmerged. No production edit/deployment; interactive browser QA and independent educator review remain open release gates.
+- Next QA target: Grade 8 Science — Elements, Compounds and Chemical Reactions.
+
+ 
+## Grade 8 Science — Elements, Compounds and Chemical Reactions QA (5 Nov 2026)
+
+- Desk-reviewed definitions and explanations for elements, compounds, mixtures, atom rearrangement, chemical-change evidence, rusting, physical/chemical changes and conservation of mass.
+- Checked worked example 12 g + 32 g = 44 g; checked five practice prompts for conceptual alignment; all five worksheet suggested-answer features and all five quiz answer mappings are consistent. No quiz JS change required. The practice section has no suggested-answer block.
+- Clarified the mixture definition and added RSC 11–14 resources plus the official England science programme of study. Added a non-accreditation disclaimer.
+- Draft PR #51: https://github.com/com-orgs/learnora/pull/51; only lesson HTML changed. Cloudflare Pages and audit checks were still in progress at checkpoint.
+- Next: Grade 8 Science — Human Digestive and Circulatory Systems. All work remains preview-only; no merge or production deployment.
+
+- PR #51 Cloudflare Pages preview deployment succeeded: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . Branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . Separate repository audit check remains in progress; production unchanged.
+
+ 
+## Grade 8 Science — Digestive and Circulatory Systems QA (5 Nov 2026)
+
+- Desk-reviewed digestion, enzyme roles, bile, villi, absorption, lacteals, heart chambers, pulmonary/systemic circuits, blood vessels and blood components.
+- Checked four worked examples, five independent-practice prompts, six worksheet suggested-answer features and five quiz mappings. All reviewed items are consistent; no quiz JS change required.
+- Clarified protease stages and added NIDDK, NHLBI and optional OpenStax references.
+- Draft PR #52: https://github.com/com-orgs/learnora/pull/52; only lesson HTML changed. Cloudflare and repository audit checks still in progress; preview not yet confirmed.
+- Next QA target: Grade 8 Science — Electric Circuits, Current, Voltage and Resistance. No production change/deployment.
+
+ 
+## Grade 8 Science — Electric Circuits QA (5 Nov 2026)
+
+- Reviewed circuit principles, Ohm's law conditions, series/parallel behaviour, meter connections and safety. Recalculated worked examples and numerical practice/worksheet keys: 3 A, 12 J, 2 A, 6 Ω, 3 A, 3 A, 5 A and 2 A. Five quiz mappings also match the visible options.
+- Added GOV.UK KS3 science, PhET Circuit Construction Kit and OpenStax ammeter/voltmeter resources.
+- Draft PR #53: https://github.com/com-orgs/learnora/pull/53; only lesson HTML changed. Cloudflare Pages and repository audit checks still in progress.
+- PR #52 digestive/circulatory Cloudflare preview deployment succeeded: https://a789444a.learnora-ab2.pages.dev/science/grade-8/human-digestive-and-circulatory-systems
+- Next QA target: Grade 8 Science — Waves, Sound and Light. Production unchanged.
+
+ 
+## Grade 8 Science — Waves, Sound and Light QA (5 Nov 2026)
+
+- Reviewed wave properties, transverse/longitudinal waves, sound, reflection/refraction, electromagnetic spectrum and safety. Checked calculations: 10 m/s, 12 m/s and 4 m/s; mirror reflection examples 35°, 25° and worksheet/quiz values are correct. All five worksheet suggested-answer features and all five quiz mappings match.
+- Refined sound-speed explanation and added GOV.UK KS3, NASA and OpenStax resources.
+- Draft PR #54: https://github.com/com-orgs/learnora/pull/54; only lesson HTML changed. Preview/audit checks not yet available.
+- PR #53 Electric Circuits Cloudflare preview succeeded: https://e4c1e038.learnora-ab2.pages.dev/science/grade-8/electric-circuits-current-voltage-resistance
+- Next QA target: Grade 8 Science — Earth, Moon and Space Patterns. No production change or deployment.
+
+ 
+## Grade 8 Science — Earth, Moon and Space Patterns QA (5 Nov 2026)
+
+- Reviewed Earth's rotation, seasons, lunar phases, eclipse alignments/orbital inclination and solar-viewing safety.
+- Checked both worked examples, five practice prompts, five worksheet suggested-answer features and five quiz mappings. The 29.5-day lunar phase cycle is correctly distinguished from the 27.3-day orbital period.
+- Added NASA/JPL resources for seasons, Moon phases, eclipses, solar-viewing safety and classroom modelling.
+- Draft PR #55: https://github.com/com-orgs/learnora/pull/55; only lesson HTML changed. Cloudflare preview deployment succeeded: https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . GitHub audit check still in progress.
+
+## Mandatory release tracking — 5 Nov 2026
+
+User instruction: work is not complete until it is production-deployed and the live page/functionality is verified. Preview success is not production success.
+- Open draft PRs #40–#43 and #45–#55 remain unmerged; PR #44 carries consolidated documentation.
+- Successful preview deployments currently recorded: #49–#53 and #55.
+- Refresh preview/check status for #40–#48 and #54 before release.
+- No open draft PR in this batch is marked production-deployed or live-verified. All remain in release backlog until checks pass, merge is performed, Cloudflare production deploy succeeds and live verification is completed.
+- Older open PRs #2, #3, #6, #7, #16, #18 and #27 also require triage/disposition.
+- Next: continue Grade 8 Science QA, while keeping a release/production-verification pass in the plan. No production change has been made by this QA step.
+
+ 
+## CI / preview status refresh — 5 Nov 2026
+
+- PRs #41–#49: Cloudflare preview and audit checks succeeded.
+- PR #50: preview deployment succeeded; audit failed at preview URL discovery because the expected Cloudflare bot comment was absent. Static and legal audits passed; header/asset and browser checks were skipped.
+- PR #40: same CI preview-comment discovery failure; Cloudflare preview itself succeeded and static/legal audits passed.
+- PRs #51–#55: Cloudflare preview and audit checks succeeded. PR #54 preview URL: https://bd2bfff0.learnora-ab2.pages.dev/science/grade-8/waves-sound-and-light
+- CI repair PR #56: https://github.com/com-orgs/learnora/pull/56. Audit fallback now reads the successful Cloudflare check-run preview URL for the exact head SHA if the bot comment is missing. Audit run still in progress; all further checks must pass before merge.
+- PR #40 and #50 remain blocked until the fix is validated and their audits are rerun. No PR in this batch is production-deployed/live-verified.
+
+ 
+### Immediate priority — production release backlog (5 Nov 2026)
+
+- Pause additional lesson-content expansion until the current reviewed PR backlog is reconciled and the deployment path is proven.
+- CI fix PR #56 latest commit: `2bb4bf7ed19418271c81d9b5159a6df48f33ff52`; now grants `checks: read` for the check-run fallback. Workflow run #881 is pending.
+- Once PR #56 passes: merge the CI fix; rerun PR #40 and #50 audit jobs (both failed only at preview URL discovery; Cloudflare preview deployments succeeded); confirm browser/asset/header checks. Then perform ordered PR review/merge, verify production deployments and live pages, and update the ledger to LIVE VERIFIED.
+- No new lesson PR should be treated as complete while these earlier changes remain only in preview.
+
+
+### Resume / deployment ledger update — 5 Nov 2026
+- PR #55 Earth, Moon and Space: audit **success**; Cloudflare preview **success**; preview page fetched and content/source section verified. Not merged, not production-live.
+- PR #56 CI repair: Cloudflare preview **success**; audit **in progress**. Hold merge until all audit steps pass.
+- PR #40 Algebra and PR #50 States of Matter: preview success, audit failed due preview URL discovery; rerun after #56 workflow repair is merged/proven.
+- PRs #40–#55 are not production-deployed/live-verified. PR #44 is consolidated documentation.
+- User's release rule: every change must be tracked through preview QA → merge → production deploy → live URL/functionality verification. Anything before final verification stays pending.
+- Pause further lesson expansion; current next action is complete CI repair and release backlog. Older PRs #2, #3, #6, #7, #16, #18 and #27 require triage.
+
+
+### CI repair follow-up — 5 Nov 2026
+- PR #56 preview URL parsing was simplified after the earlier run remained stuck at the resolver step.
+- Latest head `cc886879769856bf473f4fe166f980909df03860`; Cloudflare Pages build in progress, audit run pending. No merge.
+
+ 
+- CI repair follow-up: commit `c2e5892767cbef79f0247c51c3d4ce31eea0d95b` replaces shell-unsafe literal apostrophe matching with escaped hex apostrophe matching in jq. PR #56 Cloudflare build is in progress and audit is queued. Previous commit `cc88687` failed due shell syntax in the resolver step; do not merge until this new run completes all browser/header checks successfully.
+
+ 
+- Latest CI state: PR #56 head `c2e5892767cbef79f0247c51c3d4ce31eea0d95b`, Cloudflare preview succeeded at `https://a16e1887.learnora-ab2.pages.dev`. Workflow run [#895](https://github.com/com-orgs/learnora/actions/runs/42002228194): static audit, legal/readiness audit, exact preview resolution, and preview header/asset checks have all passed. Playwright/Chromium installation is currently in progress; mobile/desktop/quiz browser checks have not yet run. Keep PR #56 unmerged until those tests pass.

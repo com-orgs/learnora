@@ -93,3 +93,108 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - This is a preliminary structural inventory, not a finding that all 70 lessons are factually wrong or contain no useful external references. It checks for an explicit, learner-facing source section and must be followed by page-by-page claim verification.
 - Backlog recorded in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. Add topic-specific official or reputable educational sources only after checking that each URL is live and genuinely supports the lesson. Do not bulk-add generic curriculum links as if they substantiate every factual claim.
 - Prioritise Science, Financial Literacy and AI Literacy safety/privacy claims; then verify Maths worked examples and answer keys; then English language and writing guidance. Independent educator review remains required and must not be invented.
+
+
+## Additional Grade 6 and Grade 7 source QA batch — 5 November 2026
+
+### Grade 6 mathematics
+- **Algebraic Expressions (PR #40):** checked the lesson, practice and worksheet answers and five quiz mappings; clarified like terms as terms with matching variable parts and exponents (constants are like terms); added two relevant OpenStax Prealgebra 2e references. Draft only; no merge/deployment.
+- **Integers and the Number Line (PR #41):** checked worked comparisons, practice and worksheet answers and five quiz mappings; added a relevant OpenStax Prealgebra 2e reference. Draft only; no merge/deployment.
+- **Order of Operations (PR #42):** checked eight practice answers, eight worksheet answers and five quiz mappings; clarified that exponents/indices are outside this introductory page’s stated scope; added OpenStax Prealgebra 2e Section 2.1. Draft only; no merge/deployment.
+- **Understanding Percentages (PR #43):** checked seven practice answers, seven worksheet answer-key items and five quiz mappings; added OpenStax Prealgebra 2e Section 6.2 as an extra application reference. This page already had a dedicated source section; the addition does not reduce the missing-section count. Draft only; no merge/deployment.
+
+### Grade 7 Science
+- **Ecosystems and Food Chains (PR #45):** checked six practice answers, six worksheet answer-key items and five quiz mappings; added NGSS MS-LS2-3, National Park Service “Spinning a Food Web” (Grades 6–8) and National Geographic Education “Food Chain”.
+- **Forces and Motion (PR #46):** recomputed three worked examples and six practice/worksheet answers and checked five quiz mappings; added NGSS Middle School Forces and Interactions, NASA Mass vs. Weight Activities (Grades 5–8), NASA STEMonstrations: Friction (Grades 5–8) and Khan Academy Describing Motion.
+- **Heat Transfer (PR #47):** checked five practice answers, six worksheet answers and five quiz mappings; clarified heat as energy transferred due to a temperature difference versus thermal energy as part of a system’s internal energy; added NASA STEMonstrations: Thermal Energy, NOAA heat-transfer resource, National Geographic Education Grade 6 reading-level resource and U.S. Department of Energy Heat Flow.
+- **Introduction to Cells (PR #48):** checked seven practice answers, seven worksheet answer-key items and five quiz mappings; reviewed cell theory, organelle functions, plant/animal comparisons, specialised-cell adaptations and microscope guidance; added Khan Academy Cell Theory, Khan Academy Plant vs. Animal Cells Review and OpenStax Biology Section 4.1.
+
+### Limits and release gate
+- These are repository-based editorial desk checks, not independent educator reviews or exhaustive scientific certification.
+- Quiz scripts were unchanged in the four Grade 7 Science source PRs. No production files were changed and no production deployment was performed by these PRs.
+- All PRs #40–#43 and #45–#48 remain separate draft proposals unless their live GitHub status says otherwise. Browser interaction QA and genuine independent educator review remain release gates.
+
+ 
+## Grade 7 Science — Mixtures and Separation Techniques QA (5 Nov 2026)
+
+- Reviewed `science/grade-7/mixtures-and-separation-techniques.html` and `scripts/pages/science-grade-7-mixtures-and-separation-techniques.js`.
+- Checked all 5 independent-practice answers, all 6 worksheet suggested answers (including the iron/sand/salt separation challenge), and all 5 quiz answer mappings against the visible questions/options. All reviewed answers and mappings are consistent; quiz JavaScript required no change.
+- Desk-reviewed definitions and explanations for pure substances, mixtures, solutions, solutes/solvents, solubility, sieving, filtration, evaporation, crystallisation, simple distillation, chromatography and magnetic separation. No factual correction was identified in the reviewed content.
+- Added a dedicated Sources and Further Reading section with four relevant Royal Society of Chemistry education resources covering separation principles, mixtures, distillation and supervised practical separation activities. Added explicit adult-supervision/laboratory safety guidance for heating and distillation.
+- Draft PR #49: https://github.com/com-orgs/learnora/pull/49 on `qa/science-grade7-mixtures-separation-sources-2026-11-05`. PR changed only the lesson HTML; quiz JS unchanged. The PR was created as draft. CI/Cloudflare preview had not yet appeared at checkpoint time.
+- This is a repository-based editorial desk review, not independent educator review, live browser interaction QA or exhaustive scientific certification. No merge, production edit/deployment, or GSC indexing request was made.
+- Next: continue Grade 7 Science with `states-of-matter-and-particle-model.html`, then remaining Science lessons; keep changes preview-only and update this consolidated audit branch only for tracker changes.
+
+- Follow-up verification: Cloudflare Pages check for commit `978fc083c52fc3abac095de956e20a67bd80051f` completed successfully. Preview URL: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques ; branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . This confirms preview deployment only; interactive browser QA was not performed.
+
+ 
+## Grade 7 Science — States of Matter and Particle Model QA (5 Nov 2026)
+
+- Reviewed `science/grade-7/states-of-matter-and-particle-model.html` and `scripts/pages/science-grade-7-states-of-matter-and-particle-model.js`.
+- Checked all 5 independent-practice answers, all 6 worksheet suggested answers (including the cool-day evaporation challenge), and all 5 quiz answer mappings against visible questions/options. All reviewed answers and mappings are consistent; quiz JavaScript required no change.
+- Desk-reviewed the particle model, particle arrangement and movement in solids/liquids/gases, shape/volume/compressibility, heating and cooling, melting, freezing, evaporation, boiling, condensation and physical changes. The constant-temperature explanation during phase changes is appropriately qualified for a pure substance at constant pressure.
+- Added age-appropriate RSC resources for particle theory, particle models and states of matter (11–14 years), plus an optional, clearly labelled advanced OpenStax phase-transitions reference.
+- Draft PR #50: https://github.com/com-orgs/learnora/pull/50 on `qa/science-grade7-states-matter-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare preview deployment completed successfully for commit `6c88edc4df2d4acfe5c688cb450407e4b23f4555`; preview URL: https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model . This is preview only; interactive browser QA not performed.
+- This remains a repository-based desk review, not independent educator review or exhaustive scientific certification. No production merge/deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Elements, Compounds and Chemical Reactions QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/elements-compounds-and-chemical-reactions.html` and `scripts/pages/science-grade-8-elements-compounds-and-chemical-reactions.js`.
+- Checked the worked mass example (12 g carbon + 32 g oxygen = 44 g product mass in a closed system), five practice prompts for conceptual alignment, all five worksheet suggested-answer features, and all five quiz answer mappings. The calculation and answer mappings are consistent; quiz JavaScript required no change. The practice section has no separate suggested-answer block, so none was invented.
+- Desk-reviewed element/compound/mixture definitions, atoms rearranging in reactions, possible evidence of chemical change, rusting, physical vs chemical changes, and conservation of mass in a closed system.
+- Clarified the mixture definition: components are physically combined and a mixture may contain elements, compounds or both. Added RSC resources for ages 11–14 and the official England science programme of study, with an explicit statement that Learnora does not claim formal curriculum accreditation.
+- Draft PR #51: https://github.com/com-orgs/learnora/pull/51 on `qa/science-grade8-elements-compounds-sources-2026-11-05`. Only the lesson HTML changed; quiz JS unchanged. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
+- This is a repository-based editorial desk review, not independent educator review or exhaustive chemistry certification. No merge, production deployment or GSC indexing request was made.
+
+- Follow-up deployment verification: Cloudflare Pages completed successfully for PR #51 commit `c601c8bb74eb3b7c00803b4e0ccfd71dfbe7252a`. Preview URL: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions ; branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . The separate repository audit check was still in progress; this is preview deployment only, not browser interaction QA or production deployment.
+
+ 
+## Grade 8 Science — Human Digestive and Circulatory Systems QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/human-digestive-and-circulatory-systems.html` and `scripts/pages/science-grade-8-human-digestive-and-circulatory-systems.js`.
+- Desk-reviewed digestive organs, mechanical and chemical digestion, amylase/proteases/lipase, bile and emulsification, villi and nutrient absorption, lacteals, heart chambers and pulmonary/systemic circuits, arteries/veins/capillaries, blood components and the relationship between digestion and circulation.
+- Checked all four worked examples, five independent-practice prompts for conceptual alignment, all six worksheet suggested-answer features and all five quiz answer mappings. All reviewed answer features and quiz mappings are consistent; the practice section has no separate answer block. No quiz JavaScript change required.
+- Improved the protease table to distinguish proteases that form shorter peptides from enzymes that further break peptides into amino acids.
+- Added official NIDDK digestive-system and NHLBI heart/blood-flow references, plus an optional advanced OpenStax heart-anatomy reference.
+- Draft PR #52: https://github.com/com-orgs/learnora/pull/52 on `qa/science-grade8-digestive-circulatory-sources-2026-11-05`. Only lesson HTML changed. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
+- This is a repository-based editorial desk review, not independent educator review or medical advice. No merge, production deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Electric Circuits, Current, Voltage and Resistance QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/electric-circuits-current-voltage-resistance.html` and `scripts/pages/science-grade-8-electric-circuits-current-voltage-resistance.js`.
+- Recalculated all six worked examples and all numerical practice/worksheet answers: 12 C / 4 s = 3 A; 6 V × 2 C = 12 J; 6 V / 3 Ω = 2 A; 2 Ω + 4 Ω = 6 Ω; 15 C / 5 s = 3 A; 12 V / 4 Ω = 3 A; 20 C / 4 s = 5 A; 10 V / 5 Ω = 2 A.
+- Checked five independent-practice prompts, six worksheet suggested-answer features and all five quiz mappings; all reviewed calculations and mappings are consistent.
+- Desk-reviewed circuit completeness, current, potential difference, resistance, Ohm's law conditions, series/parallel behaviour, ammeter/voltmeter connections and low-voltage safety. No factual correction was needed.
+- Added the official England KS3 science programme, PhET's free Circuit Construction Kit: DC Virtual Lab, and OpenStax ammeter/voltmeter guidance.
+- Draft PR #53: https://github.com/com-orgs/learnora/pull/53 on `qa/science-grade8-electric-circuits-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare Pages and repository audit checks were still in progress at checkpoint time; no preview URL claimed.
+- This is a repository-based desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Waves, Sound and Light QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/waves-sound-and-light.html` and `scripts/pages/science-grade-8-waves-sound-and-light.js`.
+- Checked worked calculations and angles: 5 Hz × 2 m = 10 m/s; reflection angles of 35° and 25°; practice 4 Hz × 3 m = 12 m/s and 25° reflection; worksheet 8 Hz × 0.5 m = 4 m/s. Checked all five worksheet suggested-answer features and all five quiz mappings; all reviewed items are consistent.
+- Desk-reviewed energy transfer, transverse/longitudinal motion, amplitude/wavelength/frequency/speed, sound as a mechanical wave, pitch/loudness, sound in different media, reflection/refraction, electromagnetic spectrum order and radiation safety.
+- Refined the sound-speed explanation to identify compressibility, stiffness and density as relevant material properties.
+- Added GOV.UK KS3 science, NASA Grades 5–8 wavelength activity, NASA electromagnetic-spectrum introduction and relevant OpenStax wave/sound/optics references.
+- Draft PR #54: https://github.com/com-orgs/learnora/pull/54 on `qa/science-grade8-waves-sound-light-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare preview/audit checks were not yet available at checkpoint time.
+- This is a repository-based editorial desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
+
+ 
+## Grade 8 Science — Earth, Moon and Space Patterns QA (5 Nov 2026)
+
+- Reviewed `science/grade-8/earth-moon-and-space-patterns.html` and `scripts/pages/science-grade-8-earth-moon-and-space-patterns.js`.
+- Desk-reviewed Earth's rotation and day/night, axial tilt and seasons, the approximately 29.5-day synodic lunar phase cycle, waxing/waning, solar and lunar eclipse alignments, the Moon's inclined orbit and why eclipses do not occur every month, plus solar-viewing safety.
+- Checked both worked examples, all five independent-practice prompts for conceptual alignment, all five worksheet suggested-answer features and all five quiz answer mappings. The reviewed worksheet guidance and quiz mappings are consistent; no quiz JavaScript change required. Confirmed that the 27.3-day sidereal orbital period is distinct from the approximately 29.5-day phase cycle used in the lesson.
+- Added NASA Space Place resources for seasons, Moon phases and eclipses; NASA eclipse-viewing safety; NASA JPL Moon Phases activity; and a NASA Grades 5–8 Sun–Earth–Moon activity guide.
+- Draft PR #55: https://github.com/com-orgs/learnora/pull/55 on `qa/science-grade8-earth-moon-space-sources-2026-11-05`. Only lesson HTML changed; quiz JS unchanged. Cloudflare Pages preview deployment succeeded for commit `db9f5b5f3cf5efe42ff1cc2b1f66f9cb50c25596`: https://7ca7806c.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . Branch preview: https://qa-science-grade8-earth-moon.learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns . GitHub audit check was still in progress at checkpoint time.
+- This is a repository-based editorial desk review, not independent educator review or live browser interaction QA. No merge, production deployment or GSC indexing request was made.
+
+
+### Release checkpoint update — 5 Nov 2026
+- PR #55 Earth, Moon and Space now has successful audit and Cloudflare preview checks. Preview page was fetched; expected lesson, metadata, NASA source list and safety guidance are present. Preview only; no production release.
+- PR #56 CI fix: preview deployment successful; audit still running. PR #40 and #50 audits still fail at preview URL discovery although their Cloudflare previews succeed. Retest after CI repair.
+- User requires all completed work to be deployed and live-verified. No lesson PR is considered complete until it is merged, production deployment succeeds, and the live production page/functionality is checked.
+- Pause new lesson content until current release backlog is reconciled and deployed safely.
