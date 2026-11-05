@@ -212,3 +212,14 @@ Date: 2026-11-05
 - Confirmed the visual model shades 1/2 in bars divided into 2, 4 and 6 equal parts.
 - Reviewed OpenStax, BBC Bitesize and Math Learning Center references for relevance.
 - No source-level factual or arithmetic error found in this focused review. This is not a substitute for subject-expert peer review or live browser testing.
+
+
+## Deep content review — Comparing and Ordering Fractions
+
+Date: 2026-11-05
+- Reviewed same-denominator and same-numerator comparisons, common-denominator conversions, benchmark reasoning around 0, 1/2 and 1, ordering methods, common mistakes, worked examples, six practice answers, five quiz mappings and seven worksheet answer-key items.
+- Recalculated 2/3 vs 3/4 (8/12 vs 9/12), 5/6 vs 7/9 (15/18 vs 14/18), benchmark example 3/8 vs 5/9, and ordering examples. All conclusions are correct.
+- Rechecked all practice and worksheet answers, including descending order 7/8, 5/6, 3/4 and 2/3 vs 5/8 (16/24 vs 15/24). No mismatch found.
+- Confirmed the five quiz answer mappings match visible options.
+- Reviewed the UK Year 6 Mathematics Guidance, Khan Academy Class 6 Mathematics and Illustrative Mathematics common-denominator lesson as further-learning references. Their inclusion is not presented as Learnora curriculum accreditation or formal alignment.
+- No source-level factual or arithmetic issue found in this focused pass. Browser rendering and live quiz interaction remain unverified.
