@@ -189,3 +189,14 @@ Date: 2026-11-05
 ## Release matrix
 - Created `PHASE_2_GRADE6_RELEASE_MATRIX.md` to distinguish all 23 pages' quiz-key, detailed academic review, reference, metadata/schema, mobile table and pending browser QA status.
 - 11 pages have detailed worked-example/practice/worksheet calculation reviews recorded; the remaining 12 are explicitly marked for deeper review. This prevents the 115 quiz-key check from being misrepresented as a full academic audit.
+
+
+## Deep content review — Understanding Fractions
+
+Date: 2026-11-05
+- Reviewed the complete lesson's definition of fractions, numerator/denominator, proper/improper/mixed forms, visual pizza model, three worked examples, common mistakes, five practice questions and answers, five quiz questions and answer key, eight worksheet questions and teacher key.
+- Rechecked all worksheet responses: numerator/denominator (3 and 7), examples of proper/improper fractions, 4/9 as proper, 3/8 for the pizza, 2 1/3 for two wholes and one third, denominator as total equal parts, and 8/8 as improper. All supplied answers are correct.
+- The five quiz mappings match the visible options; no mismatch found.
+- Reviewed source references (OpenStax, BBC Bitesize, Math Learning Center and NRICH) for topic relevance. They support further learning and are not presented as formal curriculum alignment.
+- Found missing closing `</body>` and `</html>` tags at the end of the source. Added both tags and re-fetched the file to verify the document now ends with the page script followed by the two closing tags.
+- No other factual or arithmetic issue found in this focused pass. This remains a source-level review, not external subject-expert peer review or browser testing.
