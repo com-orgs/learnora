@@ -302,3 +302,11 @@ Repository: https://github.com/com-orgs/learnora
 - `qa-how-ai-works-content-quality` — PR #60
 - `qa-verify-ai-content-quality` — PR #61
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+### Verify AI preview update — 5 Nov 2026
+- PR #61 Cloudflare branch preview deployed successfully:
+  https://qa-verify-ai-content-quality.learnora-ab2.pages.dev/ai-literacy/verify-ai
+- Preview homepage and revised lesson fetched successfully; the page contains the new claim-checking workflow, lateral reading, four evidence statuses, worked examples, practice answers, worksheet answer key and source section.
+- Static audit, legal readiness, preview resolution and security header/assets steps passed in run #42055587328. Playwright browser checks were still in progress; run #42055624934 was queued after the CI branch-name correction.
+- No production merge/deployment.
