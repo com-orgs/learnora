@@ -338,3 +338,31 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
 - `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
 - Draft content proposals: PRs #40–#43 and #45–#53. No production release.
+
+ 
+## Latest checkpoint — Grade 8 Waves, Sound and Light (5 Nov 2026)
+
+### Completed
+- Reviewed Waves, Sound and Light lesson and quiz JS.
+- Checked worked calculations and mirror angles; all five worksheet suggested-answer features and all five quiz mappings are consistent.
+- Refined the sound-speed explanation and added GOV.UK, NASA and OpenStax references.
+- Draft PR #54: https://github.com/com-orgs/learnora/pull/54. Only lesson HTML changed; quiz JS unchanged. Preview/audit checks not yet available.
+- PR #53 Electric Circuits preview deployment succeeded: https://e4c1e038.learnora-ab2.pages.dev/science/grade-8/electric-circuits-current-voltage-resistance
+- PR #52 Digestive/Circulatory preview deployment succeeded: https://a789444a.learnora-ab2.pages.dev/science/grade-8/human-digestive-and-circulatory-systems
+
+### Current safety / blockers
+- PRs #49–#54 are draft and unmerged; no production changes or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection/manual indexing request; no paid crawl/scrape.
+
+### Next action
+- Continue Grade 8 Science with `science/grade-8/earth-moon-and-space-patterns.html` and its quiz script. Check astronomy claims, examples, worksheet answers and quiz mappings; add trusted sources on a separate preview branch.
+
+### Project tree / active proposals
+- `science/grade-7/` — six source-section proposals in PRs #45–#50
+- `science/grade-8/` — Elements/Compounds PR #51; Digestive/Circulatory PR #52; Electric Circuits PR #53; Waves/Sound/Light PR #54; remaining lessons
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — 77-lesson source-section inventory
+- `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
+- Preview-only content proposals: PRs #40–#43 and #45–#54. If the 13 missing-section proposals (#40–#42 and #45–#54) all merge, coverage would project to 32/77; this is not yet reflected on main. No production release.
