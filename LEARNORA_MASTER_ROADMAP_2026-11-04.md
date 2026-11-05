@@ -6,6 +6,17 @@
 
 > Traffic, rankings, indexing and revenue cannot be guaranteed. This plan prioritises measurable work, student value, search intent and safe monetisation. Do not invent keyword metrics or publish thin pages merely to increase URL count.
 
+
+## Superseding release and quality checkpoint — 5 November 2026
+
+- Latest production code commit recorded in `PROJECT_STATUS.md`: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`; main HEAD `2e96dc638b96733174ce7c95e8ffa9c893f11ece` is a docs-only checkpoint.
+- Post-PR #23 content work subsequently released: Grade 8 Science hub cross-link to Earth Resources (PR #20); verified references on Grade 6 Understanding Fractions (#21), Equivalent Fractions (#22), Mixed Numbers (#23), Adding/Subtracting Fractions (#25), Multiplying/Dividing Fractions (#26), Comparing/Ordering Fractions (#28), Understanding Decimals (#29), Adding/Subtracting Decimals (#31), and Introduction to Ratios (#37).
+- Additional Grade 6 improvements include a fuller decimal-division lesson and common-mistakes content, metadata/favicon consistency across Grade 6 lessons, and BreadcrumbList structured data on all 23 Grade 6 Maths lessons. PR #36 added the favicon to Introduction to Ratios. Latest status records PR #37 as merged/deployed with full preview QA and production self-canonical/`index,follow` verification.
+- The Grade 8 Science internal-link gap is resolved by PR #20; no current unresolved internal-link defect is recorded in the latest release evidence.
+- Source attribution: 11/77 was the post-PR #26 snapshot; four later source-section additions imply a provisional 15/77 (62 remaining). Recount the repository before using this as a final percentage. Independent educator review remains open.
+- Daily monitoring results and all exact URLs for 5 November are recorded in the following daily log.
+
+
 ## 1. Project timeline — from the beginning
 
 ### Initial foundation and launch
@@ -402,3 +413,214 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Production fetch now confirms all three Grade 6 Mixed Numbers references (Manitoba Education, Texas Instruments Education, Open University OpenLearn), expected page metadata, self-canonical and `index,follow`. Homepage also fetched successfully.
 - Earlier note that the PR #23 release was pending is superseded.
 - Next: refresh the actual source-attribution inventory across all 77 lessons, then select the next priority Grade 6 Maths page for a source and accuracy PR. Keep the 9/77 estimate provisional until inventory is complete.
+
+
+
+## Daily indexing & discovery — 5 November 2026 (08:21–08:27 PKT)
+
+### Source snapshot
+- Read current `PROJECT_STATUS.md` on `main` (blob before this update: `75a2a59db04697767bae308264acc52e708b1094`) and the master roadmap on `main` (blob before this update: `d66c889d84bc9ca300a7dc0e2eb3aaa5f380ff52`).
+- Latest production code commit recorded by the status file: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`; later main HEAD `2e96dc638b96733174ce7c95e8ffa9c893f11ece` is a documentation checkpoint.
+- Live sitemap fetched at `https://learnora-ab2.pages.dev/sitemap.xml`: HTTP 200, 104 URLs, 104 unique, all on `learnora-ab2.pages.dev`, zero duplicate entries.
+- Firecrawl credit balance was 0 after the sitemap fetch. Direct web page opens were inaccessible, and the connected Browser tab list returned “Browser access requires the originating browser context.” Therefore page-level live canonical/robots/fetch verification was not repeated in this run; see limitations below.
+
+### Google Search Console — strict Pakistan-date guard
+- Full tracker read: 104/104 URLs. Current tracker summary: 1 indexed, 103 not indexed / “URL is unknown to Google”, 0 pending, 0 errors, 0 warnings. Only 1 URL has a recorded crawl; 103 have no crawl time. Latest tracker timestamp: `2026-11-05T03:18:43.202Z` = 08:18:43 PKT.
+- Full URL Inspection history read: 67 rows, 41 distinct URLs; newest `2026-11-04T02:45:34.013Z`, oldest `2026-11-02T17:07:05.847Z`. Same-day 5 Nov history rows: **0**.
+- Pakistan-date union before any inspection: **31 distinct URLs** (31 tracker lastCheckAt + 0 history rows), which exceeds the project cap of 10 by **21**. Remaining cap: 0. **No inspect_url, bulk_inspect_urls, or check_tracked_url_now call was made by this run.** No additional inspection is allowed on 5 Nov.
+- The 31 tracker URLs already checked by the hourly background process (timestamps are UTC; all convert to 5 Nov PKT):
+- `https://learnora-ab2.pages.dev/curriculum/grade-6-8-maths-study-plan` — `03:14:19.244Z` UTC
+- `https://learnora-ab2.pages.dev/computer-science/` — `02:59:09.685Z` UTC
+- `https://learnora-ab2.pages.dev/english/grade-6-8/argument-writing-claims-reasons-evidence` — `03:06:27.736Z` UTC
+- `https://learnora-ab2.pages.dev/financial-literacy/` — `03:18:43.202Z` UTC
+- `https://learnora-ab2.pages.dev/worksheets/international-middle-school-maths` — `03:07:28.904Z` UTC
+- `https://learnora-ab2.pages.dev/curriculum/us-common-core-math` — `23:46:15.878Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/terms` — `22:50:57.377Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/perimeter-area-shapes` — `02:33:11.276Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/area-surface-area-volume` — `22:09:10.102Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/equivalent-fractions` — `23:17:16.586Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/equations-and-inequalities` — `22:07:26.971Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-fractions` — `23:53:28.853Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/privacy-policy` — `22:15:14.208Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/adding-subtracting-integers` — `19:49:17.679Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals` — `02:28:27.604Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/introduction-to-ratios` — `00:17:14.274Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/metric-units-and-conversions` — `03:07:03.515Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/percentage-increase-decrease` — `02:11:19.013Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/rational-numbers-and-operations` — `20:54:23.307Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/comparing-ordering-fractions` — `23:31:30.171Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/understanding-decimals` — `01:02:07.124Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/understanding-percentages` — `02:01:54.470Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-fractions` — `00:23:31.844Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-decimals` — `01:24:02.242Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/mixed-numbers-improper-fractions` — `00:38:14.749Z` UTC
+- `https://learnora-ab2.pages.dev/about` — `22:26:05.112Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/geometry-angles-scale-drawings` — `21:24:57.873Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/ratios-rates-proportional-relationships` — `20:11:05.107Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/math/grade-6/volume-of-3d-shapes` — `03:10:23.463Z` UTC
+- `https://learnora-ab2.pages.dev/math/grade-7/simplifying-algebraic-expressions` — `20:15:28.580Z (4 Nov UTC)` UTC
+- `https://learnora-ab2.pages.dev/science/` — `19:05:53.770Z (4 Nov UTC)` UTC
+- Historical repeated URL Inspection records (not duplicates today): 15 URLs / 26 extra rows:
+- `https://learnora-ab2.pages.dev/math/grade-6/` — 5 history rows
+- `https://learnora-ab2.pages.dev/math/grade-6/understanding-fractions` — 4 history rows
+- `https://learnora-ab2.pages.dev/ai-literacy/` — 3 history rows
+- `https://learnora-ab2.pages.dev/` — 6 history rows
+- `https://learnora-ab2.pages.dev/financial-literacy/` — 2 history rows
+- `https://learnora-ab2.pages.dev/science/` — 2 history rows
+- `https://learnora-ab2.pages.dev/english/` — 2 history rows
+- `https://learnora-ab2.pages.dev/computer-science/` — 2 history rows
+- `https://learnora-ab2.pages.dev/curriculum/us-common-core-math` — 3 history rows
+- `https://learnora-ab2.pages.dev/curriculum/` — 2 history rows
+- `https://learnora-ab2.pages.dev/english/grade-6-8/parts-of-speech` — 2 history rows
+- `https://learnora-ab2.pages.dev/english/grade-6-8/parts-of-speech.html` — 2 history rows
+- `https://learnora-ab2.pages.dev/math/grade-8/linear-equations-and-inequalities.html` — 2 history rows
+- `https://learnora-ab2.pages.dev/science/grade-7/introduction-to-cells.html` — 2 history rows
+- `https://learnora-ab2.pages.dev/math/grade-6/understanding-fractions.html` — 2 history rows
+- Tracker is active; the connected connector exposes no pause/throttle control for its hourly background checks. This background process has already exceeded the project's daily cap. Platform quota is 16/2,000 used (1,984 remaining), but the stricter project cap controls.
+- Google sitemap: `https://learnora-ab2.pages.dev/sitemap.xml`, last submitted `2026-11-03T15:07:21.300Z`, pending=true, warnings=0, errors=0.
+- Sitemap performance for settled range 6 Oct–2 Nov 2026: 104 URLs scanned without truncation; 1 URL received an impression (homepage: 1 impression, 0 clicks, reported average position 77). This is search-performance evidence only, not a count of indexed pages.
+- GSC tracker’s 103 “URL is unknown to Google” states and missing crawl times indicate a discovery/crawl backlog, not proof of a robots/noindex/canonical defect. For these 103 rows, inspection fields do not establish a specific crawl blocker.
+- No authenticated interactive Search Console UI control was available through the connected browser context. **No manual Request Indexing request was submitted.** The API inspection/history is not a manual-request history. Owner candidates (all pending/unknown and not checked by the tracker on 5 Nov; skip any already manually requested):
+1. `https://learnora-ab2.pages.dev/math/grade-6/`
+2. `https://learnora-ab2.pages.dev/math/grade-7/`
+3. `https://learnora-ab2.pages.dev/math/grade-8/`
+4. `https://learnora-ab2.pages.dev/english/`
+5. `https://learnora-ab2.pages.dev/curriculum/`
+6. `https://learnora-ab2.pages.dev/science/grade-8/`
+7. `https://learnora-ab2.pages.dev/math/grade-6/understanding-fractions`
+8. `https://learnora-ab2.pages.dev/math/grade-6/solving-one-step-equations`
+9. `https://learnora-ab2.pages.dev/math/grade-6/rates-and-proportions`
+10. `https://learnora-ab2.pages.dev/math/grade-6/factors-multiples-hcf-lcm`
+
+### Bing Webmaster and IndexNow
+- Bing property `https://learnora-ab2.pages.dev/` is verified.
+- Bing sitemap feed: Success; 104 URLs; submitted and last crawled 3 Nov 2026. Crawl issues: 0 URLs. Crawl-stat and traffic endpoints returned no dated rows / no latest data date; do not interpret missing rows as zero crawling. Traffic totals currently returned 0 clicks and 0 impressions, but no dated series is available.
+- Bing connector quota limits: 100 URLs/day and 2,600/month. No direct Bing Webmaster URL Submission action exists in the connected tools; IndexNow is the available notification route.
+- IndexNow settings before submission: API key configured (masked `****5d92`); key file verified/reachable. Previous full history: 296 rows, 104 unique URLs; all 104 current sitemap URLs were already present. Last previous batch timestamp: `2026-11-03T15:07:18.854533Z`.
+- GitHub main commit history since that last IndexNow update was compared with the current 104-URL sitemap. 42 unique sitemap URLs had material HTML/content/metadata/structured-data changes after their last submission; all 42 were eligible. No new sitemap URLs existed. The 62 remaining sitemap URLs had no material HTML changes after the last submission and were deliberately skipped (exact list below).
+- IndexNow batch `9bfc98cf-5d2d-432a-ae38-04bfd64e7047`: **42/42 accepted**, 0 failed, all HTTP 200 “submitted, key validated”, timestamp `2026-11-05T03:26:52.03061Z` (08:26:52 PKT). This is accepted notification, not proof of indexing.
+- Full IndexNow history after submission: 338 rows, 104 unique URLs, 103 URLs with repeats / 234 repeat rows; 264 HTTP 200 and 74 HTTP 202. All 42 rows from today are HTTP 200. HTTP 202 in older history means accepted pending key validation; neither 200 nor 202 proves indexing.
+- Exact 42 URLs submitted today:
+1. `https://learnora-ab2.pages.dev/math/grade-6/introduction-to-ratios`
+2. `https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-decimals`
+3. `https://learnora-ab2.pages.dev/math/grade-6/adding-subtracting-fractions`
+4. `https://learnora-ab2.pages.dev/math/grade-6/algebraic-expressions`
+5. `https://learnora-ab2.pages.dev/math/grade-6/angles-and-triangles`
+6. `https://learnora-ab2.pages.dev/math/grade-6/comparing-ordering-fractions`
+7. `https://learnora-ab2.pages.dev/math/grade-6/data-and-graphs`
+8. `https://learnora-ab2.pages.dev/math/grade-6/equivalent-fractions`
+9. `https://learnora-ab2.pages.dev/math/grade-6/factors-multiples-hcf-lcm`
+10. `https://learnora-ab2.pages.dev/math/grade-6/integers-number-line`
+11. `https://learnora-ab2.pages.dev/math/grade-6/metric-units-and-conversions`
+12. `https://learnora-ab2.pages.dev/math/grade-6/mixed-numbers-improper-fractions`
+13. `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals`
+14. `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-fractions`
+15. `https://learnora-ab2.pages.dev/math/grade-6/order-of-operations`
+16. `https://learnora-ab2.pages.dev/math/grade-6/percentage-increase-decrease`
+17. `https://learnora-ab2.pages.dev/math/grade-6/perimeter-area-shapes`
+18. `https://learnora-ab2.pages.dev/math/grade-6/rates-and-proportions`
+19. `https://learnora-ab2.pages.dev/math/grade-6/solving-one-step-equations`
+20. `https://learnora-ab2.pages.dev/math/grade-6/understanding-decimals`
+21. `https://learnora-ab2.pages.dev/math/grade-6/understanding-fractions`
+22. `https://learnora-ab2.pages.dev/math/grade-6/understanding-percentages`
+23. `https://learnora-ab2.pages.dev/math/grade-6/volume-of-3d-shapes`
+24. `https://learnora-ab2.pages.dev/science/grade-8/`
+25. `https://learnora-ab2.pages.dev/ai-literacy/ai-safety`
+26. `https://learnora-ab2.pages.dev/ai-literacy/how-ai-works`
+27. `https://learnora-ab2.pages.dev/ai-literacy/verify-ai`
+28. `https://learnora-ab2.pages.dev/computer-science/algorithms`
+29. `https://learnora-ab2.pages.dev/computer-science/html-css`
+30. `https://learnora-ab2.pages.dev/computer-science/python-basics`
+31. `https://learnora-ab2.pages.dev/curriculum/grade-6-8-maths-study-plan`
+32. `https://learnora-ab2.pages.dev/curriculum/international-english-guide`
+33. `https://learnora-ab2.pages.dev/curriculum/international-science-guide`
+34. `https://learnora-ab2.pages.dev/english/grade-6-8/argument-writing-claims-reasons-evidence`
+35. `https://learnora-ab2.pages.dev/english/grade-6-8/text-structure-authors-purpose`
+36. `https://learnora-ab2.pages.dev/financial-literacy/budgeting`
+37. `https://learnora-ab2.pages.dev/financial-literacy/savings-interest`
+38. `https://learnora-ab2.pages.dev/financial-literacy/unit-prices`
+39. `https://learnora-ab2.pages.dev/science/grade-7/weather-climate-water-cycle`
+40. `https://learnora-ab2.pages.dev/science/grade-8/earth-resources-sustainability-human-impact`
+41. `https://learnora-ab2.pages.dev/worksheets/international-english-science-practice`
+42. `https://learnora-ab2.pages.dev/worksheets/international-middle-school-maths`
+- Exact 62 existing sitemap URLs skipped because they had no material change after their last submission:
+1. `https://learnora-ab2.pages.dev/`
+2. `https://learnora-ab2.pages.dev/math/grade-6/`
+3. `https://learnora-ab2.pages.dev/math/grade-7/`
+4. `https://learnora-ab2.pages.dev/math/grade-7/two-step-equations`
+5. `https://learnora-ab2.pages.dev/math/grade-7/adding-subtracting-integers`
+6. `https://learnora-ab2.pages.dev/math/grade-7/simplifying-algebraic-expressions`
+7. `https://learnora-ab2.pages.dev/math/grade-7/ratios-rates-proportional-relationships`
+8. `https://learnora-ab2.pages.dev/math/grade-7/rational-numbers-and-operations`
+9. `https://learnora-ab2.pages.dev/math/grade-7/equations-and-inequalities`
+10. `https://learnora-ab2.pages.dev/math/grade-7/geometry-angles-scale-drawings`
+11. `https://learnora-ab2.pages.dev/math/grade-7/area-surface-area-volume`
+12. `https://learnora-ab2.pages.dev/privacy-policy`
+13. `https://learnora-ab2.pages.dev/about`
+14. `https://learnora-ab2.pages.dev/terms`
+15. `https://learnora-ab2.pages.dev/english/grade-6-8/parts-of-speech`
+16. `https://learnora-ab2.pages.dev/science/grade-7/introduction-to-cells`
+17. `https://learnora-ab2.pages.dev/math/grade-7/statistics-probability-data-interpretation`
+18. `https://learnora-ab2.pages.dev/math/grade-7/transformations-and-symmetry`
+19. `https://learnora-ab2.pages.dev/math/grade-7/coordinate-geometry`
+20. `https://learnora-ab2.pages.dev/math/grade-7/fractions-decimals-and-percentages-in-problem-solving`
+21. `https://learnora-ab2.pages.dev/math/grade-8/`
+22. `https://learnora-ab2.pages.dev/math/grade-8/exponents-powers-and-scientific-notation`
+23. `https://learnora-ab2.pages.dev/math/grade-8/linear-equations-and-inequalities`
+24. `https://learnora-ab2.pages.dev/math/grade-8/pythagorean-theorem-and-right-triangles`
+25. `https://learnora-ab2.pages.dev/math/grade-8/linear-functions-and-graphs`
+26. `https://learnora-ab2.pages.dev/math/grade-8/systems-of-linear-equations`
+27. `https://learnora-ab2.pages.dev/math/grade-8/transformations-congruence-and-similarity`
+28. `https://learnora-ab2.pages.dev/math/grade-8/volume-of-cylinders-cones-and-spheres`
+29. `https://learnora-ab2.pages.dev/math/grade-8/scatter-plots-and-data-relationships`
+30. `https://learnora-ab2.pages.dev/math/grade-8/probability-models-and-compound-events`
+31. `https://learnora-ab2.pages.dev/math/grade-8/square-roots-and-irrational-numbers`
+32. `https://learnora-ab2.pages.dev/math/grade-8/angle-relationships-and-parallel-lines`
+33. `https://learnora-ab2.pages.dev/english/`
+34. `https://learnora-ab2.pages.dev/science/`
+35. `https://learnora-ab2.pages.dev/contact`
+36. `https://learnora-ab2.pages.dev/english/grade-6-8/sentence-types-and-structure`
+37. `https://learnora-ab2.pages.dev/english/grade-6-8/verb-tenses-and-agreement`
+38. `https://learnora-ab2.pages.dev/science/grade-7/forces-and-motion`
+39. `https://learnora-ab2.pages.dev/science/grade-7/ecosystems-and-food-chains`
+40. `https://learnora-ab2.pages.dev/english/grade-6-8/punctuation-and-capitalization`
+41. `https://learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model`
+42. `https://learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques`
+43. `https://learnora-ab2.pages.dev/english/grade-6-8/reading-comprehension-main-idea-inference-evidence`
+44. `https://learnora-ab2.pages.dev/science/grade-7/heat-transfer-conduction-convection-radiation`
+45. `https://learnora-ab2.pages.dev/english/grade-6-8/paragraph-writing-topic-sentences-supporting-details`
+46. `https://learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions`
+47. `https://learnora-ab2.pages.dev/english/grade-6-8/vocabulary-context-clues-prefixes-suffixes-roots`
+48. `https://learnora-ab2.pages.dev/science/grade-8/human-digestive-and-circulatory-systems`
+49. `https://learnora-ab2.pages.dev/science/grade-8/electric-circuits-current-voltage-resistance`
+50. `https://learnora-ab2.pages.dev/science/grade-8/waves-sound-and-light`
+51. `https://learnora-ab2.pages.dev/science/grade-8/earth-moon-and-space-patterns`
+52. `https://learnora-ab2.pages.dev/curriculum/`
+53. `https://learnora-ab2.pages.dev/curriculum/us-common-core-math`
+54. `https://learnora-ab2.pages.dev/curriculum/england-ks3-maths`
+55. `https://learnora-ab2.pages.dev/curriculum/canada-ontario-math`
+56. `https://learnora-ab2.pages.dev/curriculum/australia-year-7-8-maths`
+57. `https://learnora-ab2.pages.dev/curriculum/uk-maths-curriculum`
+58. `https://learnora-ab2.pages.dev/curriculum/canada-grade-6-8-math`
+59. `https://learnora-ab2.pages.dev/editorial-policy`
+60. `https://learnora-ab2.pages.dev/computer-science/`
+61. `https://learnora-ab2.pages.dev/ai-literacy/`
+62. `https://learnora-ab2.pages.dev/financial-literacy/`
+
+### Internal links, sitemap, canonical, robots, fetch and content-quality blockers
+- Sitemap inventory is clean: 104 unique same-host URLs, no duplicates. Google processing remains pending (0 warnings/errors); Bing feed is Success.
+- Grade 8 Science hub’s previously missing link to the Earth Resources lesson was fixed in PR #20, merged and production-verified in the master roadmap. No unresolved internal-link blocker is recorded in the latest repository evidence.
+- Repository `robots.txt` on main allows all user agents, explicitly allows OAI-SearchBot and declares the sitemap. The last live robots check recorded on 4 Nov returned HTTP 200. A fresh live robots fetch was unavailable this run (Firecrawl credits 0 / Browser context unavailable).
+- Latest known on-page audit (4 Nov status) covered 104/104 sitemap URLs with 0 critical/high/medium findings and 159 low-severity findings; a 25-page Grade 6 audit returned HTTP 200/indexable with zero findings. PR #37 production verification confirmed self-canonical and `index,follow` on the ratios lesson. These are previous verified results, not a fresh full live-page crawl today.
+- No known canonical/noindex/fetch defect is established by the current GSC data. 103 URLs are unknown to Google with no crawl timestamp; that is the main discovery bottleneck.
+- Dedicated Sources/Further Reading inventory was 11/77 after PR #26. Four later source additions (Comparing Fractions, Understanding Decimals, Adding/Subtracting Decimals, Introduction to Ratios) make a **provisional** 15/77 estimate (62 without a dedicated section); re-count all lesson files before treating this as an exact inventory. Independent subject-expert review remains outstanding.
+- GA4/Google Tag and AdSense remain disabled pending child/mixed-audience privacy, consent/CMP, publisher ID and ads.txt account gates.
+
+### Next actions
+1. Do not run any further GSC inspections on 5 Nov; the project cap is already exceeded by 21 through tracker background checks.
+2. Owner should locate and pause/reduce the GSC Wizard hourly tracker cron in its UI if such a control is available; the connected connector itself exposes no pause/throttle action.
+3. If using manual Request Indexing, review the 10 candidates above and skip any already requested manually; no such requests were submitted by this run.
+4. Continue source attribution and factual verification in small preview-only batches; refresh the 77-lesson source inventory before updating the count.
+5. Re-run page-level live robots/canonical/fetch checks when Firecrawl credits or the originating browser context are available. Keep production code unchanged until preview QA passes.
+6. Continue IndexNow only for new/materially changed URLs; never resubmit the 62 unchanged URLs listed above.
+
