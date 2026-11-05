@@ -281,3 +281,31 @@ Repository: https://github.com/com-orgs/learnora
 - Lesson preview: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions
 - Branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions
 - Separate repository audit check was still in progress. No production deployment; browser interaction QA remains outstanding.
+
+ 
+## Latest checkpoint — Grade 8 Digestive and Circulatory Systems (5 Nov 2026)
+
+### Completed
+- Reviewed digestive/circulatory lesson and quiz script.
+- Checked four worked examples, five practice prompts for conceptual alignment, six worksheet suggested-answer features and five quiz mappings; reviewed items are consistent.
+- Clarified the protease sequence; added official NIDDK and NHLBI references plus optional advanced OpenStax reading.
+- Draft PR #52: https://github.com/com-orgs/learnora/pull/52. Only lesson HTML changed; quiz JS unchanged.
+- PR #52 Cloudflare Pages and audit checks were still in progress at checkpoint time.
+- Preview deployments already successful: PR #49 Mixtures (https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques), PR #50 States of Matter (https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model), PR #51 Elements and Compounds (https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions).
+
+### Current safety / blockers
+- PRs #49–#52 are draft and unmerged; no production changes or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection/manual indexing request; no paid crawl/scrape.
+
+### Next action
+- Continue Grade 8 Science QA with `science/grade-8/electric-circuits-current-voltage-resistance.html` and its quiz script. Verify electrical concepts, worked calculations, worksheet answers and quiz mappings; add only authoritative, age-suitable sources on a separate preview branch.
+
+### Project tree / active proposals
+- `science/grade-7/` — six source-section proposals in PRs #45–#50
+- `science/grade-8/` — Elements/Compounds PR #51; Digestive/Circulatory PR #52; remaining lessons
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — complete 77-lesson source-section inventory
+- `audit/source-inventory-2026-11-05` — consolidated documentation/checkpoint branch (PR #44)
+- Draft content proposals: PRs #40–#43 and #45–#52. No production release.
