@@ -127,3 +127,32 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — Understanding Percentages reviewed (5 Nov 2026)
+
+### Completed since previous checkpoint
+- Reviewed `math/grade-6/understanding-percentages.html` and `scripts/pages/math-grade-6-understanding-percentages.js`.
+- Independently recomputed all 7 practice answers and all 7 worksheet answer-key items; all are correct.
+- Confirmed all 5 quiz correct-answer mappings match the visible options and feedback.
+- Checked the lesson's 3 listed references: OpenStax and Illustrative Mathematics were reachable and directly relevant; Khan Academy returned a client challenge and remains unverified.
+- The page already contains a substantial explanation, multiple worked examples, everyday applications, misconception guidance, independent practice, worksheet, answer key and source section. No content edit was justified in this pass.
+- Internal desk-audit estimate: 94/100 for this page only; not a Google score and not transferable to the site-wide score.
+- Added `PHASE14_PERCENTAGES_QA_2026-11-05.md` as the audit record.
+
+### Current production safety
+- Read-only review only. No production HTML/JS changed, no deployment and no GSC inspection.
+- No independent educator review is claimed.
+- Existing Draft PRs #40, #41 and #42 remain separate preview work; do not merge them as part of this read-only audit.
+
+### Next action
+- Audit `math/grade-6/percentage-increase-decrease.html` and `scripts/pages/math-grade-6-percentage-increase-decrease.js`: verify definitions, examples, practice and worksheet answers independently, match quiz keys to visible options, and validate sources. Make changes only on a separate preview branch if a concrete issue is found.
+
+### Project tree
+- `math/grade-6/` — Grade 6 lesson HTML
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_PERCENTAGES_QA_2026-11-05.md` — percentage lesson QA
+- `qa/grade6-algebraic-expressions-sources` — Draft PR #40
+- `qa/grade6-integers-sources` — Draft PR #41
+- `qa/grade6-order-operations-sources` — Draft PR #42
+- `PROJECT_STATE.md` — current resume checkpoint
