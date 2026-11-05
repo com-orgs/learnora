@@ -471,9 +471,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`
-- Workflow: Learnora Site Audit (run [#41961816725](https://github.com/com-orgs/learnora/actions/runs/41961816725))
-- Last updated automatically: run #41961816725 on branch `seo/grade6-understanding-percentages-sources-2026-11-05`.
+- Tested commit: `263bd231a4c9cb15e2d2fe81353f52133f062e9b`
+- Workflow: Learnora Site Audit (run [#41961830482](https://github.com/com-orgs/learnora/actions/runs/41961830482))
+- Last updated automatically: run #41961830482 on branch `seo/grade6-understanding-percentages-sources-2026-11-05`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
