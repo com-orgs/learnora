@@ -124,3 +124,20 @@ Checkpoint branch: project-checkpoint-system-2026-11-04
 - [ ] PR #17 (50-competitor keyword research + roadmap docs) remains open/unmerged; documentation-only preview smoke passed earlier, but no equivalent full QA run is recorded.
 - [ ] Daily GSC inspection cap: do not run any more URL inspections on Pakistan local date 4 Nov 2026. On next PKT day, deduplicate tracker and inspection history first, then inspect at most 10 distinct URLs total.
 - Exact next action: review PR #19's remaining check/status state and confirm no code drift from the tested PR head; if clean, prepare the next preview-only educational quality batch (structured data/source attribution for priority Grade 6 Maths pages), without merging/deploying production.
+
+
+## 2026-11-05 — Daily indexing and discovery run completed
+
+- Production sitemap was fetched live: HTTP 200, 104 unique same-host URLs, no duplicate entries.
+- GSC full tracker: 104 URLs; 1 indexed, 103 URL-unknown, 0 pending/errors/warnings; only 1 URL has a crawl time. Full URL Inspection history: 67 rows, 41 distinct URLs, 15 historical repeated URLs / 26 extra rows.
+- Strict Pakistan-date guard for 5 Nov: 31 distinct URLs already had tracker lastCheckAt today; URL Inspection history had 0 rows today; union=31, project cap=10, overrun=21. No inspection calls were made by this run. The tracker is active and the connector exposes no pause/throttle action for the hourly background process. Do not inspect more URLs on 5 Nov.
+- GSC sitemap submitted 3 Nov, still pending, 0 warnings/errors. Settled sitemap performance 6 Oct–2 Nov: homepage had 1 impression, 0 clicks, average position 77. This is not an index-count or ranking guarantee.
+- Bing verified property; feed Success, 104 URLs, last crawled 3 Nov; 0 crawl issues. Bing crawl/traffic reports had no dated rows. Direct Bing URL Submission action is not exposed.
+- IndexNow key configured and key file verified. Compared all 104 live sitemap URLs with all 296 historical rows and GitHub main commits after the last submission (3 Nov 15:07 UTC). 42 materially changed URLs were eligible; 62 unchanged URLs were skipped. Batch `9bfc98cf-5d2d-432a-ae38-04bfd64e7047` submitted 42/42 with HTTP 200/key validated, 0 failed. History now 338 rows / 104 unique; 264 HTTP 200 and 74 HTTP 202. Acceptance does not prove indexing.
+- Search Console interactive UI was not accessible through the connected browser context; no manual Request Indexing action was submitted. Ten uninspected, high-priority candidates were recorded in the GitHub status/roadmap for owner review; skip any already manually requested.
+- Current production code commit recorded in the status file: `271ca6c89f26c5a562c180f758dcb0f5bb34c535`; main documentation HEAD after status/roadmap updates: `45c3d4b55fe8360612bbed41214ddbfaa41bd765`.
+- `PROJECT_STATUS.md` and `LEARNORA_MASTER_ROADMAP_2026-11-04.md` updated on main with full exact URL lists, guard counts, IndexNow batch, historical duplicates, Bing/GSC evidence, blockers and next actions; post-update fetch verified both files.
+- Page-level live robots/canonical/fetch checks were not repeated because Firecrawl balance was 0 and Browser access required its originating browser context. Latest known 4 Nov checks remain the baseline. Grade 8 Science missing Earth Resources link is resolved by PR #20.
+- Content source coverage remains provisional: 11/77 after PR #26 plus four later source additions implies 15/77, 62 remaining; refresh full inventory before treating as exact. Independent subject-expert review remains open.
+- No production code, sitemap or metadata was changed in this run. Only documentation and the 42 IndexNow notifications were updated.
+- Next: maintain zero GSC inspections for 5 Nov; owner to locate any tracker pause control in GSC Wizard UI; next run must deduplicate before inspecting. Continue source attribution in preview-only batches and only notify IndexNow for new/materially changed pages.
