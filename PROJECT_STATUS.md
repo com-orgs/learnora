@@ -1132,3 +1132,15 @@ Historical session notes below are retained for continuity; use this current sta
 - No HTML, quiz script, production code, metadata or live content was changed. No deployment was performed. This was repository-source inspection only; no fresh live page fetch or browser QA was claimed.
 - GSC daily guard remains in force for 5 Nov: tracker is active, 104 URLs are tracked, latest tracker timestamp returned 2026-11-05T03:36:29.347Z, and no pause/throttle action is exposed by the connected GSC Wizard tools. No GSC inspection was run in this QA batch.
 - Next: re-count source sections across all 77 lesson HTML files; then continue with Grade 6 maths worked-example/practice-answer verification in small batches. Obtain genuine independent educator review before claiming expert endorsement.
+
+
+## Additional Grade 6 preview QA — 5 Nov 2026
+
+- Added four Grade 6 lessons to the source-code QA sample: Algebraic Expressions, Integers and the Number Line, Order of Operations, and Understanding Percentages.
+- Quiz key consistency: 20/20 mappings matched the visible answer-choice letters/text across these four lessons (5 each). This is a source-code consistency check only, not a full proof of all worked examples or a live browser test.
+- Dedicated Sources/References/Further Reading heading: present on Understanding Percentages; not found on Algebraic Expressions, Integers and the Number Line, or Order of Operations. These three pages need source-attribution review before content changes.
+- Combined sample so far: 9 Grade 6 lesson pages inspected; 45/45 quiz answer-key mappings matched; 6/9 pages have a dedicated source heading, 3/9 do not. This is a targeted sample, not the complete 77-lesson site inventory.
+- Files inspected in this batch: `math/grade-6/algebraic-expressions.html`, `scripts/pages/math-grade-6-algebraic-expressions.js`, `math/grade-6/integers-number-line.html`, `scripts/pages/math-grade-6-integers-number-line.js`, `math/grade-6/order-of-operations.html`, `scripts/pages/math-grade-6-order-of-operations.js`, `math/grade-6/understanding-percentages.html`, `scripts/pages/math-grade-6-understanding-percentages.js`.
+- No production files, metadata, HTML, or scripts changed; no deployment. Firecrawl current balance checked and returned 0 credits, so no paid crawl/scrape was initiated. Repository source inspection only.
+- GSC daily inspection restriction remains unchanged: no URL Inspection API call or manual Request Indexing request made.
+- Next: add reliable age-appropriate references to the three flagged pages only after checking exact claims and reference suitability; then test their worked examples and worksheet keys. Do not mass-edit or deploy without preview QA.
