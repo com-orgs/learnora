@@ -200,3 +200,15 @@ Date: 2026-11-05
 - Reviewed source references (OpenStax, BBC Bitesize, Math Learning Center and NRICH) for topic relevance. They support further learning and are not presented as formal curriculum alignment.
 - Found missing closing `</body>` and `</html>` tags at the end of the source. Added both tags and re-fetched the file to verify the document now ends with the page script followed by the two closing tags.
 - No other factual or arithmetic issue found in this focused pass. This remains a source-level review, not external subject-expert peer review or browser testing.
+
+
+## Deep content review — Equivalent Fractions
+
+Date: 2026-11-05
+- Reviewed fraction equivalence definitions, visual bar model, multiplying/dividing rules, simplification, equivalence checks, common mistakes, three worked practice examples, six practice questions and answers, five quiz questions/answer keys, and seven worksheet items with teacher key.
+- Recalculated the worked examples: 2/3 = 4/6; 12/18 = 2/3; 3/4 = 6/8; 3/8 = 9/24; 15/20 = 3/4; and 4/5 = 16/20. All are correct.
+- Rechecked practice answers: 1/3 = 4/12; 2/5 = 8/20; 8/12 = 2/3; 18/24 = 3/4; 3/7 = 12/28; and 4/6 = 2/3. All are correct.
+- Rechecked quiz answer mappings and worksheet keys, including 2/3 × 5/5 = 10/15, 3/4 = 12/16, 6/10 = 3/5 and 21/28 = 3/4. No mismatch found.
+- Confirmed the visual model shades 1/2 in bars divided into 2, 4 and 6 equal parts.
+- Reviewed OpenStax, BBC Bitesize and Math Learning Center references for relevance.
+- No source-level factual or arithmetic error found in this focused review. This is not a substitute for subject-expert peer review or live browser testing.
