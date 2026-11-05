@@ -76,9 +76,3 @@ This matrix separates checks that are complete from checks that still need real 
 - Google rankings, indexing, snippets and traffic cannot be guaranteed by these checks.
 - The deployment is live; future content changes should follow the same preview QA and production release workflow.
 
-
-- The 115 quiz mappings are source-level verified against visible question options; this is not an external independent assessment of the whole lesson.
-- All 23 Grade 6 lesson pages have received a focused source-level review of worked examples, practice questions and worksheet answer keys; this is not a substitute for independent subject-expert peer review.
-- External references improve source transparency and further learning; they do not prove originality or that every sentence is independently verified.
-- Google rankings, indexing, snippets and traffic cannot be guaranteed by these checks.
-- No changes have been merged to `main` and no production deployment has been performed.
