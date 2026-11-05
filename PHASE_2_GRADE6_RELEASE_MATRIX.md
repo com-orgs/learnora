@@ -14,7 +14,7 @@ This matrix separates checks that are complete from checks that still need real 
 | Equivalent Fractions | Pass | Reviewed | Pass | Pass | N/A |
 | Comparing and Ordering Fractions | Pass | Reviewed | Pass | Pass | N/A |
 | Adding and Subtracting Fractions | Pass | Reviewed | Pass | Pass | N/A |
-| Introduction to Ratios | Pass | Pending detailed pass | Pass | Pass | Pass |
+| Introduction to Ratios | Pass | Reviewed | Pass | Pass | Pass |
 | Multiplying and Dividing Fractions | Pass | Reviewed | Pass | Pass | N/A |
 | Mixed Numbers and Improper Fractions | Pass | Reviewed | Pass | Pass | Pass |
 | Understanding Decimals | Pass | Reviewed | Pass | Pass | Pass |
