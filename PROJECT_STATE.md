@@ -67,3 +67,30 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — Integers lesson reviewed (5 Nov 2026)
+
+### Completed since previous checkpoint
+- Reviewed Grade 6 Integers and the Number Line HTML and quiz JS.
+- Checked all visible lesson examples, 7 practice answers, 7 worksheet answer-key items, and 5 quiz mappings; all reviewed answers are consistent.
+- Added OpenStax Prealgebra 2e section 3.1 as a source in preview branch `qa/grade6-integers-sources`.
+- Created Draft PR #41: https://github.com/com-orgs/learnora/pull/41.
+- Algebraic Expressions PR #40 is also draft and unmerged.
+
+### Current production safety
+- Both PRs are draft and unmerged; no production changes or deployment.
+- No GSC inspections performed during these content QA tasks.
+- Live browser interaction QA and independent educator review are still outstanding.
+
+### Next action
+- Continue with `math/grade-6/order-of-operations.html` and its page script. Verify the worked examples, practice and worksheet answers independently, match quiz keys to visible options, and identify an appropriate open academic reference. If a change is justified, use a separate preview branch and draft PR.
+
+### Project tree
+- math/grade-6/ — lesson HTML
+- scripts/pages/ — lesson quiz scripts
+- qa/grade6-algebraic-expressions-sources — Draft PR #40
+- qa/grade6-integers-sources — Draft PR #41
+- PROJECT_STATUS.md
+- LEARNORA_MASTER_ROADMAP_2026-11-04.md
+- PROJECT_STATE.md
