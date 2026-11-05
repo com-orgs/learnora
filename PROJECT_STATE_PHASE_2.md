@@ -20,7 +20,7 @@ Base branch: main
 - The Grade 6 maths learning path explains that its sequence is suggested and curriculum-neutral, not an official syllabus.
 - Editorial Policy is unusually transparent: AI-assisted drafting may be used; automated checks do not prove academic correctness; Learnora does not currently claim independent review by named subject experts.
 - Contact page gives a correction/reporting route and privacy caution.
-- Current homepage scrape displays a duplicate card for “Multiplying and Dividing Fractions” (verify whether duplicate markup is actually present in the source before fixing).
+- Confirmed the homepage contained two separate resource cards for the same “Multiplying and Dividing Fractions” URL. Removed the redundant second card on the working branch; verified the source now contains exactly one such card.
 - Current homepage hero's fraction visual was extracted by text scraping as “34=0.75”; inspect actual markup/rendered visual before deciding whether this is a defect.
 - One attempted lesson URL using the wrong path returned 404; the correct live route is /math/grade-6/understanding-fractions (no /mathematics/ segment).
 
@@ -30,6 +30,11 @@ Base branch: main
 3. Cite trustworthy primary/authoritative sources where factual claims need support; distinguish Learnora's explanation from external source material.
 4. Check every changed page for content accuracy, links, metadata, canonical, structured data where appropriate, mobile rendering, and quiz/worksheet answer consistency.
 5. Keep all edits on phase-2-quality-fixes until reviewed. Do not merge to main or deploy without explicit user approval.
+
+## Changes made on working branch
+- `index.html`: removed one redundant duplicate resource card for `/math/grade-6/multiplying-dividing-fractions`.
+- Commit: `14cfdc81324d26e4843fc7559b20562aaceaa4fa`.
+- Verification: fetched the updated file from `phase-2-quality-fixes`; exactly one matching card remains. No live deployment has occurred.
 
 ## Next actions
 1. Inspect repository layout and source files for the homepage, lessons, shared templates/scripts, sitemap, robots, and Cloudflare configuration.
