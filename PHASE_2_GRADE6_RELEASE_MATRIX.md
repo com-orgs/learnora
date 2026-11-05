@@ -48,18 +48,17 @@ This matrix separates checks that are complete from checks that still need real 
 
 ## Still required before release
 
-1. Deep academic review of the 12 lessons marked pending above, including worked reasoning, practice answers and worksheet keys.
-2. Real rendered browser testing on desktop and narrow mobile widths. Static media-query checks do not prove the layout actually looks correct.
-3. Live quiz interaction tests: submit correct/incorrect/unanswered combinations, verify feedback and score, retake, keyboard-only operation and focus order.
-4. Print-preview tests for each worksheet layout and tables.
-5. Accessibility checks with a real screen reader and automated accessibility tooling; source checks alone do not establish WCAG conformance.
-6. Live URL HTTP/redirect/canonical verification and Google Rich Results/schema validation.
-7. Review any remaining subject accuracy and source relevance with a qualified educator before claiming full academic verification.
+1. Real rendered browser testing on desktop and narrow mobile widths. Static media-query checks do not prove the layout actually looks correct.
+2. Live quiz interaction tests: submit correct/incorrect/unanswered combinations, verify feedback and score, retake, keyboard-only operation and focus order.
+3. Print-preview tests for each worksheet layout and tables.
+4. Accessibility checks with a real screen reader and automated accessibility tooling; source checks alone do not establish WCAG conformance.
+5. Live URL HTTP/redirect/canonical verification and Google Rich Results/schema validation.
+6. Independent subject-expert/educator review before claiming full academic peer verification.
 
 ## Important limitations
 
 - The 115 quiz mappings are source-level verified against visible question options; this is not an external independent assessment of the whole lesson.
-- The 11 detailed content reviews checked the listed calculations and answer keys, but are not a substitute for full subject-expert peer review.
+- All 23 Grade 6 lesson pages have received a focused source-level review of worked examples, practice questions and worksheet answer keys; this is not a substitute for independent subject-expert peer review.
 - External references improve source transparency and further learning; they do not prove originality or that every sentence is independently verified.
 - Google rankings, indexing, snippets and traffic cannot be guaranteed by these checks.
 - No changes have been merged to `main` and no production deployment has been performed.
