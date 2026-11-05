@@ -72,3 +72,24 @@ Base branch: main
 - Reviewed metric prefix definitions, conversion relationships, worked examples, six practice answers, five quiz answer mappings and six worksheet key items. No arithmetic or answer-key mismatch was found in this source-level pass.
 - Added three NIST references covering SI length units, metric prefixes/unit writing, and general tables including mass and capacity. All three references returned HTTP 200 and were relevant to the lesson.
 - The page did not contain duplicate “Continue Learning” sections. No production deployment occurred.
+
+
+## Additional Grade 6 lesson QA — 2026-11-05
+- Reviewed `math/grade-6/angles-and-triangles.html` and its quiz script. Checked angle ranges, protractor instructions, triangle classification, angle-sum examples, straight-line/around-a-point facts, seven practice answers, five quiz mappings and seven worksheet answers. No mismatch found in the reviewed calculations or answer mappings.
+- Clarified that triangle classification by sides and by angles describes two independent properties; added a combined-name example.
+- Added Math Is Fun references for using a protractor and triangle properties.
+- Reviewed `math/grade-6/integers-number-line.html` and its quiz script. Checked integer definitions, number-line comparisons, ordering, opposites, absolute value, real-life examples, seven practice answers, five quiz mappings and seven worksheet answers. No mismatch found.
+- Added three relevant GeoGebra resources for Grades 6–8: integers, ordering on a number line, and absolute value on a number line.
+- Reviewed `math/grade-6/order-of-operations.html` and its quiz script. Checked priority rules, left-to-right examples, eight practice answers, five quiz mappings and eight worksheet answers. No mismatch found.
+- Clarified the scope of BIDMAS/PEMDAS: this introductory lesson focuses on brackets and the four basic operations; indices/exponents are outside its scope.
+- Added The Open University and Australian Mathematical Sciences Institute references.
+- Re-fetched all three updated HTML files and verified each has one H1, one canonical, five quiz questions, one “Continue Learning” section and one “Sources and Further Learning” section. New external links include `rel="noopener noreferrer"`.
+- Firecrawl was unavailable because its connected account had exhausted the daily MCP credit allowance; web search was used as a fallback and Firecrawl was not retried.
+- Updated detailed findings in `PHASE_2_GRADE6_MATH_QA.md`.
+- No production deployment occurred; all work remains isolated on `phase-2-quality-fixes`.
+
+## Next actions
+1. Continue the Grade 6 content QA with the remaining lessons that have no external references, prioritising Rates and Proportions, Factors/Multiples/HCF/LCM, and Introduction to Algebraic Expressions.
+2. Review each lesson's definitions, worked reasoning, practice and worksheet keys, quiz mappings, source quality and internal links before making targeted edits.
+3. After the content batch, perform a separate rendered/mobile/accessibility and live-interaction QA pass; source inspection alone cannot verify those behaviours.
+4. Keep all changes on the working branch. Do not merge or deploy without explicit user approval.
