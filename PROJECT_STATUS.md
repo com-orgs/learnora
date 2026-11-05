@@ -1186,3 +1186,13 @@ Historical session notes below are retained for continuity; use this current sta
 - This is not claim-level fact-checking, a fresh live crawl, URL reachability verification or browser QA. No production files changed and no deployment performed. PR #43 remains a separate unmerged proposal; its fourth percentages source is not counted in main.
 - Preview/documentation branch: `audit/source-inventory-2026-11-05`.
 - Next: claim-level science review (11), financial literacy (3), AI literacy (3), mathematics (31), English (7), then computer science (3); add sources only after checking authority, relevance, currentness and age suitability.
+
+
+## Consolidated Grade 6 and Grade 7 QA status — 5 Nov 2026
+
+- Preview-only QA proposals: PR #40 Algebraic Expressions; #41 Integers; #42 Order of Operations; #43 Understanding Percentages; #45 Ecosystems and Food Chains; #46 Forces and Motion; #47 Heat Transfer; #48 Introduction to Cells.
+- Fresh source inventory: 19/77 lesson pages have a dedicated source section; 58/77 do not on main. Exact backlog and methodology are in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`.
+- Seven PRs (#40–#42, #45–#48) propose new dedicated source sections on currently missing pages. If all are accepted and merged, projected coverage becomes 26/77 with 51 remaining; this is not yet reflected in main. PR #43 adds a supplementary source to a page already counted as sourced.
+- Consolidated academic desk-review notes are in `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md`. These are not independent educator reviews. Browser interaction QA and release checks remain required.
+- No production edits or deployment were performed as part of this consolidated audit. No GSC inspection/manual indexing request made. Firecrawl credit balance 0; no paid crawl/scrape.
+- Next: Science — Mixtures and Separation Techniques; continue source QA and keep changes preview-only.
