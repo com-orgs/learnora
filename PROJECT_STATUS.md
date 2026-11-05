@@ -1209,3 +1209,13 @@ Historical session notes below are retained for continuity; use this current sta
 - Next QA target: Grade 7 Science — States of Matter and the Particle Model.
 
 - PR #49 Cloudflare Pages preview deployment: **successful** for commit `978fc083c52fc3abac095de956e20a67bd80051f`. Preview: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . Branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques . This does not mean production deployment; interactive browser QA remains outstanding.
+
+ 
+## Grade 7 Science — States of Matter QA update (5 Nov 2026)
+
+- Reviewed the States of Matter and Particle Model lesson and quiz JS. Checked 5/5 practice answers, 6/6 worksheet suggested answers, and 5/5 quiz answer mappings; all reviewed items are consistent.
+- Added three RSC age-appropriate learning resources and one optional advanced OpenStax reference.
+- Draft PR #50: https://github.com/com-orgs/learnora/pull/50. Cloudflare Pages preview deployment succeeded: https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model
+- Draft PR #49 (Mixtures) also has a successful preview deployment: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
+- PRs #49 and #50 remain unmerged. No production edit/deployment; interactive browser QA and independent educator review remain open release gates.
+- Next QA target: Grade 8 Science — Elements, Compounds and Chemical Reactions.
