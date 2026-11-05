@@ -223,3 +223,14 @@ Date: 2026-11-05
 - Confirmed the five quiz answer mappings match visible options.
 - Reviewed the UK Year 6 Mathematics Guidance, Khan Academy Class 6 Mathematics and Illustrative Mathematics common-denominator lesson as further-learning references. Their inclusion is not presented as Learnora curriculum accreditation or formal alignment.
 - No source-level factual or arithmetic issue found in this focused pass. Browser rendering and live quiz interaction remain unverified.
+
+
+## Deep content review — Adding and Subtracting Fractions
+
+Date: 2026-11-05
+- Reviewed same-denominator operations, common denominators, simplifying, four-step method, estimation, three real-life examples, five common mistakes, eight practice answers, five quiz mappings and eight worksheet answer-key items.
+- Recalculated practice answers: 2/9 + 4/9 = 2/3; 7/10 − 3/10 = 2/5; 1/2 + 1/5 = 7/10; 3/4 − 1/8 = 5/8; 2/3 + 1/6 = 5/6; 5/6 − 1/4 = 7/12; 3/8 + 2/8 = 5/8; and 7/8 − 1/4 = 5/8. All are correct.
+- Recalculated worksheet keys: 8/11; 4/12 = 1/3; 11/12; 7/12; 7/10; 3/8; 5/6 km; and 5/8 L. All are correct.
+- Confirmed all five quiz mappings match visible options and their explanations.
+- Reviewed OpenStax common-denominator/different-denominator lessons and Math Learning Center fraction-model resources for relevance.
+- No source-level factual or arithmetic mismatch found in this focused review. Browser interaction and print preview remain unverified.
