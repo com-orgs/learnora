@@ -127,3 +127,21 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — Grade 7 Science: Introduction to Cells (5 Nov 2026)
+
+### Completed
+- Reviewed `science/grade-7/introduction-to-cells.html` and its quiz script.
+- Checked all 7 practice answers, all 7 worksheet answer-key items and all 5 quiz mappings against visible choices; all reviewed answers are consistent.
+- Desk-reviewed cell theory, cell structures/organelle functions, plant and animal cell comparisons, specialised-cell adaptations and microscope guidance. No factual correction was required in this review.
+- Added Khan Academy Cell Theory (Middle School Biology), Khan Academy Plant vs. Animal Cells Review, and OpenStax Biology Section 4.1 Studying Cells as supplementary references.
+- Logged the review in `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md`.
+
+### Current branch / release status
+- Preview branch: `qa/science-grade7-introduction-cells-sources-2026-11-05`.
+- Quiz JavaScript unchanged. No production changes, merge or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+
+### Next action
+- Continue the Science source backlog with Mixtures and Separation Techniques, then remaining Science lessons. Keep all changes preview-only.
