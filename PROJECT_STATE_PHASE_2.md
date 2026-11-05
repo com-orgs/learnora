@@ -45,3 +45,12 @@ Base branch: main
 2. Build a page-by-page content QA matrix; start with high-impact lessons and any demonstrable factual, answer-key, duplicate-content, broken-link, or rendering defect.
 3. Fix critical technical/indexing issues only after exact source and impact are verified.
 4. Record each change, verification result, and remaining blocker in this checkpoint.
+
+## Grade 6 Mathematics QA batch completed
+- Added `PHASE_2_GRADE6_MATH_QA.md` documenting a source-level review of all 23 Grade 6 Maths lesson pages.
+- All 23 lesson pages contain quiz forms and worksheet material; all 23 corresponding scripts contain five quiz answer keys.
+- Compared 115 quiz answer-key mappings against the visible options: no mismatch found in this pass.
+- 12 lessons have 3–4 external source links; 11 lessons have no external HTTP(S) reference links in their HTML source. This is a reference-coverage improvement opportunity, not proof of incorrect content.
+- Approximate visible text counts range from 974 to 1,554 words. These are descriptive only; word count is not a quality target.
+- No lesson text was rewritten in this batch. Worksheet answer keys, every worked example, diagrams, accessibility, mobile rendering and live interactions still require further review.
+- No production deployment occurred.
