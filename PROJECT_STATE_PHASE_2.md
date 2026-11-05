@@ -177,3 +177,16 @@ Base branch: main
 2. Run live quiz tests for correct, incorrect and unanswered submissions, retake/reset, keyboard-only interaction, and print preview.
 3. Deep-review the 12 lessons marked pending in `PHASE_2_GRADE6_RELEASE_MATRIX.md`.
 4. Then complete live HTTP/redirect and schema validation. Do not merge or deploy without explicit user approval.
+
+
+## Deep review — Understanding Fractions (2026-11-05)
+- Completed a focused full-content review of `math/grade-6/understanding-fractions.html`: definitions, visual model, worked examples, practice answers, quiz options/keys, worksheet and teacher answer key.
+- All reviewed practice, worksheet and five quiz answers matched. No factual/arithmetic mismatch found.
+- Reviewed OpenStax, BBC Bitesize, Math Learning Center and NRICH references for relevance.
+- Found and fixed missing closing `</body>` and `</html>` tags. Re-fetched to verify correct document closure.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark Understanding Fractions as deeply reviewed; the pending deep-review count is now 11 lessons.
+- Updated `PHASE_2_GRADE6_MATH_QA.md` with the detailed notes.
+- No deployment or merge.
+
+## Next action
+Continue the remaining 11 pending lessons from the release matrix, prioritising Equivalent Fractions, Comparing and Ordering Fractions, and Adding/Subtracting Fractions. After the academic pass, use an available browser session for live rendering and interaction QA; current browser access is not available in this chat session.
