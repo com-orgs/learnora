@@ -127,3 +127,18 @@ Base branch: main
 2. Run automated internal-link and external-link checks, including canonical URLs, sitemap coverage and redirects.
 3. Perform rendered desktop/mobile, keyboard/accessibility, quiz feedback/retake and worksheet-print QA before considering the branch release-ready.
 4. Keep the branch isolated. No merge or production deployment without explicit user approval.
+
+
+## Grade 6 internal-link and sitemap check — 2026-11-05
+- Cross-checked root-relative internal destinations referenced across all 23 Grade 6 Maths lesson pages against the working-branch repository tree.
+- 30 unique internal URL destinations checked; no missing file targets found.
+- All 23 lesson pages reference a matching page-specific JS file; all 23 scripts exist in the branch.
+- Working-branch `sitemap.xml` contains 104 URLs, including all 23 Grade 6 Maths lesson URLs.
+- This verifies repository path presence and sitemap membership only; it does not establish production HTTP status, runtime redirect/canonical behaviour or visual rendering.
+- Detailed results recorded in `PHASE_2_GRADE6_MATH_QA.md`. No deployment or sitemap edits were made.
+
+## Current next actions
+1. Finish the Grade 6 release matrix and verify all lesson pages have one clear canonical, accurate title/description, suitable structured data and appropriate metadata.
+2. Perform a separate live rendered/mobile/accessibility/quiz/worksheet QA pass when browser access is available.
+3. Extend the same content-quality approach to Grade 7/8 maths and other subjects only after Grade 6 release checks are complete.
+4. Keep all edits isolated on `phase-2-quality-fixes`; do not merge or deploy without explicit user approval.
