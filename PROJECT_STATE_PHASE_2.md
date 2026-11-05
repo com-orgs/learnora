@@ -164,7 +164,7 @@ Base branch: main
 
 ## Static mobile, accessibility and quiz QA — 2026-11-05
 - Inspected all 23 Grade 6 Maths lesson templates: all have responsive media queries, print styles, focus-visible styling, a labelled main navigation landmark, and five quiz fieldsets with five legends.
-- Found 17 tables across 11 pages that lacked a keyboard-scrollable wrapper. Wrapped them in `div.table-wrap` regions with `role=region`, `aria-label=Scrollable table` and `tabindex=0`. Together with five previously wrapped tables, all 22 tables across the 23 lessons now have the wrapper. Re-fetched all pages and verified matching table/wrapper counts.
+- Found 13 tables across 10 pages that lacked a keyboard-scrollable wrapper; the other 9 tables already had scrollable wrappers. Added `div.table-wrap` regions with `role=region`, `aria-label=Scrollable table` and `tabindex=0` to the 13 unwrapped tables. Together with the 9 existing `table-wrap`/`table-scroll` regions, all 22 tables across the 23 lessons now have a keyboard-scrollable region. Re-fetched all pages and verified matching table/region counts.
 - Updated shared `accessibility.css` with a print override so responsive table wrappers do not clip content in print output.
 - Checked external links: all `target=_blank` links in the inspected lesson pages also include `rel=noopener noreferrer`.
 - Checked all 23 quiz scripts: five answer entries, submit handler, preventDefault, feedback, retake/reset, progress reset and print handler are present.
