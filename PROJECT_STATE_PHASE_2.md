@@ -190,3 +190,13 @@ Base branch: main
 
 ## Next action
 Continue the remaining 11 pending lessons from the release matrix, prioritising Equivalent Fractions, Comparing and Ordering Fractions, and Adding/Subtracting Fractions. After the academic pass, use an available browser session for live rendering and interaction QA; current browser access is not available in this chat session.
+
+
+## Deep review — Equivalent Fractions (2026-11-05)
+- Reviewed the full lesson, visual bar model, equivalence/simplification examples, practice answers, five quiz answer mappings, seven worksheet answer-key items and further-learning references.
+- Recalculated all listed worked examples and practice/worksheet calculations; no mismatch found.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark Equivalent Fractions reviewed. Two lessons in the previously pending group are now complete; 10 detailed lesson reviews remain.
+- Recorded detailed findings in `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next action
+Continue deep review of Comparing and Ordering Fractions, then Adding and Subtracting Fractions. Keep the branch isolated; rendered browser QA remains pending because the connected browser context is unavailable in this chat.
