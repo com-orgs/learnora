@@ -1219,3 +1219,12 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #49 (Mixtures) also has a successful preview deployment: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
 - PRs #49 and #50 remain unmerged. No production edit/deployment; interactive browser QA and independent educator review remain open release gates.
 - Next QA target: Grade 8 Science — Elements, Compounds and Chemical Reactions.
+
+ 
+## Grade 8 Science — Elements, Compounds and Chemical Reactions QA (5 Nov 2026)
+
+- Desk-reviewed definitions and explanations for elements, compounds, mixtures, atom rearrangement, chemical-change evidence, rusting, physical/chemical changes and conservation of mass.
+- Checked worked example 12 g + 32 g = 44 g; checked five practice prompts for conceptual alignment; all five worksheet suggested-answer features and all five quiz answer mappings are consistent. No quiz JS change required. The practice section has no suggested-answer block.
+- Clarified the mixture definition and added RSC 11–14 resources plus the official England science programme of study. Added a non-accreditation disclaimer.
+- Draft PR #51: https://github.com/com-orgs/learnora/pull/51; only lesson HTML changed. Cloudflare Pages and audit checks were still in progress at checkpoint.
+- Next: Grade 8 Science — Human Digestive and Circulatory Systems. All work remains preview-only; no merge or production deployment.
