@@ -282,3 +282,12 @@ Continue the remaining deep reviews: Understanding Percentages, Percentage Incre
 
 ## Next action
 Deep-review Percentage Increase and Decrease and Introduction to Ratios, then final release checks. Keep the branch isolated.
+
+
+## Deep review — Percentage Increase and Decrease (2026-11-05)
+- Reviewed formula, worked examples, percentage multipliers, percentage-point distinction, practice, five quiz mappings and worksheet keys. All reviewed calculations are correct.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark the lesson reviewed. Eleven detailed reviews are complete; one remains.
+- Detailed findings saved in `PHASE_2_GRADE6_MATH_QA.md`. No deployment or merge.
+
+## Next action
+Complete the final pending deep review: Introduction to Ratios. Then run final release-matrix reconciliation and prepare browser QA when an authorized browser session is available.
