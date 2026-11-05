@@ -94,3 +94,36 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — Order of Operations reviewed (5 Nov 2026)
+
+### Completed since previous checkpoint
+- Reviewed Grade 6 Order of Operations HTML and quiz JS.
+- Independently checked 8 practice answers and 8 worksheet answer-key items; all checked arithmetic is correct.
+- Confirmed 5/5 quiz answer mappings match visible options.
+- Clarified lesson scope: introductory content covers brackets and four basic operations; exponents/indices are deferred. Added relevant OpenStax Prealgebra 2e reference.
+- Created preview branch `qa/grade6-order-operations-sources`, Draft PR #42: https://github.com/com-orgs/learnora/pull/42.
+
+### Open preview PRs
+- #40 Algebraic Expressions — draft, unmerged.
+- #41 Integers and Number Line — draft, unmerged.
+- #42 Order of Operations — draft, unmerged.
+
+### Production safety
+- No production HTML/script changes and no deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection performed during content QA.
+
+### Next action
+- Audit `math/grade-6/understanding-percentages.html` and its page script: verify definitions, worked examples, practice and worksheet answer keys, and quiz mappings. Check source relevance and only propose changes on a separate preview branch.
+
+### Project tree
+- math/grade-6/ — lesson HTML
+- scripts/pages/ — lesson quiz scripts
+- qa/grade6-algebraic-expressions-sources — Draft PR #40
+- qa/grade6-integers-sources — Draft PR #41
+- qa/grade6-order-operations-sources — Draft PR #42
+- PROJECT_STATUS.md
+- LEARNORA_MASTER_ROADMAP_2026-11-04.md
+- PROJECT_STATE.md
