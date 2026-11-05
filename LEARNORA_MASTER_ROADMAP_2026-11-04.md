@@ -660,3 +660,11 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - No production files, metadata, HTML, or scripts changed; no deployment. Firecrawl current balance checked and returned 0 credits, so no paid crawl/scrape was initiated. Repository source inspection only.
 - GSC daily inspection restriction remains unchanged: no URL Inspection API call or manual Request Indexing request made.
 - Next: add reliable age-appropriate references to the three flagged pages only after checking exact claims and reference suitability; then test their worked examples and worksheet keys. Do not mass-edit or deploy without preview QA.
+
+
+## Grade 6 Algebraic Expressions QA update — 5 Nov 2026
+
+- Completed source-code review of Algebraic Expressions lesson, practice set, worksheet answer key and quiz mapping. All checked arithmetic and five visible quiz mappings are consistent.
+- Improved the general definition of like terms (matching variable part and exponents; constants are like terms) and added two checked OpenStax Prealgebra 2e references.
+- Work is in preview branch `qa/grade6-algebraic-expressions-sources`, Draft PR #40: https://github.com/com-orgs/learnora/pull/40. Not merged or deployed.
+- Release gate still requires browser interaction QA and independent educator review. Next lesson QA: Integers and the Number Line, then Order of Operations.
