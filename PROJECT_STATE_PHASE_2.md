@@ -314,3 +314,20 @@ Complete the final pending deep review: Introduction to Ratios. Then run final r
 2. Reconcile the release matrix and inspect the diff for unintended edits.
 3. Obtain an authorized browser session for rendered mobile/desktop and live interaction tests.
 4. Only after those checks, prepare a pull request for review; do not merge or deploy without the user's explicit approval.
+
+
+## Final Grade 6 branch consistency pass — 2026-11-05
+- Re-fetched all 23 Grade 6 lesson pages: all have doctype, closed body/html tags, one H1, one canonical, canonical/OG URL match, aligned OG title/description, index/follow, and valid BreadcrumbList JSON-LD.
+- All 23 have five quiz fieldsets, one source section and one Continue Learning section. Metric Units uses the legacy `fieldset.question` class and is included in the five-question check.
+- All 23 quiz scripts exist and have five answer entries; all 115 answer mappings were previously checked against visible options.
+- All 22 tables have keyboard-focusable responsive regions: 18 `.table-wrap` and 4 `.table-scroll`. Shared print CSS covers both.
+- All external links opening in a new tab have safe rel attributes.
+- 30 internal URL destinations checked, no missing repository targets. All 23 lesson script files exist. Sitemap has 104 URLs including all Grade 6 lessons.
+- Compared branch to main: 26 expected files changed; no unexpected paths in diff.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` and detailed QA report. All 23 lessons have a focused source-level content/answer-key review recorded.
+- Browser-rendered desktop/mobile, live quiz, screen-reader, print-preview and live production HTTP tests remain pending because no connected browser session is available. No merge or deployment.
+
+## Current state
+- Working branch: `phase-2-quality-fixes`
+- Main branch and production site remain untouched.
+- Next step: arrange an authorized browser session for rendered QA, or request approval to create a pull request for code review. Do not merge or deploy without explicit user approval.
