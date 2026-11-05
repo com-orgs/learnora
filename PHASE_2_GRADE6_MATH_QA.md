@@ -347,6 +347,6 @@ Date: 2026-11-05
 - All 22 tables have one keyboard-focusable responsive region. The four Understanding Decimals tables use their original `.table-scroll` wrapper; the other 18 use `.table-wrap`. The print override covers both wrapper classes.
 - Rechecked all 23 pages for external links opened in new tabs; they use `rel="noopener noreferrer"`.
 - Final repository-tree check: 30 unique internal URL destinations resolve to files; all 23 page scripts exist; sitemap has 104 URLs and includes all 23 Grade 6 lesson URLs.
-- Compared `main` with `phase-2-quality-fixes`: 29 expected files changed (3 reports, editorial standard, shared accessibility CSS, homepage duplicate-card removal, and 23 lesson-page edits). No unexpected repository paths appeared in the diff.
+- Compared `main` with `phase-2-quality-fixes`: 28 expected files changed (3 reports, editorial standard, shared accessibility CSS, homepage duplicate-card removal, and 22 lesson-page edits). No unexpected repository paths appeared in the diff.
 - All 23 Grade 6 lessons now have a focused source-level content/answer-key review recorded. This is not independent subject-expert peer review.
 - Real rendered browser/mobile, live quiz, screen-reader, print-preview and live production HTTP tests remain pending because no connected browser session is available in this chat. No production deployment or merge occurred.
