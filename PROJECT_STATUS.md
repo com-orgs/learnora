@@ -561,9 +561,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `619715611a0e8bbd4cc7f1a59bed1d16131ae69f`
-- Workflow: Learnora Site Audit (run [#41962434106](https://github.com/com-orgs/learnora/actions/runs/41962434106))
-- Last updated automatically: run #41962434106 on branch `seo/grade6-percentage-increase-decrease-sources-2026-11-05`.
+- Tested commit: `362d792e44b609f140a7d8d828352f8c46b6cb95`
+- Workflow: Learnora Site Audit (run [#41962445063](https://github.com/com-orgs/learnora/actions/runs/41962445063))
+- Last updated automatically: run #41962445063 on branch `seo/grade6-percentage-increase-decrease-sources-2026-11-05`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
