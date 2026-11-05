@@ -54,3 +54,10 @@ Base branch: main
 - Approximate visible text counts range from 974 to 1,554 words. These are descriptive only; word count is not a quality target.
 - No lesson text was rewritten in this batch. Worksheet answer keys, every worked example, diagrams, accessibility, mobile rendering and live interactions still require further review.
 - No production deployment occurred.
+
+## Perimeter and Area lesson improvement
+- Reviewed `math/grade-6/perimeter-area-shapes.html`: checked the explanations, formulas, three worked examples, seven practice answers, five quiz mappings, and seven worksheet answer calculations in source.
+- No arithmetic mismatch was found in the reviewed examples/practice/worksheet answers or five quiz mappings.
+- Found two duplicated “Continue Learning” sections. Consolidated them into one section with four distinct relevant internal lesson links.
+- Added a “Sources and further learning” section with Khan Academy and CK-12 Foundation references. Both URLs were fetched successfully and their content matched the lesson topic.
+- Verified the branch file now contains exactly one “Continue Learning” heading and one source section. No production deployment occurred.
