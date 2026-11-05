@@ -1175,3 +1175,15 @@ Historical session notes below are retained for continuity; use this current sta
 - Draft PR #42: https://github.com/com-orgs/learnora/pull/42. Not merged or deployed. Browser interaction QA and independent educator review remain outstanding.
 - Draft PRs #40 (Algebraic Expressions) and #41 (Integers) remain unmerged. Production unchanged.
 - Next: continue targeted source-code QA on Understanding Percentages, verifying worked examples, practice/worksheet answers, quiz key mappings and suitable reference attribution.
+
+
+## Latest production release — Phase 2 Grade 6 Maths QA (5 Nov 2026)
+
+- PR [#57](https://github.com/com-orgs/learnora/pull/57) merged to main. Production commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`.
+- Production deploy workflow [#42049423565](https://github.com/com-orgs/learnora/actions/runs/42049423565) passed; Cloudflare Pages deployment check passed.
+- Phase 2: all 23 Grade 6 Maths lessons received focused source-level review; 115 quiz answer mappings checked; metadata/canonical/BreadcrumbList JSON-LD and internal links checked; all 22 lesson tables have keyboard-scrollable wrappers.
+- Full preview browser QA passed on the exact deployed source tree: 104 sitemap routes, 320/390/768/desktop widths, 77 quiz submissions and retakes, 79 print-handler checks, 104 performance budgets, no horizontal overflow, no axe WCAG 2.0/2.1 A/AA violations, no third-party/CSP/runtime errors.
+- Preview security/HTTP checks passed. Post-deploy live fetch verified homepage, Grade 6 fractions lesson, canonical/robots metadata, 104-URL sitemap and robots.txt sitemap reference.
+- Reports/checkpoint: `PHASE_2_GRADE6_RELEASE_MATRIX.md`, `PHASE_2_GRADE6_MATH_QA.md`, `PROJECT_STATE_PHASE_2.md`.
+- Remaining follow-up: manual screen-reader testing, actual print-preview/PDF visual review, and independent educator review before claiming peer review. Existing GSC daily inspection cap remains in force; do not exceed it.
+- Production: https://learnora-ab2.pages.dev/ .
