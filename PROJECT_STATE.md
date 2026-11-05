@@ -346,3 +346,36 @@ Repository: https://github.com/com-orgs/learnora
 - `PHASE14_HOW_AI_WORKS_QA_2026-11-05.md` — How AI Works QA
 - `PHASE14_VERIFY_AI_QA_2026-11-05.md` — AI answer verification QA
 - `PROJECT_STATE.md` — resume checkpoint
+
+
+## Checkpoint update — Algorithms and Flowcharts preview (5 Nov 2026)
+
+### Completed
+- Reviewed `computer-science/algorithms.html`; initial page lacked in-depth worked examples, practice answer reasoning, worksheet key and sources.
+- Checked BBC Bitesize pages on algorithms, flowcharts and sequence/selection/iteration, plus Teach Computing / National Centre for Computing Education's flowcharts and pseudocode course.
+- Updated the lesson on branch `qa-algorithms-content-quality`: clear/finite/testable algorithms, inputs-processes-outputs, decomposition, a validated pass-check algorithm, three control structures, loop types and trace table, labelled flowchart path, boundary tests, five practice explanations and worksheet answer key.
+- Source-level QA passed: one H1, five quiz questions, all five existing answer keys match visible options, canonical/OG consistency, four relevant source references and safe external-link rel attributes. Shared quiz JS unchanged.
+- Draft PR #62: https://github.com/com-orgs/learnora/pull/62.
+- Cloudflare preview fetched successfully: https://qa-algorithms-content-qualit.learnora-ab2.pages.dev/computer-science/algorithms.
+- Static website audit, legal/pre-monetisation audit, preview resolution and preview headers/assets passed in GitHub Actions run #42057241438. Playwright mobile/desktop/quiz checks were still in progress at checkpoint time.
+- QA report: https://github.com/com-orgs/learnora/blob/main/PHASE14_ALGORITHMS_QA_2026-11-05.md.
+
+### Release safety
+- PR #62 is draft and unmerged. No production lesson changes or deployment.
+- AI Literacy PRs #59, #60 and #61 also remain draft and unmerged.
+- Do not describe preview-only lesson scores as a site-wide score.
+
+### Next actions
+- Confirm PR #62 browser test completion and update its QA report.
+- Continue with `computer-science/python-basics.html`, then `computer-science/html-css.html`.
+- Continue Financial Literacy pages after Computer Science.
+- Run final combined regression tests and obtain release approval before merging/deploying.
+
+### Project tree / branches
+- `ai-literacy/ai-safety.html` — PR #59 preview
+- `ai-literacy/how-ai-works.html` — PR #60 preview
+- `ai-literacy/verify-ai.html` — PR #61 preview
+- `computer-science/algorithms.html` — PR #62 preview
+- `scripts/pages/new-subject-lessons.js` — shared quiz map, unchanged
+- `PHASE14_ALGORITHMS_QA_2026-11-05.md` — Algorithms QA
+- `PROJECT_STATE.md` — current resume checkpoint
