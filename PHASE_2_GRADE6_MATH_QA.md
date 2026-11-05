@@ -335,3 +335,18 @@ Date: 2026-11-05
 - Rechecked all five quiz mappings and worksheet answers, including the order reversal cats:dogs = 8:3 and the juice/water ratio scale-up. No mismatch found.
 - Reviewed OpenStax Ratios and Rate, Khan Academy Grade 6 Ratios and Proportional Relationships, and Illustrative Mathematics Grade 6 ratio standards/tasks for relevance.
 - No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Final Grade 6 branch consistency pass
+
+Date: 2026-11-05
+- Re-fetched all 23 Grade 6 lesson HTML files after edits.
+- All 23 have a doctype, closing body/html tags, exactly one H1, exactly one canonical link, canonical matching the Open Graph URL, aligned Open Graph title/description, `robots=index,follow`, and valid JSON-LD BreadcrumbList.
+- All 23 have five quiz fieldsets (the metric lesson uses the legacy `fieldset.question` class; the other pages use `fieldset.quiz-question`), one source/further-learning section, and one dedicated Continue Learning section.
+- All 23 pages have matching page-specific JavaScript files. Their five answer-key entries and visible options were checked; total quiz answer mappings remain 115/115.
+- All 22 tables have one keyboard-focusable responsive region. The four Understanding Decimals tables use their original `.table-scroll` wrapper; the other 18 use `.table-wrap`. The print override covers both wrapper classes.
+- Rechecked all 23 pages for external links opened in new tabs; they use `rel="noopener noreferrer"`.
+- Final repository-tree check: 30 unique internal URL destinations resolve to files; all 23 page scripts exist; sitemap has 104 URLs and includes all 23 Grade 6 lesson URLs.
+- Compared `main` with `phase-2-quality-fixes`: 26 expected files changed (3 reports, editorial standard, shared accessibility CSS, homepage duplicate-card removal, and 20 lesson-page edits). No unexpected repository paths appeared in the diff.
+- All 23 Grade 6 lessons now have a focused source-level content/answer-key review recorded. This is not independent subject-expert peer review.
+- Real rendered browser/mobile, live quiz, screen-reader, print-preview and live production HTTP tests remain pending because no connected browser session is available in this chat. No production deployment or merge occurred.
