@@ -273,3 +273,16 @@ Date: 2026-11-05
 - Updated shared print CSS to handle both `.table-wrap` and `.table-scroll` regions. Re-fetched the page and verified four tables, four scroll regions, no nested scroll regions, one related-learning section, and closing body/html tags.
 - Reviewed OpenStax, Khan Academy Grade 6 WNCP and NCETM references for relevance.
 - No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
+
+
+## Deep content review — Adding and Subtracting Decimals
+
+Date: 2026-11-05
+- Reviewed place-value alignment, placeholder zeros, addition, subtraction with regrouping, estimation, money/distance/measurement examples, common mistakes, eight practice answers, five quiz mappings and eight worksheet answer-key items.
+- Recalculated worked examples: 12.45 + 3.70 = 16.15; 4.35 + 2.80 = 7.15; 0.76 + 0.19 = 0.95; 5.20 − 1.76 = 3.44; 4.30 − 1.85 = 2.45; and 8.72 + 3.19 = 11.91. All are correct.
+- Rechecked all practice answers, including 7.02 − 1.80 = 5.22, 10.00 − 4.65 = 5.35, and 2.50 − 0.85 = 1.65 L. No mismatch found.
+- Rechecked worksheet keys, including 7.08 + 0.95 = 8.03, 10.00 − 3.48 = 6.52 and 6.03 − 1.90 = 4.13. All are correct.
+- Confirmed all five quiz answer mappings match visible options.
+- Found repeated guidance in the “Common Mistakes” section. Consolidated it into five distinct reminders covering alignment, placeholder zeros, decimal-point placement, regrouping and estimation.
+- Reviewed OpenStax Decimal Operations, Khan Academy Grade 6 arithmetic and Illustrative Mathematics’ Grade 6 money task as further-learning references.
+- No source-level factual or arithmetic issue found in this focused review. Browser and print-preview behaviour remain unverified.
