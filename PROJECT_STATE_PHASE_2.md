@@ -142,3 +142,21 @@ Base branch: main
 2. Perform a separate live rendered/mobile/accessibility/quiz/worksheet QA pass when browser access is available.
 3. Extend the same content-quality approach to Grade 7/8 maths and other subjects only after Grade 6 release checks are complete.
 4. Keep all edits isolated on `phase-2-quality-fixes`; do not merge or deploy without explicit user approval.
+
+
+## Grade 6 metadata and structured data audit — 2026-11-05
+- Audited metadata on all 23 Grade 6 Maths lesson pages.
+- All 23 pages have exactly one canonical URL; each canonical matches its Open Graph URL.
+- All 23 pages declare `robots=index,follow`.
+- All 23 JSON-LD blocks parse successfully and use `BreadcrumbList`.
+- Fixed Open Graph title/description inconsistencies so all 23 social titles match HTML titles and all 23 social descriptions match meta descriptions.
+- Meta description length range is 132–160 characters. This does not guarantee Google snippet display.
+- Did not add Article/Course/author/reviewer/rating schema claims without reliable supporting facts.
+- Static source verification only; rich-result validator, live rendering and mobile visual QA remain pending.
+- Detailed findings added to `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next actions
+1. Create a Grade 6 release matrix covering per-page content review, answer-key checks, external reference coverage, metadata/schema checks, and browser tests not yet performed.
+2. Inspect shared layout/CSS and page templates for mobile breakpoints, semantic landmarks, focus visibility, form labels, keyboard access and print styles.
+3. Inspect the quiz scripts for keyboard operation, visible feedback, retry/reset and reduced-motion/accessibility concerns.
+4. Use a real rendered browser/device pass before release. Keep the branch isolated; no merge or production deployment without explicit user approval.
