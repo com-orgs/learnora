@@ -18,7 +18,7 @@ This matrix separates checks that are complete from checks that still need real 
 | Multiplying and Dividing Fractions | Pass | Reviewed | Pass | Pass | N/A |
 | Mixed Numbers and Improper Fractions | Pass | Reviewed | Pass | Pass | Pass |
 | Understanding Decimals | Pass | Reviewed | Pass | Pass | Pass |
-| Adding and Subtracting Decimals | Pass | Pending detailed pass | Pass | Pass | N/A |
+| Adding and Subtracting Decimals | Pass | Reviewed | Pass | Pass | N/A |
 | Understanding Percentages | Pass | Pending detailed pass | Pass | Pass | Pass |
 | Percentage Increase and Decrease | Pass | Pending detailed pass | Pass | Pass | Pass |
 | Multiplying and Dividing Decimals | Pass | Pending detailed pass | Pass | Pass | Pass |
