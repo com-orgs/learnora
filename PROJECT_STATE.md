@@ -127,3 +127,32 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — complete source inventory (5 Nov 2026)
+
+### Completed
+- Recursively enumerated the current repository tree and identified exactly 77 lesson HTML pages across Mathematics (46), English (9), Science (13), Computer Science (3), AI Literacy (3) and Financial Literacy (3). Subject index pages, curriculum pages, worksheets and policy pages were excluded.
+- Checked all 77 files for a dedicated Sources / References / Further Reading section. Found 19 pages with such a section and 58 without: Mathematics 15/46; English 2/9; Science 2/13; Computer Science 0/3; AI Literacy 0/3; Financial Literacy 0/3.
+- Counted only external links within the dedicated section. General navigation/body/footer links do not count. Excluded the lesson title “How to Check AI Answers and Sources” as a false positive.
+- Updated `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` with the full 77-page inventory, source-section counts, exact 58-page backlog, methodology and limits.
+- Work is on preview/documentation branch `audit/source-inventory-2026-11-05`; no production content was changed and no deployment performed.
+
+### Important limits
+- This is a structural reference-section inventory, not claim-level fact-checking, URL reachability verification, full live crawl or browser QA.
+- The historical 3 Nov inventory is retained in the report; the new 5 Nov scan supersedes it for current planning.
+- Percentages PR #43 remains separate, unmerged; its proposed fourth source is not counted in main-branch inventory.
+
+### Next action
+- Start topic-specific claim-level source review in Science (11 pages), then Financial Literacy (3), AI Literacy (3), Mathematics (31), English (7) and Computer Science (3). Add references only after validating relevance and quality; keep all changes on preview branches.
+
+### Project tree / open QA branches
+- `math/grade-6/` — lesson HTML
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — historical plus refreshed complete inventory
+- `audit/source-inventory-2026-11-05` — documentation-only audit branch
+- `qa/grade6-algebraic-expressions-sources` — Draft PR #40
+- `qa/grade6-integers-sources` — Draft PR #41
+- `qa/grade6-order-operations-sources` — Draft PR #42
+- `qa/grade6-understanding-percentages-applications-2026-11-05` — Draft PR #43
+- `PROJECT_STATUS.md`, `PROJECT_STATE.md`, `LEARNORA_MASTER_ROADMAP_2026-11-04.md`
