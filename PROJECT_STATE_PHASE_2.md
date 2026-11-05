@@ -200,3 +200,13 @@ Continue the remaining 11 pending lessons from the release matrix, prioritising 
 
 ## Next action
 Continue deep review of Comparing and Ordering Fractions, then Adding and Subtracting Fractions. Keep the branch isolated; rendered browser QA remains pending because the connected browser context is unavailable in this chat.
+
+
+## Deep review — Comparing and Ordering Fractions (2026-11-05)
+- Reviewed the complete lesson, worked examples, benchmark reasoning, practice answers, five quiz mappings, seven worksheet answers and reference links.
+- Recalculated common-denominator and ordering examples; no mismatch found.
+- Marked the page as reviewed in `PHASE_2_GRADE6_RELEASE_MATRIX.md`; three deep lesson reviews are now complete and nine remain.
+- Detailed findings saved in `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next action
+Deep-review Adding and Subtracting Fractions, then the remaining pending Grade 6 pages. Browser-rendered testing remains pending until an authorized browser context is available.
