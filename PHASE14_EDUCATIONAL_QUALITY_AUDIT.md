@@ -93,3 +93,23 @@ Three Grade 8 lessons were desk-checked: Pythagorean theorem and right triangles
 - This is a preliminary structural inventory, not a finding that all 70 lessons are factually wrong or contain no useful external references. It checks for an explicit, learner-facing source section and must be followed by page-by-page claim verification.
 - Backlog recorded in `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md`. Add topic-specific official or reputable educational sources only after checking that each URL is live and genuinely supports the lesson. Do not bulk-add generic curriculum links as if they substantiate every factual claim.
 - Prioritise Science, Financial Literacy and AI Literacy safety/privacy claims; then verify Maths worked examples and answer keys; then English language and writing guidance. Independent educator review remains required and must not be invented.
+
+
+## Additional Grade 6 and Grade 7 source QA batch — 5 November 2026
+
+### Grade 6 mathematics
+- **Algebraic Expressions (PR #40):** checked the lesson, practice and worksheet answers and five quiz mappings; clarified like terms as terms with matching variable parts and exponents (constants are like terms); added two relevant OpenStax Prealgebra 2e references. Draft only; no merge/deployment.
+- **Integers and the Number Line (PR #41):** checked worked comparisons, practice and worksheet answers and five quiz mappings; added a relevant OpenStax Prealgebra 2e reference. Draft only; no merge/deployment.
+- **Order of Operations (PR #42):** checked eight practice answers, eight worksheet answers and five quiz mappings; clarified that exponents/indices are outside this introductory page’s stated scope; added OpenStax Prealgebra 2e Section 2.1. Draft only; no merge/deployment.
+- **Understanding Percentages (PR #43):** checked seven practice answers, seven worksheet answer-key items and five quiz mappings; added OpenStax Prealgebra 2e Section 6.2 as an extra application reference. This page already had a dedicated source section; the addition does not reduce the missing-section count. Draft only; no merge/deployment.
+
+### Grade 7 Science
+- **Ecosystems and Food Chains (PR #45):** checked six practice answers, six worksheet answer-key items and five quiz mappings; added NGSS MS-LS2-3, National Park Service “Spinning a Food Web” (Grades 6–8) and National Geographic Education “Food Chain”.
+- **Forces and Motion (PR #46):** recomputed three worked examples and six practice/worksheet answers and checked five quiz mappings; added NGSS Middle School Forces and Interactions, NASA Mass vs. Weight Activities (Grades 5–8), NASA STEMonstrations: Friction (Grades 5–8) and Khan Academy Describing Motion.
+- **Heat Transfer (PR #47):** checked five practice answers, six worksheet answers and five quiz mappings; clarified heat as energy transferred due to a temperature difference versus thermal energy as part of a system’s internal energy; added NASA STEMonstrations: Thermal Energy, NOAA heat-transfer resource, National Geographic Education Grade 6 reading-level resource and U.S. Department of Energy Heat Flow.
+- **Introduction to Cells (PR #48):** checked seven practice answers, seven worksheet answer-key items and five quiz mappings; reviewed cell theory, organelle functions, plant/animal comparisons, specialised-cell adaptations and microscope guidance; added Khan Academy Cell Theory, Khan Academy Plant vs. Animal Cells Review and OpenStax Biology Section 4.1.
+
+### Limits and release gate
+- These are repository-based editorial desk checks, not independent educator reviews or exhaustive scientific certification.
+- Quiz scripts were unchanged in the four Grade 7 Science source PRs. No production files were changed and no production deployment was performed by these PRs.
+- All PRs #40–#43 and #45–#48 remain separate draft proposals unless their live GitHub status says otherwise. Browser interaction QA and genuine independent educator review remain release gates.
