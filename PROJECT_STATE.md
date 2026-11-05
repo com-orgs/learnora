@@ -436,3 +436,9 @@ Anything not at step 6 remains explicitly pending. Never claim preview = product
 - User explicitly asked to prevent work being completed but left undeployed. Mandatory ledger rule: no item is complete until preview QA, merge, successful production deployment, and live production URL/functionality verification. All #40–#55 content PRs remain pending production release; #44 is the docs/checkpoint PR. Older open PRs #2, #3, #6, #7, #16, #18 and #27 also need disposition.
 - **Priority:** pause additional lesson content. Finish #56 CI repair, refresh failed checks, inspect PR diffs/dependencies and release gates, then release in safe order and verify each live URL. Do not equate a green preview with production.
 
+
+
+### CI repair follow-up — 5 Nov 2026
+- PR #56 preview resolver was still waiting at the check-run fallback step on commit `2bb4bf7`. I inspected the workflow and simplified both preview URL regexes to match the actual Cloudflare check-run/comment HTML using literal single quotes and POSIX whitespace.
+- New PR #56 head commit: `cc886879769856bf473f4fe166f980909df03860`. Cloudflare Pages build is currently in progress; the new audit run has not yet appeared. Do not merge.
+- Previous run for `2bb4bf7` did not advance past preview resolution, so the fix is not yet validated.
