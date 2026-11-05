@@ -561,9 +561,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `a43d54d4db739cafe6039f64a4a9f1806a53f45b`
-- Workflow: Learnora Site Audit (run [#42001376249](https://github.com/com-orgs/learnora/actions/runs/42001376249))
-- Last updated automatically: run #42001376249 on branch `audit/source-inventory-2026-11-05`.
+- Tested commit: `b726f8df16a2e88fe7f258a04101732d7e254639`
+- Workflow: Learnora Site Audit (run [#42001899859](https://github.com/com-orgs/learnora/actions/runs/42001899859))
+- Last updated automatically: run #42001899859 on branch `audit/source-inventory-2026-11-05`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
