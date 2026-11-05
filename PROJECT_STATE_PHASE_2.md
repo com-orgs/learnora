@@ -210,3 +210,13 @@ Continue deep review of Comparing and Ordering Fractions, then Adding and Subtra
 
 ## Next action
 Deep-review Adding and Subtracting Fractions, then the remaining pending Grade 6 pages. Browser-rendered testing remains pending until an authorized browser context is available.
+
+
+## Deep review — Adding and Subtracting Fractions (2026-11-05)
+- Reviewed full lesson, worked examples, common-denominator reasoning, practice calculations, five quiz mappings, eight worksheet answer keys and source relevance.
+- Recalculated all listed practice and worksheet answers; no mismatch found.
+- Updated `PHASE_2_GRADE6_RELEASE_MATRIX.md` to mark this lesson reviewed. Four detailed lesson reviews are complete; eight remain.
+- Recorded findings in `PHASE_2_GRADE6_MATH_QA.md`. No production deployment.
+
+## Next action
+Continue with Multiplying and Dividing Fractions, then the other pending lessons. Rendered browser, real-device and print-preview tests remain pending.
