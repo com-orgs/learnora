@@ -218,3 +218,31 @@ Repository: https://github.com/com-orgs/learnora
 - Lesson preview: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
 - Branch preview: https://qa-science-grade7-mixtures-s.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
 - This is a successful preview deployment, not production. The preview URL could not be fetched by the web reader; interactive browser QA remains outstanding.
+
+ 
+## Latest checkpoint — Grade 7 States of Matter (5 Nov 2026)
+
+### Completed
+- Reviewed the Grade 7 States of Matter and Particle Model lesson and quiz JS.
+- Checked 5 practice answers, 6 worksheet suggested answers and 5 quiz answer mappings; all reviewed items are consistent.
+- Added three age-appropriate RSC resources and one optional advanced OpenStax reference.
+- Draft PR #50: https://github.com/com-orgs/learnora/pull/50.
+- Cloudflare Pages preview deployment succeeded for commit `6c88edc4df2d4acfe5c688cb450407e4b23f4555`: https://ddb72f71.learnora-ab2.pages.dev/science/grade-7/states-of-matter-and-particle-model
+- Mixtures PR #49 also has a successful Cloudflare preview deployment: https://4e4d2fcc.learnora-ab2.pages.dev/science/grade-7/mixtures-and-separation-techniques
+
+### Current safety / blockers
+- PRs #49 and #50 are draft and unmerged. No production changes or deployment.
+- Browser interaction QA and independent educator review remain outstanding.
+- No GSC inspection/manual indexing request; no paid crawl/scrape.
+
+### Next action
+- Continue Grade 8 Science source and answer-key QA with `science/grade-8/elements-compounds-and-chemical-reactions.html` and its quiz script. Verify claims, worked examples, practice/worksheet answers and quiz mappings; add only topic-specific, age-suitable sources on a separate preview branch.
+
+### Project tree / active proposals
+- `science/grade-7/` — six source-section proposals in PRs #45–#50
+- `science/grade-8/` — remaining Grade 8 Science lessons
+- `scripts/pages/` — lesson quiz scripts
+- `PHASE14_EDUCATIONAL_QUALITY_AUDIT.md` — consolidated desk-review log
+- `PHASE14_SOURCE_ATTRIBUTION_AUDIT_2026-11-03.md` — complete 77-lesson source-section inventory
+- `audit/source-inventory-2026-11-05` — documentation/checkpoint branch (PR #44)
+- Draft content proposals: PRs #40–#43 and #45–#50; all remain separate until reviewed. No production release.
