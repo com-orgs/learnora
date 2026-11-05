@@ -263,3 +263,42 @@ Repository: https://github.com/com-orgs/learnora
 - Final workflow run [#42054837940](https://github.com/com-orgs/learnora/actions/runs/42054837940) completed with **success**.
 - Passed static website audit, legal/pre-monetisation audit, Cloudflare preview resolution, security headers/assets checks, Playwright/Chromium installation and mobile/desktop/quiz browser smoke tests.
 - PR #60 remains draft and unmerged. No production deployment.
+
+
+## Checkpoint update — Verify AI lesson revised on preview (5 Nov 2026)
+
+### Completed since previous checkpoint
+- AI Safety PR #59: full CI success, including browser tests (run #42052324235); preview re-fetched successfully. Remains draft/unmerged.
+- How AI Works PR #60: full CI success, including Playwright mobile/desktop/quiz browser tests (run #42054837940); preview page and homepage fetched successfully. Remains draft/unmerged.
+- Audited `ai-literacy/verify-ai.html` and shared quiz script. All five existing quiz keys match visible options; shared JS unchanged.
+- Verified Digital Inquiry Group / Civic Online Reasoning's lateral-reading guidance and Purdue OWL's source-evaluation guidance. Library of Congress candidate source was blocked during fetch and was not cited.
+- Expanded the lesson with claim decomposition, source evaluation, primary/secondary source nuance, lateral reading, independent cross-checking and evidence status labels (supported, contradicted, partly supported, unverified).
+- Added two worked examples, five practice explanations, worksheet answer key and source section.
+- Source-level checks passed for one H1, five quiz fields, five correct answer mappings, canonical/OG match, two verified references, practice and worksheet answers, safe external-link rel attributes.
+- Created `PHASE14_VERIFY_AI_QA_2026-11-05.md`.
+- Draft PR #61: https://github.com/com-orgs/learnora/pull/61.
+- CI run #42055587328 was superseded by the branch update; latest run #42055624934 was pending at checkpoint time. Cloudflare preview build was also in progress.
+
+### Current release safety
+- PR #59, #60 and #61 remain draft/unmerged. No production HTML/JS changes or deployment.
+- No GSC inspections performed in this batch.
+- Page-level editorial improvements do not establish site-wide 92+ score.
+
+### Next action
+- Finish PR #61 preview and CI browser checks. If successful, keep as draft pending release approval.
+- Then audit Computer Science and Financial Literacy content for actual lesson depth, practice feedback, worked examples, answer keys and source relevance.
+
+### Project tree
+- `ai-literacy/ai-safety.html` — revised on PR #59
+- `ai-literacy/how-ai-works.html` — revised on PR #60
+- `ai-literacy/verify-ai.html` — revised on PR #61
+- `scripts/pages/new-subject-lessons.js` — shared quiz map inspected, unchanged
+- `PHASE14_AI_SAFETY_QA_2026-11-05.md`
+- `PHASE14_HOW_AI_WORKS_QA_2026-11-05.md`
+- `PHASE14_VERIFY_AI_QA_2026-11-05.md`
+- `PHASE14_PERCENTAGES_QA_2026-11-05.md`
+- `PHASE14_PERCENTAGE_CHANGE_QA_2026-11-05.md`
+- `qa-ai-safety-content-quality` — PR #59
+- `qa-how-ai-works-content-quality` — PR #60
+- `qa-verify-ai-content-quality` — PR #61
+- `PROJECT_STATE.md` — current resume checkpoint
