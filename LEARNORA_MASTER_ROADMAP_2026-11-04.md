@@ -668,3 +668,11 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Improved the general definition of like terms (matching variable part and exponents; constants are like terms) and added two checked OpenStax Prealgebra 2e references.
 - Work is in preview branch `qa/grade6-algebraic-expressions-sources`, Draft PR #40: https://github.com/com-orgs/learnora/pull/40. Not merged or deployed.
 - Release gate still requires browser interaction QA and independent educator review. Next lesson QA: Integers and the Number Line, then Order of Operations.
+
+
+## Integers lesson QA update — 5 Nov 2026
+
+- Reviewed Grade 6 Integers and the Number Line lesson, worked comparisons, practice and worksheet answer keys; all checked arithmetic is consistent. All five quiz key mappings match visible options.
+- Added one relevant OpenStax Prealgebra 2e reference for integers, number-line ordering, opposites and absolute value.
+- Preview branch `qa/grade6-integers-sources`; Draft PR #41: https://github.com/com-orgs/learnora/pull/41. Not merged or deployed.
+- PR #40 for Algebraic Expressions also remains draft/unmerged. Continue to keep production unchanged pending preview interaction QA and educator review.
