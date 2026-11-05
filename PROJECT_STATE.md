@@ -379,3 +379,40 @@ Repository: https://github.com/com-orgs/learnora
 - `scripts/pages/new-subject-lessons.js` — shared quiz map, unchanged
 - `PHASE14_ALGORITHMS_QA_2026-11-05.md` — Algorithms QA
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Indexing and live technical audit (5 Nov 2026)
+
+### Completed
+- Rechecked Google Indexing Tracker: 104 tracked URLs; 1 indexed (homepage), 103 not indexed; all 103 currently report "URL is unknown to Google", with no recorded indexing errors or warnings. Latest tracker check: 2026-11-05T16:21:18Z.
+- Rechecked Google sitemap: `https://learnora-ab2.pages.dev/sitemap.xml` submitted 2026-11-05T16:21:51Z; currently pending download, with 0 warnings and 0 errors.
+- Checked Google URL Inspection quota: 85 used / 2,000 daily; 1,915 remaining at time of check.
+- Verified live `robots.txt`: allows all user agents, including OAI-SearchBot, and declares the sitemap.
+- Verified live sitemap returns HTTP 200 and contains the Learnora URL set.
+- Audited 10 representative homepage, subject, grade and lesson pages with GSC Wizard on-page audit: all 10 indexable; 0 critical, 0 high, 0 medium issues; 2 low-severity title-length notes (Algorithms and Flowcharts; Financial Literacy landing page).
+- Firecrawl live fetch confirmed homepage, robots.txt, sitemap and sampled pages return HTTP 200. Representative pages have index,follow, self-referencing canonicals, one H1 and LearningResource JSON-LD on the Algorithms lesson. Homepage links directly to subject, grade and lesson URLs; Grade 6 and Science landing pages link to their lessons.
+- Bing crawl-issue report returned 0 issue rows. Bing crawl-statistics endpoint currently returns no daily rows, so indexed-page count is not available from that report.
+- IndexNow history has 447 records (many repeat submissions); previous sitemap reconciliation confirmed all 104 unique sitemap URLs were notified to Bing. Submission acceptance is not proof of indexing.
+- Manual Google Search Console UI Request Indexing attempts previously completed for 10 URLs, representing 9 unique URLs (Fractions was submitted twice). These are requests only, not confirmed indexing.
+
+### Interpretation / current blockers
+- No confirmed robots, canonical, HTTP-status or noindex defect found in the sampled pages.
+- The main current bottleneck is Google not yet knowing/crawling most URLs; sitemap status is still pending download. This may change after Google fetches the sitemap and crawls internal links.
+- GSC URL Inspection API does not provide the manual Request Indexing action. Additional manual requests require the Search Console web interface; the earlier TinyFish UI run completed but its execution budget was exhausted before a broader batch.
+- Do not repeat IndexNow for unchanged URLs or keep spending inspection quota on the same "unknown to Google" results. Wait for sitemap processing / crawl signals, then target pages that change status or have a specific diagnosed issue.
+- Do not claim any of the not-indexed pages are indexed until Google URL Inspection or the Indexing report confirms it.
+
+### Next actions
+1. Recheck sitemap processing and URL Inspection status after Google has had time to fetch the sitemap.
+2. Prioritise pages with actual user value and strong internal links; when UI automation budget is available, request indexing for a small next batch of important URLs that have not already been submitted.
+3. Recheck tracker changes (newly indexed vs still unknown) and inspect only pages whose state changes or that show a specific coverage issue.
+4. Consider shortening the two low-severity long titles during the next content QA pass; this is not an indexing blocker.
+5. Continue the existing editorial QA / preview PR workflow; do not merge preview-only PRs or change production solely to chase indexing.
+
+### Project tree / current release safety
+- Live site: `https://learnora-ab2.pages.dev/`
+- `robots.txt`, `sitemap.xml` — live, HTTP 200
+- `PROJECT_STATE.md` — this resume checkpoint
+- AI Literacy preview PRs #59, #60, #61 — draft/unmerged
+- Algorithms preview PR #62 — draft/unmerged; browser CI completion still needs verification
+- No production content edits, merge or deployment were made during this indexing audit.
