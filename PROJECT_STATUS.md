@@ -1228,3 +1228,5 @@ Historical session notes below are retained for continuity; use this current sta
 - Clarified the mixture definition and added RSC 11–14 resources plus the official England science programme of study. Added a non-accreditation disclaimer.
 - Draft PR #51: https://github.com/com-orgs/learnora/pull/51; only lesson HTML changed. Cloudflare Pages and audit checks were still in progress at checkpoint.
 - Next: Grade 8 Science — Human Digestive and Circulatory Systems. All work remains preview-only; no merge or production deployment.
+
+- PR #51 Cloudflare Pages preview deployment succeeded: https://3e54180e.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . Branch preview: https://qa-science-grade8-elements-c.learnora-ab2.pages.dev/science/grade-8/elements-compounds-and-chemical-reactions . Separate repository audit check remains in progress; production unchanged.
