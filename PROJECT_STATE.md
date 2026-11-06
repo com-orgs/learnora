@@ -817,3 +817,42 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md` — source verification and QA record
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 59/77 structural source coverage
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Grade 7/8 Maths source batch (6 November 2026)
+
+### Completed
+- Recounted source headings directly from the current branch HTML because the older inventory and PR description contained stale Grade 7/8 counts.
+- Confirmed Grade 7 Maths was 11/12 sourced; added a topic-specific source section to `math/grade-7/transformations-and-symmetry.html`. Grade 7 Maths is now 12/12.
+- Added topic-specific source sections to:
+  - `math/grade-8/angle-relationships-and-parallel-lines.html`
+  - `math/grade-8/exponents-powers-and-scientific-notation.html`
+  - `math/grade-8/linear-functions-and-graphs.html`
+- Grade 8 Maths is now 6/11 sourced.
+- Updated `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` and created `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` with source checks, link-fetch limitations and exact scope.
+- Overall source-section count is now **70/77**. Remaining gaps: five Grade 8 Maths pages and two Computer Science pages.
+- No lesson explanation, worked example, exercise, quiz, answer key, script, canonical URL, metadata or sitemap entry was changed in this source-only batch.
+
+### Verification notes
+- Opened OpenStax Prealgebra 2e §10.5 (integer exponents/scientific notation), §§11.2 and 11.4 (linear graphs/slope), OpenStax Contemporary Mathematics §10.2 (angles/transversals), and Prealgebra 2e §9.3 (angle properties).
+- Khan Academy transformation, Grade 8 angle and linear-function units were found through search. Some pages returned no readable lines/cache misses, so those are recorded as supplementary sources rather than fully page-fetched evidence.
+- Source-section count is structural only; it does not prove every lesson claim is independently educator-reviewed.
+
+### Current CI / release status
+- PR #63 remains draft/open and unmerged.
+- Exact-head workflow run #1007 / `42207367501` was pending on commit `36de89b85485b098defdfc0da905a853676b7b2c`; this run predates the final Phase 20 documentation commit. Check the latest PR head's exact workflow before claiming green.
+- No merge, production deployment or GSC indexing request.
+- No independent educator review is claimed.
+
+### Next actions
+1. Refresh PR #63 metadata and check exact-head CI after the Phase 20 documentation commit.
+2. Continue the five remaining Grade 8 Maths source gaps in small topic batches, then the two remaining Computer Science pages.
+3. After source coverage, return to the Fractions pilot for multiply/divide worked-example, worksheet-answer and quiz-mapping QA.
+4. Revisit the design-reference platform blueprint during the later design phase. Benchmark learning architecture and UX patterns from Khan Academy, BBC Bitesize, CK-12 and OpenStax; do not copy wording, code, images or question banks.
+
+### Project tree
+- `math/grade-7/transformations-and-symmetry.html` — sources added; Grade 7 Maths 12/12
+- `math/grade-8/` — sources added to angles, exponents/scientific notation and linear functions; Grade 8 Maths 6/11
+- `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — source verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — current count 70/77
+- `PROJECT_STATE.md` — current resume checkpoint
