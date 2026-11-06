@@ -907,3 +907,14 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md` — final Maths/CS source verification
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — updated 77/77 source coverage
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — PR #63 final source-coverage status (6 November 2026)
+
+- Structural source coverage: **77/77 lesson pages** on the preview branch.
+- Current PR #63 is still **draft/open**, not merged; GitHub reports it mergeable after recalculation, but this is not merge approval.
+- Latest checked head before this checkpoint append: `287311aaba3d7883b00dc6ff6efd84c28d5ee980`.
+- Exact-head workflow #1018 / `42207970844` was pending with no jobs started at last check on the preceding head `8086a02daaa7641180781e81fc966ba36529c043`.
+- This checkpoint append creates a newer commit and will trigger or require a newer exact-head workflow. **Do not claim the latest PR head is green until its own full workflow completes successfully.**
+- The reconciliation report and PR #63 description now reflect 77/77 structural source coverage and the latest previously checked pending workflow.
+- Next work after CI: source-link availability/relevance sweep across all lesson pages, then claim-level QA of examples, worksheets, quiz keys, and the Fractions pilot. Do not merge or deploy without explicit user approval.
