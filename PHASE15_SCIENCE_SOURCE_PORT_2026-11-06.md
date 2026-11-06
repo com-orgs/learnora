@@ -28,3 +28,14 @@ Ported only learner-facing source sections from existing science PRs #45, #46, #
 - Preview branch only: `preview-learnora-redesign-inventory-2026-11-06`.
 - PR #63 remains draft and unmerged.
 - No production deployment, production content change or GSC indexing request was performed.
+
+## Additional source-only batch — PRs #49, #50 and #52
+
+Three more science source sections were ported:
+- `science/grade-7/mixtures-and-separation-techniques.html` — Royal Society of Chemistry (RSC) education resources for separation methods, filtration/sieving, mixtures and distillation. Search verification confirmed the RSC 11–14 particle model, separation-techniques and distillation resources; two RSC pages returned HTTP-method restrictions to the web fetcher, so those responses are not treated as proof of a broken link.
+- `science/grade-7/states-of-matter-and-particle-model.html` — RSC particle-model lesson for ages 11–14 and OpenStax Chemistry §10.3 as clearly labelled advanced extension reading. Both were found and relevant content was verified.
+- `science/grade-8/human-digestive-and-circulatory-systems.html` — NIDDK digestive-system overview, NHLBI heart and blood-flow pages, and optional OpenStax heart-anatomy extension. NIDDK and NHLBI content supports the learner-facing summaries of digestion, enzymes, bile, nutrient absorption, circulation and heart flow; OpenStax is marked as advanced extension.
+
+Important scope distinction: PR #52 also proposes a protease-definition clarification. That scientific wording change was **not** ported in this source-only batch; it remains reserved for the separate content-correction review so the source addition does not silently import an unverified content edit.
+
+The official PhET circuit simulation URL in the earlier batch was normalized to its canonical public page: `https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc?locale=en`.
