@@ -8,9 +8,9 @@ GitHub currently reports **29 open pull requests**: 24 drafts and 5 non-drafts. 
 
 | Exact-head CI result | PR count |
 |---|---:|
-| Successful latest recorded workflow | 19 |
+| Successful latest recorded workflow | 18 |
 | Failed at Cloudflare preview-URL resolution | 2 |
-| No workflow run found for exact current PR head | 8 |
+| No workflow run found for exact current PR head | 9 |
 | **Total open PRs** | **29** |
 
 Eleven PRs currently report `mergeable=false`. A green workflow does not mean a PR is mergeable or approved. Do not merge or close any PR as part of this reconciliation.
@@ -44,7 +44,7 @@ Eleven PRs currently report `mergeable=false`. A green workflow does not mean a 
 ## 2. CI / release engineering
 | PR | Changed files | State | Mergeable | Exact-head CI | Assessment |
 |---:|---|---|---|---|---|
-| #63 | `.github/workflows/site-audit.yml`; four Grade 6 Maths lessons; six documentation/checkpoint files | Draft/open | Yes | Success, #42193457427 | Fresh preview batch. Static/legal audits, exact-SHA Cloudflare preview resolution, headers/assets, 104-page browser/responsive/accessibility checks, 77 quizzes/retakes and 79 print actions all passed. This is a QA preview, not production approval. |
+| #63 | `.github/workflows/site-audit.yml`; four Grade 6 Maths lessons; eight Science lessons; source audit, inventory, strategy and checkpoint docs | Draft/open | Yes | Previous head success #42194105507; latest science head has no recorded run yet | Adds source-only coverage to eight Science lessons (PRs #45, #46, #48, #49, #50, #52, #53, #55), alongside the four Grade 6 Maths pages and exact-SHA preview resolver. Do not treat earlier green run as validation of the new science head. |
 | #56 | `.github/workflows/site-audit.yml` | Draft/open | No | Success, #42002228194 | Valuable exact-commit Cloudflare check-run fallback. Rebase/port to current workflow; do not merge stale branch directly. |
 | #2 | `.github/workflows/site-audit.yml`, `scripts/verify-production-sitemap.py`, `PROJECT_STATUS.md` | Open, not draft | No | No exact-head run | Candidate production sitemap/robots smoke test. The Python script is not present on current main. Review and port only if still compatible with the current workflow. |
 | #6 | `.github/workflows/site-audit.yml`, `PROJECT_STATUS.md` | Open, not draft | No | No run on exact current head | Old QA-only branch. Its earlier green run tested a predecessor SHA; current main workflow and #56 are newer. Treat as superseded pending diff review. |
