@@ -617,3 +617,37 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 2. Continue science content PR review in small batches. Start with source-only changes (#45, #46, #48, #53, #55); give deeper factual edits (#47, #49–#52, #54) separate scientific/answer-key review before porting.
 3. After science, review Financial Literacy PR #16 and then AI Literacy/Computer Science PRs #59–#62.
 4. Resume Fractions pilot implementation from `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`; first audit Multiplying/Dividing Fractions worked examples and worksheet answers.
+
+
+## Checkpoint update — Science source batch ported (6 November 2026)
+
+### Completed
+- Confirmed the previous exact-head CI run `42194105507` completed successfully on commit `35db05352f2d9ace692c94c0ceeb3a61861d1900`.
+- Ported source sections only from science PRs #45, #46, #48, #53 and #55 into the current preview branch; no full PR page was copied.
+- Replaced the plant/animal-cell Khan Academy link with OpenStax Biology 2e §4.3 because the original Khan URL resolves into a Pakistan National Curriculum Grade 6 course path; OpenStax §4.3 directly covers eukaryotic cells and plant/animal comparisons.
+- Verified the main source references for ecosystems, forces/friction/mass-weight, cells, electric circuits and Earth/Moon/space; recorded exact verification status and limitations in `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`.
+- No production changes, merge, deployment or GSC indexing request.
+
+### Current working branch
+- Branch: `preview-learnora-redesign-inventory-2026-11-06`
+- Latest content commit before this checkpoint update: `c77dbd8a407935a30b12d6998e8f1cd87a54c23a`.
+- PR #63 remains draft/open; CI for the newly extended head must be checked before calling this batch green.
+
+### QA limitations
+- This was a scoped source-section port, not a new full scientific content audit or independent educator review.
+- Direct page retrieval for Khan Academy Describing Motion was inconclusive; it was found via search and retained as a supplementary source.
+- Browser interaction, screen-reader and print-preview checks remain release gates.
+
+### Next actions
+1. Check the exact-head workflow triggered by the latest PR #63 commit; resolve any failures before proceeding.
+2. Continue source-only science PR review for #49, #50, #52, then examine content-correction PRs #47, #51 and #54 individually with claim-level verification.
+3. Revisit the design-reference benchmark list during the platform redesign phase; use those sites for learning architecture and interaction patterns only, never to copy their wording/assets/code.
+
+### Project tree
+- `science/grade-7/` — ecosystems, forces and motion, introduction to cells
+- `science/grade-8/` — electric circuits, Earth/Moon/space
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — source verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 77-lesson source/feature inventory
+- `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` — strategy and reference-platform research
+- `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md` — fractions pilot specification
+- `PROJECT_STATE.md` — current resume checkpoint
