@@ -21,16 +21,16 @@ This inventory is based on the current `main` repository, the live production si
 | Subject / level | Lessons | Dedicated Sources / Further Reading sections | Current structural coverage |
 |---|---:|---:|---:|
 | Mathematics — Grade 6 | 23 | 23 | 23/23 |
-| Mathematics — Grade 7 | 12 | 4 | 4/12 |
-| Mathematics — Grade 8 | 11 | 3 | 3/11 |
+| Mathematics — Grade 7 | 12 | 12 | 12/12 |
+| Mathematics — Grade 8 | 11 | 6 | 6/11 |
 | English — Grades 6–8 | 9 | 9 | 9/9 |
 | Science — Grades 7–8 | 13 | 13 | 13/13 |
 | Computer Science — Grades 6–8 | 3 | 1 | 1/3 |
 | AI Literacy — Grades 6–8 | 3 | 3 | 3/3 |
 | Financial Literacy — Grades 6–8 | 3 | 3 | 3/3 |
-| **Total** | **77** | **59** | **59/77** |
+| **Total** | **77** | **70** | **70/77** |
 
-**18 lessons remain without a dedicated learner-facing source section:** Grade 7 Maths (8), Grade 8 Maths (8), Computer Science (2).
+**7 lessons remain without a dedicated learner-facing source section:** Grade 8 Maths (5) and Computer Science (2).
 
 The 3 November source inventory recorded 7/77. That count is now stale: the subsequent Grade 6 Maths Phase 2 work added/reviewed source sections across all 23 Grade 6 lessons. The 59/77 figure above is a structural coverage count, not a quality or ranking score. A source heading alone does not prove that every claim is supported; every link must still be checked for relevance and currency.
 
@@ -187,3 +187,5 @@ All 104 URLs map to repository files. This is a repository/sitemap consistency c
 **6 November Grade 7 Maths update:** Added source sections to Adding/Subtracting Integers, Ratios/Rates/Proportional Relationships, Fractions/Decimals/Percentages in Problem Solving and Two-Step Equations. Grade 7 Maths is now 4/12; total source-section coverage is 52/77. The source-only scope and exact links are recorded in `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md`.
 
 **6 November English update:** Added sources to all seven previously unsourced English lessons: Paragraph Writing, Parts of Speech, Punctuation and Capitalization, Reading Comprehension, Sentence Types, Verb Tenses and Agreement, and Vocabulary. English is now 9/9; total source-section coverage is 59/77. The detailed source-suitability review and quiz-label checks are in `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md`.
+
+**6 November Maths source audit update:** A direct check of the current preview-branch lesson HTML (rather than the older table snapshot) found 11 of 12 Grade 7 Maths pages already had a dedicated source heading and list. The remaining Transformations and Symmetry page now has topic-specific Khan Academy references. Grade 7 Maths coverage is 12/12. Grade 8 Maths had 3/11 pages with sources; topic-specific sources have now been added to Angle Relationships and Parallel Lines, Exponents/Powers/Scientific Notation, and Linear Functions and Graphs, bringing Grade 8 Maths to 6/11. Total structural source coverage is now **70/77**; **7 pages remain** (five Grade 8 Maths, two Computer Science). This recount checks the current working branch files; it is not a claim that every statement on all 70 pages has been independently educator-reviewed.
