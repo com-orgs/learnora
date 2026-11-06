@@ -39,3 +39,14 @@ Three more science source sections were ported:
 Important scope distinction: PR #52 also proposes a protease-definition clarification. That scientific wording change was **not** ported in this source-only batch; it remains reserved for the separate content-correction review so the source addition does not silently import an unverified content edit.
 
 The official PhET circuit simulation URL in the earlier batch was normalized to its canonical public page: `https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc?locale=en`.
+
+## Final science terminology corrections — PRs #47, #51, #54 and #52
+
+The remaining three science source gaps were filled, bringing the Science subject to 13/13 pages with a dedicated learner-facing source section.
+
+- Heat Transfer (#47): added a clear distinction: heat is energy transferred between systems because of a temperature difference; thermal energy is part of a system's internal energy. The NASA STEMonstrations page, NOAA heat-transfer explainer, National Geographic Education Grade 6 resource and U.S. Department of Energy Building Science page were checked. OpenStax College Physics 2e §14.1 independently supports the heat-transfer definition.
+- Elements and Compounds (#51): clarified that a mixture contains two or more substances physically combined, not chemically bonded to one another as a single compound, and may contain elements, compounds or both. RSC definitions and the GOV.UK England science programme were checked. The page explicitly avoids claiming formal curriculum accreditation.
+- Waves, Sound and Light (#54): corrected the sound-speed explanation to state both effects: greater stiffness tends to increase speed, while greater density tends to reduce it. Solids are usually much stiffer than gases, so sound generally travels faster in solids despite their higher density. OpenStax Physics §14.1 directly supports this distinction. Sources also include NASA wave/EM-spectrum resources, GOV.UK and OpenStax wave/optics sections.
+- Digestive and Circulatory Systems (#52): clarified protein digestion: proteases such as pepsin produce shorter peptides; other digestive enzymes, including peptidases, continue breaking peptide chains down into amino acids. Added OpenStax Anatomy and Physiology 2e §23.7, which describes pepsin, pancreatic enzymes and peptidases in sequence.
+
+These changes are preview-only. No quiz scripts or answer keys were changed. The PR descriptions record earlier desk checks of the relevant lesson practice, worksheet and quiz mappings, but this work does not claim independent educator approval.
