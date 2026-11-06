@@ -752,3 +752,34 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md`
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 48/77 source-section count
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Exact-head CI green and Grade 7 Maths source batch (6 November 2026)
+
+### CI verification
+- GitHub Actions run **#983 / 42204323754** completed successfully on exact PR #63 head `5e91029e49c8a30802b971860902fdfefd2d3195`.
+- Passed: static website audit, legal/pre-monetisation audit, exact Cloudflare preview resolution, preview headers/assets, Playwright/Chromium install and mobile/desktop/quiz browser checks.
+- Cloudflare Pages preview check for that exact SHA succeeded at `https://068af1a2.learnora-ab2.pages.dev`; this is a preview deployment, not production.
+- PR #63 was still draft/open and GitHub's direct API reported mergeable/clean at that point.
+
+### Grade 7 Maths source batch
+- Added source sections to four pages: Adding/Subtracting Integers; Ratios/Rates/Proportional Relationships; Fractions/Decimals/Percentages in Problem Solving; Two-Step Equations.
+- Sources verified: OpenStax Prealgebra 2e §§3.2–3.3, 4.2, 5.3, 5.6, 6.1–6.2, 8.1–8.2 and Khan Academy Grade 7 proportional-relationships unit.
+- No lesson explanations, worked examples, quiz forms, answer keys, scripts, canonical URLs, metadata or sitemap entries were changed.
+- Grade 7 Maths source coverage is now 4/12. Overall site source-section coverage is **52/77**; **25/77** remain.
+
+### Current QA status
+- Run #983 applies to the earlier head `5e91029...`, before the four Grade 7 Maths additions.
+- The new Grade 7 Maths head needs its own exact-head CI run. Do not treat run #983 as validation of these latest changes.
+- PR #63 remains draft and unmerged; no production deployment or indexing request.
+
+### Next actions
+1. Confirm the current head's exact CI run and resolve any issues.
+2. Continue Grade 7 Maths source gaps, then Grade 8 Maths and English.
+3. After source coverage, return to the Fractions pilot for multiply/divide worked-example and worksheet-answer QA.
+
+### Project tree
+- `math/grade-7/` — four more source sections; 4/12 now sourced
+- `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md` — source verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 52/77 structural coverage
+- `PROJECT_STATE.md` — resume checkpoint
