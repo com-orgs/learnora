@@ -16,6 +16,7 @@ permissions:
   contents: write
   pull-requests: read
   issues: read
+  checks: read
 
 jobs:
   audit:
@@ -40,7 +41,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER_INPUT: ${{ github.event.pull_request.number || '' }}
           REPOSITORY: ${{ github.repository }}
-          BRANCH_NAME: ${{ github.ref_name }}
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         shell: bash
         run: |
           set -euo pipefail
@@ -52,17 +54,19 @@ jobs:
           preview_url=''
           for attempt in {1..30}; do
             comments=$(gh api "repos/$REPOSITORY/issues/$pr_number/comments?per_page=100")
-            preview_url=$(printf '%s' "$comments" | jq -r '[.[] | select(.user.login == "cloudflare-workers-and-pages[bot]") | .body | try capture("Branch Preview URL:</strong></td><td>\\s*<a href=\u0027(?<url>https://[^\u0027]+)\u0027").url catch empty] | map(select(length > 0)) | last // empty')
+            preview_url=$(printf '%s' "$comments" | jq -r '[.[] | select(.user.login == "cloudflare-workers-and-pages[bot]") | .body | try capture("Branch Preview URL:</strong></td><td>\\s*<a href=\\x27(?<url>https://[^\\x27]+)\\x27").url catch empty] | map(select(length > 0)) | last // empty')
             if [ -n "$preview_url" ]; then break; fi
-            echo "Waiting for Cloudflare branch preview comment ($attempt/30)..."
+
+            # If the bot comment is missing, resolve the preview from this exact commit's successful Pages check.
+            checks=$(gh api "repos/$REPOSITORY/commits/$HEAD_SHA/check-runs?per_page=100")
+            preview_url=$(printf '%s' "$checks" | jq -r '[.check_runs[] | select(.name == "Cloudflare Pages" and .conclusion == "success") | .output.summary // "" | try capture("Preview URL:</strong></td><td>\\s*<a href=\\x27(?<url>https://[^\\x27]+)\\x27").url catch empty] | map(select(length > 0)) | last // empty')
+            if [ -n "$preview_url" ]; then
+              echo "Resolved exact commit preview from successful Cloudflare Pages check run."
+              break
+            fi
+            echo "Waiting for Cloudflare preview evidence ($attempt/30)..."
             sleep 10
           done
-          if [ -z "$preview_url" ]; then
-            # Cloudflare may have deployed the branch before the PR existed, so no PR comment is available.
-            # Try the documented Pages branch hostname; the following HTTP/header checks must still pass.
-            preview_url="https://${BRANCH_NAME}.learnora-ab2.pages.dev"
-            echo "No Cloudflare PR comment found; verifying the branch hostname directly: $preview_url"
-          fi
           case "$preview_url" in https://*.learnora-ab2.pages.dev) ;; *) echo 'Preview URL is outside the Learnora Cloudflare Pages domain.'; exit 1 ;; esac
           echo "url=$preview_url" >> "$GITHUB_OUTPUT"
 

@@ -476,3 +476,496 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — repository and content inventory (6 November 2026)
+
+### Completed
+- Verified current production sitemap: 104 unique URLs, zero duplicates; every URL maps to a file in current `main`.
+- Enumerated 216 repository files, 105 HTML files and 77 lesson pages across six subject groups.
+- Re-fetched all 77 lesson HTML files from `main` and mapped each to a relevant proposed built-in learning tool. The complete page-by-page map is in `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md`.
+- Recounted dedicated Sources/Further Reading sections: 30/77 (Maths Grade 6 23/23; Maths Grade 7 0/12; Maths Grade 8 3/11; English 2/9; Science 2/13; Computer Science 0/3; AI Literacy 0/3; Financial Literacy 0/3). The 3 Nov count of 7/77 is stale after Grade 6 Phase 2 work; 47 pages remain in the source-section backlog.
+- Verified latest PR #62 workflow run #42146364198: static audit 104 HTML pages, 0 warnings; legal/pre-monetisation checks passed; browser checks covered 104 pages at 320/390/768/desktop, 77 quiz submissions, 77 retakes, 79 worksheet print actions and 104 performance budgets. Preview CI only; not production release.
+- Confirmed all 77 lesson pages are structurally covered by five-question quizzes and quiz answer-key mappings in the static audit; the current retake behaviour resets the fixed quiz and does not implement the planned larger fresh-question bank.
+- Inspected production homepage, fractions, Algorithms and AI Safety pages, sitemap, robots and subject hubs. PR #59–#62 improvements remain preview-only.
+- Identified a visual-system gap: homepage and many lesson pages use different palettes; the basic SVG logo asset is not referenced by the homepage.
+- Read the deployment and PR audit workflows. Direct pushes to `main` trigger production deployment; all future changes must remain on preview branches and go through PR QA.
+
+### Branch and repository state
+- `main` head: `eb30ff69498c122d3670e15475430f4673265846`.
+- Existing `strategy/learning-platform-redesign` diverged from main: 4 commits ahead, 6 behind; common base `7b4ab3206f8bbfbfb955ad824e6bf9714074432c`.
+- Created fresh working branch from current main: `preview-learnora-redesign-inventory-2026-11-06`.
+- Carried forward `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` from the old strategy branch.
+- Added `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` with all 77 lessons and proposed tool mappings.
+- PR #57 merged; PRs #59–#62 remain draft/open/unmerged with successful latest recorded CI. No PR was merged and no production code/content was changed.
+
+### Outstanding / next actions
+1. Verify exceptional quiz structures and script mappings for every lesson; use the latest static audit as baseline and do not repeat Grade 6's completed 115-mapping review.
+2. Update the old source-attribution report with the 30/77 recount and exact 47-page backlog.
+3. Complete lesson-to-tool mapping and fractions pilot design.
+4. Implement only on `preview-learnora-redesign-inventory-2026-11-06`, run PR QA and record exact commits/results.
+5. Keep production unchanged until explicit user approval.
+
+### Operational blocker
+- The 6 Nov GSC daily guard recorded 39 distinct tracker URLs checked against a daily cap of 10 (29 over). Do not run more URL inspections until the user pauses/reduces the hourly tracker in its UI. This does not block repository inventory or content design.
+
+### Project tree / current checkpoint
+```text
+learnora/
+├── LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md
+├── LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md
+├── PROJECT_STATE.md
+└── [existing production source, lessons, scripts, assets, tests and workflows]
+```
+
+
+## Checkpoint update — source attribution recount (6 November 2026)
+
+- Added `PHASE14_SOURCE_ATTRIBUTION_RECOUNT_2026-11-06.md` after rechecking all 77 lesson files.
+- Current source-section count: 30/77; missing backlog: 47. This supersedes the historical 3 Nov snapshot of 7/77 because all 23 Grade 6 Maths pages gained source sections during the later Phase 2 QA work.
+- Exact page-by-page source backlog is recorded in the new recount report. Do not bulk-add generic citations; verify each source against the claim.
+- PRs #59–#62 are not included in current coverage because they remain draft/unmerged. Their preview changes would conditionally add four source sections if later merged.
+- No production files were changed; documentation only on `preview-learnora-redesign-inventory-2026-11-06`.
+
+
+## Checkpoint update — all open PRs reconciled (6 November 2026)
+
+- Queried all open pull requests: **28 open** (23 draft, 5 not draft). This is broader than the previous handover's #59–#62-only list.
+- Checked exact head SHA, changed files, draft/open state, mergeability and exact-head workflow result for all 28.
+- Exact-head CI: 18 success, 2 failed at Cloudflare preview-URL resolution (#40 and #50), 8 with no workflow run found for the exact current head.
+- Eleven PRs report `mergeable=false`; green CI does not equal mergeable or approval.
+- Useful pending content work: #40–#43 Grade 6 Maths; #45–#55 Science; #16 Financial Literacy; #59–#62 AI Literacy/Computer Science. PRs #45–#55 cover all 11 current Science source gaps; #16 covers all three Financial Literacy source gaps.
+- CI candidate: #56 adds exact-commit Cloudflare check-run fallback, but is not mergeable against current main. #59–#61 also touch the same workflow file with a smaller branch-name fix; consolidate rather than merge overlapping edits separately.
+- Likely stale/superseded candidates: #3 (main has a different deployed IndexNow key and newer roadmap), #6 (old QA workflow), #7 (study plan/curriculum/workbook already on main through later releases), #18 (old checkpoint), #27 (the same three sources already exist in the current fractions lesson), and #44 (old 19/77 source count superseded by 30/77 recount). PR #2's production sitemap smoke-test script is a candidate for a fresh-base port, not a direct merge.
+- Added `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md` with all 28 PRs, changed files, head branches, CI state and safe consolidation plan.
+- No PR was merged or closed. Production remains unchanged.
+
+
+## Documentation commit ledger — 6 November 2026
+
+Working branch: `preview-learnora-redesign-inventory-2026-11-06` (created from main head `eb30ff69498c122d3670e15475430f4673265846`; 0 commits behind main at creation).
+
+| Change | Commit |
+|---|---|
+| Carry forward platform redesign blueprint | `c37f2324ce6b3b15e2fa82c237280fffdbb15a88` |
+| Add 77-page content and feature inventory | `1f535d2a1ba4daf71fb474c4a46215bfa20a8fa9` |
+| Initial repository/content checkpoint | `b195b94e00452540d1212d8eec725526d4ee8052` |
+| Add 30/77 source attribution recount | `2c4fb041850282f492180b5b54f6eccee66701d7` |
+| Checkpoint source attribution recount | `484b4dfc9c70f9b101a49825d592311f1fd86689` |
+| Add all-28-open-PR reconciliation | `3ec493372f0a19a519f8ac8680d3c850d18b9841` |
+| Checkpoint PR reconciliation | `ced256921002ba90baed72804d7e88524ed8059d` |
+| Remove repeated PR #27 row from reconciliation | `f60f466f7c0f5d06f240728107cdb4a65c162497` |
+
+The current PR reconciliation contains one PR #27 entry. Documentation-only changes have been made on the preview branch; no website source, production branch, open PR state or deployment was changed.
+
+
+## Final verification of PR reconciliation checkpoint — 6 November 2026
+
+- Reconciliation table now contains exactly 28 unique open PR entries (no repeated PR numbers).
+- Documentation-only report cleanup commits: `8c7a691496085a0e63561e2f3fbe71959a077d77` (intermediate formatting attempt), `f60f466f7c0f5d06f240728107cdb4a65c162497` (remove duplicate #27 row), and `3e0ff1d9aa13b4158348874ac9afc8f18612c73e` (remove duplicate #44 row).
+- Previous full checkpoint commit: `c96da38eba9dbb40d2342c0e85f56fec3e0b7d40`.
+- Final reconciliation report path: `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md`.
+- No PR state changed. No production files changed. No merge/deployment occurred.
+
+
+## Checkpoint update — fractions pilot specification (6 November 2026)
+
+- Inspected the six Grade 6 fractions lesson pages and their linked scripts on current main.
+- The 5 Nov fractions QA batch covered five lessons and 25/25 quiz mappings; it did not include the Multiplying/Dividing Fractions lesson in that specific batch. The broader Grade 6 Phase 2 QA still covers all 23 Grade 6 pages and 115 quiz mappings. The multiplication/division lesson needs a focused worked-example/practice/worksheet answer review before release.
+- Confirmed the Understanding Fractions quiz uses a fixed five-question set; retake resets the same questions rather than drawing fresh questions from a bank.
+- Added `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md` with course/unit/skill architecture, shared fraction visualizer, exact-arithmetic requirements, accessible modes, question-bank/retake model, worksheet answer-key workflow, internal linking, implementation phases and acceptance tests.
+- This is a design document only. No lesson HTML, quiz script, tool code, production branch, PR state or deployment was changed.
+
+### Next action
+Reconcile and port useful open content/CI patches onto the current preview branch in controlled subject batches, then implement the fractions pilot against the specification. Keep production unchanged.
+
+
+## Final branch verification — 6 November 2026
+
+- Before this final checkpoint, working branch `preview-learnora-redesign-inventory-2026-11-06` was 14 commits ahead of `main` and 0 commits behind it.
+- Exactly six paths differ from `main`: `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md`, `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`, `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md`, `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md`, `PHASE14_SOURCE_ATTRIBUTION_RECOUNT_2026-11-06.md`, and `PROJECT_STATE.md`.
+- All changes are documentation. No lesson, script, sitemap, workflow, asset, production branch or deployment configuration changed.
+- Previous project-state commit before this entry: `5e11651ba65ef7363f911fd32a287769fda385a3`.
+
+
+## Checkpoint update — Grade 6 Maths batch and preview PR #63 (6 November 2026)
+
+### Completed on the working branch
+- Ported only scoped, reviewed changes from the original Maths PRs; deliberately did not copy unrelated metadata/table-layout changes present on some PR branches.
+- `math/grade-6/algebraic-expressions.html`: clarified that like terms have the same variable part and powers, and that constants are like terms; replaced old source block with two relevant OpenStax Prealgebra 2e sections.
+- `math/grade-6/integers-number-line.html`: replaced generic GeoGebra links with OpenStax Prealgebra 2e §3.1 reference for number lines, ordering, opposites and absolute value.
+- `math/grade-6/order-of-operations.html`: clarified that multiplication/division share priority and addition/subtraction share priority; made clear that this introductory lesson postpones exponents; added OpenStax §2.1 reference.
+- `math/grade-6/understanding-percentages.html`: added OpenStax Prealgebra 2e §6.2 application-of-percent reference.
+- Verified the new OpenStax references against the publisher's live pages: §2.1 order of operations, §2.2 like terms and algebraic expressions, §3.1 integers, and §6.2 percent applications.
+- Ported CI preview resolver fix into `.github/workflows/site-audit.yml`: use pull-request head branch/SHA, grant `checks: read`, and fall back to the exact commit's successful Cloudflare Pages check run instead of guessing a branch hostname.
+
+### Preview and verification
+- Created draft PR **#63**: https://github.com/com-orgs/learnora/pull/63
+- Latest PR head before this checkpoint: `8e0c88a4d1f46e52ee395772c8ee8c3f84034185`.
+- PR #63 is draft/open and GitHub reports it mergeable; no merge or production deployment was performed.
+- CI run #42193457427 passed on the prior content/workflow head; after updating the PR reconciliation document, run #42193787095 also passed on the then-current head.
+- Both successful runs included: static audit (104 HTML pages, 68 curriculum lesson files, 68 sitemap lesson URLs, 77 accessible quiz forms and 77 answer-key mappings), legal/pre-monetisation audit, exact-SHA Cloudflare preview resolution, security headers/CSP/assets/custom 404, and Playwright checks across 104 pages at 320/390/768/desktop widths, 77 quiz submissions, 77 retakes, 79 worksheet print actions, performance budgets and no third-party browser requests.
+- Updated `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md` to include PR #63 and refresh the open/draft/CI counts: 29 open, 24 draft, 5 non-draft; exact-head workflow summary 19 success, 2 preview-resolution failures, 8 with no exact-head run found (the original 28 PRs plus new #63).
+- Working branch comparison before this checkpoint: 20 commits ahead of `main`, 0 behind; 11 changed paths (four Grade 6 Maths lessons, site-audit workflow, five audit/specification documents and `PROJECT_STATE.md`).
+
+### Safety / current state
+- Production `main` remains unchanged. No PR has been merged or closed. No production deployment or AdSense/analytics activation occurred.
+- PR #63 remains a draft for review and preview QA only. Do not merge or deploy without explicit user approval.
+
+### Next actions
+1. Re-run/confirm CI for the latest checkpoint commit after this state update.
+2. Continue science content PR review in small batches. Start with source-only changes (#45, #46, #48, #53, #55); give deeper factual edits (#47, #49–#52, #54) separate scientific/answer-key review before porting.
+3. After science, review Financial Literacy PR #16 and then AI Literacy/Computer Science PRs #59–#62.
+4. Resume Fractions pilot implementation from `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`; first audit Multiplying/Dividing Fractions worked examples and worksheet answers.
+
+
+## Checkpoint update — Science source batch ported (6 November 2026)
+
+### Completed
+- Confirmed the previous exact-head CI run `42194105507` completed successfully on commit `35db05352f2d9ace692c94c0ceeb3a61861d1900`.
+- Ported source sections only from science PRs #45, #46, #48, #53 and #55 into the current preview branch; no full PR page was copied.
+- Replaced the plant/animal-cell Khan Academy link with OpenStax Biology 2e §4.3 because the original Khan URL resolves into a Pakistan National Curriculum Grade 6 course path; OpenStax §4.3 directly covers eukaryotic cells and plant/animal comparisons.
+- Verified the main source references for ecosystems, forces/friction/mass-weight, cells, electric circuits and Earth/Moon/space; recorded exact verification status and limitations in `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`.
+- No production changes, merge, deployment or GSC indexing request.
+
+### Current working branch
+- Branch: `preview-learnora-redesign-inventory-2026-11-06`
+- Latest content commit before this checkpoint update: `c77dbd8a407935a30b12d6998e8f1cd87a54c23a`.
+- PR #63 remains draft/open; CI for the newly extended head must be checked before calling this batch green.
+
+### QA limitations
+- This was a scoped source-section port, not a new full scientific content audit or independent educator review.
+- Direct page retrieval for Khan Academy Describing Motion was inconclusive; it was found via search and retained as a supplementary source.
+- Browser interaction, screen-reader and print-preview checks remain release gates.
+
+### Next actions
+1. Check the exact-head workflow triggered by the latest PR #63 commit; resolve any failures before proceeding.
+2. Continue source-only science PR review for #49, #50, #52, then examine content-correction PRs #47, #51 and #54 individually with claim-level verification.
+3. Revisit the design-reference benchmark list during the platform redesign phase; use those sites for learning architecture and interaction patterns only, never to copy their wording/assets/code.
+
+### Project tree
+- `science/grade-7/` — ecosystems, forces and motion, introduction to cells
+- `science/grade-8/` — electric circuits, Earth/Moon/space
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — source verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 77-lesson source/feature inventory
+- `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` — strategy and reference-platform research
+- `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md` — fractions pilot specification
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Science source coverage complete (6 November 2026)
+
+### Completed
+- Added source sections to the remaining Science lessons through carefully scoped ports from PRs #47, #49, #50, #51, #52, #54 and existing source-only ports #45, #46, #48, #53 and #55.
+- Science source-section coverage is now **13/13**. Total site source-section coverage is **41/77**; **36/77** lessons still need a dedicated learner-facing source section.
+- Heat Transfer: clarified heat as energy transfer due to a temperature difference and thermal energy as part of internal energy; added NASA, NOAA, National Geographic Education and U.S. DOE sources.
+- Elements and Compounds: clarified mixture definition and included elements/compounds/both; added RSC and GOV.UK references.
+- Waves, Sound and Light: corrected sound-speed explanation to account for both stiffness and density; added NASA and OpenStax sources.
+- Digestive/Circulatory: clarified sequential protein digestion using proteases and peptidases; added OpenStax Anatomy and Physiology 2e §23.7.
+- Full source review and limitations recorded in `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`.
+
+### Current QA status
+- Previous exact-head CI success #42194105507 applies to earlier commit `35db05352f2d9ace692c94c0ceeb3a61861d1900`, not to this science-expanded head.
+- Recent workflow runs associated with intermediate science commits were cancelled; the current final head has no recorded successful exact-head workflow yet. Do not mark this batch green until a current-head run is confirmed.
+- Source pages were reviewed with web search/open checks; RSC pages that returned method restrictions were not treated as broken links.
+- No full fresh recalculation of every science example or quiz answer key was performed in this batch. Existing PR descriptions record earlier desk checks; independent educator review and manual browser/print/screen-reader checks remain outstanding.
+
+### Next actions
+1. Obtain and complete a fresh exact-head CI run for the current preview branch.
+2. Update PR #63 body and status docs with the full science scope; keep it draft and unmerged.
+3. Continue with Financial Literacy PR #16, then AI Literacy/Computer Science PRs #59–#62, before returning to the Grade 6 Fractions pilot's outstanding multiply/divide worked-example and worksheet audit.
+
+### Project tree
+- `science/grade-7/` — all Science Grade 7 lessons now have dedicated source sections
+- `science/grade-8/` — all Science Grade 8 lessons now have dedicated source sections
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — source and terminology verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 41/77 current source-section count
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Financial Literacy sources added (6 November 2026)
+
+### Completed
+- Ported only the reviewed source sections from PR #16 into:
+  - `financial-literacy/budgeting.html`
+  - `financial-literacy/savings-interest.html`
+  - `financial-literacy/unit-prices.html`
+- Added a careful scope note to the savings formula: I = P × r × t is a simplified fixed-principal model; actual savings accounts may calculate interest daily or compound it according to their terms.
+- Verified CFPB budget/saving/compound-interest resources, the CFPB classroom borrowing formula PDF, FTC unit-pricing/shrinkflation advice and Consumer.gov shopping guidance.
+- Spot-checked the displayed budget, savings-goal, simple-interest and unit-price calculations.
+- Financial Literacy source coverage is now 3/3. Overall site coverage is **44/77**; **33/77** pages still need dedicated learner-facing sources.
+- Full notes in `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md`.
+
+### Current QA status
+- PR #63 remains draft/open and unmerged.
+- The last successful CI run (#42194105507) predates the current science and finance additions. Current head has no successful exact-head run.
+- A strict browser workflow-dispatch attempt could not start because the account does not have the TinyFish beta required for strict mode. The tool instructed that a default-mode retry requires user approval; no workflow was dispatched.
+- No production deployment or indexing request.
+
+### Next actions
+1. Ask whether to retry the GitHub Actions workflow dispatch in default browser mode (150-step limit); otherwise wait for a user-triggered run.
+2. Continue AI Literacy and Computer Science PRs #59–#62, using source-only and content-accuracy checks.
+3. Then resume the Grade 6 Fractions pilot and audit multiply/divide examples, worksheet answers and quiz mappings.
+
+### Project tree
+- `science/grade-7/` and `science/grade-8/` — all 13 Science lessons now have dedicated sources
+- `financial-literacy/` — all 3 Financial Literacy lessons now have dedicated sources
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — Science sources and terminology QA
+- `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md` — Financial Literacy sources and calculation checks
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 44/77 source-section count
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — AI Literacy and Computer Science QA (6 November 2026)
+
+### Completed
+- Ported the reviewed lesson-page updates from PRs #59–#62:
+  - `ai-literacy/ai-safety.html`
+  - `ai-literacy/how-ai-works.html`
+  - `ai-literacy/verify-ai.html`
+  - `computer-science/algorithms.html`
+- Excluded unrelated workflow edits from PRs #59–#61.
+- Verified one H1 and five quiz questions on each page; canonical and Open Graph URLs match; shared quiz script references are unchanged; all five answer-key texts match visible options; external new-tab links use `noopener noreferrer`.
+- Improved source-level accuracy labels: Microsoft Learn is marked intermediate/advanced; Purdue OWL is labelled university-level extension; BBC Bitesize links are labelled GCSE-level extension; Teach Computing is labelled a teacher subject-knowledge course.
+- AI Literacy source coverage is now 3/3; Computer Science is 1/3. Total site coverage is **48/77**; **29/77** pages remain without dedicated sources.
+- Full review and limitations recorded in `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md`.
+
+### Current QA status
+- PR #63 remains draft/open and unmerged.
+- Latest successful CI still belongs to the older Grade 6 Maths-only head (#42194105507); the current science/finance/AI/CS head has no successful exact-head workflow.
+- A browser-based workflow dispatch could not be started in strict mode because this account lacks the required beta. The tool asked for approval before trying default browser mode; no workflow was dispatched.
+- GitHub's latest PR response reported `mergeable: false`; do not attempt a merge. Recheck the mergeability state after the final head and workflow are refreshed.
+- No production deployment or indexing request.
+
+### Next actions
+1. Obtain approval to retry workflow dispatch in default browser mode, or have a user-triggered exact-head workflow run.
+2. Continue the remaining Grade 7/8 Maths and English source sections; these are the largest remaining gaps.
+3. Return to the Fractions pilot and complete multiply/divide worked-example, worksheet and quiz-answer audit.
+
+### Project tree
+- `science/grade-7/` and `science/grade-8/` — all 13 Science lessons sourced
+- `financial-literacy/` — all 3 Financial Literacy lessons sourced
+- `ai-literacy/` — all 3 AI Literacy lessons sourced
+- `computer-science/algorithms.html` — updated with source section and responsive pseudocode layout
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`
+- `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md`
+- `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md`
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 48/77 source-section count
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Exact-head CI green and Grade 7 Maths source batch (6 November 2026)
+
+### CI verification
+- GitHub Actions run **#983 / 42204323754** completed successfully on exact PR #63 head `5e91029e49c8a30802b971860902fdfefd2d3195`.
+- Passed: static website audit, legal/pre-monetisation audit, exact Cloudflare preview resolution, preview headers/assets, Playwright/Chromium install and mobile/desktop/quiz browser checks.
+- Cloudflare Pages preview check for that exact SHA succeeded at `https://068af1a2.learnora-ab2.pages.dev`; this is a preview deployment, not production.
+- PR #63 was still draft/open and GitHub's direct API reported mergeable/clean at that point.
+
+### Grade 7 Maths source batch
+- Added source sections to four pages: Adding/Subtracting Integers; Ratios/Rates/Proportional Relationships; Fractions/Decimals/Percentages in Problem Solving; Two-Step Equations.
+- Sources verified: OpenStax Prealgebra 2e §§3.2–3.3, 4.2, 5.3, 5.6, 6.1–6.2, 8.1–8.2 and Khan Academy Grade 7 proportional-relationships unit.
+- No lesson explanations, worked examples, quiz forms, answer keys, scripts, canonical URLs, metadata or sitemap entries were changed.
+- Grade 7 Maths source coverage is now 4/12. Overall site source-section coverage is **52/77**; **25/77** remain.
+
+### Current QA status
+- Run #983 applies to the earlier head `5e91029...`, before the four Grade 7 Maths additions.
+- The new Grade 7 Maths head needs its own exact-head CI run. Do not treat run #983 as validation of these latest changes.
+- PR #63 remains draft and unmerged; no production deployment or indexing request.
+
+### Next actions
+1. Confirm the current head's exact CI run and resolve any issues.
+2. Continue Grade 7 Maths source gaps, then Grade 8 Maths and English.
+3. After source coverage, return to the Fractions pilot for multiply/divide worked-example and worksheet-answer QA.
+
+### Project tree
+- `math/grade-7/` — four more source sections; 4/12 now sourced
+- `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md` — source verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 52/77 structural coverage
+- `PROJECT_STATE.md` — resume checkpoint
+
+
+## Checkpoint update — English source pass completed (6 November 2026)
+
+### Completed
+- Added source sections to the seven previously unsourced English lessons:
+  - Paragraph Writing
+  - Parts of Speech
+  - Punctuation and Capitalization
+  - Reading Comprehension: Main Idea, Inference and Evidence
+  - Sentence Types and Structure
+  - Verb Tenses and Agreement
+  - Vocabulary: Context Clues, Prefixes, Suffixes and Roots
+- Verified the chosen Purdue OWL, British Council LearnEnglish and Reading Rockets references; advanced/university-level references are labelled optional extensions, not required grade-level reading.
+- Checked all seven pages: one H1, canonical/OG match, balanced section tags and safe external new-tab links.
+- Compared five answer-key labels with visible quiz choices on all seven pages; all match exactly. No quiz scripts were changed.
+- English source coverage is now **9/9**. Overall site source coverage is **59/77**; **18/77** lessons remain.
+- Full source review in `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md`.
+
+### CI status
+- Exact-head run #989 passed on commit `08a04564b65857029c031abb8ee5215b9aa84d66`, including static/legal audits, Cloudflare preview resolution, headers/assets and Playwright mobile/desktop/quiz checks.
+- The English source changes and documentation are newer than that run; the current head needs a fresh exact-head workflow before it is marked green.
+- PR #63 remains draft/open and unmerged. No production deployment or indexing request.
+
+### Next actions
+1. Check exact-head CI for the English-expanded branch.
+2. Finish the remaining Grade 7 Maths (8), Grade 8 Maths (8) and Computer Science (2) source gaps.
+3. Then return to the Fractions pilot for the outstanding multiply/divide worked-example and worksheet-answer audit.
+
+### Project tree
+- `english/grade-6-8/` — all 9 English lessons now have dedicated sources
+- `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md` — source verification and QA record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 59/77 structural source coverage
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Grade 7/8 Maths source batch (6 November 2026)
+
+### Completed
+- Recounted source headings directly from the current branch HTML because the older inventory and PR description contained stale Grade 7/8 counts.
+- Confirmed Grade 7 Maths was 11/12 sourced; added a topic-specific source section to `math/grade-7/transformations-and-symmetry.html`. Grade 7 Maths is now 12/12.
+- Added topic-specific source sections to:
+  - `math/grade-8/angle-relationships-and-parallel-lines.html`
+  - `math/grade-8/exponents-powers-and-scientific-notation.html`
+  - `math/grade-8/linear-functions-and-graphs.html`
+- Grade 8 Maths is now 6/11 sourced.
+- Updated `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` and created `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` with source checks, link-fetch limitations and exact scope.
+- Overall source-section count is now **70/77**. Remaining gaps: five Grade 8 Maths pages and two Computer Science pages.
+- No lesson explanation, worked example, exercise, quiz, answer key, script, canonical URL, metadata or sitemap entry was changed in this source-only batch.
+
+### Verification notes
+- Opened OpenStax Prealgebra 2e §10.5 (integer exponents/scientific notation), §§11.2 and 11.4 (linear graphs/slope), OpenStax Contemporary Mathematics §10.2 (angles/transversals), and Prealgebra 2e §9.3 (angle properties).
+- Khan Academy transformation, Grade 8 angle and linear-function units were found through search. Some pages returned no readable lines/cache misses, so those are recorded as supplementary sources rather than fully page-fetched evidence.
+- Source-section count is structural only; it does not prove every lesson claim is independently educator-reviewed.
+
+### Current CI / release status
+- PR #63 remains draft/open and unmerged.
+- Exact-head workflow run #1007 / `42207367501` was pending on commit `36de89b85485b098defdfc0da905a853676b7b2c`; this run predates the final Phase 20 documentation commit. Check the latest PR head's exact workflow before claiming green.
+- No merge, production deployment or GSC indexing request.
+- No independent educator review is claimed.
+
+### Next actions
+1. Refresh PR #63 metadata and check exact-head CI after the Phase 20 documentation commit.
+2. Continue the five remaining Grade 8 Maths source gaps in small topic batches, then the two remaining Computer Science pages.
+3. After source coverage, return to the Fractions pilot for multiply/divide worked-example, worksheet-answer and quiz-mapping QA.
+4. Revisit the design-reference platform blueprint during the later design phase. Benchmark learning architecture and UX patterns from Khan Academy, BBC Bitesize, CK-12 and OpenStax; do not copy wording, code, images or question banks.
+
+### Project tree
+- `math/grade-7/transformations-and-symmetry.html` — sources added; Grade 7 Maths 12/12
+- `math/grade-8/` — sources added to angles, exponents/scientific notation and linear functions; Grade 8 Maths 6/11
+- `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — source verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — current count 70/77
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Final source coverage complete, 77/77 (6 November 2026)
+
+### Completed
+- Added sources to the final five Grade 8 Maths pages across the Phase 20/21 batches:
+  - Scatter Plots and Data Relationships
+  - Square Roots and Irrational Numbers
+  - Systems of Linear Equations
+  - Transformations, Congruence and Similarity
+  - Volume of Cylinders, Cones and Spheres
+- Added official documentation sources to the final two Computer Science pages:
+  - HTML and CSS: How Web Pages Work — MDN HTML, CSS and accessibility resources.
+  - Python Variables, Input and Output — official Python tutorial, input/output chapter, built-in functions and built-in types references.
+- Updated `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` and created `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md`.
+- Structural source coverage is now **77/77** across all eight subject/level groups:
+  - Grade 6 Maths 23/23
+  - Grade 7 Maths 12/12
+  - Grade 8 Maths 11/11
+  - English 9/9
+  - Science 13/13
+  - Financial Literacy 3/3
+  - AI Literacy 3/3
+  - Computer Science 3/3
+
+### Verification and limits
+- Opened OpenStax Prealgebra 2e §9.6 and confirmed its text covers cylinder, cone and sphere volume formulas.
+- Opened MDN HTML/CSS introductory references and Python official tutorial/input-output/built-in references.
+- Some Khan Academy and MDN pages returned no readable lines/cache misses; their relevance was checked from search results and they are documented as supplementary references.
+- 77/77 is a source-section presence count, not proof every claim, example, quiz answer or worksheet calculation has been independently checked. Independent educator review, manual screen-reader testing and real print/PDF preview remain separate gates.
+- No source wording, images, diagrams, code or question banks were copied from external sites.
+
+### CI and release status
+- PR #63 remains draft/open and unmerged.
+- The exact-head workflow from Phase 20 is no longer sufficient because newer lesson and documentation commits were added. Check the exact latest PR head's workflow before claiming green.
+- No merge to `main`, production deployment or GSC indexing request.
+
+### Next actions
+1. Check the exact latest PR #63 head and wait for its full CI workflow to finish.
+2. Perform a source-link availability/relevance pass across all 77 source sections and separately plan claim-level QA, especially worked examples, quiz answer keys and worksheet answers.
+3. Resume the Fractions pilot using `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`; verify multiplication/division examples and all corresponding worksheet/quiz answers.
+4. During the later redesign phase, continue using Khan Academy, BBC Bitesize, CK-12 and OpenStax as design/learning-architecture benchmarks only. Use external sites for research, not copying.
+
+### Project tree
+- `math/grade-8/` — all 11 lessons now have source sections
+- `computer-science/html-css.html` — MDN source section
+- `computer-science/python-basics.html` — official Python source section
+- `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — Maths source verification
+- `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md` — final Maths/CS source verification
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — updated 77/77 source coverage
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — PR #63 final source-coverage status (6 November 2026)
+
+- Structural source coverage: **77/77 lesson pages** on the preview branch.
+- Current PR #63 is still **draft/open**, not merged; GitHub reports it mergeable after recalculation, but this is not merge approval.
+- Latest checked head before this checkpoint append: `287311aaba3d7883b00dc6ff6efd84c28d5ee980`.
+- Exact-head workflow #1018 / `42207970844` was pending with no jobs started at last check on the preceding head `8086a02daaa7641180781e81fc966ba36529c043`.
+- This checkpoint append creates a newer commit and will trigger or require a newer exact-head workflow. **Do not claim the latest PR head is green until its own full workflow completes successfully.**
+- The reconciliation report and PR #63 description now reflect 77/77 structural source coverage and the latest previously checked pending workflow.
+- Next work after CI: source-link availability/relevance sweep across all lesson pages, then claim-level QA of examples, worksheets, quiz keys, and the Fractions pilot. Do not merge or deploy without explicit user approval.
+
+
+## Checkpoint update — source inventory reconciliation and exact-head CI (6 November 2026)
+
+### Completed
+- Reconciled the inventory's historical intermediate counts: the current preview-branch structural source coverage is **77/77**, as shown in the subject-group table. Historical 41/77 through 70/77 notes are explicitly labelled as superseded intermediate checkpoints.
+- Verified PR #63 head SHA: `52ac33d73b627f7cf64d10b4923f7b5c2f1e84c7`.
+- Verified GitHub Actions run **#1020 / 42208059250** completed with conclusion **success** for that exact head.
+- PR #63 remains draft/open and unmerged. No production deployment, merge or indexing request was made.
+
+### QA limits / next action
+- The successful exact-head workflow confirms the automated checks configured in CI; it does not replace source-link relevance/currency checks, claim-level fact-checking, educator review, manual screen-reader testing or real print/PDF checks.
+- Next: begin a source-link relevance and availability sweep, then claim-level QA of worked examples, worksheet answers and quiz keys, starting with the Grade 6 Fractions pilot.
+
+### Project tree
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — final 77/77 count reconciled; historical intermediate totals labelled
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — Science source/terminology record
+- `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md` — Financial Literacy source/calculation record
+- `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md` — AI Literacy/Computer Science QA record
+- `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md` — Grade 7 Maths source record
+- `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md` — English source record
+- `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — Maths source record
+- `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md` — final Maths/Computer Science source record
+- `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Fractions multiplication/division calculation QA (6 November 2026)
+
+### Completed
+- Audited `math/grade-6/multiplying-dividing-fractions.html` and its quiz script.
+- Recalculated 10/10 worked examples, 8/8 practice answers and 8/8 worksheet answers; all are correct.
+- Checked all five visible quiz choices against the JavaScript answer keys; 5/5 mappings match.
+- Verified the OpenStax Prealgebra 2e §4.2 reference is directly relevant to multiplication, simplification, reciprocals and division.
+- Recorded scope, calculations, script behavior and limitations in `PHASE22_FRACTIONS_MULTIPLY_DIVIDE_QA_2026-11-06.md`.
+- No lesson HTML or quiz JavaScript was changed.
+
+### Findings / pending decisions
+- Retake resets the same five fixed questions; unseen-question selection requires the future question-bank feature specified in the Fractions Pilot.
+- Lesson metadata says Grades 6–7 while its canonical route and breadcrumb hierarchy place it under Grade 6. Confirm intended grade label before changing metadata.
+- Manual keyboard/screen-reader and print/PDF checks remain outstanding.
+
+### CI / release
+- PR #63 remains draft/open and unmerged.
+- The inventory and checkpoint documentation updates are on the preview branch only; check the latest head's workflow before claiming green.
+- No production merge, deployment or indexing request.
+
+### Project tree
+- `math/grade-6/multiplying-dividing-fractions.html` — audited; no changes
+- `scripts/pages/math-grade-6-multiplying-dividing-fractions.js` — answer mapping/retake behavior audited; no changes
+- `PHASE22_FRACTIONS_MULTIPLY_DIVIDE_QA_2026-11-06.md` — detailed calculation QA
+- `PROJECT_STATE.md` — resume checkpoint
