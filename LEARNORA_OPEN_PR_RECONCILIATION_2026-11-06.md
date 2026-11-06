@@ -58,7 +58,6 @@ Eleven PRs currently report `mergeable=false`. A green workflow does not mean a 
 | #18 | `PROJECT_STATUS.md` only | Draft/open | No | No exact-head run | 4 Nov checkpoint is superseded by current main and the new 6 Nov checkpoint. |
 | #7 | Curriculum guides, maths study-plan page, worksheet, sitemap and `PROJECT_STATUS.md` | Draft/open | No | No exact-head run | Current main already contains the maths study plan, curriculum pages and international maths worksheet through later merged release PRs #9/#10. Likely superseded. |
 | #3 | Old IndexNow key, `INTERNATIONAL_SEO_ROADMAP.md`, `PROJECT_STATUS.md` | Open, not draft | No | No exact-head run | Current main already has a different deployed IndexNow verification file (`53dfa572750e069e6549b800c46f5d92.txt`) and a newer master roadmap. Do not add a second key without a deliberate rotation plan. |
-| #44 | Old source inventory | Draft/open | No | No exact-head run | Replaced by the new 30/77 recount and 47-page list. |
 
 ## 4. Full current PR-state counts
 - Open PRs: 28.
