@@ -681,3 +681,36 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — source and terminology verification record
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 41/77 current source-section count
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Financial Literacy sources added (6 November 2026)
+
+### Completed
+- Ported only the reviewed source sections from PR #16 into:
+  - `financial-literacy/budgeting.html`
+  - `financial-literacy/savings-interest.html`
+  - `financial-literacy/unit-prices.html`
+- Added a careful scope note to the savings formula: I = P × r × t is a simplified fixed-principal model; actual savings accounts may calculate interest daily or compound it according to their terms.
+- Verified CFPB budget/saving/compound-interest resources, the CFPB classroom borrowing formula PDF, FTC unit-pricing/shrinkflation advice and Consumer.gov shopping guidance.
+- Spot-checked the displayed budget, savings-goal, simple-interest and unit-price calculations.
+- Financial Literacy source coverage is now 3/3. Overall site coverage is **44/77**; **33/77** pages still need dedicated learner-facing sources.
+- Full notes in `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md`.
+
+### Current QA status
+- PR #63 remains draft/open and unmerged.
+- The last successful CI run (#42194105507) predates the current science and finance additions. Current head has no successful exact-head run.
+- A strict browser workflow-dispatch attempt could not start because the account does not have the TinyFish beta required for strict mode. The tool instructed that a default-mode retry requires user approval; no workflow was dispatched.
+- No production deployment or indexing request.
+
+### Next actions
+1. Ask whether to retry the GitHub Actions workflow dispatch in default browser mode (150-step limit); otherwise wait for a user-triggered run.
+2. Continue AI Literacy and Computer Science PRs #59–#62, using source-only and content-accuracy checks.
+3. Then resume the Grade 6 Fractions pilot and audit multiply/divide examples, worksheet answers and quiz mappings.
+
+### Project tree
+- `science/grade-7/` and `science/grade-8/` — all 13 Science lessons now have dedicated sources
+- `financial-literacy/` — all 3 Financial Literacy lessons now have dedicated sources
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — Science sources and terminology QA
+- `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md` — Financial Literacy sources and calculation checks
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 44/77 source-section count
+- `PROJECT_STATE.md` — current resume checkpoint
