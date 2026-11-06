@@ -651,3 +651,33 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` — strategy and reference-platform research
 - `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md` — fractions pilot specification
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Science source coverage complete (6 November 2026)
+
+### Completed
+- Added source sections to the remaining Science lessons through carefully scoped ports from PRs #47, #49, #50, #51, #52, #54 and existing source-only ports #45, #46, #48, #53 and #55.
+- Science source-section coverage is now **13/13**. Total site source-section coverage is **41/77**; **36/77** lessons still need a dedicated learner-facing source section.
+- Heat Transfer: clarified heat as energy transfer due to a temperature difference and thermal energy as part of internal energy; added NASA, NOAA, National Geographic Education and U.S. DOE sources.
+- Elements and Compounds: clarified mixture definition and included elements/compounds/both; added RSC and GOV.UK references.
+- Waves, Sound and Light: corrected sound-speed explanation to account for both stiffness and density; added NASA and OpenStax sources.
+- Digestive/Circulatory: clarified sequential protein digestion using proteases and peptidases; added OpenStax Anatomy and Physiology 2e §23.7.
+- Full source review and limitations recorded in `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`.
+
+### Current QA status
+- Previous exact-head CI success #42194105507 applies to earlier commit `35db05352f2d9ace692c94c0ceeb3a61861d1900`, not to this science-expanded head.
+- Recent workflow runs associated with intermediate science commits were cancelled; the current final head has no recorded successful exact-head workflow yet. Do not mark this batch green until a current-head run is confirmed.
+- Source pages were reviewed with web search/open checks; RSC pages that returned method restrictions were not treated as broken links.
+- No full fresh recalculation of every science example or quiz answer key was performed in this batch. Existing PR descriptions record earlier desk checks; independent educator review and manual browser/print/screen-reader checks remain outstanding.
+
+### Next actions
+1. Obtain and complete a fresh exact-head CI run for the current preview branch.
+2. Update PR #63 body and status docs with the full science scope; keep it draft and unmerged.
+3. Continue with Financial Literacy PR #16, then AI Literacy/Computer Science PRs #59–#62, before returning to the Grade 6 Fractions pilot's outstanding multiply/divide worked-example and worksheet audit.
+
+### Project tree
+- `science/grade-7/` — all Science Grade 7 lessons now have dedicated source sections
+- `science/grade-8/` — all Science Grade 8 lessons now have dedicated source sections
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — source and terminology verification record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 41/77 current source-section count
+- `PROJECT_STATE.md` — current resume checkpoint
