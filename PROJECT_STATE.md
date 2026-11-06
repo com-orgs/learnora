@@ -566,3 +566,15 @@ The current PR reconciliation contains one PR #27 entry. Documentation-only chan
 - Previous full checkpoint commit: `c96da38eba9dbb40d2342c0e85f56fec3e0b7d40`.
 - Final reconciliation report path: `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md`.
 - No PR state changed. No production files changed. No merge/deployment occurred.
+
+
+## Checkpoint update — fractions pilot specification (6 November 2026)
+
+- Inspected the six Grade 6 fractions lesson pages and their linked scripts on current main.
+- The 5 Nov fractions QA batch covered five lessons and 25/25 quiz mappings; it did not include the Multiplying/Dividing Fractions lesson in that specific batch. The broader Grade 6 Phase 2 QA still covers all 23 Grade 6 pages and 115 quiz mappings. The multiplication/division lesson needs a focused worked-example/practice/worksheet answer review before release.
+- Confirmed the Understanding Fractions quiz uses a fixed five-question set; retake resets the same questions rather than drawing fresh questions from a bank.
+- Added `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md` with course/unit/skill architecture, shared fraction visualizer, exact-arithmetic requirements, accessible modes, question-bank/retake model, worksheet answer-key workflow, internal linking, implementation phases and acceptance tests.
+- This is a design document only. No lesson HTML, quiz script, tool code, production branch, PR state or deployment was changed.
+
+### Next action
+Reconcile and port useful open content/CI patches onto the current preview branch in controlled subject batches, then implement the fractions pilot against the specification. Keep production unchanged.
