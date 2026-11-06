@@ -319,3 +319,111 @@ This is an internal editorial tool, not a Google ranking score or external certi
 - No logo has been selected or replaced.
 - Existing draft PRs remain separate and unmerged.
 - The Algorithms mobile-overflow fix CI run #42146364198 completed successfully; PR #62 remains draft/open.
+
+
+## 14. Built-in learning tools — keep learners inside Learnora
+
+Product principle: when a student needs a calculator, graph, code runner, writing aid or subject-specific interactive tool to complete the lesson or explore a related problem, provide a relevant Learnora tool in the same learning flow wherever it is safe, feasible and useful. Tools must support learning rather than distract from it. Do not add a generic tool directory full of thin pages; integrate tools contextually into lessons, practice and subject hubs.
+
+### Tool families and subject mapping
+
+#### Mathematics
+- Scientific calculator with clear order-of-operations display and accessible keyboard input.
+- Fraction calculator: simplify, compare, add, subtract, multiply and divide fractions; show every step and visual fraction models.
+- Percentage, ratio, proportion and decimal tools with explanation of the method, not just the answer.
+- Algebra solver for supported equation types with step-by-step transformations and a clear scope/limitations notice.
+- Graph plotter for linear and simple quadratic functions, tables of values, intercepts and slope exploration.
+- Geometry tools: angle explorer, perimeter/area/volume calculators, coordinate plane and shape visualizer.
+- Statistics tools: mean/median/mode/range, simple charts and probability experiments.
+- Unit converter for length, mass, time, area, volume and temperature, with unit labels and conversion steps.
+- Arithmetic/number-line and fraction-bar manipulatives for younger learners.
+
+#### Science
+- Periodic table with element facts and filters.
+- Unit and scientific-notation converter; significant-figures helper.
+- Formula rearrangement and graph/data plotting helpers, with worked steps and clearly stated formula assumptions.
+- Interactive simulations for forces, circuits, waves, cells, states of matter and simple chemical models where scientifically valid.
+- Lab-data table and graph builder for recording observations; never present a simulated result as a real experiment.
+- Safety-first virtual lab activities where physical experiments are inappropriate.
+
+#### English and literacy
+- Grammar checker focused on teaching: identify a grammar concept, explain the rule and show a suggested correction; avoid silently rewriting student work.
+- Sentence diagramming and parts-of-speech highlighter.
+- Vocabulary builder, spelling practice, flashcards and spaced-revision lists.
+- Reading-comprehension annotation workspace and evidence-from-text practice.
+- Writing planner/outliner, paragraph structure coach and citation-format guide.
+- Word counter and readability indicators, with cautions that readability scores are estimates, not grades.
+
+#### Computer Science and programming
+- In-browser code playground for HTML/CSS/JavaScript and selected beginner Python exercises if a safe local/runtime solution is available.
+- Algorithm visualizer: step-through flowcharts, pseudocode traces, sorting and searching demonstrations.
+- Binary/decimal/hexadecimal converter, logic-gate simulator and truth-table builder.
+- HTML/CSS live preview and responsive layout sandbox.
+- Debugging practice with intentionally flawed sample code and guided hints.
+- Run code in a sandboxed environment only; never execute arbitrary student code on the production server or expose secrets, filesystem or network access.
+
+#### AI Literacy
+- Prompt-building practice sandbox using fixed, curated examples; clearly label when responses are simulated or generated.
+- Source-verification checklist and claim/evidence comparison workspace.
+- Bias and hallucination spotting activities using authored sample outputs.
+- Privacy-safe scenario simulator; do not ask learners to enter personal or sensitive data.
+- AI tool comparisons must be transparent about date, limitations and whether an external service is involved. No paid API by default.
+
+#### Financial Literacy
+- Budget planner with fictional/sample data and downloadable local worksheet.
+- Savings-goal and compound-interest calculator with assumptions and clear explanation.
+- Discount, tax, unit-price and simple/compound interest calculators.
+- Needs-versus-wants decision activity and scenario-based financial practice.
+- Tools are educational only, not personal financial advice; no bank connection or collection of financial account details.
+
+#### Cross-subject study tools
+- Flashcards with spaced practice and local progress.
+- Notes workspace that stays in the browser unless the learner explicitly exports.
+- Printable worksheet generator from curated question banks, with a separate answer key.
+- Timed practice mode and optional focus timer.
+- Search across Learnora lessons, definitions, worked examples and tools.
+- Personal learning dashboard showing completed skills, recent practice and suggested next steps, with local-only progress initially.
+
+### How tools appear in the learning journey
+- Put a contextual tool link or embedded mini-tool next to the relevant concept (e.g. fraction model inside a fractions lesson), not an unrelated banner.
+- Every tool should include a short purpose, instructions, one worked example, accessible controls, reset/clear action and a link back to the lesson.
+- Where appropriate, add a "Try it yourself" activity and then a short reflection/check question so the tool teaches rather than merely computes.
+- Allow learners to move from lesson → tool → practice → quiz without losing their place.
+- Tools should work on mobile, keyboard and screen readers; provide a non-interactive explanation or table when an interactive visual cannot be accessed.
+- Tool results must be reproducible and explain assumptions, units, rounding and supported input ranges.
+
+### Tool quality, privacy and safety requirements
+- Prefer client-side HTML/CSS/JavaScript tools that run locally and do not transmit learner inputs.
+- Do not collect names, email addresses, school details, personal writing, financial details or other sensitive information to use a tool.
+- No third-party tracking or external AI API calls in a learning tool by default.
+- For code execution, use a properly isolated sandbox with strict CPU/time/memory limits and no secrets or unrestricted network; if this cannot be guaranteed on the free stack, begin with safe trace/visualization exercises rather than a live code runner.
+- For grammar or AI helpers, clearly disclose whether processing is local, simulated or sent to an external service. Never imply a local tool uses AI if it does not.
+- Show calculation steps and allow learners to inspect the method. Avoid black-box answer-only tools.
+- Add automated tests for known input/output cases, boundary values, invalid input, keyboard interaction, mobile overflow and screen-reader announcements.
+- Tools that provide only final answers should be separated from mastery assessments; teacher/learner settings can disable calculators during tests where mental calculation is the objective.
+- Provide clear educational-use disclaimers for financial, health-adjacent, legal or other sensitive topics; do not expand into professional advice.
+- Do not embed external websites in a way that exposes learners to unrelated ads, tracking or unsafe content. Prefer native Learnora tools.
+
+### Prioritization under a free/no-budget constraint
+
+Build in this order, based on broad usefulness and feasibility:
+1. Calculator, fraction visualizer/calculator, percentage/ratio helper and unit converter.
+2. Graph plotter, geometry explorer, statistics calculator and flashcards.
+3. Worksheet/practice generator and local progress dashboard.
+4. Algorithm/flowchart visualizer, binary converter and browser-based HTML/CSS/JS playground.
+5. Periodic table, science graph/data tools and carefully scoped simulations.
+6. Grammar/writing learning aids and financial literacy calculators.
+7. Any AI-powered or server-executed features only after privacy, safety, cost and operational review.
+
+This is a priority proposal, not a promise that every tool will be built at once. Start with tools that directly support the pilot course and reuse shared components.
+
+### Tool acceptance checklist
+A tool is ready only when:
+- Its educational purpose and linked skills are documented.
+- It produces correct, independently checked results for test cases.
+- It explains the method and limitations.
+- It has no hidden paid dependency and no unapproved external service.
+- It works at 320px and larger, supports keyboard and accessible labels.
+- It does not transmit or retain learner inputs unexpectedly.
+- It links back into the relevant Learnora learning path.
+- Its code, privacy behaviour and performance pass review.
