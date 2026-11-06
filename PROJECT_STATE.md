@@ -526,3 +526,16 @@ learnora/
 - Exact page-by-page source backlog is recorded in the new recount report. Do not bulk-add generic citations; verify each source against the claim.
 - PRs #59–#62 are not included in current coverage because they remain draft/unmerged. Their preview changes would conditionally add four source sections if later merged.
 - No production files were changed; documentation only on `preview-learnora-redesign-inventory-2026-11-06`.
+
+
+## Checkpoint update — all open PRs reconciled (6 November 2026)
+
+- Queried all open pull requests: **28 open** (23 draft, 5 not draft). This is broader than the previous handover's #59–#62-only list.
+- Checked exact head SHA, changed files, draft/open state, mergeability and exact-head workflow result for all 28.
+- Exact-head CI: 18 success, 2 failed at Cloudflare preview-URL resolution (#40 and #50), 8 with no workflow run found for the exact current head.
+- Eleven PRs report `mergeable=false`; green CI does not equal mergeable or approval.
+- Useful pending content work: #40–#43 Grade 6 Maths; #45–#55 Science; #16 Financial Literacy; #59–#62 AI Literacy/Computer Science. PRs #45–#55 cover all 11 current Science source gaps; #16 covers all three Financial Literacy source gaps.
+- CI candidate: #56 adds exact-commit Cloudflare check-run fallback, but is not mergeable against current main. #59–#61 also touch the same workflow file with a smaller branch-name fix; consolidate rather than merge overlapping edits separately.
+- Likely stale/superseded candidates: #3 (main has a different deployed IndexNow key and newer roadmap), #6 (old QA workflow), #7 (study plan/curriculum/workbook already on main through later releases), #18 (old checkpoint), #27 (the same three sources already exist in the current fractions lesson), and #44 (old 19/77 source count superseded by 30/77 recount). PR #2's production sitemap smoke-test script is a candidate for a fresh-base port, not a direct merge.
+- Added `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md` with all 28 PRs, changed files, head branches, CI state and safe consolidation plan.
+- No PR was merged or closed. Production remains unchanged.
