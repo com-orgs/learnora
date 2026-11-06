@@ -586,3 +586,34 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - Exactly six paths differ from `main`: `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md`, `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`, `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md`, `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md`, `PHASE14_SOURCE_ATTRIBUTION_RECOUNT_2026-11-06.md`, and `PROJECT_STATE.md`.
 - All changes are documentation. No lesson, script, sitemap, workflow, asset, production branch or deployment configuration changed.
 - Previous project-state commit before this entry: `5e11651ba65ef7363f911fd32a287769fda385a3`.
+
+
+## Checkpoint update — Grade 6 Maths batch and preview PR #63 (6 November 2026)
+
+### Completed on the working branch
+- Ported only scoped, reviewed changes from the original Maths PRs; deliberately did not copy unrelated metadata/table-layout changes present on some PR branches.
+- `math/grade-6/algebraic-expressions.html`: clarified that like terms have the same variable part and powers, and that constants are like terms; replaced old source block with two relevant OpenStax Prealgebra 2e sections.
+- `math/grade-6/integers-number-line.html`: replaced generic GeoGebra links with OpenStax Prealgebra 2e §3.1 reference for number lines, ordering, opposites and absolute value.
+- `math/grade-6/order-of-operations.html`: clarified that multiplication/division share priority and addition/subtraction share priority; made clear that this introductory lesson postpones exponents; added OpenStax §2.1 reference.
+- `math/grade-6/understanding-percentages.html`: added OpenStax Prealgebra 2e §6.2 application-of-percent reference.
+- Verified the new OpenStax references against the publisher's live pages: §2.1 order of operations, §2.2 like terms and algebraic expressions, §3.1 integers, and §6.2 percent applications.
+- Ported CI preview resolver fix into `.github/workflows/site-audit.yml`: use pull-request head branch/SHA, grant `checks: read`, and fall back to the exact commit's successful Cloudflare Pages check run instead of guessing a branch hostname.
+
+### Preview and verification
+- Created draft PR **#63**: https://github.com/com-orgs/learnora/pull/63
+- Latest PR head before this checkpoint: `8e0c88a4d1f46e52ee395772c8ee8c3f84034185`.
+- PR #63 is draft/open and GitHub reports it mergeable; no merge or production deployment was performed.
+- CI run #42193457427 passed on the prior content/workflow head; after updating the PR reconciliation document, run #42193787095 also passed on the then-current head.
+- Both successful runs included: static audit (104 HTML pages, 68 curriculum lesson files, 68 sitemap lesson URLs, 77 accessible quiz forms and 77 answer-key mappings), legal/pre-monetisation audit, exact-SHA Cloudflare preview resolution, security headers/CSP/assets/custom 404, and Playwright checks across 104 pages at 320/390/768/desktop widths, 77 quiz submissions, 77 retakes, 79 worksheet print actions, performance budgets and no third-party browser requests.
+- Updated `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md` to include PR #63 and refresh the open/draft/CI counts: 29 open, 24 draft, 5 non-draft; exact-head workflow summary 19 success, 2 preview-resolution failures, 8 with no exact-head run found (the original 28 PRs plus new #63).
+- Working branch comparison before this checkpoint: 20 commits ahead of `main`, 0 behind; 11 changed paths (four Grade 6 Maths lessons, site-audit workflow, five audit/specification documents and `PROJECT_STATE.md`).
+
+### Safety / current state
+- Production `main` remains unchanged. No PR has been merged or closed. No production deployment or AdSense/analytics activation occurred.
+- PR #63 remains a draft for review and preview QA only. Do not merge or deploy without explicit user approval.
+
+### Next actions
+1. Re-run/confirm CI for the latest checkpoint commit after this state update.
+2. Continue science content PR review in small batches. Start with source-only changes (#45, #46, #48, #53, #55); give deeper factual edits (#47, #49–#52, #54) separate scientific/answer-key review before porting.
+3. After science, review Financial Literacy PR #16 and then AI Literacy/Computer Science PRs #59–#62.
+4. Resume Fractions pilot implementation from `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`; first audit Multiplying/Dividing Fractions worked examples and worksheet answers.
