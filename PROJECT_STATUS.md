@@ -4,6 +4,30 @@
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
 
+## Current verified state — 6 November 2026 (daily indexing & discovery refresh)
+
+- Production code remains at Phase 2 release commit `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`; Cloudflare production deployment run [#42049423565](https://github.com/com-orgs/learnora/actions/runs/42049423565) succeeded. Main HEAD before today's log commit was `7b4ab3206f8bbfbfb955ad824e6bf9714074432c); comparison from production commit showed only documentation/QA files after release, with no production HTML/JS/CSS changes.
+- Live sitemap: 104 unique same-host URLs, no duplicates. robots.txt allows all user agents, explicitly allows OAI-SearchBot, and declares the sitemap.
+- GSC tracker: 104 URLs, 1 indexed, 103 not indexed / URL unknown to Google, 0 pending/errors/warnings; tracker active. Latest lastCheckAt `2026-11-06T03:46:07.051Z` (08:46:07 PKT).
+- **6 Nov Pakistan-date daily guard:** 39 distinct URLs already have tracker lastCheckAt today; URL Inspection history has 0 rows today; union=39/10, overrun=29, remaining=0. No `inspect_url`, `bulk_inspect_urls` or `check_tracked_url_now` call was made. The 39 exact URLs and timestamps are in [DAILY_INDEXING_LOG_2026-11-06.md](DAILY_INDEXING_LOG_2026-11-06.md).
+- Full URL Inspection history: 77 rows, 42 distinct URLs, 19 URL keys repeated (35 extra historical rows); no 6 Nov rows. Platform quota is 18/2,000 used (1,982 remaining), but the stricter project cap controls.
+- GSC sitemap last submitted `2026-11-05T16:21:51.927Z`; still pending, 0 warnings/errors. Settled performance through 3 Nov: 0 clicks, 2 impressions, CTR 0%, reported average position 39; later data is incomplete.
+- Hourly tracker background checks have already exceeded the cap. Connected GSC Wizard tools expose no pause/throttle action; owner must pause/reduce the hourly tracker in its UI. Do not run further GSC checks while the union is at/above 10.
+- GSC URL Inspection API is status-only and does not submit manual Request Indexing. Browser context was unavailable; TinyFish strict UI automation could not start because strict mode is beta-only. No Request Indexing control was verified and no manual request was submitted in this run. Existing project state records 10 previous manual attempts across 9 unique URLs (Fractions submitted twice); the API does not expose the exact per-URL manual history. Owner must skip any candidate already manually requested; candidate list is recorded in the daily log.
+- Bing property is listed in the connected Bing sites; feed Success, 104 URLs, submitted/last crawled 3 Nov; crawl issues 0. Crawl statistics have no dated rows/latest date, so crawling volume is unavailable, not zero. Quota: 100/day, 2,500/month. No direct Bing URL Submission action exists in the connected tools.
+- IndexNow key is set (masked `****5d92`) and key file verified. Full history: 447 rows, 104 unique URLs, 373 HTTP 200 and 74 HTTP 202; 343 repeat rows. Live sitemap and history match exactly (104/104; 0 new; 0 historical-only). All 104 URLs were skipped today; no eligible new/materially changed production URLs and **0 submissions**. The latest relevant batches on 5 Nov were 25, 77 and 7 rows, all HTTP 200; the two older last-notified CS pages were not changed by the later production release. Acceptance is not proof of indexing.
+- Fresh on-page audit of 25 representative URLs: 25/25 indexable, 0 critical/high/medium and 10 low notes (six long titles, one long description, three missing optional structured-data notes). No confirmed robots/canonical/noindex blocker in the sample. Eight live hub pages fetched with self-canonical and `index,follow`; their internal links were present. A full 104-page inbound-link graph was not completed because TinyFish returned its 150-URLs/min rate limit. Exact URLs, low findings and evidence are in the daily log.
+- PRs #59–#62 remain draft/unmerged. PR #62's mobile-overflow fix run [#42146364198](https://github.com/com-orgs/learnora/actions/runs/42146364198) has now completed successfully. No PR was merged or production content edited in this run.
+- Full evidence and exact URL inventories: [DAILY_INDEXING_LOG_2026-11-06.md](DAILY_INDEXING_LOG_2026-11-06.md).
+
+### Next actions — 6 November
+1. [ ] Owner: pause/reduce GSC Wizard hourly background tracker checks in the UI. Until this is done, do not make further daily inspections; the connector has no pause/throttle action.
+2. [ ] Review the manual Request Indexing candidates in the daily log against the owner's actual Search Console request history; skip any URL already requested. Do not treat URL Inspection API rows as manual requests.
+3. [ ] Wait for Google sitemap processing; keep the sitemap pending/0-warning state under observation. Do not repeat IndexNow for unchanged URLs.
+4. [ ] Complete the full 104-page internal-link graph when fetch rate limits allow; the current fresh audit is a 25-page sample.
+5. [ ] Review low title/description/structured-data notes in preview branches only; do not mass-edit production metadata.
+6. [ ] Continue Phase 14 content QA for Computer Science Python Basics, HTML/CSS and Financial Literacy. Keep PRs #59–#62 unmerged until combined review/release gates pass.
+
 ## Current verified state — 5 November 2026 (post-PR #39 production release)
 
 - Production: https://learnora-ab2.pages.dev/
