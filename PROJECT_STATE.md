@@ -942,3 +942,30 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — Maths source record
 - `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md` — final Maths/Computer Science source record
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Fractions multiplication/division calculation QA (6 November 2026)
+
+### Completed
+- Audited `math/grade-6/multiplying-dividing-fractions.html` and its quiz script.
+- Recalculated 10/10 worked examples, 8/8 practice answers and 8/8 worksheet answers; all are correct.
+- Checked all five visible quiz choices against the JavaScript answer keys; 5/5 mappings match.
+- Verified the OpenStax Prealgebra 2e §4.2 reference is directly relevant to multiplication, simplification, reciprocals and division.
+- Recorded scope, calculations, script behavior and limitations in `PHASE22_FRACTIONS_MULTIPLY_DIVIDE_QA_2026-11-06.md`.
+- No lesson HTML or quiz JavaScript was changed.
+
+### Findings / pending decisions
+- Retake resets the same five fixed questions; unseen-question selection requires the future question-bank feature specified in the Fractions Pilot.
+- Lesson metadata says Grades 6–7 while its canonical route and breadcrumb hierarchy place it under Grade 6. Confirm intended grade label before changing metadata.
+- Manual keyboard/screen-reader and print/PDF checks remain outstanding.
+
+### CI / release
+- PR #63 remains draft/open and unmerged.
+- The inventory and checkpoint documentation updates are on the preview branch only; check the latest head's workflow before claiming green.
+- No production merge, deployment or indexing request.
+
+### Project tree
+- `math/grade-6/multiplying-dividing-fractions.html` — audited; no changes
+- `scripts/pages/math-grade-6-multiplying-dividing-fractions.js` — answer mapping/retake behavior audited; no changes
+- `PHASE22_FRACTIONS_MULTIPLY_DIVIDE_QA_2026-11-06.md` — detailed calculation QA
+- `PROJECT_STATE.md` — resume checkpoint
