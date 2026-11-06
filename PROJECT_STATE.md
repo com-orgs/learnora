@@ -714,3 +714,41 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md` — Financial Literacy sources and calculation checks
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 44/77 source-section count
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — AI Literacy and Computer Science QA (6 November 2026)
+
+### Completed
+- Ported the reviewed lesson-page updates from PRs #59–#62:
+  - `ai-literacy/ai-safety.html`
+  - `ai-literacy/how-ai-works.html`
+  - `ai-literacy/verify-ai.html`
+  - `computer-science/algorithms.html`
+- Excluded unrelated workflow edits from PRs #59–#61.
+- Verified one H1 and five quiz questions on each page; canonical and Open Graph URLs match; shared quiz script references are unchanged; all five answer-key texts match visible options; external new-tab links use `noopener noreferrer`.
+- Improved source-level accuracy labels: Microsoft Learn is marked intermediate/advanced; Purdue OWL is labelled university-level extension; BBC Bitesize links are labelled GCSE-level extension; Teach Computing is labelled a teacher subject-knowledge course.
+- AI Literacy source coverage is now 3/3; Computer Science is 1/3. Total site coverage is **48/77**; **29/77** pages remain without dedicated sources.
+- Full review and limitations recorded in `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md`.
+
+### Current QA status
+- PR #63 remains draft/open and unmerged.
+- Latest successful CI still belongs to the older Grade 6 Maths-only head (#42194105507); the current science/finance/AI/CS head has no successful exact-head workflow.
+- A browser-based workflow dispatch could not be started in strict mode because this account lacks the required beta. The tool asked for approval before trying default browser mode; no workflow was dispatched.
+- GitHub's latest PR response reported `mergeable: false`; do not attempt a merge. Recheck the mergeability state after the final head and workflow are refreshed.
+- No production deployment or indexing request.
+
+### Next actions
+1. Obtain approval to retry workflow dispatch in default browser mode, or have a user-triggered exact-head workflow run.
+2. Continue the remaining Grade 7/8 Maths and English source sections; these are the largest remaining gaps.
+3. Return to the Fractions pilot and complete multiply/divide worked-example, worksheet and quiz-answer audit.
+
+### Project tree
+- `science/grade-7/` and `science/grade-8/` — all 13 Science lessons sourced
+- `financial-literacy/` — all 3 Financial Literacy lessons sourced
+- `ai-literacy/` — all 3 AI Literacy lessons sourced
+- `computer-science/algorithms.html` — updated with source section and responsive pseudocode layout
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`
+- `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md`
+- `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md`
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 48/77 source-section count
+- `PROJECT_STATE.md` — current resume checkpoint
