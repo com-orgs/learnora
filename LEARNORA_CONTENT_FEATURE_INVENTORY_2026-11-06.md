@@ -21,18 +21,18 @@ This inventory is based on the current `main` repository, the live production si
 | Subject / level | Lessons | Dedicated Sources / Further Reading sections | Current structural coverage |
 |---|---:|---:|---:|
 | Mathematics — Grade 6 | 23 | 23 | 23/23 |
-| Mathematics — Grade 7 | 12 | 0 | 0/12 |
+| Mathematics — Grade 7 | 12 | 4 | 4/12 |
 | Mathematics — Grade 8 | 11 | 3 | 3/11 |
 | English — Grades 6–8 | 9 | 2 | 2/9 |
 | Science — Grades 7–8 | 13 | 13 | 13/13 |
 | Computer Science — Grades 6–8 | 3 | 1 | 1/3 |
 | AI Literacy — Grades 6–8 | 3 | 3 | 3/3 |
 | Financial Literacy — Grades 6–8 | 3 | 3 | 3/3 |
-| **Total** | **77** | **48** | **48/77** |
+| **Total** | **77** | **52** | **52/77** |
 
-**29 lessons remain without a dedicated learner-facing source section:** Grade 7 Maths (12), Grade 8 Maths (8), English (7), Science (0), Computer Science (3), AI Literacy (3) and Financial Literacy (3).
+**25 lessons remain without a dedicated learner-facing source section:** Grade 7 Maths (8), Grade 8 Maths (8), English (7), Science (0), Computer Science (2), AI Literacy (0) and Financial Literacy (0).
 
-The 3 November source inventory recorded 7/77. That count is now stale: the subsequent Grade 6 Maths Phase 2 work added/reviewed source sections across all 23 Grade 6 lessons. The 30/77 figure above is a fresh repository recount, not a quality or ranking score. A source heading alone does not prove that every claim is supported; every link must still be checked for relevance and currency.
+The 3 November source inventory recorded 7/77. That count is now stale: the subsequent Grade 6 Maths Phase 2 work added/reviewed source sections across all 23 Grade 6 lessons. The 52/77 figure above is a structural coverage count, not a quality or ranking score. A source heading alone does not prove that every claim is supported; every link must still be checked for relevance and currency.
 
 **6 November science batch update:** Source sections from preview PRs #45, #46, #48, #49, #50, #52, #53 and #55 have been ported to the current preview branch. Science coverage is now 13/13 and the overall structural count is 41/77.
 
@@ -183,3 +183,5 @@ All 104 URLs map to repository files. This is a repository/sitemap consistency c
 **6 November financial-literacy update:** The three Financial Literacy lesson pages now include public, age-appropriate consumer-education references. Savings-interest wording explicitly limits I = P × r × t to a simplified fixed-principal model and distinguishes the CFPB borrowing activity from real savings-account terms. Coverage is now 44/77 overall; 33 lessons remain without dedicated source sections. See `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md`.
 
 **6 November AI Literacy / Computer Science update:** All three AI Literacy lessons now have dedicated sources; the Algorithms and Flowcharts lesson is also sourced. The AI and CS page QA included canonical/OG, shared quiz mapping and external-link safety checks. Coverage is now 48/77 overall, with 29 lessons remaining. See `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md` for source suitability notes, including advanced/teacher-level references.
+
+**6 November Grade 7 Maths update:** Added source sections to Adding/Subtracting Integers, Ratios/Rates/Proportional Relationships, Fractions/Decimals/Percentages in Problem Solving and Two-Step Equations. Grade 7 Maths is now 4/12; total source-section coverage is 52/77. The source-only scope and exact links are recorded in `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md`.
