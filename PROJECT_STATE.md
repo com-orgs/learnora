@@ -517,3 +517,12 @@ learnora/
 ├── PROJECT_STATE.md
 └── [existing production source, lessons, scripts, assets, tests and workflows]
 ```
+
+
+## Checkpoint update — source attribution recount (6 November 2026)
+
+- Added `PHASE14_SOURCE_ATTRIBUTION_RECOUNT_2026-11-06.md` after rechecking all 77 lesson files.
+- Current source-section count: 30/77; missing backlog: 47. This supersedes the historical 3 Nov snapshot of 7/77 because all 23 Grade 6 Maths pages gained source sections during the later Phase 2 QA work.
+- Exact page-by-page source backlog is recorded in the new recount report. Do not bulk-add generic citations; verify each source against the claim.
+- PRs #59–#62 are not included in current coverage because they remain draft/unmerged. Their preview changes would conditionally add four source sections if later merged.
+- No production files were changed; documentation only on `preview-learnora-redesign-inventory-2026-11-06`.
