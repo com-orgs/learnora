@@ -24,17 +24,19 @@ This inventory is based on the current `main` repository, the live production si
 | Mathematics — Grade 7 | 12 | 0 | 0/12 |
 | Mathematics — Grade 8 | 11 | 3 | 3/11 |
 | English — Grades 6–8 | 9 | 2 | 2/9 |
-| Science — Grades 7–8 | 13 | 10 | 10/13 |
+| Science — Grades 7–8 | 13 | 13 | 13/13 |
 | Computer Science — Grades 6–8 | 3 | 0 | 0/3 |
 | AI Literacy — Grades 6–8 | 3 | 0 | 0/3 |
 | Financial Literacy — Grades 6–8 | 3 | 0 | 0/3 |
-| **Total** | **77** | **38** | **38/77** |
+| **Total** | **77** | **41** | **41/77** |
 
-**39 lessons remain without a dedicated learner-facing source section:** Grade 7 Maths (12), Grade 8 Maths (8), English (7), Science (3), Computer Science (3), AI Literacy (3) and Financial Literacy (3).
+**36 lessons remain without a dedicated learner-facing source section:** Grade 7 Maths (12), Grade 8 Maths (8), English (7), Science (0), Computer Science (3), AI Literacy (3) and Financial Literacy (3).
 
 The 3 November source inventory recorded 7/77. That count is now stale: the subsequent Grade 6 Maths Phase 2 work added/reviewed source sections across all 23 Grade 6 lessons. The 30/77 figure above is a fresh repository recount, not a quality or ranking score. A source heading alone does not prove that every claim is supported; every link must still be checked for relevance and currency.
 
-**6 November science batch update:** Source sections from preview PRs #45, #46, #48, #49, #50, #52, #53 and #55 have been ported to the current preview branch. Science coverage is now 10/13 and the overall structural count is 38/77. These are source-heading counts, not a claim that every factual statement has been independently fact-checked. The scoped source verification is recorded in `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`.
+**6 November science batch update:** Source sections from preview PRs #45, #46, #48, #49, #50, #52, #53 and #55 have been ported to the current preview branch. Science coverage is now 13/13 and the overall structural count is 41/77.
+
+**Second science QA update:** The remaining source gaps were filled on the preview branch through PR-derived, individually reviewed changes for Heat Transfer (#47), Elements and Compounds (#51), and Waves, Sound and Light (#54). These included terminology corrections for heat versus thermal energy, the definition of mixtures, and sound speed. The Digestive/Circulatory lesson (#52) also received a clearer protein-digestion sequence supported by OpenStax. Science now has dedicated source sections on all 13/13 lessons; overall coverage is 41/77, with 36 lesson pages still lacking a dedicated source section. These are source-heading counts, not a claim that every factual statement has been independently fact-checked. The scoped source verification is recorded in `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md`.
 
 ## 4. Existing QA evidence — do not repeat unnecessarily
 - **Grade 6 Maths:** all 23 lesson pages received a focused source-level content and answer-key review. All 115 quiz mappings were checked against visible options; all 23 pages have five quiz fieldsets, a source/further-learning section and a Continue Learning section. Worksheet answer keys and worked calculations were reviewed in the recorded Phase 2/Phase 14 work. This is not independent educator peer review.
