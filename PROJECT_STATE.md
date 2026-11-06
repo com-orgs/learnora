@@ -856,3 +856,54 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — source verification record
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — current count 70/77
 - `PROJECT_STATE.md` — current resume checkpoint
+
+
+## Checkpoint update — Final source coverage complete, 77/77 (6 November 2026)
+
+### Completed
+- Added sources to the final five Grade 8 Maths pages across the Phase 20/21 batches:
+  - Scatter Plots and Data Relationships
+  - Square Roots and Irrational Numbers
+  - Systems of Linear Equations
+  - Transformations, Congruence and Similarity
+  - Volume of Cylinders, Cones and Spheres
+- Added official documentation sources to the final two Computer Science pages:
+  - HTML and CSS: How Web Pages Work — MDN HTML, CSS and accessibility resources.
+  - Python Variables, Input and Output — official Python tutorial, input/output chapter, built-in functions and built-in types references.
+- Updated `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` and created `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md`.
+- Structural source coverage is now **77/77** across all eight subject/level groups:
+  - Grade 6 Maths 23/23
+  - Grade 7 Maths 12/12
+  - Grade 8 Maths 11/11
+  - English 9/9
+  - Science 13/13
+  - Financial Literacy 3/3
+  - AI Literacy 3/3
+  - Computer Science 3/3
+
+### Verification and limits
+- Opened OpenStax Prealgebra 2e §9.6 and confirmed its text covers cylinder, cone and sphere volume formulas.
+- Opened MDN HTML/CSS introductory references and Python official tutorial/input-output/built-in references.
+- Some Khan Academy and MDN pages returned no readable lines/cache misses; their relevance was checked from search results and they are documented as supplementary references.
+- 77/77 is a source-section presence count, not proof every claim, example, quiz answer or worksheet calculation has been independently checked. Independent educator review, manual screen-reader testing and real print/PDF preview remain separate gates.
+- No source wording, images, diagrams, code or question banks were copied from external sites.
+
+### CI and release status
+- PR #63 remains draft/open and unmerged.
+- The exact-head workflow from Phase 20 is no longer sufficient because newer lesson and documentation commits were added. Check the exact latest PR head's workflow before claiming green.
+- No merge to `main`, production deployment or GSC indexing request.
+
+### Next actions
+1. Check the exact latest PR #63 head and wait for its full CI workflow to finish.
+2. Perform a source-link availability/relevance pass across all 77 source sections and separately plan claim-level QA, especially worked examples, quiz answer keys and worksheet answers.
+3. Resume the Fractions pilot using `LEARNORA_FRACTIONS_PILOT_SPEC_2026-11-06.md`; verify multiplication/division examples and all corresponding worksheet/quiz answers.
+4. During the later redesign phase, continue using Khan Academy, BBC Bitesize, CK-12 and OpenStax as design/learning-architecture benchmarks only. Use external sites for research, not copying.
+
+### Project tree
+- `math/grade-8/` — all 11 lessons now have source sections
+- `computer-science/html-css.html` — MDN source section
+- `computer-science/python-basics.html` — official Python source section
+- `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — Maths source verification
+- `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md` — final Maths/CS source verification
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — updated 77/77 source coverage
+- `PROJECT_STATE.md` — current resume checkpoint
