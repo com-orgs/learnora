@@ -539,3 +539,21 @@ learnora/
 - Likely stale/superseded candidates: #3 (main has a different deployed IndexNow key and newer roadmap), #6 (old QA workflow), #7 (study plan/curriculum/workbook already on main through later releases), #18 (old checkpoint), #27 (the same three sources already exist in the current fractions lesson), and #44 (old 19/77 source count superseded by 30/77 recount). PR #2's production sitemap smoke-test script is a candidate for a fresh-base port, not a direct merge.
 - Added `LEARNORA_OPEN_PR_RECONCILIATION_2026-11-06.md` with all 28 PRs, changed files, head branches, CI state and safe consolidation plan.
 - No PR was merged or closed. Production remains unchanged.
+
+
+## Documentation commit ledger — 6 November 2026
+
+Working branch: `preview-learnora-redesign-inventory-2026-11-06` (created from main head `eb30ff69498c122d3670e15475430f4673265846`; 0 commits behind main at creation).
+
+| Change | Commit |
+|---|---|
+| Carry forward platform redesign blueprint | `c37f2324ce6b3b15e2fa82c237280fffdbb15a88` |
+| Add 77-page content and feature inventory | `1f535d2a1ba4daf71fb474c4a46215bfa20a8fa9` |
+| Initial repository/content checkpoint | `b195b94e00452540d1212d8eec725526d4ee8052` |
+| Add 30/77 source attribution recount | `2c4fb041850282f492180b5b54f6eccee66701d7` |
+| Checkpoint source attribution recount | `484b4dfc9c70f9b101a49825d592311f1fd86689` |
+| Add all-28-open-PR reconciliation | `3ec493372f0a19a519f8ac8680d3c850d18b9841` |
+| Checkpoint PR reconciliation | `ced256921002ba90baed72804d7e88524ed8059d` |
+| Remove repeated PR #27 row from reconciliation | `f60f466f7c0f5d06f240728107cdb4a65c162497` |
+
+The current PR reconciliation contains one PR #27 entry. Documentation-only changes have been made on the preview branch; no website source, production branch, open PR state or deployment was changed.
