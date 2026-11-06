@@ -476,3 +476,44 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Checkpoint update — repository and content inventory (6 November 2026)
+
+### Completed
+- Verified current production sitemap: 104 unique URLs, zero duplicates; every URL maps to a file in current `main`.
+- Enumerated 216 repository files, 105 HTML files and 77 lesson pages across six subject groups.
+- Re-fetched all 77 lesson HTML files from `main` and mapped each to a relevant proposed built-in learning tool. The complete page-by-page map is in `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md`.
+- Recounted dedicated Sources/Further Reading sections: 30/77 (Maths Grade 6 23/23; Maths Grade 7 0/12; Maths Grade 8 3/11; English 2/9; Science 2/13; Computer Science 0/3; AI Literacy 0/3; Financial Literacy 0/3). The 3 Nov count of 7/77 is stale after Grade 6 Phase 2 work; 47 pages remain in the source-section backlog.
+- Verified latest PR #62 workflow run #42146364198: static audit 104 HTML pages, 0 warnings; legal/pre-monetisation checks passed; browser checks covered 104 pages at 320/390/768/desktop, 77 quiz submissions, 77 retakes, 79 worksheet print actions and 104 performance budgets. Preview CI only; not production release.
+- Confirmed all 77 lesson pages are structurally covered by five-question quizzes and quiz answer-key mappings in the static audit; the current retake behaviour resets the fixed quiz and does not implement the planned larger fresh-question bank.
+- Inspected production homepage, fractions, Algorithms and AI Safety pages, sitemap, robots and subject hubs. PR #59–#62 improvements remain preview-only.
+- Identified a visual-system gap: homepage and many lesson pages use different palettes; the basic SVG logo asset is not referenced by the homepage.
+- Read the deployment and PR audit workflows. Direct pushes to `main` trigger production deployment; all future changes must remain on preview branches and go through PR QA.
+
+### Branch and repository state
+- `main` head: `eb30ff69498c122d3670e15475430f4673265846`.
+- Existing `strategy/learning-platform-redesign` diverged from main: 4 commits ahead, 6 behind; common base `7b4ab3206f8bbfbfb955ad824e6bf9714074432c`.
+- Created fresh working branch from current main: `preview-learnora-redesign-inventory-2026-11-06`.
+- Carried forward `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` from the old strategy branch.
+- Added `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` with all 77 lessons and proposed tool mappings.
+- PR #57 merged; PRs #59–#62 remain draft/open/unmerged with successful latest recorded CI. No PR was merged and no production code/content was changed.
+
+### Outstanding / next actions
+1. Verify exceptional quiz structures and script mappings for every lesson; use the latest static audit as baseline and do not repeat Grade 6's completed 115-mapping review.
+2. Update the old source-attribution report with the 30/77 recount and exact 47-page backlog.
+3. Complete lesson-to-tool mapping and fractions pilot design.
+4. Implement only on `preview-learnora-redesign-inventory-2026-11-06`, run PR QA and record exact commits/results.
+5. Keep production unchanged until explicit user approval.
+
+### Operational blocker
+- The 6 Nov GSC daily guard recorded 39 distinct tracker URLs checked against a daily cap of 10 (29 over). Do not run more URL inspections until the user pauses/reduces the hourly tracker in its UI. This does not block repository inventory or content design.
+
+### Project tree / current checkpoint
+```text
+learnora/
+├── LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md
+├── LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md
+├── PROJECT_STATE.md
+└── [existing production source, lessons, scripts, assets, tests and workflows]
+```
