@@ -22,15 +22,15 @@ This inventory is based on the current `main` repository, the live production si
 |---|---:|---:|---:|
 | Mathematics — Grade 6 | 23 | 23 | 23/23 |
 | Mathematics — Grade 7 | 12 | 12 | 12/12 |
-| Mathematics — Grade 8 | 11 | 6 | 6/11 |
+| Mathematics — Grade 8 | 11 | 11 | 11/11 |
 | English — Grades 6–8 | 9 | 9 | 9/9 |
 | Science — Grades 7–8 | 13 | 13 | 13/13 |
-| Computer Science — Grades 6–8 | 3 | 1 | 1/3 |
+| Computer Science — Grades 6–8 | 3 | 3 | 3/3 |
 | AI Literacy — Grades 6–8 | 3 | 3 | 3/3 |
 | Financial Literacy — Grades 6–8 | 3 | 3 | 3/3 |
-| **Total** | **77** | **70** | **70/77** |
+| **Total** | **77** | **77** | **77/77** |
 
-**7 lessons remain without a dedicated learner-facing source section:** Grade 8 Maths (5) and Computer Science (2).
+**All 77/77 lesson pages now have a dedicated learner-facing Sources and Further Reading section on the current preview branch.** This is a structural coverage milestone, not a content-quality score or independent educator sign-off.
 
 The 3 November source inventory recorded 7/77. That count is now stale: the subsequent Grade 6 Maths Phase 2 work added/reviewed source sections across all 23 Grade 6 lessons. The 59/77 figure above is a structural coverage count, not a quality or ranking score. A source heading alone does not prove that every claim is supported; every link must still be checked for relevance and currency.
 
@@ -189,3 +189,6 @@ All 104 URLs map to repository files. This is a repository/sitemap consistency c
 **6 November English update:** Added sources to all seven previously unsourced English lessons: Paragraph Writing, Parts of Speech, Punctuation and Capitalization, Reading Comprehension, Sentence Types, Verb Tenses and Agreement, and Vocabulary. English is now 9/9; total source-section coverage is 59/77. The detailed source-suitability review and quiz-label checks are in `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md`.
 
 **6 November Maths source audit update:** A direct check of the current preview-branch lesson HTML (rather than the older table snapshot) found 11 of 12 Grade 7 Maths pages already had a dedicated source heading and list. The remaining Transformations and Symmetry page now has topic-specific Khan Academy references. Grade 7 Maths coverage is 12/12. Grade 8 Maths had 3/11 pages with sources; topic-specific sources have now been added to Angle Relationships and Parallel Lines, Exponents/Powers/Scientific Notation, and Linear Functions and Graphs, bringing Grade 8 Maths to 6/11. Total structural source coverage is now **70/77**; **7 pages remain** (five Grade 8 Maths, two Computer Science). This recount checks the current working branch files; it is not a claim that every statement on all 70 pages has been independently educator-reviewed.
+
+
+**6 November final source-coverage update:** The final five Grade 8 Maths source gaps were filled in scoped batches: Scatter Plots and Data Relationships, Square Roots and Irrational Numbers, Systems of Linear Equations, Transformations/Congruence/Similarity, and Volume of Cylinders/Cones/Spheres. The final two Computer Science pages, HTML and CSS and Python Variables/Input/Output, also received official documentation links. Current preview-branch counts are Grade 8 Maths 11/11 and Computer Science 3/3. Combined with the previously completed subject groups, structural source coverage is now **77/77**. Every page has a dedicated source section, but factual claim review, source relevance/currency checks, screen-reader review, and independent educator review remain separate quality gates.
