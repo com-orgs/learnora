@@ -4,14 +4,14 @@
 **Base:** current `main` at `eb30ff69498c122d3670e15475430f4673265846`
 
 ## Executive result
-GitHub currently reports **28 open pull requests**: 23 drafts and 5 non-drafts. This is more than the four PRs recorded in the previous handover. All 28 were checked for exact head, changed files, open/draft state, mergeability and latest workflow run on the exact head SHA.
+GitHub currently reports **29 open pull requests**: 24 drafts and 5 non-drafts. This is more than the four PRs recorded in the previous handover. The original 28 were reconciled, and new PR #63 was checked separately for changed files, mergeability and exact-head CI.
 
 | Exact-head CI result | PR count |
 |---|---:|
-| Successful latest recorded workflow | 18 |
+| Successful latest recorded workflow | 19 |
 | Failed at Cloudflare preview-URL resolution | 2 |
 | No workflow run found for exact current PR head | 8 |
-| **Total open PRs** | **28** |
+| **Total open PRs** | **29** |
 
 Eleven PRs currently report `mergeable=false`. A green workflow does not mean a PR is mergeable or approved. Do not merge or close any PR as part of this reconciliation.
 
@@ -44,6 +44,7 @@ Eleven PRs currently report `mergeable=false`. A green workflow does not mean a 
 ## 2. CI / release engineering
 | PR | Changed files | State | Mergeable | Exact-head CI | Assessment |
 |---:|---|---|---|---|---|
+| #63 | `.github/workflows/site-audit.yml`; four Grade 6 Maths lessons; six documentation/checkpoint files | Draft/open | Yes | Success, #42193457427 | Fresh preview batch. Static/legal audits, exact-SHA Cloudflare preview resolution, headers/assets, 104-page browser/responsive/accessibility checks, 77 quizzes/retakes and 79 print actions all passed. This is a QA preview, not production approval. |
 | #56 | `.github/workflows/site-audit.yml` | Draft/open | No | Success, #42002228194 | Valuable exact-commit Cloudflare check-run fallback. Rebase/port to current workflow; do not merge stale branch directly. |
 | #2 | `.github/workflows/site-audit.yml`, `scripts/verify-production-sitemap.py`, `PROJECT_STATUS.md` | Open, not draft | No | No exact-head run | Candidate production sitemap/robots smoke test. The Python script is not present on current main. Review and port only if still compatible with the current workflow. |
 | #6 | `.github/workflows/site-audit.yml`, `PROJECT_STATUS.md` | Open, not draft | No | No run on exact current head | Old QA-only branch. Its earlier green run tested a predecessor SHA; current main workflow and #56 are newer. Treat as superseded pending diff review. |
@@ -60,15 +61,15 @@ Eleven PRs currently report `mergeable=false`. A green workflow does not mean a 
 | #3 | Old IndexNow key, `INTERNATIONAL_SEO_ROADMAP.md`, `PROJECT_STATUS.md` | Open, not draft | No | No exact-head run | Current main already has a different deployed IndexNow verification file (`53dfa572750e069e6549b800c46f5d92.txt`) and a newer master roadmap. Do not add a second key without a deliberate rotation plan. |
 
 ## 4. Full current PR-state counts
-- Open PRs: 28.
-- Draft: 23.
+- Open PRs: 29.
+- Draft: 24.
 - Not draft: 5 (#27, #16, #6, #3, #2).
-- GitHub currently reports mergeable: 17; not mergeable: 11.
-- Exact-head workflow: 18 success, 2 preview-resolution failures, 8 no run found.
+- GitHub currently reports mergeable: 18; not mergeable: 11.
+- Exact-head workflow: 19 success, 2 preview-resolution failures, 8 no run found (including PR #63's successful run #42193457427).
 - No PR was merged or closed during this audit.
 
 ## 5. Safe consolidation plan
-1. Keep all 28 open PRs untouched while inventory/review continues.
+1. Keep all 29 open PRs untouched while inventory/review continues.
 2. Rebase/port the CI preview resolver fix from #56 onto the current preview branch and test it. Consolidate the overlapping workflow edits from #59–#61.
 3. Rebase the useful content patches onto the current preview branch in subject batches: Grade 6 Maths (#40–#43), Science (#45–#55), Financial Literacy (#16), AI/Computer Science (#59–#62).
 4. Re-run static, legal, exact Cloudflare preview, browser, axe, quiz and print checks after consolidation.
