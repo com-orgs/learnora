@@ -918,3 +918,27 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - This checkpoint append creates a newer commit and will trigger or require a newer exact-head workflow. **Do not claim the latest PR head is green until its own full workflow completes successfully.**
 - The reconciliation report and PR #63 description now reflect 77/77 structural source coverage and the latest previously checked pending workflow.
 - Next work after CI: source-link availability/relevance sweep across all lesson pages, then claim-level QA of examples, worksheets, quiz keys, and the Fractions pilot. Do not merge or deploy without explicit user approval.
+
+
+## Checkpoint update — source inventory reconciliation and exact-head CI (6 November 2026)
+
+### Completed
+- Reconciled the inventory's historical intermediate counts: the current preview-branch structural source coverage is **77/77**, as shown in the subject-group table. Historical 41/77 through 70/77 notes are explicitly labelled as superseded intermediate checkpoints.
+- Verified PR #63 head SHA: `52ac33d73b627f7cf64d10b4923f7b5c2f1e84c7`.
+- Verified GitHub Actions run **#1020 / 42208059250** completed with conclusion **success** for that exact head.
+- PR #63 remains draft/open and unmerged. No production deployment, merge or indexing request was made.
+
+### QA limits / next action
+- The successful exact-head workflow confirms the automated checks configured in CI; it does not replace source-link relevance/currency checks, claim-level fact-checking, educator review, manual screen-reader testing or real print/PDF checks.
+- Next: begin a source-link relevance and availability sweep, then claim-level QA of worked examples, worksheet answers and quiz keys, starting with the Grade 6 Fractions pilot.
+
+### Project tree
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — final 77/77 count reconciled; historical intermediate totals labelled
+- `PHASE15_SCIENCE_SOURCE_PORT_2026-11-06.md` — Science source/terminology record
+- `PHASE16_FINANCIAL_SOURCE_PORT_2026-11-06.md` — Financial Literacy source/calculation record
+- `PHASE17_AI_COMPUTER_SOURCE_PORT_2026-11-06.md` — AI Literacy/Computer Science QA record
+- `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md` — Grade 7 Maths source record
+- `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md` — English source record
+- `PHASE20_MATHS_SOURCE_PORT_2026-11-06.md` — Maths source record
+- `PHASE21_FINAL_SOURCE_COVERAGE_2026-11-06.md` — final Maths/Computer Science source record
+- `PROJECT_STATE.md` — current resume checkpoint
