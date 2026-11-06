@@ -783,3 +783,37 @@ Reconcile and port useful open content/CI patches onto the current preview branc
 - `PHASE18_GRADE7_MATH_SOURCE_PORT_2026-11-06.md` — source verification record
 - `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 52/77 structural coverage
 - `PROJECT_STATE.md` — resume checkpoint
+
+
+## Checkpoint update — English source pass completed (6 November 2026)
+
+### Completed
+- Added source sections to the seven previously unsourced English lessons:
+  - Paragraph Writing
+  - Parts of Speech
+  - Punctuation and Capitalization
+  - Reading Comprehension: Main Idea, Inference and Evidence
+  - Sentence Types and Structure
+  - Verb Tenses and Agreement
+  - Vocabulary: Context Clues, Prefixes, Suffixes and Roots
+- Verified the chosen Purdue OWL, British Council LearnEnglish and Reading Rockets references; advanced/university-level references are labelled optional extensions, not required grade-level reading.
+- Checked all seven pages: one H1, canonical/OG match, balanced section tags and safe external new-tab links.
+- Compared five answer-key labels with visible quiz choices on all seven pages; all match exactly. No quiz scripts were changed.
+- English source coverage is now **9/9**. Overall site source coverage is **59/77**; **18/77** lessons remain.
+- Full source review in `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md`.
+
+### CI status
+- Exact-head run #989 passed on commit `08a04564b65857029c031abb8ee5215b9aa84d66`, including static/legal audits, Cloudflare preview resolution, headers/assets and Playwright mobile/desktop/quiz checks.
+- The English source changes and documentation are newer than that run; the current head needs a fresh exact-head workflow before it is marked green.
+- PR #63 remains draft/open and unmerged. No production deployment or indexing request.
+
+### Next actions
+1. Check exact-head CI for the English-expanded branch.
+2. Finish the remaining Grade 7 Maths (8), Grade 8 Maths (8) and Computer Science (2) source gaps.
+3. Then return to the Fractions pilot for the outstanding multiply/divide worked-example and worksheet-answer audit.
+
+### Project tree
+- `english/grade-6-8/` — all 9 English lessons now have dedicated sources
+- `PHASE19_ENGLISH_SOURCE_PORT_2026-11-06.md` — source verification and QA record
+- `LEARNORA_CONTENT_FEATURE_INVENTORY_2026-11-06.md` — 59/77 structural source coverage
+- `PROJECT_STATE.md` — current resume checkpoint
