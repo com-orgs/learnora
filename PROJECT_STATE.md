@@ -469,3 +469,38 @@ Repository: https://github.com/com-orgs/learnora
 - `computer-science/algorithms.html` — 320px overflow fix on PR #62; CI success confirmed.
 - AI Literacy PRs #59–#61 and Algorithms PR #62 — draft/unmerged.
 - Production: `https://learnora-ab2.pages.dev/` — unchanged.
+
+
+## Checkpoint update — Integrated Learnora learning tools (6 Nov 2026)
+
+### Completed
+- Added Section 14, "Built-in learning tools — keep learners inside Learnora", to `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` on `strategy/learning-platform-redesign`.
+- Defined contextual tool families for Mathematics, Science, English, Computer Science, AI Literacy, Financial Literacy and cross-subject study.
+- Specified learning-flow integration, mobile/accessibility requirements, step-by-step explanations, test coverage, privacy, safe code execution, cost constraints and a phased no-budget priority order.
+
+### Proposed priority
+1. Calculator, fraction visualizer/calculator, percentage/ratio helper and unit converter.
+2. Graph/geometry/statistics tools and flashcards.
+3. Worksheet generator and local progress dashboard.
+4. Algorithm/flowchart visualizer, binary converter and safe coding playground.
+5. Science tools, grammar/writing aids and financial literacy calculators.
+6. AI-powered/external-service features only after privacy, safety and cost review.
+
+### Safeguards
+- No production changes or external services enabled.
+- No paid APIs or subscriptions without explicit approval.
+- Student inputs should remain client-side by default; no personal or sensitive data collection.
+- Arbitrary code execution must not be added without a properly isolated sandbox. If unavailable on the free stack, use safe trace/visualization activities.
+
+### Next actions
+- Complete live-site inventory and map every current lesson/quiz to its relevant built-in tool(s).
+- Prototype the first Mathematics tools (fraction visualizer/calculator, percentage/ratio helper, unit converter) on preview branch and test correctness/accessibility.
+- Include tool links in lesson, practice and quiz templates so learners stay inside Learnora.
+- Keep all changes on preview branches; production release requires explicit approval.
+
+### Project tree / state
+- `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` — includes integrated tools strategy, preview branch only.
+- `PROJECT_STATE.md` — checkpoint updated.
+- `computer-science/algorithms.html` — mobile overflow fix CI passed on PR #62; draft/unmerged.
+- PRs #59–#62 remain draft/unmerged.
+- Production `https://learnora-ab2.pages.dev/` remains unchanged.
