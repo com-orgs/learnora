@@ -439,3 +439,40 @@ Repository: https://github.com/com-orgs/learnora
 - AI Literacy PRs #59–#61 — draft/unmerged, last known CI success.
 - `PROJECT_STATE.md` — updated resume checkpoint.
 - Production remains unchanged.
+
+
+## Daily indexing and discovery checkpoint — 6 November 2026
+
+### Completed
+- Read the current PROJECT_STATUS.md and master roadmap, the full 104-row tracker, the complete 77-row URL Inspection history, Google sitemap status, Bing site/feed/quota/crawl endpoints and all 447 IndexNow history rows.
+- Daily guard: 39 distinct tracker URLs have lastCheckAt on 6 Nov Pakistan date; URL Inspection history has 0 same-day rows. Union 39/10, overrun 29, remaining 0. No URL Inspection API or tracker-check action was called.
+- Tracker is active and the connected GSC Wizard tools expose no pause/throttle action. Owner must pause/reduce the hourly checks in the UI.
+- Live sitemap: 104 unique URLs; all 104 appear in IndexNow history; no new/historical-only URL. IndexNow submissions today: 0. Key and key file verified.
+- Fresh on-page audit of 25 representative pages: 25/25 indexable, 0 critical/high/medium and 10 low notes. Live fetch verified robots policy and self-canonical/index-follow on eight hubs.
+- Created detailed log: DAILY_INDEXING_LOG_2026-11-06.md. Updated PROJECT_STATUS.md and LEARNORA_MASTER_ROADMAP_2026-11-04.md.
+- Rechecked PR #62 workflow run #42146364198: completed successfully. PR #62 remains draft/unmerged; PRs #59–#62 remain draft/unmerged.
+
+### Current blockers / limitations
+- GSC sitemap still pending (0 warnings/errors); 103 tracker URLs remain not indexed/unknown.
+- Daily cap exceeded by 29 due to hourly background tracker checks. No more GSC inspections today.
+- No manual Request Indexing request submitted; browser context unavailable and TinyFish strict UI automation requires beta. Existing project checkpoint records 10 manual attempts across 9 unique URLs (Fractions twice); exact per-URL manual history is not available from the API.
+- Bing crawl stats return no dated rows; this is unavailable data, not proof of zero crawling.
+- Full 104-page internal-link graph not recomputed because TinyFish rate limiting stopped the expanded fetch. Current live sample and 25-page on-page audit show no confirmed indexability blocker.
+- Low on-page notes are title/description length and optional structured-data notes; no mass metadata changes made.
+
+### Next actions
+1. Owner pauses/reduces GSC hourly background tracker checks in the UI.
+2. Owner checks manual Request Indexing history before using any candidate; skip previously requested URLs.
+3. Wait for Google sitemap processing; do not re-inspect unchanged URLs or resubmit unchanged IndexNow URLs.
+4. Complete full internal-link graph after fetch rate limit clears; continue Computer Science Python Basics, HTML/CSS and Financial Literacy QA in preview branches.
+5. Keep PRs #59–#62 unmerged pending combined review and explicit release approval.
+
+### Project tree / current state
+- Production: https://learnora-ab2.pages.dev/
+- math/grade-6/ — 23/23 Phase 2 lessons released
+- ai-literacy/ — PRs #59–#61 preview only
+- computer-science/algorithms.html — PR #62 preview only; CI success
+- DAILY_INDEXING_LOG_2026-11-06.md — daily exact URL lists and evidence
+- PROJECT_STATUS.md
+- LEARNORA_MASTER_ROADMAP_2026-11-04.md
+- PROJECT_STATE.md
