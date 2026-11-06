@@ -439,3 +439,33 @@ Repository: https://github.com/com-orgs/learnora
 - AI Literacy PRs #59–#61 — draft/unmerged, last known CI success.
 - `PROJECT_STATE.md` — updated resume checkpoint.
 - Production remains unchanged.
+
+
+## Checkpoint update — Platform, brand and content redesign strategy (6 Nov 2026)
+
+### Completed
+- Benchmarked public learning patterns from Khan Academy (unit/skill sequencing, separate practice sets, mastery thresholds, staged quizzes and unit tests), BBC Bitesize (age/level entry points, visual topic discovery and varied learning formats), CK-12 (interactive/tutor-oriented learning and separate FlexBooks route), and OpenStax (textbook depth and academic sourcing).
+- Reviewed the live Learnora homepage, Grade 6 Maths hub and Understanding Fractions lesson. Current homepage relies on emoji subject symbols and a generic navy/teal visual treatment; Fractions lesson has explanations, examples, five practice prompts, a five-question quiz and worksheet but lacks a full multi-skill progression and robust repeated-attempt question bank.
+- Created `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` on branch `strategy/learning-platform-redesign` (commit `d7a33529915c88816f6c1c901e1e9b78cbda6214`). The document covers competitive patterns, original brand/logo direction, visual system, page templates, course/skill architecture, question-bank and quiz requirements, subject expansion, originality standards, SEO, free-stack constraints, phases and acceptance rubric.
+- Verified GitHub Actions run #42146364198 completed with conclusion `success` for the 320px Algorithms pseudocode overflow fix. PR #62 remains draft/open/unmerged.
+
+### Safety and scope
+- Strategy branch only. No production files, live logo, homepage design or course pages changed.
+- No logo concept has been selected or generated yet.
+- Existing draft PRs #59–#62 remain unmerged; this strategy work does not approve their release.
+- The blueprint is a proposal, not a claim that the new platform features have been implemented.
+
+### Next actions
+1. Build a complete live-site inventory: all pages, subject/grade coverage, lesson depth, quiz bank size/rotation, worksheets, sources, visuals and technical issues.
+2. Create a competitor feature matrix with a focused second pass on course maps, lesson layouts, quiz interaction and visual identity; record evidence and avoid copying assets or text.
+3. Develop 2–3 original Learnora logo directions and a cohesive brand system (SVG-first, favicon, monochrome, light/dark, accessible colours and typography).
+4. Design responsive wireframes for homepage, subject hub, course/unit, lesson, practice and quiz before implementation.
+5. Map Grade 6 Fractions into a complete pilot unit and specify a reusable question-bank engine with fresh retakes, explanations, hints and local progress.
+6. Keep all work on preview branches; require explicit approval before merging or deploying.
+
+### Project tree / state
+- `LEARNORA_PLATFORM_REDESIGN_BLUEPRINT.md` — strategy draft on `strategy/learning-platform-redesign`.
+- `PROJECT_STATE.md` — this checkpoint update on the same branch.
+- `computer-science/algorithms.html` — 320px overflow fix on PR #62; CI success confirmed.
+- AI Literacy PRs #59–#61 and Algorithms PR #62 — draft/unmerged.
+- Production: `https://learnora-ab2.pages.dev/` — unchanged.
