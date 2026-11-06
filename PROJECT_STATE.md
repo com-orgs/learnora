@@ -416,3 +416,26 @@ Repository: https://github.com/com-orgs/learnora
 - AI Literacy preview PRs #59, #60, #61 — draft/unmerged
 - Algorithms preview PR #62 — draft/unmerged; browser CI completion still needs verification
 - No production content edits, merge or deployment were made during this indexing audit.
+
+
+## Checkpoint update — PR #62 mobile overflow found and fix submitted (6 Nov 2026)
+
+### Completed
+- Rechecked open preview PRs #59–#62. PRs #59, #60 and #61 each have successful GitHub Actions run conclusions. All four remain draft and unmerged.
+- PR #62's earlier workflow run #42057241438 failed only at the Playwright browser-smoke stage after static audit, legal readiness, preview resolution, security headers/assets and Chromium setup had passed.
+- Browser log identified one concrete defect: `/computer-science/algorithms` had horizontal overflow at 320px width, caused by the long pseudocode code block inside a `pre` element (document width 347px).
+- Added narrow-screen CSS to wrap pseudocode safely and constrain the code block on the PR #62 preview branch. Commit: `4bf767d92c2e1e96a78a462ce5e619f6388bb680`.
+- New GitHub Actions run #42146364198 was triggered for the fix and was still in progress at the time of this checkpoint.
+- No production merge, deployment or live-site change.
+
+### Next actions
+1. Wait for run #42146364198 to complete; inspect Playwright results. If overflow persists, adjust CSS on the preview branch and rerun.
+2. If PR #62 passes, keep it draft pending combined review/release approval; do not merge automatically.
+3. Continue source and answer-key QA for Computer Science `python-basics.html`, then `html-css.html`, and Financial Literacy lessons.
+4. Continue Google indexing monitoring separately; don't resubmit unchanged URLs repeatedly.
+
+### Project tree / state
+- `computer-science/algorithms.html` — mobile overflow fix committed on `qa-algorithms-content-quality` (PR #62); new CI pending.
+- AI Literacy PRs #59–#61 — draft/unmerged, last known CI success.
+- `PROJECT_STATE.md` — updated resume checkpoint.
+- Production remains unchanged.
