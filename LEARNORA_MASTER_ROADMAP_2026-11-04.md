@@ -7,6 +7,29 @@
 > Traffic, rankings, indexing and revenue cannot be guaranteed. This plan prioritises measurable work, student value, search intent and safe monetisation. Do not invent keyword metrics or publish thin pages merely to increase URL count.
 
 
+## Superseding daily indexing & discovery checkpoint — 6 November 2026
+
+- Production code commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1` (Phase 2 Grade 6 Maths release; production deployment run [#42049423565](https://github.com/com-orgs/learnora/actions/runs/42049423565) succeeded). Main changes after this release are documentation/QA only; no later production HTML/JS/CSS change was found.
+- Live sitemap: 104 unique same-host URLs; 0 duplicate entries. robots.txt allows all user agents and OAI-SearchBot and declares the sitemap.
+- GSC tracker: 104 tracked, 1 indexed, 103 unknown to Google, 0 pending/errors/warnings; tracker active.
+- Pakistan-date guard on 6 Nov: 39 distinct tracker URLs checked by background activity + 0 URL Inspection history rows = 39/10; overrun 29, remaining 0. No inspect_url, bulk_inspect_urls or check_tracked_url_now call was made. Full 39-URL/time list is in [DAILY_INDEXING_LOG_2026-11-06.md](DAILY_INDEXING_LOG_2026-11-06.md). The GSC Wizard connector exposes no pause/throttle action; owner must pause/reduce hourly checks in its UI.
+- Full GSC URL Inspection history: 77 rows, 42 unique URLs, 19 repeated URL keys and 35 extra historical rows; no rows dated 6 Nov. API quota 18/2,000 used, but project cap 10 is stricter.
+- Google sitemap remains pending (last submitted 5 Nov 16:21:51.927Z; 0 warnings/errors). Settled GSC performance through 3 Nov: 0 clicks, 2 impressions, average position 39; do not claim ranking/traffic growth.
+- Manual GSC Request Indexing was not submitted this run. Browser context unavailable; TinyFish strict mode requires beta. Existing checkpoint records 10 manual attempts across 9 unique URLs, Fractions twice; exact per-URL manual history is not exposed by the API. Owner candidates and skip warning are in the daily log.
+- Bing: property listed; sitemap feed Success, 104 URLs, last crawled 3 Nov; 0 crawl issues; no dated crawl-stat rows. Quota 100/day, 2,500/month. No direct Bing URL Submission action exists.
+- IndexNow: key configured and key file verified; history 447 rows / 104 unique / 373 HTTP 200 / 74 HTTP 202 / 343 repeat rows. Current sitemap matches history exactly; 0 new URLs and 0 historical-only URLs. All 104 were deliberately skipped today; no material production change since their relevant last notification; 0 submissions. Neither HTTP 200 nor 202 proves indexing.
+- Fresh on-page audit: 25/25 representative URLs indexable; 0 critical/high/medium, 10 low snippet/optional structured-data notes. Eight live hubs had self-canonicals, index/follow and internal links. Full 104-page inbound graph was not recomputed because TinyFish rate limiting stopped the expanded fetch.
+- PR #62's mobile overflow fix CI run [#42146364198](https://github.com/com-orgs/learnora/actions/runs/42146364198) completed successfully. PRs #59–#62 remain draft/unmerged; no production content changes in this run.
+- Exact inspected/audited URLs, all 104 IndexNow duplicate skips, repeated history URLs, candidates and evidence: [DAILY_INDEXING_LOG_2026-11-06.md](DAILY_INDEXING_LOG_2026-11-06.md).
+
+### Current execution priorities
+1. Owner pauses/reduces the GSC hourly tracker in its UI; no further inspections until the Pakistan-date union is below 10.
+2. Owner checks manual Request Indexing history and skips previously requested candidates; no API call can confirm that manual history.
+3. Wait for GSC sitemap processing and crawl discovery; do not repeatedly inspect unchanged unknown URLs.
+4. Do not resubmit unchanged IndexNow URLs; all 104 current sitemap URLs already have history.
+5. Complete the full internal-link graph when rate limits allow, then continue Python Basics, HTML/CSS and Financial Literacy preview QA.
+6. Resolve low on-page notes only in preview QA; no mass production metadata edits.
+
 ## Superseding release and quality checkpoint — 5 November 2026 (post-PR #39)
 
 - Latest production commit: `4bf96bbfdb786b45a510ca794fcc841edbbc01b4`; production URL https://learnora-ab2.pages.dev/.
