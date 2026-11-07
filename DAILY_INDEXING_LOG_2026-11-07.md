@@ -1,6 +1,6 @@
 # Learnora Daily Indexing & Discovery Log — 7 November 2026
 
-Run snapshot: 2026-11-07 08:51 PKT. Pakistan calendar date governs the GSC project inspection cap.
+Run snapshot: 2026-11-07 08:56 PKT. Pakistan calendar date governs the GSC project inspection cap.
 
 ## Repository and production baseline
 
@@ -18,7 +18,7 @@ Run snapshot: 2026-11-07 08:51 PKT. Pakistan calendar date governs the GSC proje
 - Full tracker list read: 104/104. Tracker rows whose latest lastCheckAt falls on 7 Nov Pakistan date: 41 distinct URLs.
 - Full URL Inspection history read: 77 rows, 42 distinct URL keys, 19 URL keys with repeats, 35 extra historical rows. URL Inspection rows requested on 7 Nov Pakistan date: 0; distinct same-day inspection-history URLs: 0; repeated same-day inspection URLs: 0.
 - Daily union: 41 distinct URLs across tracker lastCheckAt and URL Inspection requested_at. Cap: 10. Remaining: 0. Overrun: 31. No further daily GSC inspections were run.
-- This run called none of: inspect_url, bulk_inspect_urls, check_tracked_url_now. All 38 same-day tracker checks were already recorded by the background tracker before this run; no new inspection was added.
+- This run called none of: inspect_url, bulk_inspect_urls, check_tracked_url_now. All 41 same-day tracker URL rows were already recorded by the background tracker before this run; no new inspection was added.
 - GSC API quota snapshot: 20/2000 used; 1980 platform quota remains. The project cap of 10 is stricter and already exceeded; API quota does not authorize more checks.
 - Tracker isActive=true. Connected GSC Wizard tools expose no pause/throttle control for the hourly background checks. Owner must pause/reduce its hourly schedule in the GSC Wizard UI. Current tracker list exposes only the latest lastCheckAt per URL, not every hourly execution timestamp, so it cannot reconstruct multiple same-day background executions for the same URL.
 - Exact distinct URLs whose latest tracker lastCheckAt is on 7 Nov Pakistan date (UTC and PKT timestamps):
