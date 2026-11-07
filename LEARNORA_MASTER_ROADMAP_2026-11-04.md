@@ -707,3 +707,26 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Clarified that exponents/indices are outside the scope of this introductory page despite mention of BIDMAS/PEMDAS, preventing a misleading incomplete order list.
 - Added OpenStax Prealgebra 2e section 2.1 reference. Preview branch `qa/grade6-order-operations-sources`, Draft PR #42: https://github.com/com-orgs/learnora/pull/42.
 - PR #40 (Algebraic Expressions) and #41 (Integers) also remain draft/unmerged. No production edits or deployment. Next target: Understanding Percentages.
+
+
+## Superseding daily indexing & discovery checkpoint — 7 November 2026
+
+- Production code remains at Phase 2 commit `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`. Main HEAD `eb30ff69498c122d3670e15475430f4673265846`; 32 commits ahead / 13 changed files since production baseline, all documentation/QA only. No production HTML/JS/CSS changes and no material production URL change for IndexNow.
+- Live sitemap HTTP 200: 104 unique URLs, 0 duplicate loc entries, no lastmod fields. robots.txt HTTP 200; allows all agents and OAI-SearchBot and declares sitemap.
+- GSC tracker active: 104 URLs; 1 indexed, 103 not indexed, 0 pending/errors/warnings. Full tracker (104 rows) and full inspection history (77 rows) read before the daily guard.
+- 7 Nov Pakistan-date guard: 38 distinct tracker URLs with lastCheckAt today + 0 same-day URL Inspection history rows = 38/10 distinct URLs; overrun 28; remaining 0. No URL Inspection API or tracker-check call was made. Exact URLs and timestamps: [DAILY_INDEXING_LOG_2026-11-07.md](DAILY_INDEXING_LOG_2026-11-07.md). Historical inspection history: 77 rows, 42 unique URLs, 19 repeated URL keys, 35 extra rows.
+- Tracker hourly background checks exceed the project cap; GSC Wizard exposes no pause/throttle control. Owner must pause/reduce hourly schedule; no further daily inspections while union >=10.
+- Google sitemap pending since 5 Nov 16:21:51.927Z; warnings=0; errors=0.
+- Manual GSC Request Indexing: authenticated browser check redirected to Google Sign-in. No manual request submitted; URL Inspection API is status-only and does not expose full manual history. Prior record: 10 attempts / 9 unique URLs, Fractions twice. Owner candidate list and skip warning are in the daily log.
+- Bing property verified; sitemap feed Success for 104 URLs, last crawled 3 Nov; quota 100/day and 2,400/month; crawl issues=0; crawl stats unavailable (no dated rows). No direct Bing URL Submission action exists.
+- IndexNow key set and key file verified. Complete history 447 rows / 104 unique URLs / 343 extra repeat rows; HTTP 200=373, HTTP 202=74. Sitemap/history exact match; 0 new, 0 historical-only, 0 submissions today. All 104 unchanged sitemap URLs skipped. Acceptance is not indexing.
+- Fresh on-page sample: 25/25 indexable HTTP 200 with self-canonicals, no noindex or redirects; internal links 7–47; 0 critical/high/medium, 12 low notes (7 long titles, 5 missing optional structured data). Full 104-page inbound-link graph remains outstanding.
+- Full evidence, exact 38 tracker URLs, all 104 IndexNow skip URLs, historical duplicates, 25-page audit and blockers: [DAILY_INDEXING_LOG_2026-11-07.md](DAILY_INDEXING_LOG_2026-11-07.md).
+
+### Current execution priorities
+1. Owner pauses/reduces GSC hourly tracker; do not inspect more URLs while Pakistan-date union is >=10.
+2. Wait for Google sitemap processing; resume only when strict cap allows.
+3. Owner checks manual Request Indexing history and skips previously requested URLs.
+4. No IndexNow resubmission for unchanged URLs; 104/104 are already in history.
+5. Complete full internal-link graph when rate limits permit; continue Computer Science and Financial Literacy QA in preview branches.
+6. Resolve title/structured-data notes only via preview QA; do not mass-edit production metadata.
