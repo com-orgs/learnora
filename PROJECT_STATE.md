@@ -476,3 +476,27 @@ Repository: https://github.com/com-orgs/learnora
 - PROJECT_STATUS.md
 - LEARNORA_MASTER_ROADMAP_2026-11-04.md
 - PROJECT_STATE.md
+
+
+## Daily indexing checkpoint — 7 Nov 2026
+
+### Completed
+- Read all 104 tracker rows and all 77 URL Inspection history rows before the daily guard decision.
+- Pakistan-date guard: 38 distinct tracker URLs with lastCheckAt today; 0 same-day inspection-history rows; union 38/10; overrun 28; remaining 0. No URL Inspection API or check_tracked_url_now call was made.
+- Tracker: 104 total, 1 indexed, 103 not indexed, 0 pending/errors/warnings; latest check 2026-11-07T03:45:41.656Z (08:45:41 PKT).
+- Live sitemap HTTP 200: 104 unique URLs, no duplicate entries, no lastmod fields. Google sitemap pending with 0 warnings/errors. robots.txt HTTP 200 and allows all agents/OAI-SearchBot.
+- Bing verified; feed Success for 104 URLs, last crawled 3 Nov; quota 100/day, 2,400/month; no crawl issue URLs; crawl statistics unavailable.
+- IndexNow key and key file verified; 447 history rows, 104 unique URLs, 343 repeat rows; 373 HTTP 200 / 74 HTTP 202. All 104 sitemap URLs already in history; no new/changed production URLs; 0 submissions today.
+- Fresh 25-page audit: 25/25 HTTP 200/indexable/self-canonical; 0 noindex/redirect; internal links 7–47; 12 low notes only.
+- GSC interactive browser check redirected to Google Sign-in; no authenticated Request Indexing UI. No manual request submitted.
+- Detailed log: [DAILY_INDEXING_LOG_2026-11-07.md](DAILY_INDEXING_LOG_2026-11-07.md), including exact URL lists, duplicate counts, timestamps, evidence and next actions.
+
+### Safety / blockers
+- GSC hourly background checks exceed the 10-URL project cap; no pause/throttle control exposed by connector. Owner must pause/reduce the tracker.
+- Google sitemap remains pending; no confirmed technical indexability blocker in the 25-page sample.
+- Full 104-page internal-link graph remains incomplete.
+- Manual GSC Request Indexing history is not exposed by API; owner must skip URLs already requested.
+- No production code/content/metadata changed. No manual GSC request or IndexNow submission.
+
+### Next action
+- Owner pauses/reduces hourly GSC tracker; wait for sitemap processing; do not inspect more URLs until strict union is below 10 on a future Pakistan date. Continue full internal-link graph and preview-only Computer Science / Financial Literacy content QA.
