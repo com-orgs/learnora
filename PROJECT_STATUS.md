@@ -1211,3 +1211,28 @@ Historical session notes below are retained for continuity; use this current sta
 - Reports/checkpoint: `PHASE_2_GRADE6_RELEASE_MATRIX.md`, `PHASE_2_GRADE6_MATH_QA.md`, `PROJECT_STATE_PHASE_2.md`.
 - Remaining follow-up: manual screen-reader testing, actual print-preview/PDF visual review, and independent educator review before claiming peer review. Existing GSC daily inspection cap remains in force; do not exceed it.
 - Production: https://learnora-ab2.pages.dev/ .
+
+
+## Current verified state — 7 November 2026 (daily indexing & discovery refresh)
+
+- Production: https://learnora-ab2.pages.dev/. Production code baseline remains Phase 2 commit `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`; main HEAD at audit `eb30ff69498c122d3670e15475430f4673265846`. GitHub comparison: 32 commits / 13 changed files since production baseline, all documentation/QA only; no production HTML/JS/CSS/sitemap/robots change.
+- Live sitemap: HTTP 200, 104 entries / 104 unique / 0 duplicates. No `lastmod` entries. robots.txt HTTP 200, allows all user agents and OAI-SearchBot, and declares the sitemap.
+- GSC tracker active: 104 URLs; 1 indexed, 103 not indexed, 0 pending, 0 errors, 0 warnings. Latest tracker check `2026-11-07T03:45:41.656Z` (08:45:41 PKT).
+- **7 Nov Pakistan-date guard:** all 104 tracker rows and all 77 URL Inspection history rows were read before the guard decision. 38 distinct tracker URLs have lastCheckAt today; 0 same-day URL Inspection rows; union=38/10; overrun=28; remaining=0. No `inspect_url`, `bulk_inspect_urls` or `check_tracked_url_now` call was made. Exact 38 URLs and UTC/PKT timestamps are in [DAILY_INDEXING_LOG_2026-11-07.md](DAILY_INDEXING_LOG_2026-11-07.md).
+- Full GSC URL Inspection history: 77 rows, 42 unique URLs, 19 repeated URL keys, 35 extra historical rows; no rows dated 7 Nov and no same-day duplicate URL. Platform quota snapshot 20/2,000 used, but the project cap of 10 is stricter and already exceeded.
+- GSC Wizard hourly background tracker checks have already consumed/exceeded the daily cap. The connector exposes no pause/throttle control; owner must pause/reduce the hourly schedule in its UI. No further daily GSC inspections.
+- Google sitemap last submitted `2026-11-05T16:21:51.927Z`; still pending; warnings=0; errors=0.
+- Manual Request Indexing: read-only browser check redirected to Google Sign-in; session was unauthenticated, so no Request Indexing control was verified and no manual request was submitted. URL Inspection API is status-only and does not expose complete manual-request history. Prior record: 10 manual attempts / 9 unique URLs, Fractions twice; owner must skip any candidate already requested. Ten owner-review candidates are in the daily log.
+- Bing property verified. Feed Success for 104 URLs, submitted/last crawled 3 Nov 2026. Direct Bing quota: 100/day and 2,400/month. Crawl statistics returned no dated rows; crawl issues=0. No direct Bing URL Submission action exists; IndexNow is the available notification route.
+- IndexNow key set (masked `****5d92`) and key file verified. Full history: 447 rows, 104 unique URLs, 343 extra repeat rows; HTTP 200=373 and HTTP 202=74. Live sitemap matches history exactly: 104/104; new=0; historical-only=0; submissions today=0. All 104 sitemap URLs were skipped as previously submitted. Neither HTTP 200 nor 202 proves indexing.
+- Fresh on-page audit: 25/25 sampled URLs HTTP 200, indexable, self-canonical, no noindex/redirect; internal links 7–47; 0 critical/high/medium and 12 low notes (7 long titles, 5 missing optional structured data). Full 104-page inbound-link graph remains incomplete; no site-wide orphan-free claim.
+- Detailed evidence, exact 38 daily tracker URLs, all 104 IndexNow duplicate skips, repeated URL lists, audit rows, verification evidence and next actions: [DAILY_INDEXING_LOG_2026-11-07.md](DAILY_INDEXING_LOG_2026-11-07.md).
+
+### Next actions — 7 November
+1. [ ] Owner pauses/reduces GSC Wizard hourly background tracker checks; connector has no pause/throttle control. Keep daily GSC inspections at zero while the union is at/above 10.
+2. [ ] Wait for Google sitemap processing; resume daily monitoring only when the Pakistan-date union is below 10 on a future date.
+3. [ ] Owner checks manual Request Indexing history and skips previously requested URLs before any manual request.
+4. [ ] Do not resubmit unchanged IndexNow URLs; all 104 current sitemap URLs are already in the complete history.
+5. [ ] Complete the full internal-link graph when fetch limits permit; continue Python Basics, HTML/CSS and Financial Literacy QA on preview branches.
+6. [ ] Review title/structured-data notes only through isolated preview QA; no mass metadata edits.
+7. [ ] Keep PRs #59–#62 unmerged until combined content/browser review and explicit release approval.
