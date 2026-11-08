@@ -35,8 +35,11 @@ for(let i=0;i<parts;i++){const segment=document.createElement("span");if(i<shade
 row.append(name,bar);return row;
 }
 function update(){
-const n=Number(numerator.value),d=Number(denominator.value),k=Number(factor.value);
-if(n<1||d<2||n>=d||k<2)return;
+const d=Number(denominator.value);
+Array.from(numerator.options).forEach(function(option){option.disabled=Number(option.value)>=d;});
+if(Number(numerator.value)>=d)numerator.value=String(d-1);
+const n=Number(numerator.value),k=Number(factor.value);
+if(n<1||d<2||k<2)return;
 const newN=n*k,newD=d*k;
 models.replaceChildren(drawBar(n+"/"+d,d,n),drawBar(newN+"/"+newD,newD,newN));
 explanation.innerHTML="";
