@@ -18,3 +18,31 @@ retakeButton.addEventListener("click",function(){form.reset();form.querySelector
 })();
 
 document.addEventListener('click', function (event) { const button = event.target.closest('[data-print-worksheet]'); if (button) window.print(); });
+
+(function(){
+"use strict";
+const numerator=document.getElementById("eq-numerator");
+const denominator=document.getElementById("eq-denominator");
+const factor=document.getElementById("eq-factor");
+const models=document.getElementById("eq-models");
+const explanation=document.getElementById("eq-explanation");
+if(!numerator||!denominator||!factor||!models||!explanation)return;
+function drawBar(label,parts,shaded){
+const row=document.createElement("div");row.className="bar-row";
+const name=document.createElement("span");name.className="bar-label";name.textContent=label;
+const bar=document.createElement("div");bar.className="bar";bar.setAttribute("role","img");bar.setAttribute("aria-label",shaded+" of "+parts+" equal parts shaded");
+for(let i=0;i<parts;i++){const segment=document.createElement("span");if(i<shaded)segment.className="shade";bar.appendChild(segment);}
+row.append(name,bar);return row;
+}
+function update(){
+const n=Number(numerator.value),d=Number(denominator.value),k=Number(factor.value);
+if(n<1||d<2||n>=d||k<2)return;
+const newN=n*k,newD=d*k;
+models.replaceChildren(drawBar(n+"/"+d,d,n),drawBar(newN+"/"+newD,newD,newN));
+explanation.innerHTML="";
+const strong=document.createElement("strong");strong.textContent=n+"/"+d+" = "+newN+"/"+newD+".";
+explanation.append(strong,document.createTextNode(" Both fractions shade the same proportion of the whole."));
+}
+[numerator,denominator,factor].forEach(function(control){control.addEventListener("change",update);});
+update();
+})();
