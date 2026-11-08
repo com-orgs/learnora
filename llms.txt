@@ -1,0 +1,44 @@
+# Learnora
+
+> Free educational lessons, worked examples, practice quizzes and printable worksheets for middle-school learners, with resources focused on Grades 6–8.
+
+Learnora provides curriculum-neutral learning support across mathematics, English, science, AI literacy, computer science and financial literacy. Lesson pages include explanations and examples; many also include practice, quizzes and worksheets.
+
+## Start here
+
+- [Home](https://learnora-ab2.pages.dev/): Browse subjects and learning resources.
+- [Mathematics](https://learnora-ab2.pages.dev/math/grade-6/): Grade 6–8 mathematics lessons and practice.
+- [English](https://learnora-ab2.pages.dev/english/): Grammar, reading and writing resources.
+- [Science](https://learnora-ab2.pages.dev/science/): Grade 7–8 science lessons.
+- [Curriculum guides](https://learnora-ab2.pages.dev/curriculum/): Selected curriculum guides for international learners.
+
+## Selected learning resources
+
+- [Understanding Fractions](https://learnora-ab2.pages.dev/math/grade-6/understanding-fractions): Fraction concepts, visual examples and practice.
+- [Coordinate Geometry](https://learnora-ab2.pages.dev/math/grade-7/coordinate-geometry): Ordered pairs, quadrants, plotting points and reflections.
+- [Linear Equations and Inequalities](https://learnora-ab2.pages.dev/math/grade-8/linear-equations-and-inequalities): Multi-step equations and inequality models.
+- [Parts of Speech](https://learnora-ab2.pages.dev/english/grade-6-8/parts-of-speech): Grammar categories and examples.
+- [Weather, Climate and the Water Cycle](https://learnora-ab2.pages.dev/science/grade-7/weather-climate-water-cycle): Weather, climate and Earth's water cycle.
+- [How AI Works](https://learnora-ab2.pages.dev/ai-literacy/how-ai-works): Data, patterns, training and predictions.
+- [Python Basics](https://learnora-ab2.pages.dev/computer-science/python-basics): Variables, input, output and simple calculations.
+- [Needs, Wants and Simple Budgets](https://learnora-ab2.pages.dev/financial-literacy/budgeting): Budgeting and spending choices.
+
+## Curriculum guides
+
+- [US Common Core Math](https://learnora-ab2.pages.dev/curriculum/us-common-core-math)
+- [England KS3 Maths](https://learnora-ab2.pages.dev/curriculum/england-ks3-maths)
+- [UK Maths Curriculum](https://learnora-ab2.pages.dev/curriculum/uk-maths-curriculum)
+- [Canada Grade 6–8 Math](https://learnora-ab2.pages.dev/curriculum/canada-grade-6-8-math)
+- [Ontario Math Curriculum](https://learnora-ab2.pages.dev/curriculum/canada-ontario-math)
+- [Australia Years 7–8 Maths](https://learnora-ab2.pages.dev/curriculum/australia-year-7-8-maths)
+- [International English Curriculum](https://learnora-ab2.pages.dev/curriculum/international-english-guide)
+- [International Science Curriculum](https://learnora-ab2.pages.dev/curriculum/international-science-guide)
+
+## About and editorial information
+
+- [About Learnora](https://learnora-ab2.pages.dev/about)
+- [Editorial and Corrections Policy](https://learnora-ab2.pages.dev/editorial-policy)
+- [Privacy Policy](https://learnora-ab2.pages.dev/privacy-policy)
+- [Terms of Use](https://learnora-ab2.pages.dev/terms)
+
+Content is intended as supplementary educational support. Learners should check curriculum and assessment requirements with their school, teacher or relevant education authority.
