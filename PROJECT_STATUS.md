@@ -4,6 +4,30 @@
 > Before starting work, read this file and inspect the current audit-branch HEAD/CI. After every meaningful task, update the task log and next actions. The GitHub Actions workflow automatically refreshes the CI status block below after each run on a branch (not pull-request runs). Production merge/deployment requires explicit user approval; the user authorized merge and deployment on 2026-11-02.
 
 
+## Current verified state — 8 November 2026 (daily indexing & discovery refresh)
+
+- Live production sitemap fetch succeeded: 104 unique same-host URLs, 0 duplicate entries. robots.txt allows all user agents, explicitly allows OAI-SearchBot, and declares the sitemap.
+- Main latest content commit `4625c15dbe7f26fd4c5ba217f9960d21eda56b10` (7 Nov 06:49:48 UTC) changed five production lessons: Computer Science HTML/CSS and Python Basics; Financial Literacy Budgeting, Savings & Interest, and Unit Prices. All five changes were confirmed live. No production code was changed by the 8 Nov indexing routine.
+- GSC tracker: 104 URLs, 1 indexed, 103 not indexed/unknown, 0 pending/errors/warnings; tracker active. Latest check at `2026-11-08T03:46:56.434+00:00` UTC (2026-11-08 08:46:56.434 PKT).
+- **8 Nov Pakistan-date guard:** 39 distinct tracker URLs already have today's `lastCheckAt`; URL Inspection history has 0 rows today; union=39/10, overrun=29, remaining=0. No `inspect_url`, `bulk_inspect_urls` or `check_tracked_url_now` call was made. Exact URL/timestamp list is in [DAILY_INDEXING_LOG_2026-11-08.md](DAILY_INDEXING_LOG_2026-11-08.md).
+- Full URL Inspection history: 77 rows, 42 distinct URL keys, 19 repeated URL keys (35 extra historical rows); no 8 Nov rows. Platform quota 16/2000 used, but project cap 10 is stricter.
+- GSC sitemap `https://learnora-ab2.pages.dev/sitemap.xml` last submitted `2026-11-05T16:21:51.927Z`; still pending, 0 warnings/errors. Do not interpret pending as a confirmed technical block.
+- GSC hourly tracker remains active. Connected GSC Wizard tools expose no pause/throttle control; owner must pause/reduce hourly checks in its UI. Do not run further GSC checks while today's union is at/above 10.
+- Read-only Search Console UI attempt redirected to the public landing page because the saved Google sign-in is no longer authenticated. URL Inspection UI and Request Indexing control were not available. No manual Request Indexing request was submitted. The API does not expose a complete manual-request history; owner must skip candidates already requested manually.
+- Bing site is verified; feed Success, sitemap count 104, last crawled/submitted 3 Nov; crawl issue URLs 0. Crawl statistics contain no dated rows/latest date (unavailable, not zero). Bing quota response daily=100, monthly=2300. No direct Bing URL Submission connector action exists.
+- IndexNow key set (`****5d92`) and key file verified. Before today's batch: 447 rows/104 unique/373 HTTP 200/74 HTTP 202/343 repeat rows. Live sitemap/history matched 104/104, 0 new and 0 history-only URLs. 99 unchanged URLs skipped. Five materially changed live pages submitted; all five HTTP 200, key validated. After batch: 452 rows/104 unique/378 HTTP 200/74 HTTP 202/348 extra repeat rows. Acceptance is not proof of indexing. Exact submitted and skipped URLs are in the daily log.
+- Ten representative live pages fetched; all ten self-canonical and `index,follow`, with internal links. Full 104-page inbound-link graph remains outstanding. Algorithms is a content-depth review candidate (323 extracted words), not a word-count violation.
+- Full evidence, all 39 background-checked URLs, all 99 skipped URLs, five submitted URLs, prior notification timestamps and blockers: [DAILY_INDEXING_LOG_2026-11-08.md](DAILY_INDEXING_LOG_2026-11-08.md).
+
+### Next actions — 8 November
+1. [ ] Owner: pause/reduce GSC Wizard hourly background tracker checks in its UI. Until this is confirmed, do not make further daily inspections.
+2. [ ] Reauthenticate the saved Google browser profile; then review manual Request Indexing candidates against actual UI history and skip prior requests.
+3. [ ] Wait for Google sitemap processing; monitor pending/0-warning state without adding URL inspections today.
+4. [ ] Complete the full 104-page internal-link/orphan graph when fetch capacity allows.
+5. [ ] Continue academic/content-depth QA on Algorithms and the five recently improved Computer Science/Financial Literacy lessons; use preview QA for any new changes.
+6. [ ] For Bing/IndexNow, notify only new or materially changed URLs; do not resubmit the 99 unchanged URLs.
+7. [ ] Keep production metadata and robots/canonical settings unchanged absent a confirmed blocker and preview-tested fix.
+
 ## Current verified state — 6 November 2026 (daily indexing & discovery refresh)
 
 - Production code remains at Phase 2 release commit `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1`; Cloudflare production deployment run [#42049423565](https://github.com/com-orgs/learnora/actions/runs/42049423565) succeeded. Main HEAD before today's log commit was `7b4ab3206f8bbfbfb955ad824e6bf9714074432c); comparison from production commit showed only documentation/QA files after release, with no production HTML/JS/CSS changes.
