@@ -54,3 +54,17 @@ Review the three curriculum Article objects and verify whether real publication 
 - Changes are on branch `seo/sitewalk-remediation-2026-11-08` only. Production remains untouched.
 - The earlier 74/100 Sitewalk report was generated before the last Pythagorean meta-description update and schema standardization. It is a baseline for this batch, not the final post-change score.
 - Next: confirm Cloudflare preview deploy has reached latest branch HEAD; run fresh Sitewalk audit and GitHub workflow; verify no unintended page-body, canonical, or quiz changes; keep PR draft until mobile/desktop and interactive QA are complete.
+
+
+## Latest continuation checkpoint — 8 November 2026
+- Standardized all three curriculum guides to valid, consistent LearningResource JSON-LD; verified the JSON parses and each page has exactly one schema block.
+- Aligned each page's HTML meta description, Open Graph description and Twitter description. Verified exact source strings match.
+- Pythagorean lesson description is now 152 characters and its Open Graph/Twitter descriptions match.
+- Latest Cloudflare immutable preview deployment for commit `0bcdd51`: https://8d43781d.learnora-ab2.pages.dev/
+- Retrieved all four edited pages from that exact deployment. Page titles/descriptions and canonical targets were returned; robots metadata is index,follow on the preview pages. Preview remains separate from production.
+- Verified CFPB youth financial education landing page and activities page are retrievable at their original URLs; Sitewalk's earlier external-link warning was not confirmed as a broken link.
+- GitHub static audit workflow passed for commit `0bcdd51`; Cloudflare Pages deployment check passed.
+- Sitewalk monthly audit allowance is exhausted (tool returned a hard limit of 5 audits this month). No further crawl was started. The 74/100 score is the previous preview audit baseline, not a post-latest-change score.
+- PR #68 remains open, draft and unmerged. Production `main` and `https://learnora-ab2.pages.dev/` have not been changed by this remediation branch.
+- Still outstanding: real mobile/desktop interaction QA, quiz feedback and worksheet interaction checks, a new Sitewalk re-audit when allowance resets, and explicit owner release approval.
+- Do not merge or deploy to production until the remaining QA gates and owner approval are complete.
