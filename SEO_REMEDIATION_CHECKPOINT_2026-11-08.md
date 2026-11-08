@@ -43,3 +43,14 @@ Draft PR: https://github.com/com-orgs/learnora/pull/68
 
 ## Next action
 Review the three curriculum Article objects and verify whether real publication dates and representative article images exist in the actual content/history. Resolve only fields supported by evidence; then repeat QA and Sitewalk preview audit.
+
+
+## Checkpoint update — curriculum schema consistency and meta-description correction
+- Confirmed the three curriculum guide pages have no representative in-page images. Their existing Learnora logo is branding, not an article-specific representative image.
+- Did not invent publication dates or modified dates; no reliable public publication history was established in the page content.
+- Replaced Article JSON-LD on the three curriculum guide pages with a consistent LearningResource schema. This avoids asserting Article publication dates or a representative image that the pages do not actually provide.
+- Standardized the same schema type and properties across all three pages: name, description, URL, educational level, resource type, language, free-access status and Learnora provider.
+- Expanded the Grade 8 Pythagorean theorem meta description to 152 characters. Its JSON-LD description remains the shorter accurate summary; the HTML meta description is the search snippet field.
+- Changes are on branch `seo/sitewalk-remediation-2026-11-08` only. Production remains untouched.
+- The earlier 74/100 Sitewalk report was generated before the last Pythagorean meta-description update and schema standardization. It is a baseline for this batch, not the final post-change score.
+- Next: confirm Cloudflare preview deploy has reached latest branch HEAD; run fresh Sitewalk audit and GitHub workflow; verify no unintended page-body, canonical, or quiz changes; keep PR draft until mobile/desktop and interactive QA are complete.
