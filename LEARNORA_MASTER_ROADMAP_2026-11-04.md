@@ -7,6 +7,27 @@
 > Traffic, rankings, indexing and revenue cannot be guaranteed. This plan prioritises measurable work, student value, search intent and safe monetisation. Do not invent keyword metrics or publish thin pages merely to increase URL count.
 
 
+## Superseding daily indexing & discovery checkpoint — 8 November 2026
+
+- Live sitemap fetched successfully: 104 unique URLs, no duplicates; robots.txt allows all and OAI-SearchBot, and declares the sitemap.
+- GSC tracker: 104 tracked, 1 indexed, 103 not indexed/unknown, 0 pending/errors/warnings; active. Pakistan-date 8 Nov guard: 39 distinct tracker URLs + 0 same-day inspection-history rows = 39/10; overrun 29; no additional inspections. Exact list in [DAILY_INDEXING_LOG_2026-11-08.md](DAILY_INDEXING_LOG_2026-11-08.md).
+- Full URL Inspection history: 77 rows, 42 unique URLs, 19 repeated URL keys and 35 extra rows; 0 rows today. Platform quota 16/2000, but project cap 10 controls. No inspect_url/bulk_inspect_urls/check_tracked_url_now call was made.
+- Hourly GSC Wizard tracker remains active; connector exposes no pause/throttle control. Owner must pause/reduce it in the UI; do not add inspections while union >=10.
+- Google sitemap still pending (last submitted 2026-11-05T16:21:51.927Z; 0 warnings/errors). No sampled robots/canonical/fetch blocker found.
+- Saved Google browser profile redirected to Search Console landing page; authenticated URL Inspection/Request Indexing control unavailable. No manual request submitted; owner must reauthenticate and skip any candidate already requested manually.
+- Bing property verified; feed Success, 104 URLs, last crawled 3 Nov; 0 crawl issue URLs; no dated crawl-stat rows. No direct Bing URL Submission connector action.
+- IndexNow key set (****5d92) and key file verified. Pre-batch history 447 rows/104 URLs/373 HTTP 200/74 HTTP 202/343 extra rows. Compared all 104 live sitemap URLs against full history: 0 new, 0 history-only. 99 unchanged URLs skipped. Five materially changed production pages were verified live and submitted; 5/5 HTTP 200, key validated. Post-batch history 452 rows/104 unique/378 HTTP 200/74 HTTP 202/348 extra rows. Neither 200 nor 202 proves indexing. Exact lists and timestamps are in the daily log.
+- Latest content commit `4625c15d` changed Computer Science HTML/CSS, Python Basics and three Financial Literacy lessons; all five were confirmed live with self-canonical and index/follow. The daily routine did not edit production code.
+- Ten representative pages fetched; all had self-canonical, index/follow and internal links. Full 104-page orphan graph remains open. Algorithms is a content-depth review candidate, not a word-count violation.
+
+### Current execution priorities
+1. Owner: pause/reduce the GSC Wizard hourly tracker in its UI; no further daily GSC inspections until resolved.
+2. Reauthenticate the saved Google browser profile; manually review candidates only after checking which were already requested.
+3. Wait for Google sitemap processing; avoid unnecessary API inspections.
+4. Finish the 104-page internal-link/orphan graph and continue content QA for Algorithms and recent lesson updates.
+5. Continue IndexNow only for new or materially changed pages; never resubmit unchanged sitemap URLs just to use quota.
+6. Keep production metadata/canonical/robots unchanged unless a confirmed issue is fixed and preview-tested.
+
 ## Superseding daily indexing & discovery checkpoint — 6 November 2026
 
 - Production code commit: `66d163cd9f2c4d96e65a49bcc373725c0a9fa3f1` (Phase 2 Grade 6 Maths release; production deployment run [#42049423565](https://github.com/com-orgs/learnora/actions/runs/42049423565) succeeded). Main changes after this release are documentation/QA only; no later production HTML/JS/CSS change was found.
