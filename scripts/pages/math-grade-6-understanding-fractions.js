@@ -165,3 +165,58 @@
 })();
 
 document.addEventListener('click', function (event) { const button = event.target.closest('[data-print-worksheet]'); if (button) window.print(); });
+
+
+// Interactive fraction explorer and quick check.
+(function () {
+  "use strict";
+  const denominator = document.getElementById("denominator-select");
+  const numerator = document.getElementById("numerator-slider");
+  const numeratorValue = document.getElementById("numerator-value");
+  const topNumber = document.getElementById("lab-numerator");
+  const bottomNumber = document.getElementById("lab-denominator");
+  const bar = document.getElementById("fraction-bar");
+  const caption = document.getElementById("lab-caption");
+
+  if (denominator && numerator && numeratorValue && topNumber && bottomNumber && bar && caption) {
+    function renderFraction() {
+      const total = Number(denominator.value);
+      const selected = Number(numerator.value);
+      numerator.max = String(total);
+      numeratorValue.value = String(selected);
+      numeratorValue.textContent = String(selected);
+      topNumber.textContent = String(selected);
+      bottomNumber.textContent = String(total);
+      bar.replaceChildren();
+      for (let i = 0; i < total; i++) {
+        const part = document.createElement("span");
+        if (i < selected) part.className = "filled";
+        bar.appendChild(part);
+      }
+      const wording = selected === 1 ? "part is" : "parts are";
+      caption.textContent = selected + " out of " + total + " equal " + wording + " shaded.";
+      bar.setAttribute("aria-label", selected + " of " + total + " equal parts shaded");
+    }
+    denominator.addEventListener("change", function () {
+      numerator.max = denominator.value;
+      if (Number(numerator.value) > Number(denominator.value)) numerator.value = denominator.value;
+      renderFraction();
+    });
+    numerator.addEventListener("input", renderFraction);
+    renderFraction();
+  }
+
+  document.querySelectorAll(".quick-choice").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const feedback = document.getElementById("quick-feedback");
+      if (!feedback) return;
+      if (button.dataset.answer === "2/5") {
+        feedback.textContent = "Correct. Two parts are selected (numerator) out of five equal parts in total (denominator).";
+        feedback.style.color = "#126239";
+      } else {
+        feedback.textContent = "Not quite. The denominator is the total number of equal parts. Try counting the shaded parts first, then all the parts.";
+        feedback.style.color = "#a32828";
+      }
+    });
+  });
+})();
