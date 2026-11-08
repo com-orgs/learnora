@@ -609,9 +609,9 @@ Historical session notes below are retained for continuity; use this current sta
 
 ## CI status (automatically refreshed by GitHub Actions)
 - Status: success.
-- Tested commit: `a46661ba6dccc954ff65a43b0b7bdd7a81977c05`
-- Workflow: Learnora Site Audit (run [#42490196989](https://github.com/com-orgs/learnora/actions/runs/42490196989))
-- Last updated automatically: run #42490196989 on branch `seo/sitewalk-remediation-2026-11-08`.
+- Tested commit: `6d0ddf3644484d90d0efd427dcffd4f8ee5d0f52`
+- Workflow: Learnora Site Audit (run [#42491946607](https://github.com/com-orgs/learnora/actions/runs/42491946607))
+- Last updated automatically: run #42491946607 on branch `seo/sitewalk-remediation-2026-11-08`.
 
 
 ### Phase 12 browser QA correction — 3 November 2026
