@@ -42,7 +42,7 @@ const n=Number(numerator.value),k=Number(factor.value);
 if(n<1||d<2||k<2)return;
 const newN=n*k,newD=d*k;
 models.replaceChildren(drawBar(n+"/"+d,d,n),drawBar(newN+"/"+newD,newD,newN));
-explanation.innerHTML="";
+explanation.replaceChildren();
 const strong=document.createElement("strong");strong.textContent=n+"/"+d+" = "+newN+"/"+newD+".";
 explanation.append(strong,document.createTextNode(" Both fractions shade the same proportion of the whole."));
 }
