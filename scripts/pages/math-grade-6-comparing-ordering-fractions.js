@@ -30,4 +30,35 @@ scoreNumber.textContent="0 / 5";scoreMessage.textContent="";scoreDetail.textCont
 });
 })();
 
+
+
+(function(){
+"use strict";
+const left=document.getElementById("compare-left");
+const right=document.getElementById("compare-right");
+const bars=document.getElementById("comparison-bars");
+const markerLeft=document.getElementById("compare-marker-left");
+const markerRight=document.getElementById("compare-marker-right");
+const result=document.getElementById("comparison-result");
+const working=document.getElementById("comparison-working");
+if(!left||!right||!bars||!markerLeft||!markerRight||!result||!working)return;
+function fraction(value){const parts=value.split("/").map(Number);return {n:parts[0],d:parts[1],value:parts[0]/parts[1]};}
+function gcd(a,b){while(b){const t=b;b=a%b;a=t;}return a;}
+function lcm(a,b){return a/gcd(a,b)*b;}
+function makeBar(label,percent){const row=document.createElement("div");row.className="compare-row";const name=document.createElement("strong");name.textContent=label;const track=document.createElement("div");track.className="compare-track";track.setAttribute("role","img");track.setAttribute("aria-label",label+" shaded to "+percent.toFixed(1)+" percent");const fill=document.createElement("span");fill.style.width=percent+"%";track.appendChild(fill);const amount=document.createElement("span");amount.textContent=percent.toFixed(1)+"%";row.append(name,track,amount);return row;}
+function update(){
+const a=fraction(left.value),b=fraction(right.value);
+const aPercent=a.value*100,bPercent=b.value*100;
+bars.replaceChildren(makeBar(left.value,aPercent),makeBar(right.value,bPercent));
+markerLeft.style.left=aPercent+"%";markerRight.style.left=bPercent+"%";
+markerLeft.title=left.value;markerRight.title=right.value;
+const common=lcm(a.d,b.d),aTop=a.n*(common/a.d),bTop=b.n*(common/b.d);
+const relation=a.value<b.value?"<":a.value>b.value?">":"=";
+const phrase=a.value<b.value?"is less than":a.value>b.value?"is greater than":"is equal to";
+result.textContent=left.value+" "+phrase+" "+right.value+".";
+working.textContent="Using a common denominator of "+common+": "+left.value+" = "+aTop+"/"+common+" and "+right.value+" = "+bTop+"/"+common+". Since "+aTop+" "+relation+" "+bTop+", "+left.value+" "+relation+" "+right.value+".";
+}
+left.addEventListener("change",update);right.addEventListener("change",update);update();
+})();
+
 document.addEventListener('click', function (event) { const button = event.target.closest('[data-print-worksheet]'); if (button) window.print(); });
