@@ -32,7 +32,7 @@ Sitemap: https://learnora-ab2.pages.dev/sitemap.xml
 ## Google Search Console — strict daily inspection guard
 
 - Property: https://learnora-ab2.pages.dev/
-- Tracker read: 104/104 rows (all pages); status counts: {"not_indexed":103,"indexed":1}; active=undefined; latest check timestamp: 2026-11-08T03:46:56.434+00:00 UTC (2026-11-08 08:46:56.434 PKT).
+- Tracker read: 104/104 rows (all pages); status counts: {"not_indexed":103,"indexed":1}; active=true; latest check timestamp: 2026-11-08T03:46:56.434+00:00 UTC (2026-11-08 08:46:56.434 PKT).
 - Full URL Inspection history read: 77 rows; pagination hasMore=false; unique URL keys=42; repeated URL keys=19; extra historical repeat rows=35.
 - Pakistan-date 8 Nov tracker rows: 39 distinct URLs.
 - Pakistan-date 8 Nov URL Inspection history rows: 0; distinct URLs=0; same-day repeated inspection URLs=0.
