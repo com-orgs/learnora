@@ -329,6 +329,90 @@ footer a { text-decoration:none; }
 
 fieldset.question,fieldset.quiz-question{border:0;min-width:0}
 fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;font-weight:700;margin:0 0 8px;padding:0}
+
+/* Learnora lesson experience refresh */
+main { max-width:1120px; }
+.hero {
+  position:relative; overflow:hidden;
+  padding:clamp(26px,5vw,48px);
+  border:1px solid #d9e8e5;
+  border-top:0;
+  border-radius:22px;
+  background:linear-gradient(125deg,#ffffff 0%,#edf8f3 58%,#eaf2fb 100%);
+  box-shadow:0 16px 42px rgba(23,59,99,.08);
+}
+.hero:after {
+  content:"½"; position:absolute; right:5%; top:-35px;
+  color:rgba(17,116,84,.08); font-size:190px; font-weight:900;
+  line-height:1; pointer-events:none;
+}
+.hero h1 { max-width:720px; font-size:clamp(34px,5vw,54px); letter-spacing:-1.8px; }
+.hero .tag { padding:7px 13px; letter-spacing:.04em; }
+.hero .muted { font-size:14px; }
+.section {
+  border-radius:18px; padding:clamp(20px,3.5vw,34px);
+  box-shadow:0 8px 26px rgba(23,59,99,.045);
+  scroll-margin-top:24px;
+}
+.section h2 { font-size:clamp(22px,3vw,29px); letter-spacing:-.5px; }
+.section h3 { margin-top:25px; }
+.lesson-map {
+  display:flex; flex-wrap:wrap; align-items:center; gap:9px;
+  padding:13px 16px; margin:0 0 22px;
+  border:1px solid var(--line); border-radius:14px; background:#fff;
+}
+.lesson-map strong { color:var(--navy); margin-right:4px; font-size:13px; }
+.lesson-map a {
+  display:inline-flex; padding:7px 11px; border-radius:999px;
+  background:#f0f6f4; color:#116548; text-decoration:none;
+  font-size:13px; font-weight:700;
+}
+.lesson-map a:hover { background:#dff1e9; }
+.learning-callout {
+  border:1px solid #cfe7db; border-radius:14px; padding:16px 18px;
+  background:linear-gradient(120deg,#f0faf5,#f6f9ff); margin:18px 0;
+}
+.learning-callout strong { color:#116548; }
+.fraction-lab {
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:22px; align-items:center; padding:20px;
+  background:#f7fafc; border:1px solid #dce7ef; border-radius:16px;
+}
+.lab-controls { display:grid; gap:13px; }
+.lab-controls label { font-weight:700; color:var(--navy); }
+.lab-controls select { width:100%; padding:11px; border:1px solid #b8c9d7; border-radius:9px; background:#fff; }
+.lab-controls input[type=range] { width:100%; accent-color:var(--teal); }
+.lab-output {
+  min-height:180px; display:grid; align-content:center; justify-items:center;
+  padding:18px; border-radius:14px; background:#fff; border:1px solid #e1e8f0;
+}
+.lab-fraction { font-size:32px; font-weight:850; color:var(--navy); }
+.lab-fraction span { display:block; text-align:center; padding:0 12px; }
+.lab-fraction span:first-child { border-bottom:3px solid currentColor; }
+.fraction-bar { display:flex; width:100%; max-width:360px; gap:3px; margin:18px 0 10px; }
+.fraction-bar span { flex:1; height:38px; border:1px solid #b8c9d7; border-radius:5px; background:#edf2f7; }
+.fraction-bar span.filled { background:#168b68; border-color:#168b68; }
+.lab-caption { color:var(--muted); text-align:center; font-size:14px; margin:0; }
+.number-line {
+  position:relative; height:95px; margin:24px 10px 8px;
+}
+.number-line .track { position:absolute; top:30px; left:0; right:0; height:4px; background:#526b80; }
+.number-line .tick { position:absolute; top:19px; width:2px; height:25px; background:#526b80; transform:translateX(-50%); }
+.number-line .tick span { position:absolute; top:31px; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:13px; color:var(--ink); }
+.number-line .point { position:absolute; top:22px; width:18px; height:18px; border-radius:50%; background:#168b68; border:3px solid #fff; box-shadow:0 0 0 2px #168b68; transform:translateX(-50%); }
+.quick-check {
+  padding:18px; margin-top:20px; border:1px solid #dce7ef;
+  border-radius:14px; background:#fff;
+}
+.quick-check button { margin:6px 7px 0 0; }
+.quick-feedback { min-height:25px; margin:12px 0 0; font-weight:700; }
+@media(max-width:700px) {
+  main { margin:22px auto; }
+  .fraction-lab { grid-template-columns:1fr; }
+  .lesson-map { gap:7px; }
+  .lesson-map strong { width:100%; }
+}
+
 </style>
   <link rel="stylesheet" href="/accessibility.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -389,6 +473,15 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
     Learning time: approximately 20–25 minutes · Beginner level
   </p>
 </section>
+
+<nav class="lesson-map" aria-label="On this lesson">
+  <strong>Jump to:</strong>
+  <a href="#fraction-explorer">Explore fractions</a>
+  <a href="#number-line">Number line</a>
+  <a href="#practice">Practice</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#worksheet">Worksheet</a>
+</nav>
 
 <section class="section">
   <h2>What You Will Learn</h2>
@@ -457,6 +550,69 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
     of equal parts. The numerator tells how many of those parts
     are being considered.
   </div>
+</section>
+
+
+<section class="section" id="fraction-explorer">
+  <h2>Explore it yourself: Build a fraction</h2>
+  <p>Change the number of equal parts, then choose how many parts are shaded. Watch how the fraction changes. A fraction only describes a fair share when the parts are equal in size.</p>
+  <div class="fraction-lab">
+    <div class="lab-controls">
+      <label for="denominator-select">1. Divide the whole into equal parts</label>
+      <select id="denominator-select">
+        <option value="2">2 equal parts</option><option value="3">3 equal parts</option>
+        <option value="4" selected>4 equal parts</option><option value="5">5 equal parts</option>
+        <option value="6">6 equal parts</option><option value="7">7 equal parts</option>
+        <option value="8">8 equal parts</option>
+      </select>
+      <label for="numerator-slider">2. Shade some parts: <output id="numerator-value">1</output></label>
+      <input id="numerator-slider" type="range" min="0" max="4" value="1">
+      <div class="learning-callout"><strong>Think about it:</strong> The denominator stays the same when we shade more pieces. Only the numerator changes.</div>
+    </div>
+    <div class="lab-output" aria-live="polite">
+      <div class="lab-fraction"><span id="lab-numerator">1</span><span id="lab-denominator">4</span></div>
+      <div class="fraction-bar" id="fraction-bar" role="img" aria-label="One of four equal parts shaded">
+        <span class="filled"></span><span></span><span></span><span></span>
+      </div>
+      <p class="lab-caption" id="lab-caption">1 out of 4 equal parts is shaded.</p>
+    </div>
+  </div>
+  <div class="quick-check">
+    <strong>Quick check: A strip is divided into 5 equal parts. You shade 2. Which fraction is shaded?</strong>
+    <div>
+      <button type="button" class="quick-choice" data-answer="2/5">2/5</button>
+      <button type="button" class="quick-choice" data-answer="5/2">5/2</button>
+      <button type="button" class="quick-choice" data-answer="2/3">2/3</button>
+    </div>
+    <p class="quick-feedback" id="quick-feedback" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="section" id="number-line">
+  <h2>Fractions on a number line</h2>
+  <p>A fraction is also a number. It tells us a position between whole numbers, not just a shaded piece of a shape.</p>
+  <div class="visual">
+    <strong>One whole divided into four equal steps</strong>
+    <div class="number-line" role="img" aria-label="Number line from zero to one, divided into four equal intervals. Three quarters is marked.">
+      <div class="track"></div>
+      <div class="tick" style="left:0%"><span>0</span></div>
+      <div class="tick" style="left:25%"><span>1/4</span></div>
+      <div class="tick" style="left:50%"><span>1/2</span></div>
+      <div class="tick" style="left:75%"><span>3/4</span></div>
+      <div class="tick" style="left:100%"><span>1</span></div>
+      <div class="point" style="left:75%"></div>
+    </div>
+    <p class="muted">The marked point is three equal steps from zero: 3/4.</p>
+  </div>
+  <div class="example">
+    <strong>Worked example: Where is 2/4?</strong>
+    <ol>
+      <li>The denominator is 4, so split the distance from 0 to 1 into 4 equal intervals.</li>
+      <li>The numerator is 2, so count 2 intervals from 0.</li>
+      <li>You land halfway between 0 and 1. That point is 2/4, which is also 1/2.</li>
+    </ol>
+  </div>
+  <div class="learning-callout"><strong>Key idea:</strong> Equal denominators mean the whole is split into the same number of equal-sized parts. A larger numerator then means more of those parts.</div>
 </section>
 
 <section class="section">
@@ -549,7 +705,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="practice">
   <h2>6. Practice Exercises</h2>
   <p>Try these questions before checking your answers.</p>
 
@@ -636,7 +792,7 @@ fieldset.question>legend,fieldset.quiz-question>legend{display:block;width:100%;
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="worksheet">
   <h2>8. Free Printable Worksheet</h2>
   <p>
     Use this worksheet to practise what you have learned.
