@@ -1,3 +1,30 @@
+## Latest continuation checkpoint — Final SEO & Technical Release Review (9 November 2026)
+
+- Corrected the task sequence to the agreed roadmap: final SEO/technical release review, remaining-risk verification and checkpoint update. The separate Phase 14 CS/Financial Literacy QA remains recorded below as supporting work, not a replacement for the release review.
+- Decision: **HOLD final release sign-off**. No confirmed critical/high/medium finding in the latest 25-page on-page sample, but site-wide release qualification remains incomplete.
+- Parsed current main `sitemap.xml`: 104 entries, 104 unique, all HTTPS and same-host, no query strings/fragments. No `lastmod` values; optional and not a blocker.
+- Re-read `robots.txt`: allows all agents and explicitly OAI-SearchBot; sitemap declaration matches production URL.
+- Latest 9 Nov recorded live sample: 25/25 HTTP 200, indexable, self-canonical, no noindex/redirect; 0 critical/high/medium, 12 low observations. The 104-page inbound-link/orphan graph remains incomplete.
+- GSC: 104 tracked; 1 indexed, 103 not indexed/unknown; sitemap pending with 0 warnings/errors. Daily guard already 34 distinct background-checked URLs / cap 10; no more URL inspections. Owner must pause/reduce the active hourly tracker in GSC Wizard UI.
+- Reviewed `_headers`: HSTS, frame/content-type/referrer protections, Permissions Policy and restrictive CSP configured. Reviewed static audit and legal/pre-monetisation audit source.
+- Reviewed trust/legal files: About, Contact, Privacy, Terms and Editorial Policy exist. AdSense/analytics remain intentionally disabled; no placeholder `ads.txt`. Audience/COPPA, actual publisher ID and any applicable certified CMP + exact ads.txt seller record remain monetisation gates.
+- PR #62 workflow run [#42146364198](https://github.com/com-orgs/learnora/actions/runs/42146364198) inspected at step level: static, legal, exact preview, headers/assets and mobile/desktop/quiz browser checks all succeeded. This is PR #62 evidence only, not a fresh consolidated release-candidate run. PRs #59–#62 remain recorded as draft/unmerged; current PR metadata refresh is still required.
+- Report: [FINAL_SEO_TECHNICAL_RELEASE_REVIEW_2026-11-09.md](FINAL_SEO_TECHNICAL_RELEASE_REVIEW_2026-11-09.md).
+- Phase 14 supporting sample report: [PHASE14_CS_FINLIT_QA_2026-11-09.md](PHASE14_CS_FINLIT_QA_2026-11-09.md).
+- Next: complete 104-page inbound-link/orphan graph; refresh PR #59–#62 exact state/diffs; obtain fresh full QA on exact consolidated candidate; manual screen-reader and print-output checks; then issue final release recommendation. Weekly read-only GSC monitoring can be configured later after hourly tracker throttling and explicit schedule approval.
+- Production safety: no production HTML/JS/CSS/sitemap/robots/headers changes; no merge; no Cloudflare deployment. Zero-investment guardrail preserved.
+
+### Project tree — this checkpoint
+- `sitemap.xml`, `robots.txt`, `_headers` — reviewed from main.
+- `scripts/audit-site.mjs`, `scripts/audit-legal-readiness.mjs` — reviewed.
+- `about.html`, `contact.html`, `privacy-policy.html`, `terms.html`, `editorial-policy.html` — existence/content spot-check.
+- `FINAL_SEO_TECHNICAL_RELEASE_REVIEW_2026-11-09.md` — final review record.
+- `PHASE14_CS_FINLIT_QA_2026-11-09.md` — supporting six-lesson QA record.
+- `PROJECT_STATUS.md` — updated checkpoint.
+- Production: https://learnora-ab2.pages.dev/ — unchanged.
+
+---
+
 ## Latest continuation checkpoint — Phase 14 CS & Financial Literacy QA (9 November 2026)
 
 - Created docs-only preview branch `qa/phase14-cs-finlit-review-2026-11-09` from `main`; no production branch or files changed.
