@@ -1336,3 +1336,12 @@ Historical session notes below are retained for continuity; use this current sta
 
 - Initial pre-inspection guard at the start of the run: 33 distinct tracker URLs + 0 URL Inspection history rows = 33/10 (overrun 23); all daily GSC inspection actions stopped.
 - A later read-only tracker refresh at 08:23:19 PKT showed 34 distinct tracker URLs (overrun 24). The additional hourly background check was `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals` (`lastCheckAt=2026-11-09T03:23:19.741+00:00` UTC). This was not manually triggered. Final per-URL list is in `DAILY_INDEXING_LOG_2026-11-09.md`.
+
+
+## Commitment completion checkpoint — 9 November 2026
+
+- Current PR state reconciled in COMMITMENT_COMPLETION_CHECKPOINT_2026-11-09.md: #64–#67 merged; #59–#63 and #68 remain open drafts. Historical CI success is tied to exact recorded SHAs; PR #68 latest head SHA does not have a matching successful PR workflow run and is 6 commits behind current main.
+- Full internal-link/orphan graph is still open. scripts/audit-site.mjs checks broken same-origin links site-wide and lesson links from selected Math/English/Science indexes, but does not create a universal 104-page inbound-link graph or detect all page-type orphans.
+- New Sitewalk crawl could not start: monthly limit of five audits reached. No paid crawl credits were purchased. Retry after monthly reset.
+- Release recommendation remains HOLD. Manual screen-reader and actual print/PDF visual checks, current-head consolidated CI, and genuine independent educator review remain open.
+- No merge, production code change or Cloudflare deployment. No GSC URL Inspection action. Owner must pause/reduce the hourly GSC Wizard tracker in its UI.
