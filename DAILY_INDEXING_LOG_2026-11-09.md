@@ -340,3 +340,9 @@ Learnora
 ├── LEARNORA_MASTER_ROADMAP_2026-11-04.md
 └── DAILY_INDEXING_LOG_2026-11-09.md
 ```
+
+
+## Guard snapshot progression
+
+- Initial pre-inspection guard at the start of the run: 33 distinct tracker URLs + 0 URL Inspection history rows = 33/10 (overrun 23). All daily GSC inspection actions stopped at that point.
+- Later read-only tracker refresh at 08:23:19 PKT showed 34 distinct tracker URLs (overrun 24). The additional hourly background check was `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals` (`lastCheckAt=2026-11-09T03:23:19.741+00:00` UTC). It was not manually triggered; no GSC inspection action was called.
