@@ -1276,3 +1276,9 @@ Historical session notes below are retained for continuity; use this current sta
 - Fresh 25-page on-page audit: 25/25 HTTP 200 and indexable; self-canonical on all; no noindex/redirect; internal links 11–47; critical/high/medium=0; low=12 (10 long titles, 1 long meta description, 1 missing optional structured data). Full 104-page orphan/inbound graph still outstanding.
 - Manual Request Indexing: no authenticated Search Console UI control verified; no manual request submitted. URL Inspection API does not submit manual requests or expose complete manual history. Candidate list and skip warning are in the daily log.
 - No production code, sitemap, robots or metadata change and no manual deployment. Exact evidence, all 34 tracker URLs, all 101 unchanged IndexNow URLs, all 25 audit rows, blockers and next actions: [DAILY_INDEXING_LOG_2026-11-09.md](DAILY_INDEXING_LOG_2026-11-09.md).
+
+
+### Guard snapshot progression — 9 Nov 2026
+
+- Initial pre-inspection guard at the start of the run: 33 distinct tracker URLs + 0 URL Inspection history rows = 33/10 (overrun 23); all daily GSC inspection actions stopped.
+- A later read-only tracker refresh at 08:23:19 PKT showed 34 distinct tracker URLs (overrun 24). The additional hourly background check was `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals` (`lastCheckAt=2026-11-09T03:23:19.741+00:00` UTC). This was not manually triggered. Final per-URL list is in `DAILY_INDEXING_LOG_2026-11-09.md`.
