@@ -68,3 +68,40 @@ Review the three curriculum Article objects and verify whether real publication 
 - PR #68 remains open, draft and unmerged. Production `main` and `https://learnora-ab2.pages.dev/` have not been changed by this remediation branch.
 - Still outstanding: real mobile/desktop interaction QA, quiz feedback and worksheet interaction checks, a new Sitewalk re-audit when allowance resets, and explicit owner release approval.
 - Do not merge or deploy to production until the remaining QA gates and owner approval are complete.
+
+
+## Functional QA checkpoint — 9 November 2026
+### Browser QA run 1 — homepage and Grade 6 fractions
+- Preview tested: https://791c3327.learnora-ab2.pages.dev/
+- Homepage load and desktop layout: PASS; no visible errors or overflow.
+- Seven subject filters: PASS (All, Maths, English, Science, Computer Science, AI Literacy, Financial Literacy).
+- Homepage 3-question quiz: PASS; answers enabled progression, results screen and restart.
+- Grade 6 Understanding Fractions page: PASS.
+- Fraction explorer denominator and numerator controls: PASS; graphic and labels update.
+- Quick-choice feedback: PASS.
+- Five-question quiz: PASS; known correct answers returned 5/5 with per-question explanations.
+- Results remained inline without jumping to page top; Retake Quiz reset selections, feedback and score.
+- Worksheet and Teacher/Parent Answer Key disclosure present; print action was tested and page remained stable.
+- No visible JavaScript/runtime errors.
+- Mobile width around 390px: first browser run reported no obvious horizontal overflow/clipped controls.
+
+### Browser QA run 2 — English, Science, Financial Literacy and worksheet
+- English Parts of Speech: PASS; page, navigation, content sections and five-question quiz feedback.
+- Science Grade 7 Introduction to Cells: PASS; page, lesson content and five-question quiz feedback.
+- Financial Literacy: initial test guessed /financial-literacy/needs-wants-simple-budgets and got 404. This is NOT a broken internal link: homepage source links to the actual route /financial-literacy/budgeting, whose H1 is “Needs, Wants and Simple Budgets”; that actual route loaded and its quiz passed.
+- International Middle-School Maths worksheet: PASS; all four curriculum sections render; worked-answer disclosures expand/collapse; print control present and deliberately not clicked.
+- No visible JavaScript errors in tested pages.
+- Full mobile viewport test on this second batch could not be completed.
+
+### PR change-scope review
+- Compared PR base 2b6a750ea46aca274f139636600500c53479f65f to branch head 37016fc8d9eecc2dcd7e2619eda00b1470a08017.
+- 104 HTML files appear in the PR diff. In available diff patches, no changed HTML body content was detected; changes are in document head metadata/schema and supporting headers/docs.
+- PR #68 remains draft and unmerged. Production remains unchanged.
+- GitHub checks and Cloudflare Pages deployment for the earlier commit 7c9fd8b succeeded; branch head now includes a later automated status/checkpoint commit and should be checked for its own completed workflows/deployment before any further action.
+
+### Remaining QA gates
+- Run a dedicated broken-internal-link audit over all local links and ensure every homepage card destination exists.
+- Complete mobile QA on representative English, Science and worksheet pages.
+- Confirm latest branch-head CI/deployment, not just the prior preview commit.
+- Re-audit Sitewalk when monthly audit quota resets; current latest score 74/100 is a pre-functional-QA baseline only.
+- Keep PR #68 draft/unmerged and production untouched pending all checks and explicit release approval.
