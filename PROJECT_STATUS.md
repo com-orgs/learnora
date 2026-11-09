@@ -1,3 +1,30 @@
+## Latest continuation checkpoint — Phase 14 CS & Financial Literacy QA (9 November 2026)
+
+- Created docs-only preview branch `qa/phase14-cs-finlit-review-2026-11-09` from `main`; no production branch or files changed.
+- Source-reviewed six lessons: Algorithms and Flowcharts (preview branch `qa-algorithms-content-quality`), Python Variables/Input/Output, HTML/CSS, Budgeting, Savings/Interest, and Unit Prices (the latter five from `main`).
+- Structural pass: all six contain learning objectives, concept explanations, worked examples, common mistakes, practice, five-question quiz, printable worksheet, answer guide and Sources/Further Reading.
+- Checked 30/30 visible quiz answer mappings against the visible answer options and independently checked the sampled arithmetic/answer guides. No definite calculation error, answer-key mismatch or contradiction found in this sample.
+- Confirmed in source: all six pages have self-canonical, index/follow, matching Open Graph URL/title/description and LearningResource JSON-LD. All load `/scripts/pages/new-subject-lessons.js`.
+- External source choices are topically appropriate, but all external URLs were not re-fetched in this batch; link uptime/redirect status is not certified.
+- Algorithms remains preview-only on PR #62. No claim that this page is live in production.
+- QA report: [PHASE14_CS_FINLIT_QA_2026-11-09.md](PHASE14_CS_FINLIT_QA_2026-11-09.md).
+- No production code change, merge, deployment, GSC URL Inspection, manual Request Indexing or IndexNow submission in this batch.
+- 9 Nov GSC guard remains 34 distinct background-checked URLs / 10 allowed; do not run further daily inspections. Owner must pause/reduce hourly tracker in GSC Wizard UI.
+- Remaining: combined review/current CI check of preview PRs; full 104-page inbound-link/orphan graph; re-fetch external references; independent educator review; obtain explicit release approval before any merge/deploy.
+
+### Project tree — this checkpoint
+- `computer-science/algorithms.html` — reviewed on PR #62 preview branch, not production.
+- `computer-science/python-basics.html` — reviewed on main.
+- `computer-science/html-css.html` — reviewed on main.
+- `financial-literacy/budgeting.html` — reviewed on main.
+- `financial-literacy/savings-interest.html` — reviewed on main.
+- `financial-literacy/unit-prices.html` — reviewed on main.
+- `PHASE14_CS_FINLIT_QA_2026-11-09.md` — QA report.
+- `PROJECT_STATUS.md` — updated checkpoint.
+- Production: https://learnora-ab2.pages.dev/ — unchanged.
+
+---
+
 # Learnora — Project Status & Continuation Tracker
 
 > **Single source of truth for all future chats and development sessions.**
