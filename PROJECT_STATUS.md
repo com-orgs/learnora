@@ -1260,3 +1260,19 @@ Historical session notes below are retained for continuity; use this current sta
 5. [ ] Complete the full internal-link graph when fetch limits permit; continue Python Basics, HTML/CSS and Financial Literacy QA on preview branches.
 6. [ ] Review title/structured-data notes only through isolated preview QA; no mass metadata edits.
 7. [ ] Keep PRs #59–#62 unmerged until combined content/browser review and explicit release approval.
+
+
+## Daily indexing & discovery checkpoint — 9 November 2026
+
+- Production: https://learnora-ab2.pages.dev/. Latest content commit reviewed: `2b6a750ea46aca274f139636600500c53479f65f`; comparison from `4625c15dbe7f26fd4c5ba217f9960d21eda56b10` shows 7 commits ahead: three Grade 6 fractions HTML/JS changes and four documentation-only commits.
+- Live sitemap fetch: 104 entries / 104 unique / 0 duplicates. Existing IndexNow history already covered all 104 before today's update; new sitemap URLs=0; history-only=0.
+- GSC tracker: 104 URLs; indexed=1; not indexed/unknown=103; pending=0; errors=0; warnings=0; active=true. Full tracker (104) and full inspection history (77) read before guard.
+- **Pakistan-date 2026-11-09 guard:** 34 tracker rows across 34 distinct URLs; 0 URL Inspection history rows; union=34/10; overrun=24; remaining=0. No `inspect_url`, `bulk_inspect_urls` or `check_tracked_url_now` call. Exact URLs/timestamps and historical repeats: [DAILY_INDEXING_LOG_2026-11-09.md](DAILY_INDEXING_LOG_2026-11-09.md). GSC platform quota snapshot 11/2000, but project cap is stricter.
+- Historical GSC Inspection history: 77 rows, 42 unique URLs, 19 repeated URL keys, 35 extra repeat rows. Same-day repeated URLs=0.
+- GSC hourly tracker remains active; connector exposes no pause/throttle control. Owner must pause/reduce it in the GSC Wizard UI. No additional daily inspections while union >=10.
+- Google sitemap: last submitted 2026-11-05T16:21:51.927Z; pending=true; warnings=0; errors=0. robots.txt fetch confirms Allow for all agents and OAI-SearchBot plus sitemap declaration.
+- Bing property verified=true; feed=Success for 104 URLs; last crawled=2026-11-03; quota=100/day, 2200/month; crawl issues=0; crawl stats rows=0 (no dated stats returned).
+- IndexNow key configured=true, masked=****5d92, key file verified=true. Full history after today's batch: 455 rows, 104 unique URLs, 351 extra repeat rows; HTTP 200=381, HTTP 202=74. Three materially changed pages were verified live and submitted: Understanding Fractions, Equivalent Fractions, Comparing and Ordering Fractions; batch `597d18b8-cd8f-4898-8a13-3491e49b8eae`; all HTTP 200 accepted/key-validated, not proof of indexing. 101 unchanged URLs skipped; exact per-URL duplicate-skip evidence is in the daily log.
+- Fresh 25-page on-page audit: 25/25 HTTP 200 and indexable; self-canonical on all; no noindex/redirect; internal links 11–47; critical/high/medium=0; low=12 (10 long titles, 1 long meta description, 1 missing optional structured data). Full 104-page orphan/inbound graph still outstanding.
+- Manual Request Indexing: no authenticated Search Console UI control verified; no manual request submitted. URL Inspection API does not submit manual requests or expose complete manual history. Candidate list and skip warning are in the daily log.
+- No production code, sitemap, robots or metadata change and no manual deployment. Exact evidence, all 34 tracker URLs, all 101 unchanged IndexNow URLs, all 25 audit rows, blockers and next actions: [DAILY_INDEXING_LOG_2026-11-09.md](DAILY_INDEXING_LOG_2026-11-09.md).
