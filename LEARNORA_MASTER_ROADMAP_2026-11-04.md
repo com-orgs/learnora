@@ -763,3 +763,9 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 - Fresh on-page audit: 25/25 pages HTTP 200, indexable and self-canonical; no noindex or redirect; 0 critical/high/medium; 12 low notes (10 long titles, 1 long description, 1 optional structured-data absence). Internal-link sample range 11–47; full 104-page orphan graph remains outstanding.
 - No authenticated manual GSC Request Indexing control verified and no manual request submitted. URL Inspection API is status-only; manual request history is incomplete. Owner candidates and duplicate-skip warning are logged.
 - Next: owner pauses/reduces hourly tracker; monitor Google sitemap; authenticate Search Console and skip previously requested candidates; complete full internal-link graph; preview-QA metadata improvements; continue independent educator review of interactive fraction lessons. No production code or metadata change and no manual deployment.
+
+
+### 9 Nov guard snapshot correction
+
+- Pre-inspection guard snapshot was 33/10 (33 tracker URLs, 0 same-day URL Inspection history rows); no GSC inspection calls were made.
+- Read-only final tracker refresh later reached 34/10 because the hourly background checker added `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals` at `2026-11-09T03:23:19.741+00:00` UTC (08:23:19 PKT). Overrun therefore ended at 24. This is background activity, not an extra manual check. Full list: `DAILY_INDEXING_LOG_2026-11-09.md`.
