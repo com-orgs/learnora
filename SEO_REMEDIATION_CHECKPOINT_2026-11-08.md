@@ -105,3 +105,19 @@ Review the three curriculum Article objects and verify whether real publication 
 - Confirm latest branch-head CI/deployment, not just the prior preview commit.
 - Re-audit Sitewalk when monthly audit quota resets; current latest score 74/100 is a pre-functional-QA baseline only.
 - Keep PR #68 draft/unmerged and production untouched pending all checks and explicit release approval.
+
+
+## Functional browser QA checkpoint — 9 November 2026
+- Live browser QA completed against immutable Cloudflare preview: https://791c3327.learnora-ab2.pages.dev/
+- Homepage: load passed; desktop layout showed no visible overflow/clipping; all seven subject filters rendered and tested filters/reset worked.
+- Homepage three-question quick quiz: answer selection enabled Next, progression to results worked, and Try Again reset to question one.
+- Representative lesson tested: `/math/grade-6/understanding-fractions`.
+- Lesson content rendered; fraction explorer denominator and numerator controls updated values and visual bar; quick-choice feedback appeared.
+- Five-question quiz tested using correct answers b,c,a,c,b: result 5/5, 100%, per-question explanations, no scroll-to-top jump; Retake reset selections, feedback and score.
+- Worksheet rendered with eight questions; Teacher / Parent Answer Key disclosure was present. Print control was present and invoked without crashing the page (native print preview may appear).
+- Narrow viewport approx. 390x844: no obvious horizontal overflow or clipped controls observed.
+- No visible JavaScript console/runtime errors were reported during this browser run.
+- Scope limitation: this is a representative interactive QA of homepage and one Grade 6 fractions lesson, not exhaustive QA of all 104 pages, every lesson, every worksheet, or all browser/device combinations.
+- The tested immutable deployment is an earlier preview build than the very latest branch checkpoint; confirm the latest commit is deployed and repeat smoke tests on that exact deployment before production release.
+- PR #68 remains draft/unmerged; production remains untouched.
+- Next: verify current branch/PR HEAD and deployment commit; perform expanded representative QA for a Grade 7/8 lesson and one worksheet flow; then finalize release checklist. Do not merge/deploy until owner approval.
