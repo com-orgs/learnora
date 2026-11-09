@@ -500,3 +500,89 @@ Repository: https://github.com/com-orgs/learnora
 
 ### Next action
 - Owner pauses/reduces hourly GSC tracker; wait for sitemap processing; do not inspect more URLs until strict union is below 10 on a future Pakistan date. Continue full internal-link graph and preview-only Computer Science / Financial Literacy content QA.
+
+## Checkpoint update — Sitewalk SEO remediation (8 November 2026)
+
+### Completed
+- Ran Sitewalk production audit for https://learnora-ab2.pages.dev/ (audit `cfe783d550d647cf806cfcc271ac5056`): score 41/100; 104 pages crawled; 133/148 checks passed; 1 error, 7 warnings and 8 notices.
+- Main findings: structured data absent on 46 pages; titles longer than Sitewalk's guide on 39; meta descriptions too long on 23 and too short on 23; Twitter Card tags missing on 104; near-duplicate curriculum guide metadata on 2.
+- Created isolated branch `seo/sitewalk-remediation-2026-11-08` and draft PR #68: https://github.com/com-orgs/learnora/pull/68.
+- Added AboutPage JSON-LD to About and ContactPage JSON-LD to Contact; added Twitter card/title/description metadata to homepage, About, Contact and Grade 6 Understanding Fractions.
+- Preserved existing homepage Organization/WebSite graph and Understanding Fractions BreadcrumbList schema; these were already present in GitHub main source.
+- Verified JSON-LD parses on homepage, About, Contact and Understanding Fractions; verified canonical URLs remain unchanged.
+- PR preview deployed: https://seo-sitewalk-remediation-202.learnora-ab2.pages.dev/
+- GitHub Actions static website audit and legal/pre-monetisation readiness audit passed on the PR commit; Cloudflare preview security-header and asset checks passed.
+
+### Current state / blockers
+- Sitewalk preview re-audit is running: `3649262fb37b45b4a9b396c6947bfb61`; at last check 2/500 pages crawled and 3 possible issues noted. Do not treat this as complete.
+- Browser-based mobile, desktop and quiz checks are still running in GitHub Actions.
+- Sitewalk's complete per-URL list for the 46 missing-schema pages has not yet been extracted; only affected-page counts and example URLs are available in the report summary.
+- Production remains unchanged. PR #68 is draft and unmerged.
+- Do not treat a short Open Graph description as a short meta description: About page has a separate longer `meta name="description"`; the Open Graph description is intentionally shorter.
+
+### Next actions
+1. Continue polling Sitewalk preview audit until completed, failed or canceled.
+2. Finish Playwright mobile, desktop and quiz checks on the exact PR head.
+3. Use the preview audit and page-source inventory to identify the remaining missing-schema pages and exact title/description outliers.
+4. Apply only page-appropriate structured data and accurate, distinct metadata; do not invent publish dates, social profiles or representative images.
+5. Re-run static, legal, browser and Sitewalk checks; keep PR draft until all release gates pass.
+6. Merge/deploy only after the preview is verified and the production release is intentionally approved.
+
+### Changed files in this batch
+- `index.html`
+- `about.html`
+- `contact.html`
+- `math/grade-6/understanding-fractions.html`
+- `PROJECT_STATUS.md` (CI status refresh; automated)
+
+### Project tree
+- `index.html` — homepage
+- `about.html`, `contact.html` — trust and contact pages
+- `math/grade-6/` — lesson HTML
+- `scripts/pages/` — lesson interactions and quiz scripts
+- `scripts/audit-site.mjs` — static QA
+- `PROJECT_STATE.md` — persistent checkpoint
+- `seo/sitewalk-remediation-2026-11-08` — draft remediation branch (PR #68)
+
+
+## Current checkpoint — 9 November 2026 (Sitewalk remediation + functional QA)
+
+### Completed
+- Production Sitewalk baseline: 41/100. Preview Sitewalk follow-up: 74/100, 104 pages crawled, 140/151 checks passed. The 74 score predates the latest schema/description corrections; monthly Sitewalk audit quota is now exhausted, so no newer score is available.
+- Draft PR #68 remains isolated on branch `seo/sitewalk-remediation-2026-11-08`.
+- Structured data detected on 104/104 pages in the prior preview crawl. Three curriculum guide Article objects were standardized to LearningResource because reliable publish/modified dates and article-specific representative images were not established.
+- Search, Open Graph and Twitter descriptions aligned on the reviewed curriculum pages and Pythagorean lesson. No dates, social profile URLs or article images were invented.
+- Homepage internal links: 47/47 resolve to repository files.
+- Browser QA on preview:
+  - Homepage filters and 3-question quick quiz passed.
+  - Grade 6 Understanding Fractions explorer, quick choice, 5-question quiz, explanations, inline results, retake and worksheet/answer key passed.
+  - English Parts of Speech 5-question quiz passed.
+  - Science Grade 7 Introduction to Cells 5-question quiz passed.
+  - Financial Literacy actual route `/financial-literacy/budgeting` loaded and quiz passed; this page's H1 is “Needs, Wants and Simple Budgets”. A guessed alternative URL was 404 but is not linked from the site and is not a broken internal link.
+  - International Middle-School Maths worksheet: all four curriculum sets render; worked-answer disclosures expand/collapse.
+  - No visible JavaScript errors in tested pages. Mobile check around 390px passed for homepage/fractions; second cross-subject run could not fully test mobile.
+- PR diff review: 104 HTML files changed; available patch comparison detected no body-content changes. Changes are in head metadata/schema plus headers/docs.
+- Latest branch commit at this checkpoint: `23ae70fad10e753c60459e582eec724a14e0e9fe`. Cloudflare preview deployment succeeded at https://9b4b286f.learnora-ab2.pages.dev/.
+- GitHub static audit and legal/pre-monetisation audit passed. A separate CI Playwright job is still running mobile/desktop/quiz checks on this exact commit at last check.
+- Sitewalk report and details are recorded in `SEO_REMEDIATION_CHECKPOINT_2026-11-08.md`.
+
+### Current state / blockers
+- Production `main` and https://learnora-ab2.pages.dev/ remain untouched by PR #68.
+- PR #68 is open, draft and unmerged. Do not merge/deploy until latest CI browser checks complete, remaining mobile QA is assessed, and owner explicitly approves release.
+- Sitewalk cannot be re-run until monthly quota resets.
+- No new content/features were added; this phase is existing-site audit and remediation only.
+
+### Next actions
+1. Finish CI Playwright checks on the latest branch commit and inspect any failures.
+2. Complete a broader internal-link audit and mobile QA for English, Science and worksheet pages.
+3. Re-run Sitewalk when allowance resets and compare against the 74/100 baseline.
+4. Review the full PR diff one final time, then wait for explicit release approval before merge/deploy.
+
+### Project tree / state
+- Production: https://learnora-ab2.pages.dev/ (unchanged)
+- Preview branch: `seo/sitewalk-remediation-2026-11-08`
+- Draft PR: https://github.com/com-orgs/learnora/pull/68
+- Latest verified preview: https://9b4b286f.learnora-ab2.pages.dev/
+- `SEO_REMEDIATION_CHECKPOINT_2026-11-08.md` — detailed Sitewalk and functional QA log
+- `PROJECT_STATE.md` — persistent project state
+- `PROJECT_STATUS.md` — CI status tracker
