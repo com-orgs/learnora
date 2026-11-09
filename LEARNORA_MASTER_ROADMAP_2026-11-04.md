@@ -751,3 +751,15 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 4. No IndexNow resubmission for unchanged URLs; 104/104 are already in history.
 5. Complete full internal-link graph when rate limits permit; continue Computer Science and Financial Literacy QA in preview branches.
 6. Resolve title/structured-data notes only via preview QA; do not mass-edit production metadata.
+
+
+## Daily indexing & discovery refresh — 9 November 2026
+
+- Daily safety guard: full tracker 104/104 and full URL Inspection history 77 rows read before any inspection. Pakistan-date union=34/10 distinct URLs (34 tracker rows + 0 history rows); overrun=24; remaining=0. No GSC URL Inspection API or tracker-now calls made. Hourly tracker is active and connector exposes no pause/throttle control; owner action required.
+- Tracker stats: 104 total; 1 indexed; 103 not indexed/unknown; 0 pending; 0 errors; 0 warnings. Historical inspection: 77 rows / 42 unique / 19 repeated URL keys / 35 extra rows.
+- Google sitemap pending since 2026-11-05T16:21:51.927Z, warnings=0, errors=0. Live sitemap 104 entries, 104 unique, no duplicate loc entries; robots permits all agents and OAI-SearchBot.
+- Bing property verified; sitemap feed Success for 104 URLs, last crawled 2026-11-03; Webmaster quota 100/day, 2200/month; crawl issues=0; crawl stats returned 0 dated rows (unavailable, not zero crawl).
+- IndexNow key set and file verified. After this run: 455 history rows, 104 unique URLs, 351 extra repeat rows; HTTP 200=381, HTTP 202=74. Three materially changed Grade 6 fraction pages were submitted with HTTP 200/key validated; batch `597d18b8-cd8f-4898-8a13-3491e49b8eae`. All 101 other sitemap URLs were unchanged and skipped; full exact list and previous timestamps are in [DAILY_INDEXING_LOG_2026-11-09.md](DAILY_INDEXING_LOG_2026-11-09.md). Acceptance is not indexing.
+- Fresh on-page audit: 25/25 pages HTTP 200, indexable and self-canonical; no noindex or redirect; 0 critical/high/medium; 12 low notes (10 long titles, 1 long description, 1 optional structured-data absence). Internal-link sample range 11–47; full 104-page orphan graph remains outstanding.
+- No authenticated manual GSC Request Indexing control verified and no manual request submitted. URL Inspection API is status-only; manual request history is incomplete. Owner candidates and duplicate-skip warning are logged.
+- Next: owner pauses/reduces hourly tracker; monitor Google sitemap; authenticate Search Console and skip previously requested candidates; complete full internal-link graph; preview-QA metadata improvements; continue independent educator review of interactive fraction lessons. No production code or metadata change and no manual deployment.
