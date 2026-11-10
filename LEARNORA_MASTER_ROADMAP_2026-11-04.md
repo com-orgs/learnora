@@ -769,3 +769,23 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 
 - Pre-inspection guard snapshot was 33/10 (33 tracker URLs, 0 same-day URL Inspection history rows); no GSC inspection calls were made.
 - Read-only final tracker refresh later reached 34/10 because the hourly background checker added `https://learnora-ab2.pages.dev/math/grade-6/multiplying-dividing-decimals` at `2026-11-09T03:23:19.741+00:00` UTC (08:23:19 PKT). Overrun therefore ended at 24. This is background activity, not an extra manual check. Full list: `DAILY_INDEXING_LOG_2026-11-09.md`.
+
+
+## Daily indexing & discovery update — 10 November 2026 (partial)
+
+- Live sitemap: 104 URLs / 104 unique / 0 duplicates; exact URL-set match with GitHub main sitemap; no lastmod fields. robots.txt allows all agents and OAI-SearchBot and declares the sitemap.
+- GSC Wizard connector now returns `payment_required` (trial ended, no active subscription). Therefore current tracker pages, full URL Inspection history, Google sitemap status, Bing Webmaster property/feed/quota/crawl data and complete IndexNow settings/history could not be read. Do not reuse 9 Nov figures as current.
+- Daily guard for Pakistan date 10 Nov is UNKNOWN (tracker and history inaccessible). No URL Inspection or tracker-now action was called; manual GSC Request Indexing=0. Keep inspections at zero until all tracker/history pages can be read and union is calculated.
+- Historical 9 Nov snapshot only: tracker 104 total / 1 indexed / 103 not indexed or unknown; daily union 34/10; inspection history 77 rows / 42 unique / 19 repeated URL keys / 35 extra rows; Google sitemap pending with zero warnings/errors.
+- Historical 9 Nov Bing/IndexNow snapshot only: Bing verified, feed Success for 104 URLs, last crawled 3 Nov, quota 100/day and 2,200/month, crawl issues 0, no dated crawl stats; IndexNow key and file verified, 455 rows / 104 unique / 351 extra rows / HTTP 200=381 / HTTP 202=74. Three changed fraction lessons were accepted on 9 Nov; no submission was attempted on 10 Nov because history/key reads were blocked.
+- GitHub main latest retrieved commit `5867079...` is documentation-only; last production page/code commit `2b6a750...` is 8 Nov. No newer production code/page commit found.
+- Ten-page production sample fetched successfully; all sampled canonicals self-reference and robots meta is index,follow; internal-link counts 8–51. Full 104-page orphan graph remains outstanding. Content depth review targets: Algorithms (323 extracted words), Grade 8 Science hub (378), Grade 6 Maths hub (400); word count is not a Google threshold.
+- Manual GSC UI was not verified: saved profile sign-in claim is dated 5 Nov but custom browser automation required TinyFish beta, and connected Browser lacked originating context. No manual request submitted.
+- No production changes or deployment. Detailed evidence and limitations: [DAILY_INDEXING_LOG_2026-11-10.md](DAILY_INDEXING_LOG_2026-11-10.md).
+
+### Current priorities
+1. Restore GSC Wizard/Google access before any further inspection; no payment was made during this run.
+2. On restoration, read all tracker and inspection-history pages first; compute the Pakistan-date union and obey the 10-URL cap.
+3. Owner pauses/reduces hourly background tracker in UI if active; prior connector exposed no pause/throttle control.
+4. Recheck Google sitemap and Bing/IndexNow status only after account access returns; never resubmit unchanged URLs.
+5. Complete 104-page inbound-link graph and preview-QA educational-depth improvements. Keep production unchanged until QA and explicit release approval.
