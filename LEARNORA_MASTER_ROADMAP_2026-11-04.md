@@ -789,3 +789,22 @@ At every future session: read this roadmap and PROJECT_STATUS.md, inspect curren
 3. Owner pauses/reduces hourly background tracker in UI if active; prior connector exposed no pause/throttle control.
 4. Recheck Google sitemap and Bing/IndexNow status only after account access returns; never resubmit unchanged URLs.
 5. Complete 104-page inbound-link graph and preview-QA educational-depth improvements. Keep production unchanged until QA and explicit release approval.
+
+
+## Daily indexing & discovery update — 11 November 2026 (partial; account access blocked)
+
+- GSC Wizard trial ended/no active subscription. All Google tracker/history/sitemap and Bing/IndexNow account-backed reads returned `payment_required`. No payment was made.
+- Daily Google guard cannot be calculated: tracker and full inspection history both inaccessible. Same-day distinct union, history rows, duplicates and remaining cap are all UNKNOWN. Zero URL Inspection API calls, zero tracker checks, zero manual Request Indexing requests.
+- Live sitemap: 104 unique same-host URLs, 0 duplicates; exact 104/104 match with repository sitemap; no `lastmod` elements. Live robots allows all agents and OAI-SearchBot and declares the sitemap.
+- Ten production pages fetched successfully; all final URLs match requested URLs, self-canonical and `index,follow`; internal links 8–51. Full 104-page inbound-link graph still outstanding. Algorithms and Grade 6 Maths hub remain content-depth review candidates, not confirmed indexing blockers.
+- Bing/IndexNow: no fresh reads and no submissions. Last known 9 Nov values are historical only; complete 11 Nov duplicate-skip reconciliation is unavailable. Do not resubmit unchanged URLs.
+- Read-only Search Console UI check reached generic landing/sign-in page; no authenticated property dashboard or Request Indexing control. No manual request submitted.
+- Exact 10-page fetch list, metadata/link/word counts, current blocked values, historical snapshot caveats and next actions: [DAILY_INDEXING_LOG_2026-11-11.md](DAILY_INDEXING_LOG_2026-11-11.md).
+- No production code, content, metadata, sitemap, robots or canonical changes; no deployment.
+
+### Current priorities
+1. Restore account-backed access only if owner chooses; no paid action without explicit approval and preserve the zero-investment constraint.
+2. Do not inspect until every tracker URL and every URL Inspection history page can be read and the daily union is calculated.
+3. Reauthenticate Google Search Console before any manual Request Indexing action.
+4. Re-read Bing verified site/feed/quota/crawl data and full IndexNow settings/history before any submission; verify the key file.
+5. Complete the full 104-page inbound-link graph and continue preview-only content QA.
