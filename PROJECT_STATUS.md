@@ -1306,3 +1306,24 @@ Historical session notes below are retained for continuity; use this current sta
 4. [ ] Recheck Google sitemap status after access is restored; last known 9 Nov status was pending with zero warnings/errors.
 5. [ ] Recheck Bing property/feed/quota/crawl issues/stats and IndexNow key/history before any submission. Never resubmit unchanged URLs.
 6. [ ] Complete the full 104-page inbound-link graph; review Algorithms, Grade 8 Science hub and Grade 6 Maths hub for educational depth through preview QA and educator review.
+
+
+## Daily indexing & discovery checkpoint — 11 November 2026 (partial; account access blocked)
+
+- Run time: 08:24 PKT. GSC Wizard returned `payment_required` (trial ended; no active subscription) for account info, Google property list, tracker summary, all tracked URLs, full URL Inspection history, Google sitemap status, Bing property/feed/quota/crawl reads, IndexNow settings and full IndexNow history. No payment was made.
+- **11 Nov strict guard:** tracker pages unreadable; full inspection history unreadable; same-day tracker URL count=UNKNOWN; same-day history rows=UNKNOWN; distinct URL union=UNKNOWN; same-day duplicates=UNKNOWN; remaining cap=UNKNOWN. No GSC URL inspection or tracker check was triggered: `inspect_url=0`, `bulk_inspect_urls=0`, `check_tracked_url_now=0`. No manual Request Indexing request was submitted.
+- Live sitemap fetched: 104 entries, 104 unique, 0 duplicates, all same host. Exact match with `main:sitemap.xml` (104 entries; live-only=0; source-only=0). Repository sitemap has no `lastmod` elements. Fetch service did not expose HTTP status.
+- Live robots.txt fetched: `User-agent: * / Allow: /`; explicit OAI-SearchBot allow; sitemap declared; no disallow rule.
+- Fresh read-only production sample: 10/10 fetches successful; final URLs matched requested URLs; all ten self-canonical and `index,follow`; internal links 8–51. Exact URLs, word counts and link counts are in [DAILY_INDEXING_LOG_2026-11-11.md](DAILY_INDEXING_LOG_2026-11-11.md). These are ordinary fetches, not GSC inspections.
+- Full 104-page inbound-link/orphan graph remains incomplete. Algorithms (323 extracted words) and Grade 6 Maths hub (400) remain instructional-depth review candidates; word count alone is not an indexing or quality violation.
+- Bing and IndexNow fresh reads were blocked by the same subscription error. No IndexNow submissions were attempted; duplicate skip count is not evaluated. Last known 9 Nov snapshot only: Bing verified/feed Success/104 URLs, quota 100/day and 2,200/month, IndexNow 455 rows/104 unique/381 HTTP 200/74 HTTP 202/351 extra rows, key `****5d92` and key file verified. Do not present these as 11 Nov values.
+- Read-only Search Console UI check redirected to the generic Search Console landing page and Google sign-in; the saved profile's 5 Nov sign-in claim is expired. No property dashboard or Request Indexing control was available; no manual request submitted.
+- No production HTML/CSS/JS, metadata, sitemap, robots or canonical change; no deployment. Exact URL action ledger and evidence: [DAILY_INDEXING_LOG_2026-11-11.md](DAILY_INDEXING_LOG_2026-11-11.md).
+
+### Next actions — 11 November
+1. [ ] Restore GSC Wizard access only if owner chooses; no payment or subscription purchase was made. Do not run any inspections while the full tracker/history guard reads are blocked.
+2. [ ] Reauthenticate the Google Search Console profile before attempting the interactive Request Indexing UI.
+3. [ ] Owner pauses/reduces the hourly tracker in its UI if still active; the connector has no pause/throttle control.
+4. [ ] After account access is restored, read all tracker URLs and all history pages first; calculate the Pakistan-date union and stop at >=10.
+5. [ ] Re-read Bing and IndexNow full history/settings and verify key-file reachability before any eligible submission.
+6. [ ] Continue full 104-page internal-link/orphan audit and preview-only content-depth QA; do not mass-edit metadata or publish without preview QA.
