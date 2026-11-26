@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free equation solver: solve one-step and two-step equations step by step, with each inverse operation shown and the answer checked.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://learnora-ab2.pages.dev/tools/equation-solver">
+<meta property="og:title" content="Equation Solver | Learnora Tools">
+<meta property="og:description" content="Solve ax + b = c and x ÷ a + b = c step by step, with every inverse operation shown and the answer checked.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://learnora-ab2.pages.dev/tools/equation-solver">
+<title>Equation Solver | Learnora Tools</title>
+<link rel="stylesheet" href="/accessibility.css"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Equation Solver","applicationCategory":"EducationalApplication","operatingSystem":"Any","isAccessibleForFree":true,"url":"https://learnora-ab2.pages.dev/tools/equation-solver"}</script>
+<style>
+:root{--navy:#173b63;--teal:#117454;--ink:#263445;--muted:#66758a;--bg:#f4f7fb;--line:#e1e8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Arial,Helvetica,sans-serif}a{color:var(--teal)}header,footer{background:#fff;padding:16px 20px;border-bottom:1px solid var(--line)}footer{border-top:1px solid var(--line);border-bottom:0;text-align:center;color:var(--muted)}nav,main{max-width:900px;margin:auto}nav{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.brand{font-size:25px;font-weight:800;color:var(--navy);text-decoration:none}nav div{display:flex;gap:16px;flex-wrap:wrap}nav div a{text-decoration:none;color:var(--navy);font-weight:600}main{padding:30px 18px 55px}.crumb{font-size:14px;color:#4b596b;margin-bottom:17px}.hero,.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:clamp(18px,4vw,28px);margin-bottom:20px}.hero{border-top:5px solid #117454}.tag{display:inline-block;background:#e8f6ed;color:#126239;border-radius:30px;padding:4px 12px;font-size:13px;font-weight:700}h1,h2,h3{color:var(--navy);line-height:1.3}h1{font-size:clamp(30px,5vw,42px);margin:12px 0}h2{font-size:23px;margin-top:0}.muted{color:var(--muted)}label{display:block;font-weight:700;margin:12px 0 4px}input,select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;width:100%;max-width:320px}button{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 17px;font:inherit;font-weight:700;cursor:pointer;margin-top:14px}button.secondary{background:#e7f2ef;color:var(--ink);margin-left:8px}.result{font-size:1.25rem;font-weight:800;color:var(--navy);margin:14px 0 6px}li{margin:7px 0}
+</style>
+</head>
+<body>
+<header><nav aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/tools/">Tools</a><a href="/about">About</a></div></nav></header>
+<main>
+<div class="crumb"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Equation Solver</div>
+<section class="hero"><span class="tag">STUDENT TOOL · MATHS</span><h1>Equation Solver</h1><p>Solve one-step and two-step equations. The solver shows each inverse operation and checks the answer by putting it back into the original equation — use it to learn the method, then try the questions yourself first.</p><p class="muted">Free to use. Nothing you type leaves your browser.</p></section>
+
+<section class="panel"><h2>Solve</h2>
+<form id="eq-form-el">
+<label for="eq-form">Equation type</label>
+<select id="eq-form">
+<option value="axb">ax + b = c</option>
+<option value="div">x ÷ a + b = c</option>
+</select>
+<p class="muted" id="eq-form-label">Solve ax + b = c</p>
+<label for="eq-a">a (the number with x)</label>
+<input type="number" id="eq-a" inputmode="decimal" step="any" value="2" required>
+<label for="eq-b">b (the number added)</label>
+<input type="number" id="eq-b" inputmode="decimal" step="any" value="5" required>
+<label for="eq-c">c (the answer)</label>
+<input type="number" id="eq-c" inputmode="decimal" step="any" value="20" required>
+<br><button type="submit">Solve</button>
+<button type="button" class="secondary" id="eq-try">Try: 2x + 5 = 20</button>
+</form>
+<p class="result" id="eq-result" aria-live="polite"></p>
+<ol id="eq-steps"></ol>
+</section>
+
+<section class="panel"><h2>Worked example</h2><p><strong>Question:</strong> Solve 3x + 5 = 20.</p><p>Undo the addition first: 3x = 20 − 5 = 15. Then undo the multiplication: x = 15 ÷ 3 = 5. Check: 3 × 5 + 5 = 15 + 5 = 20. Correct.</p><p><strong>Remember:</strong> whatever you do to one side of an equation, do the same to the other side — that keeps it balanced.</p></section>
+
+<section class="panel"><h2>Learn the idea first</h2><ul>
+<li><a href="/math/grade-6/solving-one-step-equations">Solving One-Step Equations</a> — Grade 6 Maths</li>
+<li><a href="/math/grade-7/two-step-equations">How to Solve Two-Step Equations</a> — Grade 7 Maths</li>
+<li><a href="/math/grade-8/linear-equations-and-inequalities">Linear Equations and Inequalities</a> — Grade 8 Maths</li>
+</ul><p><a href="/tools/">All tools</a> · <a href="/">Learnora home</a></p></section>
+</main>
+<footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Home</a> · <a href="/about">About</a> · <a href="/editorial-policy">Editorial Policy</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></footer>
+<script src="/scripts/tools/equation-solver.js" defer></script>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free study timer: study for 25 minutes, rest for 5. A simple Pomodoro-style timer to help you focus — no account, no downloads.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://learnora-ab2.pages.dev/tools/study-timer">
+<meta property="og:title" content="Study Timer | Learnora Tools">
+<meta property="og:description" content="Study for 25 minutes, rest for 5. A simple timer to help you focus.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://learnora-ab2.pages.dev/tools/study-timer">
+<title>Study Timer | Learnora Tools</title>
+<link rel="stylesheet" href="/accessibility.css"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Study Timer","applicationCategory":"EducationalApplication","operatingSystem":"Any","isAccessibleForFree":true,"url":"https://learnora-ab2.pages.dev/tools/study-timer"}</script>
+<style>
+:root{--navy:#173b63;--teal:#117454;--ink:#263445;--muted:#66758a;--bg:#f4f7fb;--line:#e1e8f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Arial,Helvetica,sans-serif}a{color:var(--teal)}header,footer{background:#fff;padding:16px 20px;border-bottom:1px solid var(--line)}footer{border-top:1px solid var(--line);border-bottom:0;text-align:center;color:var(--muted)}nav,main{max-width:900px;margin:auto}nav{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.brand{font-size:25px;font-weight:800;color:var(--navy);text-decoration:none}nav div{display:flex;gap:16px;flex-wrap:wrap}nav div a{text-decoration:none;color:var(--navy);font-weight:600}main{padding:30px 18px 55px}.crumb{font-size:14px;color:#4b596b;margin-bottom:17px}.hero,.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:clamp(18px,4vw,28px);margin-bottom:20px}.hero{border-top:5px solid #117454}.tag{display:inline-block;background:#e8f6ed;color:#126239;border-radius:30px;padding:4px 12px;font-size:13px;font-weight:700}h1,h2,h3{color:var(--navy);line-height:1.3}h1{font-size:clamp(30px,5vw,42px);margin:12px 0}h2{font-size:23px;margin-top:0}.muted{color:var(--muted)}button{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:11px 17px;font:inherit;font-weight:700;cursor:pointer;margin:6px 6px 0 0}button.secondary{background:#e7f2ef;color:var(--ink)}.timer{font-size:clamp(3rem,12vw,5rem);font-weight:800;color:var(--navy);text-align:center;line-height:1.1;margin:10px 0}.timer-mode{text-align:center;font-weight:700}.timer-count{text-align:center;color:var(--muted)}li{margin:7px 0}
+</style>
+</head>
+<body>
+<header><nav aria-label="Main navigation"><a class="brand" href="/">Learnora</a><div><a href="/">Home</a><a href="/#subjects">Subjects</a><a href="/tools/">Tools</a><a href="/about">About</a></div></nav></header>
+<main>
+<div class="crumb"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Study Timer</div>
+<section class="hero"><span class="tag">STUDENT TOOL · STUDY SKILLS</span><h1>Study Timer</h1><p>Study for 25 minutes, then rest for 5. Short, focused sessions with real breaks help you remember more than one long, tired session. Press Start when you are ready — the timer switches between study and break by itself.</p><p class="muted">Free to use. Works offline. Nothing is stored or sent anywhere.</p></section>
+
+<section class="panel"><h2>Your timer</h2>
+<p class="timer" id="st-time" aria-live="polite">25:00</p>
+<p class="timer-mode" id="st-mode">Study time — focus on one thing</p>
+<p class="timer-count" id="st-count">Study sessions finished: 0</p>
+<div>
+<button type="button" id="st-start">Start</button>
+<button type="button" class="secondary" id="st-switch">Switch to break / study</button>
+<button type="button" class="secondary" id="st-reset">Reset</button>
+</div>
+<p><label><input type="checkbox" id="st-sound"> Play a short beep when the time is up</label><br><span class="muted">Sound is off by default. The beep only plays after you press Start.</span></p>
+</section>
+
+<section class="panel"><h2>How to use it — the 25-minute method</h2><ol>
+<li><strong>Pick one thing</strong> to study, and put everything else away.</li>
+<li><strong>Press Start</strong> and work until the timer reaches 25:00 — do not check your phone.</li>
+<li><strong>Take the 5-minute break:</strong> stretch, drink water, rest your eyes. Do not start a game or a video.</li>
+<li><strong>Repeat.</strong> After four study sessions, take a longer break of 15–30 minutes.</li>
+<li><strong>When you finish,</strong> try the lesson quiz or the printable worksheet to check what stayed in your memory.</li>
+</ol><p>Short sessions work because your brain needs rest to store what you learned. Forcing yourself to study for hours without a break usually means you remember less, not more.</p></section>
+
+<section class="panel"><h2>Learn the idea first</h2><ul>
+<li><a href="/how-to-use/">How to Use Learnora</a> — the 25-minute study method, for students, parents and teachers</li>
+<li><a href="/math/grade-6/understanding-fractions">Understanding Fractions</a> — try a 25-minute session on a real lesson</li>
+</ul><p><a href="/tools/">All tools</a> · <a href="/">Learnora home</a></p></section>
+</main>
+<footer><strong>Learnora</strong><br>Learn Better. Practice Smarter.<br><a href="/">Home</a> · <a href="/about">About</a> · <a href="/editorial-policy">Editorial Policy</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></footer>
+<script src="/scripts/tools/study-timer.js" defer></script>
+</body></html>
